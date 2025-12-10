@@ -2,15 +2,15 @@ output_path: ./data/output
 
 LLM:
   title_model:
-    LLM_API_KEY: sk-1fdbb0e4ce3943bab4b300ca867c1315
+    LLM_API_KEY: xxx
     LLM_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
     LLM_MODEL: qwen3-14b
   img:
-    API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315  
+    API_KEY : xxx 
     BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
     MODEL : qwen3-vl-8b-instruct
   table:
-    API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315  
+    API_KEY : xxx  
     BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
     MODEL : qwen3-14b
 
