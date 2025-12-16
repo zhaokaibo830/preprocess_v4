@@ -16,8 +16,22 @@ from fastapi.responses import FileResponse
 from fastapi.responses import JSONResponse
 import uuid, os, json, shutil
 from fastapi import HTTPException 
-app = FastAPI()
-
+from fastapi.staticfiles import StaticFiles
+from fastapi.openapi.docs import get_swagger_ui_html
+from fastapi.responses import FileResponse
+app = FastAPI(
+    docs_url=None,
+    redoc_url=None
+    )
+app.mount("/static", StaticFiles(directory="static"), name="static")
+@app.get("/docs", include_in_schema=False)
+def custom_docs():
+    return get_swagger_ui_html(
+        openapi_url=app.openapi_url,
+        title="文档解析服务",
+        swagger_js_url="/static/swagger-ui-bundle.js",
+        swagger_css_url="/static/swagger-ui.css",
+    )
 AVALIABLE_FORMATS=["pdf","docx","doc","wps","odt","pptx","ppt","ofd","md","ceb","jpg","jpeg","png","txt"]
 
 with open("config.yaml",'r',encoding='utf-8') as file:
@@ -200,6 +214,12 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(...), 
                 if block["type"]=="table":
                     for sub_block_index,sub_block in enumerate(block["blocks"]):
                         if sub_block["type"]=="table_body":
+                            try:
+                                table_html=sub_block["lines"][0]["spans"][0]["html"]
+                            except (IndexError, KeyError, TypeError):
+                        # 这里可以打印日志，告诉你到底哪一层断了
+                                print(f"[WARN] page={page_index} block={block_index} 取不到 html，已跳过")
+                                continue
                             table_html=sub_block["lines"][0]["spans"][0]["html"]
                             result=table_extract(table_html,cfg['LLM']['table']['API_KEY'],cfg['LLM']['table']['BASE_URL'],cfg['LLM']['table']['MODEL'] )
                             print(result)
@@ -226,7 +246,7 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(...), 
 if __name__=="__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    uvicorn.run(app, host="0.0.0.0", port=8002)
 
 
 
