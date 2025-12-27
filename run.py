@@ -39,8 +39,8 @@ with open("config.yaml",'r',encoding='utf-8') as file:
 
 #OUTPUT_PATH="./data/output"
 @app.post("/api/preprocessv4")
-async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(...),   # 开关 1
-    table_enable: bool = Form(...) ):
+async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(True),   # 开关 1
+    table_enable: bool = Form(True),vlm_enable: bool = Form(True)):
 
     #加载cfg
     try:
@@ -71,6 +71,29 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(...), 
     #版面识别
     output_path=cfg['output_path']
     output_path=Path(output_path).resolve()
+    if vlm_enable:
+        cmd=[
+            'mineru',
+            '-p', str(input_file),
+            '-o', str(output_path),
+            '--backend', 'vlm-lmdeploy-engine',
+            '--cache-max-entry-count','0.8',
+            '--device', 'cuda',
+            '--source', 'local',
+            '--max-batch-size','8'
+        ]
+    else:
+        cmd=[
+            'mineru',
+            '-p', str(input_file),
+            '-o', str(output_path),
+            '--backend', 'pipeline',
+            '--cache-max-entry-count','0.8',
+            '--device', 'cuda',
+            '--source', 'local',
+            '--max-batch-size','8'
+        ]
+    """
     cmd = [
     'mineru',
     '-p', str(input_file),
@@ -79,6 +102,7 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(...), 
     '--device', 'cuda',
     '--source', 'local'
     ]
+    """
     subprocess.run(cmd, check=True)
     middle_json_name = f'{file_name}_middle.json'
     target_json = output_path / file_name / 'vlm' / middle_json_name

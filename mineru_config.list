@@ -1,0 +1,5 @@
+# ~/mineru_env.list
+export MINERU_LMDEPLOY_BACKEND=pytorch
+export OMP_NUM_THREADS=4
+export TOKENIZERS_PARALLELISM=false
+export MINERU_MIN_BATCH_INFERENCE_SIZE=512

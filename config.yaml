@@ -2,32 +2,17 @@ output_path: ./data/output
 
 LLM:
   title_model:
-    LLM_API_KEY: 1
-    LLM_BASE_URL: http://10.208.127.82:9080/qwen25032_api/v1
-    LLM_MODEL: gpt-3.5-turbo
+    LLM_API_KEY: ***
+    LLM_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+    LLM_MODEL: qwen3-14b
   img:
-    API_KEY : 1 
-    BASE_URL : http://10.208.127.189:25007/v1
-    MODEL : gpt-3.5-turbo
+    API_KEY : ***  
+    BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
+    MODEL : qwen3-vl-8b-instruct
   table:
-    API_KEY : 1
-    BASE_URL : http://10.208.127.82:9080/qwen3_fthink/v1
-    MODEL : gpt-3.5-turbo
->>>>>>> 3e3feeb (本地加载网页前端；修改config为本地调用；优化表格处理逻辑)
-
+    API_KEY : ***
+    BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
+    MODEL : qwen3-14b
 img_enable: true
 table_enable: true
 
-LLM_local:
-  title_model:
-    LLM_API_KEY: sk-1fdbb0e4ce3943bab4b300ca867c1315
-    LLM_BASE_URL: http://10.208.127.82:9080/qwen25014_api/v1
-    LLM_MODEL: gpt-3.5-turbo
-  img:
-    API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315  
-    BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
-    MODEL : gpt-3.5-turbo
-  table:
-    API_KEY : 1  
-    BASE_URL : http://10.208.127.82:9080/qwen25014_api/v1
-    MODEL : gpt-3.5-turbo

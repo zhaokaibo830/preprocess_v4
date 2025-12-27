@@ -1,0 +1,6002 @@
+{
+  "output": [
+    {
+      "page_size": [
+        560,
+        777
+      ],
+      "page_idx": 0,
+      "result": [
+        {
+          "bbox": [
+            124,
+            75,
+            450,
+            95
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                124,
+                75,
+                450,
+                95
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    124,
+                    75,
+                    450,
+                    95
+                  ],
+                  "type": "text",
+                  "content": "三峡库区河道泥沙冲淤过程动态仿真研究"
+                }
+              ]
+            }
+          ],
+          "index": 6
+        },
+        {
+          "bbox": [
+            230,
+            105,
+            343,
+            117
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                230,
+                105,
+                343,
+                117
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    230,
+                    105,
+                    343,
+                    117
+                  ],
+                  "type": "text",
+                  "content": "冶运涛，张尚弘，王兴奎"
+                }
+              ]
+            }
+          ],
+          "index": 7
+        },
+        {
+          "bbox": [
+            176,
+            118,
+            398,
+            128
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                176,
+                118,
+                398,
+                128
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    176,
+                    118,
+                    398,
+                    128
+                  ],
+                  "type": "text",
+                  "content": "（清华大学水沙科学与水利水电工程国家重点实验室，北京100084）"
+                }
+              ]
+            }
+          ],
+          "index": 8
+        },
+        {
+          "type": "image",
+          "bbox": [
+            67,
+            134,
+            126,
+            222
+          ],
+          "blocks": [
+            {
+              "bbox": [
+                67,
+                134,
+                126,
+                222
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    67,
+                    134,
+                    126,
+                    222
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        67,
+                        134,
+                        126,
+                        222
+                      ],
+                      "type": "image",
+                      "image_path": "924d2b7eeadaae788ee5d4baafd731fd15c9817248704ec135ae662881586b73.jpg"
+                    }
+                  ]
+                }
+              ],
+              "index": 9,
+              "angle": 0,
+              "type": "image_body"
+            }
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            129,
+            135,
+            512,
+            204
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                129,
+                135,
+                512,
+                204
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    129,
+                    135,
+                    512,
+                    204
+                  ],
+                  "type": "text",
+                  "content": "摘要：泥沙冲淤过程模拟的三维可视化不仅能改善泥沙过程信息的视觉效果，更有助于发现泥沙运动的宏观规律，并为过程模拟数据的深层次分析奠定基础。主要提出了基于高精度、大范围DEM数据的断面控制点提取方法，采用网格逼近的方法生成了三维河道地形；与大尺度流域三维场景形成嵌套结构；研究了大范围河道泥沙动态仿真中的LOD和无缝拼接技术，并采用伪彩色技术表现河道冲淤时空分布，开发了纵横断面冲淤分析模块。该研究能够直观地分析泥沙冲淤变化规律，能够为水利工程规划和设计、河道和航道整治提供决策支持。"
+                }
+              ]
+            }
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            130,
+            205,
+            392,
+            216
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                130,
+                205,
+                392,
+                216
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    130,
+                    205,
+                    392,
+                    216
+                  ],
+                  "type": "text",
+                  "content": "关键词：数字流域；泥沙过程；动态可视化仿真；LOD；无缝拼接"
+                }
+              ]
+            }
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            130,
+            217,
+            510,
+            229
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                130,
+                217,
+                510,
+                229
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    130,
+                    217,
+                    510,
+                    229
+                  ],
+                  "type": "text",
+                  "content": "中图分类号：TV212；TP391.9 文献标识码：A 文章编号：1004-731X(2009)15-4806-05"
+                }
+              ]
+            }
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            104,
+            237,
+            471,
+            270
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                104,
+                237,
+                471,
+                270
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    104,
+                    237,
+                    471,
+                    270
+                  ],
+                  "type": "text",
+                  "content": "Research on 3D Visualization of Sediment Process Simulation in Three Gorge Reservoir Area"
+                }
+              ]
+            }
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            180,
+            274,
+            395,
+            286
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                180,
+                274,
+                395,
+                286
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    180,
+                    274,
+                    395,
+                    286
+                  ],
+                  "type": "text",
+                  "content": "YE Yun-tao, ZHANG Shang-hong, WANG Xing-kui"
+                }
+              ]
+            }
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            134,
+            286,
+            440,
+            296
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                134,
+                286,
+                440,
+                296
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    134,
+                    286,
+                    440,
+                    296
+                  ],
+                  "type": "text",
+                  "content": "(State Key Laboratory of Hydroscience and Engineering, Tsinghua University, Beijing 100084, China)"
+                }
+              ]
+            }
+          ],
+          "index": 15
+        },
+        {
+          "bbox": [
+            61,
+            303,
+            514,
+            407
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                61,
+                303,
+                514,
+                407
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    61,
+                    303,
+                    514,
+                    407
+                  ],
+                  "type": "text",
+                  "content": "Abstract: The 3D visualization of sediment simulation can not only improve the presentation of sedimentation process, but also be very helpful for discovering the overall rules controlling sediment, and so can lay good foundation for providing further analyzing. The method for extracting the section's control coordinates based on high resolution and large scale DEM data was studied, and the 3D river was generated with triangular mesh approximation approach, which is integrated with 3D terrain models. The real-time rendering techniques for the large-scale 3D scene rendering such as LOD and seamless tiling of LOD patches, which were adapted to render the river bed, were discussed. The spatial-temporal distribution of erosion and deposition was showed by pseudo-color, and the section's erosion and deposition module was developed. The research can analyze the sediment process rules, which provide the decision support for water resources planning and design, as well as river and navigation regulation."
+                }
+              ]
+            }
+          ],
+          "index": 16
+        },
+        {
+          "bbox": [
+            61,
+            408,
+            483,
+            419
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                61,
+                408,
+                483,
+                419
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    61,
+                    408,
+                    483,
+                    419
+                  ],
+                  "type": "text",
+                  "content": "Key words: digital watershed; sediment process; dynamic visual simulation; LOD; seamlessly tiling of LOD patches"
+                }
+              ]
+            }
+          ],
+          "index": 17
+        },
+        {
+          "bbox": [
+            48,
+            428,
+            86,
+            442
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                48,
+                428,
+                86,
+                442
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    48,
+                    428,
+                    86,
+                    442
+                  ],
+                  "type": "text",
+                  "content": "引言"
+                }
+              ]
+            }
+          ],
+          "index": 18
+        },
+        {
+          "bbox": [
+            47,
+            450,
+            280,
+            536
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                47,
+                450,
+                280,
+                536
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    47,
+                    450,
+                    280,
+                    536
+                  ],
+                  "type": "text",
+                  "content": "基于三维虚拟仿真的流域可视化技术，以其逼真的三维场景和友好的实时动态交互特性，引起了研究学者的广泛关注。它为研究者开辟了一个具有沉浸感的虚拟环境，实现了多维空间和时间数据的视觉化，使研究者既能够在虚拟环境中交互操控研究对象，更可以在仿真模拟等科学计算过程中实时得到正在处理的动态过程的反馈。"
+                }
+              ]
+            }
+          ],
+          "index": 19
+        },
+        {
+          "bbox": [
+            47,
+            538,
+            280,
+            624
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                47,
+                538,
+                280,
+                624
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    47,
+                    538,
+                    280,
+                    624
+                  ],
+                  "type": "text",
+                  "content": "泥沙冲淤过程可视化仿真系统可以从流域、区域全局或局部实现泥沙淤积过程的三维动态可视化，将离散数据转化为直观的动态或静态画面，有助于从纷繁复杂的数据中认清水沙运动规律，从而为泥沙冲淤状况分布数据的进一步分析与解释提供便利。不但有利于计算结果的全局表达，而且易于明晰冲淤变化过程，有助于计算结果的分析和研究。"
+                }
+              ]
+            }
+          ],
+          "index": 20
+        },
+        {
+          "bbox": [
+            48,
+            627,
+            280,
+            654
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                48,
+                627,
+                280,
+                654
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    48,
+                    627,
+                    280,
+                    654
+                  ],
+                  "type": "text",
+                  "content": "数字流域仿真的研究重点是水体和泥沙，大范围水体仿真的研究已有一些成果[1-2]，但是基于三维虚拟仿真平台大"
+                }
+              ]
+            }
+          ],
+          "index": 21
+        },
+        {
+          "bbox": [
+            295,
+            428,
+            526,
+            453
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                295,
+                428,
+                526,
+                453
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    295,
+                    428,
+                    526,
+                    453
+                  ],
+                  "type": "text",
+                  "content": "范围泥沙冲淤过程动态仿真的研究目前暂无人涉及；在仿真平台与数学模型的集成方面，张尚弘等做了一定的工作[3-5]。"
+                }
+              ]
+            }
+          ],
+          "index": 22
+        },
+        {
+          "bbox": [
+            295,
+            456,
+            527,
+            638
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                295,
+                456,
+                527,
+                638
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    295,
+                    456,
+                    527,
+                    638
+                  ],
+                  "type": "text",
+                  "content": "本文就泥沙冲淤过程动态仿真方面，基于前人已有成果，以三峡库区为例，提出了虚拟仿真平台与数学模型集成的统一网格体系结构；由于计算机技术的发展，数学模型计算的范围越来越大，精度越来越高，必须解决流域三维场景漫游中由于模拟范围太大和数据精度高而带来的视觉停滞、延缓等不能满足实时性要求的情况，提出了采用LOD技术和无缝拼接技术以实现大范围河道泥沙冲淤过程的动态仿真，采用流域三维场景与动态河道的嵌套建模以及动静河道互相切换来减少系统的渲染量和提高场景的实时性；为了实现三维虚拟仿真平台能够为工程规划、论证和设计提供科学决策，便于分析河道泥沙冲淤过程，采用了伪彩色增强技术表达河道冲淤的时空分布；同时开发了与仿真平台交互进行河道断面冲淤分析的功能。"
+                }
+              ]
+            }
+          ],
+          "index": 23
+        },
+        {
+          "bbox": [
+            295,
+            644,
+            495,
+            659
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                295,
+                644,
+                495,
+                659
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    295,
+                    644,
+                    495,
+                    659
+                  ],
+                  "type": "text",
+                  "content": "1 二维水流泥沙数学模型及定解条件"
+                }
+              ]
+            }
+          ],
+          "index": 24
+        },
+        {
+          "bbox": [
+            295,
+            668,
+            526,
+            694
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                295,
+                668,
+                526,
+                694
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    295,
+                    668,
+                    526,
+                    694
+                  ],
+                  "type": "text",
+                  "content": "二维水流泥沙模型控制方程由水流连续方程、动量方程、悬移质泥沙扩散方程和河床变形方程组成。"
+                }
+              ]
+            }
+          ],
+          "index": 25
+        },
+        {
+          "bbox": [
+            314,
+            698,
+            371,
+            709
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                314,
+                698,
+                371,
+                709
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    314,
+                    698,
+                    371,
+                    709
+                  ],
+                  "type": "text",
+                  "content": "水流连续方程"
+                }
+              ]
+            }
+          ],
+          "index": 26
+        },
+        {
+          "bbox": [
+            315,
+            711,
+            414,
+            735
+          ],
+          "type": "interline_equation",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                315,
+                711,
+                414,
+                735
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    315,
+                    711,
+                    414,
+                    735
+                  ],
+                  "type": "interline_equation",
+                  "content": "\\frac {\\partial Z s}{\\partial t} + \\frac {\\partial (H U)}{\\partial x} + \\frac {\\partial (H V)}{\\partial y} = 0",
+                  "image_path": "9573ddac792a0ad81c9cb2538787a8d2a2293236f63448cc2bfbcbc4df6d3696.jpg"
+                }
+              ]
+            }
+          ],
+          "index": 27
+        },
+        {
+          "bbox": [
+            47,
+            34,
+            101,
+            44
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                47,
+                34,
+                101,
+                44
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    47,
+                    34,
+                    101,
+                    44
+                  ],
+                  "type": "text",
+                  "content": "第21卷第15期"
+                }
+              ]
+            }
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            48,
+            46,
+            86,
+            55
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                48,
+                46,
+                86,
+                55
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    48,
+                    46,
+                    86,
+                    55
+                  ],
+                  "type": "text",
+                  "content": "2009年8月"
+                }
+              ]
+            }
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            220,
+            29,
+            346,
+            42
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                220,
+                29,
+                346,
+                42
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    220,
+                    29,
+                    346,
+                    42
+                  ],
+                  "type": "text",
+                  "content": "系统仿真学报"
+                }
+              ]
+            }
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            215,
+            44,
+            348,
+            56
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                215,
+                44,
+                348,
+                56
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    215,
+                    44,
+                    348,
+                    56
+                  ],
+                  "type": "text",
+                  "content": "Journal of System Simulation"
+                }
+              ]
+            }
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            480,
+            34,
+            526,
+            43
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                480,
+                34,
+                526,
+                43
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    480,
+                    34,
+                    526,
+                    43
+                  ],
+                  "type": "text",
+                  "content": "Vol. 21 No. 15"
+                }
+              ]
+            }
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            490,
+            45,
+            526,
+            55
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                490,
+                45,
+                526,
+                55
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    490,
+                    45,
+                    526,
+                    55
+                  ],
+                  "type": "text",
+                  "content": "Aug., 2009"
+                }
+              ]
+            }
+          ],
+          "index": 5
+        },
+        {
+          "bbox": [
+            47,
+            668,
+            221,
+            679
+          ],
+          "type": "page_footnote",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                47,
+                668,
+                221,
+                679
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    47,
+                    668,
+                    221,
+                    679
+                  ],
+                  "type": "text",
+                  "content": "收稿日期：2008-01-23 修回日期：2008-05-10"
+                }
+              ]
+            }
+          ],
+          "index": 28
+        },
+        {
+          "bbox": [
+            48,
+            679,
+            234,
+            689
+          ],
+          "type": "page_footnote",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                48,
+                679,
+                234,
+                689
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    48,
+                    679,
+                    234,
+                    689
+                  ],
+                  "type": "text",
+                  "content": "基金项目：中国博士后科学基金资助项目 (20070410532)"
+                }
+              ]
+            }
+          ],
+          "index": 29
+        },
+        {
+          "bbox": [
+            48,
+            690,
+            280,
+            739
+          ],
+          "type": "page_footnote",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                48,
+                690,
+                280,
+                739
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    48,
+                    690,
+                    280,
+                    739
+                  ],
+                  "type": "text",
+                  "content": "作者简介：冶运涛(1983-), 男, 河南许昌人, 博士生, 研究方向为虚拟仿真技术和科学计算可视化在数字流域中的应用; 张尚弘(1977-), 男, 甘肃古浪人, 博士, 研究方向为虚拟仿真技术在数字流域中的应用; 王兴奎(1951-), 男, 四川资中人, 博士, 教授, 博导, 研究方向为河流动力学、数字水利工程和水利量测技术。"
+                }
+              ]
+            }
+          ],
+          "index": 30
+        },
+        {
+          "bbox": [
+            272,
+            744,
+            303,
+            753
+          ],
+          "type": "page_number",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                272,
+                744,
+                303,
+                753
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    272,
+                    744,
+                    303,
+                    753
+                  ],
+                  "type": "text",
+                  "content": "4806"
+                }
+              ]
+            }
+          ],
+          "index": 32
+        }
+      ]
+    },
+    {
+      "page_size": [
+        560,
+        777
+      ],
+      "page_idx": 1,
+      "result": [
+        {
+          "bbox": [
+            58,
+            67,
+            98,
+            78
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                58,
+                67,
+                98,
+                78
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    58,
+                    67,
+                    98,
+                    78
+                  ],
+                  "type": "text",
+                  "content": "动量方程"
+                }
+              ]
+            }
+          ],
+          "index": 5
+        },
+        {
+          "bbox": [
+            59,
+            81,
+            245,
+            106
+          ],
+          "type": "interline_equation",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                59,
+                81,
+                245,
+                106
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    59,
+                    81,
+                    245,
+                    106
+                  ],
+                  "type": "interline_equation",
+                  "content": "\\frac {\\partial U}{\\partial t} + U \\frac {\\partial U}{\\partial x} + V \\frac {\\partial U}{\\partial y} = - g \\frac {\\partial Z s}{\\partial x} - \\frac {\\tau_ {x}}{\\rho} + \\gamma_ {t} \\left(\\frac {\\partial^ {2} U}{\\partial x ^ {2}} + \\frac {\\partial^ {2} U}{\\partial y ^ {2}}\\right)",
+                  "image_path": "d056a1fee6830b3e8a6c1bb9fe96a521d4ac76c12eb6f307ad26baad4be812be.jpg"
+                }
+              ]
+            }
+          ],
+          "index": 6
+        },
+        {
+          "bbox": [
+            59,
+            110,
+            245,
+            135
+          ],
+          "type": "interline_equation",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                59,
+                110,
+                245,
+                135
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    59,
+                    110,
+                    245,
+                    135
+                  ],
+                  "type": "interline_equation",
+                  "content": "\\frac {\\partial V}{\\partial t} + U \\frac {\\partial V}{\\partial x} + V \\frac {\\partial V}{\\partial y} = - g \\frac {\\partial Z s}{\\partial y} - \\frac {\\tau_ {y}}{\\rho} + \\gamma_ {t} \\left(\\frac {\\partial^ {2} V}{\\partial x ^ {2}} + \\frac {\\partial^ {2} V}{\\partial y ^ {2}}\\right)",
+                  "image_path": "e7a0a72a211fe6202d7cd263f5b683c969d03104a0f08467eb35e1116c107362.jpg"
+                }
+              ]
+            }
+          ],
+          "index": 7
+        },
+        {
+          "bbox": [
+            58,
+            140,
+            142,
+            151
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                58,
+                140,
+                142,
+                151
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    58,
+                    140,
+                    142,
+                    151
+                  ],
+                  "type": "text",
+                  "content": "悬移质泥沙扩散方程"
+                }
+              ]
+            }
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            58,
+            154,
+            236,
+            180
+          ],
+          "type": "interline_equation",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                58,
+                154,
+                236,
+                180
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    58,
+                    154,
+                    236,
+                    180
+                  ],
+                  "type": "interline_equation",
+                  "content": "\\frac {\\partial S}{\\partial t} + U \\frac {\\partial S}{\\partial x} + V \\frac {\\partial S}{\\partial y} = \\varepsilon_ {s} \\left(\\frac {\\partial^ {2} S}{\\partial x ^ {2}} + \\frac {\\partial^ {2} S}{\\partial y ^ {2}}\\right) - \\frac {\\alpha \\omega}{H} \\left(S - S _ {\\bullet}\\right)",
+                  "image_path": "d052929e69e6e037b4af9a963c1311ced503977fc80ac6f6e96bc7a25c5a1d58.jpg"
+                }
+              ]
+            }
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            57,
+            184,
+            114,
+            195
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                57,
+                184,
+                114,
+                195
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    57,
+                    184,
+                    114,
+                    195
+                  ],
+                  "type": "text",
+                  "content": "河床变形方程"
+                }
+              ]
+            }
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            58,
+            198,
+            132,
+            219
+          ],
+          "type": "interline_equation",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                58,
+                198,
+                132,
+                219
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    58,
+                    198,
+                    132,
+                    219
+                  ],
+                  "type": "interline_equation",
+                  "content": "\\gamma^ {\\prime} \\frac {\\partial Z b}{\\partial t} = \\alpha \\omega \\left(S - S _ {\\bullet}\\right)",
+                  "image_path": "ffd901b119122393e570cc814da430b86d5c592895d49e325c6892e7c9cb990f.jpg"
+                }
+              ]
+            }
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            38,
+            222,
+            272,
+            323
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                38,
+                222,
+                272,
+                323
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": "式中 "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "U"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "V"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 分别为垂线平均流速在 "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "x"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "y"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 方向上的分量； "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "Zs"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "Zb"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 和 "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "H"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 分别为水位、河底高程和水深； "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "g"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 为重力加速度； "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\rho"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 为水的密度； "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\tau_{x}"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\tau_{y}"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 分别为底部切应力在 "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "x"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "y"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 方向上的分量； "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "C"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 为谢才系数； "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\gamma_{t}"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 为水流紊动粘性系数，由零方程紊流模型确定； "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "S"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 和 "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "S_{\\bullet}"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 分别为垂线平均含沙量和挟沙力； "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\varepsilon_{s}"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 为泥沙紊动扩散系数； "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\omega"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 为泥沙沉速； "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\gamma^{\\prime}"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 为床沙干容重； "
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\alpha"
+                },
+                {
+                  "bbox": [
+                    38,
+                    222,
+                    272,
+                    323
+                  ],
+                  "type": "text",
+                  "content": " 为悬移质泥沙恢复饱和系数。"
+                }
+              ]
+            }
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            55,
+            326,
+            262,
+            337
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                55,
+                326,
+                262,
+                337
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    55,
+                    326,
+                    262,
+                    337
+                  ],
+                  "type": "text",
+                  "content": "水流挟沙力和分组挟沙力级配采用文献[6]进行计算。"
+                }
+              ]
+            }
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            38,
+            340,
+            271,
+            382
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                38,
+                340,
+                271,
+                382
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    38,
+                    340,
+                    271,
+                    382
+                  ],
+                  "type": "text",
+                  "content": "数值计算定解条件为：进口给定流量、含沙量及级配，出口给定水位。对固壁边界，取法向流速为0。初始时刻给出地形、水位、流速和含沙量等物理量初始值。"
+                }
+              ]
+            }
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            37,
+            385,
+            271,
+            426
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                37,
+                385,
+                271,
+                426
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    37,
+                    385,
+                    271,
+                    426
+                  ],
+                  "type": "text",
+                  "content": "数学模型控制方程及定解条件的数值离散和求解基于 SIMPLERC 算法。在求解离散时采用 Patanker 和 Spalding 给出的欠松弛技术、块校正技术及逐行迭代法。"
+                }
+              ]
+            }
+          ],
+          "index": 15
+        },
+        {
+          "bbox": [
+            37,
+            430,
+            271,
+            473
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                37,
+                430,
+                271,
+                473
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    37,
+                    430,
+                    271,
+                    473
+                  ],
+                  "type": "text",
+                  "content": "数学模型的计算结果给出了每个网格节点上的水位、流速、含沙量及河底高程随时间的变化过程，将其与仿真平台耦合，可实时显示水流、泥沙、河床的动态变化过程。"
+                }
+              ]
+            }
+          ],
+          "index": 16
+        },
+        {
+          "bbox": [
+            37,
+            479,
+            203,
+            494
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                37,
+                479,
+                203,
+                494
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    37,
+                    479,
+                    203,
+                    494
+                  ],
+                  "type": "text",
+                  "content": "2 大流域三维仿真模型的生成"
+                }
+              ]
+            }
+          ],
+          "index": 17
+        },
+        {
+          "bbox": [
+            36,
+            501,
+            271,
+            602
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                36,
+                501,
+                271,
+                602
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    36,
+                    501,
+                    271,
+                    602
+                  ],
+                  "type": "text",
+                  "content": "将处理后的高程 DEM、遥感影像、各种矢量数据根据高斯一克力格投影方式导入 Terra Vista；采用分块技术设置分块的大小和块内三角形数量以及地形模型采用的 LOD 的层数；矢量数据按用途和表现进行赋值，如将道路矢量线赋值为道路标识，并设定道路宽度、路面纹理；将河道、湖泊等设置为水面标识、水面纹理等。最后选定所要生成的目标区域，生成 OpenFlight 格式的地形文件。"
+                }
+              ]
+            }
+          ],
+          "index": 18
+        },
+        {
+          "bbox": [
+            36,
+            608,
+            190,
+            622
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                36,
+                608,
+                190,
+                622
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    36,
+                    608,
+                    190,
+                    622
+                  ],
+                  "type": "text",
+                  "content": "3 河道三维仿真地形的生成"
+                }
+              ]
+            }
+          ],
+          "index": 19
+        },
+        {
+          "bbox": [
+            36,
+            630,
+            269,
+            686
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                36,
+                630,
+                269,
+                686
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    36,
+                    630,
+                    269,
+                    686
+                  ],
+                  "type": "text",
+                  "content": "河道三维仿真地形的生成包括大范围、高精度 DEM 数据的管理；河道断面的划分以及断面左右岸平面坐标点的提取；河道断面与栅格数据文件的交点；河道三维仿真地形的生成。"
+                }
+              ]
+            }
+          ],
+          "index": 20
+        },
+        {
+          "bbox": [
+            36,
+            692,
+            173,
+            705
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                36,
+                692,
+                173,
+                705
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    36,
+                    692,
+                    173,
+                    705
+                  ],
+                  "type": "text",
+                  "content": "3.1 河道断面左右岸坐标提取"
+                }
+              ]
+            }
+          ],
+          "index": 21
+        },
+        {
+          "bbox": [
+            36,
+            710,
+            269,
+            738
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                36,
+                710,
+                269,
+                738
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    36,
+                    710,
+                    269,
+                    738
+                  ],
+                  "type": "text",
+                  "content": "三峡库区采用的数学模型以实测大断面资料为基础，所以生成的三维仿真河道的断面中应包括用于数学模型计算"
+                }
+              ]
+            }
+          ],
+          "index": 22
+        },
+        {
+          "bbox": [
+            290,
+            66,
+            520,
+            79
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                290,
+                66,
+                520,
+                79
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    290,
+                    66,
+                    520,
+                    79
+                  ],
+                  "type": "text",
+                  "content": "的断面，这也是数学模型与三维虚拟仿真平台集成的关键。"
+                }
+              ]
+            }
+          ],
+          "index": 23
+        },
+        {
+          "bbox": [
+            289,
+            82,
+            523,
+            153
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                289,
+                82,
+                523,
+                153
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    289,
+                    82,
+                    523,
+                    153
+                  ],
+                  "type": "text",
+                  "content": "将河道高精度的 DEM 灰度图调入 Arcgis，根据数模计算断面的端点坐标画出断面线作为控制断面，并在控制断面之间加密断面。控制断面和加密断面共同组成具有左右岸平面坐标的断面 SHAPE 文件。自主开发了读取 SHAPE 文件点、线、面的程序，能够读取左右岸坐标点。"
+                }
+              ]
+            }
+          ],
+          "index": 24
+        },
+        {
+          "bbox": [
+            288,
+            157,
+            448,
+            170
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                288,
+                157,
+                448,
+                170
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    288,
+                    157,
+                    448,
+                    170
+                  ],
+                  "type": "text",
+                  "content": "3.2 河道地形栅格数据文件的存储"
+                }
+              ]
+            }
+          ],
+          "index": 25
+        },
+        {
+          "bbox": [
+            288,
+            176,
+            521,
+            291
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                288,
+                176,
+                521,
+                291
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    288,
+                    176,
+                    521,
+                    291
+                  ],
+                  "type": "text",
+                  "content": "河道 DEM 数据精度高，数据量大。采用全局搜索插值速度慢，效率低而且不可能一次将其调入内存进行管理。本文采用分块插值和两级存储[7]的模式对河道栅格数据进行处理。分块插值可以满足数据量大、分块多、读取快的需要；两级存储的关键是建立一个索引文件存储地形块的相关信息，如 DEM 数据块的 ASCII 格式的栅格数据文件名、数据范围以及存储路径等。索引文件中每个数据块的具体索引信息的存储结构为："
+                }
+              ]
+            }
+          ],
+          "index": 26
+        },
+        {
+          "type": "code",
+          "bbox": [
+            306,
+            296,
+            520,
+            435
+          ],
+          "blocks": [
+            {
+              "bbox": [
+                306,
+                296,
+                520,
+                435
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    306,
+                    296,
+                    520,
+                    435
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        306,
+                        296,
+                        520,
+                        435
+                      ],
+                      "type": "text",
+                      "content": "struct AsciiFileInfo{ char AscName[64];//ASCII格式栅格数据文件名 int nColumns; //栅格数据块的列数 int nRows; //栅格数据块的行数 float fCellSize; //单元格尺寸大小 double dNoDataValue; //无数据区域的默认值 double dTop; //栅格数据块范围顶部坐标 double dBottom; //栅格数据块范围底部坐标 double dLeft; //栅格数据块范围左边坐标 double dRight; //栅格数据块范围右边坐标 char FilePath[256];//栅格数据文件存储路径 };"
+                    }
+                  ]
+                }
+              ],
+              "index": 27,
+              "angle": 0,
+              "type": "code_body"
+            }
+          ],
+          "index": 27,
+          "sub_type": "code",
+          "guess_lang": "javascript"
+        },
+        {
+          "bbox": [
+            286,
+            440,
+            520,
+            540
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                286,
+                440,
+                520,
+                540
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    286,
+                    440,
+                    520,
+                    540
+                  ],
+                  "type": "text",
+                  "content": "对两级存储栅格地形块的具体操作是：首先打开索引文件，根据一定的要求读取满足条件的地形块的索引信息；然后根据索引信息中的地形块的文件名和存储路径读取相应的地形栅格数据文件。两级存储结构可以避免逐个打开DEM栅格数据文件，仅需要按照指定要求读取满足条件的栅格数据文件即可，提高了地形块的搜索速度，为河道地形三维网格的自动生成奠定了基础。"
+                }
+              ]
+            }
+          ],
+          "index": 28
+        },
+        {
+          "bbox": [
+            286,
+            545,
+            444,
+            557
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                286,
+                545,
+                444,
+                557
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    286,
+                    545,
+                    444,
+                    557
+                  ],
+                  "type": "text",
+                  "content": "3.3 河道断面控制点空间坐标提取"
+                }
+              ]
+            }
+          ],
+          "index": 29
+        },
+        {
+          "bbox": [
+            285,
+            563,
+            520,
+            693
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                285,
+                563,
+                520,
+                693
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    285,
+                    563,
+                    520,
+                    693
+                  ],
+                  "type": "text",
+                  "content": "河道断面是一条连续的曲线，但现有的数学模型计算以及真实地形的生成主要基于离散点进行计算和构建。在实际处理中，就是将一条连续曲线用一条折线来代替，即用有限的点来反映断面的宏观形态。确定断面的形态有两种方法：一种是先确定断面上有限点的平面坐标，然后对这些点在地形DEM栅格数据文件中进行插值求出相应的高程；另一种是先确定断面线与地形栅格数据文件的交点的三维坐标 "
+                },
+                {
+                  "bbox": [
+                    285,
+                    563,
+                    520,
+                    693
+                  ],
+                  "type": "inline_equation",
+                  "content": "(x,y,z)"
+                },
+                {
+                  "bbox": [
+                    285,
+                    563,
+                    520,
+                    693
+                  ],
+                  "type": "text",
+                  "content": "，然后对断面控制点重新进行采样插值。本文采用的是第二种方法。"
+                }
+              ]
+            }
+          ],
+          "index": 30
+        },
+        {
+          "bbox": [
+            285,
+            696,
+            519,
+            738
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                285,
+                696,
+                519,
+                738
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    285,
+                    696,
+                    519,
+                    738
+                  ],
+                  "type": "text",
+                  "content": "一个断面在水平面上的投影是一条线段，求断面控制点坐标的过程，就是一条边与系列正方形求交的过程，即线段跨越了哪些栅格。为了对断面插值后的控制点进行排序，"
+                }
+              ]
+            }
+          ],
+          "index": 31
+        },
+        {
+          "bbox": [
+            40,
+            33,
+            95,
+            42
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                40,
+                33,
+                95,
+                42
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    40,
+                    33,
+                    95,
+                    42
+                  ],
+                  "type": "text",
+                  "content": "第21卷第15期"
+                }
+              ]
+            }
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            40,
+            44,
+            81,
+            54
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                40,
+                44,
+                81,
+                54
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    40,
+                    44,
+                    81,
+                    54
+                  ],
+                  "type": "text",
+                  "content": "2009年8月"
+                }
+              ]
+            }
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            172,
+            43,
+            383,
+            55
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                172,
+                43,
+                383,
+                55
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    172,
+                    43,
+                    383,
+                    55
+                  ],
+                  "type": "text",
+                  "content": "冶运涛，等：三峡库区河道泥沙冲淤过程动态仿真研究"
+                }
+              ]
+            }
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            477,
+            34,
+            523,
+            43
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                477,
+                34,
+                523,
+                43
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    477,
+                    34,
+                    523,
+                    43
+                  ],
+                  "type": "text",
+                  "content": "Vol. 21 No. 15"
+                }
+              ]
+            }
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            488,
+            45,
+            523,
+            55
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                488,
+                45,
+                523,
+                55
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    488,
+                    45,
+                    523,
+                    55
+                  ],
+                  "type": "text",
+                  "content": "Aug., 2009"
+                }
+              ]
+            }
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            262,
+            747,
+            293,
+            757
+          ],
+          "type": "page_number",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                262,
+                747,
+                293,
+                757
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    262,
+                    747,
+                    293,
+                    757
+                  ],
+                  "type": "text",
+                  "content": "4807"
+                }
+              ]
+            }
+          ],
+          "index": 32
+        }
+      ]
+    },
+    {
+      "page_size": [
+        560,
+        777
+      ],
+      "page_idx": 2,
+      "result": [
+        {
+          "bbox": [
+            39,
+            64,
+            271,
+            120
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                39,
+                64,
+                271,
+                120
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    39,
+                    64,
+                    271,
+                    120
+                  ],
+                  "type": "text",
+                  "content": "需要确定线段（断面）以左岸为起始点的空间走向。在平面坐标系中，一条线段的走向有四种位置关系，即分别在第一、二、三和四象限（见图1）。假设位于栅格中的一条线段 "
+                },
+                {
+                  "bbox": [
+                    39,
+                    64,
+                    271,
+                    120
+                  ],
+                  "type": "inline_equation",
+                  "content": "AB"
+                },
+                {
+                  "bbox": [
+                    39,
+                    64,
+                    271,
+                    120
+                  ],
+                  "type": "text",
+                  "content": " 跨越的栅格如图2。"
+                }
+              ]
+            }
+          ],
+          "index": 5
+        },
+        {
+          "type": "image",
+          "bbox": [
+            86,
+            125,
+            225,
+            237
+          ],
+          "blocks": [
+            {
+              "bbox": [
+                86,
+                125,
+                225,
+                237
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    86,
+                    125,
+                    225,
+                    237
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        86,
+                        125,
+                        225,
+                        237
+                      ],
+                      "type": "image",
+                      "image_path": "4b2a17ff27517ef3aa3ef717a9f8ee1a074dbf5efc6d3791a92242e695e92808.jpg"
+                    }
+                  ]
+                }
+              ],
+              "index": 6,
+              "angle": 0,
+              "type": "image_body"
+            },
+            {
+              "bbox": [
+                103,
+                242,
+                208,
+                252
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    103,
+                    242,
+                    208,
+                    252
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        103,
+                        242,
+                        208,
+                        252
+                      ],
+                      "type": "text",
+                      "content": "图1 断面在直角坐标系中走向"
+                    }
+                  ]
+                }
+              ],
+              "index": 7,
+              "angle": 0,
+              "type": "image_caption"
+            }
+          ],
+          "index": 6
+        },
+        {
+          "type": "image",
+          "bbox": [
+            83,
+            259,
+            234,
+            389
+          ],
+          "blocks": [
+            {
+              "bbox": [
+                83,
+                259,
+                234,
+                389
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    83,
+                    259,
+                    234,
+                    389
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        83,
+                        259,
+                        234,
+                        389
+                      ],
+                      "type": "image",
+                      "image_path": "ce1c394ee953a80f622ffc03568ebc84bd86eb03f8c37ee6146fa4b95f9a5d5b.jpg"
+                    }
+                  ]
+                }
+              ],
+              "index": 8,
+              "angle": 0,
+              "type": "image_body"
+            },
+            {
+              "bbox": [
+                111,
+                400,
+                202,
+                409
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    111,
+                    400,
+                    202,
+                    409
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        111,
+                        400,
+                        202,
+                        409
+                      ],
+                      "type": "text",
+                      "content": "图2 断面跨越栅格示意图"
+                    }
+                  ]
+                }
+              ],
+              "index": 9,
+              "angle": 0,
+              "type": "image_caption"
+            }
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            42,
+            418,
+            268,
+            445
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                42,
+                418,
+                268,
+                445
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    42,
+                    418,
+                    268,
+                    445
+                  ],
+                  "type": "text",
+                  "content": "根据线段（断面）两个端点平面坐标 "
+                },
+                {
+                  "bbox": [
+                    42,
+                    418,
+                    268,
+                    445
+                  ],
+                  "type": "inline_equation",
+                  "content": "A\\left(x_{a},y_{a}\\right)"
+                },
+                {
+                  "bbox": [
+                    42,
+                    418,
+                    268,
+                    445
+                  ],
+                  "type": "text",
+                  "content": " 、"
+                },
+                {
+                  "bbox": [
+                    42,
+                    418,
+                    268,
+                    445
+                  ],
+                  "type": "inline_equation",
+                  "content": "B\\left(x_{b},y_{b}\\right)"
+                },
+                {
+                  "bbox": [
+                    42,
+                    418,
+                    268,
+                    445
+                  ],
+                  "type": "text",
+                  "content": " 可以求得线段的参数方程为："
+                }
+              ]
+            }
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            63,
+            447,
+            138,
+            475
+          ],
+          "type": "interline_equation",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                63,
+                447,
+                138,
+                475
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    63,
+                    447,
+                    138,
+                    475
+                  ],
+                  "type": "interline_equation",
+                  "content": "\\left\\{ \\begin{array}{l} x = x _ {a} + \\left(x _ {b} - x _ {a}\\right) t \\\\ y = y _ {a} + \\left(y _ {b} - y _ {a}\\right) t \\end{array} \\right.",
+                  "image_path": "78f50570a7d72a9f3647c7ee098b24f8e57756b188e02c50da43157e58994591.jpg"
+                }
+              ]
+            }
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            40,
+            480,
+            272,
+            629
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                40,
+                480,
+                272,
+                629
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": "其中 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "t"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " 为参数， "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "t\\in [0,1]"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " 。DEM数据文件的栅格数据结构是按照一定的规则排列的，其所在的位置根据行列号以及数据文件头信息能够转换为相应的空间坐标。知道栅格的坐标后，可以求得线段 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "AB"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " 与竖直网格线的平面交点 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\nu 1"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\nu 2"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\nu 3"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " ，与水平网格线的平面交点 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "h1"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "h2"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "h3"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "h4"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "h5"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " 、 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "h6"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " ；如果与水平(竖直)网格线平行，只求得与竖直(平行)网格线的交点即可。当求出线段 "
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "inline_equation",
+                  "content": "AB"
+                },
+                {
+                  "bbox": [
+                    40,
+                    480,
+                    272,
+                    629
+                  ],
+                  "type": "text",
+                  "content": " 与网格相交的平面交点坐标以后，就要求解交点的高程值。由于栅格数据的分辨率比较高，只需利用交点上下端或者左右端的栅格坐标根据反距离权重插值得出高程值。"
+                }
+              ]
+            }
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            41,
+            633,
+            272,
+            660
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                41,
+                633,
+                272,
+                660
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    41,
+                    633,
+                    272,
+                    660
+                  ],
+                  "type": "text",
+                  "content": "水平网格点上高程值的求解方法与竖直网格类似。根据上述思想，可以求解出已知线段与栅格的全部交点坐标。"
+                }
+              ]
+            }
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            40,
+            664,
+            272,
+            737
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                40,
+                664,
+                272,
+                737
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    40,
+                    664,
+                    272,
+                    737
+                  ],
+                  "type": "text",
+                  "content": "一条线段与栅格线的交点形成一个点列。如果某条线段恰好经过栅格的顶点，即不但与水平格网相交，而且与竖直格网相交，则交点中必然存在一个重复点。此时从点列中删除一个即可。为了更好的描述点的拓扑关系以生成河道三维地形，应对断面上的点进行从左岸到右岸的排序。"
+                }
+              ]
+            }
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            287,
+            63,
+            425,
+            76
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                287,
+                63,
+                425,
+                76
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    287,
+                    63,
+                    425,
+                    76
+                  ],
+                  "type": "text",
+                  "content": "3.4 河道三维仿真地形的生成"
+                }
+              ]
+            }
+          ],
+          "index": 15
+        },
+        {
+          "bbox": [
+            287,
+            82,
+            519,
+            122
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                287,
+                82,
+                519,
+                122
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    287,
+                    82,
+                    519,
+                    122
+                  ],
+                  "type": "text",
+                  "content": "由于河道 DEM 数据的分辨率高，河道断面信息不但能反映真实河道的情况，提高数学模型的计算精度，而且由此构成的三维可视化仿真模型精确逼真。"
+                }
+              ]
+            }
+          ],
+          "index": 16
+        },
+        {
+          "bbox": [
+            287,
+            125,
+            520,
+            181
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                287,
+                125,
+                520,
+                181
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    287,
+                    125,
+                    520,
+                    181
+                  ],
+                  "type": "text",
+                  "content": "河道断面与栅格数据的交点比较密集，点的数目也不一致，为了构网和计算的方便，所有的断面均经过插值使各断面的点数保持相等，这样的数据拓扑关系简单，存储方便，便于构网，而且能够提高河道边界的搜索速度。"
+                }
+              ]
+            }
+          ],
+          "index": 17
+        },
+        {
+          "bbox": [
+            287,
+            184,
+            520,
+            311
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                287,
+                184,
+                520,
+                311
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    287,
+                    184,
+                    520,
+                    311
+                  ],
+                  "type": "text",
+                  "content": "在可视化仿真领域，OpenFlight 是通常采用的格式，采用树状的层次结构对仿真对象进行组织和管理。Creator 平台提供了对该格式的编辑修改功能。为了构建三维可视化河道，根据具有结构网格的离散点进行三角构网，生成具有三角形面的河道仿真数据库。将生成河道三维地形文件调入 Creator 平台设置光照效果，材质属性和纹理映射。最后将三维河道地形与大流域三维场景进行嵌套建模(如图 3)。生成的模型可以在 PC 机有限的资源环境下实时动态地演示河流洪水演进、水位变化以及河道冲淤过程的真实场景。"
+                }
+              ]
+            }
+          ],
+          "index": 18
+        },
+        {
+          "type": "image",
+          "bbox": [
+            338,
+            316,
+            472,
+            423
+          ],
+          "blocks": [
+            {
+              "bbox": [
+                338,
+                316,
+                472,
+                423
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    338,
+                    316,
+                    472,
+                    423
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        338,
+                        316,
+                        472,
+                        423
+                      ],
+                      "type": "image",
+                      "image_path": "7210514d4431ac8739193f8042f7b1e9574dcce036c66569819e49ee01d3f0c6.jpg"
+                    }
+                  ]
+                }
+              ],
+              "index": 19,
+              "angle": 0,
+              "type": "image_body"
+            },
+            {
+              "bbox": [
+                356,
+                428,
+                452,
+                438
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    356,
+                    428,
+                    452,
+                    438
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        356,
+                        428,
+                        452,
+                        438
+                      ],
+                      "type": "text",
+                      "content": "图3三峡库区嵌套地形网格"
+                    }
+                  ]
+                }
+              ],
+              "index": 20,
+              "angle": 0,
+              "type": "image_caption"
+            }
+          ],
+          "index": 19
+        },
+        {
+          "bbox": [
+            288,
+            451,
+            393,
+            465
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                288,
+                451,
+                393,
+                465
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    288,
+                    451,
+                    393,
+                    465
+                  ],
+                  "type": "text",
+                  "content": "4 多细节层次模型"
+                }
+              ]
+            }
+          ],
+          "index": 21
+        },
+        {
+          "bbox": [
+            287,
+            473,
+            520,
+            542
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                287,
+                473,
+                520,
+                542
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    287,
+                    473,
+                    520,
+                    542
+                  ],
+                  "type": "text",
+                  "content": "为了提高模型计算精度，计算网格的划分比较密集，在三维仿真系统中表达河床冲淤变化分布的质量也比较高，致使实时绘制速度较慢，描述精度和绘制效率将相互矛盾。可采用多层细节层次模型协调此矛盾，它在大范围场景的生成和实时调度方面是一项关键技术。"
+                }
+              ]
+            }
+          ],
+          "index": 22
+        },
+        {
+          "bbox": [
+            287,
+            545,
+            520,
+            690
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                287,
+                545,
+                520,
+                690
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    287,
+                    545,
+                    520,
+                    690
+                  ],
+                  "type": "text",
+                  "content": "细节层次 LOD（Level Of Detail）模型是对同一个场景或场景中的物体，使用不同细节的描述方法得到的一组模型，供绘制时选择使用。在绘制河道床面网格单元时，也可以采用类似的技术。在工程应用中，往往需要详细观看局部的泥沙冲淤状况，鉴于视域限制，想要从全局去观察河道是不切合实际的。因此，不关注的河段没有必要采取很高的分辨率，仅仅对关注的河段动态河床的绘制采用较高的分辨率，这样可以提高动态河床的绘制效率。将三维场景用不同的精度表示，并根据视点的位置变化来选择不同精度予以实时绘制图形，能够更好地实现场景的实时漫游。"
+                }
+              ]
+            }
+          ],
+          "index": 23
+        },
+        {
+          "bbox": [
+            287,
+            693,
+            521,
+            735
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                287,
+                693,
+                521,
+                735
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    287,
+                    693,
+                    521,
+                    735
+                  ],
+                  "type": "text",
+                  "content": "三维场景中河道床面的绘制以相互连接的三角形表现，三角形数量越多则模拟越精细。在水沙模型计算中，为了能够保证计算的精度和稳定性，河道多采用正交贴体坐标网格"
+                }
+              ]
+            }
+          ],
+          "index": 24
+        },
+        {
+          "bbox": [
+            40,
+            30,
+            94,
+            40
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                40,
+                30,
+                94,
+                40
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    40,
+                    30,
+                    94,
+                    40
+                  ],
+                  "type": "text",
+                  "content": "第21卷第15期"
+                }
+              ]
+            }
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            40,
+            41,
+            80,
+            51
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                40,
+                41,
+                80,
+                51
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    40,
+                    41,
+                    80,
+                    51
+                  ],
+                  "type": "text",
+                  "content": "2009年8月"
+                }
+              ]
+            }
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            230,
+            40,
+            330,
+            51
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                230,
+                40,
+                330,
+                51
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    230,
+                    40,
+                    330,
+                    51
+                  ],
+                  "type": "text",
+                  "content": "系统仿真学报"
+                }
+              ]
+            }
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            474,
+            31,
+            519,
+            39
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                474,
+                31,
+                519,
+                39
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    474,
+                    31,
+                    519,
+                    39
+                  ],
+                  "type": "text",
+                  "content": "Vol. 21 No. 15"
+                }
+              ]
+            }
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            484,
+            42,
+            519,
+            52
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                484,
+                42,
+                519,
+                52
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    484,
+                    42,
+                    519,
+                    52
+                  ],
+                  "type": "text",
+                  "content": "Aug., 2009"
+                }
+              ]
+            }
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            265,
+            745,
+            295,
+            755
+          ],
+          "type": "page_number",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                265,
+                745,
+                295,
+                755
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    265,
+                    745,
+                    295,
+                    755
+                  ],
+                  "type": "text",
+                  "content": "4808"
+                }
+              ]
+            }
+          ],
+          "index": 25
+        }
+      ]
+    },
+    {
+      "page_size": [
+        560,
+        777
+      ],
+      "page_idx": 3,
+      "result": [
+        {
+          "bbox": [
+            34,
+            66,
+            268,
+            181
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                34,
+                66,
+                268,
+                181
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    34,
+                    66,
+                    268,
+                    181
+                  ],
+                  "type": "text",
+                  "content": "剖分。该网格属于结构网格的范畴，河道断面上控制点数目一致，均为 "
+                },
+                {
+                  "bbox": [
+                    34,
+                    66,
+                    268,
+                    181
+                  ],
+                  "type": "inline_equation",
+                  "content": "M"
+                },
+                {
+                  "bbox": [
+                    34,
+                    66,
+                    268,
+                    181
+                  ],
+                  "type": "text",
+                  "content": " ，断面的数目为 "
+                },
+                {
+                  "bbox": [
+                    34,
+                    66,
+                    268,
+                    181
+                  ],
+                  "type": "inline_equation",
+                  "content": "N"
+                },
+                {
+                  "bbox": [
+                    34,
+                    66,
+                    268,
+                    181
+                  ],
+                  "type": "text",
+                  "content": " ，则河道离散点的数目为 "
+                },
+                {
+                  "bbox": [
+                    34,
+                    66,
+                    268,
+                    181
+                  ],
+                  "type": "inline_equation",
+                  "content": "M \\times N"
+                },
+                {
+                  "bbox": [
+                    34,
+                    66,
+                    268,
+                    181
+                  ],
+                  "type": "text",
+                  "content": " （如图5(a)所示）。河道的冲淤变化是通过每个节点高程值的实时更新表达的，当节点高程值发生变化时，对所有节点采用三角形网格连接方式绘制床面，三角形网格索引组合为 "
+                },
+                {
+                  "bbox": [
+                    34,
+                    66,
+                    268,
+                    181
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\{(i,j), (i,j+1), (i+1,j)\\}, \\{(i,j+1), (i+1,j+1), (i+1,j)\\}"
+                },
+                {
+                  "bbox": [
+                    34,
+                    66,
+                    268,
+                    181
+                  ],
+                  "type": "text",
+                  "content": " （如图4），在三维虚拟场景下可以观察到床面的动态变化。"
+                }
+              ]
+            }
+          ],
+          "index": 5
+        },
+        {
+          "type": "image",
+          "bbox": [
+            90,
+            189,
+            216,
+            290
+          ],
+          "blocks": [
+            {
+              "bbox": [
+                90,
+                189,
+                216,
+                290
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    90,
+                    189,
+                    216,
+                    290
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        90,
+                        189,
+                        216,
+                        290
+                      ],
+                      "type": "image",
+                      "image_path": "1662d2ccdd113815edc7c51a509fa9f27586de6305fe7e6089eeb3ddc32c3171.jpg"
+                    }
+                  ]
+                }
+              ],
+              "index": 6,
+              "angle": 0,
+              "type": "image_body"
+            },
+            {
+              "bbox": [
+                100,
+                297,
+                199,
+                307
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    100,
+                    297,
+                    199,
+                    307
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        100,
+                        297,
+                        199,
+                        307
+                      ],
+                      "type": "text",
+                      "content": "图4三角形网格索引关系图"
+                    }
+                  ]
+                }
+              ],
+              "index": 7,
+              "angle": 0,
+              "type": "image_caption"
+            }
+          ],
+          "index": 6
+        },
+        {
+          "bbox": [
+            32,
+            316,
+            267,
+            401
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                32,
+                316,
+                267,
+                401
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    32,
+                    316,
+                    267,
+                    401
+                  ],
+                  "type": "text",
+                  "content": "本文对研究区域的河道采用分区 LOD 思想，即对大范围河道分段，然后对每段河道建立 LOD 模型。建立 LOD 模型需要对每个河段组成点重新采样，为了在采样过程中保证河段各级 LOD 的网格属于结构性网格，每个河段纵横向网格采样点数目一致，其中对于河道与流域三维场景的公共边不能重新采样，这样避免河道冲淤过程动静地形接边处出现裂缝。"
+                }
+              ]
+            }
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            32,
+            404,
+            266,
+            476
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                32,
+                404,
+                266,
+                476
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    32,
+                    404,
+                    266,
+                    476
+                  ],
+                  "type": "text",
+                  "content": "根据结构性网格的特点，从河段采样点建立LOD模型方式有三种：沿着河道方向采样，断面方向点保持不变；沿着断面方向采样，河道方向点数目保持一致；沿着河道、断面方向均采样。采样后的网格的连接方式如图5，虚线左边是重新采样后的河段，右边是原始河段。"
+                }
+              ]
+            }
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            31,
+            479,
+            265,
+            551
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                31,
+                479,
+                265,
+                551
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    31,
+                    479,
+                    265,
+                    551
+                  ],
+                  "type": "text",
+                  "content": "用于大地形LOD切换方法同样适用于河道冲淤过程的可视化仿真[2]：设置LOD的切换距离，同时设置切换的临界距离，当在临界距离时同时显现两种LOD下的河道床面，但以不同的透明度表现，并在视点不断变化时改变透明度，直至到达新的LOD，从而实现LOD的平滑过渡。"
+                }
+              ]
+            }
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            31,
+            557,
+            123,
+            571
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                31,
+                557,
+                123,
+                571
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    31,
+                    557,
+                    123,
+                    571
+                  ],
+                  "type": "text",
+                  "content": "5 无缝拼接技术"
+                }
+              ]
+            }
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            30,
+            580,
+            264,
+            740
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                30,
+                580,
+                264,
+                740
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    30,
+                    580,
+                    264,
+                    740
+                  ],
+                  "type": "text",
+                  "content": "在流域场景漫游过程中，各河段距离视点的位置不同，采用的LOD模型不一样，这样导致河段与相邻河段以及河段与周围场景出现裂缝，破坏了视景的真实性，这样就涉及到无缝拼接的问题。在河道冲淤可视化中无缝拼接分为三种情况：相同LOD情况下拼接(如图5(a))，该情况下沿断面方向节点数目一样，取出相邻河段的边界坐标，直接构造三角形网格；不同LOD情况下的接边；LOD情况下河段与两岸虚拟场景的拼接。另一种是非LOD下河段之间的拼接(如图5(b))，由于绘制河段纵轴方向节点数目的不同，裂缝两边出现数据点不对称的情况，破坏了结构性数据的性质。此种情况下，漏掉一个数据点，河床动态显示时就会出现裂缝。在"
+                }
+              ]
+            }
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            283,
+            67,
+            519,
+            212
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                283,
+                67,
+                519,
+                212
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    283,
+                    67,
+                    519,
+                    212
+                  ],
+                  "type": "text",
+                  "content": "绘制前，需要确定裂缝两边数据点的连接关系，如何构造三角形网格成为面临的问题。对于散点进行三角形网格化有多种方法，而Delaunay三角化是其中的代表。故在不同LOD河段进行拼接时，把接缝处两边的点当作散点，进行Delaunay三角化，并按照逆时针顺序记录三角形的顶点，为绘制做准备。设置公共边完成对河道地形与两岸周围场景的拼接有很好的视觉效果。公共边上点数目在不同LOD切换时保持不变，与初始网格最外边界点数目一致。当边界重新采样造成与公共边点数目不一样的时候，同样可以采用Delaunay三角化的方式构造三角形网格(如图5(b))。"
+                }
+              ]
+            }
+          ],
+          "index": 13
+        },
+        {
+          "type": "image",
+          "bbox": [
+            338,
+            217,
+            462,
+            334
+          ],
+          "blocks": [
+            {
+              "bbox": [
+                338,
+                217,
+                462,
+                334
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    338,
+                    217,
+                    462,
+                    334
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        338,
+                        217,
+                        462,
+                        334
+                      ],
+                      "type": "image",
+                      "image_path": "04e3a4d9c60444a7c4227af54a4dd4a969bcead694c2e2afc8a5d08fbd9d38c3.jpg"
+                    }
+                  ]
+                }
+              ],
+              "index": 14,
+              "angle": 0,
+              "type": "image_body"
+            },
+            {
+              "bbox": [
+                358,
+                338,
+                441,
+                348
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    358,
+                    338,
+                    441,
+                    348
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        358,
+                        338,
+                        441,
+                        348
+                      ],
+                      "type": "text",
+                      "content": "(a) 相同 LOD 无缝拼接"
+                    }
+                  ]
+                }
+              ],
+              "index": 15,
+              "angle": 0,
+              "type": "image_caption"
+            }
+          ],
+          "index": 14
+        },
+        {
+          "type": "image",
+          "bbox": [
+            335,
+            354,
+            463,
+            475
+          ],
+          "blocks": [
+            {
+              "bbox": [
+                335,
+                354,
+                463,
+                475
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    335,
+                    354,
+                    463,
+                    475
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        335,
+                        354,
+                        463,
+                        475
+                      ],
+                      "type": "image",
+                      "image_path": "a0b3c55eb9b05c94afd66fc7cf4d56675e86d8ffb946cbc5f4bfc4b2029e9ab4.jpg"
+                    }
+                  ]
+                }
+              ],
+              "index": 16,
+              "angle": 0,
+              "type": "image_body"
+            },
+            {
+              "bbox": [
+                361,
+                479,
+                435,
+                488
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    361,
+                    479,
+                    435,
+                    488
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        361,
+                        479,
+                        435,
+                        488
+                      ],
+                      "type": "text",
+                      "content": "(b) 非 LOD 无缝拼接"
+                    }
+                  ]
+                }
+              ],
+              "index": 17,
+              "angle": 0,
+              "type": "image_caption"
+            },
+            {
+              "bbox": [
+                362,
+                493,
+                433,
+                502
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    362,
+                    493,
+                    433,
+                    502
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        362,
+                        493,
+                        433,
+                        502
+                      ],
+                      "type": "text",
+                      "content": "图5 LOD无缝拼接"
+                    }
+                  ]
+                }
+              ],
+              "index": 18,
+              "angle": 0,
+              "type": "image_caption"
+            }
+          ],
+          "index": 16
+        },
+        {
+          "bbox": [
+            281,
+            509,
+            363,
+            523
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                281,
+                509,
+                363,
+                523
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    281,
+                    509,
+                    363,
+                    523
+                  ],
+                  "type": "text",
+                  "content": "6 伪彩色技术"
+                }
+              ]
+            }
+          ],
+          "index": 19
+        },
+        {
+          "bbox": [
+            280,
+            532,
+            514,
+            675
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                280,
+                532,
+                514,
+                675
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    280,
+                    532,
+                    514,
+                    675
+                  ],
+                  "type": "text",
+                  "content": "河道冲淤过程采用伪彩色技术表示，用不同的颜色渲染不同冲淤的区域，使用户对河床的冲淤分布一目了然，较之用单一颜色均匀着色的模型，更具有立体感、真实性。顶点映射的颜色值的选择取决于冲淤值。将三维网格点的坐标与具有时间特性的冲淤数据结合起来，建立时空上对应的三维冲淤场，依据计算时段的推移，不断更新的冲淤分布场构成了动态三维冲淤场。河道床面的动态性通过空间点位置的移动直观地表现，而对应于不同时刻的冲淤值变化通过颜色差异等地图视觉变量逐一按时间显示，从而表现出冲淤值的动态分布（如图6）。"
+                }
+              ]
+            }
+          ],
+          "index": 20
+        },
+        {
+          "bbox": [
+            280,
+            679,
+            512,
+            735
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                280,
+                679,
+                512,
+                735
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    280,
+                    679,
+                    512,
+                    735
+                  ],
+                  "type": "text",
+                  "content": "三角形面内的着色采用Gouraud着色方式，该方式是常用的渲染方法，为三角形各个顶点提供了单独的颜色值，并对各顶点的颜色进行平滑、融合处理，为三角形着上渐变色。它渲染出河床床面丰富的颜色和平滑的变色效果。Gouraud"
+                }
+              ]
+            }
+          ],
+          "index": 21
+        },
+        {
+          "bbox": [
+            35,
+            33,
+            89,
+            42
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                35,
+                33,
+                89,
+                42
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    35,
+                    33,
+                    89,
+                    42
+                  ],
+                  "type": "text",
+                  "content": "第21卷第15期"
+                }
+              ]
+            }
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            35,
+            44,
+            76,
+            52
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                35,
+                44,
+                76,
+                52
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    35,
+                    44,
+                    76,
+                    52
+                  ],
+                  "type": "text",
+                  "content": "2009年8月"
+                }
+              ]
+            }
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            168,
+            43,
+            377,
+            55
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                168,
+                43,
+                377,
+                55
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    168,
+                    43,
+                    377,
+                    55
+                  ],
+                  "type": "text",
+                  "content": "冶运涛，等：三峡库区河道泥沙冲淤过程动态仿真研究"
+                }
+              ]
+            }
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            473,
+            34,
+            518,
+            43
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                473,
+                34,
+                518,
+                43
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    473,
+                    34,
+                    518,
+                    43
+                  ],
+                  "type": "text",
+                  "content": "Vol. 21 No. 15"
+                }
+              ]
+            }
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            483,
+            46,
+            518,
+            55
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                483,
+                46,
+                518,
+                55
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    483,
+                    46,
+                    518,
+                    55
+                  ],
+                  "type": "text",
+                  "content": "Aug., 2009"
+                }
+              ]
+            }
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            256,
+            748,
+            286,
+            756
+          ],
+          "type": "page_number",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                256,
+                748,
+                286,
+                756
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    256,
+                    748,
+                    286,
+                    756
+                  ],
+                  "type": "text",
+                  "content": "4809"
+                }
+              ]
+            }
+          ],
+          "index": 22
+        }
+      ]
+    },
+    {
+      "page_size": [
+        560,
+        777
+      ],
+      "page_idx": 4,
+      "result": [
+        {
+          "type": "image",
+          "bbox": [
+            101,
+            58,
+            241,
+            158
+          ],
+          "blocks": [
+            {
+              "bbox": [
+                101,
+                58,
+                241,
+                158
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    101,
+                    58,
+                    241,
+                    158
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        101,
+                        58,
+                        241,
+                        158
+                      ],
+                      "type": "image",
+                      "image_path": "335432222fefff5227079911da30614e1cb6675d0fe9462f1c77c0d24817caae.jpg"
+                    }
+                  ]
+                }
+              ],
+              "index": 5,
+              "angle": 0,
+              "type": "image_body"
+            },
+            {
+              "bbox": [
+                117,
+                165,
+                207,
+                175
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    117,
+                    165,
+                    207,
+                    175
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        117,
+                        165,
+                        207,
+                        175
+                      ],
+                      "type": "text",
+                      "content": "图6 某时刻河道冲淤分布"
+                    }
+                  ]
+                }
+              ],
+              "index": 6,
+              "angle": 0,
+              "type": "image_caption"
+            }
+          ],
+          "index": 5
+        },
+        {
+          "bbox": [
+            46,
+            184,
+            277,
+            239
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                46,
+                184,
+                277,
+                239
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    46,
+                    184,
+                    277,
+                    239
+                  ],
+                  "type": "text",
+                  "content": "插值算法的基本思想是利用多边形各顶点的颜色值做线性内插，以求得平面多边形内其余各点的颜色值，结果使整个多边形成为非常连续的变化。用颜色映射的方法表示冲淤的时空变化，关键是取得网格节点的颜色值。"
+                }
+              ]
+            }
+          ],
+          "index": 7
+        },
+        {
+          "bbox": [
+            46,
+            243,
+            278,
+            327
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                46,
+                243,
+                278,
+                327
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    46,
+                    243,
+                    278,
+                    327
+                  ],
+                  "type": "text",
+                  "content": "确定三角形网格节点颜色值步骤如下：(1) 设计表达冲淤变化的颜色表。颜色表中一般采用由暗到亮的色系来表达冲淤值从小到大的变化，并且表中每种颜色有一个入口值（标识值）；(2) 按给定冲淤值间隔计算分带数；(3) 计算网格节点冲淤值所属带数；(4) 按照每个网格节点所属带数索引颜色表中的颜色号，并据此颜色绘图。"
+                }
+              ]
+            }
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            47,
+            334,
+            163,
+            348
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                47,
+                334,
+                163,
+                348
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    47,
+                    334,
+                    163,
+                    348
+                  ],
+                  "type": "text",
+                  "content": "7 断面冲淤变化分析"
+                }
+              ]
+            }
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            47,
+            357,
+            278,
+            413
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                47,
+                357,
+                278,
+                413
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    47,
+                    357,
+                    278,
+                    413
+                  ],
+                  "type": "text",
+                  "content": "纵断面与横断面冲淤变化分析的实时动态查询是通过鼠标的选择与点击操作来实现的，不需要进行场景画面的切换。为了便于分析不同位置断面的冲淤变化信息，根据以下步骤完成："
+                }
+              ]
+            }
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            64,
+            416,
+            246,
+            428
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                64,
+                416,
+                246,
+                428
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    64,
+                    416,
+                    246,
+                    428
+                  ],
+                  "type": "text",
+                  "content": "(1) 确定断面在三维虚拟场景中的起止点坐标；"
+                }
+              ]
+            }
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            47,
+            430,
+            278,
+            456
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                47,
+                430,
+                278,
+                456
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    47,
+                    430,
+                    278,
+                    456
+                  ],
+                  "type": "text",
+                  "content": "确定鼠标在屏幕上拉线起止点对应于三维虚拟场景中的位置，转换为确定鼠标点击位置对应于流域空间坐标。"
+                }
+              ]
+            }
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            47,
+            459,
+            278,
+            645
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                47,
+                459,
+                278,
+                645
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    47,
+                    459,
+                    278,
+                    645
+                  ],
+                  "type": "text",
+                  "content": "根据三维图形显示原理，三维图形需要经过几何、投影等变换，实现三维空间到二维计算机屏幕的投影。在计算机屏幕上点选图形，通过屏幕的二维坐标选取对应的空间实体对象，即根据投影变化的原理求解鼠标屏幕位置对应的空间点的空间坐标，即三维图形显示的逆过程。根据视口矩阵、投影变换矩阵和几何变换矩阵，可以求出视线的方向，并根据视点(摄像机)的位置以及视锥体的远截面范围，确定视线的空间位置，而且能够求得视线线段的起止点坐标 "
+                },
+                {
+                  "bbox": [
+                    47,
+                    459,
+                    278,
+                    645
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\mathsf{p0}^{[3]}"
+                },
+                {
+                  "bbox": [
+                    47,
+                    459,
+                    278,
+                    645
+                  ],
+                  "type": "text",
+                  "content": " ，"
+                },
+                {
+                  "bbox": [
+                    47,
+                    459,
+                    278,
+                    645
+                  ],
+                  "type": "inline_equation",
+                  "content": "\\mathsf{p1}^{[3]}"
+                },
+                {
+                  "bbox": [
+                    47,
+                    459,
+                    278,
+                    645
+                  ],
+                  "type": "text",
+                  "content": " 。而后根据内置函数GV Geo inq intersection获得射线与场景相交的交点坐标，也是屏幕点所对应的空间坐标。由此，可以得到查询断面的左右岸坐标，在绘制过程中，调用OpenGL绘制直线图元函数，可以看到断面在平面上的投影线段（图7所示）。"
+                }
+              ]
+            }
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            64,
+            648,
+            163,
+            660
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                64,
+                648,
+                163,
+                660
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    64,
+                    648,
+                    163,
+                    660
+                  ],
+                  "type": "text",
+                  "content": "(2) 断面冲淤分析图生成"
+                }
+              ]
+            }
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            47,
+            663,
+            278,
+            735
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                47,
+                663,
+                278,
+                735
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    47,
+                    663,
+                    278,
+                    735
+                  ],
+                  "type": "text",
+                  "content": "三维场景中断面起止点坐标确定后，通过对断面进行平面等距离取点，从数据库或者文件中实时获取模型计算或者实测结果，插值出断面点的初始高程值和冲淤后的高程值。根据一定的搜索半径确定断面点周围用来插值的点，点数不能少于3个，然后采用反距离权重插值出待求断面点的高程"
+                }
+              ]
+            }
+          ],
+          "index": 15
+        },
+        {
+          "type": "image",
+          "bbox": [
+            341,
+            57,
+            481,
+            158
+          ],
+          "blocks": [
+            {
+              "bbox": [
+                341,
+                57,
+                481,
+                158
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    341,
+                    57,
+                    481,
+                    158
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        341,
+                        57,
+                        481,
+                        158
+                      ],
+                      "type": "image",
+                      "image_path": "c1b07c79db92e3d03b95592aa4f329660cc1af31f979c2bca3c48f3ef756ce06.jpg"
+                    }
+                  ]
+                }
+              ],
+              "index": 16,
+              "angle": 0,
+              "type": "image_body"
+            },
+            {
+              "bbox": [
+                376,
+                165,
+                444,
+                175
+              ],
+              "lines": [
+                {
+                  "bbox": [
+                    376,
+                    165,
+                    444,
+                    175
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        376,
+                        165,
+                        444,
+                        175
+                      ],
+                      "type": "text",
+                      "content": "图7 断面冲淤分析"
+                    }
+                  ]
+                }
+              ],
+              "index": 17,
+              "angle": 0,
+              "type": "image_caption"
+            }
+          ],
+          "index": 16
+        },
+        {
+          "bbox": [
+            294,
+            184,
+            496,
+            195
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                294,
+                184,
+                496,
+                195
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    294,
+                    184,
+                    496,
+                    195
+                  ],
+                  "type": "text",
+                  "content": "值，依次类推，可以求出断面上各控制点空间坐标。"
+                }
+              ]
+            }
+          ],
+          "index": 18
+        },
+        {
+          "bbox": [
+            293,
+            198,
+            525,
+            269
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                293,
+                198,
+                525,
+                269
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    293,
+                    198,
+                    525,
+                    269
+                  ],
+                  "type": "text",
+                  "content": "在对话框中绘制出初始床面断面绝对高程和冲淤变化后的床面的绝对高程值组成的断面形状。为了表示断面随时间推进时断面的冲淤过程，对断面的淤积部分，填充为红色；断面的冲刷部分，填充为绿色。从而可以分析和预测断面冲淤变化情况以及沿河道方向的坡降变化趋势（图7所示）。"
+                }
+              ]
+            }
+          ],
+          "index": 19
+        },
+        {
+          "bbox": [
+            294,
+            276,
+            339,
+            289
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                294,
+                276,
+                339,
+                289
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    294,
+                    276,
+                    339,
+                    289
+                  ],
+                  "type": "text",
+                  "content": "8 结论"
+                }
+              ]
+            }
+          ],
+          "index": 20
+        },
+        {
+          "bbox": [
+            294,
+            299,
+            525,
+            324
+          ],
+          "type": "text",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                294,
+                299,
+                525,
+                324
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    294,
+                    299,
+                    525,
+                    324
+                  ],
+                  "type": "text",
+                  "content": "本文以三峡库区为例，探讨了数字流域中的河道冲淤过程三维可视化仿真的问题，主要结论如下："
+                }
+              ]
+            }
+          ],
+          "index": 21
+        },
+        {
+          "bbox": [
+            294,
+            328,
+            526,
+            545
+          ],
+          "type": "list",
+          "angle": 0,
+          "index": 26,
+          "blocks": [
+            {
+              "bbox": [
+                294,
+                328,
+                526,
+                413
+              ],
+              "type": "text",
+              "angle": 0,
+              "lines": [
+                {
+                  "bbox": [
+                    294,
+                    328,
+                    526,
+                    413
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        294,
+                        328,
+                        526,
+                        413
+                      ],
+                      "type": "text",
+                      "content": "(1) 提出了在大范围、高精度 DEM 数据中自动提取断面控制点的算法。该算法采取分块插值、自动建立断面控制点的拓扑关系，提高了断面控制点坐标的提取效率，为河道三维仿真数据库的生成奠定了基础。同时提取的断面与数学模型计算断面进行自动匹配，能够很好地进行数学模型与三维虚拟仿真平台的集成。"
+                    }
+                  ]
+                }
+              ],
+              "index": 22
+            },
+            {
+              "bbox": [
+                294,
+                416,
+                525,
+                456
+              ],
+              "type": "text",
+              "angle": 0,
+              "lines": [
+                {
+                  "bbox": [
+                    294,
+                    416,
+                    525,
+                    456
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        294,
+                        416,
+                        525,
+                        456
+                      ],
+                      "type": "text",
+                      "content": "(2) 为了提高仿真平台的实时性和渲染效率，研究了 LOD 模型和无缝拼接的技术，实现了大范围流域场景的实时控制漫游。"
+                    }
+                  ]
+                }
+              ],
+              "index": 23
+            },
+            {
+              "bbox": [
+                294,
+                460,
+                526,
+                515
+              ],
+              "type": "text",
+              "angle": 0,
+              "lines": [
+                {
+                  "bbox": [
+                    294,
+                    460,
+                    526,
+                    515
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        294,
+                        460,
+                        526,
+                        515
+                      ],
+                      "type": "text",
+                      "content": "(3) 获得具有结构性的河道地形三维离散数据点，通过Creator API 生成了河道的三维仿真地形，并在Creator平台中完成光照、材质、纹理映射，生成了具有真实感的三维河道场景，并将其嵌套于大流域三维虚拟场景中。"
+                    }
+                  ]
+                }
+              ],
+              "index": 24
+            },
+            {
+              "bbox": [
+                295,
+                519,
+                520,
+                545
+              ],
+              "type": "text",
+              "angle": 0,
+              "lines": [
+                {
+                  "bbox": [
+                    295,
+                    519,
+                    520,
+                    545
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        295,
+                        519,
+                        520,
+                        545
+                      ],
+                      "type": "text",
+                      "content": "(4) 采用伪彩色技术实现了河道冲淤时空分布的表示，开发了纵横断面冲淤变化分析模块。"
+                    }
+                  ]
+                }
+              ],
+              "index": 25
+            }
+          ],
+          "sub_type": "text"
+        },
+        {
+          "bbox": [
+            295,
+            550,
+            342,
+            562
+          ],
+          "type": "title",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                295,
+                550,
+                342,
+                562
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    295,
+                    550,
+                    342,
+                    562
+                  ],
+                  "type": "text",
+                  "content": "参考文献："
+                }
+              ]
+            }
+          ],
+          "index": 27
+        },
+        {
+          "bbox": [
+            296,
+            567,
+            526,
+            730
+          ],
+          "type": "list",
+          "angle": 0,
+          "index": 35,
+          "blocks": [
+            {
+              "bbox": [
+                296,
+                567,
+                526,
+                599
+              ],
+              "type": "ref_text",
+              "angle": 0,
+              "lines": [
+                {
+                  "bbox": [
+                    296,
+                    567,
+                    526,
+                    599
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        296,
+                        567,
+                        526,
+                        599
+                      ],
+                      "type": "text",
+                      "content": "[1] Songxin Shi, Xiuzi Ye, Zhaoxia Dong, Yin Zhang. Real-time simulation of large-scale dynamic river water [J]. Practice and Theory (S1569-190X), 2007, 15(6): 635-646."
+                    }
+                  ]
+                }
+              ],
+              "index": 28
+            },
+            {
+              "bbox": [
+                296,
+                599,
+                526,
+                620
+              ],
+              "type": "ref_text",
+              "angle": 0,
+              "lines": [
+                {
+                  "bbox": [
+                    296,
+                    599,
+                    526,
+                    620
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        296,
+                        599,
+                        526,
+                        620
+                      ],
+                      "type": "text",
+                      "content": "[2] 陈文辉，谈晓军，董朝霞.大范围流域内水体三维仿真研究[J].系统仿真学报，2004,16(11):2409-2412."
+                    }
+                  ]
+                }
+              ],
+              "index": 29
+            },
+            {
+              "bbox": [
+                296,
+                621,
+                526,
+                642
+              ],
+              "type": "ref_text",
+              "angle": 0,
+              "lines": [
+                {
+                  "bbox": [
+                    296,
+                    621,
+                    526,
+                    642
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        296,
+                        621,
+                        526,
+                        642
+                      ],
+                      "type": "text",
+                      "content": "[3] 张尚弘, 姚仕明, 曲兆松. 等. 流域三维可视化与数值模拟的实时交互运行[J]. 清华大学学报(自然科学), 2004, 44(12): 1638-1641."
+                    }
+                  ]
+                }
+              ],
+              "index": 30
+            },
+            {
+              "bbox": [
+                296,
+                643,
+                526,
+                664
+              ],
+              "type": "ref_text",
+              "angle": 0,
+              "lines": [
+                {
+                  "bbox": [
+                    296,
+                    643,
+                    526,
+                    664
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        296,
+                        643,
+                        526,
+                        664
+                      ],
+                      "type": "text",
+                      "content": "[4] 师彪，李先华，于新花，等. 海洋三维仿真平台的潮流模拟可视化建模[J]. 上海大学学报(自然科学版)，2007, 13(4): 449-455."
+                    }
+                  ]
+                }
+              ],
+              "index": 31
+            },
+            {
+              "bbox": [
+                296,
+                665,
+                526,
+                685
+              ],
+              "type": "ref_text",
+              "angle": 0,
+              "lines": [
+                {
+                  "bbox": [
+                    296,
+                    665,
+                    526,
+                    685
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        296,
+                        665,
+                        526,
+                        685
+                      ],
+                      "type": "text",
+                      "content": "[5] 马劲松, 朱大奎. 海岸海洋潮流模拟可视化与虚拟现实建模[J]. 测绘学报, 2002, 31(1): 49-53."
+                    }
+                  ]
+                }
+              ],
+              "index": 32
+            },
+            {
+              "bbox": [
+                296,
+                686,
+                526,
+                717
+              ],
+              "type": "ref_text",
+              "angle": 0,
+              "lines": [
+                {
+                  "bbox": [
+                    296,
+                    686,
+                    526,
+                    717
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        296,
+                        686,
+                        526,
+                        717
+                      ],
+                      "type": "text",
+                      "content": "[6] 李义天. 河道平面二维泥沙数学模型研究及应用 C// 第三届全国泥沙基本理论研究学术讨论会论文集. 北京: 中国建材工业出版社, 1995."
+                    }
+                  ]
+                }
+              ],
+              "index": 33
+            },
+            {
+              "bbox": [
+                296,
+                720,
+                513,
+                730
+              ],
+              "type": "ref_text",
+              "angle": 0,
+              "lines": [
+                {
+                  "bbox": [
+                    296,
+                    720,
+                    513,
+                    730
+                  ],
+                  "spans": [
+                    {
+                      "bbox": [
+                        296,
+                        720,
+                        513,
+                        730
+                      ],
+                      "type": "text",
+                      "content": "[7] 王光谦，刘家宏. 数字流域模型[M]. 北京：科学出版社，2006."
+                    }
+                  ]
+                }
+              ],
+              "index": 34
+            }
+          ],
+          "sub_type": "ref_text"
+        },
+        {
+          "bbox": [
+            47,
+            27,
+            100,
+            37
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                47,
+                27,
+                100,
+                37
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    47,
+                    27,
+                    100,
+                    37
+                  ],
+                  "type": "text",
+                  "content": "第21卷第15期"
+                }
+              ]
+            }
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            47,
+            39,
+            86,
+            48
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                47,
+                39,
+                86,
+                48
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    47,
+                    39,
+                    86,
+                    48
+                  ],
+                  "type": "text",
+                  "content": "2009年8月"
+                }
+              ]
+            }
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            236,
+            38,
+            336,
+            48
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                236,
+                38,
+                336,
+                48
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    236,
+                    38,
+                    336,
+                    48
+                  ],
+                  "type": "text",
+                  "content": "系统仿真学报"
+                }
+              ]
+            }
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            480,
+            28,
+            525,
+            37
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                480,
+                28,
+                525,
+                37
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    480,
+                    28,
+                    525,
+                    37
+                  ],
+                  "type": "text",
+                  "content": "Vol. 21 No. 15"
+                }
+              ]
+            }
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            490,
+            40,
+            525,
+            48
+          ],
+          "type": "header",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                490,
+                40,
+                525,
+                48
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    490,
+                    40,
+                    525,
+                    48
+                  ],
+                  "type": "text",
+                  "content": "Aug., 2009"
+                }
+              ]
+            }
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            271,
+            742,
+            300,
+            751
+          ],
+          "type": "page_number",
+          "angle": 0,
+          "lines": [
+            {
+              "bbox": [
+                271,
+                742,
+                300,
+                751
+              ],
+              "spans": [
+                {
+                  "bbox": [
+                    271,
+                    742,
+                    300,
+                    751
+                  ],
+                  "type": "text",
+                  "content": "4810"
+                }
+              ]
+            }
+          ],
+          "index": 36
+        }
+      ]
+    }
+  ]
+}
