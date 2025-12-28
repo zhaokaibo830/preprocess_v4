@@ -28,6 +28,7 @@ import zipfile
 import io
 import time
 from fastapi import Request
+from urllib.parse import quote
 app = FastAPI(
     docs_url=None,
     redoc_url=None
@@ -315,7 +316,8 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(True),
     return StreamingResponse(
         zip_buffer,
         media_type="application/zip",
-        headers={"Content-Disposition": f"attachment; filename={file_name}_result.zip"}
+        headers = {
+            "Content-Disposition": f"attachment; filename*=utf-8''{quote(file_name)}_result.zip"}
     )
 if __name__=="__main__":
     import uvicorn
