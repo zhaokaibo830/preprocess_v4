@@ -19,10 +19,28 @@ from fastapi import HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.responses import FileResponse
+from fastapi.responses import StreamingResponse
+from images_tables.image.tools_async import analyze_image_content_async
+from images_tables.table.tools_async import table_extract_async
+import asyncio
+from titles.title_process import *
+import zipfile
+import io
+import time
+from fastapi import Request
 app = FastAPI(
     docs_url=None,
     redoc_url=None
     )
+
+@app.middleware("http")
+async def add_process_time(request: Request, call_next):
+    start = time.time()
+    response = await call_next(request)     # 这里会执行你的 preprocess 函数
+    cost = time.time() - start
+    print(f"[{request.method}] {request.url.path} 耗时: {cost:.2f}s")
+    return response
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 @app.get("/docs", include_in_schema=False)
 def custom_docs():
@@ -125,73 +143,71 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(True),
 
     print("处理完成，已保存到 demo0_middle_final.json")
 
+    
 
-    #标题处理
+
+    print("--- Structure Processor Started ---")
+
     try:
-        # 1. 加载完整的嵌套 JSON 结构
+        # 1. 加载
         full_json_data = load_json_data(final_json_path)
-        # 2. 获取段落块的扁平列表 (引用)
-        json_data_flat = flatten_json_data(full_json_data)
-        # 3. 提取所有文本作为上下文
-        full_context = extract_all_text_context(json_data_flat)
+
+        # 2. 递归获取节点 (Task 1: 深入 blocks)
+        all_process_nodes = get_all_nodes_recursive(full_json_data)
+
+        # 3. 提取上下文
+        full_context = extract_all_text_context_from_nodes(all_process_nodes)
 
     except Exception as e:
         print(f"Startup Failed: {e}")
         sys.exit(1)
 
-    # 4. 调用核心处理逻辑，传入上下文
-    final_title_list = get_markdown_titles_with_level(json_data_flat, full_context,cfg['LLM']['title_model']['LLM_API_KEY'],cfg['LLM']['title_model']['LLM_BASE_URL'],cfg['LLM']['title_model']['LLM_MODEL'])
+    # 4. LLM 处理 (含干扰项剔除逻辑)
+    title_level_map = process_titles_with_llm(all_process_nodes, full_context,cfg['LLM']['title_model']['LLM_API_KEY'],cfg['LLM']['title_model']['LLM_BASE_URL'],cfg['LLM']['title_model']['LLM_MODEL'])
 
+    print("3. Assigning levels to ALL nodes (Task 2)...")
 
-    print("3. Mapping levels and backfilling JSON data...")
-    title_level = {}
-    default_level = 1
+    total_processed = 0
 
-    if final_title_list:
-        # 建立 LLM 成功输出的标题到层级的映射
-        for one_title in final_title_list:
-            level = count_leading_hashes(one_title)
-            clean_key = filter_string(re.sub(r'^#+\s*', '', one_title).strip())
-            if clean_key:
-                title_level[clean_key] = level
+    for node in all_process_nodes:
+        total_processed += 1
+        node_type = node.get("type")
 
-    match_count = 0
-    fallback_count = 0
-    total_title_blocks = 0
+        assigned_level = 0 # 默认 level 0 (非 title 元素)
 
-    # 5. 遍历扁平列表，对原结构进行修改 (只增加 'level' 字段)
-    for para in json_data_flat:
-        if para.get("type") == "title":
-            total_title_blocks += 1
-            original_text = extract_text_content(para)
-            original_key = filter_string(original_text)
-
-            level = title_level.get(original_key)
-
-            if level is None:
-                # 触发回退机制： LLM 过滤了该标题，或 LLM 根本没有输出
-                para["level"] = default_level
-                fallback_count += 1
+        if node_type == "title":
+            original_text = extract_text_content(node)
+            key = filter_string(original_text)
+            if key in title_level_map:
+                assigned_level = title_level_map[key]
             else:
-                # 成功找到 LLM 结构化后的层级
-                para["level"] = level
+                # 如果 LLM 没有返回该标题的层级（可能是漏了，或者是太短的干扰项）
+                # 策略：默认为 0，防止其作为错误的父节点干扰后续结构
+                # 或者：如果看起来像干扰项，也可以设为 1。这里保守设为 0。
+                assigned_level = 0
 
-            match_count += 1 # 统计已处理的标题块
+                # 插入 level 字段
+        insert_level_field(node, assigned_level)
 
+    print(f"   Assigned levels to {total_processed} nodes.")
 
-    print(f"   Total type='title' blocks processed: {total_title_blocks}")
-    print(f"   - Successfully matched LLM output: {match_count - fallback_count}")
-    print(f"   - Assigned fallback level ({default_level}): {fallback_count}")
+    print("4. Building Structure (Father/Child Nodes) (Task 3)...")
+    # 这一步依赖于 level。由于我们将干扰项设为了 Level 1 (或其他 Level)，
+    # 只要正文也是 Level 1，这里的逻辑会自动将它们视为“兄弟”而不是“父子”。
+    build_structure_relationships(all_process_nodes)
 
-    # 6. 保存完整的原始 JSON 结构
-    level_json_name=f'{file_name}_processed_with_levels.json'
-    level_json_path=output_path / file_name / 'vlm' / level_json_name
-    save_json_data(full_json_data, level_json_path)
-    print(f"--- Task Complete. Result saved to: {level_json_path} ---")
+    # 5. 保存
+    #save_json_data(full_json_data, )
+    #print(f"--- Task Complete. Result saved to: {CONFIG['OUTPUT_JSON_PATH']} ---")
 
+    base_dir = Path(output_path) / file_name / 'vlm'
+    base_name = file_name
+    md_output_path = os.path.join(base_dir, f"{base_name}_titles_only.md")
 
+    export_structure_to_markdown(all_process_nodes, md_output_path)
 
-    #表格和图片处理
+    
+    
     
 
 
@@ -201,6 +217,7 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(True),
 
     if img_enable:
         count=0
+        img_jobs=[]
         for page_index,page in enumerate(full_json_data["output"]):
             for block_index, block in enumerate(page["result"]):
                 if block["type"]=="image":
@@ -208,10 +225,19 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(True),
                         if sub_block["type"]=="image_body":
                             img_path=sub_block["lines"][0]["spans"][0]["image_path"]
                             img_path=Path(output_path)/f'{file_name}'/'vlm'/'images'/img_path
-                            result=analyze_image_content(img_path,cfg['LLM']['img']['API_KEY'],cfg['LLM']['img']['BASE_URL'],cfg['LLM']['img']['MODEL'])
+                            img_jobs.append((page_index,block_index,sub_block_index,img_path))
+                            #result=analyze_image_content(img_path,cfg['LLM']['img']['API_KEY'],cfg['LLM']['img']['BASE_URL'],cfg['LLM']['img']['MODEL'])
                             #print(result)
-                            full_json_data["output"][page_index]["result"][block_index]["description"]=result
+                            #full_json_data["output"][page_index]["result"][block_index]["description"]=result
                             count+=1
+        print(f"已收集{count}张图片")
+        img_results=await asyncio.gather(*[analyze_image_content_async(str(path),           # 注意转 str
+                                          cfg['LLM']['img']['API_KEY'],
+                                          cfg['LLM']['img']['BASE_URL'],
+                                          cfg['LLM']['img']['MODEL'])
+              for _, _, _, path in img_jobs])
+        for (p_idx, b_idx, sb_idx, _), desc in zip(img_jobs, img_results):
+            full_json_data["output"][p_idx]["result"][b_idx]["description"] = desc
         print(f"已处理{count}张图片")
         '''
         ToprocessList=[]
@@ -233,6 +259,7 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(True),
 
     if table_enable:
         count_table=0
+        table_jobs=[]
         for page_index,page in enumerate(full_json_data["output"]):
             for block_index, block in enumerate(page["result"]):
                 if block["type"]=="table":
@@ -245,10 +272,19 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(True),
                                 print(f"[WARN] page={page_index} block={block_index} 取不到 html，已跳过")
                                 continue
                             table_html=sub_block["lines"][0]["spans"][0]["html"]
-                            result=table_extract(table_html,cfg['LLM']['table']['API_KEY'],cfg['LLM']['table']['BASE_URL'],cfg['LLM']['table']['MODEL'] )
-                            print(result)
-                            full_json_data["output"][page_index]["result"][block_index]["description"]=result
+                            table_jobs.append((page_index,block_index,sub_block_index,table_html))
+                            #result=table_extract(table_html,cfg['LLM']['table']['API_KEY'],cfg['LLM']['table']['BASE_URL'],cfg['LLM']['table']['MODEL'] )
+                            #print(result)
+                            #full_json_data["output"][page_index]["result"][block_index]["description"]=result
                             count_table+=1
+        print(f"已收集{count_table}个表格")
+        table_results=await asyncio.gather(*[table_extract_async(table_html,           # 注意转 str
+                                          cfg['LLM']['table']['API_KEY'],
+                                          cfg['LLM']['table']['BASE_URL'],
+                                          cfg['LLM']['table']['MODEL'])
+              for _, _, _, table_html in table_jobs])
+        for (p_idx, b_idx, sb_idx, _), desc in zip(table_jobs, table_results):
+            full_json_data["output"][p_idx]["result"][b_idx]["description"] = desc
         print(f"已处理{count_table}个表格")
         """
         ToprocessTableList=[]
@@ -261,16 +297,30 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(True),
 
             #保存table分析结果
         """
-    save_json_data(full_json_data, level_json_path)
-    return FileResponse(
-        level_json_path,
-        media_type="application/json",
-        filename=os.path.basename(level_json_path)
+    level_json_name=f'{file_name}_processed_with_levels.json'
+    level_json_path=output_path / file_name / 'vlm' / level_json_name
+    save_json_data(full_json_data, str(level_json_path))
+    print(f"已保存{level_json_name}到{level_json_path}")
+    pdf_view=output_path/file_name/'vlm'/f"{file_name}_layout.pdf"
+    files_to_send=[
+        Path(level_json_path),
+        Path(md_output_path),
+        Path(pdf_view)
+    ]
+    zip_buffer=io.BytesIO()
+    with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zf:
+        for f in files_to_send:
+            zf.write(f, arcname=f.name)   # arcname 决定 zip 里的路径
+    zip_buffer.seek(0)
+    return StreamingResponse(
+        zip_buffer,
+        media_type="application/zip",
+        headers={"Content-Disposition": f"attachment; filename={file_name}_result.zip"}
     )
 if __name__=="__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8002)
+    uvicorn.run(app, host="0.0.0.0", port=8003)
 
 
 
