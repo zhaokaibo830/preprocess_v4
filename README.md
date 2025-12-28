@@ -9,3 +9,4 @@
 4. md。基于pypandoc实现，需要下载'--pdf-engine=xelatex'作为渲染引擎
 5. ofd。基于github项目easyofd实现。https://github.com/renoyuan/easyofd。这里注册字体用的1宋体文件在项目文件夹下，但注册字体时的路径是硬编码，后续需要修改
 6. ceb。通过wine运行windows平台的ceb2pdf实现
+
