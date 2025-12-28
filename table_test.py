@@ -1,10 +1,15 @@
 from table.tools import table_extract
-
+import json
 table_html = """
-<table><tr><td rowspan=2 colspan=1>河段</td><td rowspan=2 colspan=1>冲淤量（万m）</td><td rowspan=1 colspan=3>冲淤厚度(m)</td></tr><tr><td rowspan=1 colspan=1>平均</td><td rowspan=1 colspan=1>最大</td><td rowspan=1 colspan=1>最大淤积部位及影响</td></tr><tr><td rowspan=1 colspan=1>全河段</td><td rowspan=1 colspan=1>-2267.6</td><td rowspan=1 colspan=1>-0.57</td><td rowspan=1 colspan=1>12.1</td><td rowspan=1 colspan=1>最大淤积厚度为12.1m，位于CY02（汇合口以下14km）深槽右侧，淤后高程133m左右，在通航及港口作业区域外，对通航无影响</td></tr><tr><td rowspan=1 colspan=1>朝天门汇口以上</td><td rowspan=1 colspan=1>-1881.7</td><td rowspan=1 colspan=1>-1.11</td><td rowspan=1 colspan=1>3.1</td><td rowspan=1 colspan=1>最大淤积厚度为3.1m，位于CY34（九龙坡河段）断面中部，淤后高程154m左右，对通航无影响</td></tr><tr><td rowspan=1 colspan=1>朝天门汇口以下</td><td rowspan=1 colspan=1>-96.2</td><td rowspan=1 colspan=1>-0.09</td><td rowspan=1 colspan=1>12.1</td><td rowspan=1 colspan=1>最大淤积厚度为12.1m，位于CY02（汇合口以下14km）深槽右侧，淤后高程133m左右，在通航及港口作业区域外，对通航无影响</td></tr><tr><td rowspan=1 colspan=1>嘉陵江</td><td rowspan=1 colspan=1>-289.7</td><td rowspan=1 colspan=1>-0.25</td><td rowspan=1 colspan=1>2.1</td><td rowspan=1 colspan=1>最大淤积厚度2.1m，位于CY43（嘉陵江，汇合口上游约1.2km）主槽内，淤后高程155.5m左右，对通航无影响</td></tr></table>
-    """
-print(table_extract(table_html=table_html, api_key="sk-734ae048099b49b5b4c7981559765228",
-                    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1", model_name="qwen3-14b"))
+
+<table><tr><td>故障类型</td><td>方法</td><td>fmax/Hz</td><td>t/s</td><td>计算时间/s</td></tr><tr><td rowspan="2">故障I</td><td>PSD-BPA</td><td>-0.18</td><td>3.20</td><td>58.00</td></tr><tr><td>NFSAM</td><td>-0.21</td><td>3.10</td><td>0.60</td></tr><tr><td rowspan="2">故障ⅡI</td><td>PSD-BPA</td><td>0.45</td><td>6.86</td><td>90.00</td></tr><tr><td>NFSAM</td><td>0.49</td><td>7.01</td><td>0.73</td></tr><tr><td rowspan="2">故障ⅢI</td><td>PSD-BPA</td><td>0.94</td><td>9.20</td><td>100.00</td></tr><tr><td>NFSAM</td><td>1.00</td><td>8.91</td><td>0.73</td></tr></table>
+
+"""
+result=table_extract(table_html=table_html, api_key="sk-734ae048099b49b5b4c7981559765228",
+                    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1", model_name="qwen3-14b")
+with open('test_result/data.json', 'w', encoding='utf-8') as json_file:
+    json.dump(result, json_file, ensure_ascii=False, indent=4)
+
 
 
 # 输出结果如下：
