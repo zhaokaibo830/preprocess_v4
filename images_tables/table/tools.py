@@ -10,10 +10,16 @@ from openai import APIConnectionError, APIError, RateLimitError
 def table_extract(table_html: str, api_key: str, base_url: str, model_name: str) -> dict:
     def safe_json_parse(json_str):
         try:
+            if "json"  in json_str:
+                json_str=json_str.replace("json","")
+            if "'''" in json_str:
+                json_str = json_str.replace("'''", "")
+            if "\n" in json_str:
+                json_str=json_str.replace("\n","")
             return json.loads(json_str)
         except json.JSONDecodeError as e:
             print(f"JSON解析错误: {e}")
-            return {"error": "JSON解析失败", "raw_content": json_str}
+            return json_str
 
     def make_api_call(client, table_content, prompt, model):
         try:
@@ -53,7 +59,15 @@ def table_extract(table_html: str, api_key: str, base_url: str, model_name: str)
         }
 
     prompt_keyvalue = """
-    给定内容是一个以HTML格式呈现的表格，请深入理解该表格内容，并将其以键值对（key和value）的形式进行整理，最终输出为JSON格式，示例如下：{“姓名”: “李四”, “年龄”: 26},只需要输出JSON,以{开始，以}结束，不需要其他多余解释。
+    给定内容是一个以HTML格式呈现的表格，请详细分析该表格的内容，并将其转化为键值对（key-value）的形式，最终输出为JSON格式。请确保不遗漏HTML中的任何一个单元格数据，每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值。示例如下：
+
+输入的HTML表格内容如下：
+<table><tr><td rowspan=2 colspan=1>序号</td><td rowspan=1 colspan=3>学生信息</td></tr><tr><td rowspan=1 colspan=1>姓名</td><td rowspan=1 colspan=1>年龄</td><td rowspan=1 colspan=1>家庭地址</td></tr><tr><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>张三</td><td rowspan=1 colspan=1>23</td><td rowspan=1 colspan=1>北京</td></tr><tr><td rowspan=1 colspan=1>2</td><td rowspan=1 colspan=1>李四</td><td rowspan=1 colspan=1>12</td><td rowspan=1 colspan=1>上海</td></tr></table>
+以上HTML表格内容转化为JSON格式。最终输出的JSON格式如下：
+[{"序号":"1","学生信息":{"姓名":"张三","年龄":"23","家庭地址":"北京"}},{"序号":"2","学生信息":{"姓名":"李四","年龄":"12","家庭地址":"上海"}}]
+
+请按照这个格式输出JSON，不需要其他多余的解释，HTML中的每一个数据都要体现出来不能遗漏,每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值,且确保输出的JSON是有效且可以解析的。
+
     """
     prompt_description = "请用一段话详细的描述此表格，不要遗漏任何数据。"
 
@@ -70,6 +84,7 @@ def table_extract(table_html: str, api_key: str, base_url: str, model_name: str)
     if isinstance(keyvalue_result, dict) and "error" in keyvalue_result:
         result["key_value"] = keyvalue_result
     else:
+        print("LLM输出：", keyvalue_result)
         result["key_value"] = safe_json_parse(keyvalue_result)
 
     # 处理描述结果
