@@ -30112,7 +30112,7 @@
                     1181
                 ],
                 "score": 0.4,
-                "latex": "^ { \\star }"
+                "latex": "\\mathrel { + }"
             },
             {
                 "category_id": 13,
@@ -30157,7 +30157,7 @@
                     331
                 ],
                 "score": 0.29,
-                "latex": "\\twoheadleftarrow"
+                "latex": "\\nsim"
             },
             {
                 "category_id": 15,

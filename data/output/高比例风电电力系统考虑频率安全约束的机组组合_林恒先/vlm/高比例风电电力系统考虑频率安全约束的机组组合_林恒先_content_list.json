@@ -273,7 +273,7 @@
             90,
             93,
             369,
-            108
+            107
         ],
         "page_idx": 0
     },
@@ -284,7 +284,7 @@
             394,
             93,
             539,
-            108
+            107
         ],
         "page_idx": 0
     },
@@ -492,7 +492,7 @@
         "bbox": [
             292,
             59,
-            704,
+            705,
             72
         ],
         "page_idx": 1
@@ -501,9 +501,9 @@
         "type": "header",
         "text": "Vol. 45 No. 1",
         "bbox": [
-            811,
+            810,
             60,
-            894,
+            895,
             71
         ],
         "page_idx": 1
@@ -536,7 +536,7 @@
         "text_format": "latex",
         "bbox": [
             166,
-            103,
+            104,
             480,
             133
         ],
@@ -581,7 +581,7 @@
         "text_format": "latex",
         "bbox": [
             194,
-            516,
+            517,
             480,
             549
         ],
@@ -790,7 +790,7 @@
         "bbox": [
             89,
             84,
-            482,
+            484,
             158
         ],
         "page_idx": 3
@@ -957,6 +957,7 @@
     {
         "type": "text",
         "text": "1）功率平衡约束。",
+        "text_level": 1,
         "bbox": [
             549,
             217,
@@ -1002,6 +1003,7 @@
     {
         "type": "text",
         "text": "2）旋转备用约束。",
+        "text_level": 1,
         "bbox": [
             547,
             330,
@@ -1047,6 +1049,7 @@
     {
         "type": "text",
         "text": "3）最小启停时间约束。",
+        "text_level": 1,
         "bbox": [
             547,
             481,
@@ -1092,6 +1095,7 @@
     {
         "type": "text",
         "text": "4）机组出力约束。",
+        "text_level": 1,
         "bbox": [
             547,
             640,
@@ -1137,6 +1141,7 @@
     {
         "type": "text",
         "text": "5）机组爬坡约束。",
+        "text_level": 1,
         "bbox": [
             547,
             734,
@@ -1171,6 +1176,7 @@
     {
         "type": "text",
         "text": "6）弃风率约束。",
+        "text_level": 1,
         "bbox": [
             547,
             834,
@@ -1230,7 +1236,7 @@
             28,
             963,
             835,
-            979
+            978
         ],
         "page_idx": 3
     },
@@ -1293,7 +1299,7 @@
     },
     {
         "type": "text",
-        "text": "式中： $\\Delta P_{\\mathrm{OL0t}}$  为  $t$  时刻系统预想的最大功率扰动； $k_{\\mathrm{Dt}}$  为  $t$  时刻负荷调节效应系数； $T_{\\mathrm{St}}$  为  $t$  时刻系统的惯量； $t_{\\mathrm{mt}}$  为  $t$  时刻系统频率最低点时间。但是，式(15)并没有考虑机组的出力限制。",
+        "text": "式中： $\\Delta P_{\\mathrm{OL0t}}$  为  $t$  时刻系统预想的最大功率扰动； $k_{\\mathrm{Dt}}$  为  $t$  时刻负荷调节效应系数； $T_{\\mathrm{St}}$  为  $t$  时刻系统的惯量； $t_{\\mathrm{mr}}$  为  $t$  时刻系统频率最低点时间。但是，式(15)并没有考虑机组的出力限制。",
         "bbox": [
             89,
             255,
@@ -1532,7 +1538,7 @@
     },
     {
         "type": "text",
-        "text": "式中:  $P_{\\mathrm{w}, t}^{\\prime}$  为  $t$  时刻的风电功率超短期预测值;  $t$  时刻风电的实际出力不大于其超短期预测值。",
+        "text": "式中： $P_{\\mathrm{w},t}^{\\prime}$  为  $t$  时刻的风电功率超短期预测值； $t$  时刻风电的实际出力不大于其超短期预测值。",
         "bbox": [
             512,
             445,
@@ -1891,7 +1897,7 @@
             512,
             504,
             905,
-            651
+            650
         ],
         "page_idx": 5
     },
@@ -2008,7 +2014,7 @@
         "bbox": [
             90,
             161,
-            292,
+            290,
             175
         ],
         "page_idx": 6
@@ -2053,7 +2059,7 @@
             89,
             482,
             484,
-            574
+            573
         ],
         "page_idx": 6
     },
@@ -2093,7 +2099,7 @@
     },
     {
         "type": "table",
-        "img_path": "images/a57aa772989b8e05e67955d8aecfe94d4b908451e0af1362e224be5f00ab6f62.jpg",
+        "img_path": "images/2c87c083190bace48c463da51c83c34666e1abaa2c715fa013cf51ee1b1e8c46.jpg",
         "table_caption": [
             "表4 未加约束时最大出力机组跳闸频率最小值 Table 4 Minimum frequency without constraints when maximum output unit tripped"
         ],
@@ -2103,7 +2109,7 @@
             515,
             128,
             904,
-            261
+            260
         ],
         "page_idx": 6
     },
@@ -2213,7 +2219,7 @@
     },
     {
         "type": "text",
-        "text": "以直流闭锁系统为例，逐步减小系数δ的取值，并对每个不同的δ取值重新优化出机组组合安排，直到出现受到扰动后频率刚好降至48.5Hz的时刻，并考察δ变化时该时刻的机组组合结果，便可获得保守度的大小及其对结果的影响。",
+        "text": "以直流闭锁系统为例，逐步减小系数δ的取值，并对每个不同的δ取值重新优化出机组组合安排，直到出现受到扰动后频率刚好降至  $48.5\\mathrm{Hz}$  的时刻，并考察δ变化时该时刻的机组组合结果，便可获得保守度的大小及其对结果的影响。",
         "bbox": [
             89,
             160,
@@ -2262,8 +2268,8 @@
         "bbox": [
             90,
             625,
-            168,
-            642
+            166,
+            640
         ],
         "page_idx": 7
     },
@@ -2353,10 +2359,10 @@
             "[5] 张利，赵建国，韩学山. 考虑网络安全约束的机组组合新算法[J]. 电网技术，2006，30(21)：50-55.",
             "Zhang Li, Zhao Jianguo, Han Xueshan. New algorithm for generating unit combination considering network security constraints[J]. Power System Technology, 2006, 30(21): 50-55 (in Chinese).",
             "[6] 杨朋朋，韩学山，查浩．一种计及静态安全约束机组组合的有效算法[J]．电力系统自动化，2009，33(8)：39-43.",
-            "Yang Pengpeng, Han Xueshan, Zha Hao. An effective algorithm considering static safety constrained unit combination[J]. Automation of Electric Power Systems, 2009, 33(8): 39-43 (in Chinese).",
+            "Yang Pengpeng, Han Xueshan, Zha Hao. An effective algorithm considering static safety constrained unit combination[J]. Automation of Electric Power Systems, 2009, 33(8): 39-43(in Chinese).",
             "[7] 江全元，张铭泽，高强．考虑交流潮流约束的机组组合并行解法[J].电工技术学报，2009，24(8)：120-126.",
             "Jiang Quanyuan, Zhang Mingze, Gao Qiang. Parallel solution of unit combination considering AC power flow constraints[J]. Transactions of China Electrotechnical Society, 2009, 24(8): 120-126(in Chinese).",
-            "[8] 张铭泽. 考虑动态安全约束的电力系统机组组合研究[D]. 杭州：浙江大学，2010.",
+            "[8] 张铭泽．考虑动态安全约束的电力系统机组组合研究[D]．杭州：浙江大学，2010.",
             "[9] Xu Y, Dong Z Y, Zhang R, et al. A decomposition-based practical approach to transient stability-constrained unit commitment[J]. IEEE Transactions on Power Systems, 2015, 30(3): 1455-1464.",
             "[10] 林涛，叶婧，陈汝斯，等．考虑稳态频率约束的含大规模风电电"
         ],
@@ -2416,7 +2422,7 @@
         "type": "list",
         "sub_type": "ref_text",
         "list_items": [
-            "力系统机组组合研究[J].电力科学与技术学报，2014，29(4)：18-24. Lin Tao，Ye Jing，Chen Rusi，etal. Research on unit combination of large-scale wind power system with steady frequency constraints [J].Journal of Electric Power Science and Technology，2014，29(4)：18-24(in Chinese).",
+            "力系统机组组合研究[J].电力科学与技术学报，2014，29(4)：18-24. Lin Tao，Ye Jing，Chen Rusi，et al. Research on unit combination of large-scale wind power system with steady frequency constraints [J]. Journal of Electric Power Science and Technology，2014，29(4)：18-24(in Chinese).",
             "[11] 叶婧，林涛，徐遐龄，等．考虑稳态频率约束的含高渗透率风电的孤立电网机组组合[J]. 高电压技术，2018，44(4)：1311-1318. Ye Jing，Lin Tao，Xu Xialing，et al. Isolated grid unit combination with high permeability wind power considering steady-state frequency constraints[J]. High Voltage Technology，2018，44(4)：1311-1318(in Chinese).",
             "[12] 高林，戴义平，马庆中，等．特高压线路解列后区域互联电网一次调频稳定性研究[J].电网技术，2009，33(20)：27-32. Gao Lin，Dai Yiping，Ma Qingzhong，et al. Study on primary frequency regulation stability of regional interconnected power grid after UHV line decommissioning[J].Power System Technology，2009，33(20)：27-32(in Chinese).",
             "[13] 刘克天，王晓茹．电厂锅炉及辅机对电力系统动态频率影响的仿真研究[J].电力系统保护与控制，2014，42(13)：53-58. Liu Ketian，Wang Xiaoru. Simulation study on the influence of power plant boilers and auxiliary equipment on the dynamic frequency of power system[J]. Power System Protection and Control，2014，42(13)：53-58(in Chinese).",
@@ -2442,7 +2448,7 @@
         "list_items": [
             "1537-1548.",
             "[21] Ahmadi H, Ghasemi H. Security-constrained unit commitment with linearized system frequency limit constraints[J]. IEEE Transactions on Power Systems, 2014, 29(4): 1536-1545.",
-            "[22] 叶婧，林涛，张磊，等．考虑动态频率约束的含高渗透率光伏电源的孤立电网机组组合[J].电工技术学报，2017，32(13)：194-202. Ye Jing，Lin Tao，Zhang Lei，etal. Isolation grid unit combination with high permeability photovoltaic power source considering dynamic frequency constraints[J].Transactions of China Electrotechnical Society，2017，32(13)：194-202(in Chinese).",
+            "[22] 叶婧，林涛，张磊，等．考虑动态频率约束的含高渗透率光伏电源的孤立电网机组组合[J].电工技术学报，2017，32(13)：194-202. Ye Jing，Lin Tao，Zhang Lei，et al. Isolation grid unit combination with high permeability photovoltaic power source considering dynamic frequency constraints[J]. Transactions of China Electrotechnical Society，2017，32(13)：194-202(in Chinese).",
             "[23] 周博然. 含风电的机组组合模型及算法研究[D]. 杭州：浙江大学，2015.",
             "[24] Zhao L, Zeng B. Robust unit commitment problem with demand response and wind energy[C]/2012 IEEE Power and Energy Society General Meeting. IEEE, 2012: 1-8.",
             "[25] Jiang R, Wang J, Guan Y. Robust unit commitment with wind power and pumped storage hydro[J]. IEEE Transactions on Power Systems, 2012, 27(2): 800-810.",
@@ -2490,7 +2496,7 @@
         "type": "text",
         "text": "收稿日期：2020-02-05。",
         "bbox": [
-            648,
+            650,
             655,
             779,
             667
@@ -2512,7 +2518,7 @@
         "type": "text",
         "text": "林恒先(1996)，男，硕士研究生，研究方向为电力系统频率动态过程，E-mail: lin-hx18@tsinghua.edu.cn;",
         "bbox": [
-            623,
+            625,
             684,
             902,
             724
@@ -2523,7 +2529,7 @@
         "type": "text",
         "text": "侯凯元(1971)，男，博士，教授级高级工程师，主要研究方向为电网调度运行、稳定分析和控制等，E-mail：houkaiyuan2010@163.com;",
         "bbox": [
-            623,
+            625,
             727,
             902,
             766
@@ -2715,7 +2721,7 @@
     },
     {
         "type": "text",
-        "text": "频率最大偏差发生的时刻可求得为  $t_{\\mathrm{m}} = \\frac{1}{\\Omega}$ $\\arctan \\left(\\frac{2T_{\\mathrm{S}}T_{\\mathrm{G}}\\varOmega}{k_{\\mathrm{D}}T_{\\mathrm{G}} - T_{\\mathrm{S}}}\\right)$  ，则比例系数  $\\delta = \\left(\\frac{\\Delta f_{\\mathrm{max}}}{t_{\\mathrm{m}}}\\right) / \\frac{\\Delta P_{\\mathrm{OL}}}{T_{\\mathrm{S}}}$ $g(T_{\\mathrm{S}},T_{\\mathrm{G}},k_{\\mathrm{D}},k_{\\mathrm{G}})$  。",
+        "text": "频率最大偏差发生的时刻可求得为  $t_{\\mathrm{m}} = \\frac{1}{\\Omega}$ $\\arctan \\left(\\frac{2T_{\\mathrm{S}}T_{\\mathrm{G}}\\varOmega}{k_{\\mathrm{D}}T_{\\mathrm{G}} - T_{\\mathrm{S}}}\\right)$  ，则比例系数  $\\delta = (\\frac{\\Delta f_{\\mathrm{max}}}{t_{\\mathrm{m}}}$ $\\frac{\\Delta P_{\\mathrm{OL}}}{T_{\\mathrm{S}}}) = g(T_{\\mathrm{S}},T_{\\mathrm{G}},k_{\\mathrm{D}},k_{\\mathrm{G}})$",
         "bbox": [
             89,
             410,
@@ -2877,7 +2883,7 @@
         "type": "image",
         "img_path": "images/661732286bbfeaac3f8e4725c9fcbe13c5512dc49d05e43189ff21663963dfbe.jpg",
         "image_caption": [
-            "图A3 4种情况下真实频率最小值与频率限值的比较附录B"
+            "图A34种情况下真实频率最小值与频率限值的比较附录B"
         ],
         "image_footnote": [],
         "bbox": [
@@ -3064,62 +3070,62 @@
     },
     {
         "type": "table",
-        "img_path": "images/22b4b98d31bd24b121ba267a97ed68d3b2b5391758ab3dfcecd9771c47aaf336.jpg",
+        "img_path": "images/9e5a62df4a6f515268dd89109f9326a9f03b0a656137d46a27ac2dc22444ea28.jpg",
         "table_caption": [
             "表 C5 弃风量"
         ],
         "table_footnote": [],
         "table_body": "<table><tr><td>时段/h</td><td>弃风/MW</td><td>时段/h</td><td>弃风/MW</td><td>时段/h</td><td>弃风/MW</td><td>时段/h</td><td>弃风/MW</td><td>时段/h</td><td>弃风/MW</td><td>时段/h</td><td>弃风/MW</td></tr><tr><td>1</td><td>130</td><td>5</td><td>100</td><td>9</td><td>0</td><td>13</td><td>0</td><td>17</td><td>0</td><td>21</td><td>0</td></tr><tr><td>2</td><td>50</td><td>6</td><td>180</td><td>10</td><td>0</td><td>14</td><td>0</td><td>18</td><td>0</td><td>22</td><td>0</td></tr><tr><td>3</td><td>0</td><td>7</td><td>0</td><td>11</td><td>0</td><td>15</td><td>0</td><td>19</td><td>0</td><td>23</td><td>0</td></tr><tr><td>4</td><td>30</td><td>8</td><td>0</td><td>12</td><td>0</td><td>16</td><td>0</td><td>20</td><td>0</td><td>24</td><td>0</td></tr></table>",
         "bbox": [
-            92,
+            90,
             96,
-            905,
+            904,
             172
         ],
         "page_idx": 11
     },
     {
         "type": "table",
-        "img_path": "images/c6b1888d5dc567160250f3b03e189df9b82cf185b224d392ba49713056773d42.jpg",
+        "img_path": "images/7a85dd2a0a7cd82c35c132920907c3f416ece05d93d3135d9c2f8b246f5bfe03.jpg",
         "table_caption": [
             "表 C6 未添加频率约束求得的机组启停状态"
         ],
         "table_footnote": [],
         "table_body": "<table><tr><td>时刻</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>机组1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组2</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></table>",
         "bbox": [
-            92,
-            192,
+            90,
+            191,
             904,
-            323
+            325
         ],
         "page_idx": 11
     },
     {
         "type": "table",
-        "img_path": "images/a480257f316d872463178759899ef59d1256d9e54aea52badd5b834b849bdf87.jpg",
+        "img_path": "images/2c84e9208e8ad93d6bfb4192c25f094d148371ce434f272b688d2b2a840b05f5.jpg",
         "table_caption": [
             "表 C7 添加频率约束求得的机组启停状态(直流闭锁)"
         ],
         "table_footnote": [],
         "table_body": "<table><tr><td>时刻</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>机组1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组3</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组6</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组7</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组8</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr></table>",
         "bbox": [
-            92,
+            90,
             344,
             904,
-            475
+            476
         ],
         "page_idx": 11
     },
     {
         "type": "table",
-        "img_path": "images/5583bcbd9d02fbe917d47fe0e50747101822fa280905bb3debd6d813499ed310.jpg",
+        "img_path": "images/f40c2e0d028ee5213b288b9c9de1195ada8cc40daeb1e0097d23defa21b5e635.jpg",
         "table_caption": [
             "表 C8 添加频率约束求得的机组启停状态(最大出力机组跳闸)"
         ],
         "table_footnote": [],
         "table_body": "<table><tr><td>时刻</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>机组1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组3</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组5</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组8</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr></table>",
         "bbox": [
-            92,
+            90,
             495,
             904,
             627
@@ -3128,14 +3134,14 @@
     },
     {
         "type": "table",
-        "img_path": "images/00ac6e0445468fc4e33cc07656556f1a8d5fbe3dbc42c36280eba3b0ef7d7add.jpg",
+        "img_path": "images/1fb5c87492cf74f1ad8fac8615c0514004d9a08ce222e3e35ea93870f4257d19.jpg",
         "table_caption": [
             "表 C9 未添加频率约束求得的机组出力状态"
         ],
         "table_footnote": [],
         "table_body": "<table><tr><td>时刻</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr><td>机组1</td><td>587.5</td><td>667.5</td><td>587.5</td><td>562.5</td><td>562.5</td><td>505</td><td>617.5</td><td>680</td><td>680</td><td>680</td><td>680</td><td>680</td></tr><tr><td>机组2</td><td>0</td><td>0</td><td>150</td><td>150</td><td>150</td><td>150</td><td>150</td><td>170</td><td>170</td><td>150</td><td>150</td><td>150</td></tr><tr><td>机组3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组4</td><td>532.5</td><td>532.5</td><td>532.5</td><td>507.5</td><td>437.5</td><td>415</td><td>532.5</td><td>650</td><td>650</td><td>590</td><td>570</td><td>540</td></tr><tr><td>机组5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>时刻</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>机组1</td><td>680</td><td>562.5</td><td>680</td><td>680</td><td>680</td><td>680</td><td>680</td><td>667.5</td><td>680</td><td>680</td><td>667.5</td><td>627.5</td></tr><tr><td>机组2</td><td>150</td><td>150</td><td>260</td><td>150</td><td>220</td><td>160</td><td>150</td><td>150</td><td>150</td><td>240</td><td>150</td><td>150</td></tr><tr><td>机组3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组4</td><td>610</td><td>487.5</td><td>650</td><td>600</td><td>650</td><td>650</td><td>630</td><td>532.5</td><td>570</td><td>650</td><td>532.5</td><td>532.5</td></tr><tr><td>机组5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></table>",
         "bbox": [
-            92,
+            90,
             646,
             905,
             910
@@ -3157,7 +3163,7 @@
         "type": "text",
         "text": "MW",
         "bbox": [
-            875,
+            873,
             85,
             905,
             95
@@ -3184,7 +3190,7 @@
         "type": "text",
         "text": "MW",
         "bbox": [
-            875,
+            873,
             368,
             904,
             378
@@ -3209,14 +3215,14 @@
     },
     {
         "type": "table",
-        "img_path": "images/d1a347927608444d63c045ddb62c90702319d03c52152cd126e1fe3e36689328.jpg",
+        "img_path": "images/6718667c68d1a2f8cc1e35cd28d00c8af31d3d60b8082b65d9e5c26036aeffbb.jpg",
         "table_caption": [
             "表 C12 评估保守度对机组组合求解结果影响的开机状态与运行成本的对比"
         ],
         "table_footnote": [],
-        "table_body": "<table><tr><td>开机状态</td><td>机组1</td><td>机组2</td><td>机组3</td><td>机组4</td><td>机组5</td><td>机组6</td><td>机组7</td><td>机组8</td><td>运行成本/$</td><td>成本增加比例/%</td><td>最低频率/Hz</td></tr><tr><td>δ=0.637</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.612</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.587</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.562</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>25143</td><td>5.16</td><td>48.6730</td></tr><tr><td>δ=0.540</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>23909</td><td>0.00</td><td>48.5242</td></tr></table>",
+        "table_body": "<table><tr><td>开机状态</td><td>机组1</td><td>机组2</td><td>机组3</td><td>机组4</td><td>机组5</td><td>机组6</td><td>机组7</td><td>机组8</td><td>运行成本/$</td><td>成本增加比例/%</td><td>最低频率/Hz</td></tr><tr><td>δ=0.637</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27 040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.612</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27 040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.587</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27 040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.562</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>25 143</td><td>5.16</td><td>48.6730</td></tr><tr><td>δ=0.540</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>23 909</td><td>0.00</td><td>48.5242</td></tr></table>",
         "bbox": [
-            92,
+            90,
             662,
             904,
             751
@@ -3229,7 +3235,7 @@
         "bbox": [
             28,
             963,
-            833,
+            835,
             978
         ],
         "page_idx": 12

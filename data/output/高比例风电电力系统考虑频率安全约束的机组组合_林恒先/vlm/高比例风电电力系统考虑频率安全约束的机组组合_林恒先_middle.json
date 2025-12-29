@@ -1061,7 +1061,7 @@
                         54,
                         79,
                         220,
-                        91
+                        90
                     ],
                     "type": "header",
                     "angle": 0,
@@ -1071,7 +1071,7 @@
                                 54,
                                 79,
                                 220,
-                                91
+                                90
                             ],
                             "spans": [
                                 {
@@ -1079,7 +1079,7 @@
                                         54,
                                         79,
                                         220,
-                                        91
+                                        90
                                     ],
                                     "type": "text",
                                     "content": "文章编号：1000-3673（2021）01-0001-09"
@@ -1094,7 +1094,7 @@
                         235,
                         79,
                         321,
-                        91
+                        90
                     ],
                     "type": "header",
                     "angle": 0,
@@ -1104,7 +1104,7 @@
                                 235,
                                 79,
                                 321,
-                                91
+                                90
                             ],
                             "spans": [
                                 {
@@ -1112,7 +1112,7 @@
                                         235,
                                         79,
                                         321,
-                                        91
+                                        90
                                     ],
                                     "type": "text",
                                     "content": "中图分类号：TM614"
@@ -1854,7 +1854,7 @@
                     "bbox": [
                         174,
                         50,
-                        419,
+                        420,
                         61
                     ],
                     "type": "header",
@@ -1864,7 +1864,7 @@
                             "bbox": [
                                 174,
                                 50,
-                                419,
+                                420,
                                 61
                             ],
                             "spans": [
@@ -1872,7 +1872,7 @@
                                     "bbox": [
                                         174,
                                         50,
-                                        419,
+                                        420,
                                         61
                                     ],
                                     "type": "text",
@@ -1885,9 +1885,9 @@
                 },
                 {
                     "bbox": [
-                        483,
+                        482,
                         51,
-                        532,
+                        533,
                         60
                     ],
                     "type": "header",
@@ -1895,17 +1895,17 @@
                     "lines": [
                         {
                             "bbox": [
-                                483,
+                                482,
                                 51,
-                                532,
+                                533,
                                 60
                             ],
                             "spans": [
                                 {
                                     "bbox": [
-                                        483,
+                                        482,
                                         51,
-                                        532,
+                                        533,
                                         60
                                     ],
                                     "type": "text",
@@ -1994,7 +1994,7 @@
                 {
                     "bbox": [
                         99,
-                        87,
+                        88,
                         286,
                         112
                     ],
@@ -2004,7 +2004,7 @@
                         {
                             "bbox": [
                                 99,
-                                87,
+                                88,
                                 286,
                                 112
                             ],
@@ -2012,13 +2012,13 @@
                                 {
                                     "bbox": [
                                         99,
-                                        87,
+                                        88,
                                         286,
                                         112
                                     ],
                                     "type": "interline_equation",
                                     "content": "\\Delta P _ {\\mathrm {O L 0}} - \\Delta P _ {\\mathrm {m}} + T _ {\\mathrm {S}} \\frac {\\mathrm {d} \\Delta f}{\\mathrm {d} t} + k _ {\\mathrm {D}} \\Delta f = 0 \\tag {1}",
-                                    "image_path": "e38f16424f42c1f86a285c63b3a7ee5c01f10fbfe8da2037d16165c9665ccb13.jpg"
+                                    "image_path": "948322773b27d82cf17edb27e769ddf748b4fb61e3857d67d446c2a0a06f9610.jpg"
                                 }
                             ]
                         }
@@ -2447,7 +2447,7 @@
                 {
                     "bbox": [
                         116,
-                        434,
+                        435,
                         286,
                         462
                     ],
@@ -2457,7 +2457,7 @@
                         {
                             "bbox": [
                                 116,
-                                434,
+                                435,
                                 286,
                                 462
                             ],
@@ -2465,13 +2465,13 @@
                                 {
                                     "bbox": [
                                         116,
-                                        434,
+                                        435,
                                         286,
                                         462
                                     ],
                                     "type": "interline_equation",
                                     "content": "\\sum_ {i = 1} ^ {n} \\Delta P _ {\\mathrm {m} i} + k _ {\\mathrm {D}} \\Delta f _ {\\mathrm {m}} \\geq \\Delta P _ {\\mathrm {O L} 0} \\tag {2}",
-                                    "image_path": "ea30a17888afbdc6c6aa42736ba7acdff08c0d10105eaf3d1cab5f9dcdffa7be.jpg"
+                                    "image_path": "74134ac873c9d9f52106864635494d89f5b3d8b62aa925f8c1b5c5023ea96eb0.jpg"
                                 }
                             ]
                         }
@@ -3816,7 +3816,7 @@
                     "bbox": [
                         53,
                         71,
-                        287,
+                        288,
                         133
                     ],
                     "type": "text",
@@ -3826,7 +3826,7 @@
                             "bbox": [
                                 53,
                                 71,
-                                287,
+                                288,
                                 133
                             ],
                             "spans": [
@@ -3834,7 +3834,7 @@
                                     "bbox": [
                                         53,
                                         71,
-                                        287,
+                                        288,
                                         133
                                     ],
                                     "type": "text",
@@ -4856,7 +4856,7 @@
                         414,
                         195
                     ],
-                    "type": "text",
+                    "type": "title",
                     "angle": 0,
                     "lines": [
                         {
@@ -5069,7 +5069,7 @@
                         414,
                         290
                     ],
-                    "type": "text",
+                    "type": "title",
                     "angle": 0,
                     "lines": [
                         {
@@ -5362,7 +5362,7 @@
                         434,
                         417
                     ],
-                    "type": "text",
+                    "type": "title",
                     "angle": 0,
                     "lines": [
                         {
@@ -5675,7 +5675,7 @@
                         413,
                         550
                     ],
-                    "type": "text",
+                    "type": "title",
                     "angle": 0,
                     "lines": [
                         {
@@ -5888,7 +5888,7 @@
                         413,
                         631
                     ],
-                    "type": "text",
+                    "type": "title",
                     "angle": 0,
                     "lines": [
                         {
@@ -6048,7 +6048,7 @@
                         402,
                         714
                     ],
-                    "type": "text",
+                    "type": "title",
                     "angle": 0,
                     "lines": [
                         {
@@ -6233,7 +6233,7 @@
                         17,
                         810,
                         497,
-                        824
+                        823
                     ],
                     "type": "footer",
                     "angle": 0,
@@ -6243,7 +6243,7 @@
                                 17,
                                 810,
                                 497,
-                                824
+                                823
                             ],
                             "spans": [
                                 {
@@ -6251,7 +6251,7 @@
                                         17,
                                         810,
                                         497,
-                                        824
+                                        823
                                     ],
                                     "type": "text",
                                     "content": "(C)1994-2022 China Academic Journal Electronic Publishing House. All rights reserved. http://www.cnki.net"
@@ -6633,7 +6633,7 @@
                                         276
                                     ],
                                     "type": "inline_equation",
-                                    "content": "t_{\\mathrm{mt}}"
+                                    "content": "t_{\\mathrm{mr}}"
                                 },
                                 {
                                     "bbox": [
@@ -7701,7 +7701,7 @@
                                         406
                                     ],
                                     "type": "text",
-                                    "content": "式中: "
+                                    "content": "式中："
                                 },
                                 {
                                     "bbox": [
@@ -7711,7 +7711,7 @@
                                         406
                                     ],
                                     "type": "inline_equation",
-                                    "content": "P_{\\mathrm{w}, t}^{\\prime}"
+                                    "content": "P_{\\mathrm{w},t}^{\\prime}"
                                 },
                                 {
                                     "bbox": [
@@ -7741,7 +7741,7 @@
                                         406
                                     ],
                                     "type": "text",
-                                    "content": " 时刻的风电功率超短期预测值; "
+                                    "content": " 时刻的风电功率超短期预测值；"
                                 },
                                 {
                                     "bbox": [
@@ -9139,7 +9139,7 @@
                         305,
                         424,
                         539,
-                        548
+                        547
                     ],
                     "type": "text",
                     "angle": 0,
@@ -9149,7 +9149,7 @@
                                 305,
                                 424,
                                 539,
-                                548
+                                547
                             ],
                             "spans": [
                                 {
@@ -9157,7 +9157,7 @@
                                         305,
                                         424,
                                         539,
-                                        548
+                                        547
                                     ],
                                     "type": "text",
                                     "content": "选取系统标幺值为100MW。分别考虑以下两种功率扰动情况：任意时刻直流输电系统发生双极闭锁，即受到800MW的功率扰动，系统的频率最小值不低于48.5Hz；任意时刻系统中最大出力机组跳闸，系统的频率最小值不低于48.5Hz。本文将对未添加与分别添加了两种不同故障场景的频率约束的机组组合模型分别进行求解，并对比其在相应功率扰动下的频率最大偏差值。"
@@ -9698,7 +9698,7 @@
                     "bbox": [
                         54,
                         136,
-                        174,
+                        173,
                         148
                     ],
                     "type": "title",
@@ -9708,7 +9708,7 @@
                             "bbox": [
                                 54,
                                 136,
-                                174,
+                                173,
                                 148
                             ],
                             "spans": [
@@ -9716,7 +9716,7 @@
                                     "bbox": [
                                         54,
                                         136,
-                                        174,
+                                        173,
                                         148
                                     ],
                                     "type": "text",
@@ -9831,7 +9831,7 @@
                         53,
                         406,
                         288,
-                        483
+                        482
                     ],
                     "type": "text",
                     "angle": 0,
@@ -9841,7 +9841,7 @@
                                 53,
                                 406,
                                 288,
-                                483
+                                482
                             ],
                             "spans": [
                                 {
@@ -9849,7 +9849,7 @@
                                         53,
                                         406,
                                         288,
-                                        483
+                                        482
                                     ],
                                     "type": "text",
                                     "content": "未添加频率约束的机组组合模型求解所得的开机以及运行总成本为 "
@@ -9859,7 +9859,7 @@
                                         53,
                                         406,
                                         288,
-                                        483
+                                        482
                                     ],
                                     "type": "inline_equation",
                                     "content": "5.8552 \\times 10^{5}"
@@ -9869,7 +9869,7 @@
                                         53,
                                         406,
                                         288,
-                                        483
+                                        482
                                     ],
                                     "type": "text",
                                     "content": "；考虑了直流闭锁故障的频率约束的机组组合开机及运行总成本为 "
@@ -9879,7 +9879,7 @@
                                         53,
                                         406,
                                         288,
-                                        483
+                                        482
                                     ],
                                     "type": "inline_equation",
                                     "content": "7.2433 \\times 10^{5}"
@@ -9889,7 +9889,7 @@
                                         53,
                                         406,
                                         288,
-                                        483
+                                        482
                                     ],
                                     "type": "text",
                                     "content": "，考虑了最大出力机组跳闸的频率约束的机组组合开机及运行总成本为 "
@@ -9899,7 +9899,7 @@
                                         53,
                                         406,
                                         288,
-                                        483
+                                        482
                                     ],
                                     "type": "inline_equation",
                                     "content": "6.0789 \\times"
@@ -10139,7 +10139,7 @@
                         307,
                         108,
                         538,
-                        220
+                        219
                     ],
                     "blocks": [
                         {
@@ -10180,7 +10180,7 @@
                                 307,
                                 108,
                                 538,
-                                220
+                                219
                             ],
                             "lines": [
                                 {
@@ -10188,7 +10188,7 @@
                                         307,
                                         108,
                                         538,
-                                        220
+                                        219
                                     ],
                                     "spans": [
                                         {
@@ -10196,11 +10196,11 @@
                                                 307,
                                                 108,
                                                 538,
-                                                220
+                                                219
                                             ],
                                             "type": "table",
                                             "html": "<table><tr><td>时段/h</td><td>频率/Hz</td><td>时段/h</td><td>频率/Hz</td><td>时段/h</td><td>频率/Hz</td></tr><tr><td>1</td><td>46.6429</td><td>9</td><td>47.5741</td><td>17</td><td>47.2067</td></tr><tr><td>2</td><td>46.1806</td><td>10</td><td>47.7243</td><td>18</td><td>47.5501</td></tr><tr><td>3</td><td>47.7672</td><td>11</td><td>47.8418</td><td>19</td><td>47.3206</td></tr><tr><td>4</td><td>47.9522</td><td>12</td><td>47.5540</td><td>20</td><td>47.0313</td></tr><tr><td>5</td><td>47.9815</td><td>13</td><td>48.1771</td><td>21</td><td>47.4516</td></tr><tr><td>6</td><td>48.7778</td><td>14</td><td>47.3301</td><td>22</td><td>47.6087</td></tr><tr><td>7</td><td>47.1668</td><td>15</td><td>47.5024</td><td>23</td><td>49.4613</td></tr><tr><td>8</td><td>47.2508</td><td>16</td><td>47.1668</td><td>24</td><td>49.5295</td></tr></table>",
-                                            "image_path": "a57aa772989b8e05e67955d8aecfe94d4b908451e0af1362e224be5f00ab6f62.jpg"
+                                            "image_path": "2c87c083190bace48c463da51c83c34666e1abaa2c715fa013cf51ee1b1e8c46.jpg"
                                         }
                                     ]
                                 }
@@ -10722,7 +10722,27 @@
                                         213
                                     ],
                                     "type": "text",
-                                    "content": "以直流闭锁系统为例，逐步减小系数δ的取值，并对每个不同的δ取值重新优化出机组组合安排，直到出现受到扰动后频率刚好降至48.5Hz的时刻，并考察δ变化时该时刻的机组组合结果，便可获得保守度的大小及其对结果的影响。"
+                                    "content": "以直流闭锁系统为例，逐步减小系数δ的取值，并对每个不同的δ取值重新优化出机组组合安排，直到出现受到扰动后频率刚好降至 "
+                                },
+                                {
+                                    "bbox": [
+                                        53,
+                                        135,
+                                        286,
+                                        213
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "48.5\\mathrm{Hz}"
+                                },
+                                {
+                                    "bbox": [
+                                        53,
+                                        135,
+                                        286,
+                                        213
+                                    ],
+                                    "type": "text",
+                                    "content": " 的时刻，并考察δ变化时该时刻的机组组合结果，便可获得保守度的大小及其对结果的影响。"
                                 }
                             ]
                         }
@@ -10952,8 +10972,8 @@
                     "bbox": [
                         54,
                         526,
-                        100,
-                        540
+                        99,
+                        539
                     ],
                     "type": "title",
                     "angle": 0,
@@ -10962,16 +10982,16 @@
                             "bbox": [
                                 54,
                                 526,
-                                100,
-                                540
+                                99,
+                                539
                             ],
                             "spans": [
                                 {
                                     "bbox": [
                                         54,
                                         526,
-                                        100,
-                                        540
+                                        99,
+                                        539
                                     ],
                                     "type": "text",
                                     "content": "4 结论"
@@ -11526,7 +11546,7 @@
                                 307,
                                 534,
                                 539,
-                                558
+                                557
                             ],
                             "type": "ref_text",
                             "angle": 0,
@@ -11536,7 +11556,7 @@
                                         307,
                                         534,
                                         539,
-                                        558
+                                        557
                                     ],
                                     "spans": [
                                         {
@@ -11544,7 +11564,7 @@
                                                 307,
                                                 534,
                                                 539,
-                                                558
+                                                557
                                             ],
                                             "type": "text",
                                             "content": "[5] 张利，赵建国，韩学山. 考虑网络安全约束的机组组合新算法[J]. 电网技术，2006，30(21)：50-55."
@@ -11557,7 +11577,7 @@
                         {
                             "bbox": [
                                 324,
-                                560,
+                                559,
                                 539,
                                 593
                             ],
@@ -11567,7 +11587,7 @@
                                 {
                                     "bbox": [
                                         324,
-                                        560,
+                                        559,
                                         539,
                                         593
                                     ],
@@ -11575,7 +11595,7 @@
                                         {
                                             "bbox": [
                                                 324,
-                                                560,
+                                                559,
                                                 539,
                                                 593
                                             ],
@@ -11623,9 +11643,9 @@
                         {
                             "bbox": [
                                 324,
-                                619,
+                                618,
                                 539,
-                                653
+                                654
                             ],
                             "type": "ref_text",
                             "angle": 0,
@@ -11633,20 +11653,20 @@
                                 {
                                     "bbox": [
                                         324,
-                                        619,
+                                        618,
                                         539,
-                                        653
+                                        654
                                     ],
                                     "spans": [
                                         {
                                             "bbox": [
                                                 324,
-                                                619,
+                                                618,
                                                 539,
-                                                653
+                                                654
                                             ],
                                             "type": "text",
-                                            "content": "Yang Pengpeng, Han Xueshan, Zha Hao. An effective algorithm considering static safety constrained unit combination[J]. Automation of Electric Power Systems, 2009, 33(8): 39-43 (in Chinese)."
+                                            "content": "Yang Pengpeng, Han Xueshan, Zha Hao. An effective algorithm considering static safety constrained unit combination[J]. Automation of Electric Power Systems, 2009, 33(8): 39-43(in Chinese)."
                                         }
                                     ]
                                 }
@@ -11657,7 +11677,7 @@
                             "bbox": [
                                 307,
                                 655,
-                                538,
+                                539,
                                 677
                             ],
                             "type": "ref_text",
@@ -11667,7 +11687,7 @@
                                     "bbox": [
                                         307,
                                         655,
-                                        538,
+                                        539,
                                         677
                                     ],
                                     "spans": [
@@ -11675,7 +11695,7 @@
                                             "bbox": [
                                                 307,
                                                 655,
-                                                538,
+                                                539,
                                                 677
                                             ],
                                             "type": "text",
@@ -11745,7 +11765,7 @@
                                                 737
                                             ],
                                             "type": "text",
-                                            "content": "[8] 张铭泽. 考虑动态安全约束的电力系统机组组合研究[D]. 杭州：浙江大学，2010."
+                                            "content": "[8] 张铭泽．考虑动态安全约束的电力系统机组组合研究[D]．杭州：浙江大学，2010."
                                         }
                                     ]
                                 }
@@ -12001,7 +12021,7 @@
                                                 130
                                             ],
                                             "type": "text",
-                                            "content": "力系统机组组合研究[J].电力科学与技术学报，2014，29(4)：18-24. Lin Tao，Ye Jing，Chen Rusi，etal. Research on unit combination of large-scale wind power system with steady frequency constraints [J].Journal of Electric Power Science and Technology，2014，29(4)：18-24(in Chinese)."
+                                            "content": "力系统机组组合研究[J].电力科学与技术学报，2014，29(4)：18-24. Lin Tao，Ye Jing，Chen Rusi，et al. Research on unit combination of large-scale wind power system with steady frequency constraints [J]. Journal of Electric Power Science and Technology，2014，29(4)：18-24(in Chinese)."
                                         }
                                     ]
                                 }
@@ -12444,7 +12464,7 @@
                                                 190
                                             ],
                                             "type": "text",
-                                            "content": "[22] 叶婧，林涛，张磊，等．考虑动态频率约束的含高渗透率光伏电源的孤立电网机组组合[J].电工技术学报，2017，32(13)：194-202. Ye Jing，Lin Tao，Zhang Lei，etal. Isolation grid unit combination with high permeability photovoltaic power source considering dynamic frequency constraints[J].Transactions of China Electrotechnical Society，2017，32(13)：194-202(in Chinese)."
+                                            "content": "[22] 叶婧，林涛，张磊，等．考虑动态频率约束的含高渗透率光伏电源的孤立电网机组组合[J].电工技术学报，2017，32(13)：194-202. Ye Jing，Lin Tao，Zhang Lei，et al. Isolation grid unit combination with high permeability photovoltaic power source considering dynamic frequency constraints[J]. Transactions of China Electrotechnical Society，2017，32(13)：194-202(in Chinese)."
                                         }
                                     ]
                                 }
@@ -12587,7 +12607,7 @@
                             "bbox": [
                                 307,
                                 371,
-                                539,
+                                538,
                                 393
                             ],
                             "type": "ref_text",
@@ -12597,7 +12617,7 @@
                                     "bbox": [
                                         307,
                                         371,
-                                        539,
+                                        538,
                                         393
                                     ],
                                     "spans": [
@@ -12605,7 +12625,7 @@
                                             "bbox": [
                                                 307,
                                                 371,
-                                                539,
+                                                538,
                                                 393
                                             ],
                                             "type": "text",
@@ -12831,7 +12851,7 @@
                 },
                 {
                     "bbox": [
-                        386,
+                        387,
                         551,
                         464,
                         561
@@ -12841,7 +12861,7 @@
                     "lines": [
                         {
                             "bbox": [
-                                386,
+                                387,
                                 551,
                                 464,
                                 561
@@ -12849,7 +12869,7 @@
                             "spans": [
                                 {
                                     "bbox": [
-                                        386,
+                                        387,
                                         551,
                                         464,
                                         561
@@ -12897,7 +12917,7 @@
                 },
                 {
                     "bbox": [
-                        371,
+                        372,
                         576,
                         537,
                         609
@@ -12907,7 +12927,7 @@
                     "lines": [
                         {
                             "bbox": [
-                                371,
+                                372,
                                 576,
                                 537,
                                 609
@@ -12915,7 +12935,7 @@
                             "spans": [
                                 {
                                     "bbox": [
-                                        371,
+                                        372,
                                         576,
                                         537,
                                         609
@@ -12930,7 +12950,7 @@
                 },
                 {
                     "bbox": [
-                        371,
+                        372,
                         612,
                         537,
                         645
@@ -12940,7 +12960,7 @@
                     "lines": [
                         {
                             "bbox": [
-                                371,
+                                372,
                                 612,
                                 537,
                                 645
@@ -12948,7 +12968,7 @@
                             "spans": [
                                 {
                                     "bbox": [
-                                        371,
+                                        372,
                                         612,
                                         537,
                                         645
@@ -13612,7 +13632,7 @@
                                         417
                                     ],
                                     "type": "inline_equation",
-                                    "content": "\\delta = \\left(\\frac{\\Delta f_{\\mathrm{max}}}{t_{\\mathrm{m}}}\\right) / \\frac{\\Delta P_{\\mathrm{OL}}}{T_{\\mathrm{S}}}"
+                                    "content": "\\delta = (\\frac{\\Delta f_{\\mathrm{max}}}{t_{\\mathrm{m}}}"
                                 },
                                 {
                                     "bbox": [
@@ -13622,17 +13642,7 @@
                                         417
                                     ],
                                     "type": "inline_equation",
-                                    "content": "g(T_{\\mathrm{S}},T_{\\mathrm{G}},k_{\\mathrm{D}},k_{\\mathrm{G}})"
-                                },
-                                {
-                                    "bbox": [
-                                        53,
-                                        345,
-                                        286,
-                                        417
-                                    ],
-                                    "type": "text",
-                                    "content": " 。"
+                                    "content": "\\frac{\\Delta P_{\\mathrm{OL}}}{T_{\\mathrm{S}}}) = g(T_{\\mathrm{S}},T_{\\mathrm{G}},k_{\\mathrm{D}},k_{\\mathrm{G}})"
                                 }
                             ]
                         }
@@ -14931,7 +14941,7 @@
                                                 755
                                             ],
                                             "type": "text",
-                                            "content": "图A3 4种情况下真实频率最小值与频率限值的比较附录B"
+                                            "content": "图A34种情况下真实频率最小值与频率限值的比较附录B"
                                         }
                                     ]
                                 }
@@ -16068,9 +16078,9 @@
                 {
                     "type": "table",
                     "bbox": [
-                        55,
+                        54,
                         81,
-                        539,
+                        538,
                         145
                     ],
                     "blocks": [
@@ -16109,30 +16119,30 @@
                         },
                         {
                             "bbox": [
-                                55,
+                                54,
                                 81,
-                                539,
+                                538,
                                 145
                             ],
                             "lines": [
                                 {
                                     "bbox": [
-                                        55,
+                                        54,
                                         81,
-                                        539,
+                                        538,
                                         145
                                     ],
                                     "spans": [
                                         {
                                             "bbox": [
-                                                55,
+                                                54,
                                                 81,
-                                                539,
+                                                538,
                                                 145
                                             ],
                                             "type": "table",
                                             "html": "<table><tr><td>时段/h</td><td>弃风/MW</td><td>时段/h</td><td>弃风/MW</td><td>时段/h</td><td>弃风/MW</td><td>时段/h</td><td>弃风/MW</td><td>时段/h</td><td>弃风/MW</td><td>时段/h</td><td>弃风/MW</td></tr><tr><td>1</td><td>130</td><td>5</td><td>100</td><td>9</td><td>0</td><td>13</td><td>0</td><td>17</td><td>0</td><td>21</td><td>0</td></tr><tr><td>2</td><td>50</td><td>6</td><td>180</td><td>10</td><td>0</td><td>14</td><td>0</td><td>18</td><td>0</td><td>22</td><td>0</td></tr><tr><td>3</td><td>0</td><td>7</td><td>0</td><td>11</td><td>0</td><td>15</td><td>0</td><td>19</td><td>0</td><td>23</td><td>0</td></tr><tr><td>4</td><td>30</td><td>8</td><td>0</td><td>12</td><td>0</td><td>16</td><td>0</td><td>20</td><td>0</td><td>24</td><td>0</td></tr></table>",
-                                            "image_path": "22b4b98d31bd24b121ba267a97ed68d3b2b5391758ab3dfcecd9771c47aaf336.jpg"
+                                            "image_path": "9e5a62df4a6f515268dd89109f9326a9f03b0a656137d46a27ac2dc22444ea28.jpg"
                                         }
                                     ]
                                 }
@@ -16147,10 +16157,10 @@
                 {
                     "type": "table",
                     "bbox": [
-                        55,
-                        162,
+                        54,
+                        161,
                         538,
-                        272
+                        274
                     ],
                     "blocks": [
                         {
@@ -16188,30 +16198,30 @@
                         },
                         {
                             "bbox": [
-                                55,
-                                162,
+                                54,
+                                161,
                                 538,
-                                272
+                                274
                             ],
                             "lines": [
                                 {
                                     "bbox": [
-                                        55,
-                                        162,
+                                        54,
+                                        161,
                                         538,
-                                        272
+                                        274
                                     ],
                                     "spans": [
                                         {
                                             "bbox": [
-                                                55,
-                                                162,
+                                                54,
+                                                161,
                                                 538,
-                                                272
+                                                274
                                             ],
                                             "type": "table",
                                             "html": "<table><tr><td>时刻</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>机组1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组2</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></table>",
-                                            "image_path": "c6b1888d5dc567160250f3b03e189df9b82cf185b224d392ba49713056773d42.jpg"
+                                            "image_path": "7a85dd2a0a7cd82c35c132920907c3f416ece05d93d3135d9c2f8b246f5bfe03.jpg"
                                         }
                                     ]
                                 }
@@ -16226,10 +16236,10 @@
                 {
                     "type": "table",
                     "bbox": [
-                        55,
+                        54,
                         290,
                         538,
-                        400
+                        401
                     ],
                     "blocks": [
                         {
@@ -16267,30 +16277,30 @@
                         },
                         {
                             "bbox": [
-                                55,
+                                54,
                                 290,
                                 538,
-                                400
+                                401
                             ],
                             "lines": [
                                 {
                                     "bbox": [
-                                        55,
+                                        54,
                                         290,
                                         538,
-                                        400
+                                        401
                                     ],
                                     "spans": [
                                         {
                                             "bbox": [
-                                                55,
+                                                54,
                                                 290,
                                                 538,
-                                                400
+                                                401
                                             ],
                                             "type": "table",
                                             "html": "<table><tr><td>时刻</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>机组1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组3</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组6</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组7</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组8</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr></table>",
-                                            "image_path": "a480257f316d872463178759899ef59d1256d9e54aea52badd5b834b849bdf87.jpg"
+                                            "image_path": "2c84e9208e8ad93d6bfb4192c25f094d148371ce434f272b688d2b2a840b05f5.jpg"
                                         }
                                     ]
                                 }
@@ -16305,7 +16315,7 @@
                 {
                     "type": "table",
                     "bbox": [
-                        55,
+                        54,
                         417,
                         538,
                         528
@@ -16346,7 +16356,7 @@
                         },
                         {
                             "bbox": [
-                                55,
+                                54,
                                 417,
                                 538,
                                 528
@@ -16354,7 +16364,7 @@
                             "lines": [
                                 {
                                     "bbox": [
-                                        55,
+                                        54,
                                         417,
                                         538,
                                         528
@@ -16362,14 +16372,14 @@
                                     "spans": [
                                         {
                                             "bbox": [
-                                                55,
+                                                54,
                                                 417,
                                                 538,
                                                 528
                                             ],
                                             "type": "table",
                                             "html": "<table><tr><td>时刻</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>机组1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组3</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组5</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>机组8</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr></table>",
-                                            "image_path": "5583bcbd9d02fbe917d47fe0e50747101822fa280905bb3debd6d813499ed310.jpg"
+                                            "image_path": "f40c2e0d028ee5213b288b9c9de1195ada8cc40daeb1e0097d23defa21b5e635.jpg"
                                         }
                                     ]
                                 }
@@ -16384,7 +16394,7 @@
                 {
                     "type": "table",
                     "bbox": [
-                        55,
+                        54,
                         544,
                         539,
                         766
@@ -16425,7 +16435,7 @@
                         },
                         {
                             "bbox": [
-                                55,
+                                54,
                                 544,
                                 539,
                                 766
@@ -16433,7 +16443,7 @@
                             "lines": [
                                 {
                                     "bbox": [
-                                        55,
+                                        54,
                                         544,
                                         539,
                                         766
@@ -16441,14 +16451,14 @@
                                     "spans": [
                                         {
                                             "bbox": [
-                                                55,
+                                                54,
                                                 544,
                                                 539,
                                                 766
                                             ],
                                             "type": "table",
                                             "html": "<table><tr><td>时刻</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr><td>机组1</td><td>587.5</td><td>667.5</td><td>587.5</td><td>562.5</td><td>562.5</td><td>505</td><td>617.5</td><td>680</td><td>680</td><td>680</td><td>680</td><td>680</td></tr><tr><td>机组2</td><td>0</td><td>0</td><td>150</td><td>150</td><td>150</td><td>150</td><td>150</td><td>170</td><td>170</td><td>150</td><td>150</td><td>150</td></tr><tr><td>机组3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组4</td><td>532.5</td><td>532.5</td><td>532.5</td><td>507.5</td><td>437.5</td><td>415</td><td>532.5</td><td>650</td><td>650</td><td>590</td><td>570</td><td>540</td></tr><tr><td>机组5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>时刻</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>机组1</td><td>680</td><td>562.5</td><td>680</td><td>680</td><td>680</td><td>680</td><td>680</td><td>667.5</td><td>680</td><td>680</td><td>667.5</td><td>627.5</td></tr><tr><td>机组2</td><td>150</td><td>150</td><td>260</td><td>150</td><td>220</td><td>160</td><td>150</td><td>150</td><td>150</td><td>240</td><td>150</td><td>150</td></tr><tr><td>机组3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组4</td><td>610</td><td>487.5</td><td>650</td><td>600</td><td>650</td><td>650</td><td>630</td><td>532.5</td><td>570</td><td>650</td><td>532.5</td><td>532.5</td></tr><tr><td>机组5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>机组8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></table>",
-                                            "image_path": "00ac6e0445468fc4e33cc07656556f1a8d5fbe3dbc42c36280eba3b0ef7d7add.jpg"
+                                            "image_path": "1fb5c87492cf74f1ad8fac8615c0514004d9a08ce222e3e35ea93870f4257d19.jpg"
                                         }
                                     ]
                                 }
@@ -16506,7 +16516,7 @@
             "para_blocks": [
                 {
                     "bbox": [
-                        521,
+                        520,
                         72,
                         539,
                         80
@@ -16516,7 +16526,7 @@
                     "lines": [
                         {
                             "bbox": [
-                                521,
+                                520,
                                 72,
                                 539,
                                 80
@@ -16524,7 +16534,7 @@
                             "spans": [
                                 {
                                     "bbox": [
-                                        521,
+                                        520,
                                         72,
                                         539,
                                         80
@@ -16618,7 +16628,7 @@
                 },
                 {
                     "bbox": [
-                        521,
+                        520,
                         310,
                         538,
                         318
@@ -16628,7 +16638,7 @@
                     "lines": [
                         {
                             "bbox": [
-                                521,
+                                520,
                                 310,
                                 538,
                                 318
@@ -16636,7 +16646,7 @@
                             "spans": [
                                 {
                                     "bbox": [
-                                        521,
+                                        520,
                                         310,
                                         538,
                                         318
@@ -16662,7 +16672,7 @@
                             "bbox": [
                                 171,
                                 309,
-                                422,
+                                423,
                                 319
                             ],
                             "lines": [
@@ -16670,7 +16680,7 @@
                                     "bbox": [
                                         171,
                                         309,
-                                        422,
+                                        423,
                                         319
                                     ],
                                     "spans": [
@@ -16678,7 +16688,7 @@
                                             "bbox": [
                                                 171,
                                                 309,
-                                                422,
+                                                423,
                                                 319
                                             ],
                                             "type": "text",
@@ -16731,7 +16741,7 @@
                 {
                     "type": "table",
                     "bbox": [
-                        55,
+                        54,
                         557,
                         538,
                         632
@@ -16772,7 +16782,7 @@
                         },
                         {
                             "bbox": [
-                                55,
+                                54,
                                 557,
                                 538,
                                 632
@@ -16780,7 +16790,7 @@
                             "lines": [
                                 {
                                     "bbox": [
-                                        55,
+                                        54,
                                         557,
                                         538,
                                         632
@@ -16788,14 +16798,14 @@
                                     "spans": [
                                         {
                                             "bbox": [
-                                                55,
+                                                54,
                                                 557,
                                                 538,
                                                 632
                                             ],
                                             "type": "table",
-                                            "html": "<table><tr><td>开机状态</td><td>机组1</td><td>机组2</td><td>机组3</td><td>机组4</td><td>机组5</td><td>机组6</td><td>机组7</td><td>机组8</td><td>运行成本/$</td><td>成本增加比例/%</td><td>最低频率/Hz</td></tr><tr><td>δ=0.637</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.612</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.587</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.562</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>25143</td><td>5.16</td><td>48.6730</td></tr><tr><td>δ=0.540</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>23909</td><td>0.00</td><td>48.5242</td></tr></table>",
-                                            "image_path": "d1a347927608444d63c045ddb62c90702319d03c52152cd126e1fe3e36689328.jpg"
+                                            "html": "<table><tr><td>开机状态</td><td>机组1</td><td>机组2</td><td>机组3</td><td>机组4</td><td>机组5</td><td>机组6</td><td>机组7</td><td>机组8</td><td>运行成本/$</td><td>成本增加比例/%</td><td>最低频率/Hz</td></tr><tr><td>δ=0.637</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27 040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.612</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27 040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.587</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>27 040</td><td>13.10</td><td>48.8000</td></tr><tr><td>δ=0.562</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>25 143</td><td>5.16</td><td>48.6730</td></tr><tr><td>δ=0.540</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>23 909</td><td>0.00</td><td>48.5242</td></tr></table>",
+                                            "image_path": "6718667c68d1a2f8cc1e35cd28d00c8af31d3d60b8082b65d9e5c26036aeffbb.jpg"
                                         }
                                     ]
                                 }
@@ -16813,7 +16823,7 @@
                     "bbox": [
                         17,
                         810,
-                        496,
+                        497,
                         823
                     ],
                     "type": "footer",
@@ -16823,7 +16833,7 @@
                             "bbox": [
                                 17,
                                 810,
-                                496,
+                                497,
                                 823
                             ],
                             "spans": [
@@ -16831,7 +16841,7 @@
                                     "bbox": [
                                         17,
                                         810,
-                                        496,
+                                        497,
                                         823
                                     ],
                                     "type": "text",

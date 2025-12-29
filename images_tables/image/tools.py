@@ -72,7 +72,7 @@ def analyze_image_content(image_path, api_key, base_url, model_name):
     classify_prompt = (
         "你是一个图像分类助手。请仔细观察这张图片，将其归类为以下三类之一：\n"
         "1. pictogram (统计图表，如柱状图、折线图、饼图等)\n"
-        "2. flowchart (流程图、架构图、思维导图等)\n"
+        "2. flowchart (流程图等)\n"
         "3. other (自然图像、人物、风景或其他)\n\n"
         "请仅输出分类结果的英文单词（pictogram, flowchart, 或 other），不要输出任何标点符号或其他解释性文字。"
     )

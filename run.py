@@ -8,6 +8,7 @@ from images_tables.image.tools import analyze_image_content
 from images_tables.table.tools import table_extract
 from format.formatTransform import format
 from layout.outputjs import merge_blocks
+from layout.output_pipeline import merge_blocks_pipeline
 from titles.get_title import *
 from pathlib import Path
 import subprocess
@@ -130,7 +131,10 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(True),
         data = json.load(f)
 
     # 处理数据
-    processed_data = merge_blocks(data)
+    if vlm_enable:
+        processed_data = merge_blocks(data)
+    else:
+        processed_data = merge_blocks_pipeline(data)
 
 
     output_data = {"output": processed_data["pdf_info"]}
@@ -272,7 +276,8 @@ async def preprocess(file: UploadFile = File(...),img_enable: bool = Form(True),
                         # 这里可以打印日志，告诉你到底哪一层断了
                                 print(f"[WARN] page={page_index} block={block_index} 取不到 html，已跳过")
                                 continue
-                            table_html=sub_block["lines"][0]["spans"][0]["html"]
+                            #table_html=sub_block["lines"][0]["spans"][0]["html"]
+                            print(f"收集到表格 HTML：{table_html}")  # 打印前30个字符预览
                             table_jobs.append((page_index,block_index,sub_block_index,table_html))
                             #result=table_extract(table_html,cfg['LLM']['table']['API_KEY'],cfg['LLM']['table']['BASE_URL'],cfg['LLM']['table']['MODEL'] )
                             #print(result)
