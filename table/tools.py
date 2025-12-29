@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 from openai import OpenAI
 import json
@@ -16,6 +17,8 @@ def table_extract(table_html: str, api_key: str, base_url: str, model_name: str)
                 json_str = json_str.replace("'''", "")
             if "\n" in json_str:
                 json_str=json_str.replace("\n","")
+            print("--------------------------------")
+            print(json_str)
             return json.loads(json_str)
         except json.JSONDecodeError as e:
             print(f"JSON解析错误: {e}")
@@ -66,7 +69,10 @@ def table_extract(table_html: str, api_key: str, base_url: str, model_name: str)
 以上HTML表格内容转化为JSON格式。最终输出的JSON格式如下：
 [{"序号":"1","学生信息":{"姓名":"张三","年龄":"23","家庭地址":"北京"}},{"序号":"2","学生信息":{"姓名":"李四","年龄":"12","家庭地址":"上海"}}]
 
-请按照这个格式输出JSON，不需要其他多余的解释，HTML中的每一个数据都要体现出来不能遗漏,每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值,且确保输出的JSON是有效且可以解析的。
+要避免出现同一个dict里面出现相同的key，例如如下类似例子要避免出现：
+[{"时段/h":"1","频率/Hz":"45.7857","时段/h":"17","频率/Hz":"46.9250"},{"时段/h":"10","频率/Hz":"47.4718","时段/h":"18","频率/Hz":"46.9588"}]
+
+请按照这个格式输出JSON，不需要其他多余的解释，HTML中的每一个数据都要体现出来不能遗漏,每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值,相同的key不能出现在同一个dict里面且确保输出的JSON是有效且可以解析的。
 
     """
     prompt_description = "请用一段话详细的描述此表格，不要遗漏任何数据。"
@@ -86,6 +92,8 @@ def table_extract(table_html: str, api_key: str, base_url: str, model_name: str)
     else:
         print("LLM输出：", keyvalue_result)
         result["key_value"] = safe_json_parse(keyvalue_result)
+        print("==============================================")
+        print(result["key_value"])
 
     # 处理描述结果
     if isinstance(description_result, dict) and "error" in description_result:

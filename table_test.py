@@ -1,16 +1,14 @@
+# -*- coding: utf-8 -*-
 from table.tools import table_extract
 import json
+
 table_html = """
-
-<table><tr><td>故障类型</td><td>方法</td><td>fmax/Hz</td><td>t/s</td><td>计算时间/s</td></tr><tr><td rowspan="2">故障I</td><td>PSD-BPA</td><td>-0.18</td><td>3.20</td><td>58.00</td></tr><tr><td>NFSAM</td><td>-0.21</td><td>3.10</td><td>0.60</td></tr><tr><td rowspan="2">故障ⅡI</td><td>PSD-BPA</td><td>0.45</td><td>6.86</td><td>90.00</td></tr><tr><td>NFSAM</td><td>0.49</td><td>7.01</td><td>0.73</td></tr><tr><td rowspan="2">故障ⅢI</td><td>PSD-BPA</td><td>0.94</td><td>9.20</td><td>100.00</td></tr><tr><td>NFSAM</td><td>1.00</td><td>8.91</td><td>0.73</td></tr></table>
-
+<table><tr><td rowspan="5">基础案例电网装机、负荷和新能源资源参数</td><td>负荷</td><td colspan="3">负荷用电量13043亿kWh</td><td colspan="3">最大负荷22633万kW</td></tr><tr><td>系统预留备用</td><td colspan="6">400万kW</td></tr><tr><td>新能源资源小时数</td><td>风电12108h</td><td>风电22261h</td><td>风电31855h</td><td>光伏11401h</td><td>光伏21022h</td><td>光伏31042h</td></tr><tr><td>水电</td><td colspan="4">水电装机5650万kW</td><td colspan="2">水电发电量1987亿kWh</td></tr><tr><td>火电</td><td colspan="6">23000万kW</td></tr><tr><td rowspan="4">基础案例装机投资成本和运行成本</td><td>电源</td><td colspan="4">成本</td><td colspan="2">价格</td></tr><tr><td>火电</td><td colspan="4">装机投资成本燃煤单价平均煤耗发电运行成本碳捕集装置改造成本碳捕集装置运营成本</td><td colspan="2">6000元/kW1元/kg300g/kWh0.3元/kWh300万元/MW0.07元/kWh</td></tr><tr><td>新能源</td><td colspan="4">风电装机投资成本光伏装机投资成本储能装机投资成本储能容量投资成本</td><td colspan="2">6000元/kW4500元/kW500元/kW2000元/kWh</td></tr><tr><td>联络线</td><td colspan="4">联络线投资成本</td><td colspan="2">3000元/kW</td></tr><tr><td>电量占比</td><td>新能源发电量占比</td><td colspan="4">火电最小技术出力系数</td><td colspan="2">新能源预测误差</td></tr><tr><td rowspan="3">场景设置</td><td>25%</td><td colspan="4">0.4</td><td colspan="2">20%</td></tr><tr><td>40%</td><td colspan="4">0.2</td><td colspan="2">15%</td></tr><tr><td>50%</td><td colspan="4">0.2</td><td colspan="2">10%</td></tr></table>
 """
-result=table_extract(table_html=table_html, api_key="sk-734ae048099b49b5b4c7981559765228",
-                    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1", model_name="qwen3-14b")
+result = table_extract(table_html=table_html, api_key="sk-734ae048099b49b5b4c7981559765228",
+                       base_url="https://dashscope.aliyuncs.com/compatible-mode/v1", model_name="qwen3-14b")
 with open('test_result/data.json', 'w', encoding='utf-8') as json_file:
     json.dump(result, json_file, ensure_ascii=False, indent=4)
-
-
 
 # 输出结果如下：
 # {'key_value': {'河段': '全河段', '冲淤量（万m）': -2267.6, '冲淤厚度': {'平均': -0.57, '最大': 12.1, '最大淤积部位及影响': '最大淤积厚度为12.1m，位于CY02（汇合口以下14km）深槽右侧，淤后高程133m左右，在通航及港口作业区域外，对通
