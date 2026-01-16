@@ -316,7 +316,7 @@
         "bbox": [
             89,
             161,
-            485,
+            484,
             941
         ],
         "page_idx": 1
@@ -446,7 +446,7 @@
     },
     {
         "type": "image",
-        "img_path": "images/93ed33b71752a6e571f1f0a385f1bcea96142a8f26cf8b99e67ac0d4f9ce2bb6.jpg",
+        "img_path": "images/9971e07c8b5b10faed73daf0d3a242d0ebbee5478064d1e4512be6e0e7dcaafd.jpg",
         "image_caption": [
             "图1 三相LCL电压源型变换器拓扑结构"
         ],
@@ -454,7 +454,7 @@
         "bbox": [
             107,
             81,
-            463,
+            467,
             249
         ],
         "page_idx": 2
@@ -476,7 +476,7 @@
     },
     {
         "type": "image",
-        "img_path": "images/bbd4bea00b0fab2f3ed368b95adf56e2c64b8f51a43d2d2249791bbb8298fe45.jpg",
+        "img_path": "images/ecf35905fae6489ab6cc8020828a6ecef29a6c32c40b0ac6e4f1bbb9d8398f8a.jpg",
         "image_caption": [
             "(a) 锁相环结构",
             "(b) 电流控制器结构",
@@ -485,7 +485,7 @@
         ],
         "image_footnote": [],
         "bbox": [
-            166,
+            164,
             359,
             406,
             423
@@ -557,7 +557,7 @@
             189,
             850,
             482,
-            871
+            872
         ],
         "page_idx": 2
     },
@@ -621,7 +621,7 @@
     },
     {
         "type": "text",
-        "text": "式中： $U_{\\mathrm{dc}}$  为直流侧电压； $Y_{\\mathrm{SA}}$  和  $Y_{\\mathrm{AA}}$  分别为扰动电压下并网变换器的自导纳和互导纳(也被称为耦合导纳)，即利用  $Y_{\\mathrm{SA}}$  和  $Y_{\\mathrm{AA}}$  可表征单频率扰动的输入电压与双频率扰动的输出电流的特性； $\\dot{I}_{dq}$ 、 $D_{dq}$ 、 $G_{\\mathrm{d}}$  分别为  $dq$  轴下并网电流、占空比、控制系统等效延时的复矢量； $U_{1}$  为交流侧电压的有效值。",
+        "text": "式中： $U_{\\mathrm{dc}}$  为直流侧电压； $Y_{\\mathrm{SA}}$  和  $Y_{\\mathrm{AA}}$  分别为扰动电压下并网变换器的自导纳和互导纳(也被称为耦合导纳)，即利用  $Y_{\\mathrm{SA}}$  和  $Y_{\\mathrm{AA}}$  可表征单频率扰动的输入电压与双频率扰动的输出电流的特性； $\\dot{I}_{dq}$  、 $D_{dq}$  、 $G_{\\mathrm{d}}$  分别为  $dq$  轴下并网电流、占空比、控制系统等效延时的复矢量； $U_{1}$  为交流侧电压的有效值。",
         "bbox": [
             512,
             389,
@@ -632,7 +632,7 @@
     },
     {
         "type": "text",
-        "text": "图3为电压扰动下， $Y_{\\mathrm{SA}}$ 和 $Y_{\\mathrm{AA}}$ 的频域特性曲线。传统分析方法忽略了由PLL固有不平衡结构引起的SIDO特性，即只分析 $Y_{\\mathrm{SA}}$ 。由图3可知， $Y_{\\mathrm{AA}}$ 的低频特性与 $Y_{\\mathrm{SA}}$ 的低频特性近似，故并网变换系统出现低频扰动引起系统不稳定时。传统分析方法可能因忽略并网系统的SIDO特性而无法探明系统失稳的本质原因，从而使得控制策略效果欠佳甚至失效。",
+        "text": "图3为电压扰动下， $Y_{\\mathrm{SA}}$  和  $Y_{\\mathrm{AA}}$  的频域特性曲线。传统分析方法忽略了由PLL固有不平衡结构引起的SIDO特性，即只分析  $Y_{\\mathrm{SA}}$  。由图3可知， $Y_{\\mathrm{AA}}$  的低频特性与  $Y_{\\mathrm{SA}}$  的低频特性近似，故并网变换系统出现低频扰动引起系统不稳定时。传统分析方法可能因忽略并网系统的SIDO特性而无法探明系统失稳的本质原因，从而使得控制策略效果欠佳甚至失效。",
         "bbox": [
             512,
             505,
@@ -903,7 +903,7 @@
     },
     {
         "type": "equation",
-        "text": "\n$$\n\\begin{array}{l} T _ {0} (\\omega_ {\\mathrm {p}}) = Y _ {\\mathrm {S A}} (\\omega_ {\\mathrm {p}}) Z _ {\\mathrm {g}} (\\omega_ {\\mathrm {p}}) (13) \\\\ T (\\omega_ {\\mathrm {p}}) = Z _ {\\mathrm {g}} (\\omega_ {\\mathrm {p}}) [ Y _ {\\mathrm {S A}} (\\omega_ {\\mathrm {p}}) - Y _ {\\mathrm {A A}} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) \\cdot \\\\ \\frac {Z _ {\\mathrm {g}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) Y _ {\\mathrm {A A}} ^ {*} (\\omega_ {\\mathrm {p}})}{1 + Z _ {\\mathrm {g}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) Y _ {\\mathrm {S A}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}})} ] (14) \\\\ \\end{array}\n$$\n",
+        "text": "\n$$\n\\begin{array}{l} T _ {0} \\left(\\omega_ {\\mathrm {p}}\\right) = Y _ {\\mathrm {S A}} \\left(\\omega_ {\\mathrm {p}}\\right) Z _ {\\mathrm {g}} \\left(\\omega_ {\\mathrm {p}}\\right) (13) \\\\ T (\\omega_ {\\mathrm {p}}) = Z _ {\\mathrm {g}} (\\omega_ {\\mathrm {p}}) [ Y _ {\\mathrm {S A}} (\\omega_ {\\mathrm {p}}) - Y _ {\\mathrm {A A}} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) \\cdot \\\\ \\frac {Z _ {\\mathrm {g}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) Y _ {\\mathrm {A A}} ^ {*} (\\omega_ {\\mathrm {p}})}{1 + Z _ {\\mathrm {g}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) Y _ {\\mathrm {S A}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}})} ] (14) \\\\ \\end{array}\n$$\n",
         "text_format": "latex",
         "bbox": [
             559,
@@ -1197,7 +1197,7 @@
     },
     {
         "type": "text",
-        "text": "由式(19)可知，表达式的前3项由原系统参数决定，所提策略主要体现在后2项。当后者的相位为最大值时，其对应的相关参数即为最优参数。具体地， $G_{\\mathrm{LPF}}$  在  $50\\mathrm{Hz}$  和  $250\\mathrm{Hz}$  处的相位为",
+        "text": "由式(19)可知，表达式的前3项由原系统参数决定，所提策略主要体现在后2项。当后者的相位为最大值时，其对应的相关参数即为最优参数。具体地，  $G_{\\mathrm{LPF}}$  在  $50\\mathrm{Hz}$  和  $250\\mathrm{Hz}$  处的相位为",
         "bbox": [
             512,
             146,
@@ -1594,7 +1594,7 @@
     },
     {
         "type": "equation",
-        "text": "\n$$\nT _ {\\mathrm {r o b u s t}} (\\omega_ {\\mathrm {p}}) = Z _ {\\mathrm {g}} (\\omega_ {\\mathrm {p}}) [ Y _ {\\mathrm {S A} _ {\\mathrm {r o b u s t}}} (\\omega_ {\\mathrm {p}}) - Y _ {\\mathrm {A A} _ {\\mathrm {r o b u s t}}} ].\n$$\n",
+        "text": "\n$$\nT _ {\\mathrm {r o b u s t}} (\\omega_ {\\mathrm {p}}) = Z _ {\\mathrm {g}} (\\omega_ {\\mathrm {p}}) [ Y _ {\\mathrm {S A \\_ r o b u s t}} (\\omega_ {\\mathrm {p}}) - Y _ {\\mathrm {A A \\_ r o b u s t}} ].\n$$\n",
         "text_format": "latex",
         "bbox": [
             532,
@@ -1849,7 +1849,7 @@
     },
     {
         "type": "text",
-        "text": "基于实验平台，对上述理论分析进行验证。图13为硬件实物图。交流源和直流源的型号分别为Chroma系列的61511和62150。主处理器为dSPACE1104，英飞凌公司生产的K75T60型绝缘栅双极型晶体管(insulatedgatebipolartransistor，IGBT)作为变换器开关管，电压采样和电流采样分别用LEMLV28-P和LEMLT208-S7/SP1型号霍尔进行采样，测量设备为Agilent系列的MSO-X-3054A型示波器。实验参数见表1。电压扰动由Chroma61511的电源产生。",
+        "text": "基于实验平台，对上述理论分析进行验证。图13为硬件实物图。交流源和直流源的型号分别为Chroma系列的61511和62150。主处理器为dSPACE1104，英飞凌公司生产的K75T60型绝缘栅双极型晶体管(insulatedgate bipolar transistor，IGBT)作为变换器开关管，电压采样和电流采样分别用LEM LV28-P和LEM LT208-S7/SP1型号霍尔进行采样，测量设备为Agilent系列的MSO-X-3054A型示波器。实验参数见表1。电压扰动由Chroma61511的电源产生。",
         "bbox": [
             512,
             694,
@@ -1977,7 +1977,7 @@
     },
     {
         "type": "image",
-        "img_path": "images/fc289b184f6c6101c246fe167cb9cb524a84d5865b2fb95b9dbdabc9b04c6bbe.jpg",
+        "img_path": "images/90ae9cb41cb9d3027b1596ea4ec81326e9cdf2e97f000f1c5d6490e3b0d53374.jpg",
         "image_caption": [
             "(a) 并网点波形",
             "图14 理想电网电压工况下的并网点波形",
@@ -1988,7 +1988,7 @@
             97,
             735,
             272,
-            832
+            831
         ],
         "page_idx": 7
     },
@@ -2172,7 +2172,7 @@
         "type": "image",
         "img_path": "images/18922d9754e70b57e5ae64dbb3b4f43d46c8fd6f84b8ad07392cf803678f4922.jpg",
         "image_caption": [
-            "图16采用策略后，PCC点处的电压电流及  $i_{\\mathrm{a}}$  的FFT分析Fig.16Voltage and current at PCC point,and FFT analysis of  $i_{\\mathrm{a}}$  with the proposed strategy",
+            "图16采用策略后，PCC点处的电压电流及  $i_{\\mathrm{a}}$  的FFT分析Fig.16Voltage and current at PCC point,and FFTanalysis of  $i_{\\mathrm{a}}$  with the proposed strategy",
             "(a) 整体波形",
             "图17 采用策略后，电流突增时的暂态响应",
             "Fig. 17 Transient response of sudden current increase with the proposed strategy"
@@ -2364,7 +2364,7 @@
         "sub_type": "ref_text",
         "list_items": [
             "[1] 周孝信，陈树勇，鲁宗相，等．能源转型中我国新一代电力系统的技术特征[J].中国电机工程学报，2018，38(7)：1893-1904. ZHOU Xiaoxin，CHEN Shuyong，LU Zongxiang，et al. Technology features of the new generation power system in China[J]. Proceedings of the CSEE，2018，38(7)：1893-1904 (in Chinese).",
-            "[2] 王祺，秦文萍，张宇，等．不平衡工况下新能源并网变换器韧性分析及优化控制[J].电网技术，2020，44(11)：4337-4346.WANGQi，QINWenping，ZHANGYu，etal.Toughnessanalysisand optimalcontrol ofrenewable energy grid-connected converters underunbalanced voltage condition[J].Power System Technology，2020，44(11)：4337-4346(inChinese).",
+            "[2] 王祺，秦文萍，张宇，等．不平衡工况下新能源并网变换器韧性分析及优化控制[J].电网技术，2020，44(11)：4337-4346.WANGQi，QINWenping，ZHANGYu，etal.Toughnessanalysisand optimalcontrol ofrenewable energy grid-connected converters underunbalanced voltage condition[J].Power System Technology，2020，44(11)：4337-4346(in Chinese).",
             "[3] WANG Qi, QIN Wenping, DAI Wei, et al. Direct current control"
         ],
         "bbox": [
@@ -2426,7 +2426,7 @@
             "strategy of LCL-type converter for harmonic suppression under distorted grid condition[J]. IET Power Electronics, 2020, 13(17): 3922-3930.",
             "[4] YANG Dongsheng, WANG Xiongfei, LIU Fangcheng, et al. Symmetrical PLL for SISO impedance modeling and enhanced stability in weak grids[J]. IEEE Transactions on Power Electronics, 2020, 35(2): 1473-1483.",
             "[5] WANG Qi, QIN Wenping, WANG Lei, et al. Enhanced robustness with damping interval widening strategy of LCL-type converter under weak grid condition[J]. Journal of Power Electronics, 2020, 20(2): 410-427.",
-            "[6] 王祺，秦文萍，张宇，等．基于附加单位延时反馈的LCL型并网变换器鲁棒电流控制策略[J]．电力自动化设备，2020，40(9)：203-210.WANGQi，QINWenping，ZHANGYu，etal.Robustcurrentcontrolstrategy forLCL-type grid-connectedconverter based on additional unittime-delay feedback[J].Electric Power Automation Equipment，2020，40(9)：203-210(in Chinese).",
+            "[6] 王祺，秦文萍，张宇，等．基于附加单位延时反馈的LCL型并网变换器鲁棒电流控制策略[J]．电力自动化设备，2020，40(9)：203-210.WANGQi，QINWenping，ZHANGYu，etal.Robustcurrentcontrolstrategy forLCL-type grid-connectedconverter based on additional unittime-delay feedback[J].ElectricPower Automation Equipment，2020，40(9)：203-210(inChinese).",
             "[7] 王祺，秦文萍，张宇，等．基于局部复阻抗模型的LCL型并网变换器相位重塑控制策略[J].中国电机工程学报，2021，41(13)：4415-4424. WANG Qi, QIN Wenping, ZHANG Yu, et al. Phase reshaping control strategy of LCL grid connected converter based on local complex impedance model[J]. Proceedings of the CSEE, 2021, 41(13): 4415-4424(in Chinese).",
             "[8] 吴恒，阮新波，杨东升．弱电网条件下锁相环对LCL型并网逆变器稳定性的影响研究及锁相环参数设计[J].中国电机工程学报，2014，34(30)：5259-5268. WU Heng, RUAN Xinbo, YANG Dongsheng. Research on the stability caused by phase-locked loop for LCL-type grid-connected inverter in weak grid condition[J]. Proceedings of the CSEE，2014，34(30):5259-5268(in Chinese).",
             "[9] 许津铭，卞申一阳，钱强，等．弱电网下基于电网电流前馈的单相逆变器锁相环[J]. 中国电机工程学报，2020，40(8)：2647-2656. XU Jinming，BIAN Shenyiyang，QIAN Qiang，et al. Grid current feedforward based phase-locked loop for single-phase-inverters in weak grid case[J]. Proceedings of the CSEE，2020，40(8)：2647-2656(in Chinese).",
@@ -2453,7 +2453,7 @@
             "[17]SHUAI Zhikang, LI Yang, WU Weimin, et al. Divided DQ small-signal model: a new perspective for the stability analysis of three-phase grid-tied inverters[J]. IEEE Transactions on Industrial Electronics, 2019, 66(8): 6493-6504.",
             "[18]王国宁，杜雄，邹小明，等．用于三相并网逆变器稳定性分析的自导纳和伴随导纳建模[J]．中国电机工程学报，2017，37(14)：3973-3981．WANG Guoning，DU Xiong，ZOU Xiaoming，et al．Self and accompanying admittance model for three-phase grid-tied inverter stability analysis[J]．Proceedings of the CSEE，2017，37(14)：3973-3981(in Chinese).",
             "[19]邹小明，杜雄，王国宁，等．三相并网逆变器频率耦合机理分析及稳定性判定[J]．电力系统自动化，2018，42(18)：57-63. ZOU Xiaoming, DU Xiong, WANG Guoning, et al. Frequency coupling mechanism analysis and stability Judgement for three-phase grid-connected inverter[J]. Automation of Electric Power Systems, 2018, 42(18): 57-63(in Chinese).",
-            "[20]杨苓，陈燕东，陈智勇，等．弱电网下考虑锁相环影响的三相并网系统相角补偿控制方法[J]．中国电机工程学报，2018，38(20)：6099-6109.  \nYANG Ling，CHEN Yandong，CHEN Zhiyong，et al．The phase compensation control method considering the effect of phase locked loop for three-phase grid-connected system in the weak grid[J]. Proceedings of the CSEE，2018，38(20)：6099-6109(in Chinese).",
+            "[20]杨苓，陈燕东，陈智勇，等．弱电网下考虑锁相环影响的三相并网系统相角补偿控制方法[J].中国电机工程学报，2018，38(20)：6099-6109.  \nYANG Ling，CHEN Yandong，CHEN Zhiyong，et al．The phase compensation control method considering the effect of phase locked loop for three-phase grid-connected system in the weak grid[J].Proceedings of the CSEE，2018，38(20)：6099-6109(in Chinese).",
             "[21]许津铭，卞申一阳，钱浩，等．弱电网下单相并网逆变器延时锁相环的鲁棒控制及优化方法[J]．中国电机工程学报，2020，40(7)：2062-2070.  \nXU Jinming，BIAN Shenyiyang，QIAN Hao，et al. Robust control and optimization of delay-based phase-locked loop of single-phase grid-connected inverters under weak grid conditions[J]. Proceedings of the CSEE，2020，40(7)：2062-2070(in Chinese).",
             "[22]武相强，王赞程，陈新，等．考虑频率耦合效应的三相并网逆变器序阻抗模型及其交互稳定性研究[J]．中国电机工程学报，2020，40(5)：1605-1616. WU Xiangqiang，WANG Yuncheng，CHEN Xin，et al．Sequence impedance model and interaction stability research of three-phase grid-connected inverters with considering coupling effects[J]．Proceedings of the CSEE，2020，40(5)：1605-1616(in Chinese).",
             "[23]王祺．复杂电网工况下LCL型并网变换器鲁棒性分析及优化控制[D].太原：太原理工大学，2020.",

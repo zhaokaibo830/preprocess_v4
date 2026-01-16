@@ -941,7 +941,7 @@
                     "bbox": [
                         53,
                         136,
-                        289,
+                        288,
                         793
                     ],
                     "type": "text",
@@ -951,7 +951,7 @@
                             "bbox": [
                                 53,
                                 136,
-                                289,
+                                288,
                                 793
                             ],
                             "spans": [
@@ -959,7 +959,7 @@
                                     "bbox": [
                                         53,
                                         136,
-                                        289,
+                                        288,
                                         793
                                     ],
                                     "type": "text",
@@ -1749,7 +1749,7 @@
                     "bbox": [
                         64,
                         69,
-                        276,
+                        278,
                         210
                     ],
                     "blocks": [
@@ -1757,7 +1757,7 @@
                             "bbox": [
                                 64,
                                 69,
-                                276,
+                                278,
                                 210
                             ],
                             "lines": [
@@ -1765,7 +1765,7 @@
                                     "bbox": [
                                         64,
                                         69,
-                                        276,
+                                        278,
                                         210
                                     ],
                                     "spans": [
@@ -1773,11 +1773,11 @@
                                             "bbox": [
                                                 64,
                                                 69,
-                                                276,
+                                                278,
                                                 210
                                             ],
                                             "type": "image",
-                                            "image_path": "93ed33b71752a6e571f1f0a385f1bcea96142a8f26cf8b99e67ac0d4f9ce2bb6.jpg"
+                                            "image_path": "9971e07c8b5b10faed73daf0d3a242d0ebbee5478064d1e4512be6e0e7dcaafd.jpg"
                                         }
                                     ]
                                 }
@@ -1903,7 +1903,7 @@
                 {
                     "type": "image",
                     "bbox": [
-                        99,
+                        98,
                         303,
                         242,
                         357
@@ -1944,7 +1944,7 @@
                         },
                         {
                             "bbox": [
-                                99,
+                                98,
                                 303,
                                 242,
                                 357
@@ -1952,7 +1952,7 @@
                             "lines": [
                                 {
                                     "bbox": [
-                                        99,
+                                        98,
                                         303,
                                         242,
                                         357
@@ -1960,13 +1960,13 @@
                                     "spans": [
                                         {
                                             "bbox": [
-                                                99,
+                                                98,
                                                 303,
                                                 242,
                                                 357
                                             ],
                                             "type": "image",
-                                            "image_path": "bbd4bea00b0fab2f3ed368b95adf56e2c64b8f51a43d2d2249791bbb8298fe45.jpg"
+                                            "image_path": "ecf35905fae6489ab6cc8020828a6ecef29a6c32c40b0ac6e4f1bbb9d8398f8a.jpg"
                                         }
                                     ]
                                 }
@@ -2669,7 +2669,7 @@
                         113,
                         716,
                         287,
-                        734
+                        735
                     ],
                     "type": "interline_equation",
                     "angle": 0,
@@ -2679,7 +2679,7 @@
                                 113,
                                 716,
                                 287,
-                                734
+                                735
                             ],
                             "spans": [
                                 {
@@ -2687,11 +2687,11 @@
                                         113,
                                         716,
                                         287,
-                                        734
+                                        735
                                     ],
                                     "type": "interline_equation",
                                     "content": "\\dot {I} _ {\\mathrm {s}} (t) = \\dot {I} _ {\\mathrm {s}, \\omega_ {\\mathrm {p}}} (t) + \\dot {I} _ {\\mathrm {s}, 2 \\omega_ {0} - \\omega_ {\\mathrm {p}}} (t) \\tag {3}",
-                                    "image_path": "9d1e7d7523bd2779ab254e5dddd9fc6a10bbc1f511fb58317b619efe48a3cc6c.jpg"
+                                    "image_path": "e288c04806ddd8ca33140462181ef62d457663b8643b48319091308c3e39dfd1.jpg"
                                 }
                             ]
                         }
@@ -3012,7 +3012,7 @@
                                         425
                                     ],
                                     "type": "text",
-                                    "content": "、"
+                                    "content": " 、"
                                 },
                                 {
                                     "bbox": [
@@ -3032,7 +3032,7 @@
                                         425
                                     ],
                                     "type": "text",
-                                    "content": "、"
+                                    "content": " 、"
                                 },
                                 {
                                     "bbox": [
@@ -3145,7 +3145,7 @@
                                         551
                                     ],
                                     "type": "text",
-                                    "content": "和"
+                                    "content": " 和 "
                                 },
                                 {
                                     "bbox": [
@@ -3165,7 +3165,7 @@
                                         551
                                     ],
                                     "type": "text",
-                                    "content": "的频域特性曲线。传统分析方法忽略了由PLL固有不平衡结构引起的SIDO特性，即只分析"
+                                    "content": " 的频域特性曲线。传统分析方法忽略了由PLL固有不平衡结构引起的SIDO特性，即只分析 "
                                 },
                                 {
                                     "bbox": [
@@ -3185,7 +3185,7 @@
                                         551
                                     ],
                                     "type": "text",
-                                    "content": "。由图3可知，"
+                                    "content": " 。由图3可知，"
                                 },
                                 {
                                     "bbox": [
@@ -3205,7 +3205,7 @@
                                         551
                                     ],
                                     "type": "text",
-                                    "content": "的低频特性与"
+                                    "content": " 的低频特性与 "
                                 },
                                 {
                                     "bbox": [
@@ -3225,7 +3225,7 @@
                                         551
                                     ],
                                     "type": "text",
-                                    "content": "的低频特性近似，故并网变换系统出现低频扰动引起系统不稳定时。传统分析方法可能因忽略并网系统的SIDO特性而无法探明系统失稳的本质原因，从而使得控制策略效果欠佳甚至失效。"
+                                    "content": " 的低频特性近似，故并网变换系统出现低频扰动引起系统不稳定时。传统分析方法可能因忽略并网系统的SIDO特性而无法探明系统失稳的本质原因，从而使得控制策略效果欠佳甚至失效。"
                                 }
                             ]
                         }
@@ -4287,7 +4287,7 @@
                                         138
                                     ],
                                     "type": "interline_equation",
-                                    "content": "\\begin{array}{l} T _ {0} (\\omega_ {\\mathrm {p}}) = Y _ {\\mathrm {S A}} (\\omega_ {\\mathrm {p}}) Z _ {\\mathrm {g}} (\\omega_ {\\mathrm {p}}) (13) \\\\ T (\\omega_ {\\mathrm {p}}) = Z _ {\\mathrm {g}} (\\omega_ {\\mathrm {p}}) [ Y _ {\\mathrm {S A}} (\\omega_ {\\mathrm {p}}) - Y _ {\\mathrm {A A}} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) \\cdot \\\\ \\frac {Z _ {\\mathrm {g}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) Y _ {\\mathrm {A A}} ^ {*} (\\omega_ {\\mathrm {p}})}{1 + Z _ {\\mathrm {g}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) Y _ {\\mathrm {S A}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}})} ] (14) \\\\ \\end{array}",
+                                    "content": "\\begin{array}{l} T _ {0} \\left(\\omega_ {\\mathrm {p}}\\right) = Y _ {\\mathrm {S A}} \\left(\\omega_ {\\mathrm {p}}\\right) Z _ {\\mathrm {g}} \\left(\\omega_ {\\mathrm {p}}\\right) (13) \\\\ T (\\omega_ {\\mathrm {p}}) = Z _ {\\mathrm {g}} (\\omega_ {\\mathrm {p}}) [ Y _ {\\mathrm {S A}} (\\omega_ {\\mathrm {p}}) - Y _ {\\mathrm {A A}} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) \\cdot \\\\ \\frac {Z _ {\\mathrm {g}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) Y _ {\\mathrm {A A}} ^ {*} (\\omega_ {\\mathrm {p}})}{1 + Z _ {\\mathrm {g}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}}) Y _ {\\mathrm {S A}} ^ {*} (2 \\omega_ {0} - \\omega_ {\\mathrm {p}})} ] (14) \\\\ \\end{array}",
                                     "image_path": "dd7bb0f61a9e54a25d54089950e9efbc7941ff5492f7b9108e0d1338dbb3fbd5.jpg"
                                 }
                             ]
@@ -5705,7 +5705,7 @@
                                         185
                                     ],
                                     "type": "text",
-                                    "content": "由式(19)可知，表达式的前3项由原系统参数决定，所提策略主要体现在后2项。当后者的相位为最大值时，其对应的相关参数即为最优参数。具体地，"
+                                    "content": "由式(19)可知，表达式的前3项由原系统参数决定，所提策略主要体现在后2项。当后者的相位为最大值时，其对应的相关参数即为最优参数。具体地， "
                                 },
                                 {
                                     "bbox": [
@@ -7836,7 +7836,7 @@
                                         167
                                     ],
                                     "type": "interline_equation",
-                                    "content": "T _ {\\mathrm {r o b u s t}} (\\omega_ {\\mathrm {p}}) = Z _ {\\mathrm {g}} (\\omega_ {\\mathrm {p}}) [ Y _ {\\mathrm {S A} _ {\\mathrm {r o b u s t}}} (\\omega_ {\\mathrm {p}}) - Y _ {\\mathrm {A A} _ {\\mathrm {r o b u s t}}} ].",
+                                    "content": "T _ {\\mathrm {r o b u s t}} (\\omega_ {\\mathrm {p}}) = Z _ {\\mathrm {g}} (\\omega_ {\\mathrm {p}}) [ Y _ {\\mathrm {S A \\_ r o b u s t}} (\\omega_ {\\mathrm {p}}) - Y _ {\\mathrm {A A \\_ r o b u s t}} ].",
                                     "image_path": "9b19312ccb33bad373a15dd878dda951cf2a67d80a6ce9a59ff81ab2864d90a3.jpg"
                                 }
                             ]
@@ -9534,7 +9534,7 @@
                                         742
                                     ],
                                     "type": "text",
-                                    "content": "基于实验平台，对上述理论分析进行验证。图13为硬件实物图。交流源和直流源的型号分别为Chroma系列的61511和62150。主处理器为dSPACE1104，英飞凌公司生产的K75T60型绝缘栅双极型晶体管(insulatedgatebipolartransistor，IGBT)作为变换器开关管，电压采样和电流采样分别用LEMLV28-P和LEMLT208-S7/SP1型号霍尔进行采样，测量设备为Agilent系列的MSO-X-3054A型示波器。实验参数见表1。电压扰动由Chroma61511的电源产生。"
+                                    "content": "基于实验平台，对上述理论分析进行验证。图13为硬件实物图。交流源和直流源的型号分别为Chroma系列的61511和62150。主处理器为dSPACE1104，英飞凌公司生产的K75T60型绝缘栅双极型晶体管(insulatedgate bipolar transistor，IGBT)作为变换器开关管，电压采样和电流采样分别用LEM LV28-P和LEM LT208-S7/SP1型号霍尔进行采样，测量设备为Agilent系列的MSO-X-3054A型示波器。实验参数见表1。电压扰动由Chroma61511的电源产生。"
                                 }
                             ]
                         }
@@ -9873,7 +9873,7 @@
                             "bbox": [
                                 95,
                                 306,
-                                497,
+                                498,
                                 317
                             ],
                             "lines": [
@@ -9881,7 +9881,7 @@
                                     "bbox": [
                                         95,
                                         306,
-                                        497,
+                                        498,
                                         317
                                     ],
                                     "spans": [
@@ -9889,7 +9889,7 @@
                                             "bbox": [
                                                 95,
                                                 306,
-                                                497,
+                                                498,
                                                 317
                                             ],
                                             "type": "text",
@@ -10122,7 +10122,7 @@
                         58,
                         619,
                         162,
-                        701
+                        700
                     ],
                     "blocks": [
                         {
@@ -10130,7 +10130,7 @@
                                 58,
                                 619,
                                 162,
-                                701
+                                700
                             ],
                             "lines": [
                                 {
@@ -10138,7 +10138,7 @@
                                         58,
                                         619,
                                         162,
-                                        701
+                                        700
                                     ],
                                     "spans": [
                                         {
@@ -10146,10 +10146,10 @@
                                                 58,
                                                 619,
                                                 162,
-                                                701
+                                                700
                                             ],
                                             "type": "image",
-                                            "image_path": "fc289b184f6c6101c246fe167cb9cb524a84d5865b2fb95b9dbdabc9b04c6bbe.jpg"
+                                            "image_path": "90ae9cb41cb9d3027b1596ea4ec81326e9cdf2e97f000f1c5d6490e3b0d53374.jpg"
                                         }
                                     ]
                                 }
@@ -11384,7 +11384,7 @@
                                                 207
                                             ],
                                             "type": "text",
-                                            "content": " 的FFT分析Fig.16Voltage and current at PCC point,and FFT analysis of "
+                                            "content": " 的FFT分析Fig.16Voltage and current at PCC point,and FFTanalysis of "
                                         },
                                         {
                                             "bbox": [
@@ -12711,7 +12711,7 @@
                                                 780
                                             ],
                                             "type": "text",
-                                            "content": "[2] 王祺，秦文萍，张宇，等．不平衡工况下新能源并网变换器韧性分析及优化控制[J].电网技术，2020，44(11)：4337-4346.WANGQi，QINWenping，ZHANGYu，etal.Toughnessanalysisand optimalcontrol ofrenewable energy grid-connected converters underunbalanced voltage condition[J].Power System Technology，2020，44(11)：4337-4346(inChinese)."
+                                            "content": "[2] 王祺，秦文萍，张宇，等．不平衡工况下新能源并网变换器韧性分析及优化控制[J].电网技术，2020，44(11)：4337-4346.WANGQi，QINWenping，ZHANGYu，etal.Toughnessanalysisand optimalcontrol ofrenewable energy grid-connected converters underunbalanced voltage condition[J].Power System Technology，2020，44(11)：4337-4346(in Chinese)."
                                         }
                                     ]
                                 }
@@ -13033,7 +13033,7 @@
                                                 250
                                             ],
                                             "type": "text",
-                                            "content": "[6] 王祺，秦文萍，张宇，等．基于附加单位延时反馈的LCL型并网变换器鲁棒电流控制策略[J]．电力自动化设备，2020，40(9)：203-210.WANGQi，QINWenping，ZHANGYu，etal.Robustcurrentcontrolstrategy forLCL-type grid-connectedconverter based on additional unittime-delay feedback[J].Electric Power Automation Equipment，2020，40(9)：203-210(in Chinese)."
+                                            "content": "[6] 王祺，秦文萍，张宇，等．基于附加单位延时反馈的LCL型并网变换器鲁棒电流控制策略[J]．电力自动化设备，2020，40(9)：203-210.WANGQi，QINWenping，ZHANGYu，etal.Robustcurrentcontrolstrategy forLCL-type grid-connectedconverter based on additional unittime-delay feedback[J].ElectricPower Automation Equipment，2020，40(9)：203-210(inChinese)."
                                         }
                                     ]
                                 }
@@ -13509,7 +13509,7 @@
                                                 381
                                             ],
                                             "type": "text",
-                                            "content": "[20]杨苓，陈燕东，陈智勇，等．弱电网下考虑锁相环影响的三相并网系统相角补偿控制方法[J]．中国电机工程学报，2018，38(20)：6099-6109.  \nYANG Ling，CHEN Yandong，CHEN Zhiyong，et al．The phase compensation control method considering the effect of phase locked loop for three-phase grid-connected system in the weak grid[J]. Proceedings of the CSEE，2018，38(20)：6099-6109(in Chinese)."
+                                            "content": "[20]杨苓，陈燕东，陈智勇，等．弱电网下考虑锁相环影响的三相并网系统相角补偿控制方法[J].中国电机工程学报，2018，38(20)：6099-6109.  \nYANG Ling，CHEN Yandong，CHEN Zhiyong，et al．The phase compensation control method considering the effect of phase locked loop for three-phase grid-connected system in the weak grid[J].Proceedings of the CSEE，2018，38(20)：6099-6109(in Chinese)."
                                         }
                                     ]
                                 }
