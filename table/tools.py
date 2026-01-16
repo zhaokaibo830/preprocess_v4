@@ -79,12 +79,6 @@ def analyze_image_content(image_path,table_html, config:str,api_key, base_url, m
         "2. 如果表格内容以数据为主，需要分析表格中如最大值，最小值等能反映数据特点的信息。\n"
         "3. 如果表格内容中涉及文字信息，则应对文字信息和数据进行简要描述。\n"
     )
-    kv_desc_prompt = (
-        "你是一个数据分析技术员，请仔细分析该表格的内容，并以结构化的JSON格式返回你的分析结果。JSON应包含以下键值：\n"
-        "{\n"
-        "\"kv\": \"[请仔细分析该表格的内容，并将其转化为键值对（key-value）的形式，最终输出为JSON格式,请确保不遗漏HTML中的任何一个单元格数据，每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值，不要添加任何额外的解释性文字。相同的key不能出现在同一个dict里面且确保输出的JSON是有效且可以解析的。\n"
-        "\"desc\": \"[用简明的语言说明这是一张什么什么表格，如‘这是一张xx公司的员工工资表’，‘这是一张学生成绩表’。如果表格内容以数据为主，需要分析表格中如最大值，最小值等能反映数据特点的信息。\n"
-    )
 
     # ==========================================
     # 第二步：分别构建调用API函数
@@ -120,25 +114,8 @@ def analyze_image_content(image_path,table_html, config:str,api_key, base_url, m
         except Exception as e:
             return {"desc_completion": "error", "description": f"描述阶段出错: {str(e)}"}
         return description
-    def kv_desc_api_call():
-        try:
-            kv_desc_completion = client.chat.completions.create(
-                model=model_name,
-                messages=[
-                    {
-                        "role": "user",
-                    "content": [image_message, {"type": "text", "text": kv_desc_prompt}],
-                }
-            ],
-        )
-            kv_desc = kv_desc_completion.choices[0].message.content
-        except Exception as e:
-            return {"kv_desc_completion": "error", "description": f"kv和描述阶段出错: {str(e)}"}
-        # 解析模型输出的JSON字符串
-        kv_desc_data = json.loads(kv_desc.strip())
-        kv=kv_desc_data["kv"]
-        desc=kv_desc_data["desc"]
-        return kv,desc
+    
+       
     # ==========================================
     # 第三步：创建if分支识别传入config
     # ==========================================   
@@ -146,11 +123,12 @@ def analyze_image_content(image_path,table_html, config:str,api_key, base_url, m
     result["type"] = "table"
     #判断config中包含的功能，更新result并返回
     if "kv"in config and "desc"and "html" in config:
-        result["kv_extract"],result["description"]=kv_desc_api_call()
+        result["kv_extract"]=kv_api_call()
+        result["description"]=desc_api_call()
         result["table_html"]=table_html
         return result
     elif "kv"in config and "desc" in config:
-        result["kv_extract"],result["description"]=kv_desc_api_call()
+        result["kv_extract"],result["description"]=kv_api_call(),desc_api_call()
         return result
     elif "desc"in config and "html" in config:
         description=desc_api_call()
@@ -182,7 +160,7 @@ if __name__ == "__main__":
     BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
     MODEL = "qwen3-vl-8b-instruct"
     table_html = ""  # 如果有表格HTML，可以传入此参数
-    config='desc'  # 可选 'kv', 'desc', 'html' 或它们的组合，如 'kv_desc_html'
+    config='kv,desc,html'  # 可选 'kv', 'desc', 'html' 或它们的组合，如 'kv_desc_html'
 
     # 运行函数
     result = analyze_image_content(IMG_PATH, table_html, config, API_KEY, BASE_URL, MODEL)
