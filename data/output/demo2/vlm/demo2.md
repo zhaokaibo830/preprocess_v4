@@ -101,7 +101,7 @@ $$
 $$
 
 $$
-L = - \frac {1}{k _ {2}} \ln \left[ 1 - \frac {k _ {2}}{k _ {\mathrm {I 0}}} \left(\frac {1}{c _ {\mathrm {D P}} (\mathrm {e n d})} - \frac {1}{c _ {\mathrm {D P}} (0)}\right) \right] \tag {4}
+L = - \frac {1}{k _ {2}} \ln \left[ 1 - \frac {k _ {2}}{k _ {1 0}} \left(\frac {1}{c _ {\mathrm {D P}} (\mathrm {e n d})} - \frac {1}{c _ {\mathrm {D P}} (0)}\right) \right] \tag {4}
 $$
 
 为了解决纤维素在简单的有机溶剂中难以溶解的问题，可以对绝缘纸的纤维素成分进行改造，以提高其溶解度。其中，凝胶渗透色谱法(gel permeation chromatography, GPC)是最常用的方法[12-23]。通过使变压器绝缘纸在特定条件下发生化学反应，收集产物并进行提纯和滴定，对比色谱图可以观察到老化的绝缘纸纤维素组分的变化情况，从而推测出绝缘材料的状态。一般而言，由于绝缘材料老化过程中分子量的微小变化都可以在色谱图中观察到，因此GPC可以更详细地分析纤维素老化过程中的变化，为更复杂的退化模型提供基础。
@@ -162,7 +162,7 @@ Table 1 Comparison of advantages and disadvantages of traditional methods
 
 <table><tr><td>方法</td><td>优势</td><td>劣势</td></tr><tr><td>溶解气体分析法</td><td>能够在故障发展初期就进行检测，从而避免设备进一步损坏；非侵入性方法，测试过程中变压器无需退出运行。</td><td>对结果的解释依赖专家经验，存在主观性；多重故障共存时，难以区分不同故障类型；气体生成量和速率会受到负载和操作环境的影响；与标准的对应性可能较差。</td></tr><tr><td>聚合度分析法</td><td>聚合度是评估绝缘纸老化的直接指标；与油分析（溶解气体分析，糠醛分析）结合效果好；能实现对绝缘变化的长期趋势评估，适合用于变压器全生命周期管理。</td><td>需要对变压器纸绝缘进行物理取样，对绝缘材料有破坏性；操作复杂且需要专门设备，增加了检测的成本和时间；不适合频繁检测，通常只能在特定的维护周期内进行。</td></tr><tr><td>回复电压法</td><td>能够通过极化和去极化信号区分油和纸绝缘的老化状态，提供对油纸绝缘系统的更深入分析；检测过程不具有破坏性。</td><td>测试结果受多种因素影响，对结果的解释需要经验丰富的专家；对复杂多层绝缘结构的评估能力有限；需在变压器断电状态下测试。</td></tr><tr><td>与现代算法结合</td><td>提高了处理大规模数据的效率，减少了对专家的依赖，提高了故障检测和预测的准确性。</td><td>缺乏可解释性，难以解释具体的故障原因和诊断机理；模型的训练和调参较为复杂。</td></tr></table>
 
-![](images/63b2736c67c1fb5e737a1f383b62952ed74a594a64932f0042e1b801be9473e0.jpg)  
+![](images/51eb9b2d4062d5e5456b5ea0f5e7f3d681d4b31d1c07625de7e06ce26b31cf4f.jpg)  
 图3 变压器多导体传输线模型示意图
 
 多导体传输线模型可以从经典的电路理论、微分形式的麦克斯韦方程和积分形式的麦克斯韦方程3种方式推导得到[58-59]。在建立多导体传输线模型时，需要关注的参数有传输线上每单位长度的电阻、电感，和对地的电容、电导参数，这些参数与变压器实际的绝缘情况密切相关。
@@ -212,7 +212,7 @@ $$
 R _ {\mathrm {s}} = \frac {\sqrt {f}}{2 \sigma \delta \left(d _ {1} + d _ {2}\right)}
 $$
 
-式中： $R_0$  表示绕组的直流电阻； $R_s$  表示因集肤效应而产生的电阻； $d_1$  和  $d_2$  分别表示导体横截面的长度和宽度； $\sigma$  表示导体的电导率。
+式中： $R_{0}$  表示绕组的直流电阻； $R_{\mathrm{s}}$  表示因集肤效应而产生的电阻； $d_{1}$  和  $d_{2}$  分别表示导体横截面的长度和宽度； $\sigma$  表示导体的电导率。
 
 电感参数  $L$  同样也受集肤效应的影响[62]，因此电感矩阵也由两部分组成的，如式(7)所示：
 
@@ -346,7 +346,7 @@ Fig. 10 Influence of common insulation defects on elliptical curves
 
 该技术的一大优势在于可以在工频下进行，因此能够实现对变压器机械状态的在线监测[68-69]。同时，该方法不需要过多额外的设备，因为它使用的
 
-是附加到电力变压器的计量设备来监测输入/输出电压和输入电流，大大降低了检测的仪器成本。此外，该方法减少了对于专家的依赖性，降低了人力成本并保证了准确性。Ali. S. Masoum 等人[64]对一台  $2\mathrm{kVA}$ ， $220/110\mathrm{V}$  的变压器进行实验测试，通过短路不同数量的二次抽头来创建绕组短路的故障，同时用非正弦电压激励变压器，绘制相应的  $\Delta v - i$  轨迹，结果显示在绕组短路故障下轨迹旋转角显著减小，面积显著增大。此外，他们认为电压源谐波通过引入小回路扭曲轨迹的形状。小回路的形状、大小和数量取决于谐波的阶数、百分比和相位角。Xiaozhen Zhao 等人[70]对椭圆的表达式进行了简化，并对一台  $400\mathrm{kVA}$ ， $10/0.4\mathrm{kV}$ ，Yyn0 的三相变压器进行了实验测量，发现随着绕组径向变形水平的增加，椭圆的整个面积和周长都在明显增加。他们针对该技术在实际应用中的挑战，如负载动力学的影响、高水平背景噪声的不利影响和测量的可重复性，提出了效益高且简单的图形用户界面，在定制变压器的实验测量中表现良好。
+是附加到电力变压器的计量设备来监测输入/输出电压和输入电流，大大降低了检测的仪器成本。此外，该方法减少了对于专家的依赖性，降低了人力成本并保证了准确性。Ali. S. Masoum 等人[64]对一台  $2\mathrm{kVA}$ ， $220/110\mathrm{V}$  的变压器进行实验测试，通过短路不同数量的二次抽头来创建绕组短路的故障，同时用非正弦电压激励变压器，绘制相应的  $\Delta \nu - i$  轨迹，结果显示在绕组短路故障下轨迹旋转角显著减小，面积显著增大。此外，他们认为电压源谐波通过引入小回路扭曲轨迹的形状。小回路的形状、大小和数量取决于谐波的阶数、百分比和相位角。Xiaozhen Zhao 等人[70]对椭圆的表达式进行了简化，并对一台  $400\mathrm{kVA}$ ， $10/0.4\mathrm{kV}$ ，Yyn0 的三相变压器进行了实验测量，发现随着绕组径向变形水平的增加，椭圆的整个面积和周长都在明显增加。他们针对该技术在实际应用中的挑战，如负载动力学的影响、高水平背景噪声的不利影响和测量的可重复性，提出了效益高且简单的图形用户界面，在定制变压器的实验测量中表现良好。
 
 # 3.2 频域分析方法
 
@@ -366,7 +366,7 @@ $$
 
 # 3.2.2 频率响应分析法的应用
 
-Vahid Behjat 等人[76]对一台内部预设了匝间短路故障的  $100\mathrm{kVA}$ ， $35/0.4\mathrm{kV}$  的配电变压器进行频率响应实验，并对频率响应曲线进行了分析，如图 12 所示。通过修改匝间短路的短路电阻  $R_{\mathrm{f}}$  的数值，从响应轨迹可以看出匝间故障的总体影响是传递函数向更高频率移动。由于匝间故障的发生，谐振频率在响应图上向右移动，在  $10\sim 60\mathrm{kHz}$  频率范围内更为明显。在这个频率范围内，也可以检测到响应绝对值的增加和减少趋势。从振幅上来看，在  $39\mathrm{kHz}$  左右的明显中频谐振中，传递函数的大小从故障情况到正常响应的变化高达 5 dB。专家认为，一组 SFRA 测量值与下一组测量值之间存在 0.2 dB 左右的差异是变压器内部物理变化的指示。在高频范围内正常和故障走线几乎完全相同，因此失去了判别故障的作用。
+Vahid Behjat 等人[76]对一台内部预设了匝间短路故障的  $100\mathrm{kVA}$ ， $35/0.4\mathrm{kV}$  的配电变压器进行频率响应实验，并对频率响应曲线进行了分析，如图 12 所示。通过修改匝间短路的短路电阻  $R_{\mathrm{f}}$  的数值，从响应轨迹可以看出匝间故障的总体影响是传递函数向更高频率移动。由于匝间故障的发生，谐振频率在响应图上向右移动，在  $10\sim 60\mathrm{kHz}$  频率范围内更为明显。在这个频率范围内，也可以检测到响应绝对值的增加和减少趋势。从振幅上来看，在  $39\mathrm{kHz}$  左右的明显中频谐振中，传递函数的大小从故障情况到正常响应的变化高达5dB。专家认为，一组SFRA测量值与下一组测量值之间存在0.2dB左右的差异是变压器内部物理变化的指示。在高频范围内正常和故障走线几乎完全相同，因此失去了判别故障的作用。
 
 ![](images/67f905d1604b67eeeb7bada2025878e6b0c440efd6e1fc4ffaf08ab65d02c822.jpg)  
 图12 变压器频谱图变化  
@@ -380,7 +380,7 @@ Fig. 12 Changes in transformer spectrum
 
 在图6所示模型中，每个位置的元件数值变化均对应着一定的绝缘缺陷[54-79]。在实际运用中，通过对比仿真分析和实测得到的SFRA曲线，可以总结出等效的绝缘参数的变化，进而评估绝缘状态。但是，由于SFRA曲线较为复杂，这种感性的比对往往精度较低，并且可能忽略很多曲线中蕴含的信息。为了解决这一问题，A.Abu-Siada等人[79]提出了利用现代优化算法来提取等效的绝缘参数。他们将等效模型的参数提取转化为一个优化问题，具体的方法是通过优化算法调整等效模型中的各项参数，来使得仿真分析得到的SFRA曲线逐渐靠近实测曲线。理想情况下，当两条曲线足够重合时，意味着此时变压器等效模型即可代表该台实测变压器当下的绝缘状态。
 
-除了提取等效的绝缘参数以评估绝缘状态，现实中还希望能够对绝缘老化的部分进行准确定位，从而方便检修。K. Usha等人[80]研究了不同故障位置对于频率响应的影响，并提出了故障因子这一指标。他们对315kVA，3.3/0.55kV变压器进行实验，认为故障因子随故障位置呈现双曲线分布，如图13所示，因此只需要两次终端测量就可以预测不同故障百分比的准确故障位置。
+除了提取等效的绝缘参数以评估绝缘状态，现实中还希望能够对绝缘老化的部分进行准确定位，从而方便检修。K. Usha 等人[80]研究了不同故障位置对于频率响应的影响，并提出了故障因子这一指标。他们对  $315\mathrm{kVA}$ ， $3.3/0.55\mathrm{kV}$  变压器进行实验，认为故障因子随故障位置呈现双曲线分布，如图 13 所示，因此只需要两次终端测量就可以预测不同故障百分比的准确故障位置。
 
 ![](images/8c5b4c00cc39d00b67a1e18a8b600d5248e899c33cdc75b47faa49520dffb0ea.jpg)  
 图13 故障因子随故障位置的变化曲线  
@@ -471,7 +471,7 @@ JIN Yang, WANG Xin, QIAN Kun, et al. Research on detection of polymerization deg
 BI Pengxiang, ZHANG Wenyuan, QIN Shaozhen, et al. Methods for monitoring the condition of insulation in power transformers[J]. High Voltage Engineering, 2000, 26(3): 47-49, 51 (in Chinese).  
 [25] 杨丽君，廖瑞金，孙会刚，等．油纸绝缘热老化特性及生成物的对比分析[J].中国电机工程学报，2008，28(22)：53-58.  
 YANG Lijun, LIAO Ruijin, SUN Huigang, et al. Contrasting analysis and investigation on properties and products of oil-paper during thermal aging process[J]. Proceedings of the CSEE, 2008, 28(22): 53-58 (in Chinese).  
-[26] 姜飞宇，吴雄，高松涛，等.红外光谱法检测变压器油中糠醛含量[J].中国测试，2022，48(S2)：72-77.  
+[26] 姜飞宇，吴雄，高松涛，等．红外光谱法检测变压器油中糠醛含量[J].中国测试，2022，48(S2)：72-77.  
 JIANG Feiyu, WU Xiong, GAO Songtao, et al. Furfural dissolved in transformer oil using FTIR[J]. China Measurement & Test, 2022, 48(S2): 72-77
 
 (in Chinese).  
@@ -480,7 +480,7 @@ JIANG Feiyu, WU Xiong, GAO Songtao, et al. Furfural dissolved in transformer oil
 ZHAO Heng, YANG Yaojie, MIAO Kun, et al. Research progress on aging indicator of insulating paper of oilimmersed power transformer[J]. Transformer, 2020, 57(9): 38-43 (in Chinese).  
 [29] 乔胜亚，李光茂，杨森，等．基于拉曼光谱技术直接检测矿物绝缘油中糠醛含量方法[J].变压器，2021，58(1)：47-51.  
 QIAO Shengya, LI Guangmao, YANG Sen, et al. Direct determination of furfural content in mineral insulating oil based on raman spectroscopy[J]. Transformer, 2021, 58(1): 47-51 (in Chinese).  
-[30] 贡春艳．极化去极化电流法和回复电压法融合的油纸绝缘老化状态评估[D]. 重庆：重庆大学，2013.  
+[30] 贡春艳. 极化去极化电流法和回复电压法融合的油纸绝缘老化状态评估[D]. 重庆：重庆大学，2013.  
 [31] 李明华，董明，严璋．一种新的绝缘测试方法——回复电压法[J].高电压技术，2002，28(8)：43-45.  
 LI Minghua, DONG Ming, YAN Zhang. A new insulation testing method-return voltage method[J]. High Voltage Engineering, 2002, 28(8): 43-45 (in Chinese).  
 [32] OSVATH P, CSEPES G, WEBB M. Polarisation spectrum analysis for diagnosis of insulation systems[C]//Proceedings of 1992., Sixth International Conference on Dielectric Materials, Measurements and Applications. Manchester, UK: IEEE, 1992: 270-273.  
@@ -566,7 +566,7 @@ HUANG Jingjing, TANG Wenhu, ZHOU Jiujiang, et al. Investigation of nanosecond im
 QIAN Guochao, ZHAO Zhongyong, ZOU Dexu, et al. Detection of transformer winding deformation fault types based on continuous wavelet transform[J]. High Voltage Engineering, 2017, 43(6): 2016-2023 (in Chinese).  
 [76] BEHJAT V, VAHEDI A, SETAYESHMEHR A, et al. Diagnosing shorted turns on the windings of power transformers based upon online FRA using capacitive and inductive couplings[J]. IEEE Transactions on Power Delivery, 2011, 26(4): 2123-2133.
 
-[77] 赵仲勇，唐超，李成祥，等．基于频率响应二值化图像的变压器绕组变形故障诊断方法[J]．高电压技术，2019，45(5)：1526-1534.  
+[77] 赵仲勇，唐超，李成祥，等．基于频率响应二值化图像的变压器绕组变形故障诊断方法[J].高电压技术，2019，45(5)：1526-1534.  
 ZHAO Zhongyong, TANG Chao, LI Chengxiang, et al. Diagnosis method of transformer winding deformation faults based on frequency response binary image[J]. High Voltage Engineering, 2019, 45(5): 1526-1534 (in Chinese).  
 [78] 周利军，林桐，江飞明，等．频响多级分解与图像特征在自耦变压器绕组故障的应用研究[J]．高电压技术，2021，47(10)：3617-3625.  
 ZHOU Lijun, LIN Tong, JIANG Feiming, et al. Application research of autotransformer winding fault by using FRA multi-decomposition and image features[J]. High Voltage Engineering, 2021, 47(10): 3617-3625 (in Chinese).  
@@ -583,7 +583,7 @@ SHENG Ji, GAO Ming, QIAN Yufeng, et al. Research on automatic detection technolo
 [86] MORADZADEH A, POURHOSSEIN K, MOHAMMADI-IVATLOO B, et al. Locating inter-turn faults in transformer windings using isometric feature mapping of frequency response traces[J]. IEEE Transactions on Industrial Informatics, 2021, 17(10): 6962-6970.  
 [87] 郑海龙，吕桂贤，江覃晴，等．基于信息熵理论对变压器光纤传感器
 
-声探测信号的特征提取及识别研究[J].电力系统保护与控制，2024，52(10):156-166.
+声探测信号的特征提取及识别研究[J].电力系统保护与控制，2024，52(10)：156-166.
 
 ZHENG Hailong, LÜ Guixian, JIANG Tanqing, et al. Feature extraction and recognition of transformer fiber optic sensor acoustic detection signals based on information entropy theory[J]. Power System Protection and Control, 2024, 52(10): 156-166 (in Chinese).
 

@@ -3776,7 +3776,7 @@
                     "bbox": [
                         19,
                         2,
-                        303,
+                        304,
                         12
                     ],
                     "lines": [
@@ -3784,7 +3784,7 @@
                             "bbox": [
                                 19,
                                 3,
-                                304,
+                                303,
                                 11
                             ],
                             "spans": [
@@ -3792,7 +3792,7 @@
                                     "bbox": [
                                         19,
                                         3,
-                                        304,
+                                        303,
                                         11
                                     ],
                                     "score": 1.0,
@@ -34238,7 +34238,7 @@
                                         540
                                     ],
                                     "score": 0.68,
-                                    "content": "0 . 5 \\mathrm { k V A }",
+                                    "content": "0 . 5 \\mathrm { k V } \\mathrm { A }",
                                     "type": "inline_equation"
                                 },
                                 {
@@ -36636,7 +36636,7 @@
                                         540
                                     ],
                                     "score": 0.68,
-                                    "content": "0 . 5 \\mathrm { k V A }",
+                                    "content": "0 . 5 \\mathrm { k V } \\mathrm { A }",
                                     "type": "inline_equation"
                                 },
                                 {

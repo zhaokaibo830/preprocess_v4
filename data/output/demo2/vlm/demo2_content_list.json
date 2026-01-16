@@ -61,7 +61,7 @@
         "bbox": [
             149,
             363,
-            840,
+            842,
             397
         ],
         "page_idx": 0
@@ -73,7 +73,7 @@
             282,
             401,
             673,
-            414
+            416
         ],
         "page_idx": 0
     },
@@ -141,7 +141,7 @@
         "text": "出版确认：纸质期刊编辑部通过与《中国学术期刊（光盘版)》电子杂志社有限公司签约，在《中国学术期刊（网络版)》出版传播平台上创办与纸质期刊内容一致的网络版，以单篇或整期出版形式，在印刷出版之前刊发论文的录用定稿、排版定稿、整期汇编定稿。因为《中国学术期刊（网络版)》是国家新闻出版广电总局批准的网络连续型出版物（ISSN 2096-4188，CN 11-6037/Z)，所以签约期刊的网络版上网络首发论文视为正式出版。",
         "bbox": [
             147,
-            800,
+            801,
             850,
             889
         ],
@@ -210,7 +210,7 @@
             267,
             143,
             764,
-            162
+            164
         ],
         "page_idx": 1
     },
@@ -220,7 +220,7 @@
         "bbox": [
             272,
             168,
-            722,
+            724,
             186
         ],
         "page_idx": 1
@@ -650,10 +650,10 @@
     },
     {
         "type": "equation",
-        "text": "\n$$\nL = - \\frac {1}{k _ {2}} \\ln \\left[ 1 - \\frac {k _ {2}}{k _ {\\mathrm {I 0}}} \\left(\\frac {1}{c _ {\\mathrm {D P}} (\\mathrm {e n d})} - \\frac {1}{c _ {\\mathrm {D P}} (0)}\\right) \\right] \\tag {4}\n$$\n",
+        "text": "\n$$\nL = - \\frac {1}{k _ {2}} \\ln \\left[ 1 - \\frac {k _ {2}}{k _ {1 0}} \\left(\\frac {1}{c _ {\\mathrm {D P}} (\\mathrm {e n d})} - \\frac {1}{c _ {\\mathrm {D P}} (0)}\\right) \\right] \\tag {4}\n$$\n",
         "text_format": "latex",
         "bbox": [
-            142,
+            141,
             344,
             480,
             386
@@ -831,7 +831,7 @@
             884,
             61,
             895,
-            72
+            71
         ],
         "page_idx": 3
     },
@@ -899,7 +899,7 @@
             512,
             84,
             904,
-            271
+            272
         ],
         "page_idx": 4
     },
@@ -995,7 +995,7 @@
     },
     {
         "type": "image",
-        "img_path": "images/63b2736c67c1fb5e737a1f383b62952ed74a594a64932f0042e1b801be9473e0.jpg",
+        "img_path": "images/51eb9b2d4062d5e5456b5ea0f5e7f3d681d4b31d1c07625de7e06ce26b31cf4f.jpg",
         "image_caption": [
             "图3 变压器多导体传输线模型示意图"
         ],
@@ -1003,7 +1003,7 @@
         "bbox": [
             132,
             109,
-            442,
+            443,
             236
         ],
         "page_idx": 5
@@ -1138,7 +1138,7 @@
         "bbox": [
             512,
             778,
-            694,
+            695,
             794
         ],
         "page_idx": 5
@@ -1248,7 +1248,7 @@
     },
     {
         "type": "text",
-        "text": "式中： $R_0$  表示绕组的直流电阻； $R_s$  表示因集肤效应而产生的电阻； $d_1$  和  $d_2$  分别表示导体横截面的长度和宽度； $\\sigma$  表示导体的电导率。",
+        "text": "式中： $R_{0}$  表示绕组的直流电阻； $R_{\\mathrm{s}}$  表示因集肤效应而产生的电阻； $d_{1}$  和  $d_{2}$  分别表示导体横截面的长度和宽度； $\\sigma$  表示导体的电导率。",
         "bbox": [
             89,
             217,
@@ -1274,7 +1274,7 @@
         "text_format": "latex",
         "bbox": [
             238,
-            312,
+            313,
             319,
             329
         ],
@@ -1298,9 +1298,9 @@
         "text_format": "latex",
         "bbox": [
             238,
-            365,
+            366,
             309,
-            398
+            397
         ],
         "page_idx": 6
     },
@@ -1345,7 +1345,7 @@
             90,
             514,
             478,
-            569
+            568
         ],
         "page_idx": 6
     },
@@ -1389,8 +1389,8 @@
         "text": "\n$$\nC _ {\\mathrm {s}} = \\frac {\\varepsilon_ {0} \\varepsilon_ {\\mathrm {d e}} \\pi d _ {\\mathrm {m}} D}{a _ {\\mathrm {d}}} \\times 1 0 ^ {- 2} \\tag {11}\n$$\n",
         "text_format": "latex",
         "bbox": [
-            206,
-            740,
+            208,
+            741,
             480,
             774
         ],
@@ -1868,7 +1868,7 @@
     },
     {
         "type": "text",
-        "text": "是附加到电力变压器的计量设备来监测输入/输出电压和输入电流，大大降低了检测的仪器成本。此外，该方法减少了对于专家的依赖性，降低了人力成本并保证了准确性。Ali. S. Masoum 等人[64]对一台  $2\\mathrm{kVA}$ ， $220/110\\mathrm{V}$  的变压器进行实验测试，通过短路不同数量的二次抽头来创建绕组短路的故障，同时用非正弦电压激励变压器，绘制相应的  $\\Delta v - i$  轨迹，结果显示在绕组短路故障下轨迹旋转角显著减小，面积显著增大。此外，他们认为电压源谐波通过引入小回路扭曲轨迹的形状。小回路的形状、大小和数量取决于谐波的阶数、百分比和相位角。Xiaozhen Zhao 等人[70]对椭圆的表达式进行了简化，并对一台  $400\\mathrm{kVA}$ ， $10/0.4\\mathrm{kV}$ ，Yyn0 的三相变压器进行了实验测量，发现随着绕组径向变形水平的增加，椭圆的整个面积和周长都在明显增加。他们针对该技术在实际应用中的挑战，如负载动力学的影响、高水平背景噪声的不利影响和测量的可重复性，提出了效益高且简单的图形用户界面，在定制变压器的实验测量中表现良好。",
+        "text": "是附加到电力变压器的计量设备来监测输入/输出电压和输入电流，大大降低了检测的仪器成本。此外，该方法减少了对于专家的依赖性，降低了人力成本并保证了准确性。Ali. S. Masoum 等人[64]对一台  $2\\mathrm{kVA}$ ， $220/110\\mathrm{V}$  的变压器进行实验测试，通过短路不同数量的二次抽头来创建绕组短路的故障，同时用非正弦电压激励变压器，绘制相应的  $\\Delta \\nu - i$  轨迹，结果显示在绕组短路故障下轨迹旋转角显著减小，面积显著增大。此外，他们认为电压源谐波通过引入小回路扭曲轨迹的形状。小回路的形状、大小和数量取决于谐波的阶数、百分比和相位角。Xiaozhen Zhao 等人[70]对椭圆的表达式进行了简化，并对一台  $400\\mathrm{kVA}$ ， $10/0.4\\mathrm{kV}$ ，Yyn0 的三相变压器进行了实验测量，发现随着绕组径向变形水平的增加，椭圆的整个面积和周长都在明显增加。他们针对该技术在实际应用中的挑战，如负载动力学的影响、高水平背景噪声的不利影响和测量的可重复性，提出了效益高且简单的图形用户界面，在定制变压器的实验测量中表现良好。",
         "bbox": [
             512,
             84,
@@ -1987,7 +1987,7 @@
     },
     {
         "type": "text",
-        "text": "Vahid Behjat 等人[76]对一台内部预设了匝间短路故障的  $100\\mathrm{kVA}$ ， $35/0.4\\mathrm{kV}$  的配电变压器进行频率响应实验，并对频率响应曲线进行了分析，如图 12 所示。通过修改匝间短路的短路电阻  $R_{\\mathrm{f}}$  的数值，从响应轨迹可以看出匝间故障的总体影响是传递函数向更高频率移动。由于匝间故障的发生，谐振频率在响应图上向右移动，在  $10\\sim 60\\mathrm{kHz}$  频率范围内更为明显。在这个频率范围内，也可以检测到响应绝对值的增加和减少趋势。从振幅上来看，在  $39\\mathrm{kHz}$  左右的明显中频谐振中，传递函数的大小从故障情况到正常响应的变化高达 5 dB。专家认为，一组 SFRA 测量值与下一组测量值之间存在 0.2 dB 左右的差异是变压器内部物理变化的指示。在高频范围内正常和故障走线几乎完全相同，因此失去了判别故障的作用。",
+        "text": "Vahid Behjat 等人[76]对一台内部预设了匝间短路故障的  $100\\mathrm{kVA}$ ， $35/0.4\\mathrm{kV}$  的配电变压器进行频率响应实验，并对频率响应曲线进行了分析，如图 12 所示。通过修改匝间短路的短路电阻  $R_{\\mathrm{f}}$  的数值，从响应轨迹可以看出匝间故障的总体影响是传递函数向更高频率移动。由于匝间故障的发生，谐振频率在响应图上向右移动，在  $10\\sim 60\\mathrm{kHz}$  频率范围内更为明显。在这个频率范围内，也可以检测到响应绝对值的增加和减少趋势。从振幅上来看，在  $39\\mathrm{kHz}$  左右的明显中频谐振中，传递函数的大小从故障情况到正常响应的变化高达5dB。专家认为，一组SFRA测量值与下一组测量值之间存在0.2dB左右的差异是变压器内部物理变化的指示。在高频范围内正常和故障走线几乎完全相同，因此失去了判别故障的作用。",
         "bbox": [
             89,
             394,
@@ -2050,7 +2050,7 @@
         "type": "text",
         "text": "在图6所示模型中，每个位置的元件数值变化均对应着一定的绝缘缺陷[54-79]。在实际运用中，通过对比仿真分析和实测得到的SFRA曲线，可以总结出等效的绝缘参数的变化，进而评估绝缘状态。但是，由于SFRA曲线较为复杂，这种感性的比对往往精度较低，并且可能忽略很多曲线中蕴含的信息。为了解决这一问题，A.Abu-Siada等人[79]提出了利用现代优化算法来提取等效的绝缘参数。他们将等效模型的参数提取转化为一个优化问题，具体的方法是通过优化算法调整等效模型中的各项参数，来使得仿真分析得到的SFRA曲线逐渐靠近实测曲线。理想情况下，当两条曲线足够重合时，意味着此时变压器等效模型即可代表该台实测变压器当下的绝缘状态。",
         "bbox": [
-            510,
+            512,
             464,
             904,
             728
@@ -2059,11 +2059,11 @@
     },
     {
         "type": "text",
-        "text": "除了提取等效的绝缘参数以评估绝缘状态，现实中还希望能够对绝缘老化的部分进行准确定位，从而方便检修。K. Usha等人[80]研究了不同故障位置对于频率响应的影响，并提出了故障因子这一指标。他们对315kVA，3.3/0.55kV变压器进行实验，认为故障因子随故障位置呈现双曲线分布，如图13所示，因此只需要两次终端测量就可以预测不同故障百分比的准确故障位置。",
+        "text": "除了提取等效的绝缘参数以评估绝缘状态，现实中还希望能够对绝缘老化的部分进行准确定位，从而方便检修。K. Usha 等人[80]研究了不同故障位置对于频率响应的影响，并提出了故障因子这一指标。他们对  $315\\mathrm{kVA}$ ， $3.3/0.55\\mathrm{kV}$  变压器进行实验，认为故障因子随故障位置呈现双曲线分布，如图 13 所示，因此只需要两次终端测量就可以预测不同故障百分比的准确故障位置。",
         "bbox": [
             512,
             732,
-            905,
+            902,
             882
         ],
         "page_idx": 9
@@ -2151,7 +2151,7 @@
             512,
             84,
             904,
-            137
+            139
         ],
         "page_idx": 10
     },
@@ -2186,7 +2186,7 @@
             549,
             290,
             764,
-            304
+            305
         ],
         "page_idx": 10
     },
@@ -2291,7 +2291,7 @@
         "bbox": [
             90,
             570,
-            166,
+            168,
             586
         ],
         "page_idx": 11
@@ -2325,7 +2325,7 @@
         "bbox": [
             514,
             417,
-            600,
+            601,
             434
         ],
         "page_idx": 11
@@ -2361,7 +2361,7 @@
         "bbox": [
             512,
             599,
-            905,
+            907,
             935
         ],
         "page_idx": 11
@@ -2439,7 +2439,7 @@
             "BI Pengxiang, ZHANG Wenyuan, QIN Shaozhen, et al. Methods for monitoring the condition of insulation in power transformers[J]. High Voltage Engineering, 2000, 26(3): 47-49, 51 (in Chinese).",
             "[25] 杨丽君，廖瑞金，孙会刚，等．油纸绝缘热老化特性及生成物的对比分析[J].中国电机工程学报，2008，28(22)：53-58.",
             "YANG Lijun, LIAO Ruijin, SUN Huigang, et al. Contrasting analysis and investigation on properties and products of oil-paper during thermal aging process[J]. Proceedings of the CSEE, 2008, 28(22): 53-58 (in Chinese).",
-            "[26] 姜飞宇，吴雄，高松涛，等.红外光谱法检测变压器油中糠醛含量[J].中国测试，2022，48(S2)：72-77.",
+            "[26] 姜飞宇，吴雄，高松涛，等．红外光谱法检测变压器油中糠醛含量[J].中国测试，2022，48(S2)：72-77.",
             "JIANG Feiyu, WU Xiong, GAO Songtao, et al. Furfural dissolved in transformer oil using FTIR[J]. China Measurement & Test, 2022, 48(S2): 72-77"
         ],
         "bbox": [
@@ -2482,7 +2482,7 @@
             "ZHAO Heng, YANG Yaojie, MIAO Kun, et al. Research progress on aging indicator of insulating paper of oilimmersed power transformer[J]. Transformer, 2020, 57(9): 38-43 (in Chinese).",
             "[29] 乔胜亚，李光茂，杨森，等．基于拉曼光谱技术直接检测矿物绝缘油中糠醛含量方法[J].变压器，2021，58(1)：47-51.",
             "QIAO Shengya, LI Guangmao, YANG Sen, et al. Direct determination of furfural content in mineral insulating oil based on raman spectroscopy[J]. Transformer, 2021, 58(1): 47-51 (in Chinese).",
-            "[30] 贡春艳．极化去极化电流法和回复电压法融合的油纸绝缘老化状态评估[D]. 重庆：重庆大学，2013.",
+            "[30] 贡春艳. 极化去极化电流法和回复电压法融合的油纸绝缘老化状态评估[D]. 重庆：重庆大学，2013.",
             "[31] 李明华，董明，严璋．一种新的绝缘测试方法——回复电压法[J].高电压技术，2002，28(8)：43-45.",
             "LI Minghua, DONG Ming, YAN Zhang. A new insulation testing method-return voltage method[J]. High Voltage Engineering, 2002, 28(8): 43-45 (in Chinese).",
             "[32] OSVATH P, CSEPES G, WEBB M. Polarisation spectrum analysis for diagnosis of insulation systems[C]//Proceedings of 1992., Sixth International Conference on Dielectric Materials, Measurements and Applications. Manchester, UK: IEEE, 1992: 270-273.",
@@ -2708,7 +2708,7 @@
         "type": "list",
         "sub_type": "ref_text",
         "list_items": [
-            "[77] 赵仲勇，唐超，李成祥，等．基于频率响应二值化图像的变压器绕组变形故障诊断方法[J]．高电压技术，2019，45(5)：1526-1534.",
+            "[77] 赵仲勇，唐超，李成祥，等．基于频率响应二值化图像的变压器绕组变形故障诊断方法[J].高电压技术，2019，45(5)：1526-1534.",
             "ZHAO Zhongyong, TANG Chao, LI Chengxiang, et al. Diagnosis method of transformer winding deformation faults based on frequency response binary image[J]. High Voltage Engineering, 2019, 45(5): 1526-1534 (in Chinese).",
             "[78] 周利军，林桐，江飞明，等．频响多级分解与图像特征在自耦变压器绕组故障的应用研究[J]．高电压技术，2021，47(10)：3617-3625.",
             "ZHOU Lijun, LIN Tong, JIANG Feiming, et al. Application research of autotransformer winding fault by using FRA multi-decomposition and image features[J]. High Voltage Engineering, 2021, 47(10): 3617-3625 (in Chinese).",
@@ -2757,7 +2757,7 @@
     },
     {
         "type": "text",
-        "text": "声探测信号的特征提取及识别研究[J].电力系统保护与控制，2024，52(10):156-166.",
+        "text": "声探测信号的特征提取及识别研究[J].电力系统保护与控制，2024，52(10)：156-166.",
         "bbox": [
             90,
             86,
@@ -2921,7 +2921,7 @@
             87,
             222,
             480,
-            319
+            318
         ],
         "page_idx": 17
     },
@@ -2930,8 +2930,8 @@
         "text": "This paper first introduces the traditional methods for detecting and evaluating the insulation status of transformers, and points out that the dissolved gas analysis method (DGA) has the advantages of early warning and non-invasiveness, but it relies on expert experience and is difficult to identify composite faults. The degree of polymerization analysis method (DPA) can track insulation aging for a long time, but it is a destructive detection. The return voltage method (RVM) has strong discriminatory ability for oil paper insulation systems, but its applicability is limited by the insulation structure and power outage conditions. The integration of modern algorithms has improved the diagnostic accuracy, but has poor interpretability and high difficulty in model training process.",
         "bbox": [
             87,
-            321,
-            484,
+            322,
+            485,
             569
         ],
         "page_idx": 17
@@ -2954,7 +2954,7 @@
             510,
             222,
             907,
-            470
+            469
         ],
         "page_idx": 17
     },
@@ -2963,7 +2963,7 @@
         "text": "Finally, this paper looks forward to more advanced and comprehensive transformer insulation state detection and evaluation technologies from three aspects: multi-source data fusion diagnosis, optimization of transformer model selection and adjustment strategies, and strengthening the application of efficient algorithms in transformer diagnosis, to provide strong support for insulation status detection and evaluation of power transformers.",
         "bbox": [
             510,
-            472,
+            470,
             907,
             618
         ],

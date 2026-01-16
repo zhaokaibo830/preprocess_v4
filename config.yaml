@@ -13,6 +13,10 @@ LLM:
     API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315
     BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
     MODEL : qwen3-14b
-img_enable: true
-table_enable: true
+
+MinIO:
+  IP: 60.204.211.83:10000
+  ACCESS_KEY: minioadmin
+  SECRET_KEY: minioadmin123
+  BUCKET_NAME: preprocess
 

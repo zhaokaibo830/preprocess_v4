@@ -17,7 +17,7 @@
         "text": "电力自动化设备",
         "bbox": [
             265,
-            86,
+            87,
             371,
             99
         ],
@@ -50,10 +50,10 @@
         "text": "《电力自动化设备》网络首发论文",
         "text_level": 1,
         "bbox": [
-            157,
-            222,
-            505,
-            242
+            161,
+            223,
+            504,
+            241
         ],
         "page_idx": 0
     },
@@ -61,21 +61,21 @@
         "type": "text",
         "text": "题目： 考虑非线性环节的双高电力系统频率安全快速评估方法",
         "bbox": [
-            144,
-            288,
+            149,
+            291,
             690,
-            305
+            304
         ],
         "page_idx": 0
     },
     {
         "type": "text",
-        "text": "作者： 郭威，郑文伟，文云峰，游广增，李鸿鑫，何烨",
+        "text": "作者：郭威，郑文伟，文云峰，游广增，李鸿鑫，何烨",
         "bbox": [
-            147,
-            307,
+            149,
+            309,
             640,
-            323
+            322
         ],
         "page_idx": 0
     },
@@ -83,8 +83,8 @@
         "type": "text",
         "text": "DOI: 10.16081/j.epae.202512010",
         "bbox": [
-            147,
-            328,
+            149,
+            329,
             473,
             342
         ],
@@ -94,9 +94,9 @@
         "type": "text",
         "text": "收稿日期： 2025-03-29",
         "bbox": [
-            147,
-            346,
-            366,
+            149,
+            347,
+            364,
             359
         ],
         "page_idx": 0
@@ -106,9 +106,9 @@
         "text": "网络首发日期： 2025-12-25",
         "bbox": [
             149,
-            363,
+            365,
             364,
-            378
+            376
         ],
         "page_idx": 0
     },
@@ -127,34 +127,34 @@
         "type": "text",
         "text": "https://doi.org/10.16081/j.epae.202512010",
         "bbox": [
-            282,
+            285,
             420,
-            574,
+            573,
             434
         ],
         "page_idx": 0
     },
     {
         "type": "image",
-        "img_path": "images/6a2ad8a7030e3d885d1f20cb897de9b146e62a0b3d8e6837f827996a660e41d2.jpg",
+        "img_path": "images/63ef2dd3880ad37809373f6b0367d43b5f8fa12fa8c20d0852372b5c9e3e02a8.jpg",
         "image_caption": [],
         "image_footnote": [],
         "bbox": [
             147,
             436,
-            253,
-            511
+            252,
+            510
         ],
         "page_idx": 0
     },
     {
         "type": "image",
-        "img_path": "images/08d0a111887368df878faf597d4fd1e5be550dc3d511e74bdc5fe0d367b192d5.jpg",
+        "img_path": "images/883306a72b2442330fd0ed0c046d91aba4ec253008a7a621488fef6be345bac4.jpg",
         "image_caption": [],
         "image_footnote": [],
         "bbox": [
-            151,
-            600,
+            152,
+            601,
             181,
             624
         ],
@@ -186,8 +186,8 @@
         "type": "text",
         "text": "网络首发：在编辑部工作流程中，稿件从录用到出版要经历录用定稿、排版定稿、整期汇编定稿等阶段。录用定稿指内容已经确定，且通过同行评议、主编终审同意刊用的稿件。排版定稿指录用定稿按照期刊特定版式（包括网络呈现版式）排版后的稿件，可暂不确定出版年、卷、期和页码。整期汇编定稿指出版年、卷、期、页码均已确定的印刷或数字出版的整期汇编稿件。录用定稿网络首发稿件内容必须符合《出版管理条例》和《期刊出版管理规定》的有关规定；学术研究成果具有创新性、科学性和先进性，符合编辑部对刊文的录用要求，不存在学术不端行为及其他侵权行为；稿件内容应基本符合国家有关书刊编辑、出版的技术标准，正确使用和统一规范语言文字、符号、数字、外文字母、法定计量单位及地图标注等。为确保录用定稿网络首发的严肃性，录用定稿一经发布，不得修改论文题目、作者、机构名称和学术内容，只可基于编辑规范进行少量文字的修改。",
         "bbox": [
-            147,
-            633,
+            151,
+            634,
             848,
             796
         ],
@@ -197,10 +197,10 @@
         "type": "text",
         "text": "出版确认：纸质期刊编辑部通过与《中国学术期刊（光盘版)》电子杂志社有限公司签约，在《中国学术期刊（网络版)》出版传播平台上创办与纸质期刊内容一致的网络版，以单篇或整期出版形式，在印刷出版之前刊发论文的录用定稿、排版定稿、整期汇编定稿。因为《中国学术期刊（网络版)》是国家新闻出版广电总局批准的网络连续型出版物（ISSN 2096-4188，CN 11-6037/Z)，所以签约期刊的网络版上网络首发论文视为正式出版。",
         "bbox": [
-            147,
-            800,
-            850,
-            889
+            151,
+            801,
+            848,
+            888
         ],
         "page_idx": 0
     },
@@ -311,7 +311,7 @@
         "bbox": [
             89,
             411,
-            484,
+            482,
             801
         ],
         "page_idx": 1
@@ -344,7 +344,7 @@
         "bbox": [
             510,
             796,
-            907,
+            905,
             923
         ],
         "page_idx": 1
@@ -484,7 +484,7 @@
     },
     {
         "type": "text",
-        "text": "根据以上分析可知，在双高电力系统多元异质资源参与下，各有功资源依靠自身频率响应特性共同维持系统频率稳定。此外，由于各调频资源之间频率响应特性相差较大，难以找到一个统一的数学模型进行描述。为便于系统频率安全快速分析，基于惯性中心理论(center of inertia, COI)建立如附录A图A2所示MS-SFR模型[18]。图A2中： $G_{\\mathrm{WF}}$ 、 $G_{\\mathrm{PV}}$ 、 $G_{\\mathrm{ESS}}$ 、 $G_{\\mathrm{TTF}}$ 、 $G_{\\mathrm{HTF}}$  和 $G_{\\mathrm{DC}}$ 分别为风电机组功率响应传递函数、光伏机组功率响应传递函数、储能功率响应传递函数、火电机组一次调频传递函数、水电机组一次调频传递函数和直流FLC有功响应传递函数，可以根据各调频资源详细数学模型分别进行建模；频率响应资源 $X$ 的出力系数[7]  $K_{X}$ 如式(1)所示；系统同步惯性常数 $H$ 如式(2)所示。",
+        "text": "根据以上分析可知，在双高电力系统多元异质资源参与下，各有功资源依靠自身频率响应特性共同维持系统频率稳定。此外，由于各调频资源之间频率响应特性相差较大，难以找到一个统一的数学模型进行描述。为便于系统频率安全快速分析，基于惯性中心理论(center of inertia，COI)建立如附录A图A2所示MS-SFR模型[18]。图A2中： $G_{\\mathrm{WF}}$ 、 $G_{\\mathrm{PV}}$ 、 $G_{\\mathrm{ESS}}$ 、 $G_{\\mathrm{TTF}}$ 、 $G_{\\mathrm{HTF}}$  和 $G_{\\mathrm{DC}}$ 分别为风电机组功率响应传递函数、光伏机组功率响应传递函数、储能功率响应传递函数、火电机组一次调频传递函数、水电机组一次调频传递函数和直流FLC有功响应传递函数，可以根据各调频资源详细数学模型分别进行建模；频率响应资源 $X$ 的出力系数[7]  $K_{X}$ 如式(1)所示；系统同步惯性常数 $H$ 如式(2)所示。",
         "bbox": [
             510,
             263,
@@ -957,7 +957,7 @@
     },
     {
         "type": "equation",
-        "text": "\n$$\n\\begin{array}{l} 2 H \\frac {d \\triangle f}{d t} + D \\triangle f = \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {s y s}}} + \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {r e n e w}}} + \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {F L C}}} - \\triangle P _ {\\mathrm {d}} \\\\ = \\left(\\phi_ {\\mathrm {s y n}} + \\phi_ {\\mathrm {r e n e w}} + \\phi_ {\\mathrm {F L C}}\\right) \\Delta f - \\\\ \\left(\\phi_ {\\mathrm {s y n}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {s y n}}} + \\phi_ {\\mathrm {r e n e w}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {r e n e w}}} + \\phi_ {\\mathrm {F L C}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {F L C}}}\\right) - \\triangle P _ {\\mathrm {d}} \\tag {10} \\\\ \\end{array}\n$$\n",
+        "text": "\n$$\n\\begin{array}{l} 2 H \\frac {d \\triangle f}{d t} + D \\triangle f = \\triangle P _ {\\text {o u t} _ {\\text {s y s}}} + \\triangle P _ {\\text {o u t} _ {\\text {r e n e w}}} + \\triangle P _ {\\text {o u t} _ {\\text {F L C}}} - \\triangle P _ {\\text {d}} \\\\ = \\left(\\phi_ {\\mathrm {s y n}} + \\phi_ {\\mathrm {r e n e w}} + \\phi_ {\\mathrm {F L C}}\\right) \\Delta f - \\\\ \\left(\\phi_ {\\mathrm {s y n}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {s y n}}} + \\phi_ {\\mathrm {r e n e w}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {r e n e w}}} + \\phi_ {\\mathrm {F L C}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {F L C}}}\\right) - \\triangle P _ {\\mathrm {d}} \\tag {10} \\\\ \\end{array}\n$$\n",
         "text_format": "latex",
         "bbox": [
             99,
@@ -1007,7 +1007,7 @@
         "bbox": [
             512,
             96,
-            904,
+            902,
             129
         ],
         "page_idx": 4
@@ -1042,7 +1042,7 @@
         "bbox": [
             517,
             205,
-            631,
+            628,
             224
         ],
         "page_idx": 4
@@ -1349,7 +1349,7 @@
         "bbox": [
             512,
             331,
-            904,
+            905,
             423
         ],
         "page_idx": 5
@@ -1383,7 +1383,7 @@
         "bbox": [
             512,
             617,
-            895,
+            897,
             634
         ],
         "page_idx": 5
@@ -1435,10 +1435,10 @@
     },
     {
         "type": "text",
-        "text": "率完全释放所需时间，在此定义为机组频率响应固有时间  $T_{\\mathrm{s}}$ ，其详细计算推导见附录 D。 $T_{\\mathrm{s}}$  越大说明该机组功率响应速度越慢，不利于频率恢复。而为提升新能源极限渗透率，应替换高出力水平  $P_{\\mathrm{out}}$  的大型同步机组。",
+        "text": "率完全释放所需时间，在此定义为机组频率响应固有时间  $T_{\\mathrm{S}}$ ，其详细计算推导见附录 D。 $T_{\\mathrm{S}}$  越大说明该机组功率响应速度越慢，不利于频率恢复。而为提升新能源极限渗透率，应替换高出力水平  $P_{\\mathrm{out}}$  的大型同步机组。",
         "bbox": [
             89,
-            96,
+            95,
             484,
             185
         ],
@@ -1631,18 +1631,18 @@
             549,
             482,
             702,
-            497
+            495
         ],
         "page_idx": 6
     },
     {
         "type": "text",
-        "text": "算例1：在初始仿真时刻(t=0s)发生2.6%负荷阶跃故障，所有机组参与频率响应(小扰动场景)。",
+        "text": "算例1：在初始仿真时刻  $(t = 0 \\mathrm{~s})$  发生  $2.6\\%$  负荷阶跃故障，所有机组参与频率响应(小扰动场景)。",
         "bbox": [
             512,
             501,
-            904,
-            533
+            905,
+            535
         ],
         "page_idx": 6
     },
@@ -1754,7 +1754,7 @@
     },
     {
         "type": "image",
-        "img_path": "images/c09b680b38cf78a1bf42969a1fd96331ef691024ba4eb88b53e9347e8d8a82f1.jpg",
+        "img_path": "images/74c4666629a447817696b477ecc01b76c8f4ce5b088a569cdab6f62072e6d0fb.jpg",
         "image_caption": [
             "图3 算例1调频资源功率响应量",
             "Fig.3 Power response quantity of Case 1"
@@ -1763,7 +1763,7 @@
         "bbox": [
             100,
             507,
-            465,
+            468,
             642
         ],
         "page_idx": 7
@@ -1871,7 +1871,7 @@
             510,
             804,
             905,
-            877
+            876
         ],
         "page_idx": 7
     },
@@ -2048,7 +2048,7 @@
         "text": "此外，设置频率安全边界为  $1\\mathrm{Hz}$ ，其余基础数据保存不变，分析频率安全约束变化时的新能源极限渗透率：经所提方法计算，需关停G4、G7、G5、G1、G3、G2和G9机组，并将其替换成同等出力水平的新能源机组，此时，新能源极限渗透率达到  $57.4\\%$  。可见，若放宽电网频率偏差约束，新能源极限渗透率将显著提升。",
         "bbox": [
             510,
-            241,
+            240,
             905,
             368
         ],
@@ -2346,7 +2346,7 @@
             "GAO Huisheng, XIN Huanhai, HUANG Linbin, et al. Characteristic analysis and quantification of common mode frequency in power systems with high penetration of renewable resources[J]. Proceedings of the CSEE, 2021, 41(3): 890-900.",
             "[11]赵强，张玉琼，陈紫薇，等．计及储能的低惯量电力系统频率特性分析[J].中国电机工程学报，2023，43(3):904-914.",
             "ZHAO Qiang, ZHANG Yuqiong, CHEN Ziwei, et al. Frequency characteristic analysis of low-inertia power system considering energy storage[J]. Proceedings of the CSEE, 2023, 43(3): 904-914.",
-            "[12] LIU L, LI W D, BAY, et al. An analytical model for frequency nadir prediction following a major disturbance[J]. IEEE Transactions on Power Systems, 2020, 35(4): 2527-2536.",
+            "[12] LIU L, LI W D, B A Y, et al. An analytical model for frequency nadir prediction following a major disturbance[J]. IEEE Transactions on Power Systems, 2020, 35(4): 2527-2536.",
             "[13] ZHANG Y Q, GUO Q L, ZHOU Y Z, et al. Online frequency security assessment based on analytical model considering limiting modules[J], CSEE Journal of Power and Energy Systems, 2022, 8(5): 1363-1372.",
             "[14] SHI Q M, WANG G, MA W M, et al. Coordinated virtual inertia control strategy for D-PMSG considering frequency regulation ability[J]. Journal of Electrical Engineering and Technology, 2016, 11(6): 1556-1570.",
             "[15]张祥宇，朱永健，付媛．基于系统惯量需求的风储协同快速频率响应技术[J].中国电机工程学报，2023，43(14):5415-5429.",
@@ -2402,33 +2402,33 @@
     },
     {
         "type": "text",
-        "text": "郭威(1999—)，男，硕士，主要研究方向为低惯量电力系统频率安全分析（E-mail：gw0717@hnu.edu.cn);",
+        "text": "郭威(1999—)，男，硕士，主要研究方向为低惯量电力系统频率安全分析（E-mail：gw0717@hnu.edu.cn）；",
         "bbox": [
             514,
             615,
-            904,
+            902,
             644
         ],
         "page_idx": 10
     },
     {
         "type": "text",
-        "text": "郑文伟（2000—），男，博士研究生，主要研究方向为低惯量电力系统频率安全分析与控制（E-mail：zhengww@hnu.edu.cn）；",
+        "text": "郑文伟（2000—），男，博士研究生，主要研究方向为低惯量电力系统频率安全分析与控制（E-mail:zhengww@hnu.edu.cn);",
         "bbox": [
             514,
             645,
-            904,
+            902,
             687
         ],
         "page_idx": 10
     },
     {
         "type": "text",
-        "text": "文云峰(1986—)，男，教授，博士生研究生导师，通信作者，主要研究方向为低惯量电力系统规划、运行与控制（E-mail:yunfeng.8681@163.com）。",
+        "text": "文云峰(1986—)，男，教授，博士生研究生导师，通信作者，主要研究方向为低惯量电力系统规划、运行与控制（E-mail：yunfeng.8681@163.com）。",
         "bbox": [
             514,
             688,
-            904,
+            902,
             730
         ],
         "page_idx": 10
@@ -2736,7 +2736,8 @@
         "img_path": "images/22f632aa89e5efd2f1c8343eb29cf4b7246e4704ede39eaf3941210336391319.jpg",
         "image_caption": [
             "Fig. B1 GS-TB type governor-prime mover topology",
-            "图B2 GM-GA-TW型调速器-原动机拓扑"
+            "图B2 GM-GA-TW型调速器-原动机拓扑",
+            "Fig. B2 GM-GA-TW type governor prime mover topo"
         ],
         "image_footnote": [],
         "bbox": [
@@ -2751,7 +2752,6 @@
         "type": "image",
         "img_path": "images/0ba48ca694cd3a907f74ce8eb52bf181511c90bf1b4c40581d7489db515659fd.jpg",
         "image_caption": [
-            "Fig. B2 GM-GA-TW type governor prime mover topology",
             "图B3 水电和火电机组调速器仿真结果与辨识结果对比",
             "Fig.B3 Comparison of simulation results and identification results for hydro and thermal power plant governors"
         ],
