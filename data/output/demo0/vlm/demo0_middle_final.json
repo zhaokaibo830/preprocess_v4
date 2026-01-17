@@ -1354,7 +1354,7 @@
                 581
               ],
               "type": "inline_equation",
-              "content": "H_{\\mathrm{syn - q}}"
+              "content": "H_{\\mathrm{syn}-q}"
             },
             {
               "bbox": [
@@ -2047,7 +2047,7 @@
                 603
               ],
               "type": "inline_equation",
-              "content": "b_{0}=0"
+              "content": "\\mathrm{b}_{0}=0"
             },
             {
               "bbox": [
@@ -2067,7 +2067,7 @@
                 603
               ],
               "type": "inline_equation",
-              "content": "b_{0} \\neq 0"
+              "content": "\\mathrm{b}_{0} \\neq 0"
             },
             {
               "bbox": [
@@ -3095,7 +3095,7 @@
                 615
               ],
               "type": "interline_equation",
-              "content": "\\begin{array}{l} 2 H \\frac {d \\triangle f}{d t} + D \\triangle f = \\triangle P _ {\\text {o u t} _ {\\text {s y s}}} + \\triangle P _ {\\text {o u t} _ {\\text {r e n e w}}} + \\triangle P _ {\\text {o u t} _ {\\text {F L C}}} - \\triangle P _ {\\text {d}} \\\\ = \\left(\\phi_ {\\mathrm {s y n}} + \\phi_ {\\mathrm {r e n e w}} + \\phi_ {\\mathrm {F L C}}\\right) \\Delta f - \\\\ \\left(\\phi_ {\\mathrm {s y n}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {s y n}}} + \\phi_ {\\mathrm {r e n e w}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {r e n e w}}} + \\phi_ {\\mathrm {F L C}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {F L C}}}\\right) - \\triangle P _ {\\mathrm {d}} \\tag {10} \\\\ \\end{array}",
+              "content": "\\begin{array}{l} 2 H \\frac {d \\triangle f}{d t} + D \\triangle f = \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {s y s}}} + \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {r e n e w}}} + \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {F L C}}} - \\triangle P _ {\\mathrm {d}} \\\\ = \\left(\\phi_ {\\mathrm {s y n}} + \\phi_ {\\mathrm {r e n e w}} + \\phi_ {\\mathrm {F L C}}\\right) \\Delta f - \\\\ \\left(\\phi_ {\\mathrm {s y n}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {s y n}}} + \\phi_ {\\mathrm {r e n e w}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {r e n e w}}} + \\phi_ {\\mathrm {F L C}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {F L C}}}\\right) - \\triangle P _ {\\mathrm {d}} \\tag {10} \\\\ \\end{array}",
               "image_path": "16817a1284168c719ddacda8b44f7a2dcbd66bb6a27ccb32bf5932fe41dc4e68.jpg"
             }
           ]
@@ -3902,14 +3902,14 @@
           "spans": [
             {
               "bbox": [
-                389,
+                390,
                 724,
                 539,
                 756
               ],
               "type": "interline_equation",
               "content": "\\triangle \\widehat {P} _ {0} (t) = \\frac {P _ {\\mathrm {d}}}{t _ {\\mathrm {n} 0}} t \\tag {12}",
-              "image_path": "c019f0e965c75f0915370501dcb72dc0a29db812eb89e284e6e0f29dcd8a9146.jpg"
+              "image_path": "f44be5e9cb96c1dd8ce44b844acd4e77587cff13bd185edbab556a864c64367a.jpg"
             }
           ]
         }
@@ -4830,7 +4830,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4840,7 +4840,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4850,7 +4850,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4860,7 +4860,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4870,7 +4870,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4880,7 +4880,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4890,7 +4890,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4900,7 +4900,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4910,7 +4910,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4920,7 +4920,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4930,7 +4930,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4940,7 +4940,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4950,7 +4950,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4960,7 +4960,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4970,7 +4970,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4980,7 +4980,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4990,7 +4990,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -5000,7 +5000,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -5010,7 +5010,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -5136,7 +5136,7 @@
               "bbox": [
                 305,
                 519,
-                534,
+                533,
                 534
               ],
               "type": "text",
@@ -5394,7 +5394,7 @@
                 54,
                 253,
                 186,
-                267
+                266
               ],
               "type": "text",
               "content": "式中："
@@ -5404,7 +5404,7 @@
                 54,
                 253,
                 186,
-                267
+                266
               ],
               "type": "inline_equation",
               "content": "P_{\\mathrm{MA}}"
@@ -5414,7 +5414,7 @@
                 54,
                 253,
                 186,
-                267
+                266
               ],
               "type": "text",
               "content": " 为机组调频容量。"
@@ -5738,7 +5738,7 @@
                 53,
                 645,
                 287,
-                690
+                689
               ],
               "type": "text",
               "content": "步骤4：根据最佳关停机组合将同步机组替换成为相同出力水平的新能源机组，求解得到系统可承载的新能源极限渗透率。"
@@ -5928,7 +5928,7 @@
                 305,
                 186,
                 420,
-                199
+                198
               ],
               "type": "text",
               "content": "4.1 系统频率安全分析"
@@ -6114,7 +6114,7 @@
                 305,
                 422,
                 539,
-                450
+                449
               ],
               "type": "text",
               "content": "算例1：在初始仿真时刻 "
@@ -6124,27 +6124,27 @@
                 305,
                 422,
                 539,
-                450
+                449
               ],
               "type": "inline_equation",
-              "content": "(t = 0 \\mathrm{~s})"
+              "content": "(t = 0"
             },
             {
               "bbox": [
                 305,
                 422,
                 539,
-                450
+                449
               ],
               "type": "text",
-              "content": " 发生 "
+              "content": " s) 发生 "
             },
             {
               "bbox": [
                 305,
                 422,
                 539,
-                450
+                449
               ],
               "type": "inline_equation",
               "content": "2.6\\%"
@@ -6154,7 +6154,7 @@
                 305,
                 422,
                 539,
-                450
+                449
               ],
               "type": "text",
               "content": " 负荷阶跃故障，所有机组参与频率响应(小扰动场景)。"
@@ -6739,8 +6739,8 @@
                   "bbox": [
                     375,
                     157,
-                    469,
-                    168
+                    468,
+                    167
                   ],
                   "type": "text",
                   "content": "表 2 算例 2 对比结果"
@@ -6876,7 +6876,7 @@
                 304,
                 677,
                 539,
-                737
+                738
               ],
               "type": "text",
               "content": "本节以极值频率偏差为边界条件进行新能源极限渗透率分析，设置为：电网发生机组最大N-1故障时，新能源机组不参于频率调节，且极值频率偏差指标不超过 "
@@ -6886,7 +6886,7 @@
                 304,
                 677,
                 539,
-                737
+                738
               ],
               "type": "inline_equation",
               "content": "0.8\\mathrm{Hz}"
@@ -6896,7 +6896,7 @@
                 304,
                 677,
                 539,
-                737
+                738
               ],
               "type": "text",
               "content": " 时的新能源渗透率。"
@@ -9378,7 +9378,7 @@
             {
               "bbox": [
                 306,
-                518,
+                519,
                 537,
                 542
               ],
@@ -9400,7 +9400,7 @@
             {
               "bbox": [
                 306,
-                543,
+                544,
                 537,
                 578
               ],
@@ -10365,7 +10365,7 @@
                 403
               ],
               "type": "interline_equation",
-              "content": "\\triangle P _ {\\mathrm {o u t}} (t) = \\frac {\\Delta P _ {\\mathrm {d}}}{t _ {\\mathrm {n}}} t \\tag {A1}",
+              "content": "\\Delta P _ {\\mathrm {o u t}} (t) = \\frac {\\Delta P _ {\\mathrm {d}}}{t _ {\\mathrm {n}}} t \\tag {A1}",
               "image_path": "b1e800eb1ad1901aaf11efbd874554fb18798a7e69f9e3517d77e3c1f961fad0.jpg"
             }
           ]
@@ -10864,27 +10864,6 @@
           "index": 20,
           "angle": 0,
           "type": "image_caption"
-        },
-        {
-          "lines": [
-            {
-              "spans": [
-                {
-                  "bbox": [
-                    315,
-                    555,
-                    536,
-                    567
-                  ],
-                  "type": "text",
-                  "content": "Fig. B2 GM-GA-TW type governor prime mover topo"
-                }
-              ]
-            }
-          ],
-          "index": 21,
-          "angle": 0,
-          "type": "image_caption"
         }
       ],
       "page_idx": 12,
@@ -10899,6 +10878,27 @@
         711
       ],
       "blocks": [
+        {
+          "lines": [
+            {
+              "spans": [
+                {
+                  "bbox": [
+                    315,
+                    555,
+                    536,
+                    580
+                  ],
+                  "type": "text",
+                  "content": "Fig. B2 GM-GA-TW type governor prime mover topology"
+                }
+              ]
+            }
+          ],
+          "index": 21,
+          "angle": 0,
+          "type": "image_caption"
+        },
         {
           "lines": [
             {
@@ -10929,7 +10929,7 @@
                     316,
                     713,
                     535,
-                    738
+                    737
                   ],
                   "type": "text",
                   "content": "图B3 水电和火电机组调速器仿真结果与辨识结果对比"
@@ -11910,7 +11910,7 @@
                 544
               ],
               "type": "inline_equation",
-              "content": "a_{1}"
+              "content": "a_1"
             },
             {
               "bbox": [
@@ -11930,7 +11930,7 @@
                 544
               ],
               "type": "inline_equation",
-              "content": "b_{0}"
+              "content": "b_0"
             },
             {
               "bbox": [
@@ -11950,7 +11950,7 @@
                 544
               ],
               "type": "inline_equation",
-              "content": "b_{1}"
+              "content": "b_1"
             },
             {
               "bbox": [
@@ -12250,7 +12250,7 @@
                 201
               ],
               "type": "inline_equation",
-              "content": "t_n"
+              "content": "t_{n}"
             },
             {
               "bbox": [
@@ -12270,7 +12270,7 @@
                 201
               ],
               "type": "inline_equation",
-              "content": "T_S"
+              "content": "T_{S}"
             },
             {
               "bbox": [
@@ -12290,7 +12290,7 @@
                 201
               ],
               "type": "inline_equation",
-              "content": "T_S"
+              "content": "T_{S}"
             },
             {
               "bbox": [
@@ -12500,7 +12500,7 @@
                     61,
                     116,
                     272,
-                    137
+                    139
                   ],
                   "type": "text",
                   "content": "Table D1 Basic parameters of frequency regulation resources."
@@ -12544,7 +12544,7 @@
         58,
         354,
         283,
-        486
+        487
       ],
       "blocks": [
         {
@@ -12577,10 +12577,10 @@
                     58,
                     354,
                     283,
-                    486
+                    487
                   ],
                   "type": "image",
-                  "image_path": "44b30801cc79b3dbadb0550b5c89a534a201fa29f04652e12747492c452d294e.jpg"
+                  "image_path": "d97e950979be29ce80603f2e31b45a085da15a5c2e1cb5ac89e82b099ec11503.jpg"
                 }
               ]
             }
@@ -12596,7 +12596,7 @@
                 {
                   "bbox": [
                     94,
-                    491,
+                    490,
                     240,
                     502
                   ],

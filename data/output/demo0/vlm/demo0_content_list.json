@@ -519,7 +519,7 @@
     },
     {
         "type": "text",
-        "text": "式中： $P_{X}$  为频率响应资源  $X$  的出力； $P_{\\mathrm{load}}$  为系统负荷，系统基准容量为负荷大小； $S_{q}$  为第  $q$  台同步机组的额定容量； $H_{\\mathrm{syn - q}}$  为第  $q$  台同步机组的惯量常数； $S_{\\mathrm{base}}$  为系统基准容量， $N_{\\mathrm{G}}$  为系统中同步机组的台数。",
+        "text": "式中： $P_{X}$  为频率响应资源  $X$  的出力； $P_{\\mathrm{load}}$  为系统负荷，系统基准容量为负荷大小； $S_{q}$  为第  $q$  台同步机组的额定容量； $H_{\\mathrm{syn}-q}$  为第  $q$  台同步机组的惯量常数； $S_{\\mathrm{base}}$  为系统基准容量， $N_{\\mathrm{G}}$  为系统中同步机组的台数。",
         "bbox": [
             510,
             601,
@@ -624,7 +624,7 @@
     },
     {
         "type": "text",
-        "text": "式中:  $b_{0} 、 b_{1}$  和  $a_{1}$  为一阶模型中的等值参数, 可以通过对发电机的小扰动实验和最小二乘参数辨识方法求得。此外,  $b_{0}$  的正负决定着调速系统的种类:  $b_{0} > 0$  时, 表示该机组调速器为汽轮机(火电机组);  $b_{0}<0$  时, 表示该机组调速器为水轮机(水电机组), 即能够反映一次调频初期水电机组的反调现象, 详细证明见附录 A 式 (A1) — (A5)。需要指出的是, 若  $b_{0}=0$ , 模型将退化为无零点惯性环节, 经测试其拟合度显著下降, 无法准确捕捉关键动态特性, 因此本文中  $b_{0} \\neq 0$  。",
+        "text": "式中:  $b_{0} 、 b_{1}$  和  $a_{1}$  为一阶模型中的等值参数, 可以通过对发电机的小扰动实验和最小二乘参数辨识方法求得。此外,  $b_{0}$  的正负决定着调速系统的种类:  $b_{0} > 0$  时, 表示该机组调速器为汽轮机(火电机组);  $b_{0}<0$  时, 表示该机组调速器为水轮机(水电机组), 即能够反映一次调频初期水电机组的反调现象, 详细证明见附录 A 式 (A1) — (A5)。需要指出的是, 若  $\\mathrm{b}_{0}=0$ , 模型将退化为无零点惯性环节, 经测试其拟合度显著下降, 无法准确捕捉关键动态特性, 因此本文中  $\\mathrm{b}_{0} \\neq 0$  。",
         "bbox": [
             89,
             533,
@@ -957,7 +957,7 @@
     },
     {
         "type": "equation",
-        "text": "\n$$\n\\begin{array}{l} 2 H \\frac {d \\triangle f}{d t} + D \\triangle f = \\triangle P _ {\\text {o u t} _ {\\text {s y s}}} + \\triangle P _ {\\text {o u t} _ {\\text {r e n e w}}} + \\triangle P _ {\\text {o u t} _ {\\text {F L C}}} - \\triangle P _ {\\text {d}} \\\\ = \\left(\\phi_ {\\mathrm {s y n}} + \\phi_ {\\mathrm {r e n e w}} + \\phi_ {\\mathrm {F L C}}\\right) \\Delta f - \\\\ \\left(\\phi_ {\\mathrm {s y n}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {s y n}}} + \\phi_ {\\mathrm {r e n e w}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {r e n e w}}} + \\phi_ {\\mathrm {F L C}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {F L C}}}\\right) - \\triangle P _ {\\mathrm {d}} \\tag {10} \\\\ \\end{array}\n$$\n",
+        "text": "\n$$\n\\begin{array}{l} 2 H \\frac {d \\triangle f}{d t} + D \\triangle f = \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {s y s}}} + \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {r e n e w}}} + \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {F L C}}} - \\triangle P _ {\\mathrm {d}} \\\\ = \\left(\\phi_ {\\mathrm {s y n}} + \\phi_ {\\mathrm {r e n e w}} + \\phi_ {\\mathrm {F L C}}\\right) \\Delta f - \\\\ \\left(\\phi_ {\\mathrm {s y n}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {s y n}}} + \\phi_ {\\mathrm {r e n e w}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {r e n e w}}} + \\phi_ {\\mathrm {F L C}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {F L C}}}\\right) - \\triangle P _ {\\mathrm {d}} \\tag {10} \\\\ \\end{array}\n$$\n",
         "text_format": "latex",
         "bbox": [
             99,
@@ -1131,7 +1131,7 @@
         "text": "\n$$\n\\triangle \\widehat {P} _ {0} (t) = \\frac {P _ {\\mathrm {d}}}{t _ {\\mathrm {n} 0}} t \\tag {12}\n$$\n",
         "text_format": "latex",
         "bbox": [
-            653,
+            655,
             860,
             905,
             898
@@ -1349,7 +1349,7 @@
         "bbox": [
             512,
             331,
-            905,
+            904,
             423
         ],
         "page_idx": 5
@@ -1383,7 +1383,7 @@
         "bbox": [
             512,
             617,
-            897,
+            895,
             634
         ],
         "page_idx": 5
@@ -1474,7 +1474,7 @@
             90,
             300,
             312,
-            317
+            316
         ],
         "page_idx": 6
     },
@@ -1552,7 +1552,7 @@
             89,
             766,
             482,
-            820
+            819
         ],
         "page_idx": 6
     },
@@ -1609,7 +1609,7 @@
             512,
             221,
             705,
-            236
+            235
         ],
         "page_idx": 6
     },
@@ -1637,12 +1637,12 @@
     },
     {
         "type": "text",
-        "text": "算例1：在初始仿真时刻  $(t = 0 \\mathrm{~s})$  发生  $2.6\\%$  负荷阶跃故障，所有机组参与频率响应(小扰动场景)。",
+        "text": "算例1：在初始仿真时刻  $(t = 0$  s) 发生  $2.6\\%$  负荷阶跃故障，所有机组参与频率响应(小扰动场景)。",
         "bbox": [
             512,
             501,
             905,
-            535
+            533
         ],
         "page_idx": 6
     },
@@ -1871,7 +1871,7 @@
             510,
             804,
             905,
-            876
+            877
         ],
         "page_idx": 7
     },
@@ -2405,7 +2405,7 @@
         "text": "郭威(1999—)，男，硕士，主要研究方向为低惯量电力系统频率安全分析（E-mail：gw0717@hnu.edu.cn）；",
         "bbox": [
             514,
-            615,
+            617,
             902,
             644
         ],
@@ -2416,7 +2416,7 @@
         "text": "郑文伟（2000—），男，博士研究生，主要研究方向为低惯量电力系统频率安全分析与控制（E-mail:zhengww@hnu.edu.cn);",
         "bbox": [
             514,
-            645,
+            646,
             902,
             687
         ],
@@ -2591,7 +2591,7 @@
     },
     {
         "type": "equation",
-        "text": "\n$$\n\\triangle P _ {\\mathrm {o u t}} (t) = \\frac {\\Delta P _ {\\mathrm {d}}}{t _ {\\mathrm {n}}} t \\tag {A1}\n$$\n",
+        "text": "\n$$\n\\Delta P _ {\\mathrm {o u t}} (t) = \\frac {\\Delta P _ {\\mathrm {d}}}{t _ {\\mathrm {n}}} t \\tag {A1}\n$$\n",
         "text_format": "latex",
         "bbox": [
             233,
@@ -2736,8 +2736,7 @@
         "img_path": "images/22f632aa89e5efd2f1c8343eb29cf4b7246e4704ede39eaf3941210336391319.jpg",
         "image_caption": [
             "Fig. B1 GS-TB type governor-prime mover topology",
-            "图B2 GM-GA-TW型调速器-原动机拓扑",
-            "Fig. B2 GM-GA-TW type governor prime mover topo"
+            "图B2 GM-GA-TW型调速器-原动机拓扑"
         ],
         "image_footnote": [],
         "bbox": [
@@ -2752,6 +2751,7 @@
         "type": "image",
         "img_path": "images/0ba48ca694cd3a907f74ce8eb52bf181511c90bf1b4c40581d7489db515659fd.jpg",
         "image_caption": [
+            "Fig. B2 GM-GA-TW type governor prime mover topology",
             "图B3 水电和火电机组调速器仿真结果与辨识结果对比",
             "Fig.B3 Comparison of simulation results and identification results for hydro and thermal power plant governors"
         ],
@@ -3025,7 +3025,7 @@
     },
     {
         "type": "text",
-        "text": "式中：  $a_{1}$  、  $b_{0}$  和  $b_{1}$  为调速器低阶等值模型参数； $f_{\\mathrm{DB\\_down}}$  为极值频率偏差。",
+        "text": "式中：  $a_1$  、  $b_0$  和  $b_1$  为调速器低阶等值模型参数； $f_{\\mathrm{DB\\_down}}$  为极值频率偏差。",
         "bbox": [
             90,
             612,
@@ -3117,7 +3117,7 @@
     },
     {
         "type": "text",
-        "text": "将式(D5)代入式(D6)并进行迭代求解可求得极值频率偏差点对应时间  $t_n$ ，即本文所定义机组频率响应固有时间  $T_S$ 。由以上分析可知， $T_S$  与功率扰动大小无关，仅表示故障后机组释放调频功率至极值频率偏差点时有功平衡的时间，反映机组进行频率调节的速度。",
+        "text": "将式(D5)代入式(D6)并进行迭代求解可求得极值频率偏差点对应时间  $t_{n}$ ，即本文所定义机组频率响应固有时间  $T_{S}$ 。由以上分析可知， $T_{S}$  与功率扰动大小无关，仅表示故障后机组释放调频功率至极值频率偏差点时有功平衡的时间，反映机组进行频率调节的速度。",
         "bbox": [
             524,
             130,
@@ -3187,7 +3187,7 @@
     },
     {
         "type": "image",
-        "img_path": "images/44b30801cc79b3dbadb0550b5c89a534a201fa29f04652e12747492c452d294e.jpg",
+        "img_path": "images/d97e950979be29ce80603f2e31b45a085da15a5c2e1cb5ac89e82b099ec11503.jpg",
         "image_caption": [
             "Fig.D2 Topology diagram of the modified IEEE 39-bus system",
             "图D3 部分调频资源功率响应曲线"
@@ -3197,7 +3197,7 @@
             97,
             420,
             475,
-            577
+            579
         ],
         "page_idx": 15
     },

@@ -27,15 +27,21 @@
             }
           ],
           "index": 0,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": null,
+          "child_node": []
         }
       ],
       "page_idx": 0,
       "index": 0,
+      "level": 0,
+      "father_node": null,
+      "child_node": [],
       "llm_process": {
         "type": "other",
-        "desc": "这是一张期刊杂志封面图片。\n\n主要主体是电力系统相关设施的剪影：前景和中景是数座大型风力发电机，背景是高压输电铁塔，整体置于蓝紫色渐变的夜空背景下，营造出科技感与电力能源的主题氛围。\n\n图片顶部醒目地印有中文刊名“电力自动化设备”，其下方配有英文“Electric Power Automation Equipment”。左上角有“NR”标识及“中国电力科学研究院”字样。底部横幅文字为“服务电力系统 保障电网安全”，点明了该期刊的核心宗旨与服务方向。\n\n核心信息概括：这张封面属于《电力自动化设备》期刊，聚焦于电力系统的自动化技术与设备，旨在服务电力行业并保障电网运行的安全性。"
+        "desc": "这是一张期刊封面图片。\n\n主要主体是电力行业相关的视觉元素：前景为数座大型风力发电机，背景为高压输电铁塔和蓝色天空。整体画面传达出清洁能源发电与电网传输的现代电力系统主题。\n\n醒目的关键文字包括：\n- 标题：“电力自动化设备”及英文“Electric Power Automation Equipment”\n- 副标题/标语：“服务电力系统 保障电网安全”\n\n核心信息概括：该期刊聚焦于电力自动化技术及其在保障电网安全、服务电力系统方面的应用。\n\n由于图片中未包含具体的专业数据（如电压等级、功率参数、设备型号等），无法提取并解释电力行业术语下的专业数据。但其视觉内容隐含了对新能源接入、智能电网、自动化控制等电力行业前沿方向的关注。"
       }
     },
     {
@@ -58,7 +64,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 1
+      "index": 1,
+      "level": 0,
+      "father_node": null,
+      "child_node": []
     },
     {
       "type": "text",
@@ -80,7 +89,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 2
+      "index": 2,
+      "level": 0,
+      "father_node": null,
+      "child_node": []
     },
     {
       "type": "text",
@@ -102,7 +114,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 3
+      "index": 3,
+      "level": 0,
+      "father_node": null,
+      "child_node": []
     },
     {
       "type": "title",
@@ -124,7 +139,24 @@
         }
       ],
       "page_idx": 0,
-      "index": 4
+      "index": 4,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10",
+        "0-11",
+        "0-12",
+        "0-13",
+        "0-14",
+        "0-15",
+        "0-16",
+        "0-17"
+      ]
     },
     {
       "type": "text",
@@ -146,7 +178,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": []
     },
     {
       "type": "text",
@@ -168,7 +203,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 6
+      "index": 6,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": []
     },
     {
       "type": "text",
@@ -190,7 +228,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 7
+      "index": 7,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": []
     },
     {
       "type": "text",
@@ -212,7 +253,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 8
+      "index": 8,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": []
     },
     {
       "type": "text",
@@ -234,7 +278,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 9
+      "index": 9,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": []
     },
     {
       "type": "text",
@@ -256,7 +303,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 10
+      "index": 10,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": []
     },
     {
       "type": "text",
@@ -278,7 +328,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 11
+      "index": 11,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": []
     },
     {
       "type": "image",
@@ -307,15 +360,21 @@
             }
           ],
           "index": 12,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "0-4",
+          "child_node": []
         }
       ],
       "page_idx": 0,
       "index": 12,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": [],
       "llm_process": {
         "type": "other",
-        "desc": "这是一张二维码图片。\n\n图片主体是一个标准的黑白方形二维码，由密集排列的黑色方块和白色背景构成，四个角有明显的定位方块。该二维码目前处于静止状态，未显示任何动态内容或扫描过程。\n\n由于二维码本身是数据编码形式，图片中不包含可直接阅读的文字信息。其核心功能是通过手机等设备扫描后，引导用户访问特定的网页、下载应用、获取信息或完成其他数字交互。"
+        "desc": "这是一张二维码图片。\n\n图片主体是一个标准的黑白方形二维码，由密集排列的黑色和白色模块组成，四周带有定位方块。二维码中心区域图案复杂，无可见文字或图形信息。\n\n该二维码用于存储数据，可通过手机等设备扫描后访问链接、下载文件或执行特定操作，其核心功能是实现信息的快速数字化传递与交互。由于图片中未包含任何可读文字或电力行业相关数据，无法提取专业术语或行业数据。"
       }
     },
     {
@@ -345,15 +404,21 @@
             }
           ],
           "index": 13,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "0-4",
+          "child_node": []
         }
       ],
       "page_idx": 0,
       "index": 13,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": [],
       "llm_process": {
         "type": "other",
-        "desc": "这是一张抽象的圆形图标图片，主体是一个带有网格线的蓝色地球图案，被一个黑色环形边框包围。\n\n主要主体是一个风格化的地球仪，其表面呈现出蓝白相间的陆地与海洋纹理，并覆盖有浅蓝色的经纬网格线，暗示全球性或网络化概念。整个地球图案被一个深色圆环环绕，形成类似徽章或按钮的视觉效果。\n\n该图标没有包含任何文字。从视觉元素来看，它传达的核心信息是“全球化”、“互联网”、“科技”或“国际服务”，常用于代表跨国公司、在线平台或全球通信系统。"
+        "desc": "这是一张图标图片，主体为一个地球仪图案。\n\n图片中心是一个蓝色调的地球仪，表面可见大陆轮廓和经纬网格线，呈现出全球范围的视觉效果。地球仪被一个黑色的环形边框环绕，整体设计简洁现代，常用于象征全球化、互联网或国际事务相关的机构或服务。\n\n该图标没有包含任何文字信息。\n\n由于图片内容为通用图标，不涉及电力行业相关内容，因此无需提取电力行业术语或数据。"
       }
     },
     {
@@ -376,7 +441,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 14
+      "index": 14,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": []
     },
     {
       "type": "text",
@@ -398,7 +466,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 15
+      "index": 15,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": []
     },
     {
       "type": "text",
@@ -420,7 +491,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 16
+      "index": 16,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": []
     },
     {
       "type": "text",
@@ -442,7 +516,10 @@
         }
       ],
       "page_idx": 0,
-      "index": 17
+      "index": 17,
+      "level": 0,
+      "father_node": "0-4",
+      "child_node": []
     },
     {
       "type": "title",
@@ -464,7 +541,18 @@
         }
       ],
       "page_idx": 1,
-      "index": 3
+      "index": 3,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7",
+        "1-8",
+        "1-9",
+        "1-10"
+      ]
     },
     {
       "type": "text",
@@ -486,7 +574,10 @@
         }
       ],
       "page_idx": 1,
-      "index": 4
+      "index": 4,
+      "level": 0,
+      "father_node": "1-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -508,7 +599,10 @@
         }
       ],
       "page_idx": 1,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "1-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -530,7 +624,10 @@
         }
       ],
       "page_idx": 1,
-      "index": 6
+      "index": 6,
+      "level": 0,
+      "father_node": "1-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -552,7 +649,10 @@
         }
       ],
       "page_idx": 1,
-      "index": 7
+      "index": 7,
+      "level": 0,
+      "father_node": "1-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -574,7 +674,10 @@
         }
       ],
       "page_idx": 1,
-      "index": 8
+      "index": 8,
+      "level": 0,
+      "father_node": "1-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -596,7 +699,10 @@
         }
       ],
       "page_idx": 1,
-      "index": 9
+      "index": 9,
+      "level": 0,
+      "father_node": "1-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -618,7 +724,10 @@
         }
       ],
       "page_idx": 1,
-      "index": 10
+      "index": 10,
+      "level": 0,
+      "father_node": "1-3",
+      "child_node": []
     },
     {
       "type": "title",
@@ -640,7 +749,17 @@
         }
       ],
       "page_idx": 1,
-      "index": 11
+      "index": 11,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "1-12",
+        "1-13",
+        "1-14",
+        "1-15",
+        "2-1",
+        "2-2"
+      ]
     },
     {
       "type": "text",
@@ -662,7 +781,10 @@
         }
       ],
       "page_idx": 1,
-      "index": 12
+      "index": 12,
+      "level": 0,
+      "father_node": "1-11",
+      "child_node": []
     },
     {
       "type": "text",
@@ -684,7 +806,10 @@
         }
       ],
       "page_idx": 1,
-      "index": 13
+      "index": 13,
+      "level": 0,
+      "father_node": "1-11",
+      "child_node": []
     },
     {
       "type": "text",
@@ -706,7 +831,10 @@
         }
       ],
       "page_idx": 1,
-      "index": 14
+      "index": 14,
+      "level": 0,
+      "father_node": "1-11",
+      "child_node": []
     },
     {
       "type": "text",
@@ -728,7 +856,10 @@
         }
       ],
       "page_idx": 1,
-      "index": 15
+      "index": 15,
+      "level": 0,
+      "father_node": "1-11",
+      "child_node": []
     },
     {
       "type": "header",
@@ -882,7 +1013,10 @@
         }
       ],
       "page_idx": 2,
-      "index": 1
+      "index": 1,
+      "level": 0,
+      "father_node": "1-11",
+      "child_node": []
     },
     {
       "type": "text",
@@ -904,7 +1038,10 @@
         }
       ],
       "page_idx": 2,
-      "index": 2
+      "index": 2,
+      "level": 0,
+      "father_node": "1-11",
+      "child_node": []
     },
     {
       "type": "title",
@@ -926,7 +1063,43 @@
         }
       ],
       "page_idx": 2,
-      "index": 3
+      "index": 3,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "2-4",
+        "2-5",
+        "2-6",
+        "2-7",
+        "2-8",
+        "2-9",
+        "2-10",
+        "2-11",
+        "2-12",
+        "3-1",
+        "3-2",
+        "0-2",
+        "0-3",
+        "0-4",
+        "3-5",
+        "3-6",
+        "3-7",
+        "3-8",
+        "3-9",
+        "3-10",
+        "3-11",
+        "3-12",
+        "3-13",
+        "3-14",
+        "3-15",
+        "3-16",
+        "3-17",
+        "3-18",
+        "3-19",
+        "3-20",
+        "3-21",
+        "3-22"
+      ]
     },
     {
       "type": "text",
@@ -948,7 +1121,10 @@
         }
       ],
       "page_idx": 2,
-      "index": 4
+      "index": 4,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -970,7 +1146,10 @@
         }
       ],
       "page_idx": 2,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -992,7 +1171,10 @@
         }
       ],
       "page_idx": 2,
-      "index": 6
+      "index": 6,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -1194,7 +1376,10 @@
         }
       ],
       "page_idx": 2,
-      "index": 7
+      "index": 7,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -1217,7 +1402,10 @@
         }
       ],
       "page_idx": 2,
-      "index": 8
+      "index": 8,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -1240,7 +1428,10 @@
         }
       ],
       "page_idx": 2,
-      "index": 9
+      "index": 9,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -1366,7 +1557,7 @@
                 581
               ],
               "type": "inline_equation",
-              "content": "H_{\\mathrm{syn - q}}"
+              "content": "H_{\\mathrm{syn}-q}"
             },
             {
               "bbox": [
@@ -1442,7 +1633,10 @@
         }
       ],
       "page_idx": 2,
-      "index": 10
+      "index": 10,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -1464,7 +1658,10 @@
         }
       ],
       "page_idx": 2,
-      "index": 11
+      "index": 11,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -1606,7 +1803,10 @@
         }
       ],
       "page_idx": 2,
-      "index": 12
+      "index": 12,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "header",
@@ -1790,7 +1990,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 1
+      "index": 1,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "image",
@@ -1819,8 +2022,11 @@
             }
           ],
           "index": 2,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "2-3",
+          "child_node": []
         },
         {
           "lines": [
@@ -1840,8 +2046,11 @@
             }
           ],
           "index": 3,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "2-3",
+          "child_node": []
         },
         {
           "lines": [
@@ -1861,15 +2070,21 @@
             }
           ],
           "index": 4,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "2-3",
+          "child_node": []
         }
       ],
       "page_idx": 3,
       "index": 2,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张信号处理系统的框图，展示了一个从频率偏差输入到功率输出的完整控制流程。\n\n图片中的主要主体是三个串联的方框模块：\n1.  **左侧模块**：标记为“频率死区”，内部是一个带有±Δf_DB刻度的双向箭头符号。它接收输入信号Δf，并将其映射到一个范围[-Δf_DB, Δf_DB]内的信号Δf_in。这意味着当输入频率偏差超出这个范围时，输出会被钳制在零附近。\n2.  **中间模块**：标记为“功率响应传递函数”，内部包含一个希腊字母φ（phi）。它接收来自前一模块的Δf_in，并将其转换为功率变化量ΔP。\n3.  **右侧模块**：标记为“功率限幅”，内部是一个具有上下限的非线性饱和函数符号。它接收ΔP并将其限制在[P_min, P_max]范围内，最终输出ΔP_out。\n\n整个系统描述了如何将频率偏差转化为功率调整量，并施加物理或工程上的功率限制。\n\n关键文字包括：“频率死区”、“功率响应传递函数”、“功率限幅”、符号“Δf”、“Δf_DB”、“φ”、“P_max”、“P_min”、“ΔP_out”。\n\n核心信息是：该系统用于电力系统或类似控制系统中，根据频率偏差生成功率调整指令，并通过死区滤波、传递函数和限幅环节确保输出功率在安全有效范围内。"
+        "desc": "这是一张系统框图，展示了一个信号处理流程，包含频率死区、功率响应传递函数和功率限幅三个主要模块。\n\n图片中的主要主体是三个串联的方框模块：\n1.  **频率死区**：输入为 Δf，输出为 Δf_in。该模块内部有一个坐标系，标示了 ±Δf_DB 的边界，表示当输入频率变化量 Δf 落在 [-Δf_DB, +Δf_DB] 区间内时，输出 Δf_in 被置零（即“死区”），只有当 |Δf| > Δf_DB 时，输出才等于输入。\n2.  **功率响应传递函数**：输入为 Δf_in，输出为 ΔP。该模块用符号 φ 表示，代表一个非线性或线性的功率响应关系。\n3.  **功率限幅**：输入为 ΔP，输出为 ΔP_out。该模块内部是一个带上下限的饱和函数，其输出被限制在 [P_min, P_max] 区间内。\n\n醒目的关键文字包括：\n*   频率死区\n*   功率响应传递函数\n*   功率限幅\n*   Δf_DB\n*   φ\n*   P_max / P_min\n\n核心信息概括：该框图描述了一个控制系统中功率调整的典型流程。它首先通过频率死区滤除小幅度的频率扰动，然后通过功率响应函数将频率变化转换为功率变化，最后通过功率限幅器确保输出功率在安全范围内，防止过载或欠压。这是一种常见的功率调节或控制策略设计。"
       }
     },
     {
@@ -1892,7 +2107,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -1914,7 +2132,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 6
+      "index": 6,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -1937,7 +2158,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 7
+      "index": 7,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2063,7 +2287,7 @@
                 603
               ],
               "type": "inline_equation",
-              "content": "b_{0}=0"
+              "content": "\\mathrm{b}_{0}=0"
             },
             {
               "bbox": [
@@ -2083,7 +2307,7 @@
                 603
               ],
               "type": "inline_equation",
-              "content": "b_{0} \\neq 0"
+              "content": "\\mathrm{b}_{0} \\neq 0"
             },
             {
               "bbox": [
@@ -2099,7 +2323,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 8
+      "index": 8,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2121,7 +2348,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 9
+      "index": 9,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -2144,7 +2374,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 10
+      "index": 10,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2246,7 +2479,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 11
+      "index": 11,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2288,7 +2524,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 12
+      "index": 12,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2310,7 +2549,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 13
+      "index": 13,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2332,7 +2574,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 14
+      "index": 14,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2374,7 +2619,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 15
+      "index": 15,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -2397,7 +2645,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 16
+      "index": 16,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2479,7 +2730,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 17
+      "index": 17,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2501,7 +2755,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 18
+      "index": 18,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2523,7 +2780,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 19
+      "index": 19,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2565,7 +2825,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 20
+      "index": 20,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -2588,7 +2851,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 21
+      "index": 21,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2650,7 +2916,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 22
+      "index": 22,
+      "level": 0,
+      "father_node": "2-3",
+      "child_node": []
     },
     {
       "type": "title",
@@ -2672,7 +2941,16 @@
         }
       ],
       "page_idx": 3,
-      "index": 23
+      "index": 23,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "3-24",
+        "4-1",
+        "4-2",
+        "4-24",
+        "4-27"
+      ]
     },
     {
       "type": "text",
@@ -2694,7 +2972,10 @@
         }
       ],
       "page_idx": 3,
-      "index": 24
+      "index": 24,
+      "level": 0,
+      "father_node": "3-23",
+      "child_node": []
     },
     {
       "type": "header",
@@ -2738,7 +3019,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 1
+      "index": 1,
+      "level": 0,
+      "father_node": "3-23",
+      "child_node": []
     },
     {
       "type": "title",
@@ -2760,7 +3044,13 @@
         }
       ],
       "page_idx": 4,
-      "index": 2
+      "index": 2,
+      "level": 2,
+      "father_node": "3-23",
+      "child_node": [
+        "4-3",
+        "4-16"
+      ]
     },
     {
       "type": "title",
@@ -2782,7 +3072,24 @@
         }
       ],
       "page_idx": 4,
-      "index": 3
+      "index": 3,
+      "level": 3,
+      "father_node": "4-2",
+      "child_node": [
+        "4-4",
+        "4-5",
+        "4-6",
+        "4-7",
+        "4-8",
+        "4-9",
+        "0-9",
+        "0-10",
+        "0-11",
+        "4-12",
+        "4-13",
+        "4-14",
+        "4-15"
+      ]
     },
     {
       "type": "text",
@@ -2824,7 +3131,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 4
+      "index": 4,
+      "level": 0,
+      "father_node": "4-3",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -2847,7 +3157,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "4-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2929,7 +3242,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 6
+      "index": 6,
+      "level": 0,
+      "father_node": "4-3",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -2952,7 +3268,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 7
+      "index": 7,
+      "level": 0,
+      "father_node": "4-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -2974,7 +3293,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 8
+      "index": 8,
+      "level": 0,
+      "father_node": "4-3",
+      "child_node": []
     },
     {
       "type": "image",
@@ -3003,8 +3325,11 @@
             }
           ],
           "index": 9,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "4-3",
+          "child_node": []
         },
         {
           "lines": [
@@ -3024,8 +3349,11 @@
             }
           ],
           "index": 10,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "4-3",
+          "child_node": []
         },
         {
           "lines": [
@@ -3045,15 +3373,21 @@
             }
           ],
           "index": 11,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "4-3",
+          "child_node": []
         }
       ],
       "page_idx": 4,
       "index": 9,
+      "level": 0,
+      "father_node": "4-3",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张控制系统框图，用于描述功率响应的动态过程。\n\n图片主体是一个由方框和箭头组成的流程图：\n- 左侧输入为 Δf（频率变化量），进入一个虚线框内标记为 φ 的模块。\n- 该模块下方标注“功率响应传递函数”，表示其功能是将输入频率变化转换为功率变化。\n- 模块输出 ΔP（功率变化量）后，与一个从上方输入的 -ΔP_DB（负的功率衰减量）在求和点 Σ 处进行叠加运算。\n- 最终输出为 ΔP_out（输出功率变化量）。\n\n关键文字及其核心信息：\n- “功率响应传递函数”：说明虚线框内模块的功能是建立频率变化与功率变化之间的传递关系。\n- “φ”：代表系统中的功率响应传递函数的具体形式或符号。\n- “Σ”：表示求和节点，用于将不同路径的信号叠加。\n- “-ΔP_DB”：表示一个外部施加的、方向相反的功率修正项（如衰减补偿）。\n\n整体传达的核心信息是：系统的输出功率 ΔP_out 是由输入频率变化 Δf 经过功率响应传递函数 φ 转换得到的功率变化 ΔP，再与外部功率修正项 -ΔP_DB 相加而成。这是一个典型的反馈或校正控制系统的简化模型。"
+        "desc": "这是一张控制系统框图，用于描述功率响应的动态关系。\n\n图片主体是一个方框图，包含以下主要元素：\n- 输入信号 Δf（频率偏差）从左侧进入系统。\n- 一个虚线框内标有 φ 的模块，下方标注“功率响应传递函数”，表示这是一个具有特定动态特性的功率响应环节。\n- 输出信号 ΔP（功率偏差）从该模块输出。\n- 在 ΔP 之后有一个求和点（Σ），一个外部输入信号 -ΔP_DB（负的功率偏差）被加到该点上。\n- 最终输出为 ΔP_out（输出功率偏差）。\n\n关键文字及其含义：\n- “功率响应传递函数”：表明 φ 是系统的核心动态部分，其特性由传递函数 φ 描述，反映了系统对输入频率偏差 Δf 的功率响应关系。\n- “Σ”：表示求和点，用于叠加多个输入信号。此处将功率响应输出 ΔP 与外部参考量 -ΔP_DB 进行相加，形成闭环控制中的误差信号。\n\n整体功能说明：\n该框图描绘了一个功率调节或控制系统的简化模型，其中功率响应传递函数 φ 将频率偏差 Δf 转换为功率偏差 ΔP；随后通过与参考值（-ΔP_DB）进行比较，得到净输出 ΔP_out，从而实现对功率输出的调整。这种结构常见于电力系统自动电压/频率控制（如AVR或一次调频）等场景中。"
       }
     },
     {
@@ -3077,7 +3411,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 12
+      "index": 12,
+      "level": 0,
+      "father_node": "4-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -3099,7 +3436,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 13
+      "index": 13,
+      "level": 0,
+      "father_node": "4-3",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -3115,14 +3455,17 @@
                 615
               ],
               "type": "interline_equation",
-              "content": "\\begin{array}{l} 2 H \\frac {d \\triangle f}{d t} + D \\triangle f = \\triangle P _ {\\text {o u t} _ {\\text {s y s}}} + \\triangle P _ {\\text {o u t} _ {\\text {r e n e w}}} + \\triangle P _ {\\text {o u t} _ {\\text {F L C}}} - \\triangle P _ {\\text {d}} \\\\ = \\left(\\phi_ {\\mathrm {s y n}} + \\phi_ {\\mathrm {r e n e w}} + \\phi_ {\\mathrm {F L C}}\\right) \\Delta f - \\\\ \\left(\\phi_ {\\mathrm {s y n}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {s y n}}} + \\phi_ {\\mathrm {r e n e w}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {r e n e w}}} + \\phi_ {\\mathrm {F L C}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {F L C}}}\\right) - \\triangle P _ {\\mathrm {d}} \\tag {10} \\\\ \\end{array}",
+              "content": "\\begin{array}{l} 2 H \\frac {d \\triangle f}{d t} + D \\triangle f = \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {s y s}}} + \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {r e n e w}}} + \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {F L C}}} - \\triangle P _ {\\mathrm {d}} \\\\ = \\left(\\phi_ {\\mathrm {s y n}} + \\phi_ {\\mathrm {r e n e w}} + \\phi_ {\\mathrm {F L C}}\\right) \\Delta f - \\\\ \\left(\\phi_ {\\mathrm {s y n}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {s y n}}} + \\phi_ {\\mathrm {r e n e w}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {r e n e w}}} + \\phi_ {\\mathrm {F L C}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {F L C}}}\\right) - \\triangle P _ {\\mathrm {d}} \\tag {10} \\\\ \\end{array}",
               "image_path": "16817a1284168c719ddacda8b44f7a2dcbd66bb6a27ccb32bf5932fe41dc4e68.jpg"
             }
           ]
         }
       ],
       "page_idx": 4,
-      "index": 14
+      "index": 14,
+      "level": 0,
+      "father_node": "4-3",
+      "child_node": []
     },
     {
       "type": "text",
@@ -3224,7 +3567,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 15
+      "index": 15,
+      "level": 0,
+      "father_node": "4-3",
+      "child_node": []
     },
     {
       "type": "title",
@@ -3246,7 +3592,18 @@
         }
       ],
       "page_idx": 4,
-      "index": 16
+      "index": 16,
+      "level": 3,
+      "father_node": "4-2",
+      "child_node": [
+        "4-17",
+        "4-18",
+        "4-19",
+        "4-20",
+        "4-21",
+        "4-22",
+        "4-23"
+      ]
     },
     {
       "type": "text",
@@ -3268,7 +3625,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 17
+      "index": 17,
+      "level": 0,
+      "father_node": "4-16",
+      "child_node": []
     },
     {
       "type": "text",
@@ -3290,7 +3650,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 18
+      "index": 18,
+      "level": 0,
+      "father_node": "4-16",
+      "child_node": []
     },
     {
       "type": "text",
@@ -3312,7 +3675,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 19
+      "index": 19,
+      "level": 0,
+      "father_node": "4-16",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -3335,7 +3701,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 20
+      "index": 20,
+      "level": 0,
+      "father_node": "4-16",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -3358,7 +3727,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 21
+      "index": 21,
+      "level": 0,
+      "father_node": "4-16",
+      "child_node": []
     },
     {
       "type": "text",
@@ -3540,7 +3912,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 22
+      "index": 22,
+      "level": 0,
+      "father_node": "4-16",
+      "child_node": []
     },
     {
       "type": "text",
@@ -3562,7 +3937,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 23
+      "index": 23,
+      "level": 0,
+      "father_node": "4-16",
+      "child_node": []
     },
     {
       "type": "title",
@@ -3584,7 +3962,13 @@
         }
       ],
       "page_idx": 4,
-      "index": 24
+      "index": 24,
+      "level": 2,
+      "father_node": "3-23",
+      "child_node": [
+        "4-25",
+        "4-26"
+      ]
     },
     {
       "type": "text",
@@ -3846,7 +4230,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 25
+      "index": 25,
+      "level": 0,
+      "father_node": "4-24",
+      "child_node": []
     },
     {
       "type": "text",
@@ -3868,7 +4255,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 26
+      "index": 26,
+      "level": 0,
+      "father_node": "4-24",
+      "child_node": []
     },
     {
       "type": "title",
@@ -3890,7 +4280,33 @@
         }
       ],
       "page_idx": 4,
-      "index": 27
+      "index": 27,
+      "level": 2,
+      "father_node": "3-23",
+      "child_node": [
+        "4-28",
+        "4-29",
+        "5-1",
+        "5-2",
+        "5-3",
+        "5-4",
+        "5-5",
+        "5-6",
+        "5-7",
+        "5-8",
+        "5-9",
+        "5-10",
+        "5-11",
+        "5-12",
+        "5-13",
+        "5-14",
+        "5-15",
+        "5-16",
+        "5-17",
+        "5-18",
+        "5-19",
+        "5-20"
+      ]
     },
     {
       "type": "text",
@@ -3912,7 +4328,10 @@
         }
       ],
       "page_idx": 4,
-      "index": 28
+      "index": 28,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -3922,20 +4341,23 @@
           "spans": [
             {
               "bbox": [
-                389,
+                390,
                 724,
                 539,
                 756
               ],
               "type": "interline_equation",
               "content": "\\triangle \\widehat {P} _ {0} (t) = \\frac {P _ {\\mathrm {d}}}{t _ {\\mathrm {n} 0}} t \\tag {12}",
-              "image_path": "c019f0e965c75f0915370501dcb72dc0a29db812eb89e284e6e0f29dcd8a9146.jpg"
+              "image_path": "f44be5e9cb96c1dd8ce44b844acd4e77587cff13bd185edbab556a864c64367a.jpg"
             }
           ]
         }
       ],
       "page_idx": 4,
-      "index": 29
+      "index": 29,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "header",
@@ -3980,7 +4402,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 1
+      "index": 1,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -4062,7 +4487,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 2
+      "index": 2,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -4084,7 +4512,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 3
+      "index": 3,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -4106,7 +4537,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 4
+      "index": 4,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -4128,7 +4562,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -4210,7 +4647,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 6
+      "index": 6,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -4252,7 +4692,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 7
+      "index": 7,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -4275,7 +4718,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 8
+      "index": 8,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -4417,7 +4863,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 9
+      "index": 9,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -4519,7 +4968,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 10
+      "index": 10,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -4681,7 +5133,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 11
+      "index": 11,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -4723,7 +5178,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 12
+      "index": 12,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -4746,7 +5204,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 13
+      "index": 13,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -4769,7 +5230,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 14
+      "index": 14,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -4792,7 +5256,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 15
+      "index": 15,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -4815,7 +5282,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 16
+      "index": 16,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -4838,7 +5308,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 17
+      "index": 17,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -4850,7 +5323,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4860,7 +5333,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4870,7 +5343,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4880,7 +5353,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4890,7 +5363,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4900,7 +5373,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4910,7 +5383,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4920,7 +5393,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4930,7 +5403,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4940,7 +5413,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4950,7 +5423,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4960,7 +5433,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4970,7 +5443,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -4980,7 +5453,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -4990,7 +5463,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -5000,7 +5473,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -5010,7 +5483,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -5020,7 +5493,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "inline_equation",
@@ -5030,7 +5503,7 @@
               "bbox": [
                 305,
                 279,
-                539,
+                538,
                 356
               ],
               "type": "text",
@@ -5040,7 +5513,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 18
+      "index": 18,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -5082,7 +5558,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 19
+      "index": 19,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "text",
@@ -5144,7 +5623,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 20
+      "index": 20,
+      "level": 0,
+      "father_node": "4-27",
+      "child_node": []
     },
     {
       "type": "title",
@@ -5156,7 +5638,7 @@
               "bbox": [
                 305,
                 519,
-                534,
+                533,
                 534
               ],
               "type": "text",
@@ -5166,7 +5648,14 @@
         }
       ],
       "page_idx": 5,
-      "index": 21
+      "index": 21,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "5-22",
+        "5-23",
+        "6-6"
+      ]
     },
     {
       "type": "text",
@@ -5188,7 +5677,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 22
+      "index": 22,
+      "level": 0,
+      "father_node": "5-21",
+      "child_node": []
     },
     {
       "type": "title",
@@ -5210,7 +5702,17 @@
         }
       ],
       "page_idx": 5,
-      "index": 23
+      "index": 23,
+      "level": 2,
+      "father_node": "5-21",
+      "child_node": [
+        "5-24",
+        "6-1",
+        "6-2",
+        "6-3",
+        "6-4",
+        "6-5"
+      ]
     },
     {
       "type": "text",
@@ -5232,7 +5734,10 @@
         }
       ],
       "page_idx": 5,
-      "index": 24
+      "index": 24,
+      "level": 0,
+      "father_node": "5-23",
+      "child_node": []
     },
     {
       "type": "header",
@@ -5336,7 +5841,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 1
+      "index": 1,
+      "level": 0,
+      "father_node": "5-23",
+      "child_node": []
     },
     {
       "type": "text",
@@ -5378,7 +5886,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 2
+      "index": 2,
+      "level": 0,
+      "father_node": "5-23",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -5401,7 +5912,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 3
+      "index": 3,
+      "level": 0,
+      "father_node": "5-23",
+      "child_node": []
     },
     {
       "type": "text",
@@ -5414,7 +5928,7 @@
                 54,
                 253,
                 186,
-                267
+                266
               ],
               "type": "text",
               "content": "式中："
@@ -5424,7 +5938,7 @@
                 54,
                 253,
                 186,
-                267
+                266
               ],
               "type": "inline_equation",
               "content": "P_{\\mathrm{MA}}"
@@ -5434,7 +5948,7 @@
                 54,
                 253,
                 186,
-                267
+                266
               ],
               "type": "text",
               "content": " 为机组调频容量。"
@@ -5443,7 +5957,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 4
+      "index": 4,
+      "level": 0,
+      "father_node": "5-23",
+      "child_node": []
     },
     {
       "type": "text",
@@ -5515,7 +6032,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "5-23",
+      "child_node": []
     },
     {
       "type": "title",
@@ -5537,7 +6057,18 @@
         }
       ],
       "page_idx": 6,
-      "index": 6
+      "index": 6,
+      "level": 2,
+      "father_node": "5-21",
+      "child_node": [
+        "6-7",
+        "6-8",
+        "6-9",
+        "6-10",
+        "6-11",
+        "6-12",
+        "6-13"
+      ]
     },
     {
       "type": "text",
@@ -5599,7 +6130,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 7
+      "index": 7,
+      "level": 0,
+      "father_node": "6-6",
+      "child_node": []
     },
     {
       "type": "text",
@@ -5641,7 +6175,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 8
+      "index": 8,
+      "level": 0,
+      "father_node": "6-6",
+      "child_node": []
     },
     {
       "type": "text",
@@ -5683,7 +6220,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 9
+      "index": 9,
+      "level": 0,
+      "father_node": "6-6",
+      "child_node": []
     },
     {
       "type": "text",
@@ -5745,7 +6285,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 10
+      "index": 10,
+      "level": 0,
+      "father_node": "6-6",
+      "child_node": []
     },
     {
       "type": "text",
@@ -5758,7 +6301,7 @@
                 53,
                 645,
                 287,
-                690
+                689
               ],
               "type": "text",
               "content": "步骤4：根据最佳关停机组合将同步机组替换成为相同出力水平的新能源机组，求解得到系统可承载的新能源极限渗透率。"
@@ -5767,7 +6310,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 11
+      "index": 11,
+      "level": 0,
+      "father_node": "6-6",
+      "child_node": []
     },
     {
       "type": "text",
@@ -5869,7 +6415,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 12
+      "index": 12,
+      "level": 0,
+      "father_node": "6-6",
+      "child_node": []
     },
     {
       "type": "text",
@@ -5891,7 +6440,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 13
+      "index": 13,
+      "level": 0,
+      "father_node": "6-6",
+      "child_node": []
     },
     {
       "type": "title",
@@ -5913,7 +6465,15 @@
         }
       ],
       "page_idx": 6,
-      "index": 14
+      "index": 14,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "6-15",
+        "6-16",
+        "7-15",
+        "8-19"
+      ]
     },
     {
       "type": "text",
@@ -5935,7 +6495,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 15
+      "index": 15,
+      "level": 0,
+      "father_node": "6-14",
+      "child_node": []
     },
     {
       "type": "title",
@@ -5948,7 +6511,7 @@
                 305,
                 186,
                 420,
-                199
+                198
               ],
               "type": "text",
               "content": "4.1 系统频率安全分析"
@@ -5957,7 +6520,19 @@
         }
       ],
       "page_idx": 6,
-      "index": 16
+      "index": 16,
+      "level": 2,
+      "father_node": "6-14",
+      "child_node": [
+        "6-17",
+        "6-18",
+        "6-19",
+        "6-20",
+        "6-21",
+        "6-22",
+        "6-23",
+        "7-7"
+      ]
     },
     {
       "type": "text",
@@ -6099,7 +6674,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 17
+      "index": 17,
+      "level": 0,
+      "father_node": "6-16",
+      "child_node": []
     },
     {
       "type": "text",
@@ -6121,7 +6699,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 18
+      "index": 18,
+      "level": 0,
+      "father_node": "6-16",
+      "child_node": []
     },
     {
       "type": "text",
@@ -6134,7 +6715,7 @@
                 305,
                 422,
                 539,
-                450
+                449
               ],
               "type": "text",
               "content": "算例1：在初始仿真时刻 "
@@ -6144,27 +6725,27 @@
                 305,
                 422,
                 539,
-                450
+                449
               ],
               "type": "inline_equation",
-              "content": "(t = 0 \\mathrm{~s})"
+              "content": "(t = 0"
             },
             {
               "bbox": [
                 305,
                 422,
                 539,
-                450
+                449
               ],
               "type": "text",
-              "content": " 发生 "
+              "content": " s) 发生 "
             },
             {
               "bbox": [
                 305,
                 422,
                 539,
-                450
+                449
               ],
               "type": "inline_equation",
               "content": "2.6\\%"
@@ -6174,7 +6755,7 @@
                 305,
                 422,
                 539,
-                450
+                449
               ],
               "type": "text",
               "content": " 负荷阶跃故障，所有机组参与频率响应(小扰动场景)。"
@@ -6183,7 +6764,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 19
+      "index": 19,
+      "level": 0,
+      "father_node": "6-16",
+      "child_node": []
     },
     {
       "type": "text",
@@ -6245,7 +6829,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 20
+      "index": 20,
+      "level": 0,
+      "father_node": "6-16",
+      "child_node": []
     },
     {
       "type": "text",
@@ -6307,7 +6894,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 21
+      "index": 21,
+      "level": 0,
+      "father_node": "6-16",
+      "child_node": []
     },
     {
       "type": "text",
@@ -6329,7 +6919,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 22
+      "index": 22,
+      "level": 0,
+      "father_node": "6-16",
+      "child_node": []
     },
     {
       "type": "title",
@@ -6351,7 +6944,23 @@
         }
       ],
       "page_idx": 6,
-      "index": 23
+      "index": 23,
+      "level": 3,
+      "father_node": "6-16",
+      "child_node": [
+        "6-24",
+        "6-27",
+        "0-25",
+        "0-26",
+        "0-27",
+        "7-1",
+        "7-2",
+        "7-3",
+        "0-3",
+        "0-4",
+        "0-5",
+        "7-6"
+      ]
     },
     {
       "type": "text",
@@ -6373,7 +6982,10 @@
         }
       ],
       "page_idx": 6,
-      "index": 24
+      "index": 24,
+      "level": 0,
+      "father_node": "6-23",
+      "child_node": []
     },
     {
       "type": "table",
@@ -6402,8 +7014,11 @@
             }
           ],
           "index": 25,
+          "level": 0,
           "angle": 0,
-          "type": "table_caption"
+          "type": "table_caption",
+          "father_node": "6-23",
+          "child_node": []
         },
         {
           "lines": [
@@ -6423,8 +7038,11 @@
             }
           ],
           "index": 26,
+          "level": 0,
           "angle": 0,
-          "type": "table_caption"
+          "type": "table_caption",
+          "father_node": "6-23",
+          "child_node": []
         },
         {
           "lines": [
@@ -6445,12 +7063,18 @@
             }
           ],
           "index": 27,
+          "level": 0,
           "angle": 0,
-          "type": "table_body"
+          "type": "table_body",
+          "father_node": "6-23",
+          "child_node": []
         }
       ],
       "page_idx": 6,
       "index": 27,
+      "level": 0,
+      "father_node": "6-23",
+      "child_node": [],
       "llm_process": {
         "type": "table",
         "kv_extract": {
@@ -6470,7 +7094,8 @@
             "FNP": "0.59"
           }
         },
-        "description": "这是一张比较三种算法（PSD-BPA、NFSAM、FNP）在极值频率偏差、极值频率时间及计算时间方面的性能对比表。其中，FNP算法在计算时间上最优（0.59s），NFSAM算法在极值频率偏差上最差（-0.13Hz），PSD-BPA算法在计算时间上最差（2.50s）。"
+        "description": "好的，作为数据分析技术员，我对该表格进行如下分析和描述：\n\n---\n\n**1. 说明这是一张什么类型的表格。**\n\n这是一张**横向对比型数据表**，用于比较三种不同算法（PSD-BPA、NFSAM、FNP）在三个关键性能指标上的表现：\n- 极值频率偏差 (Hz)\n- 极值频率时间 (s)\n- 计算时间 (s)\n\n表格结构清晰，每一行代表一个算法，每一列代表一个性能维度，便于横向比较各算法的优劣。\n\n---\n\n**2. 如果是数据表，分析最大值、最小值等特征。**\n\n该表格包含三组数值数据，每组数据都有其极值：\n\n*   **极值频率偏差 (Hz)**：\n    *   最大值：-0.08 Hz (FNP)\n    *   最小值：-0.13 Hz (NFSAM)\n    *   分析：偏差均为负值，表示所有算法的计算结果都存在一定的系统性误差（可能偏移）。其中FNP算法的绝对偏差最小（仅-0.08），表明其在频率估计精度上最优；NFSAM算法偏差最大（-0.13），精度最差。\n\n*   **极值频率时间 (s)**：\n    *   最大值：1.38 s (NFSAM)\n    *   最小值：0.82 s (FNP)\n    *   分析：FNP算法在极值频率估算所需的时间上最快，效率最高；NFSAM耗时最长。\n\n*   **计算时间 (s)**：\n    *   最大值：2.50 s (PSD-BPA)\n    *   最小值：0.59 s (FNP)\n    *   分析：FNP算法在整体计算速度上最快，而PSD-BPA算法最慢，效率最低。\n\n**综合结论**：\n从性能角度看，**FNP算法综合表现最佳**。它不仅在频率估计精度（偏差最小）上领先，同时在计算速度（极值频率时间和总计算时间均最短）上也显著优于其他两种算法。\n\n---\n\n**3. 如果包含文字信息，请进行概括说明。**\n\n表格标题为“极值频率偏差/Hz”、“极值频率时间/s”、“计算时间/s”，明确指出了评估指标及其单位。表格中的算法名称（PSD-BPA、NFSAM、FNP）是具体的算法或方法名称，用于标识不同的计算模型。\n\n**概括说明**：\n本表旨在通过量化指标对比三种算法在“极值频率估计精度”与“计算效率”两个维度上的性能差异。结果显示，在追求高精度的同时兼顾快速计算的需求下，FNP算法展现出最优的整体性能，而PSD-BPA算法则在计算时间上付出最大代价。\n\n---",
+        "table_html": "<table><tr><td></td><td>极值频率\n偏差/Hz</td><td>极值频率\n时间/s</td><td>计算时间/s</td></tr><tr><td>PSD-BPA</td><td>-0.12</td><td>1.32</td><td>2.50</td></tr><tr><td>NFSAM</td><td>-0.13</td><td>1.38</td><td>0.44</td></tr><tr><td>FNP</td><td>-0.08</td><td>0.82</td><td>0.59</td></tr></table>"
       }
     },
     {
@@ -6575,7 +7200,10 @@
         }
       ],
       "page_idx": 7,
-      "index": 1
+      "index": 1,
+      "level": 0,
+      "father_node": "6-23",
+      "child_node": []
     },
     {
       "type": "text",
@@ -6597,7 +7225,10 @@
         }
       ],
       "page_idx": 7,
-      "index": 2
+      "index": 2,
+      "level": 0,
+      "father_node": "6-23",
+      "child_node": []
     },
     {
       "type": "image",
@@ -6626,8 +7257,11 @@
             }
           ],
           "index": 3,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "6-23",
+          "child_node": []
         },
         {
           "lines": [
@@ -6647,8 +7281,11 @@
             }
           ],
           "index": 4,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "6-23",
+          "child_node": []
         },
         {
           "lines": [
@@ -6668,15 +7305,22 @@
             }
           ],
           "index": 5,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "6-23",
+          "child_node": []
         }
       ],
       "page_idx": 7,
       "index": 3,
+      "level": 0,
+      "father_node": "6-23",
+      "child_node": [],
       "llm_process": {
         "type": "pictogram",
-        "desc": "图表标题：未提供  \n横坐标：不同发电/能源类型（DC, ESS, G1, G10, C2, G4, G6, G7, G8, G9, PV, WF, D）  \n纵坐标：功率/MW  \n整体趋势：各类型功率值波动分布，无统一上升或下降趋势，部分类型如G10、WF功率较高，部分如ESS、G4、G6功率较低。"
+        "desc": "图表标题：未提供  \n横坐标：不同发电/供电类型（DC, ESS, G1, G10, C2, G4, G6, G7, G8, G9, PV, WF, D）  \n纵坐标：功率/MW  \n整体趋势：多数类型功率在5~25MW区间波动，G10功率最高（约27MW），DC与ESS功率较低（DC约18MW，ESS约1.5MW），WF与D功率接近（约20MW），部分类型如G4、G6、G9功率低于5MW。",
+        "html": "所得数据通过估算得到，请酌情参考\n\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>类别</th>\n      <th>PSD-BPA (MW)</th>\n      <th>NFSAM (MW)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>DC</td>\n      <td>18.5</td>\n      <td>16.5</td>\n    </tr>\n    <tr>\n      <td>ESS</td>\n      <td>0.5</td>\n      <td>0.7</td>\n    </tr>\n    <tr>\n      <td>G1</td>\n      <td>21.0</td>\n      <td>22.0</td>\n    </tr>\n    <tr>\n      <td>G10</td>\n      <td>26.0</td>\n      <td>27.0</td>\n    </tr>\n    <tr>\n      <td>G2</td>\n      <td>15.5</td>\n      <td>14.0</td>\n    </tr>\n    <tr>\n      <td>G4</td>\n      <td>2.0</td>\n      <td>2.5</td>\n    </tr>\n    <tr>\n      <td>G6</td>\n      <td>3.0</td>\n      <td>1.5</td>\n    </tr>\n    <tr>\n      <td>G7</td>\n      <td>14.0</td>\n      <td>15.0</td>\n    </tr>\n    <tr>\n      <td>G8</td>\n      <td>6.5</td>\n      <td>6.0</td>\n    </tr>\n    <tr>\n      <td>G9</td>\n      <td>3.5</td>\n      <td>2.5</td>\n    </tr>\n    <tr>\n      <td>PV</td>\n      <td>6.0</td>\n      <td>7.5</td>\n    </tr>\n    <tr>\n      <td>WF</td>\n      <td>22.0</td>\n      <td>24.0</td>\n    </tr>\n    <tr>\n      <td>D</td>\n      <td>16.0</td>\n      <td>16.5</td>\n    </tr>\n  </tbody>\n</table>"
       }
     },
     {
@@ -6699,7 +7343,10 @@
         }
       ],
       "page_idx": 7,
-      "index": 6
+      "index": 6,
+      "level": 0,
+      "father_node": "6-23",
+      "child_node": []
     },
     {
       "type": "title",
@@ -6721,7 +7368,19 @@
         }
       ],
       "page_idx": 7,
-      "index": 7
+      "index": 7,
+      "level": 3,
+      "father_node": "6-16",
+      "child_node": [
+        "7-8",
+        "7-9",
+        "7-12",
+        "0-10",
+        "0-11",
+        "0-12",
+        "7-13",
+        "7-14"
+      ]
     },
     {
       "type": "text",
@@ -6743,7 +7402,10 @@
         }
       ],
       "page_idx": 7,
-      "index": 8
+      "index": 8,
+      "level": 0,
+      "father_node": "7-7",
+      "child_node": []
     },
     {
       "type": "text",
@@ -6765,7 +7427,10 @@
         }
       ],
       "page_idx": 7,
-      "index": 9
+      "index": 9,
+      "level": 0,
+      "father_node": "7-7",
+      "child_node": []
     },
     {
       "type": "table",
@@ -6784,8 +7449,8 @@
                   "bbox": [
                     375,
                     157,
-                    469,
-                    168
+                    468,
+                    167
                   ],
                   "type": "text",
                   "content": "表 2 算例 2 对比结果"
@@ -6794,8 +7459,11 @@
             }
           ],
           "index": 10,
+          "level": 0,
           "angle": 0,
-          "type": "table_caption"
+          "type": "table_caption",
+          "father_node": "7-7",
+          "child_node": []
         },
         {
           "lines": [
@@ -6815,8 +7483,11 @@
             }
           ],
           "index": 11,
+          "level": 0,
           "angle": 0,
-          "type": "table_caption"
+          "type": "table_caption",
+          "father_node": "7-7",
+          "child_node": []
         },
         {
           "lines": [
@@ -6837,45 +7508,28 @@
             }
           ],
           "index": 12,
+          "level": 0,
           "angle": 0,
-          "type": "table_body"
+          "type": "table_body",
+          "father_node": "7-7",
+          "child_node": []
         }
       ],
       "page_idx": 7,
       "index": 12,
+      "level": 0,
+      "father_node": "7-7",
+      "child_node": [],
       "llm_process": {
         "type": "table",
         "kv_extract": {
-          "方法": [
-            "PSD-BPA",
-            "NFSAM",
-            "仅考虑限幅环节",
-            "仅考虑频率死区环节",
-            "FNP"
-          ],
-          "极值频率偏差/Hz": [
-            "-0.57",
-            "-0.58",
-            "-0.50",
-            "-0.39",
-            "-0.36"
-          ],
-          "极值频率时间/s": [
-            "1.68",
-            "1.70",
-            "1.64",
-            "1.28",
-            "1.18"
-          ],
-          "计算时间/s": [
-            "3.07",
-            "0.61",
-            "0.63",
-            "0.61",
-            "0.63"
-          ]
+          "方法": "FNP",
+          "极值频率偏差/Hz": "-0.36",
+          "极值频率时间/s": "1.18",
+          "计算时间/s": "0.63"
         },
-        "description": "这是一张比较不同方法在极值频率偏差、极值频率时间和计算时间方面的性能表格。"
+        "description": "好的，作为数据分析技术员，我对该表格进行如下分析和描述：\n\n---\n\n**1. 表格类型说明**\n\n这是一张**对比型数据表（Comparison Table）**。其主要目的是横向对比不同“方法”在三个关键性能指标上的表现：\n- **极值频率偏差 /Hz**：衡量方法在频率估计上的准确性（负值表示低估，正值表示高估）。\n- **极值频率时间 /s**：衡量方法计算极值频率所需的时间（越短越好）。\n- **计算时间 /s**：衡量方法整体计算所需的时间（越短越好）。\n\n该表通过并列展示各方法在这些指标上的具体数值，便于读者快速识别最优或最差的方法。\n\n---\n\n**2. 数据特征分析**\n\n由于这是一个包含数值的对比表，我们可以从多个维度分析其数据特征：\n\n*   **极值频率偏差 (Hz)**\n    - **范围**：从 `-0.58 Hz` 到 `-0.36 Hz`。\n    - **最大值**：`-0.36 Hz`（FNP方法），表示该方法对极值频率的估计误差最小（绝对值最小），精度最高。\n    - **最小值**：`-0.58 Hz`（NFSAM方法），表示该方法的估计误差最大（绝对值最大），精度最低。\n    - **趋势**：所有方法的偏差均为负值，表明它们都倾向于低估实际的极值频率。其中，FNP方法的偏差最小，其次是“仅考虑频死区环节”，而NFSAM方法偏差最大。\n\n*   **极值频率时间 (s)**\n    - **范围**：从 `1.18 s` 到 `1.70 s`。\n    - **最大值**：`1.70 s`（NFSAM方法），计算极值频率耗时最长。\n    - **最小值**：`1.18 s`（FNP方法），计算极值频率耗时最短。\n    - **趋势**：FNP方法在计算极值频率方面效率最高，而NFSAM方法效率最低。\n\n*   **计算时间 (s)**\n    - **范围**：从 `0.61 s` 到 `3.07 s`。\n    - **最大值**：`3.07 s`（PSD-BPA方法），整体计算耗时最长。\n    - **最小值**：`0.61 s`（NFSAM方法），整体计算耗时最短。\n    - **趋势**：NFSAM方法的整体计算速度最快，而PSD-BPA方法整体计算速度最慢。值得注意的是，尽管PSD-BPA的整体计算时间最长，但其极值频率偏差并非最大（仅次于NFSAM），这表明其计算过程可能包含大量冗余或低效步骤。\n\n*   **综合比较**\n    - **精度与速度的权衡**：FNP方法在精度上表现最佳（偏差最小），同时在计算极值频率的速度上也最快（1.18s）。然而，其整体计算时间（0.63s）与NFSAM相当，略逊于NFSAM。\n    - **效率优先**：NFSAM方法虽然在精度上表现较差（偏差最大），但其整体计算速度最快（0.61s），是追求效率的首选。\n    - **综合性能**：FNP方法在精度和效率上均表现出色，是一个较为均衡的选择。\n\n---\n\n**3. 文字信息概括说明**\n\n表格中的文字信息主要分为两部分：\n\n*   **方法名称**：共五种不同的算法或模型：\n    1.  **PSD-BPA**：基础方法。\n    2.  **NFSAM**：一种较优方法。\n    3.  **仅考虑限幅环节**：简化版方法，只考虑限幅效应。\n    4.  **仅考虑频率死区环节**：简化版方法，只考虑频率死区效应。\n    5.  **FNP**：最终提出的优化方法。\n\n*   **标题行**：明确指出了三个评估维度——“极值频率偏差”、“极值频率时间”和“计算时间”。\n\n*   **隐含含义**：从数据可以看出，“仅考虑限幅环节”和“仅考虑频率死区环节”的性能接近，暗示了这两种因素对整体性能的影响可能相近。FNP方法可能是通过对“仅考虑频率死区环节”方法进行改进或融合其他策略而得到的。\n\n---\n\n**总结**\n\n该表格清晰地展示了五种不同方法在频率估计精度和计算效率方面的性能对比。FNP方法在精度和部分效率指标上表现最优，而NFSAM方法在整体计算效率上表现最好。表格为选择合适的方法提供了明确的数据支持。",
+        "table_html": "<table><tr><td>方法</td><td>极值频率\n偏差/Hz</td><td>极值频率\n时间/s</td><td>计算时间/s</td></tr><tr><td>PSD-BPA</td><td>-0.57</td><td>1.68</td><td>3.07</td></tr><tr><td>NFSAM</td><td>-0.58</td><td>1.70</td><td>0.61</td></tr><tr><td>仅考虑限幅环节</td><td>-0.50</td><td>1.64</td><td>0.63</td></tr><tr><td>仅考虑频率死区环节</td><td>-0.39</td><td>1.28</td><td>0.61</td></tr><tr><td>FNP</td><td>-0.36</td><td>1.18</td><td>0.63</td></tr></table>"
       }
     },
     {
@@ -6898,7 +7552,10 @@
         }
       ],
       "page_idx": 7,
-      "index": 13
+      "index": 13,
+      "level": 0,
+      "father_node": "7-7",
+      "child_node": []
     },
     {
       "type": "text",
@@ -6920,7 +7577,10 @@
         }
       ],
       "page_idx": 7,
-      "index": 14
+      "index": 14,
+      "level": 0,
+      "father_node": "7-7",
+      "child_node": []
     },
     {
       "type": "title",
@@ -6942,7 +7602,33 @@
         }
       ],
       "page_idx": 7,
-      "index": 15
+      "index": 15,
+      "level": 2,
+      "father_node": "6-14",
+      "child_node": [
+        "7-16",
+        "7-17",
+        "8-1",
+        "8-4",
+        "0-2",
+        "0-3",
+        "0-4",
+        "8-5",
+        "8-6",
+        "8-7",
+        "8-8",
+        "8-9",
+        "8-10",
+        "8-11",
+        "8-12",
+        "0-12",
+        "0-13",
+        "0-14",
+        "8-15",
+        "8-16",
+        "8-17",
+        "8-18"
+      ]
     },
     {
       "type": "text",
@@ -6955,7 +7641,7 @@
                 304,
                 677,
                 539,
-                737
+                738
               ],
               "type": "text",
               "content": "本节以极值频率偏差为边界条件进行新能源极限渗透率分析，设置为：电网发生机组最大N-1故障时，新能源机组不参于频率调节，且极值频率偏差指标不超过 "
@@ -6965,7 +7651,7 @@
                 304,
                 677,
                 539,
-                737
+                738
               ],
               "type": "inline_equation",
               "content": "0.8\\mathrm{Hz}"
@@ -6975,7 +7661,7 @@
                 304,
                 677,
                 539,
-                737
+                738
               ],
               "type": "text",
               "content": " 时的新能源渗透率。"
@@ -6984,7 +7670,10 @@
         }
       ],
       "page_idx": 7,
-      "index": 16
+      "index": 16,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "text",
@@ -7006,7 +7695,10 @@
         }
       ],
       "page_idx": 7,
-      "index": 17
+      "index": 17,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "header",
@@ -7110,7 +7802,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 1
+      "index": 1,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "table",
@@ -7139,8 +7834,11 @@
             }
           ],
           "index": 2,
+          "level": 0,
           "angle": 0,
-          "type": "table_caption"
+          "type": "table_caption",
+          "father_node": "7-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -7160,8 +7858,11 @@
             }
           ],
           "index": 3,
+          "level": 0,
           "angle": 0,
-          "type": "table_caption"
+          "type": "table_caption",
+          "father_node": "7-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -7182,72 +7883,79 @@
             }
           ],
           "index": 4,
+          "level": 0,
           "angle": 0,
-          "type": "table_body"
+          "type": "table_body",
+          "father_node": "7-15",
+          "child_node": []
         }
       ],
       "page_idx": 8,
       "index": 4,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": [],
       "llm_process": {
         "type": "table",
         "kv_extract": {
-          "机组": [
-            "G1",
-            "G2",
-            "G3",
-            "G4",
-            "G5",
-            "G7",
-            "G8",
-            "G9",
-            "G10"
-          ],
-          "T/s": [
-            "7.52",
-            "8.17",
-            "11.22",
-            "31.50",
-            "6.83",
-            "5.74",
-            "8.23",
-            "7.28",
-            "3.60"
-          ],
-          "P_MA": [
-            "0.028",
-            "0.077",
-            "0.040",
-            "0.017",
-            "0.020",
-            "0.010",
-            "0.028",
-            "0.077",
-            "0.069"
-          ],
-          "P_out": [
-            "0.080",
-            "0.086",
-            "0.090",
-            "0.085",
-            "0.080",
-            "0.091",
-            "0.062",
-            "0.086",
-            "0.094"
-          ],
-          "I_GS": [
-            "0.048",
-            "0.111",
-            "0.040",
-            "0.006",
-            "0.037",
-            "0.019",
-            "0.055",
-            "0.123",
-            "0.204"
-          ]
+          "机组": {
+            "G1": "7.52",
+            "G2": "8.17",
+            "G3": "11.22",
+            "G4": "31.50",
+            "G5": "6.83",
+            "G7": "5.74",
+            "G8": "8.23",
+            "G9": "7.28",
+            "G10": "3.60"
+          },
+          "T/s": {
+            "G1": "7.52",
+            "G2": "8.17",
+            "G3": "11.22",
+            "G4": "31.50",
+            "G5": "6.83",
+            "G7": "5.74",
+            "G8": "8.23",
+            "G9": "7.28",
+            "G10": "3.60"
+          },
+          "P_MA": {
+            "G1": "0.028",
+            "G2": "0.077",
+            "G3": "0.040",
+            "G4": "0.017",
+            "G5": "0.020",
+            "G7": "0.010",
+            "G8": "0.028",
+            "G9": "0.077",
+            "G10": "0.069"
+          },
+          "P_out": {
+            "G1": "0.080",
+            "G2": "0.086",
+            "G3": "0.090",
+            "G4": "0.085",
+            "G5": "0.080",
+            "G7": "0.091",
+            "G8": "0.062",
+            "G9": "0.086",
+            "G10": "0.094"
+          },
+          "I_GS": {
+            "G1": "0.048",
+            "G2": "0.111",
+            "G3": "0.040",
+            "G4": "0.006",
+            "G5": "0.037",
+            "G7": "0.019",
+            "G8": "0.055",
+            "G9": "0.123",
+            "G10": "0.204"
+          }
         },
-        "description": "这是一张记录不同机组（G1至G10）的T/s、P_MA、P_out和I_GS四个参数数据的表格。其中，T/s的最小值为3.60，最大值为31.50；P_MA的最小值为0.010，最大值为0.077；P_out的最小值为0.062，最大值为0.094；I_GS的最小值为0.006，最大值为0.204。"
+        "description": "好的，作为数据分析技术员，我对该表格进行如下分析和描述：\n\n---\n\n**1. 表格类型说明**\n\n这是一张**结构化数据表（Structured Data Table）**，用于记录不同“机组”（G1至G10）在特定实验或运行条件下所测量的四个关键参数：  \n- **T/s**：时间（单位：秒）  \n- **P_MA**：某个设备或系统的输入功率（单位未标出，但可能是兆瓦或类似单位）  \n- **P_out**：输出功率（单位同上）  \n- **I_GS**：电流（单位未标出，但可能是安培）\n\n该表采用行列格式，第一列为分类变量（机组编号），其余列为数值型连续变量。其核心目的是横向比较不同机组在相同物理量上的表现差异。\n\n---\n\n**2. 数据特征分析**\n\n基于表中提供的10组数据，对各列的最大值、最小值及极差进行统计分析：\n\n| 参数       | 最小值 | 最大值 | 极差（Max - Min） |\n|------------|--------|--------|------------------|\n| T/s        | 3.60   | 31.50  | 27.90 s          |\n| P_MA       | 0.010  | 0.077  | 0.067            |\n| P_out      | 0.062  | 0.094  | 0.032            |\n| I_GS       | 0.006  | 0.204  | 0.198            |\n\n**主要观察点：**\n- **时间（T/s）**：G4机组耗时最长（31.50s），G10最短（3.60s），时间跨度达27.9秒。表明不同机组完成某过程的时间存在显著差异。\n- **输入功率（P_MA）**：G2和G9的输入功率最高（0.077），G7最低（0.010）。最大与最小相差0.067。\n- **输出功率（P_out）**：范围较窄（0.062–0.094），表明所有机组输出功率相对稳定，波动较小。\n- **电流（I_GS）**：G10电流最大（0.204），G4最小（0.006），差距达0.198，是四个参数中波动最大的。\n\n**趋势性观察：**\n- 时间越长的机组（如G4），其输入功率反而更低（0.017），但电流也极低（0.006），可能表示其处于低能耗或待机状态。\n- 时间最短的G10机组，输入功率较高（0.069），电流也最大（0.204），表现出较高的能量转换效率或负载强度。\n- G2和G9虽然输入功率高，但输出功率并未同步升高（均为0.086），暗示可能存在能量损耗或系统限制。\n\n---\n\n**3. 文字信息概括说明**\n\n该表格没有包含除数字外的文字说明，因此无需额外文字概括。它直接提供了客观数据，可用于：\n\n- 对比不同机组的性能表现；\n- 分析时间、功率与电流之间的关联性；\n- 寻找异常值或优化潜力（例如G4的低功率/低电流是否合理）；\n- 支持后续建模或故障诊断（如哪个机组效率偏低）。\n\n---\n\n**结论**\n\n该数据表清晰展示了10个不同机组的关键运行参数，通过数值对比可发现机组间存在显著差异，尤其体现在时间和电流维度。建议结合业务背景进一步分析这些参数间的相关性（如是否存在线性关系或阈值效应），以支持设备选型、性能评估或故障排查等实际应用需求。",
+        "table_html": "<table><tr><td>机组</td><td>Ts/s</td><td>PMA</td><td>Pout</td><td>IGS</td></tr><tr><td>G1</td><td>7.52</td><td>0.028</td><td>0.080</td><td>0.048</td></tr><tr><td>G2</td><td>8.17</td><td>0.077</td><td>0.086</td><td>0.111</td></tr><tr><td>G3</td><td>11.22</td><td>0.040</td><td>0.090</td><td>0.040</td></tr><tr><td>G4</td><td>31.50</td><td>0.017</td><td>0.085</td><td>0.006</td></tr><tr><td>G5</td><td>6.83</td><td>0.020</td><td>0.080</td><td>0.037</td></tr><tr><td>G7</td><td>5.74</td><td>0.010</td><td>0.091</td><td>0.019</td></tr><tr><td>G8</td><td>8.23</td><td>0.028</td><td>0.062</td><td>0.055</td></tr><tr><td>G9</td><td>7.28</td><td>0.077</td><td>0.086</td><td>0.123</td></tr><tr><td>G10</td><td>3.60</td><td>0.069</td><td>0.094</td><td>0.204</td></tr></table>"
       }
     },
     {
@@ -7270,7 +7978,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "text",
@@ -7312,7 +8023,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 6
+      "index": 6,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -7335,7 +8049,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 7
+      "index": 7,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "text",
@@ -7397,7 +8114,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 8
+      "index": 8,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "text",
@@ -7419,7 +8139,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 9
+      "index": 9,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -7442,7 +8165,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 10
+      "index": 10,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "text",
@@ -7504,7 +8230,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 11
+      "index": 11,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "image",
@@ -7533,8 +8262,11 @@
             }
           ],
           "index": 12,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "7-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -7554,8 +8286,11 @@
             }
           ],
           "index": 13,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "7-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -7575,15 +8310,22 @@
             }
           ],
           "index": 14,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "7-15",
+          "child_node": []
         }
       ],
       "page_idx": 8,
       "index": 12,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": [],
       "llm_process": {
         "type": "pictogram",
-        "desc": "图表无标题。  \n横坐标：时间/s；纵坐标：频率偏差/Hz。  \n数据整体趋势：初始急剧下降后趋于平稳，数值维持在-0.8 Hz附近。"
+        "desc": "图表标题：无\n\n横坐标：时间/s\n\n纵坐标：频率偏差/Hz\n\n数据整体趋势：曲线初始阶段快速下降至约-0.8 Hz后趋于平稳，随后在约10 s后缓慢上升并维持在约-0.2 Hz水平。所得数据通过估算得到，请酌情参考",
+        "html": "所得数据通过估算得到，请酌情参考\n\n<table border=\"1\" class=\"data-table\">\n  <thead>\n    <tr>\n      <th>时间/s</th>\n      <th>频率偏差/Hz</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr><td>0</td><td>0</td></tr>\n    <tr><td>2</td><td>-0.6</td></tr>\n    <tr><td>4</td><td>-0.75</td></tr>\n    <tr><td>6</td><td>-0.8</td></tr>\n    <tr><td>8</td><td>-0.78</td></tr>\n    <tr><td>10</td><td>-0.7</td></tr>\n    <tr><td>12</td><td>-0.65</td></tr>\n    <tr><td>14</td><td>-0.6</td></tr>\n    <tr><td>16</td><td>-0.55</td></tr>\n    <tr><td>18</td><td>-0.5</td></tr>\n    <tr><td>20</td><td>-0.45</td></tr>\n    <tr><td>22</td><td>-0.4</td></tr>\n    <tr><td>24</td><td>-0.35</td></tr>\n    <tr><td>26</td><td>-0.3</td></tr>\n    <tr><td>28</td><td>-0.25</td></tr>\n    <tr><td>30</td><td>-0.2</td></tr>\n    <tr><td>32</td><td>-0.15</td></tr>\n    <tr><td>34</td><td>-0.1</td></tr>\n    <tr><td>36</td><td>-0.05</td></tr>\n    <tr><td>38</td><td>-0.02</td></tr>\n    <tr><td>40</td><td>-0.01</td></tr>\n    <tr><td>42</td><td>-0.005</td></tr>\n    <tr><td>44</td><td>-0.002</td></tr>\n    <tr><td>46</td><td>-0.001</td></tr>\n    <tr><td>48</td><td>-0.0005</td></tr>\n    <tr><td>50</td><td>-0.0002</td></tr>\n    <tr><td>52</td><td>-0.0001</td></tr>\n    <tr><td>54</td><td>-0.00005</td></tr>\n    <tr><td>56</td><td>-0.00002</td></tr>\n    <tr><td>58</td><td>-0.00001</td></tr>\n    <tr><td>60</td><td>-0.000005</td></tr>\n  </tbody>\n</table>"
       }
     },
     {
@@ -7606,7 +8348,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 15
+      "index": 15,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "text",
@@ -7708,7 +8453,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 16
+      "index": 16,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "text",
@@ -7770,7 +8518,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 17
+      "index": 17,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "text",
@@ -7792,7 +8543,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 18
+      "index": 18,
+      "level": 0,
+      "father_node": "7-15",
+      "child_node": []
     },
     {
       "type": "title",
@@ -7814,7 +8568,26 @@
         }
       ],
       "page_idx": 8,
-      "index": 19
+      "index": 19,
+      "level": 2,
+      "father_node": "6-14",
+      "child_node": [
+        "8-20",
+        "8-21",
+        "9-1",
+        "9-2",
+        "9-3",
+        "9-4",
+        "9-5",
+        "9-6",
+        "9-9",
+        "0-7",
+        "0-8",
+        "0-9",
+        "9-10",
+        "9-11",
+        "9-12"
+      ]
     },
     {
       "type": "text",
@@ -7856,7 +8629,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 20
+      "index": 20,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": []
     },
     {
       "type": "text",
@@ -7878,7 +8654,10 @@
         }
       ],
       "page_idx": 8,
-      "index": 21
+      "index": 21,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": []
     },
     {
       "type": "header",
@@ -7922,7 +8701,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 1
+      "index": 1,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": []
     },
     {
       "type": "text",
@@ -7944,7 +8726,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 2
+      "index": 2,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": []
     },
     {
       "type": "text",
@@ -7986,7 +8771,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 3
+      "index": 3,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": []
     },
     {
       "type": "text",
@@ -8028,7 +8816,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 4
+      "index": 4,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": []
     },
     {
       "type": "text",
@@ -8070,7 +8861,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": []
     },
     {
       "type": "text",
@@ -8092,7 +8886,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 6
+      "index": 6,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": []
     },
     {
       "type": "table",
@@ -8121,8 +8918,11 @@
             }
           ],
           "index": 7,
+          "level": 0,
           "angle": 0,
-          "type": "table_caption"
+          "type": "table_caption",
+          "father_node": "8-19",
+          "child_node": []
         },
         {
           "lines": [
@@ -8142,8 +8942,11 @@
             }
           ],
           "index": 8,
+          "level": 0,
           "angle": 0,
-          "type": "table_caption"
+          "type": "table_caption",
+          "father_node": "8-19",
+          "child_node": []
         },
         {
           "lines": [
@@ -8164,22 +8967,29 @@
             }
           ],
           "index": 9,
+          "level": 0,
           "angle": 0,
-          "type": "table_body"
+          "type": "table_body",
+          "father_node": "8-19",
+          "child_node": []
         }
       ],
       "page_idx": 9,
       "index": 9,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": [],
       "llm_process": {
         "type": "table",
         "kv_extract": {
-          "故障类型": "故障 I",
-          "方法": "PSD-BPA",
-          "Δf_max /Hz": "-0.18",
-          "t_n /s": "3.20",
-          "计算时间/s": "58.00"
+          "故障类型": "故障III",
+          "方法": "NFSAM",
+          "Δf_max /Hz": "1.00",
+          "t_n /s": "8.91",
+          "计算时间/s": "0.73"
         },
-        "description": "这是一张比较不同方法在三种故障类型下性能的表格，包含最大频率偏差和计算时间等数据。"
+        "description": "好的，作为数据分析技术员，我对该表格进行如下分析和描述：\n\n---\n\n**1. 说明这是一张什么类型的表格**\n\n这是一张**对比分析型数据表**。它用于比较两种不同方法（PSD-BPA 和 NFSAM）在处理三种不同类型故障（故障 I、故障 II、故障 III）时的性能表现。表格的核心目的是通过量化指标（最大频率偏差 Δf_max /Hz、计算时间 t_n /s）来评估两种算法在不同故障场景下的精度和效率差异。\n\n---\n\n**2. 如果是数据表，分析最大值、最小值等特征**\n\n从表格数据中可以提取以下关键统计特征：\n\n- **Δf_max（最大频率偏差）**\n  - 最大值：**1.00 Hz**（发生在“故障III”下NFSAM方法）\n  - 最小值：**-0.21 Hz**（发生在“故障I”下NFSAM方法）\n  - 范围：从 -0.21 Hz 到 +1.00 Hz，表明NFSAM方法在故障III下估计误差最大，在故障I下估计误差最小。\n  - 总体趋势：对于所有故障类型，NFSAM方法的 |Δf_max| 值均大于或等于PSD-BPA方法，说明NFSAM方法在频率偏差估计上可能不如PSD-BPA精确。\n\n- **t_n（计算时间）**\n  - 最大值：**100.00 s**（发生在“故障III”下PSD-BPA方法）\n  - 最小值：**0.60 s**（发生在“故障I”下NFSAM方法）\n  - 范围：从 0.60 s 到 100.00 s，差异巨大。\n  - 总体趋势：NFSAM方法在所有故障类型下都显著快于PSD-BPA方法，尤其在故障I和故障II中优势明显；但在故障III中，PSD-BPA虽然耗时最长，但其计算效率相对NFSAM方法仍然较低。\n\n- **综合观察**\n  - 在“故障I”中，NFSAM方法在计算速度上比PSD-BPA快约97倍（58.00 vs 0.60），但频率偏差绝对值略大（|-0.21| > |-0.18|）。\n  - 在“故障II”和“故障III”中，NFSAM方法不仅计算速度快得多（快约123倍和137倍），而且频率偏差估计也更准确（|Δf_max| 更小）。\n  - 因此，NFSAM方法在**效率**上全面优于PSD-BPA方法，但在**精度**（频率偏差估计准确性）上存在一定的权衡。\n\n---\n\n**3. 如果包含文字信息，请进行概括说明**\n\n表格中的文字信息主要包括：\n\n- **故障类型**：分为三类（故障I、故障II、故障III），可能代表不同的电力系统故障模式或严重程度。\n- **方法**：列出了两种算法名称：\n  - **PSD-BPA**：可能是基于功率谱密度的BPA算法（一种传统的频率估计方法）。\n  - **NFSAM**：可能是某种新型或改进的频率估计算法（如神经网络结合自适应滤波器等）。\n- **Δf_max /Hz**：表示在每种故障场景下，两种方法估计出的频率与真实值之间的最大偏差。\n- **t_n /s**：表示每种方法完成一次计算所需的平均时间。\n- **计算时间/s**：这是对“t_n”的重复或强调，实际内容与t_n相同。\n\n**概括说明**：\n\n该表格旨在通过实验数据对比两种电力系统频率估计算法——PSD-BPA和NFSAM——在面对三种典型故障时的表现。结果显示，尽管PSD-BPA在某些情况下提供了更小的频率估计误差，但NFSAM算法无论是在计算速度还是在多数情况下的频率估计精度上，都展现出显著的优势。这表明NFSAM是一种更高效且在大多数场景下精度更高的现代算法。\n\n---\n\n综上所述，这张表格清晰地展示了两种算法在不同故障条件下的性能差异，为算法选型提供了定量依据。",
+        "table_html": "<table><tr><td>故障类型</td><td>方法</td><td>Δfmax/Hz</td><td>tn/s</td><td>计算时间/s</td></tr><tr><td rowspan=\"2\">故障I</td><td>PSD-BPA</td><td>-0.18</td><td>3.20</td><td>58.00</td></tr><tr><td>NFSAM</td><td>-0.21</td><td>3.10</td><td>0.60</td></tr><tr><td rowspan=\"2\">故障II</td><td>PSD-BPA</td><td>0.45</td><td>6.86</td><td>90.00</td></tr><tr><td>NFSAM</td><td>0.49</td><td>7.01</td><td>0.73</td></tr><tr><td rowspan=\"2\">故障III</td><td>PSD-BPA</td><td>0.94</td><td>9.20</td><td>100.00</td></tr><tr><td>NFSAM</td><td>1.00</td><td>8.91</td><td>0.73</td></tr></table>"
       }
     },
     {
@@ -8262,7 +9072,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 10
+      "index": 10,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": []
     },
     {
       "type": "text",
@@ -8404,7 +9217,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 11
+      "index": 11,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": []
     },
     {
       "type": "text",
@@ -8426,7 +9242,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 12
+      "index": 12,
+      "level": 0,
+      "father_node": "8-19",
+      "child_node": []
     },
     {
       "type": "title",
@@ -8448,7 +9267,17 @@
         }
       ],
       "page_idx": 9,
-      "index": 13
+      "index": 13,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "9-14",
+        "9-17",
+        "0-15",
+        "0-16",
+        "9-18",
+        "9-19"
+      ]
     },
     {
       "type": "text",
@@ -8470,7 +9299,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 14
+      "index": 14,
+      "level": 0,
+      "father_node": "9-13",
+      "child_node": []
     },
     {
       "bbox": [
@@ -8483,6 +9315,7 @@
       "angle": 0,
       "page_idx": 9,
       "index": 17,
+      "level": 0,
       "blocks": [
         {
           "type": "text",
@@ -8503,7 +9336,10 @@
               ]
             }
           ],
-          "index": 15
+          "index": 15,
+          "level": 0,
+          "father_node": "9-13",
+          "child_node": []
         },
         {
           "type": "text",
@@ -8524,10 +9360,15 @@
               ]
             }
           ],
-          "index": 16
+          "index": 16,
+          "level": 0,
+          "father_node": "9-13",
+          "child_node": []
         }
       ],
-      "sub_type": "text"
+      "sub_type": "text",
+      "father_node": "9-13",
+      "child_node": []
     },
     {
       "type": "text",
@@ -8549,7 +9390,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 18
+      "index": 18,
+      "level": 0,
+      "father_node": "9-13",
+      "child_node": []
     },
     {
       "type": "text",
@@ -8571,7 +9415,10 @@
         }
       ],
       "page_idx": 9,
-      "index": 19
+      "index": 19,
+      "level": 0,
+      "father_node": "9-13",
+      "child_node": []
     },
     {
       "type": "title",
@@ -8593,7 +9440,48 @@
         }
       ],
       "page_idx": 9,
-      "index": 20
+      "index": 20,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "9-36",
+        "0-21",
+        "0-22",
+        "0-23",
+        "0-24",
+        "0-25",
+        "0-26",
+        "0-27",
+        "0-28",
+        "0-29",
+        "0-30",
+        "0-31",
+        "0-32",
+        "0-33",
+        "0-34",
+        "0-35",
+        "10-15",
+        "0-1",
+        "0-2",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-10",
+        "0-11",
+        "0-12",
+        "0-13",
+        "0-14",
+        "10-27",
+        "0-16",
+        "0-17",
+        "0-18",
+        "0-19",
+        "0-20"
+      ]
     },
     {
       "bbox": [
@@ -8606,6 +9494,7 @@
       "angle": 0,
       "page_idx": 9,
       "index": 36,
+      "level": 0,
       "blocks": [
         {
           "type": "ref_text",
@@ -8626,7 +9515,10 @@
               ]
             }
           ],
-          "index": 21
+          "index": 21,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8647,7 +9539,10 @@
               ]
             }
           ],
-          "index": 22
+          "index": 22,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8668,7 +9563,10 @@
               ]
             }
           ],
-          "index": 23
+          "index": 23,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8689,7 +9587,10 @@
               ]
             }
           ],
-          "index": 24
+          "index": 24,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8710,7 +9611,10 @@
               ]
             }
           ],
-          "index": 25
+          "index": 25,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8731,7 +9635,10 @@
               ]
             }
           ],
-          "index": 26
+          "index": 26,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8752,7 +9659,10 @@
               ]
             }
           ],
-          "index": 27
+          "index": 27,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8773,7 +9683,10 @@
               ]
             }
           ],
-          "index": 28
+          "index": 28,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8794,7 +9707,10 @@
               ]
             }
           ],
-          "index": 29
+          "index": 29,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8815,7 +9731,10 @@
               ]
             }
           ],
-          "index": 30
+          "index": 30,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8836,7 +9755,10 @@
               ]
             }
           ],
-          "index": 31
+          "index": 31,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8857,7 +9779,10 @@
               ]
             }
           ],
-          "index": 32
+          "index": 32,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8878,7 +9803,10 @@
               ]
             }
           ],
-          "index": 33
+          "index": 33,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8899,7 +9827,10 @@
               ]
             }
           ],
-          "index": 34
+          "index": 34,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8920,10 +9851,15 @@
               ]
             }
           ],
-          "index": 35
+          "index": 35,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         }
       ],
-      "sub_type": "ref_text"
+      "sub_type": "ref_text",
+      "father_node": "9-20",
+      "child_node": []
     },
     {
       "type": "header",
@@ -8958,6 +9894,7 @@
       "angle": 0,
       "page_idx": 10,
       "index": 15,
+      "level": 0,
       "blocks": [
         {
           "type": "ref_text",
@@ -8978,7 +9915,10 @@
               ]
             }
           ],
-          "index": 1
+          "index": 1,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -8999,7 +9939,10 @@
               ]
             }
           ],
-          "index": 2
+          "index": 2,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9020,7 +9963,10 @@
               ]
             }
           ],
-          "index": 3
+          "index": 3,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9041,7 +9987,10 @@
               ]
             }
           ],
-          "index": 4
+          "index": 4,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9062,7 +10011,10 @@
               ]
             }
           ],
-          "index": 5
+          "index": 5,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9083,7 +10035,10 @@
               ]
             }
           ],
-          "index": 6
+          "index": 6,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9104,7 +10059,10 @@
               ]
             }
           ],
-          "index": 7
+          "index": 7,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9125,7 +10083,10 @@
               ]
             }
           ],
-          "index": 8
+          "index": 8,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9146,7 +10107,10 @@
               ]
             }
           ],
-          "index": 9
+          "index": 9,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9167,7 +10131,10 @@
               ]
             }
           ],
-          "index": 10
+          "index": 10,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9188,7 +10155,10 @@
               ]
             }
           ],
-          "index": 11
+          "index": 11,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9209,7 +10179,10 @@
               ]
             }
           ],
-          "index": 12
+          "index": 12,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9230,7 +10203,10 @@
               ]
             }
           ],
-          "index": 13
+          "index": 13,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9251,10 +10227,15 @@
               ]
             }
           ],
-          "index": 14
+          "index": 14,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         }
       ],
-      "sub_type": "ref_text"
+      "sub_type": "ref_text",
+      "father_node": "9-20",
+      "child_node": []
     },
     {
       "bbox": [
@@ -9267,6 +10248,7 @@
       "angle": 0,
       "page_idx": 10,
       "index": 27,
+      "level": 0,
       "blocks": [
         {
           "type": "ref_text",
@@ -9287,7 +10269,10 @@
               ]
             }
           ],
-          "index": 16
+          "index": 16,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9308,7 +10293,10 @@
               ]
             }
           ],
-          "index": 17
+          "index": 17,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9329,7 +10317,10 @@
               ]
             }
           ],
-          "index": 18
+          "index": 18,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9350,7 +10341,10 @@
               ]
             }
           ],
-          "index": 19
+          "index": 19,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9371,7 +10365,10 @@
               ]
             }
           ],
-          "index": 20
+          "index": 20,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9392,7 +10389,10 @@
               ]
             }
           ],
-          "index": 21
+          "index": 21,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9413,7 +10413,10 @@
               ]
             }
           ],
-          "index": 22
+          "index": 22,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9434,7 +10437,10 @@
               ]
             }
           ],
-          "index": 23
+          "index": 23,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9455,7 +10461,10 @@
               ]
             }
           ],
-          "index": 24
+          "index": 24,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9476,7 +10485,10 @@
               ]
             }
           ],
-          "index": 25
+          "index": 25,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         },
         {
           "type": "ref_text",
@@ -9497,10 +10509,15 @@
               ]
             }
           ],
-          "index": 26
+          "index": 26,
+          "level": 0,
+          "father_node": "9-20",
+          "child_node": []
         }
       ],
-      "sub_type": "ref_text"
+      "sub_type": "ref_text",
+      "father_node": "9-20",
+      "child_node": []
     },
     {
       "type": "title",
@@ -9522,7 +10539,14 @@
         }
       ],
       "page_idx": 10,
-      "index": 28
+      "index": 28,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "10-29",
+        "10-30",
+        "10-31"
+      ]
     },
     {
       "type": "text",
@@ -9533,7 +10557,7 @@
             {
               "bbox": [
                 306,
-                518,
+                519,
                 537,
                 542
               ],
@@ -9544,7 +10568,10 @@
         }
       ],
       "page_idx": 10,
-      "index": 29
+      "index": 29,
+      "level": 0,
+      "father_node": "10-28",
+      "child_node": []
     },
     {
       "type": "text",
@@ -9555,7 +10582,7 @@
             {
               "bbox": [
                 306,
-                543,
+                544,
                 537,
                 578
               ],
@@ -9566,7 +10593,10 @@
         }
       ],
       "page_idx": 10,
-      "index": 30
+      "index": 30,
+      "level": 0,
+      "father_node": "10-28",
+      "child_node": []
     },
     {
       "type": "text",
@@ -9588,7 +10618,10 @@
         }
       ],
       "page_idx": 10,
-      "index": 31
+      "index": 31,
+      "level": 0,
+      "father_node": "10-28",
+      "child_node": []
     },
     {
       "type": "header",
@@ -9632,7 +10665,39 @@
         }
       ],
       "page_idx": 11,
-      "index": 1
+      "index": 1,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "11-2",
+        "11-3",
+        "11-4",
+        "11-5",
+        "11-7",
+        "0-6",
+        "0-7",
+        "0-8",
+        "0-9",
+        "11-10",
+        "0-10",
+        "0-11",
+        "0-12",
+        "0-13",
+        "12-1",
+        "12-2",
+        "12-3",
+        "12-4",
+        "12-5",
+        "12-6",
+        "12-7",
+        "12-8",
+        "12-9",
+        "12-10",
+        "12-11",
+        "12-12",
+        "12-13",
+        "12-14"
+      ]
     },
     {
       "type": "text",
@@ -9764,7 +10829,10 @@
         }
       ],
       "page_idx": 11,
-      "index": 2
+      "index": 2,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "text",
@@ -9786,7 +10854,10 @@
         }
       ],
       "page_idx": 11,
-      "index": 3
+      "index": 3,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "text",
@@ -9808,7 +10879,10 @@
         }
       ],
       "page_idx": 11,
-      "index": 4
+      "index": 4,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "text",
@@ -9830,7 +10904,10 @@
         }
       ],
       "page_idx": 11,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "image",
@@ -9859,8 +10936,11 @@
             }
           ],
           "index": 6,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "11-1",
+          "child_node": []
         },
         {
           "lines": [
@@ -9880,8 +10960,11 @@
             }
           ],
           "index": 7,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "11-1",
+          "child_node": []
         },
         {
           "lines": [
@@ -9901,8 +10984,11 @@
             }
           ],
           "index": 8,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "11-1",
+          "child_node": []
         },
         {
           "lines": [
@@ -9922,15 +11008,22 @@
             }
           ],
           "index": 9,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "11-1",
+          "child_node": []
         }
       ],
       "page_idx": 11,
       "index": 7,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": [],
       "llm_process": {
         "type": "pictogram",
-        "desc": "图表标题：未提供\n\n横坐标：时间(s)\n\n纵坐标1（上图）：频率偏差(p.u.)\n\n纵坐标2（下图）：功率响应(p.u.)\n\n整体趋势：\n\n上图：频率偏差先下降至最低点Δf_max，再上升并趋于平稳。\n\n下图：各功率响应曲线均从零开始波动，随后趋于稳定，其中火电机组、水电机组一次调频及FLC功率响应曲线最终趋于水平，阻尼响应与PD-VIC曲线则逐渐衰减至平稳。"
+        "desc": "图表标题：未提供\n\n横坐标含义：时间(s)，单位：秒  \n纵坐标含义（上图）：频率偏差(p.u.)，单位：标幺值  \n纵坐标含义（下图）：功率响应(p.u.)，单位：标幺值  \n\n整体趋势描述：  \n上图中频率偏差曲线先下降至最低点Δf_max后回升并趋于稳定。  \n下图中各功率响应曲线在初始阶段快速变化，随后进入惯量响应阶段或一次调频阶段并逐渐趋于平稳。所得数据通过估算得到，请酌情参考",
+        "html": "所得数据通过估算得到，请酌情参考\n\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>时间(s)</th>\n      <th>频率偏差(p.u)</th>\n      <th>功率响应(p.u)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <td>Δf<sub>max</sub></td>\n      <td>最小值</td>\n      <td>火电机组一次调频：峰值约0.2 p.u<br>水电机组一次调频：峰值约0.3 p.u<br>FLC功率响应：峰值约0.1 p.u<br>惯量响应：峰值约0.15 p.u<br>阻尼响应：峰值约0.05 p.u<br>PD-VIC：峰值约0.25 p.u</td>\n    </tr>\n    <tr>\n      <td>稳定后</td>\n      <td>接近0</td>\n      <td>火电机组一次调频：稳定约0.1 p.u<br>水电机组一次调频：稳定约0.15 p.u<br>FLC功率响应：稳定约0.05 p.u<br>惯量响应：稳定约0 p.u<br>阻尼响应：稳定约0 p.u<br>PD-VIC：稳定约0.1 p.u</td>\n    </tr>\n  </tbody>\n</table>"
       }
     },
     {
@@ -9960,8 +11053,11 @@
             }
           ],
           "index": 10,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "11-1",
+          "child_node": []
         },
         {
           "lines": [
@@ -9981,8 +11077,11 @@
             }
           ],
           "index": 11,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "11-1",
+          "child_node": []
         },
         {
           "lines": [
@@ -10002,8 +11101,11 @@
             }
           ],
           "index": 12,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "11-1",
+          "child_node": []
         },
         {
           "lines": [
@@ -10113,15 +11215,21 @@
             }
           ],
           "index": 13,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "11-1",
+          "child_node": []
         }
       ],
       "page_idx": 11,
       "index": 10,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张电力系统频率响应控制模型的结构框图，用于描述不同发电机组和储能单元如何协同参与系统频率调节。\n\n**主要主体与结构：**\n- 图中包含多个并列的“机组”模块，从上至下依次为：\n  - 风电机组a（绿色虚线框）\n  - 光伏机组b（绿色虚线框）\n  - 储能机组c（绿色虚线框）\n  - 火电机组i（红色虚线框）\n  - 水电机组j（蓝色虚线框）\n  - 直流h（黑色虚线框）\n每个机组模块内部结构相同，均由一个比例环节（K）、一个积分环节（∫）、一个功率限制器（G）以及一个频率偏差输入端组成。\n- 所有机组模块的输出通过一个加法器汇总，并送入“系统转子模型”（1/(2Hs+D)），该模型模拟系统惯性对频率变化的响应。\n- 最终输出Δf表示系统频率偏差。\n\n**核心功能与流程：**\n- 各类电源（风电、光伏、储能、火电、水电、直流）均具有基于频率偏差（f_DB）调整其出力的能力，其调节量经由各自的增益K和积分器G后，共同作用于系统频率偏差Δf。\n- 图中的箭头指示了信号流向：频率偏差作为输入触发各机组的功率调整，调整后的功率变化叠加后影响系统频率。\n\n**关键文字及其含义：**\n- **风电机组a、光伏机组b、储能机组c、火电机组i、水电机组j、直流h**：标识不同类型的发电/储能单元。\n- **ΔP^a_WF, ΔP^b_PV, ΔP^c_ESS, ΔP^i_m, ΔP^j_m, ΔP^h_FLC**：表示各机组对应的功率变化量。\n- **K^a_WF, K^b_PV, K^c_ESS, K^i_TTF, K^j_HTF, K^h_DC**：各机组的比例系数（增益），决定频率偏差对功率变化的影响程度。\n- **G^a_WF, G^b_PV, G^c_ESS, G^i_TTF, G^j_HTF, G^h_DC**：各机组的积分环节或功率限制器，通常代表机组的调频能力或功率约束。\n- **f^a_DB, f^b_DB, ... f^h_DB**：各机组所感知的频率偏差输入信号。\n- **系统转子模型 (1/(2Hs+D))**：代表系统惯性，其中H是系统惯性常数，D是阻尼系数。\n- **ΔP_d**：总功率扰动输入。\n- **Δf**：最终的系统频率偏差输出。\n\n这张图的核心信息是：在电力系统频率动态平衡过程中，各类分布式能源和传统机组通过各自的频率响应机制（比例-积分控制），共同调节功率输出以维持系统频率稳定。"
+        "desc": "这是一张电力系统频率响应控制的结构框图，用于描述不同发电机组（含新能源）与系统转子模型之间的动态交互关系。\n\n主要主体包括：\n- 七个并列的发电单元模块：风电（a）、光伏（b）、储能（c）、火电（i）、水电（j）、直流（h），以及一个中心系统转子模型。\n- 每个发电单元模块均包含：功率偏差输入（ΔP）、增益环节（K）、积分器、功率限制（P_max, P_min）、发电机调频特性（G）、以及频率偏差反馈（f_DB）。\n- 中心系统转子模型为“1/(2Hs + D)”，表示系统惯性与阻尼特性。\n- 所有发电单元的频率偏差输出（f_DB）共同作用于系统频率Δf，并通过负反馈路径影响各单元的功率输出。\n\n关键文字提取及核心信息概括：\n- “风电机组a”、“光伏机组b”、“储能机组c”、“火电机组i”、“水电机组j”、“直流h”——标识不同类型的电源单元。\n- “系统转子模型”——代表电网整体的惯性响应机制。\n- “ΔP_d”——系统总功率偏差输入。\n- “Δf”——系统频率偏差输出。\n- “K^a_WF”, “G^a_WF”, “f^a_DB”等——各单元的具体参数符号，表示该单元的增益、调频特性及频率偏差信号。\n\n专业数据解释（电力行业术语）：\n- 各发电单元模块采用“比例-积分”（PI）控制器结构，其中K为比例增益，积分器用于消除稳态误差。\n- G块代表发电机调频特性，其形式通常为线性或非线性函数，反映发电机在频率变化时的功率调节能力。\n- f_DB为频率偏差信号，通过负反馈连接至各单元的功率输出端口，构成闭环控制系统。\n- 系统转子模型“1/(2Hs + D)”是经典的一阶惯性模型，其中H为系统等效惯性常数（单位：GW·s/GW），D为阻尼系数（单位：p.u./s），用于建模系统频率动态响应。\n- 整体结构体现“一次调频”的基本原理：系统频率偏差驱动各机组根据自身调频能力调整出力，以恢复系统频率稳定。\n\n该图清晰展现了现代电力系统中多种电源类型参与频率调节的协同控制架构，是构建电力系统动态仿真和稳定分析的重要基础模型。"
       }
     },
     {
@@ -10286,7 +11394,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 1
+      "index": 1,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "text",
@@ -10408,7 +11519,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 2
+      "index": 2,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "text",
@@ -10490,7 +11604,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 3
+      "index": 3,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "text",
@@ -10512,7 +11629,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 4
+      "index": 4,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -10528,14 +11648,17 @@
                 403
               ],
               "type": "interline_equation",
-              "content": "\\triangle P _ {\\mathrm {o u t}} (t) = \\frac {\\Delta P _ {\\mathrm {d}}}{t _ {\\mathrm {n}}} t \\tag {A1}",
+              "content": "\\Delta P _ {\\mathrm {o u t}} (t) = \\frac {\\Delta P _ {\\mathrm {d}}}{t _ {\\mathrm {n}}} t \\tag {A1}",
               "image_path": "b1e800eb1ad1901aaf11efbd874554fb18798a7e69f9e3517d77e3c1f961fad0.jpg"
             }
           ]
         }
       ],
       "page_idx": 12,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "text",
@@ -10637,7 +11760,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 6
+      "index": 6,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -10660,7 +11786,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 7
+      "index": 7,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "text",
@@ -10682,7 +11811,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 8
+      "index": 8,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -10705,7 +11837,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 9
+      "index": 9,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "text",
@@ -10727,7 +11862,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 10
+      "index": 10,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -10750,7 +11888,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 11
+      "index": 11,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "text",
@@ -10792,7 +11933,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 12
+      "index": 12,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -10815,7 +11959,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 13
+      "index": 13,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "text",
@@ -10877,7 +12024,10 @@
         }
       ],
       "page_idx": 12,
-      "index": 14
+      "index": 14,
+      "level": 0,
+      "father_node": "11-1",
+      "child_node": []
     },
     {
       "type": "title",
@@ -10899,7 +12049,31 @@
         }
       ],
       "page_idx": 12,
-      "index": 15
+      "index": 15,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "12-16",
+        "0-16",
+        "0-17",
+        "12-19",
+        "0-18",
+        "0-19",
+        "0-20",
+        "12-22",
+        "0-21",
+        "0-22",
+        "0-23",
+        "0-24",
+        "13-1",
+        "0-1",
+        "0-2",
+        "13-4",
+        "0-3",
+        "0-4",
+        "0-5",
+        "0-6"
+      ]
     },
     {
       "type": "image",
@@ -10928,8 +12102,11 @@
             }
           ],
           "index": 16,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "12-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -10949,15 +12126,21 @@
             }
           ],
           "index": 17,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "12-15",
+          "child_node": []
         }
       ],
       "page_idx": 12,
       "index": 16,
+      "level": 0,
+      "father_node": "12-15",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张电力系统或工业控制系统的结构框图，用于描述一个包含发电机（GS）和调速器（TB）的闭环控制系统。\n\n主要主体包括：\n- 左上角的“GS”模块：代表发电机系统，其输入为“KΔω”（转速偏差信号），输出为功率指令“P₀”，并经过比例环节“±½εK”后与反馈信号相加。\n- 中间部分是功率调节环节，包括一个斜坡上升的“P_UP”模块（表示功率上限）、一个饱和限幅器“P_MAX(P.U.) / P_MIN(P.U.)”，以及一个“P_DOWN”模块（表示功率下限），共同构成功率限制单元。\n- 下方的“TB”模块：代表调速器或执行机构，接收来自上游的“P_GT”功率指令，并通过多个时间常数环节（如1/(1+sT_CH), 1/(1+sT_RH), 1/(1+sT_CO)）进行处理。\n- “TB”模块内部还包含一个积分器“F_IP”、一个比例放大器“F_IIP”，以及一个求和节点“Σ”，用于实现PID控制逻辑。\n- 最终输出为“P_d”，代表实际输出功率。\n\n关键文字及其核心信息：\n- “GS”、“TB”：分别代表发电机系统和调速器系统，表明这是一个分层控制架构。\n- “KΔω”、“P₀”、“P_GT”、“P_d”：这些变量标识了系统中的关键信号流——从转速误差到功率设定值再到最终输出功率。\n- “±½εK”、“1/T₁”、“P_MAX(P.U.)”、“P_MIN(P.U.)”、“1+sT_CH”等：这些表达式代表了控制器中的增益、滤波器、饱和限制器及惯性环节，体现了系统的设计细节。\n- 图中虚线框内的“GS”和“TB”区域划分清晰，说明这是一个模块化设计，便于分析和调试。\n\n整体来看，该图描绘了一个典型的电力系统自动调频或功率调节闭环控制系统，其中发电机侧负责功率设定，调速器侧负责执行功率调整，并通过反馈机制确保系统稳定运行。"
+        "desc": "这是一张电力系统控制系统的结构框图。\n\n图片中的主要主体是一个由多个模块组成的控制系统框图，包含两个主要区域：“GS”（Generator Set，发电机组）和“TB”（Turbine Boiler，汽轮机锅炉）。该系统用于协调发电机功率输出与负荷需求。关键模块包括：\n- 输入信号：KΔω（频率偏差）、P₀（参考功率）、±½εK（扰动项）；\n- 控制器环节：比例积分环节（如1/(1+sTᵢ)）、限幅器（Pₘₐₓ(Pᵤ,·)、Pₘᵢₙ(Pᵤ,·)）、惯性环节（如1/(1+sTᵣₕ)）；\n- 输出变量：P_G（发电机功率）、F_IP（调速器功率）、F_LP（低压侧功率）、Pₗ（负载功率）；\n- 信号处理节点：求和点（Σ）、乘法器（λ）；\n- 系统反馈路径：从P_G反馈至输入端。\n\n关键文字及其功能概括：\n- GS: 发电机组控制单元。\n- TB: 汽轮机锅炉协调控制单元。\n- P_G: 发电机实际输出功率。\n- KΔω: 频率偏差信号，用于频率调节。\n- ±½εK: 表示系统允许的扰动范围或鲁棒性裕度。\n- P₀: 目标功率设定值。\n- F_IP/F_LP: 分别代表高压侧和低压侧的功率调节量。\n- λ: 反馈增益系数或调节参数。\n- P_L: 负载功率。\n\n该图描绘了一个典型的电力系统一次调频与二次调频协调控制架构，其中：\n- GS部分负责根据频率偏差调整发电机出力；\n- TB部分负责协调汽轮机与锅炉响应功率变化；\n- 整体系统通过闭环反馈实现功率平衡和频率稳定。\n\n图中未包含具体数值数据，但所有符号和模块均符合电力系统自动控制原理，属于专业工程图纸范畴。"
       }
     },
     {
@@ -10987,8 +12170,11 @@
             }
           ],
           "index": 18,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "12-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -11008,8 +12194,11 @@
             }
           ],
           "index": 19,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "12-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -11029,36 +12218,21 @@
             }
           ],
           "index": 20,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
-        },
-        {
-          "lines": [
-            {
-              "spans": [
-                {
-                  "bbox": [
-                    315,
-                    555,
-                    536,
-                    567
-                  ],
-                  "type": "text",
-                  "content": "Fig. B2 GM-GA-TW type governor prime mover topo"
-                }
-              ]
-            }
-          ],
-          "index": 21,
-          "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "12-15",
+          "child_node": []
         }
       ],
       "page_idx": 12,
       "index": 19,
+      "level": 0,
+      "father_node": "12-15",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张复杂的工业控制系统框图，展示了一个多回路、带限幅和积分饱和保护的闭环控制架构，常用于电机驱动或过程控制领域。\n\n**主要主体与结构：**\n*   **上半部分（主控制回路）：** 以一个PID控制器为核心，接收来自传感器的反馈信号 `ω` 和设定值 `ωₜ`，经过误差计算后输出控制量 `u₁`。该回路包含多个限幅模块 (`MAX`, `MIN`, `INTMAX`, `INTMIN`) 和比例/积分/微分环节 (`Kₚ`, `sKᵢ/(1+sTᵢ)`, `K𝒹`)，并设有积分饱和保护。\n*   **下半部分（执行器与功率回路）：** 包含一个电压调节器 (`VEL_OPEN`, `VEL_close`)，将控制信号转换为实际的电压指令 `Pₐᵥ`。该回路还包含一个低通滤波器 (`LVPD`) 和一个最大/最小功率限制模块 (`Pₘₐₓ`, `Pₘᵢₙ`)，最终输出到功率器件 `P₀`。\n*   **中间连接部分：** 主控回路输出 `u₁` 经过处理后驱动执行器回路，形成完整的闭环系统。图中用虚线框划分了不同的功能区域，并标注了关键节点如A、B、C。\n\n**醒目的文字及其核心信息：**\n*   **`PID_max`**: 表示这是一个最大化的PID控制器或其输出上限。\n*   **`Kₚ`, `Kᵢ`, `K𝒹`**: 分别代表比例、积分、微分增益系数，是PID控制器的核心参数。\n*   **`INTMAX`, `INTMIN`**: 积分项的最大最小值限制器，用于防止积分饱和导致系统失控。\n*   **`MAX`, `MIN`**: 输出限幅器，确保控制信号在安全范围内。\n*   **`VEL_OPEN`, `VEL_close`**: 开环/闭环速度切换逻辑，可能用于电机启动或换向控制。\n*   **`LVPD`**: 低通滤波器，用于平滑控制信号，减少高频干扰。\n*   **`Pₘₐₓ`, `Pₘᵢₙ`**: 功率上限和下限，保护功率器件不被过载或欠压损坏。\n*   **`1+Tₛ/Tₓ`**: 时间常数相关的滤波或延时环节。\n*   **`1 + 0.5sTₓGᵢ`**: 系统传递函数的一部分，反映了系统的动态特性。\n\n**整体功能概括：**\n这张图描绘了一个高性能、高可靠性的闭环控制系统。它通过PID控制器精确跟踪设定值，同时通过多重限幅和饱和保护机制确保系统稳定运行，避免因积分饱和或功率过载导致的硬件损坏。整个系统结构复杂，体现了现代工业控制系统的典型设计思路。"
+        "desc": "这是一张电力系统或工业控制系统的复杂控制逻辑框图，用于描述一个闭环控制系统的设计结构。\n\n主要主体是多个相互连接的控制模块、信号路径和反馈回路。图中包含：\n- 输入信号 ω 和 θ（可能代表转速或角度指令与反馈）；\n- 多个比例积分（PI）控制器（如 K_p, K_i）；\n- 限幅器（MAX/MIN, INTMAX/INTMIN）；\n- 信号处理环节（如 sK_p / (1+sT_p) 表示带惯性的PI控制器）；\n- 输出限幅器 PID_max；\n- 阀门控制单元（VEL_OPEN, VEL_CLOSE）；\n- 电机功率输出 P_0；\n- 反馈路径（如 ε^{-sT} 表示延迟环节）；\n- 虚线框划分出不同功能区域（如 GM、TW 等）。\n\n关键文字包括：\n- “PID_max”：表示最大允许的PID输出值；\n- “sK_p/(1+sT_p)”：表示控制器传递函数；\n- “VEL_OPEN/VEL_CLOSE”：阀门开闭控制；\n- “LVDV”：可能指低电压检测或相关保护逻辑；\n- “P_max/P_min”：功率上限和下限限制；\n- “(1-xT_s G_i)/(1+0.5xT_s G_i)”：可能是某种滤波或补偿环节的传递函数。\n\n该图描绘了一个多层级、多回路的控制系统架构，其中包含了速度环、电流环或功率环等控制策略，并通过限幅、延时、滤波等环节实现稳定运行。其核心目的是将输入指令 ω 转换为受控输出 P_0，同时保证系统响应在安全范围内（由 PID_max、P_max/P_min 等限制），并具备抗干扰能力（如ε^{-sT}延迟环节）。整体结构体现了现代工业控制中常见的“前馈+反馈+饱和限制”的设计思想。\n\n由于图像未提供具体数值参数（如电阻、电容、时间常数的具体值），无法提取具体的电力行业数据进行解释。"
       }
     },
     {
@@ -11070,6 +12244,30 @@
         711
       ],
       "blocks": [
+        {
+          "lines": [
+            {
+              "spans": [
+                {
+                  "bbox": [
+                    315,
+                    555,
+                    536,
+                    580
+                  ],
+                  "type": "text",
+                  "content": "Fig. B2 GM-GA-TW type governor prime mover topology"
+                }
+              ]
+            }
+          ],
+          "index": 21,
+          "level": 0,
+          "angle": 0,
+          "type": "image_caption",
+          "father_node": "12-15",
+          "child_node": []
+        },
         {
           "lines": [
             {
@@ -11088,8 +12286,11 @@
             }
           ],
           "index": 22,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "12-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -11100,7 +12301,7 @@
                     316,
                     713,
                     535,
-                    738
+                    737
                   ],
                   "type": "text",
                   "content": "图B3 水电和火电机组调速器仿真结果与辨识结果对比"
@@ -11109,8 +12310,11 @@
             }
           ],
           "index": 23,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "12-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -11130,15 +12334,22 @@
             }
           ],
           "index": 24,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "12-15",
+          "child_node": []
         }
       ],
       "page_idx": 12,
       "index": 22,
+      "level": 0,
+      "father_node": "12-15",
+      "child_node": [],
       "llm_process": {
         "type": "pictogram",
-        "desc": "图表标题：未提供  \n横坐标：时间(s)  \n纵坐标：功率(MW)  \n\n整体趋势：四条曲线均呈上升趋势，其中GM-GA-TW仿真结果与GS-TB仿真结果上升较快且峰值较高，GM-GA-TW辨识结果波动较大，GS-TB辨识结果上升平缓。"
+        "desc": "图表标题：未提供  \n横坐标：时间(s)，单位：秒  \n纵坐标：功率(MW)，单位：兆瓦  \n\n整体趋势：四条曲线均呈上升趋势，其中“GS-TB仿真结果”（红色虚线）和“GS-TB辨识结果”（橙色实线）在前期下降后迅速上升，其余两条曲线持续上升。“GS-TB仿真结果”在约5秒时达到峰值约260MW，“GS-TB辨识结果”峰值略高约270MW，其余两条曲线峰值低于250MW。所得数据通过估算得到，请酌情参考",
+        "html": "所得数据通过估算得到，请酌情参考\n\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>时间(s)</th>\n      <th>GM-GA-TW仿真结果</th>\n      <th>GM-GA-TW辨识结果</th>\n      <th>GS-TB仿真结果</th>\n      <th>GS-TB辨识结果</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <td>1</td>\n      <td>约20</td>\n      <td>约-30</td>\n      <td>约80</td>\n      <td>约60</td>\n    </tr>\n    <tr>\n      <td>2</td>\n      <td>约50</td>\n      <td>约20</td>\n      <td>约140</td>\n      <td>约120</td>\n    </tr>\n    <tr>\n      <td>3</td>\n      <td>约90</td>\n      <td>约60</td>\n      <td>约180</td>\n      <td>约170</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>约130</td>\n      <td>约100</td>\n      <td>约220</td>\n      <td>约210</td>\n    </tr>\n    <tr>\n      <td>5</td>\n      <td>约160</td>\n      <td>约140</td>\n      <td>约240</td>\n      <td>约230</td>\n    </tr>\n    <tr>\n      <td>6</td>\n      <td>约180</td>\n      <td>约160</td>\n      <td>约250</td>\n      <td>约240</td>\n    </tr>\n  </tbody>\n</table>"
       }
     },
     {
@@ -11190,8 +12401,11 @@
             }
           ],
           "index": 1,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "12-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -11211,15 +12425,21 @@
             }
           ],
           "index": 2,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "12-15",
+          "child_node": []
         }
       ],
       "page_idx": 13,
       "index": 1,
+      "level": 0,
+      "father_node": "12-15",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张电力系统或电网频率调节控制系统的框图。\n\n图片中的主要主体是多个功能模块组成的控制系统流程，包括：\n- 输入信号 f（频率）经过一个一阶惯性环节 1/(1+sT_p) 后，与设定值 f_d 进行比较。\n- 比较器输出 Δf 的符号变化被用于生成 FLAG_F 信号。\n- Δf 被送入两个比例积分环节 DPDE_VP 和 DPDE_PV（可能代表电压和功率的动态频率误差补偿），其输出分别记为 DP 和 DP_P。\n- DP 和 DP_P 经过求和器后得到 dPf，再与另一个输入 dp_a 相加，最终通过一个带增益 K_m 的环节（含一阶惯性环节 1/(1+sT_m)）输出 P_m。\n- 另一路信号从 FLAG_F 分支，用于触发一个斜坡发生器 dbwi，并将其输出作为 K_m 环节的输入之一。\n- 图中还包含 FLAG_W 信号和相关参数如 Δf_m、Δf_max、Δf_m_min 等，用于控制不同工作模式下的响应。\n\n关键文字包括：\n- f, f_d, Δf\n- FLAG_F, FLAG_W\n- DPDE_VP, DPDE_PV\n- dPf, dp_a, P_m\n- K_m, T_p, T_m\n\n核心信息：该框图描述了一个基于频率偏差 Δf 的闭环控制系统，用于实现对电力系统功率输出 P_m 的动态调节。系统根据频率偏差的大小和符号变化（由 FLAG_F 控制），选择不同的控制策略（如电压或功率补偿），并通过一个带有惯性环节的比例放大器 K_m 输出最终的功率指令 P_m，从而维持系统频率稳定。"
+        "desc": "这是一张电力系统中频率调节控制逻辑的框图，用于描述一次调频与二次调频协同工作的控制流程。\n\n主要主体及功能：\n- 输入信号 f：系统频率偏差信号。\n- 1/(1+sT_p)：比例积分（PI）控制器环节，用于初步频率调节。\n- Σ：求和节点，将输入信号与反馈信号进行叠加。\n- FLAG_F 和 FLAG_W：两个状态标志位，分别用于触发频率调节（FLAG_F）和功率调节（FLAG_W）逻辑。\n- △f_m、△f_m_wg、△f_m_max：频率偏差阈值或限幅值，用于判断是否启动相应调节策略。\n- DPDE_VP / DPDE_MAX：两个功率调节执行模块，分别对应电压功率调节（VP）和最大功率调节（MAX），它们接收频率偏差信号并输出功率指令。\n- Σ（第二个）：功率指令求和节点，将来自DPDE_VP和DPDE_MAX的功率指令进行加法运算。\n- dPf：最终输出的功率调节量（Primary Frequency Control Power Adjustment）。\n- dPm：由dPf经过一个带延迟环节（1/(1+sT_m)）后得到的功率调节量（Secondary Frequency Control Power Adjustment）。\n- K_m：增益系数，用于放大功率调节信号。\n- P_mmax：功率调节上限限制器，防止功率超出安全范围。\n\n关键文字提取及其核心信息：\n- “1/(1+sT_p)”、“1/(1+sT_m)”：表示系统中存在惯性时间常数分别为 T_p 和 T_m 的动态响应环节，典型应用于电力系统频率调节中的惯性环节建模。\n- “DPDE_VP”、“DPDE_MAX”：代表两种不同的功率调节策略，前者可能用于电压支持下的频率调节，后者用于最大容量下的快速响应。\n- “FLAG_F”、“FLAG_W”：状态标志位，用于区分不同调节模式或触发不同控制路径。\n- “dPf”、“dPm”：分别代表一次调频功率增量和二次调频功率增量。\n- “P_mmax”：功率调节的最大允许值，确保系统安全运行。\n\n整体含义：\n该框图描绘了一个基于频率偏差检测、分阶段功率调节（一次调频 + 二次调频）、并带有功率限制保护的自动频率控制系统。它通过设定频率阈值来决定采用何种调节策略，并将多个调节模块的输出进行整合，最终输出经限幅后的功率调整量，以恢复系统频率稳定。这种结构常见于电网AGC（自动发电控制）或频率紧急控制系统的底层逻辑设计。"
       }
     },
     {
@@ -11249,8 +12469,11 @@
             }
           ],
           "index": 3,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "12-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -11270,8 +12493,11 @@
             }
           ],
           "index": 4,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "12-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -11291,8 +12517,11 @@
             }
           ],
           "index": 5,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "12-15",
+          "child_node": []
         },
         {
           "lines": [
@@ -11312,15 +12541,21 @@
             }
           ],
           "index": 6,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "12-15",
+          "child_node": []
         }
       ],
       "page_idx": 13,
       "index": 4,
+      "level": 0,
+      "father_node": "12-15",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张电力系统或工业控制领域的闭环控制系统框图，用于描述频率和功率的调节机制。\n\n**主要主体与功能：**\n- 图中包含两个并联的反馈控制回路，分别处理输入频率信号 f 和设定值 fn。\n- 每个回路都包含一个比例积分（PI）控制器（由 Kp 和 Ki 组成），用于生成控制输出。\n- 控制器输出经过限幅器（LIM）进行饱和限制，以防止过调或超出物理范围。\n- 两个回路的输出最终汇合，通过求和节点生成总的功率变化量 ΔPric。\n- 图中还标有“f_band”、“P_down_min”、“P_up_max”等参数，表示带宽、功率下限和上限，体现了系统的约束条件。\n\n**关键文字及其含义：**\n- **fn**: 设定频率参考值。\n- **f**: 输入频率信号。\n- **Kp, Ki**: 比例增益和积分增益，构成PI控制器。\n- **1/s**: 积分环节。\n- **LIM**: 限幅器，确保输出在安全范围内。\n- **ΔPric**: 最终输出的功率调节量。\n- **f_band**: 频率带宽，可能用于滤波或限制响应速度。\n- **P_down_min / P_up_max**: 功率调节的最小/最大限制值。\n\n**核心信息概括：**\n该框图展示了一个双通道闭环控制系统，旨在根据输入频率偏差调整输出功率，同时通过积分作用消除稳态误差，并通过限幅器保证功率调节在安全范围内。这通常应用于电力系统中的自动频率调节或发电机组的功率控制。"
+        "desc": "这是一张电力系统中用于频率与功率控制的闭环控制系统框图。\n\n图片主体是一个复杂的反馈控制结构，包含多个模块：输入信号 f（频率）和 f_N（频率参考值），经过比例积分（PI）控制器 K_p 和 K_I，分别处理频率偏差和功率偏差。系统通过两个并联支路实现对有功功率 P_down_min 和 P_up_max 的限制控制，并最终输出 ΔP_ctrl（功率控制量）。图中包含多个求和点、增益块、积分器（1/s）、限幅器（LIM）以及带通滤波器（f_band）等典型控制元件。\n\n关键文字包括：\n- 输入变量：f, f_N\n- 控制增益：K_p, K_I\n- 限幅器输出：P_down_min, P_up_max\n- 最终输出：ΔP_ctrl\n\n该图描述的是一个电力系统频率调节与功率限制协同控制的方案，其中频率偏差被用于生成功率控制指令，同时受到上下限约束，确保系统稳定运行。"
       }
     },
     {
@@ -11343,7 +12578,27 @@
         }
       ],
       "page_idx": 13,
-      "index": 7
+      "index": 7,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "13-8",
+        "0-8",
+        "0-9",
+        "13-11",
+        "0-10",
+        "0-11",
+        "0-12",
+        "0-13",
+        "13-14",
+        "0-14",
+        "0-15",
+        "13-17",
+        "0-16",
+        "0-17",
+        "0-18",
+        "0-19"
+      ]
     },
     {
       "type": "image",
@@ -11372,8 +12627,11 @@
             }
           ],
           "index": 8,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "13-7",
+          "child_node": []
         },
         {
           "lines": [
@@ -11393,15 +12651,22 @@
             }
           ],
           "index": 9,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-7",
+          "child_node": []
         }
       ],
       "page_idx": 13,
       "index": 8,
+      "level": 0,
+      "father_node": "13-7",
+      "child_node": [],
       "llm_process": {
         "type": "pictogram",
-        "desc": "图表标题：未提供  \n横坐标：时间，单位为秒（s）  \n纵坐标：机械功率响应，单位为兆瓦（MW）  \n整体趋势：新能源功率响应曲线先上升后下降，同步机功率限幅响应和FLC功率限幅响应呈阶梯式上升，新能源功率响应在T₁时刻后低于同步机功率响应范围。"
+        "desc": "图表无标题。  \n横坐标：时间 t/s；纵坐标：机械功率响应/MW。  \n整体趋势：新能源功率响应（橙线）在0至T₁时段快速上升后下降，同步机功率限幅响应（黑实线）与FLC功率限幅响应（黑虚线）在T₀至T₁区间内呈阶梯式上升并维持高位，FLC功率响应范围（斜纹）和同步机功率响应范围（斜线）分别覆盖不同响应区间。  \n所得数据通过估算得到，请酌情参考。",
+        "html": "所得数据通过估算得到，请酌情参考\n\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr>\n      <th>时间点</th>\n      <th>机械功率响应/MW</th>\n      <th>同步机功率响应范围</th>\n      <th>FLC功率响应范围</th>\n      <th>新能源功率响应</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <td>T<sub>0</sub></td>\n      <td>略高于0</td>\n      <td>略高于0</td>\n      <td>略高于0</td>\n      <td>略高于0</td>\n    </tr>\n    <tr>\n      <td>T<sub>1</sub></td>\n      <td>峰值（约15MW）</td>\n      <td>峰值（约20MW）</td>\n      <td>峰值（约25MW）</td>\n      <td>峰值（约10MW）</td>\n    </tr>\n    <tr>\n      <td>之后</td>\n      <td>下降至约5MW</td>\n      <td>维持在约20MW</td>\n      <td>维持在约25MW</td>\n      <td>下降至约5MW</td>\n    </tr>\n  </tbody>\n</table>"
       }
     },
     {
@@ -11431,8 +12696,11 @@
             }
           ],
           "index": 10,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-7",
+          "child_node": []
         },
         {
           "lines": [
@@ -11452,8 +12720,11 @@
             }
           ],
           "index": 11,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "13-7",
+          "child_node": []
         },
         {
           "lines": [
@@ -11473,8 +12744,11 @@
             }
           ],
           "index": 12,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-7",
+          "child_node": []
         },
         {
           "lines": [
@@ -11494,15 +12768,21 @@
             }
           ],
           "index": 13,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-7",
+          "child_node": []
         }
       ],
       "page_idx": 13,
       "index": 11,
+      "level": 0,
+      "father_node": "13-7",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张电力系统或控制系统的框图，具体展示了一个包含“出力限幅环节修正部分”和“死区环节修正部分”的动态补偿控制结构。\n\n主要主体：\n- 图中包含多个信号流、加法器（Σ）、比例环节（α₁, αₑ, αᵢ, αₙ等）、积分/微分环节（1/(2Hs+D)）以及相位补偿环节（φⁱ⁺¹, φᵉ）。\n- 左侧输入为ΔP_d（功率偏差），右侧输出为Δf（频率偏差）。\n- 两个虚线框分别标注了“出力限幅环节修正部分”和“死区环节修正部分”，表明这是对系统非线性特性进行建模和补偿的结构。\n\n它们在做什么：\n- 系统接收功率偏差ΔP_d，并将其与来自“出力限幅环节修正部分”的三个分量（ΔPᵃⁱₒᵤᵗ(t), ΔPᵉₒᵤᵗ(t), ΔPⁱₒᵤᵗ(t)）求和后，经由一个惯性环节（1/(2Hs+D)）处理，最终得到频率偏差Δf。\n- “出力限幅环节修正部分”模拟了实际发电机出力受限时的饱和特性（右侧示意图显示的是典型的限幅曲线）。\n- “死区环节修正部分”则通过引入相位补偿（φⁱ⁺¹, φᵉ）来补偿因测量或执行机构存在死区而引起的动态误差。\n\n醒目的文字及核心信息：\n- “出力限幅环节修正部分”：用于建模和补偿发电机出力受限导致的非线性饱和行为。\n- “死区环节修正部分”：用于建模和补偿系统中存在的测量或执行死区带来的动态滞后效应。\n- 右侧示意图中的ΔP_out(t)曲线：直观展示了发电机出力的饱和特性，即超过一定阈值后功率不再增加。\n- 整个框图的功能是构建一个能够有效抑制非线性影响（限幅和死区）的控制系统，以提高频率调节精度和系统稳定性。"
+        "desc": "这是一张电力系统频率控制中“出力限幅环节”与“死区环节”的修正部分的结构框图。\n\n主要主体是两个用不同颜色边框（蓝色虚线框和黄色虚线框）划分的功能模块：\n- 蓝色框内为“出力限幅环节修正部分”，其输入包括ΔP_d（负荷扰动）、ΔP_out(t)（输出功率变化），并经过多个α_i增益系数进行加权求和，最终输出Δf（频率偏差）。右侧附有ΔP_out(t)的典型阶跃响应曲线示意图，表明该环节用于限制输出功率的变化幅度。\n- 黄色框内为“死区环节修正部分”，其输入为ΔP_out(t)，通过α_{i+1}、α_n等增益系数分别与ΔP^{i+1}_{out}(t)、ΔP^n_{out}(t)相乘后，在Σ节点处求和，并引入φ^{i+1}、φ^e等相位补偿量及ΔP^{i+1}_{DB}、ΔP^e_{DB}等死区值进行修正，形成闭环反馈。\n\n关键文字及其核心信息：\n- “出力限幅环节修正部分”：指对发电机或调频单元输出功率变化施加上限约束，防止过调或超范围运行。\n- “死区环节修正部分”：用于补偿传感器或执行机构存在的测量误差或动作滞后（即“死区”），提高控制系统精度。\n- ΔP_d：负荷功率扰动量；\n- Δf：系统频率偏差；\n- α_i：各通道的比例增益系数；\n- φ^{i+1}, φ^e：相位补偿量；\n- ΔP^{i+1}_{DB}, ΔP^e_{DB}：死区宽度参数。\n\n整体来看，该图描述了一个具有非线性特性（限幅与死区）的电力系统频率调节控制器结构，旨在提升频率响应的稳定性和准确性。它不是直接的电力行业数据图，而是系统建模和控制策略的示意图。"
       }
     },
     {
@@ -11532,8 +12812,11 @@
             }
           ],
           "index": 14,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "13-7",
+          "child_node": []
         },
         {
           "lines": [
@@ -11553,15 +12836,21 @@
             }
           ],
           "index": 15,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-7",
+          "child_node": []
         }
       ],
       "page_idx": 13,
       "index": 14,
+      "level": 0,
+      "father_node": "13-7",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张电力系统或自动控制领域的框图，用于描述频率调节过程中的两个关键修正环节。\n\n**主要主体与状态：**\n图片包含两个用不同颜色虚线框出的主要部分：\n1.  **“出力限幅环节修正部分”（蓝色虚线框）**：该部分接收来自外部的功率偏差信号 ΔP_out(t)，并将其分解为多个分量（ΔP^i_out(t)），通过各自的增益系数 α_i 进行加权求和，最终输出一个经过修正的功率信号。其右侧有一个示意图，显示了该环节的作用是将原始功率阶跃响应 ΔP_out(t) 转换为更平滑、受限制的输出。\n2.  **“死区环节修正部分”（黄色虚线框）**：该部分接收频率偏差信号 Δf(t) 的变化率或相关参数 φ^{i+1}、φ^n，并计算出对应的功率偏差 ΔP^{i+1}_out(t) 和 ΔP^n_out(t)，再通过增益系数 α_{i+1}、α_n 进行修正。其右侧示意图显示了频率偏差 Δf(t) 具有非线性特性（类似倒U型曲线），表明该环节用于补偿系统中存在的“死区”或非线性区域。\n\n**核心功能与流程：**\n整个系统从参考功率偏差 ΔP_d 开始，经过一个积分器（1/(2Hs+D)）后，与来自两个修正环节的输出相加，最终得到总频率偏差 Δf。这表明系统正在尝试通过动态调整发电机组出力来稳定电网频率。\n\n**关键文字提取：**\n*   “出力限幅环节修正部分”\n*   “死区环节修正部分”\n*   “ΔP_out(t)”、“Δf(t)” —— 核心物理量\n*   “ΔP_d_” —— 参考功率偏差输入\n*   “1/(2Hs+D)” —— 系统惯性环节\n*   “α_i”、“α_{i+1}”、“α_n” —— 各修正环节的增益系数\n\n这张图的核心信息是展示了一个复杂的频率调节控制系统，它通过两个并联的反馈修正路径——“出力限幅”和“死区补偿”——来改善系统对频率扰动的响应性能，确保频率稳定。"
+        "desc": "这是一张电力系统频率控制的闭环控制系统框图，展示了“出力限幅环节修正部分”和“死区环节修正部分”的结构及其对频率偏差信号的响应机制。\n\n主要主体包括：\n- 输入信号：ΔP_d（负荷扰动或功率设定值）；\n- 输出信号：Δf（系统频率偏差）；\n- 两个核心修正模块：“出力限幅环节修正部分”（蓝色虚线框）和“死区环节修正部分”（黄色虚线框）；\n- 系统传递函数块：1/(2Hs+D)，代表系统惯性与阻尼特性；\n- 多个增益系数 α_i、α_e、α_{i+1}、α_n 等，用于调节不同环节的响应强度；\n- 求和点（Σ），用于信号叠加与误差合成；\n- 带有“ΔP_out(t)”和“Δf(t)”波形图，分别表示输出功率变化和频率偏差随时间的变化趋势。\n\n关键文字及核心信息：\n- “出力限幅环节修正部分”：该模块通过反馈 ΔP^i_out(t) 和 ΔP^e_out(t) 的差值，对输出功率进行动态限制，防止超出安全范围，其目标是平滑 ΔP_out(t) 的阶跃响应。\n- “死区环节修正部分”：该模块通过引入 Δφ^{i+1} 和 Δφ^n 的死区补偿信号（ΔP^{i+1}_DB, ΔP^n_DB），消除因测量或执行器滞后造成的频率响应死区，提升系统精度。\n- 传递函数 1/(2Hs+D)：这是典型的二阶惯性环节模型，其中 H 为系统惯性常数，D 为阻尼系数，用于描述发电机转速响应特性。\n\n专业术语解释：\n- ΔP_out(t)：发电机输出功率偏差；\n- Δf(t)：系统频率偏差；\n- 死区（Deadband）：控制量在一定范围内无响应的区域，此处通过 ΔP^{i+1}_DB 和 ΔP^n_DB 补偿以消除其影响；\n- 出力限幅：防止发电机输出功率超过物理或安全上限；\n- 闭环控制：通过反馈调整维持系统频率稳定；\n- 传递函数：反映系统动态特性，用于建模和分析控制性能。\n\n该图整体描绘了一种具有非线性补偿能力的频率自动调节系统，旨在提高电力系统在面对负荷波动时的稳定性与响应精度。"
       }
     },
     {
@@ -11591,8 +12880,11 @@
             }
           ],
           "index": 16,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-7",
+          "child_node": []
         },
         {
           "lines": [
@@ -11612,8 +12904,11 @@
             }
           ],
           "index": 17,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "13-7",
+          "child_node": []
         },
         {
           "lines": [
@@ -11633,8 +12928,11 @@
             }
           ],
           "index": 18,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-7",
+          "child_node": []
         },
         {
           "lines": [
@@ -11654,15 +12952,21 @@
             }
           ],
           "index": 19,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-7",
+          "child_node": []
         }
       ],
       "page_idx": 13,
       "index": 17,
+      "level": 0,
+      "father_node": "13-7",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张算法流程图，展示了一个涉及电力系统或信号处理的迭代计算过程。\n\n**主要主体与状态：**\n图中包含多个标准流程图元素：\n- 一个“开始”节点和一个“结束”节点，定义了流程的边界。\n- 多个矩形框代表具体的计算步骤或操作（如初始化变量、求解方程、计算功率等）。\n- 一个菱形判断框，用于控制循环的继续或终止。\n- 箭头连接各个节点，指示流程走向。\n整个流程呈现为一个从初始化到迭代计算再到最终输出的闭环结构。\n\n**关键文字及其核心信息：**\n\n1. **初始化部分：**\n   - `i=0`：将计数器初始化为零。\n   - `S={S₁,S₂,...,S_N}`：定义一个包含N个元素的集合S。\n   - `假设 t_n₀ 根据式(12) 计算式(13)`：基于公式(12)和(13)进行初始值假设。\n\n2. **迭代计算部分：**\n   - `求得有功响应 Δ̂P_i(t) 和频率响应 Δ̂f_i(t)`：计算两个关键响应函数。\n   - `计算死区功率 P_DB_j`：计算某个特定功率值。\n   - `代入式(14)，使用NRI求解 t_ni`：利用非线性回归方法(NRI)求解参数t_ni。\n   - `式(15)经NRI求解得到 T_j`：另一个参数T_j通过NRI求解。\n   - `代入式(16)，得式(18)，经NRI求解得 t_i`：进一步求解参数t_i。\n   - `i=i+1`：计数器递增，准备下一次迭代。\n   - `∀j∈[1,2,...,N], |ΔP'_out| > |P'_limit|`：判断条件——若所有j都满足此不等式，则继续循环；否则退出。\n\n3. **最终输出部分：**\n   - `t_n = t_ni`, `Δf_max = Δ̂f_i(t_n)`：输出最终结果。\n\n**核心功能概括：**\n该流程图描述了一个迭代算法，其目标是通过多次计算和判断来确定最优参数`t_n`。算法首先初始化，然后进入循环，在每次迭代中计算响应函数、死区功率，并利用NRI方法求解多个中间变量。当所有条件满足时，算法跳出循环并输出最终结果`t_n`和最大频率偏差`Δf_max`。这个过程常用于电力系统稳定分析、自适应控制或信号处理等领域。"
+        "desc": "这是一张流程图，展示了一个迭代计算过程。\n\n图片中的主要主体是多个矩形框和菱形判断框组成的流程路径，通过箭头连接。流程从“开始”节点启动，依次执行初始化（i=0）、集合定义（S={S₁,S₂...Sⱼ...Sₙ}）、假设初始值并计算式(13)、求解有功响应和频率响应、计算死区功率、代入式(14)求解tₙᵢ等步骤。流程中包含一个循环判断：若满足条件∀j∈[1,2,...,N],|△P'ₒᵤₜⱼ|>|P'ₗᵢₘᵢⱼ|，则继续迭代（i=i+1）；否则退出循环，执行最终赋值操作tₙ=tₙᵢ, △fₘₐₓ=△f̂ᵢ(tₙ)，最后到达“结束”节点。\n\n醒目的关键文字包括：“开始”、“结束”、“i=0”、“S={S₁,S₂...Sⱼ...Sₙ}”、“假设tₙ₀根据式(12)计算式(13)”、“求得有功响应ΔP̂ᵢ(t)和频率响应Δf̂ᵢ(t)”、“计算死区功率Pᴰᴮ₋ⱼ”、“代入式(16)，得式(18)，经NRI求解得tᵢ”、“式(15)经NRI求解得到Tⱼ”、“代入式(14)，使用NRI求解tₙᵢ”、“∀j∈[1,2,...,N],|△P'ₒᵤₜⱼ|>|P'ₗᵢₘᵢⱼ|”、“tₙ=tₙᵢ, △fₘₐₓ=Δf̂ᵢ(tₙ)”。\n\n该流程图描述了一个基于特定数学模型和NRI（可能指某种数值求解方法）的迭代算法，用于在给定约束条件下逐步逼近最优解或稳定状态。其中涉及变量如i、t、P、f等，并通过多次迭代调整参数以满足终止条件。"
       }
     },
     {
@@ -11685,7 +12989,54 @@
         }
       ],
       "page_idx": 13,
-      "index": 20
+      "index": 20,
+      "level": 1,
+      "father_node": null,
+      "child_node": [
+        "13-21",
+        "13-22",
+        "14-1",
+        "14-2",
+        "14-3",
+        "0-3",
+        "0-4",
+        "14-5",
+        "14-6",
+        "14-7",
+        "14-8",
+        "14-9",
+        "14-10",
+        "14-11",
+        "14-12",
+        "14-13",
+        "14-14",
+        "14-15",
+        "14-16",
+        "14-17",
+        "14-18",
+        "14-19",
+        "0-19",
+        "0-20",
+        "14-22",
+        "0-21",
+        "0-22",
+        "0-23",
+        "15-4",
+        "0-2",
+        "15-5",
+        "0-1",
+        "0-5",
+        "0-6",
+        "15-8",
+        "0-7",
+        "0-8",
+        "0-9",
+        "0-13",
+        "15-11",
+        "0-10",
+        "0-11",
+        "0-12"
+      ]
     },
     {
       "type": "text",
@@ -11727,7 +13078,10 @@
         }
       ],
       "page_idx": 13,
-      "index": 21
+      "index": 21,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "text",
@@ -11749,7 +13103,10 @@
         }
       ],
       "page_idx": 13,
-      "index": 22
+      "index": 22,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "header",
@@ -11833,7 +13190,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 1
+      "index": 1,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -11856,7 +13216,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 2
+      "index": 2,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "image",
@@ -11885,8 +13248,11 @@
             }
           ],
           "index": 3,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -11906,15 +13272,21 @@
             }
           ],
           "index": 4,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-20",
+          "child_node": []
         }
       ],
       "page_idx": 14,
       "index": 3,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张电力系统或自动控制领域的闭环控制系统框图，用于描述频率调节或功率控制过程。\n\n**主要主体与状态：**\n图中包含多个功能模块和信号流向：\n- 输入信号 ΔP_d（功率设定值）经过一个求和节点（“+”号），与反馈信号 ΔP_out 相加，生成误差信号 ΔP_e。\n- 误差信号 ΔP_e 经过一个积分环节（1/(2Hs)），其中 H 是系统惯性常数。\n- 积分输出与频率偏差 Δf 相关，并通过一个符号为 f_DB_up 的双向开关（或称为“方向选择器”）连接到另一个模块。\n- 另一个模块是带比例-微分特性（b₀s + b₁）/ (s + a₁）的控制器，其输出 ΔP_out 作为反馈信号返回求和节点。\n- 同时，频率偏差 Δf 也直接连接到一个符号为 f_DB_down 的双向开关，该开关与前述控制器模块相连。\n\n**关键文字及其核心信息：**\n- “1/(2Hs)” —— 表示系统的惯性环节（积分器），用于平滑响应并消除稳态误差。\n- “(b₀s + b₁)/(s + a₁)” —— 表示一个二阶有源控制器（可能是PID控制器的一部分），用于动态调整输出。\n- “f_DB_up” 和 “f_DB_down” —— 表示根据频率偏差 Δf 的正负，选择不同的控制路径或模式（例如：上行/下行频率调节策略）。\n\n**整体功能概括：**\n该图描绘了一个基于频率偏差 Δf 和功率误差 ΔP_e 的闭环控制系统，用于维持系统功率平衡。系统通过比较设定功率 ΔP_d 与实际输出 ΔP_out 的差值，经由控制器和积分环节产生调节量，再结合频率偏差方向选择不同控制路径，从而实现对系统频率或功率的有效稳定控制。这是一个典型的电力系统一次调频或二次调频控制结构的简化模型。"
+        "desc": "这是一张电力系统或自动控制系统的框图，用于描述频率调节或功率控制的动态过程。\n\n图片中的主要主体是多个功能模块组成的控制系统结构：\n- 输入端为 ΔP_d（功率设定值变化）和 ΔP_out（输出功率变化），两者通过一个求和点（+ 和 - 号表示相加与相减）进行运算。\n- 输出 ΔP_e（功率误差）被送入一个积分器（1/(2Hs)），其中 H 通常代表系统惯性常数。\n- 积分器输出连接至一个二阶环节（(b₀s + b₁)/(s + a₁)），该环节可能代表调频器或控制器。\n- 控制器输出连接至一个非线性环节（标有 f_DB_up 和 f_DB_down），该环节具有类似死区或饱和特性的特性，其输入来自 Δf（频率偏差）。\n- 频率偏差 Δf 同时作为反馈信号，直接连接至控制器输入端，构成闭环控制回路。\n\n关键文字及其功能概括：\n- ΔP_d：功率指令变化量。\n- ΔP_e：功率误差。\n- ΔP_out：功率输出变化量。\n- Δf：频率偏差，是系统的反馈变量。\n- 1/(2Hs)：积分器，用于消除稳态误差，H 是系统惯性常数。\n- (b₀s + b₁)/(s + a₁)：二阶控制器或调频器，用于调节系统响应。\n- f_DB_up / f_DB_down：频率死区或频率限幅器，用于防止系统在特定频率范围内过度响应。\n\n这张图描绘了一个典型的电力系统频率调节闭环控制系统，其中功率误差经由积分环节产生控制信号，并通过一个包含频率死区的非线性环节调整最终输出。该系统旨在维持电网频率稳定，同时处理功率设定值的变化和实际输出功率的偏差。"
       }
     },
     {
@@ -11997,7 +13369,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 5
+      "index": 5,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "text",
@@ -12019,7 +13394,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 6
+      "index": 6,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -12042,7 +13420,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 7
+      "index": 7,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "text",
@@ -12064,7 +13445,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 8
+      "index": 8,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -12087,7 +13471,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 9
+      "index": 9,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "text",
@@ -12113,7 +13500,7 @@
                 544
               ],
               "type": "inline_equation",
-              "content": "a_{1}"
+              "content": "a_1"
             },
             {
               "bbox": [
@@ -12133,7 +13520,7 @@
                 544
               ],
               "type": "inline_equation",
-              "content": "b_{0}"
+              "content": "b_0"
             },
             {
               "bbox": [
@@ -12153,7 +13540,7 @@
                 544
               ],
               "type": "inline_equation",
-              "content": "b_{1}"
+              "content": "b_1"
             },
             {
               "bbox": [
@@ -12189,7 +13576,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 10
+      "index": 10,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "text",
@@ -12231,7 +13621,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 11
+      "index": 11,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -12254,7 +13647,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 12
+      "index": 12,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -12277,7 +13673,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 13
+      "index": 13,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "text",
@@ -12359,7 +13758,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 14
+      "index": 14,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -12382,7 +13784,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 15
+      "index": 15,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "text",
@@ -12404,7 +13809,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 16
+      "index": 16,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "interline_equation",
@@ -12427,7 +13835,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 17
+      "index": 17,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "text",
@@ -12453,7 +13864,7 @@
                 201
               ],
               "type": "inline_equation",
-              "content": "t_n"
+              "content": "t_{n}"
             },
             {
               "bbox": [
@@ -12473,7 +13884,7 @@
                 201
               ],
               "type": "inline_equation",
-              "content": "T_S"
+              "content": "T_{S}"
             },
             {
               "bbox": [
@@ -12493,7 +13904,7 @@
                 201
               ],
               "type": "inline_equation",
-              "content": "T_S"
+              "content": "T_{S}"
             },
             {
               "bbox": [
@@ -12509,7 +13920,10 @@
         }
       ],
       "page_idx": 14,
-      "index": 18
+      "index": 18,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": []
     },
     {
       "type": "image",
@@ -12538,8 +13952,11 @@
             }
           ],
           "index": 19,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -12559,15 +13976,21 @@
             }
           ],
           "index": 20,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-20",
+          "child_node": []
         }
       ],
       "page_idx": 14,
       "index": 19,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张电力系统调度或优化算法的流程图，用于描述在同步机组关停场景下如何通过迭代计算和判断来确定最优的关停组合，并评估新能源渗透率。\n\n**主要主体与流程：**\n1.  **起始点**：“开始”。\n2.  **初始化**：计算所有同步机组的关停量化指标 GSI，并按从小到大的顺序排序为数组 `[GSI1, GSI2, ..., GSIN]`。\n3.  **迭代处理**：\n    *   初始化计数器 `j=1`。\n    *   对每个机组 `Gj`（从 j=1 到 N），执行“关停机组 Gj，更新系统惯量水平”的操作。\n    *   基于 NFSAM（可能是某种频率偏差模型）求解最大频率偏差 `|Δf_max|`。\n4.  **决策判断**：\n    *   第一个判断：`|Δf_max| - 0.8 > Error`？(Y/N)\n        *   若为“N”，表示当前关停方案下的频率偏差在可接受范围内，则直接进入“更新关停机组合 L”并继续下一个机组。\n        *   若为“Y”，则进一步判断。\n    *   第二个判断：`Δf_max < 0.8Hz`？(Y/N)\n        *   若为“Y”，表示频率偏差过小，则将该机组 `Gj` 标记为“不关停”。\n        *   若为“N”，则认为该机组应被关停，并进入下一步。\n5.  **更新与替换**：\n    *   若判定某机组应关停，则将其加入关停组合 L，并根据 L 将同步机组替换为同等出力水平的新能源机组。\n    *   计算新能源极限渗透率 η。\n6.  **循环与终止**：\n    *   判断是否已处理完所有机组 (`j=N?`)。\n        *   若 `j<N`，则 `j=j+1` 并返回继续处理下一个机组。\n        *   若 `j=N`，则流程结束。\n7.  **结束点**：“结束”。\n\n**关键文字提取及核心功能概括：**\n\n*   **`GSI`**: 同步机组关停的量化指标，用于衡量关停对系统的影响程度。\n*   **`NFSAM`**: 可能是用于模拟系统频率响应的模型或方法。\n*   **`|Δf_max|`**: 系统最大频率偏差，是衡量稳定性的关键指标。\n*   **`Error`**: 频率偏差允许的误差范围阈值。\n*   **`< 0.8Hz`**: 频率偏差的绝对值上限，用于判断是否需要关停机组。\n*   **`η`**: 新能源极限渗透率，是算法最终输出的关键结果。\n\n**核心信息：**\n该流程图描述了一个智能算法，它通过逐个评估每台同步机组关停后对系统频率稳定性的影响（以 GSI 和 Δf_max 为核心指标），动态决定哪些机组应关停、哪些不应关停，并最终用新能源机组替代被关停的机组，从而计算出系统能够承受的最大新能源渗透率 η。这是一个典型的“启发式搜索”或“优化选择”过程，旨在实现系统安全与新能源消纳之间的平衡。"
+        "desc": "这是一张电力系统调度或稳定控制算法的流程图。\n\n图片中的主要主体是一个结构化的决策流程，从“开始”节点出发，经过一系列计算、判断和更新步骤，最终到达“结束”节点。流程中包含多个矩形处理框（如“计算同步机组关停机量化指标GSI”、“关停机组Gj,更新系统惯量水平”）、菱形判断框（如“|Δf_max| - 0.8 > Error?”、“Δf_max < 0.8Hz?”）以及“开始”、“结束”的椭圆形节点。流程通过箭头连接，形成一个带有循环和分支的控制逻辑。\n\n关键文字提取及其核心信息概括：\n- “计算同步机组关停机量化指标GSI”：这是算法的起始步骤，用于评估各同步发电机组在需要关停时的量化指标。\n- “GSI=[GSI1,GSI2,…,GSIN]”：表示将所有机组的GSI值按从小到大排序，以便按优先级进行处理。\n- “|Δf_max| - 0.8 > Error?”：这是一个频率偏差判断条件。Δf_max代表系统最大频率偏差，0.8 Hz是设定阈值，Error是允许误差范围。若偏差超出该范围，则执行后续操作。\n- “Δf_max < 0.8Hz?”：这是对频率偏差进一步细化的判断条件。\n- “根据L将同步机替换为同等出力水平新能源机组”：当系统需要调整时，会用等效出力的新能能源机组替代部分同步机。\n- “计算新能源极限渗透率η”：这是最终输出结果之一，表示系统允许的最大新能源接入比例。\n- “更新关停机组合L”：在不同判断路径下，关停机组的集合L会被动态更新。\n- “j=1” 和 “j=N?”：用于遍历所有N台机组，j是当前处理的机组序号。\n\n流程功能简述：\n该流程图描述了一种电力系统在面临频率扰动时的自动响应策略。系统首先按GSI排序所有待关停机组，然后依次处理每台机组。对于每台机组，系统判断其关停后是否会导致频率偏差超过预设阈值（0.8 Hz ± Error）。若偏差过大，则尝试将其替换为新能源机组，并重新计算系统极限渗透率η；若偏差在可接受范围内，则保留该机组关停状态。整个过程持续直到所有机组处理完毕，最终输出新能源极限渗透率η作为结果。\n\n由于图片内容未涉及具体数值数据，因此无法提取并解释电力行业术语下的具体数据含义。"
       }
     },
     {
@@ -12597,8 +14020,11 @@
             }
           ],
           "index": 21,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -12618,8 +14044,11 @@
             }
           ],
           "index": 22,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -12639,15 +14068,21 @@
             }
           ],
           "index": 23,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-20",
+          "child_node": []
         }
       ],
       "page_idx": 14,
       "index": 22,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": [],
       "llm_process": {
         "type": "flowchart",
-        "desc": "这是一张电力系统结构示意图，展示了一个包含多种能源发电站、储能设施和电网连接的复杂电力网络布局。\n\n图中主要主体包括：\n- 多个发电厂节点：标记为 G1 至 G10 的水电厂（G）、火电厂（G）、光伏电站（PV）、风电场（WF）和储能电站（ESS）。\n- 电力传输线路：由数字编号（如1、2、3...）标识的多条水平或垂直导线，以及连接它们的箭头，表示电力流动方向。\n- 外接大电网节点：标记为“#”，表示与外部电网相连。\n- 核心设备：一个标注为“DC”的直流转换装置，连接着部分线路。\n\n各节点状态与功能：\n- G1、G10、G8、G9、G7、G6 是不同类型的发电厂节点，通过编号线路相互连接。\n- PV（光伏电站）、WF（风电场）、ESS（储能电站）分别代表可再生能源发电和储能单元，它们接入电网并通过特定线路输送电力。\n- 线路上的箭头指示了电力的流向，例如从 G1 向下流向 G10，或从 ESS 向上流向主干线。\n- DC 节点可能用于将直流电转换为交流电或反之，以适应不同系统需求。\n- 图例说明了每个符号代表的设施类型。\n\n醒目的文字及其核心信息：\n- 图例中的关键文字：“G 水电厂”、“G 火电厂”、“PV 光伏电站”、“WF 风电场”、“ESS 储能电站”、“# 外接大电网”。\n- 这些文字传达的核心信息是：该图展示了多种能源形式（水力、火力、光伏、风电、储能）如何通过电网互联，并最终接入外网的综合能源系统架构。\n\n整体来看，这张图描绘了一个现代综合能源系统，强调了分布式能源接入、储能调节以及与主电网互动的功能。"
+        "desc": "这是一张电力系统结构示意图，展示了一个包含多种能源发电站、储能设施和电网连接的分布式电力网络拓扑。\n\n主要主体包括：\n- 多个发电单元：标记为 G1 至 G10 的水电厂（G）、火电厂（G）、光伏电站（PV）、风电场（WF）及储能电站（ESS）。\n- 电网节点与线路：用数字编号（如 1, 2, 3...）标识的连接点和输电路径，部分标注了潮流方向（↑↓）。\n- 外接大电网接口：标记为“#”的节点，通过 DC 变换器接入直流电网。\n\n关键文字及其核心信息：\n- 图例说明各类设施类型：“G 水电厂”、“G 火电厂”、“PV 光伏电站”、“WF 风电场”、“ESS 储能电站”、“# 外接大电网”。\n- 核心功能是展示多能源互补、储能协调与电网互联的电力系统架构。\n\n专业数据提取与解释：\n该图描绘了一个典型的微电网或区域配电网结构，其关键特征如下：\n- 发电侧：包含水电（G1, G10）、火电（G2, G3, G4, G5, G6, G7, G8, G9）、光伏（PV）、风电（WF），体现多能源协同。\n- 储能侧：ESS 节点（15）用于调节功率波动和提升系统稳定性。\n- 电网交互：通过节点“#”接入外部大电网，实现能量交换和系统备用。\n- 节点编号含义：数字如 1, 2, ..., 39 表示各连接点或支路编号，箭头表示有功功率流向（如从 G1 → 节点 3 → 节点 18 → ESS → 节点 16 → G7 → #），可用于潮流计算和故障分析。\n- 控制逻辑示意：部分节点（如节点 21 和 DC 接口）暗示存在直流变换器，可能用于并网或直流微电网场景。\n\n整体来看，该图是一个用于分析分布式能源接入、储能调度及电网稳定性的电力系统拓扑模型。"
       }
     },
     {
@@ -12699,8 +14134,11 @@
             }
           ],
           "index": 2,
+          "level": 0,
           "angle": 0,
-          "type": "table_caption"
+          "type": "table_caption",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -12711,7 +14149,7 @@
                     61,
                     116,
                     272,
-                    137
+                    139
                   ],
                   "type": "text",
                   "content": "Table D1 Basic parameters of frequency regulation resources."
@@ -12720,8 +14158,11 @@
             }
           ],
           "index": 3,
+          "level": 0,
           "angle": 0,
-          "type": "table_caption"
+          "type": "table_caption",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -12742,81 +14183,28 @@
             }
           ],
           "index": 4,
+          "level": 0,
           "angle": 0,
-          "type": "table_body"
+          "type": "table_body",
+          "father_node": "13-20",
+          "child_node": []
         }
       ],
       "page_idx": 15,
       "index": 4,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": [],
       "llm_process": {
         "type": "table",
         "kv_extract": {
-          "编号": [
-            "G1",
-            "G2",
-            "G3",
-            "G5",
-            "G6",
-            "G7",
-            "G8",
-            "G9",
-            "G10",
-            "G4",
-            "WF",
-            "PV",
-            "ESS",
-            "DC"
-          ],
-          "资源类型": [
-            "火电",
-            "火电",
-            "火电",
-            "火电",
-            "火电",
-            "火电",
-            "火电",
-            "火电",
-            "火电",
-            "水电",
-            "风电",
-            "光伏",
-            "储能",
-            "直流"
-          ],
-          "额定容量/MW": [
-            667,
-            1000,
-            750,
-            600,
-            800,
-            620,
-            550,
-            1000,
-            1000,
-            630,
-            564,
-            588,
-            90,
-            1000
-          ],
-          "出力水平/MW": [
-            590,
-            525,
-            530,
-            508,
-            700,
-            560,
-            378,
-            528,
-            576,
-            522,
-            508,
-            530,
-            50,
-            900
-          ]
+          "编号": "DC",
+          "资源类型": "直流",
+          "额定容量/MW": 1000,
+          "出力水平/MW": 900
         },
-        "description": "这是一张电力资源容量与出力水平的对比表，包含不同类型的发电资源及其额定容量和当前出力水平。最大额定容量为1000MW（多个资源），最小额定容量为90MW（储能）；最大出力水平为900MW（直流），最小出力水平为50MW（储能）。"
+        "description": "作为数据分析技术员，我对该表格进行如下分析：\n\n---\n\n**1. 表格类型说明**\n\n这是一张“电力资源容量与出力水平对照表”，用于描述不同电力资源（包括火电、水电、风电、光伏、储能和直流）的额定容量及当前实际出力水平。表格结构清晰，包含编号、资源类型、额定容量（MW）和出力水平（MW）四列，属于典型的能源系统资源配置或运行状态数据表。\n\n---\n\n**2. 数据特征分析**\n\n**（1）最大值与最小值**\n\n- **额定容量最大值：** DC（直流）为 1000 MW。\n- **额定容量最小值：** ESS（储能）为 90 MW。\n- **出力水平最大值：** DC（直流）为 900 MW。\n- **出力水平最小值：** G8（火电）为 378 MW。\n\n**（2）数据分布特征**\n\n- 额定容量范围：从90 MW到1000 MW，跨度较大，表明系统中包含小容量（如储能）和大容量（如直流、火电）设备。\n- 出力水平普遍低于额定容量，平均出力率约为60%-70%（以G1-G10为例），显示系统处于部分负载运行状态。\n- 出力水平与额定容量的相关性不强：例如G1（667MW额定→590MW出力）出力率约88%，而G8（550MW额定→378MW出力）仅约69%，说明不同资源类型或运行条件影响出力效率。\n- 储能（ESS）容量最小（90MW），但其出力水平也最低（50MW），表明其在系统中可能承担调节或备用功能而非主力发电。\n- 直流（DC）容量和出力均为最高，可能是系统主干输电通道或大型电源接入点。\n\n**（3）异常值或特殊点**\n\n- G8（火电）出力仅为378MW，远低于其额定容量550MW，可能表示该机组因检修、调度或故障处于低负荷运行。\n- G10（水电）额定容量1000MW，出力576MW，接近满发，可能反映当前水文条件较好。\n- 风电（WF）和光伏（PV）额定容量相近（564MW vs 588MW），但出力相同（508MW vs 530MW），说明二者在当前时段出力相当，但光伏略高，可能与光照强度或风速有关。\n\n---\n\n**3. 文字信息概括说明**\n\n表格中的“资源类型”列明确区分了不同能源形式：\n- 火电（G6-G9）、水电（G4）、风电（WF）、光伏（PV）、储能（ESS）、直流（DC），覆盖了传统化石能源、可再生能源、储能和电网传输等关键环节。\n- “编号”列便于定位具体资源单元，如G1至G10为常规发电单元，WF/PV为新能源单元，ESS/DC为辅助或传输单元。\n- 表格整体呈现的是一个混合型电力系统运行状态快照，可用于评估各资源单位的利用率、规划调度策略或识别潜在瓶颈（如G8出力偏低可能需关注）。\n\n---\n\n**总结建议**\n\n该表可用于：\n- 计算各资源单位的“出力率”（出力/额定容量），评估运行效率；\n- 分析不同资源类型的出力特性（如风光波动性、火电稳定性）；\n- 识别低效或异常运行单元（如G8）；\n- 优化调度方案，提升系统整体利用效率。\n\n作为技术员，建议结合时间序列数据进一步分析出力波动规律，或引入负荷曲线对比，以更全面评估系统运行状态。",
+        "table_html": "<table><tr><td>编号</td><td>资源类型</td><td>额定容量/MW</td><td>出力水平/MW</td></tr><tr><td>G1</td><td></td><td>667</td><td>590</td></tr><tr><td>G2</td><td></td><td>1000</td><td>525</td></tr><tr><td>G3</td><td></td><td>750</td><td>530</td></tr><tr><td>G5</td><td></td><td>600</td><td>508</td></tr><tr><td>G6</td><td>火电</td><td>800</td><td>700</td></tr><tr><td>G7</td><td></td><td>620</td><td>560</td></tr><tr><td>G8</td><td></td><td>550</td><td>378</td></tr><tr><td>G9</td><td></td><td>1000</td><td>528</td></tr><tr><td>G10</td><td></td><td>1000</td><td>576</td></tr><tr><td>G4</td><td>水电</td><td>630</td><td>522</td></tr><tr><td>WF</td><td>风电</td><td>564</td><td>508</td></tr><tr><td>PV</td><td>光伏</td><td>588</td><td>530</td></tr><tr><td>ESS</td><td>储能</td><td>90</td><td>50</td></tr><tr><td>DC</td><td>直流</td><td>1000</td><td>900</td></tr></table>"
       }
     },
     {
@@ -12825,7 +14213,7 @@
         58,
         354,
         283,
-        486
+        487
       ],
       "blocks": [
         {
@@ -12846,8 +14234,11 @@
             }
           ],
           "index": 1,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -12858,17 +14249,20 @@
                     58,
                     354,
                     283,
-                    486
+                    487
                   ],
                   "type": "image",
-                  "image_path": "44b30801cc79b3dbadb0550b5c89a534a201fa29f04652e12747492c452d294e.jpg"
+                  "image_path": "d97e950979be29ce80603f2e31b45a085da15a5c2e1cb5ac89e82b099ec11503.jpg"
                 }
               ]
             }
           ],
           "index": 5,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -12877,7 +14271,7 @@
                 {
                   "bbox": [
                     94,
-                    491,
+                    490,
                     240,
                     502
                   ],
@@ -12888,15 +14282,22 @@
             }
           ],
           "index": 6,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-20",
+          "child_node": []
         }
       ],
       "page_idx": 15,
       "index": 5,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": [],
       "llm_process": {
         "type": "pictogram",
-        "desc": "图表标题：未提供  \n横坐标：时间/s  \n纵坐标：功率/MW  \n\n整体趋势：  \n- G7：从0开始上升，约1s后趋于平稳在60MW左右。  \n- PV：维持在约40MW水平。  \n- WF：维持在约30MW水平。  \n- DC：从负值快速上升至约100MW后基本稳定。"
+        "desc": "图表无标题。横坐标为时间，单位为秒（s）；纵坐标为功率，单位为兆瓦（MW）。整体趋势显示：DC曲线从负值快速上升至约100MW并保持高位波动；G7曲线从零缓慢上升至约60MW后趋于平稳；PV与WF曲线分别稳定在约40MW和30MW左右。所得数据通过估算得到，请酌情参考。",
+        "html": "所得数据通过估算得到，请酌情参考\n\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr>\n      <th>时间/s</th>\n      <th>G7/MW</th>\n      <th>PV/MW</th>\n      <th>WF/MW</th>\n      <th>DC/MW</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <td>0.5</td>\n      <td>~20</td>\n      <td>~40</td>\n      <td>~20</td>\n      <td>~100</td>\n    </tr>\n    <tr>\n      <td>1</td>\n      <td>~45</td>\n      <td>~40</td>\n      <td>~25</td>\n      <td>~110</td>\n    </tr>\n    <tr>\n      <td>1.5</td>\n      <td>~55</td>\n      <td>~40</td>\n      <td>~30</td>\n      <td>~110</td>\n    </tr>\n    <tr>\n      <td>2</td>\n      <td>~60</td>\n      <td>~40</td>\n      <td>~30</td>\n      <td>~110</td>\n    </tr>\n    <tr>\n      <td>2.5</td>\n      <td>~60</td>\n      <td>~40</td>\n      <td>~30</td>\n      <td>~110</td>\n    </tr>\n    <tr>\n      <td>3</td>\n      <td>~60</td>\n      <td>~40</td>\n      <td>~30</td>\n      <td>~110</td>\n    </tr>\n    <tr>\n      <td>3.5</td>\n      <td>~60</td>\n      <td>~40</td>\n      <td>~30</td>\n      <td>~110</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>~60</td>\n      <td>~40</td>\n      <td>~30</td>\n      <td>~110</td>\n    </tr>\n  </tbody>\n</table>"
       }
     },
     {
@@ -12926,8 +14327,11 @@
             }
           ],
           "index": 7,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -12947,8 +14351,11 @@
             }
           ],
           "index": 8,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -12968,8 +14375,11 @@
             }
           ],
           "index": 9,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -12989,15 +14399,22 @@
             }
           ],
           "index": 13,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-20",
+          "child_node": []
         }
       ],
       "page_idx": 15,
       "index": 8,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": [],
       "llm_process": {
         "type": "pictogram",
-        "desc": "图表标题：无\n\n横坐标：场景类别（DC, ESS, G1, ..., 用电）\n\n纵坐标：功率/MW\n\n整体趋势：各场景下PSD-BPA与NFSAM功率值差异显著，G10场景功率最高，多数场景功率较低且波动明显。"
+        "desc": "图表无标题。  \n横坐标：场景类别（DC, ESS, G1, ..., 用电），单位：无量纲。  \n纵坐标：功率，单位：MW。  \n\n整体趋势：多数场景下PSD-BPA与NFSAM功率值相近且处于较低水平；G10场景功率显著升高，两者均接近200MW；其他场景功率普遍低于50MW，波动较小。所得数据通过估算得到，请酌情参考。",
+        "html": "所得数据通过估算得到，请酌情参考\n\n<table><tr><th>类别</th><th>PSD-BPA (MW)</th><th>NFSAM (MW)</th></tr><tr><td>DC</td><td>100</td><td>100</td></tr><tr><td>ESS</td><td>20</td><td>20</td></tr><tr><td>G1</td><td>40</td><td>40</td></tr><tr><td>G10</td><td>200</td><td>200</td></tr><tr><td>G2</td><td>30</td><td>30</td></tr><tr><td>G4</td><td>25</td><td>25</td></tr><tr><td>G7</td><td>60</td><td>60</td></tr><tr><td>G8</td><td>35</td><td>35</td></tr><tr><td>G9</td><td>30</td><td>30</td></tr><tr><td>PV</td><td>40</td><td>40</td></tr><tr><td>WF</td><td>75</td><td>75</td></tr><tr><td>风电（注：图表中最后一项为“风电”，但标签显示为“风”或“风电”）</td><td>75</td><td>75</td></tr></table>"
       }
     },
     {
@@ -13027,8 +14444,11 @@
             }
           ],
           "index": 10,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -13048,8 +14468,11 @@
             }
           ],
           "index": 11,
+          "level": 0,
           "angle": 0,
-          "type": "image_body"
+          "type": "image_body",
+          "father_node": "13-20",
+          "child_node": []
         },
         {
           "lines": [
@@ -13069,15 +14492,22 @@
             }
           ],
           "index": 12,
+          "level": 0,
           "angle": 0,
-          "type": "image_caption"
+          "type": "image_caption",
+          "father_node": "13-20",
+          "child_node": []
         }
       ],
       "page_idx": 15,
       "index": 11,
+      "level": 0,
+      "father_node": "13-20",
+      "child_node": [],
       "llm_process": {
         "type": "pictogram",
-        "desc": "图表标题：无  \n横坐标：频率安全边界/Hz  \n纵坐标：渗透率/%  \n整体趋势：随频率安全边界增加，渗透率持续上升。"
+        "desc": "图表标题：无\n\n横坐标：频率安全边界/Hz\n\n纵坐标：渗透率/%\n\n数据整体趋势：随着频率安全边界的增加，渗透率呈上升趋势。在频率安全边界为0.5 Hz时，渗透率约为41%；在频率安全边界接近1 Hz时，渗透率接近63%。所得数据通过估算得到，请酌情参考",
+        "html": "所得数据通过估算得到，请酌情参考\n\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr>\n      <th>频率安全边界/Hz</th>\n      <th>渗透率/%</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>0.5</td>\n      <td>41.5</td>\n    </tr>\n    <tr>\n      <td>0.6</td>\n      <td>50.0</td>\n    </tr>\n    <tr>\n      <td>0.7</td>\n      <td>56.5</td>\n    </tr>\n    <tr>\n      <td>0.8</td>\n      <td>58.0</td>\n    </tr>\n    <tr>\n      <td>0.9</td>\n      <td>60.5</td>\n    </tr>\n    <tr>\n      <td>1.0</td>\n      <td>62.0</td>\n    </tr>\n  </tbody>\n</table>"
       }
     },
     {

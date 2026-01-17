@@ -32,6 +32,7 @@ from urllib.parse import quote
 from typing import List
 from minioStore.store import store_images
 import datetime
+from images_tables.table.html2excel import html_to_excel_openpyxl
 MAX_CONCURRENT = 5
 semaphore = asyncio.Semaphore(MAX_CONCURRENT)
 
@@ -208,12 +209,19 @@ async def preprocess(
             for sub_block_index,sub_block in enumerate(block["blocks"]):
                 if sub_block["type"]=="table_body":
                     try:
+
                         table_path=sub_block["lines"][0]["spans"][0]["image_path"]
+                        
                         if vlm_enable:
                             table_path=Path(output_path)/file_name/'vlm'/'images'/table_path
                         else:
                             table_path=Path(output_path)/file_name/'auto'/'images'/table_path
                         table_html=sub_block["lines"][0]["spans"][0]["html"]
+                        #table_name=Path(table_path).stem+'.xlsx'
+                        #excel_output_dir=Path(output_path)/file_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
+                        ##excel_output_dir.mkdir(parents=True,exist_ok=True)
+                        #excel_output_path=excel_output_dir/table_name
+                        #html_to_excel_openpyxl()(table_html,str(excel_output_path))
                     except (IndexError, KeyError, TypeError):
                         print(f"[WARN] block={block_index} 取不到表格，已跳过")
                         continue
@@ -221,6 +229,7 @@ async def preprocess(
                     table_jobs.append((block_index,sub_block_index,table_path,table_html))
                     table_count+=1
     print(f"已收集{table_count}个表格")
+
     table_results = await asyncio.gather(
         *[analyze_table_content_async(
             str(path),
@@ -238,6 +247,13 @@ async def preprocess(
         full_json_data["output"][b_idx]["llm_process"] = result
         print(f"Block {b_idx}, Sub-block {sb_idx}: {result}")
     
+    for _,_,table_path,table_html in table_jobs:
+        table_name=Path(table_path).stem+'.xlsx'
+        excel_output_dir=Path(output_path)/file_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
+        excel_output_dir.mkdir(parents=True,exist_ok=True)
+        excel_output_path=excel_output_dir/table_name
+        html_to_excel_openpyxl(table_html,str(excel_output_path))
+
     print(f"已处理{table_count}张表格")
     """
     for page_index, page in enumerate(full_json_data["output"]):
@@ -299,26 +315,37 @@ async def preprocess(
     save_json_data(full_json_data, str(level_json_path))
     print(f"已保存{level_json_name}到{level_json_path}")
 
-    # 准备返回的 zip 包
-    if vlm_enable:
-        pdf_view = output_path / file_name / 'vlm' / f"{file_name}_layout.pdf"
-        md_output_path = output_path / file_name / 'vlm' / f"{file_name}_titles_only.md"
-    else:
-        pdf_view = output_path / file_name / 'auto' / f"{file_name}_layout.pdf"
-        md_output_path = output_path / file_name / 'auto' / f"{file_name}_titles_only.md"
-    files_to_send = [level_json_path, md_output_path, pdf_view]
 
-    zip_buffer = io.BytesIO()
-    with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zf:
-        for f in files_to_send:
-            zf.write(f, arcname=f.name)
-    zip_buffer.seek(0)
-    
     if vlm_enable:
         images_path=Path(output_path)/file_name/'vlm'/'images'
     else:
         images_path=Path(output_path)/file_name/'auto'/'images'
     store_images(images_path,file_name,timestamp,cfg['MinIO']['IP'],cfg['MinIO']['ACCESS_KEY'],cfg['MinIO']['SECRET_KEY'],cfg['MinIO']['BUCKET_NAME'])
+    # 准备返回的 zip 包
+    if vlm_enable:
+        pdf_view = output_path / file_name / 'vlm' / f"{file_name}_layout.pdf"
+        md_output_path = output_path / file_name / 'vlm' / f"{file_name}_titles_only.md"
+        excel_output_dir = output_path / file_name / 'vlm' / 'tables_excel'
+    else:
+        pdf_view = output_path / file_name / 'auto' / f"{file_name}_layout.pdf"
+        md_output_path = output_path / file_name / 'auto' / f"{file_name}_titles_only.md"
+        excel_output_dir = output_path / file_name / 'auto' / 'tables_excel'
+    files_to_send = [level_json_path, md_output_path, pdf_view,excel_output_dir]
+
+    zip_buffer = io.BytesIO()
+    with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zf:
+        for f in files_to_send:
+            if f.is_dir():
+                for root, _, files in os.walk(f):
+                    for file in files:
+                        file_path = Path(root) / file
+                        arcname = file_path.relative_to(output_path / file_name / ('vlm' if vlm_enable else 'auto'))
+                        zf.write(file_path, arcname=arcname)
+            else:
+                zf.write(f, arcname=f.name)
+    zip_buffer.seek(0)
+    
+
 
     return StreamingResponse(
         zip_buffer,
