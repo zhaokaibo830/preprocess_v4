@@ -72,7 +72,7 @@ DOI: 10.16081/j.epae.202512010
 
 但由于水轮效应下水电机组一次调频效应相对稳定，在长时间尺度调频过程中具有较好的频率控制能力。直流频率限制控制(frequency limited control, FLC)通过监测频率变化，快速调整直流输送功率，可以作为抑制频率偏差的辅助措施[17]。系统惯性响应在故障瞬间提供有功功率支撑最大，可以有效抑制频率变化速率，其他调频措施动作后惯量支撑功率明显减弱。系统阻尼效应与频率偏差呈正比例响应关系，可抑制系统极值频率偏差。
 
-根据以上分析可知，在双高电力系统多元异质资源参与下，各有功资源依靠自身频率响应特性共同维持系统频率稳定。此外，由于各调频资源之间频率响应特性相差较大，难以找到一个统一的数学模型进行描述。为便于系统频率安全快速分析，基于惯性中心理论(center of inertia，COI)建立如附录A图A2所示MS-SFR模型[18]。图A2中： $G_{\mathrm{WF}}$ 、 $G_{\mathrm{PV}}$ 、 $G_{\mathrm{ESS}}$ 、 $G_{\mathrm{TTF}}$ 、 $G_{\mathrm{HTF}}$  和 $G_{\mathrm{DC}}$ 分别为风电机组功率响应传递函数、光伏机组功率响应传递函数、储能功率响应传递函数、火电机组一次调频传递函数、水电机组一次调频传递函数和直流FLC有功响应传递函数，可以根据各调频资源详细数学模型分别进行建模；频率响应资源 $X$ 的出力系数[7]  $K_{X}$ 如式(1)所示；系统同步惯性常数 $H$ 如式(2)所示。
+根据以上分析可知，在双高电力系统多元异质资源参与下，各有功资源依靠自身频率响应特性共同维持系统频率稳定。此外，由于各调频资源之间频率响应特性相差较大，难以找到一个统一的数学模型进行描述。为便于系统频率安全快速分析，基于惯性中心理论(center of inertia, COI)建立如附录A图A2所示MS-SFR模型[18]。图A2中： $G_{\mathrm{WF}}$ 、 $G_{\mathrm{PV}}$ 、 $G_{\mathrm{ESS}}$ 、 $G_{\mathrm{TTF}}$ 、 $G_{\mathrm{HTF}}$  和 $G_{\mathrm{DC}}$ 分别为风电机组功率响应传递函数、光伏机组功率响应传递函数、储能功率响应传递函数、火电机组一次调频传递函数、水电机组一次调频传递函数和直流FLC有功响应传递函数，可以根据各调频资源详细数学模型分别进行建模；频率响应资源 $X$ 的出力系数[7]  $K_{X}$ 如式(1)所示；系统同步惯性常数 $H$ 如式(2)所示。
 
 $$
 K _ {X} = \frac {P _ {X}}{P _ {\mathrm {l o a d}}} \tag {1}
@@ -173,7 +173,7 @@ $$
 在多元异质资源接入的双高电力系统中，将式(3)、(5)、(6)、(8)代入转子运动方程，可得到式(10)所示系统频率微分方程。
 
 $$
-\begin{array}{l} 2 H \frac {d \triangle f}{d t} + D \triangle f = \triangle P _ {\mathrm {o u t} _ {\mathrm {s y s}}} + \triangle P _ {\mathrm {o u t} _ {\mathrm {r e n e w}}} + \triangle P _ {\mathrm {o u t} _ {\mathrm {F L C}}} - \triangle P _ {\mathrm {d}} \\ = \left(\phi_ {\mathrm {s y n}} + \phi_ {\mathrm {r e n e w}} + \phi_ {\mathrm {F L C}}\right) \Delta f - \\ \left(\phi_ {\mathrm {s y n}} \triangle f _ {\mathrm {D B} _ {\mathrm {s y n}}} + \phi_ {\mathrm {r e n e w}} \triangle f _ {\mathrm {D B} _ {\mathrm {r e n e w}}} + \phi_ {\mathrm {F L C}} \triangle f _ {\mathrm {D B} _ {\mathrm {F L C}}}\right) - \triangle P _ {\mathrm {d}} \tag {10} \\ \end{array}
+\begin{array}{l} 2 H \frac {d \triangle f}{d t} + D \triangle f = \triangle P _ {\text {o u t} _ {\text {s y s}}} + \triangle P _ {\text {o u t} _ {\text {r e n e w}}} + \triangle P _ {\text {o u t} _ {\text {F L C}}} - \triangle P _ {\text {d}} \\ = \left(\phi_ {\mathrm {s y n}} + \phi_ {\mathrm {r e n e w}} + \phi_ {\mathrm {F L C}}\right) \Delta f - \\ \left(\phi_ {\mathrm {s y n}} \triangle f _ {\mathrm {D B} _ {\mathrm {s y n}}} + \phi_ {\mathrm {r e n e w}} \triangle f _ {\mathrm {D B} _ {\mathrm {r e n e w}}} + \phi_ {\mathrm {F L C}} \triangle f _ {\mathrm {D B} _ {\mathrm {F L C}}}\right) - \triangle P _ {\mathrm {d}} \tag {10} \\ \end{array}
 $$
 
 式中： $\Delta P_{\mathrm{out\_syn}}$ 、 $\Delta P_{\mathrm{out\_renew}}$ 、 $\Delta P_{\mathrm{out\_FLC}}$  分别为同步机组、新能源、直流FLC这3类资源的响应功率； $\Delta P_{\mathrm{d}}$ 为扰动大小。
@@ -274,7 +274,7 @@ $$
 
 机组一次调频能力主要与机组出力限幅和机组频率响应快慢相关。机组出力限幅表征了机组最大可提供的有功功率支撑(maximum adjustable power, MAP)。机组频率响应快慢即调频过程中功
 
-率完全释放所需时间，在此定义为机组频率响应固有时间  $T_{\mathrm{S}}$ ，其详细计算推导见附录 D。 $T_{\mathrm{S}}$  越大说明该机组功率响应速度越慢，不利于频率恢复。而为提升新能源极限渗透率，应替换高出力水平  $P_{\mathrm{out}}$  的大型同步机组。
+率完全释放所需时间，在此定义为机组频率响应固有时间  $T_{\mathrm{S}}$ ，其详细计算推导见附录  $\mathrm{D}$ 。 $T_{\mathrm{S}}$  越大说明该机组功率响应速度越慢，不利于频率恢复。而为提升新能源极限渗透率，应替换高出力水平  $P_{\mathrm{out}}$  的大型同步机组。
 
 在此，定义同步机组关停量化指标  $I_{\mathrm{GS}}$ ，如式(19)所示，其物理含义为对于具备相同功率支撑能力的机组，优先关闭功率响应速度慢和出力水平高的同步机组，以使新能源极限渗透率更高。
 
@@ -312,7 +312,7 @@ $T_{\mathrm{S}}$  和  $I_{\mathrm{GS}}$  的计算过程考虑了机组惯量�
 
 设置以下3个算例。
 
-算例1：在初始仿真时刻  $(t = 0$  s) 发生  $2.6\%$  负荷阶跃故障，所有机组参与频率响应(小扰动场景)。
+算例1：在初始仿真时刻(t=0s)发生2.6%负荷阶跃故障，所有机组参与频率响应(小扰动场景)。
 
 算例 2: 在初始仿真时刻  $(t = 0 \mathrm{~s})$  发生机组最大  $N - 1$  故障 (G6 机组切机), 所有机组参与频率响应 (大扰动场景)。
 
@@ -467,7 +467,7 @@ ZHAO Qiang, ZHANG Yuqiong, CHEN Ziwei, et al. Frequency characteristic analysis 
 [12] LIU L, LI W D, B A Y, et al. An analytical model for frequency nadir prediction following a major disturbance[J]. IEEE Transactions on Power Systems, 2020, 35(4): 2527-2536.  
 [13] ZHANG Y Q, GUO Q L, ZHOU Y Z, et al. Online frequency security assessment based on analytical model considering limiting modules[J], CSEE Journal of Power and Energy Systems, 2022, 8(5): 1363-1372.  
 [14] SHI Q M, WANG G, MA W M, et al. Coordinated virtual inertia control strategy for D-PMSG considering frequency regulation ability[J]. Journal of Electrical Engineering and Technology, 2016, 11(6): 1556-1570.  
-[15]张祥宇，朱永健，付媛．基于系统惯量需求的风储协同快速频率响应技术[J].中国电机工程学报，2023，43(14):5415-5429.  
+[15]张祥宇，朱永健，付媛．基于系统惯量需求的风储协同快速频率响应技术[J]．中国电机工程学报，2023，43(14):5415-5429.  
 ZHANG Xiangyu, ZHU Yongjian, FU Yuan. Wind-storage cooperative fast frequency response technology based on system inertia demand[J]. Proceedings of the CSEE, 2023, 43(14):5415-5429.  
 [16]谢宇峥，李常刚，张恒旭，等．火电厂给水系统功频约束对电力系统频率特性的影响[J]．电力系统自动化，2021，45(7):132-139.  
 XIE Yuzheng, LI Changgang, ZHANG Hengxu, et al. Impact of power-frequency constraint of feedwater system in thermal power plant on frequency characteristics of power system[J]. Automation of Electric Power Systems, 2021, 45(7): 132-139.  
@@ -488,11 +488,11 @@ ZHANG Yingmin, PENG Zefeng, PENG Qiao, et al. Generic ASF model of new-energy-in
 
 # 作者简介：
 
-郭威(1999—)，男，硕士，主要研究方向为低惯量电力系统频率安全分析（E-mail：gw0717@hnu.edu.cn）；
+郭威(1999—)，男，硕士，主要研究方向为低惯量电力系统频率安全分析（E-mail：gw0717@hnu.edu.cn);
 
-郑文伟（2000—），男，博士研究生，主要研究方向为低惯量电力系统频率安全分析与控制（E-mail:zhengww@hnu.edu.cn);
+郑文伟（2000—），男，博士研究生，主要研究方向为低惯量电力系统频率安全分析与控制（E-mail：zhengww@hnu.edu.cn）；
 
-文云峰(1986—)，男，教授，博士生研究生导师，通信作者，主要研究方向为低惯量电力系统规划、运行与控制（E-mail：yunfeng.8681@163.com）。
+文云峰(1986—)，男，教授，博士生研究生导师，通信作者，主要研究方向为低惯量电力系统规划、运行与控制（E-mail:yunfeng.8681@163.com）。
 
 # Fast frequency security calculation method for double-high power system considering nonlinear elements
 
@@ -523,7 +523,7 @@ Fig.A2 Model of multi-sources system frequency response
 假设低频扰动后机组功率响应随时间线性变化，如式(A1)所示。
 
 $$
-\Delta P _ {\mathrm {o u t}} (t) = \frac {\Delta P _ {\mathrm {d}}}{t _ {\mathrm {n}}} t \tag {A1}
+\triangle P _ {\mathrm {o u t}} (t) = \frac {\Delta P _ {\mathrm {d}}}{t _ {\mathrm {n}}} t \tag {A1}
 $$
 
 式中： $\Delta P_{\mathrm{out}}(t)$  为扰动后机组的功率响应增量； $t_n$  为频率到达极值频率偏差点时间； $\Delta P_d$  为扰动值，低频故障下  $\Delta P_d > 0$  。忽略机组阻尼效应，频率偏差表达式可近似表示为式(A2)所示：
@@ -559,10 +559,10 @@ $$
 
 ![](images/22f632aa89e5efd2f1c8343eb29cf4b7246e4704ede39eaf3941210336391319.jpg)  
 Fig. B1 GS-TB type governor-prime mover topology  
-图B2 GM-GA-TW型调速器-原动机拓扑
+图B2 GM-GA-TW型调速器-原动机拓扑  
+Fig. B2 GM-GA-TW type governor prime mover topo
 
 ![](images/0ba48ca694cd3a907f74ce8eb52bf181511c90bf1b4c40581d7489db515659fd.jpg)  
-Fig. B2 GM-GA-TW type governor prime mover topology  
 图B3 水电和火电机组调速器仿真结果与辨识结果对比  
 Fig.B3 Comparison of simulation results and identification results for hydro and thermal power plant governors
 
@@ -659,7 +659,7 @@ Table D1 Basic parameters of frequency regulation resources.
 
 <table><tr><td>编号</td><td>资源类型</td><td>额定容量/MW</td><td>出力水平/MW</td></tr><tr><td>G1</td><td></td><td>667</td><td>590</td></tr><tr><td>G2</td><td></td><td>1000</td><td>525</td></tr><tr><td>G3</td><td></td><td>750</td><td>530</td></tr><tr><td>G5</td><td></td><td>600</td><td>508</td></tr><tr><td>G6</td><td>火电</td><td>800</td><td>700</td></tr><tr><td>G7</td><td></td><td>620</td><td>560</td></tr><tr><td>G8</td><td></td><td>550</td><td>378</td></tr><tr><td>G9</td><td></td><td>1000</td><td>528</td></tr><tr><td>G10</td><td></td><td>1000</td><td>576</td></tr><tr><td>G4</td><td>水电</td><td>630</td><td>522</td></tr><tr><td>WF</td><td>风电</td><td>564</td><td>508</td></tr><tr><td>PV</td><td>光伏</td><td>588</td><td>530</td></tr><tr><td>ESS</td><td>储能</td><td>90</td><td>50</td></tr><tr><td>DC</td><td>直流</td><td>1000</td><td>900</td></tr></table>
 
-![](images/d97e950979be29ce80603f2e31b45a085da15a5c2e1cb5ac89e82b099ec11503.jpg)  
+![](images/44b30801cc79b3dbadb0550b5c89a534a201fa29f04652e12747492c452d294e.jpg)  
 Fig.D2 Topology diagram of the modified IEEE 39-bus system  
 图D3 部分调频资源功率响应曲线
 

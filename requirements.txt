@@ -44,6 +44,7 @@ dnspython==2.8.0
 doclayout_yolo==0.0.4
 einops==0.8.1
 email-validator==2.3.0
+et_xmlfile==2.0.0
 fast-langdetect==0.2.5
 fastapi==0.123.7
 fastapi-cli==0.0.20
@@ -132,6 +133,7 @@ openai==2.8.1
 openai-harmony==0.0.8
 opencv-python==4.11.0.86
 opencv-python-headless==4.11.0.86
+openpyxl==3.1.5
 orjson==3.11.4
 outlines_core==0.2.11
 packaging==25.0

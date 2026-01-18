@@ -264,8 +264,8 @@
         "type": "text",
         "text": "中图分类号：TM761",
         "bbox": [
-            90,
-            347,
+            92,
+            348,
             252,
             362
         ],
@@ -311,7 +311,7 @@
         "bbox": [
             89,
             411,
-            482,
+            484,
             801
         ],
         "page_idx": 1
@@ -344,7 +344,7 @@
         "bbox": [
             510,
             796,
-            905,
+            907,
             923
         ],
         "page_idx": 1
@@ -366,7 +366,7 @@
         "bbox": [
             431,
             41,
-            615,
+            613,
             55
         ],
         "page_idx": 1
@@ -399,7 +399,7 @@
         "bbox": [
             92,
             844,
-            480,
+            478,
             871
         ],
         "page_idx": 1
@@ -484,7 +484,7 @@
     },
     {
         "type": "text",
-        "text": "根据以上分析可知，在双高电力系统多元异质资源参与下，各有功资源依靠自身频率响应特性共同维持系统频率稳定。此外，由于各调频资源之间频率响应特性相差较大，难以找到一个统一的数学模型进行描述。为便于系统频率安全快速分析，基于惯性中心理论(center of inertia，COI)建立如附录A图A2所示MS-SFR模型[18]。图A2中： $G_{\\mathrm{WF}}$ 、 $G_{\\mathrm{PV}}$ 、 $G_{\\mathrm{ESS}}$ 、 $G_{\\mathrm{TTF}}$ 、 $G_{\\mathrm{HTF}}$  和 $G_{\\mathrm{DC}}$ 分别为风电机组功率响应传递函数、光伏机组功率响应传递函数、储能功率响应传递函数、火电机组一次调频传递函数、水电机组一次调频传递函数和直流FLC有功响应传递函数，可以根据各调频资源详细数学模型分别进行建模；频率响应资源 $X$ 的出力系数[7]  $K_{X}$ 如式(1)所示；系统同步惯性常数 $H$ 如式(2)所示。",
+        "text": "根据以上分析可知，在双高电力系统多元异质资源参与下，各有功资源依靠自身频率响应特性共同维持系统频率稳定。此外，由于各调频资源之间频率响应特性相差较大，难以找到一个统一的数学模型进行描述。为便于系统频率安全快速分析，基于惯性中心理论(center of inertia, COI)建立如附录A图A2所示MS-SFR模型[18]。图A2中： $G_{\\mathrm{WF}}$ 、 $G_{\\mathrm{PV}}$ 、 $G_{\\mathrm{ESS}}$ 、 $G_{\\mathrm{TTF}}$ 、 $G_{\\mathrm{HTF}}$  和 $G_{\\mathrm{DC}}$ 分别为风电机组功率响应传递函数、光伏机组功率响应传递函数、储能功率响应传递函数、火电机组一次调频传递函数、水电机组一次调频传递函数和直流FLC有功响应传递函数，可以根据各调频资源详细数学模型分别进行建模；频率响应资源 $X$ 的出力系数[7]  $K_{X}$ 如式(1)所示；系统同步惯性常数 $H$ 如式(2)所示。",
         "bbox": [
             510,
             263,
@@ -957,7 +957,7 @@
     },
     {
         "type": "equation",
-        "text": "\n$$\n\\begin{array}{l} 2 H \\frac {d \\triangle f}{d t} + D \\triangle f = \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {s y s}}} + \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {r e n e w}}} + \\triangle P _ {\\mathrm {o u t} _ {\\mathrm {F L C}}} - \\triangle P _ {\\mathrm {d}} \\\\ = \\left(\\phi_ {\\mathrm {s y n}} + \\phi_ {\\mathrm {r e n e w}} + \\phi_ {\\mathrm {F L C}}\\right) \\Delta f - \\\\ \\left(\\phi_ {\\mathrm {s y n}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {s y n}}} + \\phi_ {\\mathrm {r e n e w}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {r e n e w}}} + \\phi_ {\\mathrm {F L C}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {F L C}}}\\right) - \\triangle P _ {\\mathrm {d}} \\tag {10} \\\\ \\end{array}\n$$\n",
+        "text": "\n$$\n\\begin{array}{l} 2 H \\frac {d \\triangle f}{d t} + D \\triangle f = \\triangle P _ {\\text {o u t} _ {\\text {s y s}}} + \\triangle P _ {\\text {o u t} _ {\\text {r e n e w}}} + \\triangle P _ {\\text {o u t} _ {\\text {F L C}}} - \\triangle P _ {\\text {d}} \\\\ = \\left(\\phi_ {\\mathrm {s y n}} + \\phi_ {\\mathrm {r e n e w}} + \\phi_ {\\mathrm {F L C}}\\right) \\Delta f - \\\\ \\left(\\phi_ {\\mathrm {s y n}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {s y n}}} + \\phi_ {\\mathrm {r e n e w}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {r e n e w}}} + \\phi_ {\\mathrm {F L C}} \\triangle f _ {\\mathrm {D B} _ {\\mathrm {F L C}}}\\right) - \\triangle P _ {\\mathrm {d}} \\tag {10} \\\\ \\end{array}\n$$\n",
         "text_format": "latex",
         "bbox": [
             99,
@@ -1131,7 +1131,7 @@
         "text": "\n$$\n\\triangle \\widehat {P} _ {0} (t) = \\frac {P _ {\\mathrm {d}}}{t _ {\\mathrm {n} 0}} t \\tag {12}\n$$\n",
         "text_format": "latex",
         "bbox": [
-            655,
+            653,
             860,
             905,
             898
@@ -1349,7 +1349,7 @@
         "bbox": [
             512,
             331,
-            904,
+            905,
             423
         ],
         "page_idx": 5
@@ -1383,7 +1383,7 @@
         "bbox": [
             512,
             617,
-            895,
+            897,
             634
         ],
         "page_idx": 5
@@ -1435,7 +1435,7 @@
     },
     {
         "type": "text",
-        "text": "率完全释放所需时间，在此定义为机组频率响应固有时间  $T_{\\mathrm{S}}$ ，其详细计算推导见附录 D。 $T_{\\mathrm{S}}$  越大说明该机组功率响应速度越慢，不利于频率恢复。而为提升新能源极限渗透率，应替换高出力水平  $P_{\\mathrm{out}}$  的大型同步机组。",
+        "text": "率完全释放所需时间，在此定义为机组频率响应固有时间  $T_{\\mathrm{S}}$ ，其详细计算推导见附录  $\\mathrm{D}$ 。 $T_{\\mathrm{S}}$  越大说明该机组功率响应速度越慢，不利于频率恢复。而为提升新能源极限渗透率，应替换高出力水平  $P_{\\mathrm{out}}$  的大型同步机组。",
         "bbox": [
             89,
             95,
@@ -1637,11 +1637,11 @@
     },
     {
         "type": "text",
-        "text": "算例1：在初始仿真时刻  $(t = 0$  s) 发生  $2.6\\%$  负荷阶跃故障，所有机组参与频率响应(小扰动场景)。",
+        "text": "算例1：在初始仿真时刻(t=0s)发生2.6%负荷阶跃故障，所有机组参与频率响应(小扰动场景)。",
         "bbox": [
             512,
             501,
-            905,
+            904,
             533
         ],
         "page_idx": 6
@@ -1989,7 +1989,7 @@
             250,
             519,
             482,
-            554
+            552
         ],
         "page_idx": 8
     },
@@ -2048,7 +2048,7 @@
         "text": "此外，设置频率安全边界为  $1\\mathrm{Hz}$ ，其余基础数据保存不变，分析频率安全约束变化时的新能源极限渗透率：经所提方法计算，需关停G4、G7、G5、G1、G3、G2和G9机组，并将其替换成同等出力水平的新能源机组，此时，新能源极限渗透率达到  $57.4\\%$  。可见，若放宽电网频率偏差约束，新能源极限渗透率将显著提升。",
         "bbox": [
             510,
-            240,
+            241,
             905,
             368
         ],
@@ -2349,7 +2349,7 @@
             "[12] LIU L, LI W D, B A Y, et al. An analytical model for frequency nadir prediction following a major disturbance[J]. IEEE Transactions on Power Systems, 2020, 35(4): 2527-2536.",
             "[13] ZHANG Y Q, GUO Q L, ZHOU Y Z, et al. Online frequency security assessment based on analytical model considering limiting modules[J], CSEE Journal of Power and Energy Systems, 2022, 8(5): 1363-1372.",
             "[14] SHI Q M, WANG G, MA W M, et al. Coordinated virtual inertia control strategy for D-PMSG considering frequency regulation ability[J]. Journal of Electrical Engineering and Technology, 2016, 11(6): 1556-1570.",
-            "[15]张祥宇，朱永健，付媛．基于系统惯量需求的风储协同快速频率响应技术[J].中国电机工程学报，2023，43(14):5415-5429.",
+            "[15]张祥宇，朱永健，付媛．基于系统惯量需求的风储协同快速频率响应技术[J]．中国电机工程学报，2023，43(14):5415-5429.",
             "ZHANG Xiangyu, ZHU Yongjian, FU Yuan. Wind-storage cooperative fast frequency response technology based on system inertia demand[J]. Proceedings of the CSEE, 2023, 43(14):5415-5429.",
             "[16]谢宇峥，李常刚，张恒旭，等．火电厂给水系统功频约束对电力系统频率特性的影响[J]．电力系统自动化，2021，45(7):132-139.",
             "XIE Yuzheng, LI Changgang, ZHANG Hengxu, et al. Impact of power-frequency constraint of feedwater system in thermal power plant on frequency characteristics of power system[J]. Automation of Electric Power Systems, 2021, 45(7): 132-139.",
@@ -2402,33 +2402,33 @@
     },
     {
         "type": "text",
-        "text": "郭威(1999—)，男，硕士，主要研究方向为低惯量电力系统频率安全分析（E-mail：gw0717@hnu.edu.cn）；",
+        "text": "郭威(1999—)，男，硕士，主要研究方向为低惯量电力系统频率安全分析（E-mail：gw0717@hnu.edu.cn);",
         "bbox": [
             514,
-            617,
-            902,
+            615,
+            904,
             644
         ],
         "page_idx": 10
     },
     {
         "type": "text",
-        "text": "郑文伟（2000—），男，博士研究生，主要研究方向为低惯量电力系统频率安全分析与控制（E-mail:zhengww@hnu.edu.cn);",
+        "text": "郑文伟（2000—），男，博士研究生，主要研究方向为低惯量电力系统频率安全分析与控制（E-mail：zhengww@hnu.edu.cn）；",
         "bbox": [
             514,
-            646,
-            902,
+            645,
+            904,
             687
         ],
         "page_idx": 10
     },
     {
         "type": "text",
-        "text": "文云峰(1986—)，男，教授，博士生研究生导师，通信作者，主要研究方向为低惯量电力系统规划、运行与控制（E-mail：yunfeng.8681@163.com）。",
+        "text": "文云峰(1986—)，男，教授，博士生研究生导师，通信作者，主要研究方向为低惯量电力系统规划、运行与控制（E-mail:yunfeng.8681@163.com）。",
         "bbox": [
             514,
             688,
-            902,
+            904,
             730
         ],
         "page_idx": 10
@@ -2591,7 +2591,7 @@
     },
     {
         "type": "equation",
-        "text": "\n$$\n\\Delta P _ {\\mathrm {o u t}} (t) = \\frac {\\Delta P _ {\\mathrm {d}}}{t _ {\\mathrm {n}}} t \\tag {A1}\n$$\n",
+        "text": "\n$$\n\\triangle P _ {\\mathrm {o u t}} (t) = \\frac {\\Delta P _ {\\mathrm {d}}}{t _ {\\mathrm {n}}} t \\tag {A1}\n$$\n",
         "text_format": "latex",
         "bbox": [
             233,
@@ -2676,7 +2676,7 @@
         "bbox": [
             90,
             838,
-            472,
+            473,
             875
         ],
         "page_idx": 12
@@ -2736,7 +2736,8 @@
         "img_path": "images/22f632aa89e5efd2f1c8343eb29cf4b7246e4704ede39eaf3941210336391319.jpg",
         "image_caption": [
             "Fig. B1 GS-TB type governor-prime mover topology",
-            "图B2 GM-GA-TW型调速器-原动机拓扑"
+            "图B2 GM-GA-TW型调速器-原动机拓扑",
+            "Fig. B2 GM-GA-TW type governor prime mover topo"
         ],
         "image_footnote": [],
         "bbox": [
@@ -2751,7 +2752,6 @@
         "type": "image",
         "img_path": "images/0ba48ca694cd3a907f74ce8eb52bf181511c90bf1b4c40581d7489db515659fd.jpg",
         "image_caption": [
-            "Fig. B2 GM-GA-TW type governor prime mover topology",
             "图B3 水电和火电机组调速器仿真结果与辨识结果对比",
             "Fig.B3 Comparison of simulation results and identification results for hydro and thermal power plant governors"
         ],
@@ -3187,7 +3187,7 @@
     },
     {
         "type": "image",
-        "img_path": "images/d97e950979be29ce80603f2e31b45a085da15a5c2e1cb5ac89e82b099ec11503.jpg",
+        "img_path": "images/44b30801cc79b3dbadb0550b5c89a534a201fa29f04652e12747492c452d294e.jpg",
         "image_caption": [
             "Fig.D2 Topology diagram of the modified IEEE 39-bus system",
             "图D3 部分调频资源功率响应曲线"
@@ -3197,7 +3197,7 @@
             97,
             420,
             475,
-            579
+            577
         ],
         "page_idx": 15
     },

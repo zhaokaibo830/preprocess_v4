@@ -102,6 +102,15 @@ async def preprocess(
             '--device', 'cuda', '--source', 'local',
             '--max-batch-size', '8'
         ]
+        #cmd = [
+        #    "curl",
+        #    "-X", "POST",
+        #    "http://127.0.0.1:8000/file_parse",
+        #    "-F", f"files=@{str(input_file)}",
+        #    "-F", f"output_dir={str(output_path)}",
+        #    "-F", "backend=vlm-lmdeploy-engine",
+        #    "-F", "return_md=true"
+        #]
     else:
         cmd = [
             'mineru', '-p', str(input_file), '-o', str(output_path),
@@ -175,136 +184,91 @@ async def preprocess(
     print("表格配置：", table_config)
 
     # 处理图片
-    image_count = 0
-    img_jobs = []
     
-    for block_index,block in enumerate(full_json_data["output"]):
-        if block["type"]=="image":
-            for sub_block_index,sub_block in enumerate(block["blocks"]):
-                if sub_block["type"]=="image_body":
-                    img_path=sub_block["lines"][0]["spans"][0]["image_path"]
-                    if vlm_enable:
-                        img_path=Path(output_path)/file_name/'vlm'/'images'/img_path
-                    else:
-                        img_path=Path(output_path)/file_name/'auto'/'images'/img_path
-                    
-                    img_jobs.append((block_index,sub_block_index,img_path))
-                    image_count+=1 
-    print(f"已收集{image_count}张图片")
-    img_results = await asyncio.gather(
-        *[analyze_image_content_async(str(path), image_config,
-                                      cfg['LLM']['img']['API_KEY'],
-                                      cfg['LLM']['img']['BASE_URL'],
-                                      cfg['LLM']['img']['MODEL'],semaphore)
-          for _, _, path in img_jobs]
-    )
-    for ( b_idx, sb_idx, _), desc in zip(img_jobs, img_results):
-        full_json_data["output"][b_idx]["llm_process"] = desc
-    print(f"已处理{image_count}张图片")
-
-    table_count = 0
-    table_jobs = []
-    for block_index,block in enumerate(full_json_data["output"]):
-        if block["type"]=="table":
-            for sub_block_index,sub_block in enumerate(block["blocks"]):
-                if sub_block["type"]=="table_body":
-                    try:
-
-                        table_path=sub_block["lines"][0]["spans"][0]["image_path"]
-                        
+    if  image_config:
+        image_count = 0
+        img_jobs = []
+        print(f"图片处理选项为{image_config}，开始处理图片...")
+        for block_index,block in enumerate(full_json_data["output"]):
+            if block["type"]=="image":
+                for sub_block_index,sub_block in enumerate(block["blocks"]):
+                    if sub_block["type"]=="image_body":
+                        img_path=sub_block["lines"][0]["spans"][0]["image_path"]
                         if vlm_enable:
-                            table_path=Path(output_path)/file_name/'vlm'/'images'/table_path
+                            img_path=Path(output_path)/file_name/'vlm'/'images'/img_path
                         else:
-                            table_path=Path(output_path)/file_name/'auto'/'images'/table_path
-                        table_html=sub_block["lines"][0]["spans"][0]["html"]
-                        #table_name=Path(table_path).stem+'.xlsx'
-                        #excel_output_dir=Path(output_path)/file_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
-                        ##excel_output_dir.mkdir(parents=True,exist_ok=True)
-                        #excel_output_path=excel_output_dir/table_name
-                        #html_to_excel_openpyxl()(table_html,str(excel_output_path))
-                    except (IndexError, KeyError, TypeError):
-                        print(f"[WARN] block={block_index} 取不到表格，已跳过")
-                        continue
-                    print(f"收集到表格图片：{table_html[:30]}...")
-                    table_jobs.append((block_index,sub_block_index,table_path,table_html))
-                    table_count+=1
-    print(f"已收集{table_count}个表格")
-
-    table_results = await asyncio.gather(
-        *[analyze_table_content_async(
-            str(path),
-            html,
-            table_config,
-            cfg['LLM']['img']['API_KEY'],
-            cfg['LLM']['img']['BASE_URL'],
-            cfg['LLM']['img']['MODEL'],
-            semaphore  # 传入信号量
-        ) for _, _, path, html in table_jobs]
-    )
+                            img_path=Path(output_path)/file_name/'auto'/'images'/img_path
+                        
+                        img_jobs.append((block_index,sub_block_index,img_path))
+                        image_count+=1 
+        print(f"已收集{image_count}张图片")
+        img_results = await asyncio.gather(
+            *[analyze_image_content_async(str(path), image_config,
+                                        cfg['LLM']['img']['API_KEY'],
+                                        cfg['LLM']['img']['BASE_URL'],
+                                        cfg['LLM']['img']['MODEL'],semaphore)
+            for _, _, path in img_jobs]
+        )
+        for ( b_idx, sb_idx, _), desc in zip(img_jobs, img_results):
+            full_json_data["output"][b_idx]["llm_process"] = desc
+        print(f"已处理{image_count}张图片")
+    else:
+        print("图片处理选项为空，跳过图片处理步骤。")
     
-    # 将结果写回原数据结构
-    for (b_idx, sb_idx, _, _), result in zip(table_jobs, table_results):
-        full_json_data["output"][b_idx]["llm_process"] = result
-        print(f"Block {b_idx}, Sub-block {sb_idx}: {result}")
-    
-    for _,_,table_path,table_html in table_jobs:
-        table_name=Path(table_path).stem+'.xlsx'
-        excel_output_dir=Path(output_path)/file_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
-        excel_output_dir.mkdir(parents=True,exist_ok=True)
-        excel_output_path=excel_output_dir/table_name
-        html_to_excel_openpyxl(table_html,str(excel_output_path))
-
-    print(f"已处理{table_count}张表格")
-    """
-    for page_index, page in enumerate(full_json_data["output"]):
-        for block_index, block in enumerate(page["result"]):
-            if block["type"] == "image":
-                for sub_block_index, sub_block in enumerate(block["blocks"]):
-                    if sub_block["type"] == "image_body":
-                        img_path = sub_block["lines"][0]["spans"][0]["image_path"]
-                        img_path = Path(output_path) / file_name / 'vlm' / 'images' / img_path
-                        img_jobs.append((page_index, block_index, sub_block_index, img_path))
-                        image_count += 1
-    print(f"已收集{image_count}张图片")
-    img_results = await asyncio.gather(
-        *[analyze_image_content_async(str(path), image_config,
-                                      cfg['LLM']['img']['API_KEY'],
-                                      cfg['LLM']['img']['BASE_URL'],
-                                      cfg['LLM']['img']['MODEL'])
-          for _, _, _, path in img_jobs]
-    )
-    for (p_idx, b_idx, sb_idx, _), desc in zip(img_jobs, img_results):
-        full_json_data["output"][p_idx]["result"][b_idx]["llm_process"] = desc
-    print(f"已处理{image_count}张图片")
-
-    # 处理表格
-    count_table = 0
-    table_jobs = []
-    for page_index, page in enumerate(full_json_data["output"]):
-        for block_index, block in enumerate(page["result"]):
-            if block["type"] == "table":
-                for sub_block_index, sub_block in enumerate(block["blocks"]):
-                    if sub_block["type"] == "table_body":
+    if table_config:
+        print(f"表格处理选项为{table_config}，开始处理表格...")
+        table_count = 0
+        table_jobs = []
+        for block_index,block in enumerate(full_json_data["output"]):
+            if block["type"]=="table":
+                for sub_block_index,sub_block in enumerate(block["blocks"]):
+                    if sub_block["type"]=="table_body":
                         try:
-                            table_html = sub_block["lines"][0]["spans"][0]["html"]
+
+                            table_path=sub_block["lines"][0]["spans"][0]["image_path"]
+                            
+                            if vlm_enable:
+                                table_path=Path(output_path)/file_name/'vlm'/'images'/table_path
+                            else:
+                                table_path=Path(output_path)/file_name/'auto'/'images'/table_path
+                            table_html=sub_block["lines"][0]["spans"][0]["html"]
                         except (IndexError, KeyError, TypeError):
-                            print(f"[WARN] page={page_index} block={block_index} 取不到 html，已跳过")
+                            print(f"[WARN] block={block_index} 取不到表格，已跳过")
                             continue
-                        print(f"收集到表格 HTML：{table_html[:30]}...")
-                        table_jobs.append((page_index, block_index, sub_block_index, table_html))
-                        count_table += 1
-    print(f"已收集{count_table}个表格")
-    table_results = await asyncio.gather(
-        *[table_extract_async(table_html, table_config,
-                               cfg['LLM']['table']['API_KEY'],
-                               cfg['LLM']['table']['BASE_URL'],
-                               cfg['LLM']['table']['MODEL'])
-          for _, _, _, table_html in table_jobs]
-    )
-    for (p_idx, b_idx, sb_idx, _), desc in zip(table_jobs, table_results):
-        full_json_data["output"][p_idx]["result"][b_idx]["llm_process"] = desc
-    print(f"已处理{count_table}个表格")
-    """
+                        print(f"收集到表格图片：{table_html[:30]}...")
+                        table_jobs.append((block_index,sub_block_index,table_path,table_html))
+                        table_count+=1
+        print(f"已收集{table_count}个表格")
+
+        table_results = await asyncio.gather(
+            *[analyze_table_content_async(
+                str(path),
+                html,
+                table_config,
+                cfg['LLM']['img']['API_KEY'],
+                cfg['LLM']['img']['BASE_URL'],
+                cfg['LLM']['img']['MODEL'],
+                semaphore  # 传入信号量
+            ) for _, _, path, html in table_jobs]
+        )
+        
+        # 将结果写回原数据结构
+        for (b_idx, sb_idx, _, _), result in zip(table_jobs, table_results):
+            full_json_data["output"][b_idx]["llm_process"] = result
+            print(f"Block {b_idx}, Sub-block {sb_idx}: {result}")
+        
+        if 'html' in table_config:
+            for _,_,table_path,table_html in table_jobs:
+                table_name=Path(table_path).stem+'.xlsx'
+                excel_output_dir=Path(output_path)/file_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
+                excel_output_dir.mkdir(parents=True,exist_ok=True)
+                excel_output_path=excel_output_dir/table_name
+                html_to_excel_openpyxl(table_html,str(excel_output_path))
+
+        print(f"已处理{table_count}张表格")
+    else:
+        print("表格处理选项为空，跳过表格处理步骤。")
+
     # 保存最终 JSON
     level_json_name = f'{file_name}_processed_with_levels.json'
     if vlm_enable:
@@ -322,15 +286,23 @@ async def preprocess(
         images_path=Path(output_path)/file_name/'auto'/'images'
     store_images(images_path,file_name,timestamp,cfg['MinIO']['IP'],cfg['MinIO']['ACCESS_KEY'],cfg['MinIO']['SECRET_KEY'],cfg['MinIO']['BUCKET_NAME'])
     # 准备返回的 zip 包
+
     if vlm_enable:
         pdf_view = output_path / file_name / 'vlm' / f"{file_name}_layout.pdf"
         md_output_path = output_path / file_name / 'vlm' / f"{file_name}_titles_only.md"
-        excel_output_dir = output_path / file_name / 'vlm' / 'tables_excel'
     else:
         pdf_view = output_path / file_name / 'auto' / f"{file_name}_layout.pdf"
         md_output_path = output_path / file_name / 'auto' / f"{file_name}_titles_only.md"
+
+    if vlm_enable and 'html' in table_config:
+        excel_output_dir = output_path / file_name / 'vlm' / 'tables_excel'
+    elif (not vlm_enable) and 'html' in table_config:
         excel_output_dir = output_path / file_name / 'auto' / 'tables_excel'
-    files_to_send = [level_json_path, md_output_path, pdf_view,excel_output_dir]
+
+    if 'html' in table_config:
+        files_to_send = [level_json_path, md_output_path, pdf_view, excel_output_dir]
+    else:
+        files_to_send = [level_json_path, md_output_path, pdf_view]
 
     zip_buffer = io.BytesIO()
     with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zf:
