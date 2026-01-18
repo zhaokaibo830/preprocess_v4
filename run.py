@@ -8,6 +8,7 @@ from layout.outputjs import merge_blocks
 from layout.output_pipeline import merge_blocks_pipeline
 from layout.changeJson import *
 from titles.get_title import *
+import pathlib
 from pathlib import Path
 import subprocess
 from fastapi import FastAPI, UploadFile, File, Form
@@ -33,6 +34,7 @@ from typing import List
 from minioStore.store import store_images
 import datetime
 from images_tables.table.html2excel import html_to_excel_openpyxl
+import shutil
 MAX_CONCURRENT = 5
 semaphore = asyncio.Semaphore(MAX_CONCURRENT)
 
@@ -94,23 +96,34 @@ async def preprocess(
         raise HTTPException(status_code=400, detail=f"不支持的文件格式：{file_format}")
 
     output_path = Path(cfg['output_path']).resolve()
+    output_path_temp = Path(cfg['output_path_temp']).resolve()
+    #output_path.mkdir(parents=True, exist_ok=True)
+    output_path_temp.mkdir(parents=True, exist_ok=True)
     if vlm_enable:
         cmd = [
-            'mineru', '-p', str(input_file), '-o', str(output_path),
+            'mineru', '-p', str(input_file), '-o', str(output_path_temp),
             '--backend', 'vlm-lmdeploy-engine',
             '--cache-max-entry-count', '0.8',
             '--device', 'cuda', '--source', 'local',
             '--max-batch-size', '8'
         ]
-        #cmd = [
-        #    "curl",
-        #    "-X", "POST",
-        #    "http://127.0.0.1:8000/file_parse",
-        #    "-F", f"files=@{str(input_file)}",
-        #    "-F", f"output_dir={str(output_path)}",
-        #    "-F", "backend=vlm-lmdeploy-engine",
-        #    "-F", "return_md=true"
-        #]
+
+        cmd = [
+            'curl',
+            '-X', 'POST',
+            'http://127.0.0.1:8000/file_parse',
+            '-F', f'files=@{input_file}',
+            '-F', f'output_dir={output_path_temp}',
+            '-F', 'backend=vlm-lmdeploy-engine',
+            '-F', 'parse_method=auto',
+            '-F', 'table_enable=true',
+            '-F', 'formula_enable=true',
+            '-F', 'return_content_list=true',
+            '-F', 'return_images=true',
+            '-F', 'return_md=true',
+            '-F', 'return_middle_json=true',
+            '-F', 'return_model_output=true'
+        ]
     else:
         cmd = [
             'mineru', '-p', str(input_file), '-o', str(output_path),
@@ -119,7 +132,40 @@ async def preprocess(
             '--device', 'cuda', '--source', 'local',
             '--max-batch-size', '8'
         ]
-    subprocess.run(cmd, check=True)
+    subprocess.run(cmd, check=True )
+
+    if vlm_enable:
+        # Step 1: 找 temp 下唯一 uuid 目录
+        uuid_dirs = [d for d in output_path_temp.iterdir() if d.is_dir()]
+        if len(uuid_dirs) != 1:
+            raise RuntimeError(
+                f"output_path_temp 下目录数量异常: {[d.name for d in uuid_dirs]}"
+            )
+
+        uuid_dir = uuid_dirs[0]
+
+        # Step 2: 找 uuid 目录下唯一结果目录（如 29）
+        result_dirs = [d for d in uuid_dir.iterdir() if d.is_dir()]
+        if len(result_dirs) != 1:
+            raise RuntimeError(
+                f"{uuid_dir} 下结果目录数量异常: {[d.name for d in result_dirs]}"
+            )
+
+        result_dir = result_dirs[0]
+
+        # Step 3: 移动结果目录到最终 output_path
+        target_dir = output_path / result_dir.name
+        if target_dir.exists():
+            shutil.rmtree(target_dir)
+
+        shutil.move(str(result_dir), str(target_dir))
+
+        # Step 4: 清空 temp 目录
+        shutil.rmtree(output_path_temp)
+        output_path_temp.mkdir(parents=True, exist_ok=True)
+
+        print(f"mineru 输出已移动至: {target_dir}")
+
 
     middle_json_name = f'{file_name}_middle.json'
     if vlm_enable:
