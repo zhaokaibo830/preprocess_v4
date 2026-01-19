@@ -100,6 +100,7 @@ async def preprocess(
     #output_path.mkdir(parents=True, exist_ok=True)
     output_path_temp.mkdir(parents=True, exist_ok=True)
     if vlm_enable:
+        """
         cmd = [
             'mineru', '-p', str(input_file), '-o', str(output_path_temp),
             '--backend', 'vlm-lmdeploy-engine',
@@ -107,7 +108,7 @@ async def preprocess(
             '--device', 'cuda', '--source', 'local',
             '--max-batch-size', '8'
         ]
-
+        """
         cmd = [
             'curl',
             '-X', 'POST',
@@ -117,7 +118,7 @@ async def preprocess(
             '-F', 'backend=vlm-lmdeploy-engine',
             '-F', 'parse_method=auto',
             '-F', 'table_enable=true',
-            '-F', 'formula_enable=false',
+            '-F', 'formula_enable=true',
             '-F', 'return_content_list=true',
             '-F', 'return_images=true',
             '-F', 'return_md=true',
@@ -127,12 +128,32 @@ async def preprocess(
             
         ]
     else:
+        """
         cmd = [
             'mineru', '-p', str(input_file), '-o', str(output_path),
             '--backend', 'pipeline',
             '--cache-max-entry-count', '0.8',
             '--device', 'cuda', '--source', 'local',
             '--max-batch-size', '8'
+        ]
+        """
+        cmd=[
+            'curl',
+            '-X', 'POST',
+            'http://127.0.0.1:8000/file_parse',
+            '-F', f'files=@{input_file}',
+            '-F', f'output_dir={output_path_temp}',
+            '-F', 'backend=pipeline',
+            '-F', 'parse_method=auto',
+            '-F', 'table_enable=true',
+            '-F', 'formula_enable=true',
+            '-F', 'return_content_list=true',
+            '-F', 'return_images=true',
+            '-F', 'return_md=true',
+            '-F', 'return_layout_pdf=true',
+            '-F', 'return_middle_json=true',
+            '-F', 'return_model_output=true',
+
         ]
     subprocess.run(cmd, check=True )
 
