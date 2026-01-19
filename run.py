@@ -362,6 +362,7 @@ async def preprocess(
         images_path=Path(output_path)/file_name/'vlm'/'images'
     else:
         images_path=Path(output_path)/file_name/'auto'/'images'
+        
     store_images(images_path,file_name,timestamp,cfg['MinIO']['IP'],cfg['MinIO']['ACCESS_KEY'],cfg['MinIO']['SECRET_KEY'],cfg['MinIO']['BUCKET_NAME'])
     # 准备返回的 zip 包
 

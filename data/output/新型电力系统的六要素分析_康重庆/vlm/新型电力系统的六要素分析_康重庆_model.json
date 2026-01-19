@@ -636,7 +636,7 @@
             "bbox": [
                 0.091,
                 0.258,
-                0.44,
+                0.439,
                 0.273
             ],
             "angle": 0,
@@ -691,7 +691,7 @@
             "bbox": [
                 0.513,
                 0.113,
-                0.908,
+                0.907,
                 0.395
             ],
             "angle": 0,
@@ -702,7 +702,7 @@
             "bbox": [
                 0.513,
                 0.399,
-                0.794,
+                0.793,
                 0.415
             ],
             "angle": 0,
@@ -825,7 +825,7 @@
             "bbox": [
                 0.812,
                 0.061,
-                0.898,
+                0.897,
                 0.073
             ],
             "angle": 0,
@@ -925,7 +925,7 @@
                 0.625,
                 0.268,
                 0.796,
-                0.282
+                0.281
             ],
             "angle": 0,
             "content": "图3新型电力系统架构"
@@ -988,7 +988,7 @@
         {
             "type": "table",
             "bbox": [
-                0.093,
+                0.092,
                 0.598,
                 0.907,
                 0.821
@@ -1057,7 +1057,7 @@
                 0.03,
                 0.964,
                 0.836,
-                0.979
+                0.98
             ],
             "angle": 0,
             "content": "(C)1994-2023 China Academic Journal Electronic Publishing House. All rights reserved. http://www.cnki.net"
@@ -1234,7 +1234,7 @@
             "bbox": [
                 0.514,
                 0.524,
-                0.794,
+                0.793,
                 0.539
             ],
             "angle": 0,
@@ -1466,7 +1466,7 @@
             "type": "image",
             "bbox": [
                 0.523,
-                0.727,
+                0.728,
                 0.9,
                 0.893
             ],
@@ -1590,7 +1590,7 @@
             "bbox": [
                 0.125,
                 0.391,
-                0.467,
+                0.466,
                 0.406
             ],
             "angle": 0,
@@ -1638,7 +1638,7 @@
                 0.102
             ],
             "angle": 0,
-            "content": "4) 碳市场：电碳协同的新型电力市场交易机制。"
+            "content": "4)碳市场：电碳协同的新型电力市场交易机制。"
         },
         {
             "type": "text",
@@ -1766,7 +1766,7 @@
         {
             "type": "image",
             "bbox": [
-                0.098,
+                0.099,
                 0.085,
                 0.481,
                 0.243
@@ -1893,7 +1893,7 @@
                 0.426
             ],
             "angle": 0,
-            "content": "5)碳视角：基于高频电力大数据的碳计量技术。"
+            "content": "5) 碳视角: 基于高频电力大数据的碳计量技术。"
         },
         {
             "type": "text",
@@ -1945,7 +1945,7 @@
                 0.03,
                 0.964,
                 0.836,
-                0.979
+                0.98
             ],
             "angle": 0,
             "content": "(C)1994-2023 China Academic Journal Electronic Publishing House. All rights reserved. http://www.cnki.net"
@@ -2236,7 +2236,7 @@
                 0.683
             ],
             "angle": 0,
-            "content": "[17] 卓振宇，张宁，谢小荣，等．高比例可再生能源电力系统关键技术及发展挑战[J]．电力系统自动化，2021，45(9)：171-191. ZHUO Zhenyu, ZHANG Ning, XIE Xiaorong, et al. Key technologies and developing challenges of power system with high proportion of renewable energy[J]. Automation of Electric Power Systems, 2021, 45(9): 171-191(in Chinese)."
+            "content": "[17] 卓振宇，张宁，谢小荣，等．高比例可再生能源电力系统关键技术及发展挑战[J]．电力系统自动化，2021，45(9)：171-191．ZHUO Zhenyu, ZHANG Ning, XIE Xiaorong, et al. Key technologies and developing challenges of power system with high proportion of renewable energy[J]．Automation of Electric Power Systems, 2021, 45(9): 171-191(in Chinese)."
         },
         {
             "type": "ref_text",
@@ -2254,7 +2254,7 @@
             "bbox": [
                 0.518,
                 0.757,
-                0.906,
+                0.907,
                 0.839
             ],
             "angle": 0,
@@ -2491,7 +2491,7 @@
                 0.639
             ],
             "angle": 0,
-            "content": "[28] 崔杨，邓贵波，曾鹏，等．计及碳捕集电厂低碳特性的含风电电力系统源-荷多时间尺度调度方法[J]．中国电机工程学报，2022，42(16):5869-5886."
+            "content": "[28] 崔杨，邓贵波，曾鹏，等．计及碳捕集电厂低碳特性的含风电电力系统源-荷多时间尺度调度方法[J]．中国电机工程学报，2022，42(16)：5869-5886."
         },
         {
             "type": "ref_text",

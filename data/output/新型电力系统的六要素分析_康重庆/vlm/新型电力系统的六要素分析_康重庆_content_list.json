@@ -595,7 +595,7 @@
         "bbox": [
             512,
             112,
-            907,
+            905,
             394
         ],
         "page_idx": 2
@@ -607,7 +607,7 @@
         "bbox": [
             512,
             397,
-            793,
+            791,
             414
         ],
         "page_idx": 2
@@ -818,7 +818,7 @@
     },
     {
         "type": "table",
-        "img_path": "images/2bb35d92973cb43d2eacf080a4d643d91358986151882abb7375b40b5e54ff85.jpg",
+        "img_path": "images/90f9c6aaba2d274c6cd48d78d7bc6bafa2e02054538b2ff99c8a5e0cbe53ee05.jpg",
         "table_caption": [
             "表 1 电力系统不同认知阶段的关键要素对比",
             "Table 1 Comparison of key elements of power system in different cognitive stages"
@@ -826,7 +826,7 @@
         "table_footnote": [],
         "table_body": "<table><tr><td>关键要素</td><td>传统电力系统</td><td>双高电力系统(“十三五”期间)</td><td>新型电力系统(双碳目标提出后)</td></tr><tr><td>电源侧</td><td>煤电为绝对的装机主体,承担能量供给与系统调节等多方面作用</td><td>新能源逐渐大规模发展,局部地区达到高比例,煤电逐渐转变为灵活调节电源</td><td>清洁能源成为电力电量主体、保留部分化石能源发电作为应急备用,保障能源电力安全</td></tr><tr><td>电网侧</td><td>分输-配-变3个具体环节,电力系统调度运行方式与电网潮流分布相对固定</td><td>大电网与分布式并举,总体维持较高转动惯量和交流同步运行特点</td><td>交直流混联大电网、柔直电网、主动配网、微电网等多种形态电网并存</td></tr><tr><td>负荷侧</td><td>以传统用能主体为主,可以工业、商业、居民进行简单分类</td><td>电动汽车等可调节灵活负荷加快发展、清洁取暖等多种形式的电能替代加速</td><td>与建筑、工业、交通等终端部门深度融合,建成清洁智慧的未来能源互联网</td></tr><tr><td>储能侧</td><td>系统中的储能较少,且以抽蓄为主</td><td>抽蓄与电化学储能快速发展</td><td>多元化多尺度的储能体系与共享模式</td></tr><tr><td>碳目标</td><td>没有明确的碳目标,电力系统要求节能发电调度</td><td>新能源的环境外部性凸显,对于节能降碳的作用显著</td><td>碳中和目标是新型电力系统的核心动因</td></tr><tr><td>数字化</td><td>重数据的采集与存储,对于数据的分析与利用有限</td><td>电力系统不确定性大幅提升,数字化技术的重要性进一步凸显</td><td>数字化技术是实现深度源网荷储互动的重要工具,是建成新型电力系统的关键途径</td></tr></table>",
         "bbox": [
-            92,
+            90,
             597,
             905,
             820
@@ -918,7 +918,7 @@
         "bbox": [
             811,
             60,
-            897,
+            895,
             72
         ],
         "page_idx": 3
@@ -930,7 +930,7 @@
             28,
             963,
             835,
-            978
+            979
         ],
         "page_idx": 3
     },
@@ -1078,7 +1078,7 @@
         "bbox": [
             512,
             523,
-            793,
+            791,
             538
         ],
         "page_idx": 4
@@ -1439,7 +1439,7 @@
     },
     {
         "type": "text",
-        "text": "4) 碳市场：电碳协同的新型电力市场交易机制。",
+        "text": "4)碳市场：电碳协同的新型电力市场交易机制。",
         "bbox": [
             547,
             85,
@@ -1678,7 +1678,7 @@
     },
     {
         "type": "text",
-        "text": "5)碳视角：基于高频电力大数据的碳计量技术。",
+        "text": "5) 碳视角: 基于高频电力大数据的碳计量技术。",
         "bbox": [
             547,
             409,
@@ -1772,7 +1772,7 @@
             28,
             963,
             835,
-            978
+            979
         ],
         "page_idx": 7
     },
@@ -1845,7 +1845,7 @@
             "[14] 胡家兵，袁小明，程时杰．电力电子并网装备多尺度切换控制与电力电子化电力系统多尺度暂态问题[J]．中国电机工程学报，2019，39(18)：5457-5467. HU Jiabing，YUAN Xiaoming，CHENG Shijie．Multi-time scale transients in power-electronized power systems considering multistime scale switching control schemes of power electronics apparatus[J].Proceedings of the CSEE，2019，39(18)：5457-5467(in Chinese).",
             "[15] 张智刚，康重庆．碳中和目标下构建新型电力系统的挑战与展望[J].中国电机工程学报，2022，42(8)：2806-2818.ZHANG Zhigang，KANG Chongqing. Challenges and prospects for constructing the new-type power system towards a carbon neutrality future[J].Proceedings of the CSEE，2022，42(8)：2806-2818(in Chinese).",
             "[16] 王继业，蒲天骄，全杰，等．能源互联网智能感知技术框架与应用布局[J].电力信息与通信技术，2020，18(4)：1-14.WANG Jiye，PU Tianjiao，TONG Jie，et al. Intelligent perception technology framework and application layout of energy internet[J].Electric Power Information and Communication Technology，2020，18(4)：1-14(in Chinese).",
-            "[17] 卓振宇，张宁，谢小荣，等．高比例可再生能源电力系统关键技术及发展挑战[J]．电力系统自动化，2021，45(9)：171-191. ZHUO Zhenyu, ZHANG Ning, XIE Xiaorong, et al. Key technologies and developing challenges of power system with high proportion of renewable energy[J]. Automation of Electric Power Systems, 2021, 45(9): 171-191(in Chinese).",
+            "[17] 卓振宇，张宁，谢小荣，等．高比例可再生能源电力系统关键技术及发展挑战[J]．电力系统自动化，2021，45(9)：171-191．ZHUO Zhenyu, ZHANG Ning, XIE Xiaorong, et al. Key technologies and developing challenges of power system with high proportion of renewable energy[J]．Automation of Electric Power Systems, 2021, 45(9): 171-191(in Chinese).",
             "[18] 马钊，周孝信，尚宇炜，等．未来配电系统形态及发展趋势[J].中国电机工程学报，2015，35(6)：1289-1298.  \nMA Zhao，ZHOU Xiaoxin，SHANG Yuwei，et al．Form and development trend of future distribution system[J].Proceedings of the CSEE，2015，35(6)：1289-1298(in Chinese).",
             "[19] 王成山，李鹏．分布式发电、微网与智能配电网的发展与挑战[J].电力系统自动化，2010，34(2)：10-14，23.WANG Chengshan，LI Peng．Development and challenges of distributed generation，the micro-grid and smart distribution system[J].Automation of Electric Power Systems，2010，34(2)：10-14，23(in Chinese).",
             "[20] ROUHOLAMINI M, WANG Caisheng, NEHRIR H, et al. A review of modeling, management, and applications of grid-connected li-ion battery storage systems[J]. IEEE Transactions on Smart Grid, 2022, 13(6): 4505-4524.",
@@ -1920,7 +1920,7 @@
             "PENG Xiaosheng, DENG Diyuan, CHENG Shijie, et al. Key technologies of electric power big data and its application prospects in smart grid[J]. Proceedings of the CSEE, 2015, 35(3): 503-511(in Chinese).",
             "[27] 李姚旺，张宁，杜尔顺，等．基于碳排放流的电力系统低碳需求响应机制研究及效益分析[J]．中国电机工程学报，2022，42(8)：2830-2841.",
             "LI Yaowang, ZHANG Ning, DU Ershun, et al. Mechanism study and benefit analysis on power system low carbon demand response based on carbon emission flow[J]. Proceedings of the CSEE, 2022, 42(8): 2830-2841(in Chinese).",
-            "[28] 崔杨，邓贵波，曾鹏，等．计及碳捕集电厂低碳特性的含风电电力系统源-荷多时间尺度调度方法[J]．中国电机工程学报，2022，42(16):5869-5886.",
+            "[28] 崔杨，邓贵波，曾鹏，等．计及碳捕集电厂低碳特性的含风电电力系统源-荷多时间尺度调度方法[J]．中国电机工程学报，2022，42(16)：5869-5886.",
             "CUI Yang, DENG Guibo, ZENG Peng, et al. Multi-time scale source-load dispatch method of power system with wind power considering low-carbon characteristics of carbon capture power plant[J]."
         ],
         "bbox": [

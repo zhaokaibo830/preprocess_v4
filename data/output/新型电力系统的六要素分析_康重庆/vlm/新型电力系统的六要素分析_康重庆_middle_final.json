@@ -1626,7 +1626,7 @@
               "bbox": [
                 305,
                 95,
-                540,
+                539,
                 332
               ],
               "type": "text",
@@ -1648,7 +1648,7 @@
               "bbox": [
                 305,
                 335,
-                472,
+                471,
                 349
               ],
               "type": "text",
@@ -2115,7 +2115,7 @@
                     371,
                     225,
                     473,
-                    237
+                    236
                   ],
                   "type": "text",
                   "content": "图3新型电力系统架构"
@@ -2199,7 +2199,7 @@
     {
       "type": "table",
       "bbox": [
-        55,
+        54,
         503,
         539,
         691
@@ -2253,14 +2253,14 @@
               "spans": [
                 {
                   "bbox": [
-                    55,
+                    54,
                     503,
                     539,
                     691
                   ],
                   "type": "table",
                   "html": "<table><tr><td>关键要素</td><td>传统电力系统</td><td>双高电力系统(“十三五”期间)</td><td>新型电力系统(双碳目标提出后)</td></tr><tr><td>电源侧</td><td>煤电为绝对的装机主体,承担能量供给与系统调节等多方面作用</td><td>新能源逐渐大规模发展,局部地区达到高比例,煤电逐渐转变为灵活调节电源</td><td>清洁能源成为电力电量主体、保留部分化石能源发电作为应急备用,保障能源电力安全</td></tr><tr><td>电网侧</td><td>分输-配-变3个具体环节,电力系统调度运行方式与电网潮流分布相对固定</td><td>大电网与分布式并举,总体维持较高转动惯量和交流同步运行特点</td><td>交直流混联大电网、柔直电网、主动配网、微电网等多种形态电网并存</td></tr><tr><td>负荷侧</td><td>以传统用能主体为主,可以工业、商业、居民进行简单分类</td><td>电动汽车等可调节灵活负荷加快发展、清洁取暖等多种形式的电能替代加速</td><td>与建筑、工业、交通等终端部门深度融合,建成清洁智慧的未来能源互联网</td></tr><tr><td>储能侧</td><td>系统中的储能较少,且以抽蓄为主</td><td>抽蓄与电化学储能快速发展</td><td>多元化多尺度的储能体系与共享模式</td></tr><tr><td>碳目标</td><td>没有明确的碳目标,电力系统要求节能发电调度</td><td>新能源的环境外部性凸显,对于节能降碳的作用显著</td><td>碳中和目标是新型电力系统的核心动因</td></tr><tr><td>数字化</td><td>重数据的采集与存储,对于数据的分析与利用有限</td><td>电力系统不确定性大幅提升,数字化技术的重要性进一步凸显</td><td>数字化技术是实现深度源网荷储互动的重要工具,是建成新型电力系统的关键途径</td></tr></table>",
-                  "image_path": "2bb35d92973cb43d2eacf080a4d643d91358986151882abb7375b40b5e54ff85.jpg"
+                  "image_path": "90f9c6aaba2d274c6cd48d78d7bc6bafa2e02054538b2ff99c8a5e0cbe53ee05.jpg"
                 }
               ]
             }
@@ -2477,7 +2477,7 @@
               "bbox": [
                 483,
                 51,
-                534,
+                533,
                 61
               ],
               "type": "text",
@@ -2500,7 +2500,7 @@
                 17,
                 811,
                 497,
-                824
+                825
               ],
               "type": "text",
               "content": "(C)1994-2023 China Academic Journal Electronic Publishing House. All rights reserved. http://www.cnki.net"
@@ -2785,7 +2785,7 @@
               "bbox": [
                 305,
                 441,
-                472,
+                471,
                 453
               ],
               "type": "text",
@@ -3601,7 +3601,7 @@
                 85
               ],
               "type": "text",
-              "content": "4) 碳市场：电碳协同的新型电力市场交易机制。"
+              "content": "4)碳市场：电碳协同的新型电力市场交易机制。"
             }
           ]
         }
@@ -4117,7 +4117,7 @@
                 358
               ],
               "type": "text",
-              "content": "5)碳视角：基于高频电力大数据的碳计量技术。"
+              "content": "5) 碳视角: 基于高频电力大数据的碳计量技术。"
             }
           ]
         }
@@ -4290,7 +4290,7 @@
                 17,
                 811,
                 497,
-                824
+                825
               ],
               "type": "text",
               "content": "(C)1994-2023 China Academic Journal Electronic Publishing House. All rights reserved. http://www.cnki.net"
@@ -4786,7 +4786,7 @@
                     575
                   ],
                   "type": "text",
-                  "content": "[17] 卓振宇，张宁，谢小荣，等．高比例可再生能源电力系统关键技术及发展挑战[J]．电力系统自动化，2021，45(9)：171-191. ZHUO Zhenyu, ZHANG Ning, XIE Xiaorong, et al. Key technologies and developing challenges of power system with high proportion of renewable energy[J]. Automation of Electric Power Systems, 2021, 45(9): 171-191(in Chinese)."
+                  "content": "[17] 卓振宇，张宁，谢小荣，等．高比例可再生能源电力系统关键技术及发展挑战[J]．电力系统自动化，2021，45(9)：171-191．ZHUO Zhenyu, ZHANG Ning, XIE Xiaorong, et al. Key technologies and developing challenges of power system with high proportion of renewable energy[J]．Automation of Electric Power Systems, 2021, 45(9): 171-191(in Chinese)."
                 }
               ]
             }
@@ -5267,7 +5267,7 @@
                     538
                   ],
                   "type": "text",
-                  "content": "[28] 崔杨，邓贵波，曾鹏，等．计及碳捕集电厂低碳特性的含风电电力系统源-荷多时间尺度调度方法[J]．中国电机工程学报，2022，42(16):5869-5886."
+                  "content": "[28] 崔杨，邓贵波，曾鹏，等．计及碳捕集电厂低碳特性的含风电电力系统源-荷多时间尺度调度方法[J]．中国电机工程学报，2022，42(16)：5869-5886."
                 }
               ]
             }
