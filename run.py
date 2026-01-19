@@ -117,12 +117,14 @@ async def preprocess(
             '-F', 'backend=vlm-lmdeploy-engine',
             '-F', 'parse_method=auto',
             '-F', 'table_enable=true',
-            '-F', 'formula_enable=true',
+            '-F', 'formula_enable=false',
             '-F', 'return_content_list=true',
             '-F', 'return_images=true',
             '-F', 'return_md=true',
+            '-F', 'return_layout_pdf=true',
             '-F', 'return_middle_json=true',
-            '-F', 'return_model_output=true'
+            '-F', 'return_model_output=true',
+            
         ]
     else:
         cmd = [
@@ -325,6 +327,15 @@ async def preprocess(
     save_json_data(full_json_data, str(level_json_path))
     print(f"已保存{level_json_name}到{level_json_path}")
 
+    eq_path=output_path / file_name / ('vlm' if vlm_enable else 'auto')/'equation_images'
+    eq_path.mkdir(parents=True,exist_ok=True)
+    for block_index, block in enumerate(full_json_data["output"]):
+        if block["type"] == "interline_equation":
+            img_path = block["lines"][0]["spans"][0]["image_path"]
+            img_path=Path(output_path)/file_name/('vlm' if vlm_enable else 'auto')/'images'/img_path
+            if img_path.exists():
+                shutil.move(str(img_path), str(output_path / file_name / 'vlm' if vlm_enable else 'auto'/'equation_images' / img_path.name))
+        
 
     if vlm_enable:
         images_path=Path(output_path)/file_name/'vlm'/'images'

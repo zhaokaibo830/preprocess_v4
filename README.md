@@ -17,7 +17,7 @@
 
 #### LLM API 配置
 
-    "LLM_API_KEY": "sk-92d983e317d24d2da8ef19ddd2359008",
+    "LLM_API_KEY": "***",
     "LLM_BASE_URL": "https://dashscope.aliyuncs.com/compatible-mode/v1",
     "LLM_MODEL": "qwen3-14b",
     # 文件路径配置
@@ -38,4 +38,14 @@
 * 优化表格处理
 * 并发处理图表信息
 * 返回json、标题markdown和minerU的版面检测pdf
+
+## mineruv4.2
+
+* 在系统中启动一个mineru的fastapi服务，在preprocess系统中调用该服务，这样mineru的模型权重只在第一次加载，后面会常驻在内存中
+* 为了能让mineru的api服务输出layout文件，必须在mineru的源代码中将fastapi.py的f_draw_layout_bbox改为True（原始代码中是硬编码为False的），因此启动容器后也得去做修改
+* 简化mineru的json输出，移除page层级
+* 针对红头文件做了标题处理优化
+* 优化了图表的处理逻辑，图片支持类别、描述和html，表格支持html、kv和描述，用户可根据需要任意选取输出字段
+* 当用户选取了表格的html字段后，会将表格的html转为excel文件并返回，便于可视化判断表格信息解析的准确性
+* 将文档中的图片和表格上传到一个minio中，minio的路径等信息也在config.yaml中配置,minio中的文件夹名是开始处理文件的时间+文件名
 
