@@ -1,16 +1,17 @@
-# Ê¹ÓÃ·Ç slim£¬È·±£¼æÈİ Wine + LibreOffice + XeLaTeX
+# ä½¿ç”¨é slimï¼Œç¡®ä¿å…¼å®¹ Wine + LibreOffice + XeLaTeX
 # rebuild context 20250601
 FROM python:3.13
 
-RUN sed -i 's|http://deb.debian.org|https://mirrors.tuna.tsinghua.edu.cn|g' \
-        /etc/apt/sources.list.d/debian.sources && \
-    sed -i 's|http://security.debian.org|https://mirrors.tuna.tsinghua.edu.cn|g' \
-        /etc/apt/sources.list.d/debian.sources
+RUN sed -i \
+    -e 's|http://deb.debian.org|https://mirrors.tuna.tsinghua.edu.cn|g' \
+    -e 's|http://security.debian.org|https://mirrors.tuna.tsinghua.edu.cn|g' \
+    /etc/apt/sources.list.d/debian.sources
 
-# ÉèÖÃ¹¤×÷Ä¿Â¼
+
+# è®¾ç½®å·¥ä½œç›®å½•
 WORKDIR /app
 
-# °²×°ÏµÍ³ÒÀÀµ
+# å®‰è£…ç³»ç»Ÿä¾èµ–
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         pandoc \
@@ -45,7 +46,7 @@ RUN apt-get update && \
         libxinerama1 \
         libxtst6 \
         libfontconfig1 \
-        # ===== ĞÂÔö£ºOpenCV ÔËĞĞÒÀÀµ =====
+        # ===== æ–°å¢ï¼šOpenCV è¿è¡Œä¾èµ– =====
         libgl1 \
         libglib2.0-0 \
         libsm6 \
@@ -56,15 +57,31 @@ RUN apt-get update && \
 
 
 
-# ¸´ÖÆ Python ÒÀÀµ
+# å¤åˆ¶ Python ä¾èµ–
 COPY requirements.txt .
 
-# °²×° Python °ü
-RUN pip install --no-cache-dir -r requirements.txt
+# å®‰è£… Python åŒ…
+
+RUN pip install --no-cache-dir \
+    -i https://pypi.tuna.tsinghua.edu.cn/simple \
+    -r requirements.txt
 
 RUN mineru-models-download --model_type all --source modelscope
-# ¸´ÖÆËùÓĞÔ´´úÂë
+# å¤åˆ¶æ‰€æœ‰æºä»£ç 
 COPY . .
 
-# Ö¸¶¨Èë¿Ú
-CMD ["python", "run.py"]
+# æŒ‡å®šå…¥å£
+RUN cat >/app/start.sh <<'EOF'
+#!/bin/bash
+set -e
+# 1. å¯¼å…¥ç¯å¢ƒå˜é‡
+source /app/mineru_config.list
+# 2. å¯åŠ¨ mineru-api å¹¶æ”¾åˆ°åå°
+mineru-api --host 0.0.0.0 --port 8000 &
+# 3. å¯åŠ¨ä¸»ç¨‹åºï¼ˆå‰å°é˜»å¡ï¼Œä¿è¯å®¹å™¨ä¸é€€å‡ºï¼‰
+exec python run.py
+EOF
+RUN chmod +x /app/start.sh
+
+# ---------------- 9. é»˜è®¤å…¥å£ ----------------
+CMD ["/app/start.sh"]

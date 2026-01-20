@@ -327,10 +327,10 @@ async def preprocess(
             print(f"Block {b_idx}, Sub-block {sb_idx}: {result}")
         
         if 'html' in table_config:
+            excel_output_dir=Path(output_path)/file_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
+            excel_output_dir.mkdir(parents=True,exist_ok=True)
             for _,_,table_path,table_html in table_jobs:
                 table_name=Path(table_path).stem+'.xlsx'
-                excel_output_dir=Path(output_path)/file_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
-                excel_output_dir.mkdir(parents=True,exist_ok=True)
                 excel_output_path=excel_output_dir/table_name
                 html_to_excel_openpyxl(table_html,str(excel_output_path))
 
