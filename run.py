@@ -155,7 +155,7 @@ async def preprocess(
             '-F', 'return_model_output=true',
 
         ]
-    subprocess.run(cmd, check=True )
+    subprocess.run(cmd, check=True ,stdout=subprocess.DEVNULL)
 
     if vlm_enable:
         # Step 1: 找 temp 下唯一 uuid 目录
@@ -304,7 +304,7 @@ async def preprocess(
                         except (IndexError, KeyError, TypeError):
                             print(f"[WARN] block={block_index} 取不到表格，已跳过")
                             continue
-                        print(f"收集到表格图片：{table_html[:30]}...")
+                        #print(f"收集到表格图片：{table_html[:30]}...")
                         table_jobs.append((block_index,sub_block_index,table_path,table_html))
                         table_count+=1
         print(f"已收集{table_count}个表格")
@@ -324,9 +324,9 @@ async def preprocess(
         # 将结果写回原数据结构
         for (b_idx, sb_idx, _, _), result in zip(table_jobs, table_results):
             full_json_data["output"][b_idx]["llm_process"] = result
-            print(f"Block {b_idx}, Sub-block {sb_idx}: {result}")
+            #print(f"Block {b_idx}, Sub-block {sb_idx}: {result}")
         
-        if 'html' in table_config:
+        if 'html' in table_config:#如果有html参数，保存excel文件
             excel_output_dir=Path(output_path)/file_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
             excel_output_dir.mkdir(parents=True,exist_ok=True)
             for _,_,table_path,table_html in table_jobs:
@@ -338,15 +338,6 @@ async def preprocess(
     else:
         print("表格处理选项为空，跳过表格处理步骤。")
 
-    # 保存最终 JSON
-    level_json_name = f'{file_name}_processed_with_levels.json'
-    if vlm_enable:
-        level_json_path = output_path / file_name / 'vlm' / level_json_name
-    else:
-        level_json_path = output_path / file_name / 'auto' / level_json_name
-    #level_json_path = output_path / file_name / 'vlm' / level_json_name
-    save_json_data(full_json_data, str(level_json_path))
-    print(f"已保存{level_json_name}到{level_json_path}")
 
     eq_path=output_path / file_name / ('vlm' if vlm_enable else 'auto')/'equation_images'
     eq_path.mkdir(parents=True,exist_ok=True)
@@ -366,6 +357,42 @@ async def preprocess(
     store_images(images_path,file_name,timestamp,cfg['MinIO']['IP'],cfg['MinIO']['ACCESS_KEY'],cfg['MinIO']['SECRET_KEY'],cfg['MinIO']['BUCKET_NAME'])
     # 准备返回的 zip 包
 
+
+    #修改图片和表格的路径为 MinIO 路径
+    for block_index,block in enumerate(full_json_data["output"]):
+        if block["type"]=="image":
+            for sub_block_index,sub_block in enumerate(block["blocks"]):
+                if sub_block["type"]=="image_body":
+                    try:
+                        img_path=sub_block["lines"][0]["spans"][0]["image_path"]
+                        img_path=f"{cfg['MinIO']['IP']}/{cfg['MinIO']['BUCKET_NAME']}/{timestamp}_{file_name}/{img_path}"
+                        full_json_data["output"][block_index]["blocks"][sub_block_index]["lines"][0]["spans"][0]["image_path"]=img_path
+                    except (IndexError, KeyError, TypeError):
+                        print(f"[WARN] block={block_index} 取不到图片，已跳过")
+                        continue
+
+        elif block["type"]=="table":
+            for sub_block_index,sub_block in enumerate(block["blocks"]):
+                if sub_block["type"]=="table_body":
+                    try:
+                        table_path=sub_block["lines"][0]["spans"][0]["image_path"]
+                        table_path=f"{cfg['MinIO']['IP']}/{cfg['MinIO']['BUCKET_NAME']}/{timestamp}_{file_name}/{table_path}"
+                        full_json_data["output"][block_index]["blocks"][sub_block_index]["lines"][0]["spans"][0]["image_path"]=table_path
+                    except (IndexError, KeyError, TypeError):
+                        print(f"[WARN] block={block_index} 取不到表格，已跳过")
+                        continue
+
+    # 保存最终 JSON
+    level_json_name = f'{file_name}_processed_with_levels.json'
+    if vlm_enable:
+        level_json_path = output_path / file_name / 'vlm' / level_json_name
+    else:
+        level_json_path = output_path / file_name / 'auto' / level_json_name
+    #level_json_path = output_path / file_name / 'vlm' / level_json_name
+    save_json_data(full_json_data, str(level_json_path))
+    print(f"已保存{level_json_name}到{level_json_path}")
+
+    # 准备返回的 zip 包
     if vlm_enable:
         pdf_view = output_path / file_name / 'vlm' / f"{file_name}_layout.pdf"
         md_output_path = output_path / file_name / 'vlm' / f"{file_name}_titles_only.md"

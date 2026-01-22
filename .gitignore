@@ -2,3 +2,12 @@ venv/
 mineru-offline.tar.gz
 preprocess_v4.2_hotfix.tar.xz
 preprocess_v4.2-hotfix.tar.gz
+pdfs/
+test_output/
+data/**/*
+!doc/
+!output/
+!temp/
+data/doc/.gitkeep
+data/output/.gitkeep
+data/temp/.gitkeep
