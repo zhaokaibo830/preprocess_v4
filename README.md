@@ -50,3 +50,5 @@
 * 将文档中的图片和表格上传到一个minio中，minio的路径等信息也在config.yaml中配置,minio中的文件夹名是开始处理文件的时间+文件名
 
 **为确保程序正常运行，output_path_temp: ./data/temp必须存在，例如data/temp,并且要保证这个文件夹为空，不能放入任何文件**
+
+
