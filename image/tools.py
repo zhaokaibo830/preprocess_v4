@@ -103,7 +103,7 @@ def analyze_image_content(image_path,config, api_key, base_url, model_name):
     image_cls=cls()
     if image_cls == "pictogram":
         desc_prompt = (
-    "你是一位专业的统计图表分析专家。请仔细分析这张统计图表，给出统计图表的相应描述，要点如下：提取图表的标题、横纵坐标含义和单位,以文字形式给出.描述数据的整体趋势（如上升、下降、波动）,若描述中涉及估计数据值，请在描述中增添'所得数据通过估算得到，请酌情参考'的说明，请确保你的回答简要精炼，不要包含额外的解释性文字。]\",\n"
+    "你是一位专业的统计图表分析专家。请仔细分析这张统计图表，给出统计图表的相应描述，要点如下：通过分析图表的标题、横纵坐标含义和单位,简要概述该图片是一张描述什么信息的图片，不需要介绍横纵坐标具体含义.描述数据的整体趋势（如上升、下降、波动）与数据特点,并对数据进行简要分析，若描述中涉及估计数据值，请在描述中增添'所得数据通过估算得到，请酌情参考'的说明，请确保你的回答简要精炼，不要包含额外的解释性文字。]\",\n"
         )
         html_prompt=(
             '请从统计图中尽可能准确地提取数据，并以规范的HTML表格形式呈现。例如：<table><tr><th>...</th>...</tr></table>，若无法提取，请说明，请在输出的html表格前加上"所得数据通过估算得到，请酌情参考"的说明。'
@@ -204,11 +204,11 @@ def analyze_image_content(image_path,config, api_key, base_url, model_name):
 # ==========================================
 if __name__ == "__main__":
     # 配置参数
-    IMG_PATH = "不要乱看我的电脑.jpg"
+    IMG_PATH = "铭牌4.png"
     API_KEY = "sk-46af479b8d7b4a1489ff47b084831a0c"  # 替换为你的真实 Key
     BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
     MODEL = "qwen3-vl-8b-instruct"
-    config='desc'  # 可选 'cls', 'desc', 'html' 或它们的组合，如 'cls_desc_html'
+    config='desc,cls,html'  # 可选 'cls', 'desc', 'html' 或它们的组合，如 'cls_desc_html'
     # 运行函数
     result = analyze_image_content(IMG_PATH,config, API_KEY, BASE_URL, MODEL)
 
