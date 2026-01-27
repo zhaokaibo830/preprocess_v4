@@ -4,7 +4,7 @@ import io
 from openai import OpenAI
 from openai import APIConnectionError, APIError, RateLimitError
     
-def table_extract(table_html: str, config, api_key: str, base_url: str, model_name: str) -> dict:
+def table_extract(table_html: str, title, config, api_key: str, base_url: str, model_name: str) -> dict:
     # ==========================================
     # 第一步：从html表格中提取数据
     # ========================================== 
@@ -25,13 +25,37 @@ def table_extract(table_html: str, config, api_key: str, base_url: str, model_na
     # ==========================================
     # 第二步：创建调用API的函数
     # ========================================== 
-    def make_api_call(client, table_content, prompt, model):
+    def make_api_call_kv(client, table_content, prompt, model):
         try:
             completion = client.chat.completions.create(
                 model=model,
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": table_content + "\n" + prompt},
+                    {"role": "user", "content": table_content +"\n" + prompt},
+                ],
+                extra_body={"enable_thinking": False}
+            )
+            return completion.choices[0].message.content
+        except APIConnectionError as e:
+            print(f"处理表格时API连接错误: {e}")
+            return {"error": "API连接失败", "details": str(e)}
+        except RateLimitError as e:
+            print(f"处理表格时API速率限制错误: {e}")
+            return {"error": "处理表格时API请求超过速率限制", "details": str(e)}
+        except APIError as e:
+            print(f"处理表格时API错误: {e}")
+            return {"error": "处理表格时API请求失败", "details": str(e)}
+        except Exception as e:
+            print(f"处理表格时未知错误: {e}")
+            return {"error": "处理表格时未知错误", "details": str(e)}
+    
+    def make_api_call_desc(client, table_content,title, prompt, model):
+        try:
+            completion = client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": table_content +"\n" + title+"\n"+prompt},
                 ],
                 extra_body={"enable_thinking": False}
             )
@@ -79,7 +103,7 @@ def table_extract(table_html: str, config, api_key: str, base_url: str, model_na
 
     """
     prompt_desc= (
-        "你是一个数据分析技术员，请仔细分析该以HTML格式呈现的表格的内容，分析并描述该表格传达的信息，需注意以下要点\n"
+        "你是一个数据分析技术员，给定内容是表格的HTML格式和表格标题，请仔细分析该以HTML格式呈现的表格的内容，并结合表格标题（若不为空）分析并描述该表格传达的信息，需注意以下要点\n"
         "1. 用简明的语言说明这是一张什么什么表格，如‘这是一张xx公司的员工工资表’，‘这是一张学生成绩表’\n"
         "2. 如果表格内容以数据为主，需要分析表格中如最大值，最小值等能反映数据特点的信息。\n"
         "3. 如果表格内容中涉及文字信息，则应对文字信息和数据进行简要描述。\n"
@@ -87,11 +111,11 @@ def table_extract(table_html: str, config, api_key: str, base_url: str, model_na
 
     # 调用API获取键值对结果
     def kv_api_call():
-        return make_api_call(client, table_html, prompt_kv, model_name)
+        return make_api_call_kv(client, table_html, prompt_kv, model_name)
     
     # 调用API获取描述结果
     def desc_api_call():
-        return make_api_call(client, table_html, prompt_desc, model_name)
+        return make_api_call_desc(client, table_html,title, prompt_desc, model_name)
 
     
     # ==========================================
@@ -159,9 +183,9 @@ if __name__ == "__main__":
     MODEL = "qwen3-vl-8b-instruct"
     table_html = "<table><tr><th>岗位名称</th><th>占比</th></tr><tr><td>监理员</td><td>41%</td></tr><tr><td>资料员</td><td>13%</td></tr><tr><td>总监理工程师</td><td>7%</td></tr><tr><td>总监代表</td><td>8%</td></tr><tr><td>专业监理工程师</td><td>18%</td></tr><tr><td>安全监理工程师</td><td>13%</td></tr></table>"
     config='desc'  # 可选 'kv', 'desc', 'html' 或它们的组合，如 'kv_desc_html'
-
+    title=""
     # 运行函数
-    result = table_extract(table_html, config, API_KEY, BASE_URL, MODEL)
+    result = table_extract(table_html, title,config, API_KEY, BASE_URL, MODEL)
     print(result)
   
   
