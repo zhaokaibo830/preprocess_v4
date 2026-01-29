@@ -128,6 +128,47 @@ def store_images(
     logger.info("Successfully uploaded %d/%d images", len(object_names), len(list(root.iterdir())))
     return object_names
 
+def store_files(
+    target_path,  # 可以是文件夹路径，也可以是单个文件路径
+    file_name,
+    timestamp,
+    minio_ip,
+    minio_access_key,
+    minio_secret_key,
+    bucket_name,
+):
+    # 1. 初始化客户端 (保持原样)
+    # ... (省略 client 初始化逻辑) ...
+
+    root = Path(target_path)
+    object_names = []
+
+    # 2. 判断是单个文件还是文件夹
+    if root.is_file():
+        # 如果是单个文件 (如 zip)
+        files_to_upload = [root]
+    elif root.is_dir():
+        # 如果是文件夹 (如 images 目录)
+        files_to_upload = [f for f in root.iterdir() if f.is_file()]
+    else:
+        logger.warning("Path <%s> is neither a file nor a directory", target_path)
+        return []
+
+    # 3. 循环上传
+    for file_path in files_to_upload:
+        # 保持你原来的目录结构命名习惯
+        # 如果传的是 zip，object_name 会变成 "时间戳_文件名/xxx.zip"
+        object_name = f"{timestamp}_{file_name}/{file_path.name}"
+        
+        try:
+            client.fput_object(bucket_name, object_name, str(file_path))
+            object_names.append(object_name)
+        except Exception as e:
+            logger.error("Upload failed for <%s>: %s", object_name, e)
+            continue
+
+    return object_names
+
 if __name__ == "__main__":
     images_path="/home/bestwish/preprocess_v4/data/output/demo0/vlm/images"
     file_name="demo0"
