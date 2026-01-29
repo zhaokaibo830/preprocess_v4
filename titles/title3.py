@@ -417,7 +417,7 @@ def export_structure_to_markdown(nodes: List[Dict[str, Any]], output_path: str):
 
 
 
-def title_process(json_path: str, base_url: str, api_key: str, model_name: str, output_path: str, file_name: str,vlm_enable)->Dict[str,Any]:
+def title_process(json_path: str, base_url: str, api_key: str, model_name: str, output_path: str, file_name: str,folder_name,vlm_enable)->Dict[str,Any]:
     print("--- Structure Processor Started ---")
 
     try:
@@ -477,9 +477,9 @@ def title_process(json_path: str, base_url: str, api_key: str, model_name: str, 
     ##print(f"--- Task Complete. Result saved to: {CONFIG['OUTPUT_JSON_PATH']} ---")
 
     if vlm_enable:
-        base_dir = Path(output_path) / file_name / 'vlm'
+        base_dir = Path(output_path) / folder_name / 'vlm'
     else:
-        base_dir = Path(output_path) / file_name / 'auto'
+        base_dir = Path(output_path) / folder_name / 'auto'
     base_dir.mkdir(parents=True, exist_ok=True)
     
     md_output_path = base_dir / f"{file_name}_titles_only.md"

@@ -35,8 +35,31 @@ from minioStore.store import store_images
 import datetime
 from images_tables.table.html2excel import html_to_excel_openpyxl
 import shutil
+import uuid
+import httpx
 MAX_CONCURRENT = 5
 semaphore = asyncio.Semaphore(MAX_CONCURRENT)
+
+async def call_mineru_api(input_file_path, output_dir, backend):
+    async with httpx.AsyncClient(timeout=None) as client:
+        with open(input_file_path, "rb") as f:
+            files = {'files': f}
+            data = {
+                'output_dir': str(output_dir),
+                'backend': backend,
+                'parse_method': 'auto',
+                'table_enable': 'true',
+                'formula_enable': 'true',
+                'return_content_list': 'true',
+                'return_images': 'true',
+                'return_md': 'true',
+                'return_layout_pdf': 'true',
+                'return_middle_json': 'true',
+                'return_model_output': 'true',
+            }
+            # 异步发送请求，此时 8003 服务可以去干别的事
+            response = await client.post("http://127.0.0.1:8000/file_parse", files=files, data=data)
+            return response.json()
 
 app = FastAPI(docs_url=None, redoc_url=None)
 
@@ -90,6 +113,7 @@ async def preprocess(
     input_file = save_filepath
     file_format = Path(input_file).suffix[1:]
     file_name = Path(input_file).stem
+    folder_name=f"{timestamp}_{file_name}"
     if file_format in AVALIABLE_FORMATS:
         if file_format != "pdf":
             input_file = format(input_file)
@@ -97,11 +121,16 @@ async def preprocess(
         raise HTTPException(status_code=400, detail=f"不支持的文件格式：{file_format}")
     mineru_start_time=time.perf_counter()
     output_path = Path(cfg['output_path']).resolve()
+    request_id = str(uuid.uuid4())
     output_path_temp = Path(cfg['output_path_temp']).resolve()
     #output_path.mkdir(parents=True, exist_ok=True)
     output_path_temp.mkdir(parents=True, exist_ok=True)
+    task_temp_path = Path(cfg['output_path_temp']).resolve() / request_id
+    task_temp_path.mkdir(parents=True, exist_ok=True)
+    await call_mineru_api(input_file, task_temp_path, 'vlm-lmdeploy-engine' if vlm_enable else 'pipeline')
+    """
     if vlm_enable:
-        """
+        
         cmd = [
             'mineru', '-p', str(input_file), '-o', str(output_path_temp),
             '--backend', 'vlm-lmdeploy-engine',
@@ -109,7 +138,7 @@ async def preprocess(
             '--device', 'cuda', '--source', 'local',
             '--max-batch-size', '8'
         ]
-        """
+        
         cmd = [
             'curl',
             '-X', 'POST',
@@ -128,8 +157,9 @@ async def preprocess(
             '-F', 'return_model_output=true',
             
         ]
+        
     else:
-        """
+        
         cmd = [
             'mineru', '-p', str(input_file), '-o', str(output_path),
             '--backend', 'pipeline',
@@ -137,7 +167,7 @@ async def preprocess(
             '--device', 'cuda', '--source', 'local',
             '--max-batch-size', '8'
         ]
-        """
+        
         cmd=[
             'curl',
             '-X', 'POST',
@@ -156,11 +186,14 @@ async def preprocess(
             '-F', 'return_model_output=true',
 
         ]
+    
     subprocess.run(cmd, check=True ,stdout=subprocess.DEVNULL)
+    """
     mineru_end_time=time.perf_counter()
-    if vlm_enable:
+    uuid_dirs = [d for d in task_temp_path.iterdir() if d.is_dir()]
+    if len(uuid_dirs)>0:
         # Step 1: 找 temp 下唯一 uuid 目录
-        uuid_dirs = [d for d in output_path_temp.iterdir() if d.is_dir()]
+        
         if len(uuid_dirs) != 1:
             raise RuntimeError(
                 f"output_path_temp 下目录数量异常: {[d.name for d in uuid_dirs]}"
@@ -178,24 +211,24 @@ async def preprocess(
         result_dir = result_dirs[0]
 
         # Step 3: 移动结果目录到最终 output_path
-        target_dir = output_path / result_dir.name
+        target_dir = output_path / folder_name
         if target_dir.exists():
             shutil.rmtree(target_dir)
 
         shutil.move(str(result_dir), str(target_dir))
 
         # Step 4: 清空 temp 目录
-        shutil.rmtree(output_path_temp)
-        output_path_temp.mkdir(parents=True, exist_ok=True)
+        #shutil.rmtree(output_path_temp)
+        #output_path_temp.mkdir(parents=True, exist_ok=True)
 
         print(f"mineru 输出已移动至: {target_dir}")
-
+    shutil.rmtree(task_temp_path)
 
     middle_json_name = f'{file_name}_middle.json'
     if vlm_enable:
-        target_json = output_path / file_name / 'vlm' / middle_json_name
+        target_json = output_path / folder_name / 'vlm' / middle_json_name
     else:
-        target_json = output_path / file_name / 'auto' / middle_json_name
+        target_json = output_path / folder_name / 'auto' / middle_json_name
     with open(target_json, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -209,9 +242,9 @@ async def preprocess(
 
     final_json_name = f'{file_name}_middle_final.json'
     if vlm_enable:
-        final_json_path = output_path / file_name / 'vlm' / final_json_name
+        final_json_path = output_path / folder_name / 'vlm' / final_json_name
     else:
-        final_json_path = output_path / file_name / 'auto' / final_json_name
+        final_json_path = output_path / folder_name / 'auto' / final_json_name
     with open(final_json_path, "w", encoding="utf-8") as f:
         json.dump(output_data, f, ensure_ascii=False, indent=2)
     print(f"处理完成，已保存到 {final_json_path}")
@@ -227,6 +260,7 @@ async def preprocess(
         cfg['LLM']['title_model']['LLM_MODEL'],
         output_path,
         file_name,
+        folder_name,
         vlm_enable=vlm_enable
     )
     title_end_time=time.perf_counter()
@@ -269,9 +303,9 @@ async def preprocess(
                     if sub_block["type"]=="image_body":
                         img_path=sub_block["lines"][0]["spans"][0]["image_path"]
                         if vlm_enable:
-                            img_path=Path(output_path)/file_name/'vlm'/'images'/img_path
+                            img_path=Path(output_path)/folder_name/'vlm'/'images'/img_path
                         else:
-                            img_path=Path(output_path)/file_name/'auto'/'images'/img_path
+                            img_path=Path(output_path)/folder_name/'auto'/'images'/img_path
                         
                         #img_jobs.append((block_index,sub_block_index,img_path))
                         #image_count+=1 
@@ -303,7 +337,7 @@ async def preprocess(
         )
         for ( b_idx, sb_idx, _,_), desc in zip(img_jobs, img_results):
             full_json_data["output"][b_idx]["llm_process"] = desc
-        print(f"已处理{image_count}张图片")
+        print(f"已处理{len(img_jobs)}张图片")
     else:
         print("图片处理选项为空，跳过图片处理步骤。")
     img_end_time=time.perf_counter()
@@ -317,17 +351,19 @@ async def preprocess(
                 current_table_html=None
                 current_table_title=""
                 current_sub_idx=-1
+                current_table_path=None
                 for sub_block_index,sub_block in enumerate(block["blocks"]):
                     if sub_block["type"]=="table_body":
                         try:
 
-                            #table_path=sub_block["lines"][0]["spans"][0]["image_path"]
+                            table_path=sub_block["lines"][0]["spans"][0]["image_path"]
                             
-                            #if vlm_enable:
-                            #    table_path=Path(output_path)/file_name/'vlm'/'images'/table_path
-                            #else:
-                            #    table_path=Path(output_path)/file_name/'auto'/'images'/table_path
-                            table_html=sub_block["lines"][0]["spans"][0]["html"]
+                            if vlm_enable:
+                                table_path=Path(output_path)/folder_name/'vlm'/'images'/table_path
+                            else:
+                                table_path=Path(output_path)/folder_name/'auto'/'images'/table_path
+                            current_table_path=table_path
+                            current_table_html=sub_block["lines"][0]["spans"][0]["html"]
                             current_sub_idx=sub_block_index
                         except (IndexError, KeyError, TypeError):
                             print(f"[WARN] block={block_index} 取不到表格，已跳过")
@@ -349,9 +385,13 @@ async def preprocess(
                             block_index,
                             current_sub_idx,
                             current_table_html,
-                            current_table_title
+                            current_table_title,
+                            table_path
                         ]
                     )
+        for idx,info in enumerate(table_jobs):
+            print(info)
+
         print(f"已收集{len(table_jobs)}个表格")
         for index,info in enumerate(table_jobs):
             print(info)
@@ -364,41 +404,41 @@ async def preprocess(
                 cfg['LLM']['img']['BASE_URL'],
                 cfg['LLM']['img']['MODEL'],
                 semaphore  # 传入信号量
-            ) for _, _, html,title in table_jobs]
+            ) for _, _, html,title,_ in table_jobs]
         )
         
         # 将结果写回原数据结构
-        for (b_idx, sb_idx, _, _), result in zip(table_jobs, table_results):
+        for (b_idx, sb_idx, _, _,_), result in zip(table_jobs, table_results):
             full_json_data["output"][b_idx]["llm_process"] = result
             #print(f"Block {b_idx}, Sub-block {sb_idx}: {result}")
         
         if 'html' in table_config:#如果有html参数，保存excel文件
-            excel_output_dir=Path(output_path)/file_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
+            excel_output_dir=Path(output_path)/folder_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
             excel_output_dir.mkdir(parents=True,exist_ok=True)
-            for _,_,table_path,table_html in table_jobs:
+            for _,_,table_html,table_title,table_path in table_jobs:
                 table_name=Path(table_path).stem+'.xlsx'
                 excel_output_path=excel_output_dir/table_name
                 html_to_excel_openpyxl(table_html,str(excel_output_path))
 
-        print(f"已处理{table_count}张表格")
+        print(f"已处理{len(table_jobs)}张表格")
     else:
         print("表格处理选项为空，跳过表格处理步骤。")
 
     table_time_end=time.perf_counter()
-    eq_path=output_path / file_name / ('vlm' if vlm_enable else 'auto')/'equation_images'
+    eq_path=output_path / folder_name / ('vlm' if vlm_enable else 'auto')/'equation_images'
     eq_path.mkdir(parents=True,exist_ok=True)
     for block_index, block in enumerate(full_json_data["output"]):
         if block["type"] == "interline_equation":
             img_path = block["lines"][0]["spans"][0]["image_path"]
-            img_path=Path(output_path)/file_name/('vlm' if vlm_enable else 'auto')/'images'/img_path
+            img_path=Path(output_path)/folder_name/('vlm' if vlm_enable else 'auto')/'images'/img_path
             if img_path.exists():
-                shutil.move(str(img_path), str(output_path / file_name / 'vlm' if vlm_enable else 'auto'/'equation_images' / img_path.name))
+                shutil.move(str(img_path), str(output_path / folder_name / 'vlm' if vlm_enable else 'auto'/'equation_images' / img_path.name))
         
 
     if vlm_enable:
-        images_path=Path(output_path)/file_name/'vlm'/'images'
+        images_path=Path(output_path)/folder_name/'vlm'/'images'
     else:
-        images_path=Path(output_path)/file_name/'auto'/'images'
+        images_path=Path(output_path)/folder_name/'auto'/'images'
         
     store_images(images_path,file_name,timestamp,cfg['MinIO']['IP'],cfg['MinIO']['ACCESS_KEY'],cfg['MinIO']['SECRET_KEY'],cfg['MinIO']['BUCKET_NAME'])
     # 准备返回的 zip 包
@@ -431,9 +471,9 @@ async def preprocess(
     # 保存最终 JSON
     level_json_name = f'{file_name}_processed_with_levels.json'
     if vlm_enable:
-        level_json_path = output_path / file_name / 'vlm' / level_json_name
+        level_json_path = output_path / folder_name / 'vlm' / level_json_name
     else:
-        level_json_path = output_path / file_name / 'auto' / level_json_name
+        level_json_path = output_path / folder_name / 'auto' / level_json_name
     #level_json_path = output_path / file_name / 'vlm' / level_json_name
     save_json_data(full_json_data, str(level_json_path))
     print(f"已保存{level_json_name}到{level_json_path}")
@@ -448,16 +488,16 @@ async def preprocess(
 
     # 准备返回的 zip 包
     if vlm_enable:
-        pdf_view = output_path / file_name / 'vlm' / f"{file_name}_layout.pdf"
-        md_output_path = output_path / file_name / 'vlm' / f"{file_name}_titles_only.md"
+        pdf_view = output_path / folder_name / 'vlm' / f"{file_name}_layout.pdf"
+        md_output_path = output_path / folder_name / 'vlm' / f"{file_name}_titles_only.md"
     else:
-        pdf_view = output_path / file_name / 'auto' / f"{file_name}_layout.pdf"
-        md_output_path = output_path / file_name / 'auto' / f"{file_name}_titles_only.md"
+        pdf_view = output_path / folder_name / 'auto' / f"{file_name}_layout.pdf"
+        md_output_path = output_path / folder_name / 'auto' / f"{file_name}_titles_only.md"
 
     if vlm_enable and 'html' in table_config:
-        excel_output_dir = output_path / file_name / 'vlm' / 'tables_excel'
+        excel_output_dir = output_path / folder_name / 'vlm' / 'tables_excel'
     elif (not vlm_enable) and 'html' in table_config:
-        excel_output_dir = output_path / file_name / 'auto' / 'tables_excel'
+        excel_output_dir = output_path / folder_name / 'auto' / 'tables_excel'
 
     if 'html' in table_config:
         files_to_send = [level_json_path, md_output_path, pdf_view, excel_output_dir]
@@ -471,7 +511,7 @@ async def preprocess(
                 for root, _, files in os.walk(f):
                     for file in files:
                         file_path = Path(root) / file
-                        arcname = file_path.relative_to(output_path / file_name / ('vlm' if vlm_enable else 'auto'))
+                        arcname = file_path.relative_to(output_path / folder_name / ('vlm' if vlm_enable else 'auto'))
                         zf.write(file_path, arcname=arcname)
             else:
                 zf.write(f, arcname=f.name)
@@ -482,7 +522,7 @@ async def preprocess(
     return StreamingResponse(
         zip_buffer,
         media_type="application/zip",
-        headers={"Content-Disposition": f"attachment; filename*=utf-8''{quote(file_name)}_result.zip"}
+        headers={"Content-Disposition": f"attachment; filename*=utf-8''{quote(folder_name)}_result.zip"}
     )
 
 if __name__ == "__main__":
