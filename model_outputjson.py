@@ -1,0 +1,487 @@
+import os
+import base64
+import glob
+import json
+import re
+import requests
+from typing import Dict, List
+
+CONFIG = {
+    # LLM API 配置
+    "LLM_API_KEY": "sk-734ae048099b49b5b4c7981559765228",
+    "LLM_BASE_URL": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "LLM_MODEL": "qwen-vl-max",
+
+    # 文件路径配置
+    "INPUT_PATH": "./output",
+    "OUTPUT_PATH": "./extracted_texts",
+}
+
+class ImageTextExtractor:
+    def __init__(self, config: Dict):
+        self.api_key = config["LLM_API_KEY"]
+        self.base_url = config["LLM_BASE_URL"]
+        self.model = config["LLM_MODEL"]
+        self.input_path = config["INPUT_PATH"]
+        self.output_path = config["OUTPUT_PATH"]
+        
+        # 创建输出目录
+        os.makedirs(self.output_path, exist_ok=True)
+        
+        # 设置请求头
+        self.headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {self.api_key}"
+        }
+    
+    def encode_image_to_base64(self, image_path: str) -> str:
+        """将图片编码为base64字符串"""
+        with open(image_path, "rb") as image_file:
+            return base64.b64encode(image_file.read()).decode('utf-8')
+    
+    def analyze_image(self, image_path: str) -> str:
+        """使用多模态模型分析图片并提取文本"""
+        try:
+            # 读取并编码图片
+            base64_image = self.encode_image_to_base64(image_path)
+            
+            # 构建提示词
+            prompt = """请严格按照以下步骤分析图片：
+
+第一步：检查图片中是否有：
+1. 红色水平线（红色、水平、长度超过图片长度的一半）  
+2. 两条黑色水平线（黑色、水平、每条长度都超过图片长度的一半）
+
+第二步：根据检查结果执行：
+- 如果发现红色水平线：提取该红线上方的所有文字内容（严格执行只提取红线上方的内容）
+- 如果发现两条黑色水平线：提取这两条黑线之间的所有文字内容  
+- 如果都没有：返回"未提取到文字内容"（仅这7个字）
+
+第三步：文字格式要求：
+如果有多段不同的文本内容，请使用数字序号（如1. 2. 3.）分开表示
+只返回提取到的文字内容或"未提取到文字内容"，不要添加任何其他内容，解释
+
+现在请分析这张图片。"""
+
+            # 构建请求数据
+            messages = [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": prompt},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/png;base64,{base64_image}"
+                            }
+                        }
+                    ]
+                }
+            ]
+            
+            payload = {
+                "model": self.model,
+                "messages": messages,
+                "max_tokens": 2000
+            }
+            
+            # 发送请求
+            response = requests.post(
+                f"{self.base_url}/chat/completions",
+                headers=self.headers,
+                json=payload,
+                timeout=60
+            )
+            
+            response.raise_for_status()
+            result = response.json()
+            
+            # 提取响应内容
+            if "choices" in result and len(result["choices"]) > 0:
+                return result["choices"][0]["message"]["content"].strip()
+            else:
+                return "未提取到文字内容"
+                
+        except Exception as e:
+            print(f"分析图片 {image_path} 时出错: {str(e)}")
+            return f"错误: {str(e)}"
+    
+    def parse_numbered_text(self, text: str) -> List[str]:
+        """解析带有序号的文本，返回文本列表"""
+        # 使用正则表达式匹配数字序号开头的行
+        pattern = r'^\s*\d+[\.、:：]?\s*(.*)$'
+        
+        lines = text.strip().split('\n')
+        items = []
+        
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+                
+            # 尝试匹配序号
+            match = re.match(r'^\s*(\d+)[\.、:：]?\s*(.*)', line)
+            if match:
+                items.append(match.group(2).strip())
+            else:
+                # 如果没有序号但是有内容，也加入
+                items.append(line)
+        
+        return items
+    
+    def classify_single_item(self, text: str) -> str:
+        """对单条文本内容进行类别判断"""
+        try:
+            # 构建分类提示词
+            prompt = f"""请分析以下文本片段，判断其属于什么类型：
+
+文本内容："{text}"
+
+请从以下类型中选择最合适的一个：
+1. 发文机关标志
+2. 密级和保密期限
+3. 份号
+4. 紧急程度
+5. 成文日期
+6. 抄送机关
+7. 印发机关
+8. 印发日期
+
+请只返回类型名称，不要添加任何解释或说明。
+
+类型："""
+            
+            messages = [
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+            
+            payload = {
+                "model": self.model,
+                "messages": messages,
+                "max_tokens": 100
+            }
+            
+            # 发送请求
+            response = requests.post(
+                f"{self.base_url}/chat/completions",
+                headers=self.headers,
+                json=payload,
+                timeout=30
+            )
+            
+            response.raise_for_status()
+            result = response.json()
+            
+            # 提取类型
+            if "choices" in result and len(result["choices"]) > 0:
+                item_type = result["choices"][0]["message"]["content"].strip()
+                # 清理可能的额外字符
+                item_type = item_type.replace('类型：', '').replace('类型:', '').strip()
+                return item_type
+            else:
+                return "其他内容"
+                
+        except Exception as e:
+            print(f"分类文本片段时出错: {str(e)}")
+            return "分类失败"
+    
+    def classify_text_items(self, text_items: List[str]) -> List[Dict[str, str]]:
+        """对多条文本内容进行批量类别判断"""
+        if not text_items:
+            return []
+        
+        # 如果只有1-3条，逐条分类
+        if len(text_items) <= 3:
+            classified_items = []
+            for item in text_items:
+                item_type = self.classify_single_item(item)
+                classified_items.append({
+                    "content": item,
+                    "type": item_type
+                })
+            return classified_items
+        
+        # 如果有多条，批量分类
+        try:
+            # 构建批量分类提示词
+            items_text = "\n".join([f"{i+1}. {item}" for i, item in enumerate(text_items)])
+            
+            prompt = f"""请分析以下文本片段，为每个片段判断其类型：
+
+文本片段：
+{items_text}
+
+请从以下类型中选择最合适的类型：
+1. 发文机关标志
+2. 密级和保密期限
+3. 份号
+4. 紧急程度
+5. 成文日期
+6. 抄送机关
+7. 印发机关
+8. 印发日期
+
+请按以下格式返回结果：
+1. 类型名称
+2. 类型名称
+...
+n. 类型名称
+
+只返回类型名称列表，不要添加任何解释或说明。"""
+            
+            messages = [
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+            
+            payload = {
+                "model": self.model,
+                "messages": messages,
+                "max_tokens": 300
+            }
+            
+            # 发送请求
+            response = requests.post(
+                f"{self.base_url}/chat/completions",
+                headers=self.headers,
+                json=payload,
+                timeout=30
+            )
+            
+            response.raise_for_status()
+            result = response.json()
+            
+            # 提取类型列表
+            if "choices" in result and len(result["choices"]) > 0:
+                type_text = result["choices"][0]["message"]["content"].strip()
+                
+                # 解析类型列表
+                type_lines = type_text.strip().split('\n')
+                types = []
+                
+                for line in type_lines:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    
+                    # 尝试提取类型名称
+                    match = re.match(r'^\s*\d+[\.、:：]?\s*(.*)', line)
+                    if match:
+                        types.append(match.group(1).strip())
+                    else:
+                        types.append(line)
+                
+                # 确保类型数量与文本项数量一致
+                if len(types) == len(text_items):
+                    classified_items = []
+                    for i in range(len(text_items)):
+                        classified_items.append({
+                            "content": text_items[i],
+                            "type": types[i]
+                        })
+                    return classified_items
+                else:
+                    # 如果不匹配，回退到逐条分类
+                    print(f"类型数量不匹配，回退到逐条分类")
+                    return self._fallback_classify(text_items)
+            else:
+                return self._fallback_classify(text_items)
+                
+        except Exception as e:
+            print(f"批量分类时出错: {str(e)}")
+            return self._fallback_classify(text_items)
+    
+    def _fallback_classify(self, text_items: List[str]) -> List[Dict[str, str]]:
+        """回退方法：逐条分类"""
+        classified_items = []
+        for item in text_items:
+            item_type = self.classify_single_item(item)
+            classified_items.append({
+                "content": item,
+                "type": item_type
+            })
+        return classified_items
+    
+    def process_single_image(self, image_path: str) -> Dict:
+        """处理单张图片"""
+        print(f"正在处理: {image_path}")
+        
+        # 提取文字
+        extracted_text = self.analyze_image(image_path)
+        
+        # 初始化分类结果
+        classified_items = []
+        
+        # 如果成功提取到文字，进行类别判断
+        if (not extracted_text.startswith('错误:') and 
+            extracted_text != "未提取到文字内容" and
+            extracted_text.strip() != ""):
+            
+            print(f"  正在进行文本解析和分类...")
+            
+            # 解析带有序号的文本
+            text_items = self.parse_numbered_text(extracted_text)
+            
+            # 进行批量分类
+            classified_items = self.classify_text_items(text_items)
+            
+            # 显示分类结果
+            for i, item in enumerate(classified_items, 1):
+                print(f"  第{i}条: {item['content']} -> {item['type']}")
+        
+        # 构建结果
+        result = {
+            "image_name": os.path.basename(image_path),
+            "extracted_text": extracted_text,
+            "classified_items": classified_items
+        }
+        
+        return result
+    
+    def save_results_to_json(self, results: List[Dict], filename: str = "extracted_texts.json"):
+        """将结果保存为JSON文件（唯一的输出文件）"""
+        output_file = os.path.join(self.output_path, filename)
+        
+        # 统计信息
+        total_count = len(results)
+        error_count = sum(1 for r in results if r['extracted_text'].startswith('错误:'))
+        empty_count = sum(1 for r in results if r['extracted_text'] == "未提取到文字内容")
+        success_count = sum(1 for r in results if r['classified_items'])
+        
+        # 类型统计
+        type_count = {}
+        total_items = 0
+        successful_results = []
+        
+        for result in results:
+            if result['classified_items']:
+                successful_results.append(result)
+                for item in result['classified_items']:
+                    item_type = item['type']
+                    type_count[item_type] = type_count.get(item_type, 0) + 1
+                    total_items += 1
+        
+        # 构建完整的JSON数据结构
+        json_data = {
+            "metadata": {
+                "total_images_processed": total_count,
+                "successful_extractions": success_count,
+                "no_content_images": empty_count,
+                "error_images": error_count,
+                "total_text_items": total_items,
+                "type_statistics": type_count
+            },
+            "results": []
+        }
+        
+        # 添加每个图片的结果
+        for result in results:
+            image_result = {
+                "image_name": result['image_name'],
+                "status": "success" if result['classified_items'] else (
+                    "error" if result['extracted_text'].startswith('错误:') else "no_content"
+                ),
+                "extracted_text": result['extracted_text'],
+                "items": result['classified_items']
+            }
+            json_data["results"].append(image_result)
+        
+        # 保存JSON文件
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(json_data, f, ensure_ascii=False, indent=2)
+        
+        return output_file
+    
+    def process_all_images(self):
+        """处理输入目录中的所有图片"""
+        # 支持的图片格式
+        image_extensions = ['*.png', '*.jpg', '*.jpeg', '*.bmp', '*.gif']
+        image_files = []
+        
+        # 收集所有图片文件
+        for ext in image_extensions:
+            image_files.extend(glob.glob(os.path.join(self.input_path, ext)))
+        
+        if not image_files:
+            print(f"在 {self.input_path} 中没有找到图片文件")
+            return
+        
+        print(f"找到 {len(image_files)} 张图片，开始处理...")
+        
+        all_results = []
+        successful_results = []
+        
+        for image_file in image_files:
+            result = self.process_single_image(image_file)
+            all_results.append(result)
+            
+            # 检查是否成功提取并分类
+            if result['classified_items']:
+                successful_results.append(result)
+                print(f"✓ 完成: {result['image_name']} - ✅ 成功提取并分类 ({len(result['classified_items'])}条)")
+            elif result['extracted_text'].startswith('错误:'):
+                print(f"✓ 完成: {result['image_name']} - ❌ 提取失败: {result['extracted_text']}")
+            else:
+                print(f"✓ 完成: {result['image_name']} - ⚠️ 不符合提取条件")
+            
+            print("-" * 50)
+        
+        # 只保存为JSON文件
+        json_file = self.save_results_to_json(all_results)
+        
+        print(f"\n处理完成！")
+        print(f"结果已保存到: {json_file}")
+        
+        # 显示统计信息
+        total_count = len(all_results)
+        error_count = sum(1 for r in all_results if r['extracted_text'].startswith('错误:'))
+        empty_count = sum(1 for r in all_results if r['extracted_text'] == "未提取到文字内容")
+        success_count = len(successful_results)
+        
+        print(f"\n处理摘要:")
+        print(f"总处理图片数: {total_count}")
+        print(f"成功提取并分类: {success_count}")
+        print(f"不符合条件: {empty_count}")
+        print(f"提取失败: {error_count}")
+        
+        # 类型统计（从JSON数据中读取）
+        type_count = {}
+        total_items = 0
+        for result in successful_results:
+            for item in result['classified_items']:
+                item_type = item['type']
+                type_count[item_type] = type_count.get(item_type, 0) + 1
+                total_items += 1
+        
+        if type_count:
+            print(f"\n内容类型统计:")
+            for item_type, count in sorted(type_count.items(), key=lambda x: x[1], reverse=True):
+                print(f"  {item_type}: {count}条")
+        
+        return all_results
+
+def main():
+    """主函数"""
+    print("=" * 60)
+    print("图片文字提取工具")
+    print("功能：")
+    print("1. 有红线 → 提取红线上方文字")
+    print("2. 有两条黑线 → 提取两条黑线中间文字")
+    print("3. 其他情况 → 不提取内容")
+    print("4. 对提取的文字逐条进行分类")
+    print("5. 结果只保存为JSON格式")
+    print("=" * 60)
+    
+    # 初始化提取器
+    extractor = ImageTextExtractor(CONFIG)
+    
+    # 处理所有图片
+    results = extractor.process_all_images()
+
+if __name__ == "__main__":
+    main()
