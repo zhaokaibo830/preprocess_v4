@@ -1,0 +1,7453 @@
+[
+  {
+    "type": "发文机关标志",
+    "title_type": -1,
+    "text": "国网陕西省电力有限公司文件",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "发文机关标志"
+        ],
+        "pages": [
+          1
+        ],
+        "bboxes": [
+          [
+            82,
+            206,
+            521,
+            246
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            13
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "发文机关标志",
+    "title_type": -1,
+    "text": "国网陕电人资〔2021〕36号",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "发文机关标志"
+        ],
+        "pages": [
+          1
+        ],
+        "bboxes": [
+          [
+            93,
+            296,
+            289,
+            315
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            15
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "签发人：胡卫东\n\n发文机关标志",
+    "title_type": -1,
+    "text": "签发人：胡卫东",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "签发人：胡卫东\n\n发文机关标志"
+        ],
+        "pages": [
+          1
+        ],
+        "bboxes": [
+          [
+            392,
+            296,
+            503,
+            315
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 1,
+    "text": "国网陕西省电力有限公司关于 各层级组织机构融合情况的报告",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          1
+        ],
+        "bboxes": [
+          [
+            147,
+            379,
+            452,
+            433
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            28
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "国家电网有限公司：",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          1
+        ],
+        "bboxes": [
+          [
+            77,
+            467,
+            213,
+            486
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            9
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "为全面推动陕西电网融合发展，国网陕西省电力有限公司（以下简称“新国网陕西电力”）积极落实辛保安董事长“一张网、一盘棋、一条心”融合工作要求，依据《国网人资部关于陕西电网融合发展需要支持事项的复函》（人资计函〔2021〕7号），完成了公司本部和直属单位组织机构融合工作。现将具体情况报告如下：",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          1
+        ],
+        "bboxes": [
+          [
+            76,
+            494,
+            522,
+            655
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            145
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "一、总体情况",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          1
+        ],
+        "bboxes": [
+          [
+            107,
+            662,
+            207,
+            681
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "融合后，新国网陕西电力设置本部部门24个、地市供电公司11个（下辖县级供电企业98个）、直属业务单位24个。较融",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          1
+        ],
+        "bboxes": [
+          [
+            77,
+            690,
+            521,
+            737
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            56
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 1 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          1
+        ],
+        "bboxes": [
+          [
+            455,
+            754,
+            508,
+            766
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            5
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "合前减少17个本部部门、9个地市供电公司、1个直属单位、2个县供电公司。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          2
+        ],
+        "bboxes": [
+          [
+            76,
+            111,
+            518,
+            158
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            36
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "融合后，全口径用工53371人，其中：长期职工36236人、供电服务职工15093人、劳务派遣用工152人、集体职工708人、省管产业单位直签用工1138人、其他社会化用工44人。长期职工平均年龄42.1岁；人才当量密度1.1087。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          2
+        ],
+        "bboxes": [
+          [
+            76,
+            168,
+            521,
+            272
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            117
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "二、公司本部组织机构融合情况",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          2
+        ],
+        "bboxes": [
+          [
+            107,
+            280,
+            332,
+            298
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            14
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（一）机构设置",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          2
+        ],
+        "bboxes": [
+          [
+            113,
+            307,
+            221,
+            325
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "根据“同类融合、差异保留”的原则，按照“职能管理类部门分类融合，非职能管理类部门融合至同类业务单位”的方式，新国网陕西电力完成原国网陕西电力和陕西地方电力两个本部融合。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          2
+        ],
+        "bboxes": [
+          [
+            76,
+            335,
+            520,
+            439
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            84
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "融合后，新国网陕西电力本部设置“23+1”个部门（职能部门23个、电力调度控制中心1个）、108个处室，较融合前部门设置数量减少17个。各部门名称分别为：办公室（党委办公室、董事会办公室）、发展策划部、财务资产部、资本运营部、战略规划部、安全监察部（保卫部）、设备管理部、配网管理部、市场营销部（农电工作部）、科技互联网部、建设部、物资部（招投标管理中心）、审计部、法律合规部（体改办）、人力资源部（社保中心）、后勤工作部、党委党建部（思想政治工作部、团委）、党委组织部（人事董事部）、党委宣传部（对外联络部）、纪委办公室（巡察办）、离退休工作部、企业管理部（监事会办公室）、工会、",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          2
+        ],
+        "bboxes": [
+          [
+            76,
+            447,
+            521,
+            719
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            291
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "—2—",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          2
+        ],
+        "bboxes": [
+          [
+            90,
+            754,
+            143,
+            766
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "电力调度控制中心。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            77,
+            111,
+            213,
+            130
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            9
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（二）人员规模和领导人员",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            113,
+            139,
+            299,
+            158
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            12
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "按照“原国网陕西电力编制+原陕西地方电力人数”原则确定人数规模，过渡期内只减不增。融合后，新国网陕西电力本部人数规模控制在668人以内，其中专职助理副总师10人、一级职员5人、部门负责人137人。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            76,
+            167,
+            520,
+            270
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            98
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "新国网陕西电力本部及综合服务中心机构设置方案详见附件1。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            105,
+            280,
+            511,
+            298
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            28
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（三）其他",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            113,
+            307,
+            191,
+            325
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            5
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "为高效推进新国网陕西电力调度通信生产综合基地建设工作，确保公司安全生产稳定，在国网陕西综合服务中心设置项目化管理机构1个，机构负责人3人。项目结束后该机构撤销，负责人职数同步核减。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            76,
+            335,
+            520,
+            439
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            90
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "三、直属单位组织机构融合情况",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            107,
+            447,
+            333,
+            466
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            14
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（一）机构设置",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            113,
+            475,
+            221,
+            493
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 4,
+    "text": "1.单位设置",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            108,
+            502,
+            190,
+            522
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "按照“分类融合、平稳过渡”等原则，新国网陕西电力全面完成市县供电公司和直属业务单位融合。融合后，新国网陕西电力设置地市供电公司11家、直属业务单位24家、县供电公司98家；另有合资公司3家。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            75,
+            531,
+            520,
+            634
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            95
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 4,
+    "text": "2.内设机构设置",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            107,
+            643,
+            218,
+            661
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            8
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "根据《国网人资部关于省公司所属单位内设机构设置标准的批复》（人资组〔2019〕44号）要求，按照“总量管控、分档核",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            76,
+            671,
+            520,
+            718
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            57
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "-3-",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          3
+        ],
+        "bboxes": [
+          [
+            455,
+            753,
+            508,
+            766
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "定、精简高效”的思路，核定各市县供电公司内设机构设置总量和职能部门上限。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          4
+        ],
+        "bboxes": [
+          [
+            76,
+            111,
+            522,
+            158
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            36
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "地市供电公司：国网西安、榆林、咸阳、宝鸡、渭南供电公司为第一档，内设机构总量上限35个（其中职能部门上限15个）；国网汉中、安康、商洛、延安供电公司为第二档，内设机构总量上限26个（其中职能部门上限14个）；国网铜川、西咸供电公司为第四档，内设机构总量上限24个（其中职能部门上限13个）。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          4
+        ],
+        "bboxes": [
+          [
+            76,
+            167,
+            523,
+            300
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            145
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "县供电公司：国网西安市长安区、西安市临潼区等78家县供电公司为第一档，内设机构总量上限9个（其中职能部门上限6个）；国网淳化、千阳等13家县供电公司为第二档，内设机构总量上限8个（其中职能部门上限6个）；国网清涧、吴堡2家县供电公司为第三档，内设机构总量上限6个（其中职能部门上限4个）；国网留坝、佛坪等5家县供电公司为第四档，内设机构总量上限5个（其中职能部门上限3个）。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          4
+        ],
+        "bboxes": [
+          [
+            75,
+            307,
+            523,
+            496
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            187
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "新国网陕西电力直属单位组织机构融合工作方案详见附件2。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          4
+        ],
+        "bboxes": [
+          [
+            106,
+            503,
+            508,
+            523
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            27
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（二）用工规模和领导人员数量",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          4
+        ],
+        "bboxes": [
+          [
+            113,
+            531,
+            335,
+            550
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            14
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "list",
+    "title_type": -1,
+    "text": "1.用工规模。在融合期间，按照“原国网陕西电力编制+原陕西地方电力人数”的原则控制直属各单位用工规模，后期待新版定员标准印发后，重新测算核定定员规模。 2.领导人员数量。在融合期间，直属各单位领导人员规模按照“原国网陕西电力职数+原陕西地方电力人数”的原则控制，只减不增。为有序消纳领导人员，直属各单位可在内设机构设置",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "list"
+        ],
+        "pages": [
+          4
+        ],
+        "bboxes": [
+          [
+            76,
+            559,
+            523,
+            718
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            159
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 4 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          4
+        ],
+        "bboxes": [
+          [
+            91,
+            754,
+            145,
+            766
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            5
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "党组织书记岗位。融合后，新国网陕西电力直属单位的三级领导人员规模控制在322人以内。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          5
+        ],
+        "bboxes": [
+          [
+            76,
+            111,
+            518,
+            158
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            42
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "list",
+    "title_type": -1,
+    "text": "附件：1.国网陕西省电力有限公司本部及综合服务中心机构设置方案 2.国网陕西省电力有限公司直属单位组织机构融合工作方案 3.国网陕西省电力有限公司组织机构图",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "list"
+        ],
+        "pages": [
+          5
+        ],
+        "bboxes": [
+          [
+            109,
+            189,
+            521,
+            302
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            78
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "国网陕西省电力有限公司",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          5
+        ],
+        "bboxes": [
+          [
+            306,
+            396,
+            479,
+            415
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            11
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "2021年12月9日",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          5
+        ],
+        "bboxes": [
+          [
+            329,
+            423,
+            455,
+            442
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            10
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "(联系人：刘伟，联系电话：029-81002181)",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          5
+        ],
+        "bboxes": [
+          [
+            113,
+            451,
+            428,
+            471
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            26
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 5 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          5
+        ],
+        "bboxes": [
+          [
+            455,
+            753,
+            508,
+            766
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            5
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "附件1",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          6
+        ],
+        "bboxes": [
+          [
+            76,
+            106,
+            121,
+            123
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 1,
+    "text": "国网陕西省电力有限公司本部及综合服务中心机构设置方案",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          6
+        ],
+        "bboxes": [
+          [
+            130,
+            155,
+            464,
+            211
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            26
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "根据《国家电网有限公司关于组建国网陕西省电力有限公司的通知》（国家电网人资〔2021〕392号）和《国网人资部关于陕西电网融合发展需要支持事项的复函》（人资计函〔2021〕7号）要求，结合公司实际，制定国网陕西省电力有限公司（以下简称“新国网陕西电力”）本部及综合服务中心机构设置方案。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          6
+        ],
+        "bboxes": [
+          [
+            76,
+            245,
+            517,
+            377
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            143
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "一、现状",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          6
+        ],
+        "bboxes": [
+          [
+            108,
+            386,
+            176,
+            404
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            4
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（一）原国网陕西电力现状",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          6
+        ],
+        "bboxes": [
+          [
+            113,
+            413,
+            305,
+            432
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            12
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "截至2021年8月，原国网陕西电力（以下简称“东区”）本部设置“21+1”个部门、100个处室。东区部门员工总量447人（不含国家电网公司党组管理干部、党委巡察组组长（副组长）），其中助理副总师7人、部门负责人68人。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          6
+        ],
+        "bboxes": [
+          [
+            76,
+            441,
+            515,
+            544
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            109
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "总部2020年批复公司本部编制总量501人（不含公司领导，不含巡察组），其中三级职数96人。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          6
+        ],
+        "bboxes": [
+          [
+            76,
+            553,
+            514,
+            600
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            46
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（二）原陕西地方电力现状",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          6
+        ],
+        "bboxes": [
+          [
+            113,
+            609,
+            305,
+            628
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            12
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "截至2021年8月，原陕西地方电力（以下简称“南区”）本部设置19个部门，其中办公室下挂车队，市场部内设2个中心（电费核算中心、电力交易中心），纪委和监察专员办公室内",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          6
+        ],
+        "bboxes": [
+          [
+            76,
+            637,
+            515,
+            713
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            83
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "-6-",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          6
+        ],
+        "bboxes": [
+          [
+            93,
+            767,
+            145,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "设3个室，其他16个部门未设置内设机构，其中资本证券部是特有部门，资金管理中心、机关党委（扶贫办）是本部职能部门。南区部门员工总量192人，其中三级正副职级51人。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          7
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            517,
+            184
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            82
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "二、融合基本原则",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          7
+        ],
+        "bboxes": [
+          [
+            107,
+            190,
+            240,
+            208
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            8
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "list",
+    "title_type": -1,
+    "text": "1.党建引领、保障融合。构建支持改革、服务改革、保证改革的坚强党组织体系，坚持党建引领，规范组织设置，创新活动载体，推动党建和融合工作深度结合，提高党建在融合发展工作中的引领力、影响力、带动力。 2.服务专业、有序推进。新公司部门及处室设置、岗位设置和人数控制规模方案，与南区、东区相关专业部门充分沟通，以支撑服务专业管理为导向，统筹推进本部机构融合工作。 3.典型导向、分类融合。在国家电网公司关于省公司本部机构典型方案的基础上，考虑东区、南区差异化业务设置新公司本部部门。职能管理类，按照“同类融合、保留差异”的原则，制定新公司本部机构编制方案报总部审核；非职能管理类，融合至同类业务单位。 4.平稳过渡、逐步规范。融合期间，按照“东区编制+南区现状”确定人数控制规模，过渡期只减不增。为有效消纳领导人员，在部门中设置专职书记。暂停执行《国网人资部关于优化调整省公司本部机构编制等事项的批复》（人资组〔2020〕71号）下达编制，纳入新公司本部人数控制规模一并考虑。 5.精简高效、激发活力。新公司本部机构设置、职责分工",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "list"
+        ],
+        "pages": [
+          7
+        ],
+        "bboxes": [
+          [
+            76,
+            217,
+            517,
+            713
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            462
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "7",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          7
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            506,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "和流程优化，要以提升专业管理效能和协同效率为导向，持续提升本部整体运行效率。充分考虑员工成长和职业发展需要，为释放人才潜力、激发队伍活力提供组织保障。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          8
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            517,
+            184
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            75
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "三、机构融合方案",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          8
+        ],
+        "bboxes": [
+          [
+            108,
+            190,
+            240,
+            209
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            8
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（一）融合思路",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          8
+        ],
+        "bboxes": [
+          [
+            114,
+            217,
+            225,
+            237
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "根据“同类融合、差异保留”的原则，按照“职能管理类部门分类融合，非职能管理类部门融合至同类业务单位”的方式，分类别融合东区和南区两个本部部门：",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          8
+        ],
+        "bboxes": [
+          [
+            76,
+            245,
+            517,
+            321
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            71
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "list",
+    "title_type": -1,
+    "text": "1.东区、南区相应部门设置及职责分工一一对应的，按照“1+1”设置新公司部门。涉及物资、宣传、工会等3个部门。 2.东区、南区相应部门名称、业务基本相同，个别职责需要进行调整的，在“1+1”设置新公司部门的基础上，融合调整业务职责。涉及办公室、财务、安监、营销、互联网、审计、法律、人资、党建、纪委、调控等11个部门。 3.东区设置独立部门、南区未设置相应独立部门的，根据国家电网公司典型方案设置部门并对应融合主要职责。涉及发展、建设、设备、配网、干部、离退休、后勤、企管等8个部门。 4. 南区部门为特有机构或因融合工作需要保留，且经国家电网公司同意的，在新公司差异化保留设置部门。涉及2个部门：资本运营部、战略规划部。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "list"
+        ],
+        "pages": [
+          8
+        ],
+        "bboxes": [
+          [
+            76,
+            329,
+            516,
+            684
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            311
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（二）本部机构设置方案",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          8
+        ],
+        "bboxes": [
+          [
+            114,
+            692,
+            287,
+            712
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            11
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "-8-",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          8
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            145,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "部门设置数量“23+1”个（职能部门23个、电力调度控制中心1个），其中23个职能部门分别为：办公室（党委办公室、董事会办公室）、发展策划部、财务资产部、资本运营部、战略规划部、安全监察部（保卫部）、设备管理部、配网管理部、市场营销部（农电工作部）、科技互联网部、建设部、物资部（招投标管理中心）、审计部、法律合规部（体改办）、人力资源部（社保中心）、后勤工作部、党委党建部（思想政治工作部、团委）、党委组织部（人事董事部）、党委宣传部（对外联络部）、纪委办公室（巡察办）、离退休工作部、企业管理部（监事会办公室）、工会。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          9
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            519,
+            377
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            261
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "按照“原国网陕西电力编制+原陕西地方电力人数”原则确定人数规模，过渡期内只减不增。融合后，新国网陕西电力本部人数规模控制在668人以内，其中专职助理副总师10人、一级职员5人、部门负责人137人。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          9
+        ],
+        "bboxes": [
+          [
+            76,
+            386,
+            517,
+            490
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            98
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "四、综合服务中心融合方案",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          9
+        ],
+        "bboxes": [
+          [
+            108,
+            497,
+            304,
+            518
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            12
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（一）融合调整",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          9
+        ],
+        "bboxes": [
+          [
+            113,
+            525,
+            224,
+            544
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "一是将东区综合服务中心全部职责划入新公司综合服务中心。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          9
+        ],
+        "bboxes": [
+          [
+            76,
+            553,
+            515,
+            599
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            27
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "二是将南区人力资源部负责的社保及企业年金业务经办、退休档案审核、养老金待遇审核等职责，划入新公司综合服务中心保险业务部。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          9
+        ],
+        "bboxes": [
+          [
+            76,
+            609,
+            516,
+            682
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            60
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "三是将南区党委宣传部负责的新媒体编辑、影像、网站、",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          9
+        ],
+        "bboxes": [
+          [
+            111,
+            693,
+            508,
+            713
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            25
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "-9-",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          9
+        ],
+        "bboxes": [
+          [
+            455,
+            767,
+            507,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "美术编辑等职责，划入新公司综合服务中心融媒体中心。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          10
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            473,
+            126
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            25
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "四是将南区资金管理中心负责的资金管理操作实施业务，划入资金集约中心。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          10
+        ],
+        "bboxes": [
+          [
+            76,
+            133,
+            508,
+            180
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            34
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（二）人数规模",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          10
+        ],
+        "bboxes": [
+          [
+            113,
+            190,
+            226,
+            208
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "调整后，综合服务中心人数规模控制在115人，其中综合服务中心负责人5人、资金集约中心负责人3人。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          10
+        ],
+        "bboxes": [
+          [
+            76,
+            217,
+            515,
+            265
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            48
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "五、其他",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          10
+        ],
+        "bboxes": [
+          [
+            108,
+            274,
+            177,
+            293
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            4
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "list",
+    "title_type": -1,
+    "text": "1.根据《国家电网有限公司关于总部有关部门职责和北京电力交易中心有限公司机构编制调整的通知》（国家电网人事[2020]384号）精神，将陕西交易公司原承担的电力交易职能管理工作，移交给公司本部相关职能部门。将南区市场部负责的交易工作职责，划入陕西电力交易中心有限公司。 2.将南区办公室（党办、董办）下挂的车队融入新公司国网陕西后勤服务中心。调整后，车队人员的薪酬待遇水平，参照原东区本部划入国网陕西后勤服务中心的同类人员执行。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "list"
+        ],
+        "pages": [
+          10
+        ],
+        "bboxes": [
+          [
+            76,
+            301,
+            517,
+            517
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            214
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "附件：1.国网陕西省电力有限公司本部各部门职责",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          10
+        ],
+        "bboxes": [
+          [
+            108,
+            553,
+            462,
+            572
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            23
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "10",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          10
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "附件1-1",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          11
+        ],
+        "bboxes": [
+          [
+            77,
+            106,
+            138,
+            124
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            5
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 1,
+    "text": "国网陕西省电力有限公司本部各部门职责",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          11
+        ],
+        "bboxes": [
+          [
+            96,
+            155,
+            498,
+            184
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            18
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "一、办公室（党委办公室、董事会办公室）",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          11
+        ],
+        "bboxes": [
+          [
+            107,
+            217,
+            411,
+            237
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            19
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "认真贯彻执行党的路线方针政策，贯彻执行国家、上级单位和党组织有关规定及工作部署；协助领导协调和推进公司日常工作并督促落实；负责党委办公室日常管理工作；负责董事会办公室日常管理工作；负责制定“三重一大”相关工作规则、议事规则、决策程序等规章制度；负责行政值班管理和值班重大事项报告工作；负责会议的归口管理，负责重大活动的组织协调，公司重要公务接待工作；负责重点工作任务的督查督办；负责组织起草公司工作报告、重要文件、重要文稿等；负责信息工作的组织、管理和重要信息收集、分析、加工、利用；负责公司国际合作工作；负责处理群众来信来访、突发群体事件应急和维护稳定工作；负责值班、公文、保密、档案、机要、接待、文印、收发、电子文件管理和协同办公系统的管理及实用化等工作；归口管理外派办事机构，指导所属单位的办公室业务；归口管理公司调查研究和管理咨询工作；负责公司政策研究，开展公司发展战略研究、实施和评估等工作；负责公司智库管理等工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          11
+        ],
+        "bboxes": [
+          [
+            76,
+            245,
+            517,
+            686
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            413
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "二、发展策划部",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          11
+        ],
+        "bboxes": [
+          [
+            108,
+            692,
+            225,
+            713
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 11 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          11
+        ],
+        "bboxes": [
+          [
+            455,
+            767,
+            515,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行国家和上级单位有关规定及工作部署；根据国家电网公司发展总体规划，制定公司发展规划，会同各专业部门组织实施；负责宏观经济研究及电力市场分析预测；负责能源、电力规划等重大问题研究，负责新能源发展有关政策研究；负责组织编制本省电网发展总体规划和专项规划并组织实施，对跨省交直流电网规划提出发展需求，负责组织本省  110\\sim 750  千伏电网规划编制，负责组织地市公司电网规划评审，审批地市公司35千伏电网规划；负责将本省电网规划报送地方政府，纳入地方经济和社会发展规划；负责风电、光伏等新能源发电发展规划研究及管理；负责开展省内  330\\sim 750  千伏电网项目可研及前期工作；负责编制省内  330\\sim 750  千伏交流电网项目前期工作计划，并抄送国家电网公司总部及分部；批复110千伏及以下前期工作计划；负责组织开展  330\\sim 750  千伏可研、扩展性电力设施迁改（改变生产能力、改变电压等级、改变网络结构、改变通道资源使用方式等迁改）方案设计；组织省经研院开展110千伏电网项目可研、扩展性电力设施迁改方案评审，以及  330\\sim 750  千伏电网项目可研、扩展性电力设施迁改方案初审，委托国网经研院开展  330\\sim 750  千伏电网项目可研、扩展性电力设施迁改方案评审，并将330千伏电网项目可研、扩展性电力设施迁改方案评审意见报总部发展部；负责审批  110\\sim 330  千伏电网项目可研、扩展性电力设施迁改方案评审方案评审意见报总部发展部；负责落实辖区内各电压等级电网项目前期条件，负责省级政府投资主管部门核准",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          12
+        ],
+        "bboxes": [
+          [
+            76,
+            104,
+            519,
+            718
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            688
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 12 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          12
+        ],
+        "bboxes": [
+          [
+            94,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "电网项目的上报与核准；负责组织并会同项目业主委托有资质的单位开展  110\\sim 750  千伏电源、330千伏用户接入系统设计；负责编制规模以下、不影响电力结构布局和总量控制的电源接入系统评审安排；负责受理国家投资主管部门核准电源的接入系统申请；负责委托有资质的咨询机构，对接入500千伏及以上电压等级的电源（用户）接入系统设计评审；负责组织省经研院对  110\\sim 330  千伏的电源（用户）接入系统方案开展评审；负责综合计划项目储备库归口管理，负责综合计划的统一编制、统一上报、统一下达、统一调整；负责生产经营计划编制、调整、跟踪分析、考核考评；负责公司发电量、购电量、售电量计划管理；负责年度电力电量平衡工作；负责公司购售电合同、输电服务合同签订和管理；负责公司省间交易计划电量管理；负责年度优先发用电计划管理；负责年度优先发电计划的月分解；负责线损归口管理和线损计划管理，负责城、乡电网电压无功管理；负责组织各部门、各单位按照公司统一下达的综合计划分解实施、检查监督，承担公司节能减排领导小组办公室管理；负责投资归口管理，负责重大投资问题及国家投资政策研究，负责投资方面的监督、检查、考核和迎审，负责中央预算内投资计划管理，负责中央预算内投资计划编制、上报和分解下达，负责电网基建投资、零星购置管理，负责电网基建投资、零星购置计划建议编制、上报和分解下达、调整及计划执行情况分析，负责公司电网基建（含调峰调频电源）投资新开",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          13
+        ],
+        "bboxes": [
+          [
+            76,
+            104,
+            519,
+            718
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            620
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "13",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          13
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            515,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "工项目备案管理，负责公司直接投资工程项目的资金计划管理；负责电网发展诊断分析和投资绩效评价；负责组织协调小型基建、生产技改、生产辅助技改、生产大修、生产辅助大修、电力营销投入、电网信息化、研究开发等专项投资项目可研、储备项目集中评审；负责公司各专业投资项目后评价的归口管理，负责编制投资项目后评价计划建议，组织开展投资项目后评价工作；负责公司统计归口管理，负责电力生产统计、固定资产投资统计、能源消耗及节能减排统计、农电统计、设备统计、公司“一套表”统计等，负责开展统计调查与分析，负责统计数据发布，负责行业统计、监管统计及政府统计报送工作，负责组织开展经济活动分析；按业务职责负责规划计划管理系统各模块应用；负责公司咨询单位资质管理；负责公司规划设计单位的业务归口管理。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          14
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            519,
+            462
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            336
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "三、财务资产部",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          14
+        ],
+        "bboxes": [
+          [
+            108,
+            469,
+            226,
+            489
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行国家和上级单位有关政策标准和工作部署；建立健全全省公司各项财务管理工作的制度标准；负责研究拟订省公司财务战略、财务中长期规划、资产经营目标并组织实施；建立健全全省公司全面预算管理体系，深化细化预算管理，编制省公司财务预算、决算和利润分配方案并组织实施、分析、考核和监督检查；负责统筹平衡财务能力与投入需求，组织相关专业部门研究提出业务预算建议方案；参与电网发展规划编制，提出财务分析建议；负责公司成本管理；负责公司会计核算管",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          14
+        ],
+        "bboxes": [
+          [
+            76,
+            497,
+            519,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            216
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "14",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          14
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "理；负责公司资产管理、产融协同管理；负责公司全面风险与内部控制工作；负责财务评价与稽核管理；负责公司资金统一管理及银行信贷、融资、税务、保险、担保、抵押和资信等业务管理；负责财产保险业务管理；负责公司各类固定资产投资项目全过程财务管理；负责公司电价、收费和价外资金管理，落实国家及公司的电价政策规定，争取电价收费政策支持，规范所属单位电价管理；负责所辖电网上网电量、跨区跨省交易电量的电费、（配）售电公司交易电费的账单核对及支付管理；负责牵头组织输配电价定价成本监审与核价，推动适应改革优化经营管理策略；负责可再生能源发电项目补贴资金的申请与支付管理；负责财税政策争取，财政资金管理；负责编制省公司本部、合并口径财务快报、月报及年度财务决算报表，负责监督指导所属单位财务报表编制工作，负责财务分析工作；负责公司本部财务预算、核算、报表、业绩考核及其他综合性工作；按照公司总部统一部署做好财务管控系统的建设应用；负责公司会计机构管理和财会队伍建设等工作；负责指导省管产业单位财务资产相关管理工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          15
+        ],
+        "bboxes": [
+          [
+            76,
+            104,
+            519,
+            574
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            447
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "四、资本运营部",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          15
+        ],
+        "bboxes": [
+          [
+            108,
+            581,
+            226,
+            600
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "负责公司产权管理；负责公司对外股权投资及投资收益管理工作；负责对公司各级全资及参、控股子公司股权投后管理、公司法人治理实施管理监督；负责亏损子企业治理；负责公司上市、资产证券化及市值管理工作；负责组织研究确定全资、",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          15
+        ],
+        "bboxes": [
+          [
+            76,
+            608,
+            517,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            107
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "15",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          15
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            515,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "控股子公司资本运营模式，主持开展与子公司产权管理，资产配置、股权调整、注册资本增减、改革、改制、及资产重组等与资本运营相关的各项工作；负责子公司融资、担保、抵押、捐赠的计划、审批及资信管理日常工作；负责组织子公司研究提出预算目标建议，预算分解下达、督导落实工作；负责组织子公司开展经营活动分析，监管经营情况及投资收益；负责子公司股权投资、基建投资、零星购置等专项投资的意向、遴选、储备、计划的审批、管理、实施及风险防控工作；负责子公司投资项目后评价的归口管理。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          16
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            520,
+            350
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            230
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "五、战略规划部",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          16
+        ],
+        "bboxes": [
+          [
+            108,
+            358,
+            226,
+            377
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "负责企业结构调整优化主业发展工作；负责推进所属子公司主辅分离工作，组织协调系统内企业的分离、解散、清算和僵尸企业的处置工作，规范改革和重组管理，督促落实改革方案的实施，以及融合发展遗留问题处置；负责指导与监督所属子公司相关业务工作，完成公司交办的其它工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          16
+        ],
+        "bboxes": [
+          [
+            76,
+            386,
+            519,
+            519
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            128
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "六、安全监察部（保卫部）",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          16
+        ],
+        "bboxes": [
+          [
+            108,
+            525,
+            299,
+            544
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            12
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行政府和总部有关规定及工作部署；负责制定公司安全监察、督查和应急管理方面的规章制度；负责对公司电网运行、输电、变电、直流系统、基建、省管产业、发电、供用电、农电、网络与信息通信、交通等专业进行安全监督、检查和评价；负责公司安全事件的调查、分析和处理；负责特种作业人员、重大危险源、危险物品、安全工器具以及特种设备的",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          16
+        ],
+        "bboxes": [
+          [
+            76,
+            553,
+            519,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            160
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "16",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          16
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "监督管理；负责公司电力设施保护、防汛、防灾减灾的监督检查；编制安全应急规划并组织实施；组织协调公司应急体系建设，负责公司应急管理日常工作；负责归口管理公司安全生产事故隐患排查治理工作并进行监督、检查与评价；负责归口管理公司安全技术及劳动保护措施计划并进行监督、检查和评价；负责公司安全管理及安全技术技能培训工作组织并监督落实。负责公司系统内部治安、消防安全监督管理工作；配合开展电力设施保护、电能保护、反窃电等工作；负责人民武装（预备役）、人民防空工作；协助公安机关和国家安全机关侦破危害公司系统的刑事案件和政治案件，参与处置重大治安案件和群体突发事件；配合实施公司系统变电站安防、消防防范措施完善的监督管理工作；负责公司本部领导人员因私出国（境）备案信息报送工作；负责公司本部集体户口的管理工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          17
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            520,
+            464
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            349
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "七、设备管理部",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          17
+        ],
+        "bboxes": [
+          [
+            108,
+            470,
+            226,
+            489
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行国家和上级单位有关规定及工作部署；负责35千伏及以上主网设备运维检修、监控和主网运检体系建设运行管理；负责电网设备全过程技术监督归口管理，负责运检阶段主网设备技术监督实施；负责电网一次设备质量归口管理，负责主网一次设备质量监督实施；负责主网运检绩效管理；负责编制主网检修计划并组织实施；负责主网设备技改大修零购管理；负责主网实物资产管理；负责资产全寿命周期归口管理；负责主网资产运维合同及运维费用管理；负责生产服务用车制度标",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          17
+        ],
+        "bboxes": [
+          [
+            76,
+            497,
+            519,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            216
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "17",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          17
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            515,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "准制定、使用监督考核等专业管理；负责状态检修归口管理，负责主网设备状态检修组织实施；负责组织主网建设改造工程验收；负责主网设备运检业务外包管理；负责主网运检信息化、智能化建设及应用；负责水电设备设施运检管理；负责电网电压无功工作实施和统计分析归口管理；负责电网谐波和技术线损归口管理；负责防汛归口管理，负责主网防汛抢险组织实施；负责主网防灾减灾和新设备（新装置）挂网试运行等管理；负责主网运检职工创新管理；负责主网电力设施保护和消防管理，负责主网和水电（抽蓄）设施安防、安保设备运检管理；负责主网线路通道防护管理；负责主网电力设施迁改工程管理；负责生产成本精益管理；负责现代设备管理体系管理；负责智能运检及新技术应用；负责森林草原防火及主网设备重大活动保电；负责主网运检管理方面重大问题的协调和处理。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          18
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            520,
+            462
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            350
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "八、配网管理部",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          18
+        ],
+        "bboxes": [
+          [
+            108,
+            470,
+            226,
+            489
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行政府和总部关于配网工作的有关规定及工作部署；负责公司10千伏及以下配网（产权分界点之前电网侧或表箱前）规划、建设、运检、抢修等全业务链条管理和考核评价。负责组织10千伏及以下配电网规划的编制、评审。负责配网工程的计划、可研初设、造价、建设（含安全、质量、进度）、物资管理；负责牵头农网专项工程管理以及中央预算内10千伏及以下农网工程建设管理；负责配网标准化建设管理；负责配网新技术推广应用、分布式电源（储能装置）接入技术管理等。负",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          18
+        ],
+        "bboxes": [
+          [
+            76,
+            497,
+            527,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            219
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 18 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          18
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "责配网运维管理；负责配网现场工作计划、检修工艺、现场标准化作业管理；负责配网带电作业、状态检修、技改大修零购管理；负责配网电缆及通道管理；负责重要活动配网供电保障管理；负责供电所配电业务管理；负责配电业务外包管理；负责配网电力设施保护和消防、防灾减灾、设备实物资产管理。负责供电可靠性归口管理以及配网供电可靠性管理；负责配网投诉及抢修管理；负责供电服务指挥业务管理；负责10千伏同期线损管理；负责配电自动化建设、改造及运维管理；负责配网信息系统管理；负责配网数字化管理。在公司设备管理部归口管理下，负责组织配网设备技术监督、电能质量、设备质量监督、技术线损、防汛、资产全寿命周期等工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          19
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            519,
+            407
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            293
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "九、市场营销部（农电工作部）",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          19
+        ],
+        "bboxes": [
+          [
+            108,
+            413,
+            331,
+            433
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            14
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "负责贯彻执行政府和总部有关规定及工作部署；负责公司营销规划、计划制定与组织实施；负责公司售电侧改革；负责综合计划中相关指标管理和营销业务对标管理；负责营销投入和成本项目管理；负责营销现场作业标准化和安全管理；负责营销员工培训和人才梯队建设；负责市场开拓、能效服务、电能替代、电力需求侧管理、有序用电、短期电力市场分析与预测、优先用电需求测算业务归口管理；负责年、月负荷预测及迎峰度夏（冬）平衡预测；负责综合能源、电动汽车、港口岸电等业务发展管理；负责客户侧源网荷储服务；负责自备电厂管理；负责优化营商环境、业扩报装、供电营业区管理、供用",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          19
+        ],
+        "bboxes": [
+          [
+            75,
+            441,
+            519,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            268
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "19",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          19
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            515,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "电合同、营业档案、营业收费管理；负责销售电价执行，电费抄表、核算、收费、明细账务管理以及缴费渠道建设和应用管理；负责经营性和非经营性电力用户档案管理及维护；负责售电公司代理用户和未参与市场用户购电量清分管理；负责各类发电企业、电网企业、售电公司、电力用户最终购售电费计收管理；负责供电营业区管理；负责分布式电源并网服务管理；负责35千伏及以下客户供电方案职能管理；负责计量体系建设与运行、计量监督、计量资产全寿命周期管理；负责计量标准管理、计量检定授权申请；负责电能计量故障、差错的调查处理归口管理；负责计量装置和用电信息采集系统建设与运行管理；负责0.4千伏与专线用户线损管理。负责网上国网、实体营业厅等服务渠道管理；负责供电服务品质、客户关系、营业窗口服务、95598客户服务管理及供电服务品牌推广、优质服务活动策划；负责用电检查、反窃查违、高危及重要客户安全管理；负责重大活动客户保电、供电服务突发事件应急响应；负责电动汽车联网平台及充换电建设、运营服务；负责营销稽查管理和业务质量管控；负责营销信息系统建设推广及业务应用管理；负责营销网络安全及客户数据安全管理；负责省营销服务中心业务管理；负责归口管理乡村振兴工作，承担领导小组办公室日常工作；负责牵头乡村电气化建设和电力服务“三农”政策研究；负责乡镇供电所综合管理工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          20
+        ],
+        "bboxes": [
+          [
+            76,
+            104,
+            519,
+            686
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            565
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "十、科技互联网部",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          20
+        ],
+        "bboxes": [
+          [
+            108,
+            692,
+            240,
+            711
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            8
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 20 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          20
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            153,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行政府和总部有关规定及工作部署；负责编制公司科技、环境保护规划和计划并组织实施；负责研究开发费专项计划管理；负责公司科技项目、技术攻关、科技奖励、知识产权、成果转化的组织协调；负责国家电网公司和公司所属专业实验室、科技攻关团队的归口管理；负责公司技术标准的归口管理；负责新技术、新材料、新工艺的推广；负责公司电网建设项目环境保护和水土保持工作的归口管理；负责330千伏及以上电网建设项目竣工环境保护验收和水土保持设施验收管理；负责公司环境保护、水土保持、职业卫生以及110千伏电网建设项目竣工环境保护验收和水土保持设施验收的监督工作。负责公司数字化建设、数据资产管理、运营监测分析、信息系统调运检相关业务的归口管理；负责组织开展数字化发展研究和企业中台建设，推动公司数字化转型；负责编制公司数字化规划、年度计划并组织实施；负责统筹组织先进信息技术的研发应用，推动信息技术与能源技术融合发展；负责组织公司数字化及能源互联网相关重大项目建设和运行管理；负责网络与信息安全归口管理；负责公司公共通信网络管理；负责组织公司数字化新兴产业运营管理；负责牵头协调和处理数字化及能源互联网业务方面的重大问题；负责受国家电网公司委托的西北分部运维、西安数据中心建设运维等相关业务的归口管理。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          21
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            520,
+            661
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            540
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "十一、建设部",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          21
+        ],
+        "bboxes": [
+          [
+            108,
+            665,
+            208,
+            684
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行国家、行业、国家电网公司及公司建设管理制度、",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          21
+        ],
+        "bboxes": [
+          [
+            108,
+            692,
+            517,
+            713
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            26
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 21 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          21
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            514,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "标准并监督执行；负责输变电工程前期管理；负责110千伏及以上常规工程的初步设计批复；负责公司投资35千伏及以上电网建设工程安全、质量、进度计划、技术、技经等职能管理工作；负责工程设计、基建新技术研究和应用等管理工作；负责330千伏及以上重点工程的统筹协调工作；参与公司电网发展规划编制；对国网陕西经研院、国网陕西建设公司、地市公司建设管理工作进行评价考核；负责国家电网公司总部投资或管理工程的属地协调管理工作；负责代表公司履行国家电网有限公司委托公司承担的特高压工程建设管理；负责业主施工监理项目部标准化建设；负责公司基建队伍专业管理；负责公司重大施工装备信息管理；负责基建信息化建设及深化应用管理；负责定额站、质监中心站业务管理。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          22
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            520,
+            435
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            316
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "十二、物资部(招投标管理中心)",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          22
+        ],
+        "bboxes": [
+          [
+            108,
+            441,
+            332,
+            462
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            15
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "负责根据上级规划组织编制物资管理规划并组织实施；负责物资的计划、采购、合同、质量监督、仓储调配、应急物资、废旧物资处置、供应商关系、标准化、信息化、档案管理（文件归档）、监察等物资全供应链的归口管理；负责服务项目的需求计划和采购管理；负责集中采购范围内采购活动的组织实施，配合总部集中采购工作；负责省公司直接管理项目的物资合同及供应管理；负责公司仓储网络规划建设；负责公司应急物资储备和跨地（市）物资调配管理；负责在设备采购、设备制造、设备验收阶段落实总部技术监督精益化管理要求，组织",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          22
+        ],
+        "bboxes": [
+          [
+            76,
+            469,
+            519,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            242
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 22 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          22
+        ],
+        "bboxes": [
+          [
+            94,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "监督问题整改；负责供应商不良行为信息的收集、审核，上报总部集中采购范围的供应商不良行为信息，处理集中采购范围的供应商不良行为；负责对采购计划审查、资质能力核实、评标、监察等各类专家的管理工作进行业务指导和监督管理；按照总部要求参与现代智慧供应链体系顶层规划和总体业务设计工作，具体承担信息化项目的试点、推广工作和管理咨询、科技项目的研究工作；负责供应链运营中心体系建设及运营管理；负责对物资管理全过程进行指导、监督、检查和考核；负责对产业单位物资采购管理进行业务指导；配合总部开展物资管理其他工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          23
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            520,
+            377
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            249
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "十三、审计部",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          23
+        ],
+        "bboxes": [
+          [
+            108,
+            386,
+            208,
+            404
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "全面履行公司审计专业管理责任，统筹制定公司年度审计工作计划并组织实施；负责建立健全审计管理制度、审计工作标准及审计信息化建设应用；负责对审计中心及公司各直属单位审计工作安排、绩效考核以及业务质量审核、评价；牵头组织公司系统迎接内外部审计工作；负责组织会审和分析审计发现的问题，并下发审计报告和下达审计决定；负责审计发现问题整改质量的管理，牵头组织督促各类问题整改和审计成果运用；负责定期向公司领导和审计委员会汇报审计情况并提出管理意见；负责公司系统审计队伍建设，组织开展公司系统审计人员的理论及业务培训。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          23
+        ],
+        "bboxes": [
+          [
+            75,
+            413,
+            519,
+            686
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            252
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "十四、法律合规部（体改办）",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          23
+        ],
+        "bboxes": [
+          [
+            108,
+            693,
+            314,
+            712
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            13
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 23 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          23
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            514,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "负责公司法治企业建设，开展依法治理活动；负责公司合规体系建设，开展公司重大决策合法合规性审核；负责公司法律风险管理，针对法律风险多发领域开展管控与监督；负责公司规章制度审核与归口管理；负责公司合同法律审核与管理；负责公司授权管理；负责公司诉讼案件及非诉业务管理；负责公司外聘律师及公司律师管理；负责公司法治宣传和教育；负责公司改革经营中涉及法律、法规等方面的课题研究；负责牵头管理公司章程；负责工商登记管理；负责公司及所属单位的商标、商誉、专利技术等知识产权的法律保护；负责公司重大项目和招投标法律保障；负责公司立法配合工作。负责公司及所属单位运营中有关法律法规的政策咨询、法律监督与服务。负责公司体制改革工作；负责组织研究制定公司相关企业改革、改制、重组方案并指导实施；负责公司主多分开和厂办大集体改革研究、方案制定及实施工作；负责增量配电业务放开改革试点政策合规性审查及评价工作；负责混合所有制改革的统筹推进工作；负责农电体制改革工作等职责；负责指导法律服务保障中心业务。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          24
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            519,
+            574
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            438
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "十五、人力资源部（社保中心）",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          24
+        ],
+        "bboxes": [
+          [
+            108,
+            581,
+            331,
+            602
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            14
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "负责公司人力资源规划的制定与组织实施；负责公司及本部机构编制、岗位体系、劳动定员管理工作；负责公司人力资源统计、分析工作；负责公司人力资源信息化、数字化工作；负责公司高校毕业生招聘、复转军人接收安置、市场化单位社",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          24
+        ],
+        "bboxes": [
+          [
+            76,
+            608,
+            517,
+            714
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            106
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 24 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          24
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            154,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "会招聘等员工入口管理，指导各单位开展需求计划编制、新员工入职管理；负责劳动用工计划和劳动关系管理；负责公司供电服务职工、劳务派遣用工及其他用工管理，指导各单位做好招聘、在岗及退出管理；根据公司人力资源管理规定指导直属各单位职员职级管理；负责公司内部人力资源市场建设与运营管理，指导各单位开展内部人力资源合理调配与优化配置；负责公司工资收入分配管理；负责业绩考核、全员绩效和考勤管理；负责公司奖惩归口管理工作；负责公司福利归口管理工作；负责公司社会保险、补充医疗保险、企业年金、住房公积金的职能管理；负责公司员工培训培养、优秀人才队伍建设、职称评定、职业技能等级评价工作；负责省管产业单位用工总量计划（含主业支援人员、省管产业单位直签职工）、工资总额计划管理，负责审核省管产业重要人力资源管理制度，指导省管产业单位人力资源管理。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          25
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            519,
+            491
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            363
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "十六、后勤工作部",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          25
+        ],
+        "bboxes": [
+          [
+            108,
+            497,
+            240,
+            515
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            8
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行国家和上级单位有关规定及工作部署；负责建立公司后勤一体化工作体系，负责制定公司后勤建设规划、全面风险管理报告等并组织实施；归口管理公司后勤及物业服务工作；负责公司后勤制度标准化建设、后勤数字化智慧平台建设应用，信息化推广组织实施及实物资产ID管理；负责公司后勤领域安全专业管理，组织落实公司后勤系统安全隐患排查治理工作；负责公司办公设备（用品）、家器具等后勤实物及保障",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          25
+        ],
+        "bboxes": [
+          [
+            76,
+            525,
+            519,
+            714
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            188
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 25 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          25
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            513,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "服务归口管理；负责公司公务车辆，统一车辆管理平台归口管理；负责公司医疗卫生、疫情防控、员工健康体检、计划生育等政策落实工作；负责公司系统员工宿舍、食堂等福利机构归口管理；负责公司电网小型基建、生产辅助技改、生产辅助大修及房屋日常维修归口管理；负责公司供电所房屋建设及维修、改造归口管理；负责公司系统住房制度改革、非生产性房地产拆迁改造等政策指导和督促落实工作；负责公司办公用房、易地交流领导人员周转房业务指导、归口管理；负责公司所属办公及非生产性房屋及其附属设施设备、所有土地类资产管理；负责公司后勤培训工作；负责公司系统属地后勤应急保障归口管理；负责公司后勤业务专业考核和电网小型基建、生产辅助技改、大修、房屋日常维修、后勤保障、物业管理考核评价的归口管理；负责公司本部后勤业务计划管理、审核和监督执行工作；负责公司本部办公用房、周转房、职工公寓、公有住房管理的制度、标准制定及调整分配方案制定；负责本部员工体检、计划生育等政策和系统生活福利的落实工作；负责配合本部巡视、审计等工作；负责后勤工作部综合事务管理工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          26
+        ],
+        "bboxes": [
+          [
+            76,
+            104,
+            519,
+            576
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            459
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "十七、党委党建部（思想政治工作部、团委）",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          26
+        ],
+        "bboxes": [
+          [
+            107,
+            581,
+            426,
+            602
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            20
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "指导公司系统党建工作；负责公司党建工作领导小组办公室日常工作。负责制定公司党建工作规划、计划；负责公司党建信息化及党内统计工作；负责检查考核、督促落实党建工作责任制；负责公司本部服务协同沟通考核工作。负责公司党的",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          26
+        ],
+        "bboxes": [
+          [
+            76,
+            608,
+            517,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            106
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 26 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          26
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "组织建设，指导基层党组织的设置、调整、换届选举；负责基层党组织负责人队伍建设；负责公司系统党费管理。负责公司系统党员教育、管理、服务工作，组织开展基层党组织负责人及党员日常教育培训；负责公司系统共产党员服务队建设与管理工作。负责公司党委理论学习中心组学习服务，指导、检查和考核各单位党委理论学习中心组学习情况；负责公司党的思想建设，组织开展党员队伍理论武装，开展形势任务教育，开展员工思想动态调研；负责公司系统企业文化建设管理；负责公司精神文明建设工作；负责公司统战工作。负责公司系统共青团工作和青年工作；负责公司本部党委日常工作；负责指导公司党校工作；负责公司党委交办的其他工作任务。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          27
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            519,
+            407
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            293
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "十八、党委组织部（人事董事部）",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          27
+        ],
+        "bboxes": [
+          [
+            108,
+            413,
+            349,
+            433
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            15
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻党的组织路线，落实上级党组织工作要求，研究提出具体措施；坚持党管干部原则，建立适应现代企业制度要求和市场竞争需要的选人用人机制；负责公司领导班子和领导人员队伍的整体规划和体制机制建设；负责公司全资、控股和直属单位领导班子的建设、管理、监督、考核；负责公司党委管理领导人员的考察考核、选拔任用、教育培训和监督管理；负责公司党委管理领导人员和本部员工因私出国（境）等日常管理工作；负责向公司控股企业、参股企业委派或更换股东代表，推荐董事会、监事会成员及公司外派董事监事的管理；负责制定公司本部人力资源管理方面的规章制度和办法；负责公司本",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          27
+        ],
+        "bboxes": [
+          [
+            76,
+            441,
+            519,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            268
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 27 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          27
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            515,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "部人员调配、考核、薪酬、福利保障等人力资源管理；负责公司优秀年轻领导人员队伍建设；负责落实公司领导人员监督有关制度，对公司各单位选人用人工作进行监督检查；负责公司系统三级及以上职员和公司本部职员管理，参考领导人员管理规定指导直属各单位四、五级职员管理；负责承接上级组织人事部门组织的相关挂职培养锻炼、人才帮扶等人员选派工作；负责公司人事档案归口管理；负责指导省管产业单位组织人事管理。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          28
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            520,
+            320
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            192
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "十九、党委宣传部（对外联络部）",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          28
+        ],
+        "bboxes": [
+          [
+            107,
+            329,
+            349,
+            349
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            15
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "在公司党委领导下，贯彻好党对宣传工作的方针政策和决策部署，落实好党管宣传、党管意识形态、党管媒体各项工作要求，做好公司党的宣传工作。负责公司系统新闻宣传、意识形态、品牌推广、社会责任及舆情管控工作；负责编制公司新闻宣传、意识形态、品牌维护、社会责任及舆情管控相关管理制度和工作规定，并开展考核评价；负责公司系统宣传队伍建设和业务培训工作；负责公司系统新闻发言人队伍建设及对外新闻发布日常管理；负责联络沟通上级宣传主管部门及外部社会媒体，协调各单位组织开展对外主题宣传、形势宣传、政策宣传、成就宣传和典型宣传；负责直管综合服务中心媒体业务，指导融媒体中心做好公司自有媒体日常管理，组织开展内部宣传及在国网媒体、行业媒体的宣传工作；负责落实“两个所有”要求，做好公司系统宣传阵地建设，统筹协调媒体融合发展；",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          28
+        ],
+        "bboxes": [
+          [
+            76,
+            357,
+            519,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            351
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 28 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          28
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "负责公司意识形态工作责任制领导小组办公室日常工作，检查考核、督促落实意识形态工作责任制；负责公司舆情监测、分析研判、舆论引导、应对处置工作，指导公司所属单位落实属地管理责任，开展协同处置；负责公司“国家电网”品牌标识应用管理工作，负责公司社会责任管理实践、社会根植项目、社会责任示范基地建设管理等工作，负责编制并发布年度《服务陕西地方经济社会发展报告》，负责公司对外捐赠、爱心公益管理及公益品牌建设等工作，负责公司影视推广、展览展示、广告宣传等管理工作。在国家电网公司的授权下，负责公司国家电网品牌实验室的管理、运行、提升等工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          29
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            520,
+            379
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            265
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "二十、纪委办公室（巡察办）",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          29
+        ],
+        "bboxes": [
+          [
+            108,
+            386,
+            315,
+            404
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            13
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "负责本单位党的纪律检查工作，贯彻落实党中央关于纪律检查工作的决定，维护党的章程和其他党内法规，督促党组织和党员干部树牢“四个意识”、坚定“四个自信”、做到“两个维护”，监督检查党的路线方针政策和重大决策部署落实；贯彻落实上级党组织和公司纪委工作部署，协助党委推进全面从严治党、加强党风建设和组织协调反腐败工作；监督检查同级和下级党委落实管党治党主体责任的情况，指导、检查、督促下级纪委落实监督责任；坚持“监督的监督”定位，监督推动各职能部门落实好对本专业、本领域的监督职责；协助党委开展党风廉政建设责任制考核；依照党的章程和其他党内法规履行监督、执纪、问责职责，负责经常对党员进行遵守纪律的",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          29
+        ],
+        "bboxes": [
+          [
+            75,
+            413,
+            519,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            295
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 29 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          29
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            515,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "教育，作出维护党纪的决定；对党委及班子成员、党委批准设立的党的组织和党委管理的领导人员，以及关键业务和重要岗位员工履行职责、行使权力进行监督，受理、处置党员群众检举举报，开展谈话提醒、约谈函询；检查和处理党委批准设立的党的组织和党委管理的党员领导人员违反党的章程和其他党内法规的案件，决定或者取消对这些案件中的党员的处分；进行问责或者提出责任追究的建议；受理党员的控告和申诉，保障党员的权利；负责组织协调本单位党风廉政建设和反腐败的宣传教育工作；落实“两为主”要求，接受公司纪委或上级纪委的领导和考核，加强对本部纪委和下级纪委的领导，组织对下级纪委书记开展履职专项考核、对下级纪检机构开展考核；负责纪检队伍监督管理、教育培训工作；监督检查中发现涉嫌职务违法、职务犯罪问题，及时层报至中央纪委国家监委驻国家电网有限公司纪检监察组；根据工作需要，加强与地方纪委监委的工作联系和配合。负责向公司巡察工作领导小组报告工作，传达领导小组决策部署，统筹、协调并指导巡察组开展工作；承担政策研究、制度建设等工作；负责研究制定巡察工作计划并组织实施，了解掌握巡察工作进展情况，对发现的问题进行研究，提出处理意见、建议；负责对领导小组决策事项进行督办；配合有关部门对巡察工作人员进行培训、考核、监督和管理。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          30
+        ],
+        "bboxes": [
+          [
+            76,
+            104,
+            519,
+            686
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            544
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "二十一、离退休工作部",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          30
+        ],
+        "bboxes": [
+          [
+            108,
+            692,
+            274,
+            713
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            10
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 30 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          30
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行国家和上级单位有关规定及工作部署；负责组织协调公司本部管理的离退休人员有关政治、生活待遇政策的落实及思想政治、党支部建设工作；负责公司本部管理的离退休人员的服务与管理；负责公司离退休人员信息统计工作；负责处理公司离退休人员来信来访和维护离退休队伍稳定工作；开展健康、有益的活动，丰富离退休人员的生活；负责指导公司系统离退休人员服务管理工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          31
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            520,
+            295
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            174
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "二十二、企业管理部（监事会办公室）",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          31
+        ],
+        "bboxes": [
+          [
+            107,
+            301,
+            379,
+            321
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            17
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行国家和上级单位有关规定及工作部署；负责监事会办公室日常工作；负责企业基础管理研究与建设，国际标准管理体系和管理方法应用工作；负责企业管理创新工作；负责企业管理诊断、管理品牌建设工作；负责组织开展公司内部对标和国际对标工作；负责公司系统社团工作的归口管理；负责公司大事记、史志、年鉴编制工作；负责企业全面质量管理（QC）工作；负责信用体系建设与评价；负责卓越绩效体系建设和管理工作；归口标准化管理工作，负责发布公司技术标准，负责标准化日常工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          31
+        ],
+        "bboxes": [
+          [
+            75,
+            329,
+            520,
+            574
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            225
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "二十三、工会",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          31
+        ],
+        "bboxes": [
+          [
+            108,
+            581,
+            208,
+            600
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行国家和上级单位有关规定及工作部署；负责公司系统各级工会组织建设工作、建设职工之家和工会会员的会籍管理；负责组织职工参与公司民主选举、民主决策、民主管理和民主监督；参与公司涉及职工权益的重要决策，促进劳动关",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          31
+        ],
+        "bboxes": [
+          [
+            76,
+            609,
+            517,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            106
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "31",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          31
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            515,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "系和谐，维护职工合法权益；负责《集体合同》履约情况的监督、检查，协调劳动关系；职代会闭会期间，负责组织、协调落实职代会决定的有关工作；负责维护职工的安全与健康，保障女职工特殊权益；负责劳动保护管理的监督；负责组织开展群众性经济技术创新、合理化建议、劳动竞赛等活动；负责班组建设工作；负责组织本单位职工疗养；负责本单位困难职工的统计、帮扶等具体实施工作；负责劳动模范等先进的评选和表彰工作；负责工会队伍及职工文化人才培养；负责开展职工文体活动；负责工会经费的收缴和使用管理；负责省公司本部工会工作；负责省管产业单位民主管理相关工作。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          32
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            520,
+            379
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            265
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "二十四、电力调度控制中心",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          32
+        ],
+        "bboxes": [
+          [
+            108,
+            386,
+            305,
+            404
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            12
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "贯彻执行国家和上级单位有关规定及工作部署；负责编制公司调控运行规划并组织实施；参与电网发展规划编制，提出电力需求预测、电网发展和系统二次发展的需求和建议，组织开展过渡期电网安全分析校核；负责落实国家电网调度标准化建设、同质化管理要求，承担本省电网调度运行、调度计划、水电及新能源、系统运行、继电保护、自动化、电力通信等各专业管理职责；负责调度管辖省域内部分330千伏系统，直调所辖电厂；负责调度管辖电网继电保护整定计算工作；负责发电厂并网运行管理；负责水电及新能源的调度运行管理，负责直调水电厂的水库调度；负责全省电力电量平衡工作；负责统筹制定发输变电设备停电（检修）计划，辨识停电风险、发布",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          32
+        ],
+        "bboxes": [
+          [
+            76,
+            413,
+            519,
+            715
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            296
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 32 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          32
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "风险预警；负责按照交易规则开展电量交易及辅助服务在内的现货市场建设和运营；负责新建电源的并网调度协议签订及电力业务许可管理；负责发电计划管理；负责电力燃料专业管理工作；负责公司通信建设、运行、检修管理；负责地（市）县调控业务一体化运作和配网抢修指挥职能管理；负责电网技术中心业务管理。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          33
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            517,
+            264
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            142
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "-33-",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          33
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            513,
+            779
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            4
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "附件2",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          34
+        ],
+        "bboxes": [
+          [
+            77,
+            107,
+            126,
+            126
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 1,
+    "text": "国网陕西省电力有限公司直属单位组织机构融合工作方案",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          34
+        ],
+        "bboxes": [
+          [
+            142,
+            158,
+            452,
+            216
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            25
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "为全面支撑陕西电网融合发展，有序推进直属单位机构融合，按照《国网人资部关于陕西电网融合发展需要支持事项的复函》（人资计函〔2021〕7号）要求，结合实际，制定国网陕西省电力有限公司直属单位组织机构融合工作方案。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          34
+        ],
+        "bboxes": [
+          [
+            76,
+            251,
+            517,
+            359
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            105
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "一、现状及差异分析",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          34
+        ],
+        "bboxes": [
+          [
+            111,
+            367,
+            261,
+            386
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            9
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（一）原国网陕西电力",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          34
+        ],
+        "bboxes": [
+          [
+            114,
+            396,
+            271,
+            414
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            10
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "截至2021年6月底，原国网陕西电力（以下简称“东区”）有直属单位26家，其中地市供电公司11家、省级业务单位11家、后勤服务中心1家、水电厂1家、控股交易公司1家、控股公司1家；县供电公司30家；另有合资公司3家。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          34
+        ],
+        "bboxes": [
+          [
+            76,
+            425,
+            519,
+            531
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            108
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（二）原陕西地方电力",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          34
+        ],
+        "bboxes": [
+          [
+            113,
+            541,
+            272,
+            560
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            10
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "截至2021年6月底，原陕西地方电力（以下简称“南区”）有直属单位19家，其中地市供电分公司9家、二级子公司9家、培训中心1家；三级子公司38家、四级子公司107家、五级子公司5家（均为全资或控股子公司）；所属县级供电分公司70家。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          34
+        ],
+        "bboxes": [
+          [
+            76,
+            570,
+            519,
+            704
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            116
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（三）差异分析",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          34
+        ],
+        "bboxes": [
+          [
+            114,
+            714,
+            225,
+            733
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "34",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          34
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "1.直属单位层面。南区所属19家直属单位，与东区直属单位业务基本对应，其中股权投资公司、投资控股公司为特有业务，主要涉及医院、酒业、银行等参股业务，以及房地产、物业服务等控股业务。南区和东区所辖县公司中，在西安周至、榆林神木2个县域存在“一县两公司”情况。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          35
+        ],
+        "bboxes": [
+          [
+            76,
+            105,
+            517,
+            243
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            128
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "2.地市公司内设机构层面。东区11家地市供电公司内设机构按照《内设机构设置标准》分档管理，各地市供电公司运检业务按照“一部三中心”设置机构，营配业务因地制宜设置管、办机构。同时，各地市供电公司城区、大型工业园区设置了18个内设机构性质的供电服务分（支）公司。南区9家地市供电公司内设机构分两档设置，第一档为榆林公司，内设17个职能部门、11个业务机构，其中生产体系设置生产技术部、送电处、变电处、调控中心，营销体系设置市场营销部、计量所、大客户中心、呼叫中心；第二档位为其他8家公司，一般内设10个职能部门、5个业务实施机构，其中生产体系设置生产技术部、运行中心、修试中心、调控中心，营销体系设置市场营销部、计量中心（或计量所）、呼叫中心。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          35
+        ],
+        "bboxes": [
+          [
+            76,
+            251,
+            517,
+            591
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            320
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "3.县公司内设机构层面。东区县供电公司内设机构也是按照《内设机构设置标准》分档管理，其中运维检修部和检修（建设）工区合署，营销部与客户服务中心合署，具有职能管理和实施主体的双重职责；16家规模较大的县公司独立设置物资供应分中心。南区县供电公司内设机构设置基本不超过10个，一",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          35
+        ],
+        "bboxes": [
+          [
+            76,
+            599,
+            517,
+            735
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            137
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 35 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          35
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            514,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "般县公司设置5个职能部门、2个业务机构，其中宝鸡、咸阳、汉中分公司所属的县公司设置了配网运营中心，下设调控班、自动化班、监督班；个别县公司设置了党群工作部和工会。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          36
+        ],
+        "bboxes": [
+          [
+            76,
+            106,
+            515,
+            184
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            81
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 2,
+    "text": "二、直属单位组织机构融合工作方案",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          36
+        ],
+        "bboxes": [
+          [
+            111,
+            193,
+            371,
+            214
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            16
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（一）总体思路",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          36
+        ],
+        "bboxes": [
+          [
+            117,
+            222,
+            228,
+            241
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "按照公司总体工作部署与安排，以公司融合发展为统领，以促进业务融合、管理融合、队伍融合为方向，以安全稳定、业务协同、运转高效为目标，尊重历史沿革，基于管理现状，统筹中远期目标，建立健全直属单位组织体系，合理核定各类人员规模，据实确定各层级负责人数量，切实指导直属各单位分类别、分层级、分步骤推进机构编制融合，全力支撑公司安全、稳定、有序发展。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          36
+        ],
+        "bboxes": [
+          [
+            76,
+            251,
+            512,
+            444
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            170
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（二）工作原则",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          36
+        ],
+        "bboxes": [
+          [
+            117,
+            454,
+            226,
+            472
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            7
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "1.实事求是，摸清家底。根据陕西电网融合工作总体安排，按照“实事求是、尊重历史”的方式摸清各单位机构设置、人员配置、干部配备情况，为后续具体操作方案制定和机构融合奠定基础。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          36
+        ],
+        "bboxes": [
+          [
+            76,
+            482,
+            517,
+            589
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            86
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "2.分层分类，平稳有序。市县供电公司，按照“一市（县）一公司”原则，新组建11家地市供电公司和98家县供电公司；遵照“同类合并、差异保留”原则和内设机构设置标准，分档确定市县供电公司内设机构设置规模，保留差异化机构设置。省级业务单位，根据企业性质，分类实施机构人员整建制划转，",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          36
+        ],
+        "bboxes": [
+          [
+            76,
+            599,
+            519,
+            735
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            138
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 36 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          36
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            153,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "并根据业务融合情况逐步优化调整。非电网业务机构，根据国家电网公司深化改革要求，适时调整发电、设计施工等机构。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          37
+        ],
+        "bboxes": [
+          [
+            76,
+            106,
+            517,
+            155
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            54
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "3.平稳过渡，防范风险。强化主体责任，主动排查风险隐患，因地制宜优化机构设置和岗位设置，确保员工队伍团结稳定、安全生产可控在控、经营活动平稳有序、优质服务不留真空。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          37
+        ],
+        "bboxes": [
+          [
+            76,
+            164,
+            519,
+            272
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            82
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（三）市县供电公司机构融合",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          37
+        ],
+        "bboxes": [
+          [
+            113,
+            280,
+            322,
+            299
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            13
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 4,
+    "text": "1.地市供电公司机构设置",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          37
+        ],
+        "bboxes": [
+          [
+            109,
+            309,
+            290,
+            328
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            12
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 5,
+    "text": "（1）融合设置地市供电公司",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          37
+        ],
+        "bboxes": [
+          [
+            113,
+            338,
+            311,
+            358
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            13
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "根据陕西省行政区划、陕西电网架构情况，在11个地市（新区）各设置1家新地市供电公司，11个新地市供电公司分别为：国网陕西省电力有限公司西安、咸阳、宝鸡、渭南、汉中、安康、商洛、铜川、延安、榆林、西咸新区供电公司。按照“一市一公司”的原则，将东区和南区在西安、咸阳、宝鸡、渭南、汉中、安康、商洛、延安、榆林9个地市设置的地市供电公司，融合到公司同一地域新地市供电公司，将东区现有的铜川公司和西咸新区公司整建制融合至同一地域新地市公司。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          37
+        ],
+        "bboxes": [
+          [
+            76,
+            367,
+            519,
+            591
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            216
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 5,
+    "text": "（2）分档设置地市供电公司内设机构",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          37
+        ],
+        "bboxes": [
+          [
+            113,
+            598,
+            379,
+            620
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            17
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "根据《国网人资部关于省公司所属单位内设机构设置标准的批复》（人资组〔2019〕44号）要求，按照“总量管控、分档核定、精简高效”的思路，核定融合后各市供电公司内设机构设置总量和职能部门上限。其中，国网西安、榆林、咸阳、",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          37
+        ],
+        "bboxes": [
+          [
+            76,
+            628,
+            519,
+            737
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            109
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "-37-",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          37
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            515,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            4
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "宝鸡、渭南供电公司为第一档，内设机构总量上限35个（其中职能部门上限15个）；国网汉中、安康、商洛、延安供电公司为第二档，内设机构总量上限26个（其中职能部门上限14个）；国网铜川、西咸供电公司为第四档，内设机构总量上限24个（其中职能部门上限13个）。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          38
+        ],
+        "bboxes": [
+          [
+            76,
+            106,
+            517,
+            243
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            127
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 4,
+    "text": "2.县供电公司机构设置",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          38
+        ],
+        "bboxes": [
+          [
+            107,
+            251,
+            269,
+            271
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            11
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 5,
+    "text": "（1）融合设置县供电公司",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          38
+        ],
+        "bboxes": [
+          [
+            115,
+            280,
+            295,
+            300
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            12
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "一是成立新县级供电公司。根据陕西省县域行政区划、陕西电网架构情况，在98个县（区、园区）各设置1家新县供电公司，新县供电公司名称为：国网陕西省电力有限公司**县（区）供电分公司。二是整合“一县两公司”。由新国网西安、榆林供电公司负责，分别将东区和南区在周至县、神木市设置的两家县公司整合至同一地域新县公司。三是调整县公司管辖关系。将南区西安公司所辖的西咸分公司（县公司性质）整建制融合至国网西咸新区泾河新城供电公司，由新国网西咸新区供电公司管理。四是整建制融合其他县公司。根据行政隶属关系，由新地市供电公司将其他县公司融合至对应的新县公司。调整后，公司共所辖县公司98家。新市县公司名称及隶属管辖关系详见附件2-1。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          38
+        ],
+        "bboxes": [
+          [
+            76,
+            309,
+            519,
+            648
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            308
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 5,
+    "text": "(2) 分档设置县供电公司内设机构",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          38
+        ],
+        "bboxes": [
+          [
+            113,
+            657,
+            360,
+            677
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            17
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "根据《内设机构设置标准》，按照各县公司售电量、资产总额、用工规模测算，分4档核定县供电公司内设机构数量上限。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          38
+        ],
+        "bboxes": [
+          [
+            77,
+            686,
+            518,
+            735
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            54
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 38 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          38
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            154,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "其中，国网西安市长安区、西安市临潼区等78家县供电公司为第一档，内设机构总量上限9个（其中职能部门上限6个）；国网淳化、千阳等13家县供电公司为第二档，内设机构总量上限8个（其中职能部门上限6个）；国网清涧、吴堡2家县供电公司为第三档，内设机构总量上限6个（其中职能部门上限4个）；国网留坝、佛坪等5家县供电公司为第四档，内设机构总量上限5个（其中职能部门上限3个）。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          39
+        ],
+        "bboxes": [
+          [
+            76,
+            106,
+            519,
+            300
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            184
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（四）直属业务单位机构融合",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          39
+        ],
+        "bboxes": [
+          [
+            113,
+            309,
+            321,
+            328
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            13
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 4,
+    "text": "1.调整部分直属业务单位机构名称",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          39
+        ],
+        "bboxes": [
+          [
+            108,
+            338,
+            353,
+            358
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            16
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "一是将东区10家分公司性质业务实施单位的企业名称由“国网陕西省电力公司**公司（中心、院）”更名为“国网陕西省电力有限公司**公司（中心、院）”。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          39
+        ],
+        "bboxes": [
+          [
+            77,
+            367,
+            517,
+            445
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            73
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "二是将南区陕西省地方电力投资控股、物资、全过程工程咨询、项目管理有限公司4家二级子公司分别更名为“陕西电力投资控股有限公司、陕西电力物资有限公司、陕西电力全过程工程咨询有限公司、陕西电力项目管理有限公司”。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          39
+        ],
+        "bboxes": [
+          [
+            76,
+            454,
+            517,
+            561
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            103
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 4,
+    "text": "2.调整培训中心职责",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          39
+        ],
+        "bboxes": [
+          [
+            107,
+            570,
+            253,
+            589
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            10
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "一是将公司系统的党建研究、党员干部培训等业务调整至中共国网陕西省电力公司党校；将公司系统的管理人员培训业务调整至陕西省地方电力（集团）有限公司培训中心；将公司系统的技能人员培训和职业（学历）教育相关业务调整至国网陕西省电力公司培训中心。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          39
+        ],
+        "bboxes": [
+          [
+            76,
+            599,
+            517,
+            735
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            118
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 39 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          39
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            514,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "二是中共国网陕西省电力公司党校与中共陕西省地方电力（集团）有限公司党委党校、中国国家电网公司党校西安分校合署办公，并挂靠至陕西省地方电力（集团）有限公司培训中心；将陕西省电力技工学校挂靠至国网陕西省电力公司培训中心。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          40
+        ],
+        "bboxes": [
+          [
+            76,
+            106,
+            517,
+            241
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            108
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "三是按照《国家电网有限公司关于优化调整省公司本部机构编制和产业管理模式的通知》（国家电网人资〔2020〕532号）要求，同时使用“中共国网陕西省电力公司党校”、“陕西省地方电力（集团）有限公司培训中心”名称时，党校在前。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          40
+        ],
+        "bboxes": [
+          [
+            76,
+            251,
+            518,
+            359
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            110
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 4,
+    "text": "3.整合优化陕西能源研究院有限公司业务职责",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          40
+        ],
+        "bboxes": [
+          [
+            107,
+            367,
+            429,
+            386
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            21
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "按照“同类合并”的原则，对陕西能源研究院现有业务进行分类整合，其中将技术研究、技术监督、产品研发、试验检测等业务调整至国网陕西电科院，将政策研究、智库管理、规划评审、造价咨询等业务调整至国网陕西经研院，将计量业务调整至国网陕西营销服务中心。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          40
+        ],
+        "bboxes": [
+          [
+            76,
+            396,
+            515,
+            531
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            120
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 3,
+    "text": "（五）用工规模和领导人员数量",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          40
+        ],
+        "bboxes": [
+          [
+            113,
+            541,
+            336,
+            560
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            14
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "list",
+    "title_type": -1,
+    "text": "1.用工规模。在融合期间，按照“东区编制+南区人数”的原则控制直属各单位用工规模，后期待国网新版定员标准印发后，重新测算核定定员规模。 2.领导人员数量。在融合期间，直属各单位领导人员规模按照“原有核定职数+划转人员数量”的原则控制，只减不增。为有序消纳领导人员，直属各单位可在内设机构设置党组织书",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "list"
+        ],
+        "pages": [
+          40
+        ],
+        "bboxes": [
+          [
+            76,
+            570,
+            515,
+            735
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            149
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 40 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          40
+        ],
+        "bboxes": [
+          [
+            93,
+            766,
+            153,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "记岗位。融合后，国网陕西电力直属单位的三级领导人员规模控制在322人。",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          41
+        ],
+        "bboxes": [
+          [
+            76,
+            106,
+            517,
+            155
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            35
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "附件：1.国网陕西省电力有限公司县级供电企业名称及隶属管辖关系情况表",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          41
+        ],
+        "bboxes": [
+          [
+            108,
+            193,
+            512,
+            242
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            34
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 41 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          41
+        ],
+        "bboxes": [
+          [
+            455,
+            766,
+            515,
+            781
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "text",
+    "title_type": -1,
+    "text": "附件2-1",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "text"
+        ],
+        "pages": [
+          42
+        ],
+        "bboxes": [
+          [
+            77,
+            107,
+            138,
+            124
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            5
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "table",
+    "title_type": -1,
+    "text": "1. **表格类型说明**  \n这是一张“县级供电企业名称及隶属管辖关系情况表”，用于清晰展示陕西省内各县级（含县级市、区）供电公司的全称、简称、所属上级单位（如西安供电公司、咸阳供电公司等），以及部分公司标注的“大型公司”或“大型县公司”属性。表格按行政区划分组（如西安、咸阳、宝鸡等），便于管理和查阅层级结构。\n\n2. **数据特点分析**  \n- **总行数**：共98行，涵盖陕西省全部10个地级市（含西咸新区）下属的县级供电单位。\n- **最大值/最小值**：\n  - 最大序号为98（对应西咸新区泾河新城供电公司）。\n  - 最小序号为1（对应西安市长安区供电公司）。\n  - 最大“大型公司”数量：共6家（长安、临潼、阎良、杨凌、蒲城、韩城）。\n  - 唯一标注“大型县公司”的是勉县供电公司（第47行），表明其规模在县级中属较大。\n- **分布特征**：\n  - 表格按区域分组，每组标题明确（如“一、国网陕西省电力有限公司西安供电公司”），体现行政隶属层级。\n  - “大型公司”标注仅出现在部分经济较发达或人口密集地区（如西安、咸阳、渭南、汉中），反映资源配置与管理重点。\n  - 所有分公司均以“国网XX市/县/区供电公司”命名，简称统一规范，便于识别和通信。\n\n3. **文字信息与数据简要描述**  \n- 表格内容覆盖全省所有县级供电单位，包括10个地级市及西咸新区，体现全面性。\n- 部分公司带有“大型公司”标签，可能代表其负荷量、员工规模或服务范围更大，如长安、临潼、阎良等主城区供电公司。\n- “勉县供电公司”被特别标注为“大型县公司”，暗示其在县级中具有相对突出的地位，可能因地理位置重要或经济基础较好。\n- 所有机构名称均遵循“国网+行政区划+供电公司”的标准化命名规则，便于统一管理和对外标识。\n- 表格结构清晰，层级分明，适合用于内部组织架构梳理、政策执行或数据分析使用。\n\n✅ 总结：该表格是一份完整的陕西省县级供电企业名录与隶属关系图谱，兼具行政管理与数据统计功能，通过序号、全称、简称、备注字段，清晰呈现了各供电单位的归属、规模特征及地域分布，对电力系统规划、资源调配、监管审计等工作具有重要参考价值。",
+    "data": "<table><tr><td>序号</td><td>机构全称</td><td>机构简称</td><td>备注</td></tr><tr><td colspan=\"4\">一、国网陕西省电力有限公司西安供电公司</td></tr><tr><td>1</td><td>国网陕西省电力有限公司西安市长安区供电分公司</td><td>国网西安市长安区供电公司</td><td>大型公司</td></tr><tr><td>2</td><td>国网陕西省电力有限公司西安市临潼区供电分公司</td><td>国网西安市临潼区供电公司</td><td>大型公司</td></tr><tr><td>3</td><td>国网陕西省电力有限公司西安市阎良区供电分公司</td><td>国网西安市阎良区供电公司</td><td>大型公司</td></tr><tr><td>4</td><td>国网陕西省电力有限公司西安市鄠邑区供电分公司</td><td>国网西安市鄠邑区供电公司</td><td></td></tr><tr><td>5</td><td>国网陕西省电力有限公司西安市高陵区供电分公司</td><td>国网西安市高陵区供电公司</td><td></td></tr><tr><td>6</td><td>国网陕西省电力有限公司蓝田县供电分公司</td><td>国网蓝田县供电公司</td><td></td></tr><tr><td>7</td><td>国网陕西省电力有限公司周至县供电分公司</td><td>国网周至县供电公司</td><td></td></tr><tr><td>8</td><td>国网陕西省电力有限公司西安市泾渭新城供电分公司</td><td>国网西安市泾渭新城供电公司</td><td></td></tr><tr><td colspan=\"4\">二、国网陕西省电力有限公司咸阳供电公司</td></tr><tr><td>9</td><td>国网陕西省电力有限公司咸阳市杨凌供电分公司</td><td>国网咸阳市杨凌供电公司</td><td>大型公司</td></tr><tr><td>10</td><td>国网陕西省电力有限公司兴平市供电分公司</td><td>国网兴平市供电公司</td><td></td></tr><tr><td>11</td><td>国网陕西省电力有限公司彬州市供电分公司</td><td>国网彬州市供电公司</td><td></td></tr><tr><td>12</td><td>国网陕西省电力有限公司三原县供电分公司</td><td>国网三原县供电公司</td><td></td></tr><tr><td>13</td><td>国网陕西省电力有限公司泾阳县供电分公司</td><td>国网泾阳县供电公司</td><td></td></tr><tr><td>14</td><td>国网陕西省电力有限公司乾县供电分公司</td><td>国网乾县供电公司</td><td></td></tr><tr><td>15</td><td>国网陕西省电力有限公司礼泉县供电分公司</td><td>国网礼泉县供电公司</td><td></td></tr><tr><td>16</td><td>国网陕西省电力有限公司永寿县供电分公司</td><td>国网永寿县供电公司</td><td></td></tr><tr><td>17</td><td>国网陕西省电力有限公司长武县供电分公司</td><td>国网长武县供电公司</td><td></td></tr><tr><td>18</td><td>国网陕西省电力有限公司旬邑县供电分公司</td><td>国网旬邑县供电公司</td><td></td></tr><tr><td>19</td><td>国网陕西省电力有限公司淳化县供电分公司</td><td>国网淳化县供电公司</td><td></td></tr><tr><td>20</td><td>国网陕西省电力有限公司武功县供电分公司</td><td>国网武功县供电公司</td><td></td></tr><tr><td>21</td><td>国网陕西省电力有限公司咸阳市高新开发区供电分公司</td><td>国网咸阳市高新区供电公司</td><td></td></tr><tr><td colspan=\"4\">三、国网陕西省电力有限公司宝鸡供电公司</td></tr><tr><td>22</td><td>国网陕西省电力有限公司宝鸡市城区供电分公司</td><td>国网宝鸡市城区供电公司</td><td></td></tr><tr><td>23</td><td>国网陕西省电力有限公司宝鸡市陈仓区供电分公司</td><td>国网宝鸡市陈仓区供电公司</td><td>大型公司</td></tr><tr><td>24</td><td>国网陕西省电力有限公司宝鸡市凤翔区供电分公司</td><td>国网宝鸡市凤翔区供电公司</td><td></td></tr><tr><td>25</td><td>国网陕西省电力有限公司岐山县供电分公司</td><td>国网岐山县供电公司</td><td></td></tr><tr><td>26</td><td>国网陕西省电力有限公司扶风县供电分公司</td><td>国网扶风县供电公司</td><td></td></tr><tr><td>27</td><td>国网陕西省电力有限公司眉县供电分公司</td><td>国网眉县供电公司</td><td></td></tr><tr><td>28</td><td>国网陕西省电力有限公司陇县供电分公司</td><td>国网陇县供电公司</td><td></td></tr><tr><td>29</td><td>国网陕西省电力有限公司千阳县供电分公司</td><td>国网千阳县供电公司</td><td></td></tr><tr><td>30</td><td>国网陕西省电力有限公司麟游县供电分公司</td><td>国网麟游县供电公司</td><td></td></tr><tr><td>31</td><td>国网陕西省电力有限公司凤县供电分公司</td><td>国网凤县供电公司</td><td></td></tr><tr><td>32</td><td>国网陕西省电力有限公司太白县供电分公司</td><td>国网太白县供电公司</td><td></td></tr><tr><td colspan=\"4\">四、国网陕西省电力有限公司渭南供电公司</td></tr><tr><td>33</td><td>国网陕西省电力有限公司渭南市华州区供电分公司</td><td>国网渭南市华州区供电公司</td><td></td></tr><tr><td>34</td><td>国网陕西省电力有限公司潼关县供电分公司</td><td>国网潼关县供电公司</td><td></td></tr><tr><td>35</td><td>国网陕西省电力有限公司大荔县供电分公司</td><td>国网大荔县供电公司</td><td></td></tr><tr><td>36</td><td>国网陕西省电力有限公司合阳县供电分公司</td><td>国网合阳县供电公司</td><td></td></tr><tr><td>37</td><td>国网陕西省电力有限公司澄城县供电分公司</td><td>国网澄城县供电公司</td><td></td></tr><tr><td>38</td><td>国网陕西省电力有限公司蒲城县供电分公司</td><td>国网蒲城县供电公司</td><td>大型公司</td></tr><tr><td>39</td><td>国网陕西省电力有限公司白水县供电分公司</td><td>国网白水县供电公司</td><td></td></tr><tr><td>40</td><td>国网陕西省电力有限公司富平县供电分公司</td><td>国网富平县供电公司</td><td></td></tr><tr><td>41</td><td>国网陕西省电力有限公司韩城市供电分公司</td><td>国网韩城市供电公司</td><td>大型公司</td></tr><tr><td>42</td><td>国网陕西省电力有限公司华阴市供电分公司</td><td>国网华阴市供电公司</td><td></td></tr><tr><td colspan=\"4\">五、国网陕西省电力有限公司汉中供电公司</td></tr><tr><td>43</td><td>国网陕西省电力有限公司汉中市南郑区供电分公司</td><td>国网汉中市南郑区供电公司</td><td></td></tr><tr><td>44</td><td>国网陕西省电力有限公司城固县供电分公司</td><td>国网城固县供电公司</td><td></td></tr><tr><td>45</td><td>国网陕西省电力有限公司洋县供电分公司</td><td>国网洋县供电公司</td><td></td></tr><tr><td>46</td><td>国网陕西省电力有限公司西乡县供电分公司</td><td>国网西乡县供电公司</td><td></td></tr><tr><td>47</td><td>国网陕西省电力有限公司勉县供电分公司</td><td>国网勉县供电公司</td><td>大型县公司</td></tr><tr><td>48</td><td>国网陕西省电力有限公司宁强县供电分公司</td><td>国网宁强县供电公司</td><td></td></tr><tr><td>49</td><td>国网陕西省电力有限公司略阳县供电分公司</td><td>国网略阳县供电公司</td><td></td></tr><tr><td>50</td><td>国网陕西省电力有限公司镇巴县供电分公司</td><td>国网镇巴县供电公司</td><td></td></tr><tr><td>51</td><td>国网陕西省电力有限公司留坝县供电分公司</td><td>国网留坝县供电公司</td><td></td></tr><tr><td>52</td><td>国网陕西省电力有限公司佛坪县供电分公司</td><td>国网佛坪县供电公司</td><td></td></tr><tr><td colspan=\"4\">六、国网陕西省电力有限公司安康供电公司</td></tr><tr><td>53</td><td>国网陕西省电力有限公司汉阴县供电分公司</td><td>国网汉阴县供电公司</td><td></td></tr><tr><td>54</td><td>国网陕西省电力有限公司石泉县供电分公司</td><td>国网石泉县供电公司</td><td></td></tr><tr><td>55</td><td>国网陕西省电力有限公司宁陕县供电分公司</td><td>国网宁陕县供电公司</td><td></td></tr><tr><td>56</td><td>国网陕西省电力有限公司紫阳县供电分公司</td><td>国网紫阳县供电公司</td><td></td></tr><tr><td>57</td><td>国网陕西省电力有限公司岚皋县供电分公司</td><td>国网岚皋县供电公司</td><td></td></tr><tr><td>58</td><td>国网陕西省电力有限公司平利县供电分公司</td><td>国网平利县供电公司</td><td></td></tr><tr><td>59</td><td>国网陕西省电力有限公司镇坪县供电分公司</td><td>国网镇坪县供电公司</td><td></td></tr><tr><td>60</td><td>国网陕西省电力有限公司旬阳市供电分公司</td><td>国网旬阳市供电公司</td><td></td></tr><tr><td>61</td><td>国网陕西省电力有限公司白河县供电分公司</td><td>国网白河县供电公司</td><td></td></tr><tr><td colspan=\"4\">七、国网陕西省电力有限公司商洛供电公司</td></tr><tr><td>62</td><td>国网陕西省电力有限公司洛南县供电分公司</td><td>国网洛南县供电公司</td><td></td></tr><tr><td>63</td><td>国网陕西省电力有限公司丹凤县供电分公司</td><td>国网丹凤县供电公司</td><td></td></tr><tr><td>64</td><td>国网陕西省电力有限公司商南县供电分公司</td><td>国网商南县供电公司</td><td></td></tr><tr><td>65</td><td>国网陕西省电力有限公司山阳县供电分公司</td><td>国网山阳县供电公司</td><td></td></tr><tr><td>66</td><td>国网陕西省电力有限公司镇安县供电分公司</td><td>国网镇安县供电公司</td><td></td></tr><tr><td>67</td><td>国网陕西省电力有限公司柞水县供电分公司</td><td>国网柞水县供电公司</td><td></td></tr><tr><td colspan=\"4\">八、国网陕西省电力有限公司铜川供电公司</td></tr><tr><td>68</td><td>国网陕西省电力有限公司铜川市印台王益区供电分公司</td><td>国网铜川市印台王益区供电公司</td><td></td></tr><tr><td>69</td><td>国网陕西省电力有限公司铜川市耀州区供电分公司</td><td>国网铜川市耀州区供电公司</td><td></td></tr><tr><td>70</td><td>国网陕西省电力有限公司宜君县供电分公司</td><td>国网宜君县供电公司</td><td></td></tr><tr><td colspan=\"4\">九、国网陕西省电力有限公司延安供电公司</td></tr><tr><td>71</td><td>国网陕西省电力有限公司延安市安塞区供电分公司</td><td>国网延安市安塞区供电公司</td><td></td></tr><tr><td>72</td><td>国网陕西省电力有限公司延长县供电分公司</td><td>国网延长县供电公司</td><td></td></tr><tr><td>73</td><td>国网陕西省电力有限公司延川县供电分公司</td><td>国网延川县供电公司</td><td></td></tr><tr><td>74</td><td>国网陕西省电力有限公司志丹县供电分公司</td><td>国网志丹县供电公司</td><td></td></tr><tr><td>75</td><td>国网陕西省电力有限公司吴起县供电分公司</td><td>国网吴起县供电公司</td><td></td></tr><tr><td>76</td><td>国网陕西省电力有限公司甘泉县供电分公司</td><td>国网甘泉县供电公司</td><td></td></tr><tr><td>77</td><td>国网陕西省电力有限公司富县供电分公司</td><td>国网富县供电公司</td><td></td></tr><tr><td>78</td><td>国网陕西省电力有限公司洛川县供电分公司</td><td>国网洛川县供电公司</td><td></td></tr><tr><td>79</td><td>国网陕西省电力有限公司宜川县供电分公司</td><td>国网宜川县供电公司</td><td></td></tr><tr><td>80</td><td>国网陕西省电力有限公司黄龙县供电分公司</td><td>国网黄龙县供电公司</td><td></td></tr><tr><td>81</td><td>国网陕西省电力有限公司黄陵县供电分公司</td><td>国网黄陵县供电公司</td><td></td></tr><tr><td>82</td><td>国网陕西省电力有限公司了长市供电分公司</td><td>国网了长市供电公司</td><td></td></tr><tr><td colspan=\"4\">十、国网陕西省电力有限公司榆林供电公司</td></tr><tr><td>83</td><td>国网陕西省电力有限公司榆林市榆阳区供电分公司</td><td>国网榆林市榆阳区供电公司</td><td></td></tr><tr><td>84</td><td>国网陕西省电力有限公司榆林市高新区供电分公司</td><td>国网榆林市高新区供电公司</td><td></td></tr><tr><td>85</td><td>国网陕西省电力有限公司榆林市横山区供电分公司</td><td>国网榆林市横山区供电公司</td><td></td></tr><tr><td>86</td><td>国网陕西省电力有限公司神木市供电分公司</td><td>国网神木市供电公司</td><td></td></tr><tr><td>87</td><td>国网陕西省电力有限公司府谷县供电分公司</td><td>国网府谷县供电公司</td><td></td></tr><tr><td>88</td><td>国网陕西省电力有限公司靖边县供电分公司</td><td>国网靖边县供电公司</td><td></td></tr><tr><td>89</td><td>国网陕西省电力有限公司定边县供电分公司</td><td>国网定边县供电公司</td><td></td></tr><tr><td>90</td><td>国网陕西省电力有限公司绥德县供电分公司</td><td>国网绥德县供电公司</td><td></td></tr><tr><td>91</td><td>国网陕西省电力有限公司米脂县供电分公司</td><td>国网米脂县供电公司</td><td></td></tr><tr><td>92</td><td>国网陕西省电力有限公司佳县供电分公司</td><td>国网佳县供电公司</td><td></td></tr><tr><td>93</td><td>国网陕西省电力有限公司吴堡县供电分公司</td><td>国网吴堡县供电公司</td><td></td></tr><tr><td>94</td><td>国网陕西省电力有限公司清涧县供电分公司</td><td>国网清涧县供电公司</td><td></td></tr><tr><td>95</td><td>国网陕西省电力有限公司子洲县供电分公司</td><td>国网子洲县供电公司</td><td></td></tr><tr><td>96</td><td>国网陕西省电力有限公司榆林市榆神工业区供电分公司</td><td>国网榆林市榆神工业区供电公司</td><td></td></tr><tr><td>97</td><td>国网陕西省电力有限公司榆林市科创新城供电分公司</td><td>国网榆林市科创新城供电公司</td><td></td></tr><tr><td colspan=\"4\">十一、国网陕西省电力有限公司西咸新区供电公司</td></tr><tr><td>98</td><td>国网陕西省电力有限公司西咸新区泾河新城供电分公司</td><td>国网西咸新区泾河新城供电公司</td><td></td></tr></table>",
+    "image_path": "60.204.211.83:10000/preprocess/20260131_070505_公司-国网陕电人资〔2021〕36号-国网陕西省电力有限公司关于各层级组织机构融合情况的报告/f6cf2d0c087b9ddea7f10ca8648e0407517b1f9e19316306c53b9f723f4b1295.jpg",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "table"
+        ],
+        "pages": [
+          42
+        ],
+        "bboxes": [
+          [
+            38,
+            185,
+            556,
+            739
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            924
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 42 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          42
+        ],
+        "bboxes": [
+          [
+            94,
+            767,
+            153,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "table",
+    "title_type": -1,
+    "text": "",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "table"
+        ],
+        "pages": [
+          43
+        ],
+        "bboxes": [
+          [
+            38,
+            96,
+            556,
+            722
+          ]
+        ],
+        "indexes": []
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 43 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          43
+        ],
+        "bboxes": [
+          [
+            455,
+            767,
+            513,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "table",
+    "title_type": -1,
+    "text": "",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "table"
+        ],
+        "pages": [
+          44
+        ],
+        "bboxes": [
+          [
+            38,
+            96,
+            556,
+            723
+          ]
+        ],
+        "indexes": []
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 44 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          44
+        ],
+        "bboxes": [
+          [
+            94,
+            767,
+            153,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "table",
+    "title_type": -1,
+    "text": "",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "table"
+        ],
+        "pages": [
+          45
+        ],
+        "bboxes": [
+          [
+            38,
+            96,
+            556,
+            723
+          ]
+        ],
+        "indexes": []
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 45 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          45
+        ],
+        "bboxes": [
+          [
+            455,
+            767,
+            513,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "table",
+    "title_type": -1,
+    "text": "",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "table"
+        ],
+        "pages": [
+          46
+        ],
+        "bboxes": [
+          [
+            38,
+            96,
+            556,
+            412
+          ]
+        ],
+        "indexes": []
+      }
+    }
+  },
+  {
+    "type": "page_number",
+    "title_type": -1,
+    "text": "— 46 —",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "page_number"
+        ],
+        "pages": [
+          46
+        ],
+        "bboxes": [
+          [
+            94,
+            767,
+            153,
+            780
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "title",
+    "title_type": 1,
+    "text": "附件3",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "title"
+        ],
+        "pages": [
+          47
+        ],
+        "bboxes": [
+          [
+            98,
+            87,
+            143,
+            105
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "image",
+    "title_type": -1,
+    "text": "该图展示国网陕西省电力有限公司组织架构，含本部部门、地市供电企业、直属业务单位及合资公司等层级，清晰呈现各部门与下属单位关系。本内容由AI生成，内容仅供参考",
+    "data": "无",
+    "image_path": "60.204.211.83:10000/preprocess/20260131_070505_公司-国网陕电人资〔2021〕36号-国网陕西省电力有限公司关于各层级组织机构融合情况的报告/aa880d7a9a9003f3d99ab4f7e48ee30e3f4a24e5eb10bdc4a31302afe97aed25.jpg",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "image"
+        ],
+        "pages": [
+          47
+        ],
+        "bboxes": [
+          [
+            84,
+            148,
+            755,
+            477
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            78
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "发文机关标志",
+    "title_type": -1,
+    "text": "国网陕西省电力有限公司办公室",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "发文机关标志"
+        ],
+        "pages": [
+          48
+        ],
+        "bboxes": [
+          [
+            89,
+            722,
+            282,
+            737
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            14
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "type": "footer",
+    "title_type": -1,
+    "text": "2021年12月9日印发",
+    "data": "无",
+    "image_path": "无",
+    "metadata": {
+      "extra_data": {
+        "types": [
+          "footer"
+        ],
+        "pages": [
+          48
+        ],
+        "bboxes": [
+          [
+            365,
+            722,
+            504,
+            737
+          ]
+        ],
+        "indexes": [
+          [
+            0,
+            12
+          ]
+        ]
+      }
+    }
+  }
+]

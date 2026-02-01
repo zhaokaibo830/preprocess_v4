@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "total_images_processed": 2,
+    "successful_extractions": 2,
+    "no_content_images": 0,
+    "error_images": 0,
+    "total_text_items": 5,
+    "type_statistics": {
+      "发文机关标志": 3,
+      "签发人：胡卫东\n\n发文机关标志": 1,
+      "印发日期": 1
+    }
+  },
+  "results": [
+    {
+      "image_name": "公司-国网陕电人资〔2021〕36号-国网陕西省电力有限公司关于各层级组织机构融合情况的报告_page_1.png",
+      "status": "success",
+      "extracted_text": "1. 国网陕西省电力有限公司文件  \n2. 国网陕电人资〔2021〕36号  \n3. 签发人：胡卫东",
+      "items": [
+        {
+          "content": "国网陕西省电力有限公司文件",
+          "type": "发文机关标志"
+        },
+        {
+          "content": "国网陕电人资〔2021〕36号",
+          "type": "发文机关标志"
+        },
+        {
+          "content": "签发人：胡卫东",
+          "type": "签发人：胡卫东\n\n发文机关标志"
+        }
+      ]
+    },
+    {
+      "image_name": "公司-国网陕电人资〔2021〕36号-国网陕西省电力有限公司关于各层级组织机构融合情况的报告_page_48.png",
+      "status": "success",
+      "extracted_text": "1. 国网陕西省电力有限公司办公室  \n2. 2021年12月9日印发",
+      "items": [
+        {
+          "content": "国网陕西省电力有限公司办公室",
+          "type": "发文机关标志"
+        },
+        {
+          "content": "2021年12月9日印发",
+          "type": "印发日期"
+        }
+      ]
+    }
+  ]
+}

@@ -13,7 +13,10 @@ LLM:
     API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315
     BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
     MODEL : qwen3-14b
-
+  red_title:
+    API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315
+    BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
+    MODEL : qwen3-vl-32b-instruct
 MinIO:
   IP: 60.204.211.83:10000
   ACCESS_KEY: minioadmin

@@ -5,15 +5,6 @@ import sys
 from openai import OpenAI
 from typing import List, Dict, Any, Tuple
 from pathlib import Path
-# ================= 配置区域 =================
-
-
-
-# ===============================================
-
-
-# ================= 辅助函数 =================
-
 def load_json_data(path: str) -> Dict[str, Any]:
     """读取完整的 JSON 文件结构"""
     if not os.path.exists(path):
@@ -166,12 +157,12 @@ def build_structure_relationships(all_nodes: List[Dict[str, Any]]):
 
 # ================= LLM 调用函数 (Prompt 重点修改区域) =================
 
-def call_llm_polish_structure(raw_titles: str, full_context: str, base_url: str, api_key: str, model_name: str) -> str:
+def call_llm_polish_structure(raw_titles: str, full_context: str,base_url, api_key, model_name) -> str:
     """
     整理目录结构并标记层级。
     在此处通过 Prompt Engineering 解决"封面干扰"问题。
     """
-    context_limit = 240000  # 略微增加上下文长度
+    # context_limit = 240000  # 略微增加上下文长度
 
     prompt = f"""您是一位专业的文档结构审计专家。
 
@@ -219,7 +210,7 @@ def call_llm_polish_structure(raw_titles: str, full_context: str, base_url: str,
         return ""
 
 
-def process_titles_with_llm(all_nodes: List[Dict[str, Any]], full_context: str, base_url: str, api_key: str, model_name: str) -> Dict[str, int]:
+def process_titles_with_llm(all_nodes: List[Dict[str, Any]], full_context: str,base_url, api_key, model_name) -> Dict[str, int]:
     """提取标题，LLM 处理，返回 {标题文本: level} 映射"""
     print("1. Collecting text from type='title' blocks...")
     titles_input_to_llm = []
@@ -236,7 +227,7 @@ def process_titles_with_llm(all_nodes: List[Dict[str, Any]], full_context: str, 
 
     full_titles_input = "\n".join(titles_input_to_llm)
     print("2. Calling LLM to polish structure (with cover/TOC protection)...")
-    title_md_result = call_llm_polish_structure(full_titles_input, full_context,base_url,api_key,model_name)
+    title_md_result = call_llm_polish_structure(full_titles_input, full_context,base_url, api_key, model_name)
 
     title_lines = title_md_result.split("\n")
     title_level_map = {}
@@ -402,10 +393,6 @@ def export_structure_to_markdown(nodes: List[Dict[str, Any]], output_path: str):
                 # 这里为了纯净的目录视图，我们只保留标题文本
                 md_lines.append(f"{prefix} {text}")
                 count += 1
-            else:
-                # 记录一下未分级（Level 0）的标题，作为列表项展示，方便检查是否有漏网之鱼
-                md_lines.append(f"- [Level 0] {text}")
-                pass
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write("\n\n".join(md_lines))

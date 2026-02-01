@@ -18,7 +18,7 @@
     .check-item input{width:20px;height:20px;accent-color:var(--prim)}
     button{padding:14px 36px;font-size:18px;border:none;border-radius:6px;background:var(--prim);color:#fff;cursor:pointer}
     button:disabled{background:#94bfff;cursor:not-allowed}
-    #msg{margin-top:24px;font-size:18px; word-break: break-all; white-space: pre-wrap;} /* 增加样式以显示JSON */
+    #msg{margin-top:24px;font-size:18px; word-break: break-all; white-space: pre-wrap;}
     .err{color:#e04040}
     .ok{color:#0bb750}
   </style>
@@ -41,17 +41,11 @@
     </div>
 
     <div class="sec">
-      <div class="sec-title">返回格式</div>
-      <div class="check-grid">
-        <label class="check-item">
-          <input type="radio" name="res_type" value="zip" checked />
-          <span>结果压缩包 (Zip)</span>
-        </label>
-        <label class="check-item">
-          <input type="radio" name="res_type" value="json" />
-          <span>纯数据结果 (JSON)</span>
-        </label>
-      </div>
+      <div class="sec-title">红头文件识别</div>
+      <label class="check-item">
+        <input id="red_title_enable" type="checkbox" checked />
+        <span>启用</span>
+      </label>
     </div>
 
     <div class="sec">
@@ -114,10 +108,7 @@ submitBtn.addEventListener('click', async () => {
   const fd = new FormData();
   fd.append('file', file);
   fd.append('vlm_enable', $('vlm_enable').checked);
-  
-  // 新增：获取 response_type 值
-  const resType = document.querySelector('input[name="res_type"]:checked').value;
-  fd.append('response_type', resType);
+  fd.append('red_title_enable', $('red_title_enable').checked);
 
   /* 收集 img 选项 */
   document.querySelectorAll('input[name="img"]:checked')
@@ -131,27 +122,19 @@ submitBtn.addEventListener('click', async () => {
     const r = await fetch('/api/preprocessv4', { method:'POST', body:fd });
     if(!r.ok) throw new Error(await r.text());
 
-    // 根据返回类型处理结果
-    if (resType === 'json') {
-      const data = await r.json();
-      console.log('JSON Result:', data);
-      flash('处理完成，数据已打印至控制台并在下方显示：\n\n' + JSON.stringify(data, null, 2), 'ok');
-    } else {
-      const blob = await r.blob();
-      const rawFname = r.headers.get('Content-Disposition');
-      let fname = 'result.zip';
-      
-      // 这里的解析逻辑匹配后端的 quote(file_name) 格式
-      if (rawFname && rawFname.includes("filename*=utf-8''")) {
-        fname = decodeURIComponent(rawFname.split("filename*=utf-8''")[1]);
-      }
-
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = fname; a.click();
-      URL.revokeObjectURL(url);
-      flash('处理完成，已下载结果包','ok');
+    const blob = await r.blob();
+    const rawFname = r.headers.get('Content-Disposition');
+    let fname = 'result.zip';
+    
+    if (rawFname && rawFname.includes("filename*=utf-8''")) {
+      fname = decodeURIComponent(rawFname.split("filename*=utf-8''")[1]);
     }
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = fname; a.click();
+    URL.revokeObjectURL(url);
+    flash('处理完成，已下载结果包','ok');
   } catch(e) {
     flash('处理失败：' + e.message, 'err');
   } finally {
