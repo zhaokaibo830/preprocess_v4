@@ -22,12 +22,61 @@ CONFIG = {
 #单独处理红头文件信息，并转换json格式
 def post_process(pdf_path,images_output_path,original_json_path,api_key,base_url,model_name,output_path,file_name,folder_name,vlm_enable,red_title):
     if red_title:
+        # step1：将文档pdf按页转png
+        pdf_to_images(pdf_path,images_output_path)
+        # 基于视觉模型判断红线，将不包含线段的图片删除
+        clean_folder_without_lines(images_output_path)
+        # 根据json获取包含图表的页码，删除这些页
+        index_list=get_page_index_list(original_json_path)
+        delete_specific_pages(images_output_path,index_list)
+
+        #基于多模态分析筛选后的page
+
+        # 多模态提取的红头文件json
+        json_temp_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f'{file_name}_redtitle.json'
+        config={
+            "LLM_API_KEY": api_key,
+            "LLM_BASE_URL": base_url,
+            "LLM_MODEL": model_name,
+            "INPUT_PATH":images_output_path,
+            "OUTPUT_PATH":json_temp_path
+
+        }
+        extractor = ImageTextExtractor(config)
+        results = extractor.process_all_images()#红头文件提取结果
+        #输出红头文件json和processed_with_level.json，将二者合并
+        json_final=json_change_format(json_temp_path,original_json_path)#将上述结果写入full_json_data
+
+        json_level_redtitle_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f'{file_name}_level_redtitle.json'
+        with open(json_level_redtitle_path,'w',encoding='utf-8') as f:
+            json.dump(json_final,f,ensure_ascii=False,indent=2)
+
+        #将json转为甲方要求的格式，存到f"{file_name}_partitions.json"
+        json_return_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
+        load_and_process_json(json_final,json_return_path)#对full_json_data进行格式转换，写入f"{file_name}_partitions.json"
+    else:
+        #跳过红头文件处理阶段，将红头文件处理结果设为空字典
+        json_temp_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f'{file_name}_redtitle.json'
+        json_data={}
+        with open(json_temp_path,'w',encoding='utf-8') as f:
+            json.dump(json_data,f,ensure_ascii=False,indent=2)
+        json_final=json_change_format(json_temp_path,original_json_path)
+        json_level_redtitle_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f'{file_name}_level_redtitle.json'
+        with open(json_level_redtitle_path,'w',encoding='utf-8') as f:
+            json.dump(json_final,f,ensure_ascii=False,indent=2)
+        json_return_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
+        load_and_process_json(json_final,json_return_path)
+
+#只处理红头文件标题，不修改json格式
+def post_process_2(pdf_path,images_output_path,original_json_path,api_key,base_url,model_name,output_path,file_name,folder_name,vlm_enable,red_title):
+    if red_title:
         pdf_to_images(pdf_path,images_output_path)
         clean_folder_without_lines(images_output_path)
         index_list=get_page_index_list(original_json_path)
         delete_specific_pages(images_output_path,index_list)
 
         json_temp_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f'{file_name}_redtitle.json'
+
         config={
             "LLM_API_KEY": api_key,
             "LLM_BASE_URL": base_url,
@@ -39,16 +88,25 @@ def post_process(pdf_path,images_output_path,original_json_path,api_key,base_url
         extractor = ImageTextExtractor(config)
         results = extractor.process_all_images()
         json_final=json_change_format(json_temp_path,original_json_path)
-        json_return_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
-        load_and_process_json(json_final,json_return_path)
+
+        #在processed_with_level的基础上加入红头文件处理结果，存入f'{file_name}_level_redtitle.json'
+        json_level_redtitle_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f'{file_name}_level_redtitle.json'
+        with open(json_level_redtitle_path,'w',encoding='utf-8') as f:
+            json.dump(json_final,f,ensure_ascii=False,indent=2)
+        #json_return_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
+        #load_and_process_json(json_final,json_return_path)
     else:
         json_temp_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f'{file_name}_redtitle.json'
         json_data={}
         with open(json_temp_path,'w',encoding='utf-8') as f:
             json.dump(json_data,f,ensure_ascii=False,indent=2)
-        json_final=json_change_format(json_temp_path)
-        json_return_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
-        load_and_process_json(json_final,json_return_path)
+        json_final=json_change_format(json_temp_path,original_json_path)
+        json_level_redtitle_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f'{file_name}_level_redtitle.json'
+        with open(json_level_redtitle_path,'w',encoding='utf-8') as f:
+            json.dump(json_final,f,ensure_ascii=False,indent=2)
+        #json_return_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
+        #load_and_process_json(json_final,json_return_path)
+
 
 if __name__=="__main__":
     pdf_path="../data/doc/公司-国网陕电人资〔2021〕36号-国网陕西省电力有限公司关于各层级组织机构融合情况的报告.pdf"
