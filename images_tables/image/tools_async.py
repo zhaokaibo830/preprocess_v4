@@ -5,6 +5,7 @@ import io
 from PIL import Image
 from openai import AsyncOpenAI
 from typing import List, Dict, Any
+import traceback
 
 def process_and_encode_image(image_path, max_size=800):
     """读取本地图片并转换为 Base64，包含缩放逻辑"""
@@ -26,11 +27,18 @@ async def analyze_image_content_async(image_path, title, config, api_key, base_u
     异步分析图片内容
     semaphore: 用于控制全局最大并发数
     """
-    if semaphore:
-        async with semaphore:
+    try:
+        if semaphore:
+            async with semaphore:
+                return await _analyze_impl(image_path, title, config, api_key, base_url, model_name)
+        else:
             return await _analyze_impl(image_path, title, config, api_key, base_url, model_name)
-    else:
-        return await _analyze_impl(image_path, title, config, api_key, base_url, model_name)
+    except Exception as e:
+        # 打印错误栈，方便调试
+        print(f"处理图片 {image_path} 时发生严重错误:")
+        traceback.print_exc()
+        # 返回包含错误信息的字典，确保后续 list 处理不崩溃
+        return {"error": f"Task execution failed: {str(e)}", "path": image_path}
 
 async def _analyze_impl(image_path, title, config, api_key, base_url, model_name):
     client = AsyncOpenAI(api_key=api_key, base_url=base_url)
@@ -70,9 +78,11 @@ async def _analyze_impl(image_path, title, config, api_key, base_url, model_name
         if "pie chart" in res_text: return "pie chart"
         if "铭牌" in res_text: return "铭牌"
         return "other"
-
-    image_cls = await get_classification()
-
+    try:
+        image_cls = await get_classification()
+    except Exception as e:
+        print(f"分类任务失败 [{image_path}]: {e}")
+        return {"error": f"分类 API 调用失败: {str(e)}"}
     # 2. 根据分类准备 Prompt
     desc_prompt = ""
     html_prompt = ""
@@ -125,6 +135,7 @@ async def _analyze_impl(image_path, title, config, api_key, base_url, model_name
 
     for key, res in zip(task_keys, api_results):
         if isinstance(res, Exception):
+            print(f"子任务 {key} 失败 [{image_path}]: {res}")
             final_result[key] = f"Error: {str(res)}"
         else:
             final_result[key] = res.choices[0].message.content

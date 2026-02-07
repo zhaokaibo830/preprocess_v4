@@ -13,7 +13,7 @@ from pathlib import Path
 layout_path = Path(__file__).parent / "layout"
 sys.path.insert(0, str(layout_path))
 import subprocess
-from fastapi import FastAPI, UploadFile, File, Form
+from fastapi import FastAPI, UploadFile, File, Form ,Query
 from fastapi.responses import FileResponse
 from fastapi.responses import JSONResponse
 import uuid, os, json, shutil
@@ -184,11 +184,64 @@ async def core_analyze_pipeline(
     print("表格配置：", table_config)
 
     # 处理图片
-    img_time_start=time.perf_counter()
+    
     if  image_config:
-        img_jobs = []
+
+        def build_consistent_error_json(reason):
+                err_dict = {}
+                if 'cls' in image_config:
+                    err_dict["type"] = "error"
+                if 'desc' in image_config:
+                    err_dict["desc"] = f"处理失败/已跳过: {reason}。本内容由AI生成，内容仅供参考。"
+                if 'html' in image_config:
+                    err_dict["html"] = f"<table><tr><td>错误信息：{reason}</td></tr></table>"
+                return err_dict
+
+        img_time_start=time.perf_counter()
+        #img_jobs = []
         print(f"图片处理选项为{image_config}，开始处理图片...")
+        image_count = 0
+        stop_processing = False  # 熔断标志
+        final_error_info = ""
         for block_index,block in enumerate(full_json_data["output"]):
+
+            if block["type"] == "image":
+                image_count += 1
+                if stop_processing:
+                    # 记录“因之前图片出错而导致本图被跳过”的状态
+                    block["llm_process"] = build_consistent_error_json(f"由于之前的错误已停止处理: {final_error_info}")
+                    continue
+                img_path=None
+                img_title=""
+                for sub_block_index , sub_block in enumerate(block["blocks"]):
+                    
+                    if sub_block["type"] == "image_body":
+                        img_path=sub_block["lines"][0]["spans"][0]["image_path"]
+                        if vlm_enable:
+                            img_path=Path(output_path)/folder_name/'vlm'/'images'/img_path
+                        else:
+                            img_path=Path(output_path)/folder_name/'auto'/'images'/img_path
+                        
+                    elif sub_block["type"] == "image_caption":
+                        try:
+                            img_title=sub_block["lines"][0]["spans"][0]["content"]
+                        except (IndexError, KeyError, TypeError):
+                            img_title=""
+                try:
+                    result=analyze_image_content(img_path,img_title,image_config,
+                                            cfg['LLM']['img']['API_KEY'],
+                                            cfg['LLM']['img']['BASE_URL'],
+                                            cfg['LLM']['img']['MODEL'])
+                    block["llm_process"]=result
+                except Exception as e:
+                    stop_processing = True  # 触发熔断
+                    final_error_info = str(e)  # 记录错误信息
+                    block["llm_process"] = build_consistent_error_json(final_error_info)
+                    print(f"!!! 严重错误：处理第 {image_count} 张图片时发生异常，已启动熔断 !!!")
+                    print(f"错误详情: {final_error_info}")
+                
+        print(f"已处理{image_count}张图片")          
+        '''
             if block["type"]=="image":
                 current_sub_idx=-1
                 current_img_path=None
@@ -214,7 +267,8 @@ async def core_analyze_pipeline(
                         current_sub_idx,
                         current_img_path,
                         current_img_title
-                    ])       
+                    ])   
+                
         print(f"已收集{len(img_jobs)}张图片")
 
         img_results = await asyncio.gather(
@@ -227,14 +281,79 @@ async def core_analyze_pipeline(
         for ( b_idx, sb_idx, _,_), desc in zip(img_jobs, img_results):
             full_json_data["output"][b_idx]["llm_process"] = desc
         print(f"已处理{len(img_jobs)}张图片")
+        '''
+        img_end_time=time.perf_counter()
     else:
         print("图片处理选项为空，跳过图片处理步骤。")
-    img_end_time=time.perf_counter()
+        img_start_time=0
+        img_end_time=0
+    
 
     #表格处理
-    table_start_time=time.perf_counter()
+    
     if table_config:
+
+        def build_table_error_json(reason):
+                err_dict = {"type": "table"} # 表格固定有 type
+                if 'kv' in table_config:
+                    # 正常是 list[dict]，报错也给个 list[dict]
+                    err_dict["key_value"] = [{"error": "数据提取失败", "details": reason}]
+                if 'desc' in table_config:
+                    err_dict["description"] = f"表格分析失败: {reason}"
+                if 'html' in table_config:
+                    err_dict["table_html"] = block.get("table_html", "") # 失败则保留原html或报错信息
+                return err_dict
+
+        table_start_time=time.perf_counter()
         print(f"表格处理选项为{table_config}，开始处理表格...")
+        table_count=0
+        stop_processing_table = False
+        final_table_error = ""
+        table_jobs = []
+        for block_index,block in enumerate(full_json_data["output"]):
+            if block["type"] == "table":
+
+                if stop_processing_table:
+                    block["llm_process"] = build_table_error_json(f"处理中断: {final_table_error}")
+                    table_count += 1
+                    continue
+                table_html=None
+                table_title=""
+                for sub_block_index , sub_block in enumerate(block["blocks"]):
+                    
+                    if sub_block["type"] == "table_body":
+                        try:
+                            table_path=sub_block["lines"][0]["spans"][0]["image_path"]
+                            if vlm_enable:
+                                table_path=Path(output_path)/folder_name/'vlm'/'images'/table_path
+                            else:
+                                table_path=Path(output_path)/folder_name/'auto'/'images'/table_path
+                            table_jobs.append([sub_block["lines"][0]["spans"][0]["html"], table_path])
+                            table_html=sub_block["lines"][0]["spans"][0]["html"]
+                            table_count+=1
+                        except (IndexError, KeyError, TypeError):
+                            table_html=None
+                            continue
+                    elif sub_block["type"] == "table_caption":
+                        try:
+                            table_title=sub_block["lines"][0]["spans"][0]["content"]
+                        except (IndexError, KeyError, TypeError):
+                            table_title=""
+                try:
+                    result=table_extract(table_html,table_title,table_config,
+                                        cfg['LLM']['img']['API_KEY'],
+                                        cfg['LLM']['img']['BASE_URL'],
+                                        cfg['LLM']['img']['MODEL'])
+                    block["llm_process"]=result
+                except Exception as e:
+                    # 3. 捕获 raise 抛出的错误，启动熔断
+                    stop_processing_table = True
+                    final_table_error = str(e)
+                    block["llm_process"] = build_table_error_json(f"处理中断: {final_table_error}")
+                    print(f"表格处理熔断：第 {processed_count} 个表格出错: {final_table_error}")
+                
+        print(f"已处理{table_count}张表格")
+        '''
         table_jobs = []
         for block_index,block in enumerate(full_json_data["output"]):
             if block["type"]=="table":
@@ -290,20 +409,23 @@ async def core_analyze_pipeline(
         for (b_idx, sb_idx, _, _,_), result in zip(table_jobs, table_results):
             full_json_data["output"][b_idx]["llm_process"] = result
             #print(f"Block {b_idx}, Sub-block {sb_idx}: {result}")
-        
+        '''
         if 'html' in table_config:#如果有html参数，保存excel文件
             excel_output_dir=Path(output_path)/folder_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
             excel_output_dir.mkdir(parents=True,exist_ok=True)
-            for _,_,table_html,table_title,table_path in table_jobs:
+            for table_html, table_path in table_jobs:
                 table_name=Path(table_path).stem+'.xlsx'
                 excel_output_path=excel_output_dir/table_name
                 html_to_excel_openpyxl(table_html,str(excel_output_path))
 
-        print(f"已处理{len(table_jobs)}张表格")
+        print(f"已处理{table_count}张表格")
+        table_time_end=time.perf_counter()
     else:
         print("表格处理选项为空，跳过表格处理步骤。")
+        table_start_time=0
+        table_time_end=0
 
-    table_time_end=time.perf_counter()
+    
 
     #将公式图片从minio待上传列表中移除
     eq_path=output_path / folder_name / ('vlm' if vlm_enable else 'auto')/'equation_images'
@@ -325,8 +447,8 @@ async def core_analyze_pipeline(
         "image_config":image_config,
         "table_config":table_config,
         "input_file":input_file,
-        "table_number" : len(table_jobs),
-        "image_number" : len(img_jobs),
+        "table_number" : table_count,
+        "image_number" : image_count,
         "layout_time" : mineru_end_time-mineru_start_time,
         "title_time" : title_end_time-title_start_time,
         "image_time" : img_end_time-img_time_start,
@@ -523,10 +645,14 @@ async def preprocess_v4(
 @app.post("/api/v1/xidian/preprocess_required")
 async def return_json_only(
     file: UploadFile = File(...),
-    vlm_enable: bool = Form(True),
-    red_title_enable:bool = Form(True),
-    img_select: List[str] = Form([]),
-    table_select: List[str] = Form([])
+    vlm_enable: bool = Query(True),
+    red_title_enable: bool = Query(True),
+    img_class: bool = Query(True),
+    img_desc: bool = Query(True),
+    img_html: bool = Query(True),
+    table_kv: bool = Query(True),
+    table_desc: bool = Query(True),
+    table_html: bool = Query(True)
 ):
     # 1. 调用核心逻辑
     request_id = str(uuid.uuid4())
@@ -534,6 +660,22 @@ async def return_json_only(
     status_message = "SUCCESS"
     return_json_partitions = []
     try:
+        img_select, table_select = [], []
+
+        if img_class:
+            img_select.append("class")
+        if img_desc:
+            img_select.append("description")
+        if img_html:
+            img_select.append("html")
+        if table_kv:
+            table_select.append("key-value")
+        if table_desc:
+            table_select.append("description")
+        if table_html:
+            table_select.append("html")
+
+        
         res = await core_analyze_pipeline(file, vlm_enable, img_select, table_select, request_id)
         
         output_path=res['output_path']
@@ -613,10 +755,14 @@ async def return_json_only(
 @app.post("/api/v1/xidian/preprocess_required_test")
 async def return_json_only(
     file: UploadFile = File(...),
-    vlm_enable: bool = Form(True),
-    red_title_enable:bool = Form(True),
-    img_select: List[str] = Form([]),
-    table_select: List[str] = Form([])
+    vlm_enable: bool = Query(True),
+    red_title_enable: bool = Query(True),
+    img_class: bool = Query(True),
+    img_desc: bool = Query(True),
+    img_html: bool = Query(True),
+    table_kv: bool = Query(True),
+    table_desc: bool = Query(True),
+    table_html: bool = Query(True)
 ):
     # 1. 调用核心逻辑
     start_time=time.perf_counter()
@@ -625,6 +771,20 @@ async def return_json_only(
     status_message = "SUCCESS"
     return_json_partitions = []
     try:
+        img_select, table_select = [], []
+
+        if img_class:
+            img_select.append("class")
+        if img_desc:
+            img_select.append("description")
+        if img_html:
+            img_select.append("html")
+        if table_kv:
+            table_select.append("key-value")
+        if table_desc:
+            table_select.append("description")
+        if table_html:
+            table_select.append("html")
         res = await core_analyze_pipeline(file, vlm_enable, img_select, table_select, request_id)
         
         output_path=res['output_path']
@@ -715,10 +875,14 @@ async def return_json_only(
 @app.post("/api/v1/xidian/preprocess_custom")
 async def return_json_with_zip_save(
     file: UploadFile = File(...),
-    vlm_enable: bool = Form(True),
-    red_title_enable:bool = Form(True),
-    img_select: List[str] = Form([]),
-    table_select: List[str] = Form([])
+    vlm_enable: bool = Query(True),
+    red_title_enable: bool = Query(True),
+    img_class: bool = Query(True),
+    img_desc: bool = Query(True),
+    img_html: bool = Query(True),
+    table_kv: bool = Query(True),
+    table_desc: bool = Query(True),
+    table_html: bool = Query(True)
 ):
 
     # 1. 调用核心逻辑
@@ -727,6 +891,20 @@ async def return_json_with_zip_save(
     status_message = "SUCCESS"
     return_json_partitions = []
     try:
+        img_select, table_select = [], []
+
+        if img_class:
+            img_select.append("class")
+        if img_desc:
+            img_select.append("description")
+        if img_html:
+            img_select.append("html")
+        if table_kv:
+            table_select.append("key-value")
+        if table_desc:
+            table_select.append("description")
+        if table_html:
+            table_select.append("html")
         res = await core_analyze_pipeline(file, vlm_enable, img_select, table_select, request_id)
         
         output_path=res['output_path']

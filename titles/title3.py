@@ -5,6 +5,7 @@ import sys
 from openai import OpenAI
 from typing import List, Dict, Any, Tuple
 from pathlib import Path
+import time
 def load_json_data(path: str) -> Dict[str, Any]:
     """读取完整的 JSON 文件结构"""
     if not os.path.exists(path):
@@ -189,12 +190,14 @@ def call_llm_polish_structure(raw_titles: str, full_context: str,base_url, api_k
     
     输出要求：仅输出 Markdown 结果，包含列表中所有原始文本，严禁遗漏。
     """
-
+    REQUEST_TIMEOUT = (5.0, 60.0)
     try:
         client = OpenAI(
             api_key=api_key,
             base_url=base_url,
+            timeout=300.0
         )
+
         completion = client.chat.completions.create(
             model=model_name,
             messages=[
@@ -227,7 +230,14 @@ def process_titles_with_llm(all_nodes: List[Dict[str, Any]], full_context: str,b
 
     full_titles_input = "\n".join(titles_input_to_llm)
     print("2. Calling LLM to polish structure (with cover/TOC protection)...")
-    title_md_result = call_llm_polish_structure(full_titles_input, full_context,base_url, api_key, model_name)
+    try:
+        title_md_result = call_llm_polish_structure(full_titles_input, full_context,base_url, api_key, model_name)
+    except Exception as e:
+        # 如果 call_llm_polish_structure 内部没接住，这里做最后兜底
+        title_md_result = ""
+        error_info = f"LLM Call Exception: {type(e).__name__} - {str(e)}"
+    
+
 
     title_lines = title_md_result.split("\n")
     title_level_map = {}
