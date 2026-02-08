@@ -147,7 +147,7 @@ async def core_analyze_pipeline(
     #标题处理
     final_json_path = Path(final_json_path).absolute()
     title_start_time=time.perf_counter()
-    full_json_data = title_process(
+    full_json_data, title_error_info = title_process(
         final_json_path,
         cfg['LLM']['title_model']['LLM_BASE_URL'],
         cfg['LLM']['title_model']['LLM_API_KEY'],
@@ -357,7 +357,8 @@ async def core_analyze_pipeline(
         "image_time" : img_end_time-img_time_start,
         "table_time" : table_time_end-table_start_time,
         "image_error_msg": image_error_msg,
-        "table_error_msg": table_error_msg
+        "table_error_msg": table_error_msg,
+        "title_error_msg": title_error_info
     }  
 
 async def call_mineru_api(input_file_path, output_dir, backend):
@@ -597,7 +598,7 @@ async def return_json_only(
         table_number=res["table_number"]
         image_error_msg=res["image_error_msg"]
         table_error_msg=res["table_error_msg"]
-
+        title_error_msg=res["title_error_msg"]
 
         # 2. 存储逻辑：将图表文件上传 MinIO
         images_path = Path(res['output_path']) / res["folder_name"] / res["sub_type"] / 'images'
@@ -661,7 +662,7 @@ async def return_json_only(
         if image_error_msg: extra_errors.append(f"图片提取异常: {image_error_msg}")
         if table_error_msg: extra_errors.append(f"表格提取异常: {table_error_msg}")
         if red_title_error_msg: extra_errors.append(f"红头处理异常: {red_title_error_msg}")
-        
+        if title_error_msg: extra_errors.append(f"标题层级分析异常: {title_error_msg}")
         if extra_errors:
             status_message = "核心流程成功，大模型调用出错: " + " | ".join(extra_errors)
     return_json={

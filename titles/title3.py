@@ -195,7 +195,7 @@ def call_llm_polish_structure(raw_titles: str, full_context: str,base_url, api_k
         client = OpenAI(
             api_key=api_key,
             base_url=base_url,
-            timeout=300.0
+            timeout=(5,300.0)
         )
 
         completion = client.chat.completions.create(
@@ -210,7 +210,7 @@ def call_llm_polish_structure(raw_titles: str, full_context: str,base_url, api_k
         return completion.choices[0].message.content
     except Exception as e:
         print(f"Error during LLM structure polishing: {e}")
-        return ""
+        raise RuntimeError(f"标题层级分析LLM调用失败: {str(e)}")
 
 
 def process_titles_with_llm(all_nodes: List[Dict[str, Any]], full_context: str,base_url, api_key, model_name) -> Dict[str, int]:
@@ -230,28 +230,31 @@ def process_titles_with_llm(all_nodes: List[Dict[str, Any]], full_context: str,b
 
     full_titles_input = "\n".join(titles_input_to_llm)
     print("2. Calling LLM to polish structure (with cover/TOC protection)...")
+
+    error_info = ""
+    title_level_map = {}
     try:
         title_md_result = call_llm_polish_structure(full_titles_input, full_context,base_url, api_key, model_name)
+        if not title_md_result:
+            # 这里如果不抛异常，也可以直接 return，视作“无结果”
+            return {}, "LLM返回结果为空"
+        title_lines = title_md_result.split("\n")
+        title_level_map = {}
+        for line in title_lines:
+            line = line.strip()
+            if not line:
+                continue
+            level = count_leading_hashes(line)
+            if level > 0:
+                clean_key = filter_string(re.sub(r'^#+\s*', '', line))
+                if clean_key:
+                    title_level_map[clean_key] = level
     except Exception as e:
-        # 如果 call_llm_polish_structure 内部没接住，这里做最后兜底
-        title_md_result = ""
-        error_info = f"LLM Call Exception: {type(e).__name__} - {str(e)}"
-    
-
-
-    title_lines = title_md_result.split("\n")
-    title_level_map = {}
-    for line in title_lines:
-        line = line.strip()
-        if not line:
-            continue
-        level = count_leading_hashes(line)
-        if level > 0:
-            clean_key = filter_string(re.sub(r'^#+\s*', '', line))
-            if clean_key:
-                title_level_map[clean_key] = level
-
-    return title_level_map
+        # 捕获到底层抛出的 RuntimeError
+        error_info = str(e)
+        print(f"[ERROR] {error_info}")
+        # 发生异常时，title_level_map 将保持为空字典
+    return title_level_map,error_info
 
 
 def is_specific_title(title):
@@ -432,7 +435,7 @@ def title_process(json_path: str, base_url: str, api_key: str, model_name: str, 
         sys.exit(1)
 
     # 4. LLM 处理 (含干扰项剔除逻辑)
-    title_level_map = process_titles_with_llm(all_process_nodes, full_context,base_url, api_key, model_name)
+    title_level_map , error_info = process_titles_with_llm(all_process_nodes, full_context,base_url, api_key, model_name)
 
     print("3. Assigning levels to ALL nodes (Task 2)...")
 
@@ -482,4 +485,4 @@ def title_process(json_path: str, base_url: str, api_key: str, model_name: str, 
     md_output_path = base_dir / f"{file_name}_titles_only.md"
 
     export_structure_to_markdown(all_process_nodes, md_output_path)  
-    return full_json_data
+    return full_json_data ,error_info
