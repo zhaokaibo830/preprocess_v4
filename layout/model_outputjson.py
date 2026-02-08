@@ -6,16 +6,6 @@ import re
 import requests
 from typing import Dict, List
 
-CONFIG = {
-    # LLM API 配置
-    "LLM_API_KEY": "sk-734ae048099b49b5b4c7981559765228",
-    "LLM_BASE_URL": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-    "LLM_MODEL": "qwen-vl-max",
-
-    # 文件路径配置
-    "INPUT_PATH": "./output",
-    "OUTPUT_PATH": "./extracted_texts",
-}
 
 class ImageTextExtractor:
     def __init__(self, config: Dict):
@@ -33,7 +23,16 @@ class ImageTextExtractor:
             "Content-Type": "application/json",
             "Authorization": f"Bearer {self.api_key}"
         }
-    
+    def build_error_json(self, status: str, error_msg: str) -> Dict:
+        """
+        统一构建错误或跳过状态下的结果字典。
+        status: "failed" (触发错误的那个图片) 或 "skipped" (熔断后被跳过的图片)
+        """
+        return {
+            "image_name": "N/A",  # 或者在调用处传入文件名
+            "extracted_text": f"错误: [{status}] {error_msg}",
+            "classified_items": []  # 确保即便失败，这个列表也存在，防止下游遍历报错
+        }
     def encode_image_to_base64(self, image_path: str) -> str:
         """将图片编码为base64字符串"""
         with open(image_path, "rb") as image_file:
@@ -105,7 +104,7 @@ class ImageTextExtractor:
                 f"{self.base_url}/chat/completions",
                 headers=self.headers,
                 json=payload,
-                timeout=60
+                timeout=(5,60)
             )
             
             response.raise_for_status()
@@ -119,7 +118,7 @@ class ImageTextExtractor:
                 
         except Exception as e:
             print(f"分析图片 {image_path} 时出错: {str(e)}")
-            return f"错误: {str(e)}"
+            raise RuntimeError(f"OCR分析阶段失败: {str(e)}")
     
     def parse_numbered_text(self, text: str) -> List[str]:
         """解析带有序号的文本，返回文本列表"""
@@ -186,7 +185,7 @@ class ImageTextExtractor:
                 f"{self.base_url}/chat/completions",
                 headers=self.headers,
                 json=payload,
-                timeout=30
+                timeout=(5, 30)
             )
             
             response.raise_for_status()
@@ -203,7 +202,7 @@ class ImageTextExtractor:
                 
         except Exception as e:
             print(f"分类文本片段时出错: {str(e)}")
-            return "分类失败"
+            raise RuntimeError(f"文本分类阶段失败: {str(e)}")
     
     def classify_text_items(self, text_items: List[str]) -> List[Dict[str, str]]:
         """对多条文本内容进行批量类别判断"""
@@ -433,11 +432,23 @@ n. 类型名称
         
         all_results = []
         successful_results = []
-        
+        stop_processing = False
+        final_error = None
         for image_file in image_files:
-            result = self.process_single_image(image_file)
-            all_results.append(result)
-            
+            if stop_processing:
+            # 已经熔断，直接生成空结构
+                all_results.append(self.build_error_json("skipped", final_error))
+                continue
+            try:
+                result = self.process_single_image(image_file)
+                all_results.append(result)
+            except Exception as e:
+                # 终于抓到了！
+                stop_processing = True
+                final_error = str(e)  # 记录具体的报错信息
+                all_results.append(self.build_error_json("failed", final_error))
+                print(f"检测到异常，启动熔断: {final_error}")
+                continue
             # 检查是否成功提取并分类
             if result['classified_items']:
                 successful_results.append(result)
@@ -481,7 +492,7 @@ n. 类型名称
             for item_type, count in sorted(type_count.items(), key=lambda x: x[1], reverse=True):
                 print(f"  {item_type}: {count}条")
         
-        return all_results
+        return all_results , final_error
 
 def main():
     """主函数"""

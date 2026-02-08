@@ -184,7 +184,7 @@ async def core_analyze_pipeline(
     print("表格配置：", table_config)
 
     # 处理图片
-    
+    image_error_msg = None
     if  image_config:
 
         def build_consistent_error_json(reason):
@@ -236,52 +236,12 @@ async def core_analyze_pipeline(
                 except Exception as e:
                     stop_processing = True  # 触发熔断
                     final_error_info = str(e)  # 记录错误信息
+                    image_error_msg = final_error_info
                     block["llm_process"] = build_consistent_error_json(final_error_info)
                     print(f"!!! 严重错误：处理第 {image_count} 张图片时发生异常，已启动熔断 !!!")
                     print(f"错误详情: {final_error_info}")
                 
         print(f"已处理{image_count}张图片")          
-        '''
-            if block["type"]=="image":
-                current_sub_idx=-1
-                current_img_path=None
-                current_img_title=""
-                for sub_block_index,sub_block in enumerate(block["blocks"]):
-                    if sub_block["type"]=="image_body":
-                        img_path=sub_block["lines"][0]["spans"][0]["image_path"]
-                        if vlm_enable:
-                            img_path=Path(output_path)/folder_name/'vlm'/'images'/img_path
-                        else:
-                            img_path=Path(output_path)/folder_name/'auto'/'images'/img_path
-                        
-                        current_sub_idx=sub_block_index
-                        current_img_path=img_path
-                    elif sub_block["type"]=="image_caption":
-                        try:
-                            current_img_title=sub_block["lines"][0]["spans"][0]["content"]
-                        except (IndexError, KeyError, TypeError):
-                            current_img_title=""
-                if current_img_path:
-                    img_jobs.append([
-                        block_index,
-                        current_sub_idx,
-                        current_img_path,
-                        current_img_title
-                    ])   
-                
-        print(f"已收集{len(img_jobs)}张图片")
-
-        img_results = await asyncio.gather(
-            *[analyze_image_content_async(str(path),title, image_config,
-                                        cfg['LLM']['img']['API_KEY'],
-                                        cfg['LLM']['img']['BASE_URL'],
-                                        cfg['LLM']['img']['MODEL'],semaphore)
-            for _, _, path,title in img_jobs]
-        )
-        for ( b_idx, sb_idx, _,_), desc in zip(img_jobs, img_results):
-            full_json_data["output"][b_idx]["llm_process"] = desc
-        print(f"已处理{len(img_jobs)}张图片")
-        '''
         img_end_time=time.perf_counter()
     else:
         print("图片处理选项为空，跳过图片处理步骤。")
@@ -290,7 +250,7 @@ async def core_analyze_pipeline(
     
 
     #表格处理
-    
+    table_error_msg = None
     if table_config:
 
         def build_table_error_json(reason):
@@ -349,67 +309,11 @@ async def core_analyze_pipeline(
                     # 3. 捕获 raise 抛出的错误，启动熔断
                     stop_processing_table = True
                     final_table_error = str(e)
+                    table_error_msg = final_table_error
                     block["llm_process"] = build_table_error_json(f"处理中断: {final_table_error}")
-                    print(f"表格处理熔断：第 {processed_count} 个表格出错: {final_table_error}")
+                    print(f"表格处理熔断：第 {table_count} 个表格出错: {final_table_error}")
                 
         print(f"已处理{table_count}张表格")
-        '''
-        table_jobs = []
-        for block_index,block in enumerate(full_json_data["output"]):
-            if block["type"]=="table":
-                current_table_html=None
-                current_table_title=""
-                current_sub_idx=-1
-                current_table_path=None
-                for sub_block_index,sub_block in enumerate(block["blocks"]):
-                    if sub_block["type"]=="table_body":
-                        try:
-                            table_path=sub_block["lines"][0]["spans"][0]["image_path"]
-                            if vlm_enable:
-                                table_path=Path(output_path)/folder_name/'vlm'/'images'/table_path
-                            else:
-                                table_path=Path(output_path)/folder_name/'auto'/'images'/table_path
-                            current_table_path=table_path
-                            current_table_html=sub_block["lines"][0]["spans"][0]["html"]
-                            current_sub_idx=sub_block_index
-                        except (IndexError, KeyError, TypeError):
-                            print(f"[WARN] block={block_index} 取不到表格，已跳过")
-                            continue
-                    elif sub_block["type"]=="table_caption":
-                        try:
-                            current_table_title=sub_block["lines"][0]["spans"][0]["content"]
-                        except (IndexError, KeyError, TypeError):
-                            current_table_title=""
-                if current_table_html:
-                    table_jobs.append(
-                        [
-                            block_index,
-                            current_sub_idx,
-                            current_table_html,
-                            current_table_title,
-                            table_path
-                        ]
-                    )
-
-        print(f"已收集{len(table_jobs)}个表格")
-
-        table_results = await asyncio.gather(
-            *[analyze_table_content_async(
-                html,
-                title,
-                table_config,
-                cfg['LLM']['img']['API_KEY'],
-                cfg['LLM']['img']['BASE_URL'],
-                cfg['LLM']['img']['MODEL'],
-                semaphore  # 传入信号量
-            ) for _, _, html,title,_ in table_jobs]
-        )
-        
-        # 将结果写回原数据结构
-        for (b_idx, sb_idx, _, _,_), result in zip(table_jobs, table_results):
-            full_json_data["output"][b_idx]["llm_process"] = result
-            #print(f"Block {b_idx}, Sub-block {sb_idx}: {result}")
-        '''
         if 'html' in table_config:#如果有html参数，保存excel文件
             excel_output_dir=Path(output_path)/folder_name/('vlm' if vlm_enable else 'auto')/'tables_excel'
             excel_output_dir.mkdir(parents=True,exist_ok=True)
@@ -426,7 +330,6 @@ async def core_analyze_pipeline(
         table_time_end=0
 
     
-
     #将公式图片从minio待上传列表中移除
     eq_path=output_path / folder_name / ('vlm' if vlm_enable else 'auto')/'equation_images'
     eq_path.mkdir(parents=True,exist_ok=True)
@@ -452,7 +355,9 @@ async def core_analyze_pipeline(
         "layout_time" : mineru_end_time-mineru_start_time,
         "title_time" : title_end_time-title_start_time,
         "image_time" : img_end_time-img_time_start,
-        "table_time" : table_time_end-table_start_time
+        "table_time" : table_time_end-table_start_time,
+        "image_error_msg": image_error_msg,
+        "table_error_msg": table_error_msg
     }  
 
 async def call_mineru_api(input_file_path, output_dir, backend):
@@ -659,6 +564,9 @@ async def return_json_only(
     status_code = 200
     status_message = "SUCCESS"
     return_json_partitions = []
+    image_error_msg = None
+    table_error_msg = None
+    red_title_error_msg = None
     try:
         img_select, table_select = [], []
 
@@ -685,6 +593,11 @@ async def return_json_only(
         image_config=res["image_config"]
         table_config=res["table_config"]
         input_file=res["input_file"]
+        image_number=res["image_number"]
+        table_number=res["table_number"]
+        image_error_msg=res["image_error_msg"]
+        table_error_msg=res["table_error_msg"]
+
 
         # 2. 存储逻辑：将图表文件上传 MinIO
         images_path = Path(res['output_path']) / res["folder_name"] / res["sub_type"] / 'images'
@@ -715,7 +628,7 @@ async def return_json_only(
                             print(f"[WARN] block={block_index} 取不到表格，已跳过")
                             continue
         
-        # 保存最终 JSON
+        # 保存level JSON
         level_json_name = f'{file_name}_processed_with_levels.json'
         if vlm_enable:
             level_json_path = output_path / folder_name / 'vlm' / level_json_name
@@ -726,7 +639,7 @@ async def return_json_only(
         # 红头文件处理
         images_output_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/"page_images"
         images_output_path.mkdir(parents=True, exist_ok=True)
-        post_process(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable)
+        red_title_error_msg = post_process(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable)
         partitions_json_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
         with open(partitions_json_path,'r',encoding='utf-8') as f:
             return_json_partitions=json.load(f)#红头文件标题处理后的json
@@ -743,7 +656,14 @@ async def return_json_only(
     except Exception as e:
         status_code = 500
         status_message = f"INTERNAL_ERROR: {str(e)}"
-
+    if status_code == 200:
+        extra_errors = []
+        if image_error_msg: extra_errors.append(f"图片提取异常: {image_error_msg}")
+        if table_error_msg: extra_errors.append(f"表格提取异常: {table_error_msg}")
+        if red_title_error_msg: extra_errors.append(f"红头处理异常: {red_title_error_msg}")
+        
+        if extra_errors:
+            status_message = "核心流程成功，大模型调用出错: " + " | ".join(extra_errors)
     return_json={
         "status_code": status_code,
         "status_message": status_message,

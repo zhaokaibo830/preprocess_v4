@@ -43,7 +43,7 @@ def post_process(pdf_path,images_output_path,original_json_path,api_key,base_url
 
         }
         extractor = ImageTextExtractor(config)
-        results = extractor.process_all_images()#红头文件提取结果
+        results ,error_msg = extractor.process_all_images()#红头文件提取结果
         #输出红头文件json和processed_with_level.json，将二者合并
         json_final=json_change_format(json_temp_path,original_json_path)#将上述结果写入full_json_data
 
@@ -54,7 +54,9 @@ def post_process(pdf_path,images_output_path,original_json_path,api_key,base_url
         #将json转为甲方要求的格式，存到f"{file_name}_partitions.json"
         json_return_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
         load_and_process_json(json_final,json_return_path)#对full_json_data进行格式转换，写入f"{file_name}_partitions.json"
+        return error_msg
     else:
+        error_msg = None
         #跳过红头文件处理阶段，将红头文件处理结果设为空字典
         json_temp_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f'{file_name}_redtitle.json'
         json_data={}
@@ -66,7 +68,7 @@ def post_process(pdf_path,images_output_path,original_json_path,api_key,base_url
             json.dump(json_final,f,ensure_ascii=False,indent=2)
         json_return_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
         load_and_process_json(json_final,json_return_path)
-
+        return error_msg
 #只处理红头文件标题，不修改json格式
 def post_process_2(pdf_path,images_output_path,original_json_path,api_key,base_url,model_name,output_path,file_name,folder_name,vlm_enable,red_title):
     if red_title:
@@ -86,7 +88,7 @@ def post_process_2(pdf_path,images_output_path,original_json_path,api_key,base_u
 
         }
         extractor = ImageTextExtractor(config)
-        results = extractor.process_all_images()
+        results,error_msg = extractor.process_all_images()
         json_final=json_change_format(json_temp_path,original_json_path)
 
         #在processed_with_level的基础上加入红头文件处理结果，存入f'{file_name}_level_redtitle.json'
@@ -95,7 +97,9 @@ def post_process_2(pdf_path,images_output_path,original_json_path,api_key,base_u
             json.dump(json_final,f,ensure_ascii=False,indent=2)
         #json_return_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
         #load_and_process_json(json_final,json_return_path)
+        return error_msg
     else:
+        error_msg = None
         json_temp_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f'{file_name}_redtitle.json'
         json_data={}
         with open(json_temp_path,'w',encoding='utf-8') as f:
@@ -106,7 +110,7 @@ def post_process_2(pdf_path,images_output_path,original_json_path,api_key,base_u
             json.dump(json_final,f,ensure_ascii=False,indent=2)
         #json_return_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
         #load_and_process_json(json_final,json_return_path)
-
+        return error_msg
 
 if __name__=="__main__":
     pdf_path="../data/doc/公司-国网陕电人资〔2021〕36号-国网陕西省电力有限公司关于各层级组织机构融合情况的报告.pdf"
