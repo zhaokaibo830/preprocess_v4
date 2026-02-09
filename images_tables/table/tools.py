@@ -36,7 +36,7 @@ def table_extract(table_html: str, title, config, api_key: str, base_url: str, m
                     {"role": "user", "content": user_content},
                 ],
                 extra_body={"enable_thinking": False},
-                timeout=(5.0, 60.0)  # 连接5秒，响应60秒超时
+                timeout=(20.0, 600)  # 连接5秒，响应60秒超时
             )
             return completion.choices[0].message.content
         except Exception as e:

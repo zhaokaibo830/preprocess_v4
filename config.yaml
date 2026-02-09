@@ -3,19 +3,19 @@ output_path_temp: ./data/temp
 LLM:
   title_model:
     LLM_API_KEY: sk-1fdbb0e4ce3943bab4b300ca867c1315
-    LLM_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v
+    LLM_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
     LLM_MODEL: qwen3-14b
   img:
     API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315
-    BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v
+    BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
     MODEL : qwen3-vl-8b-instruct
   table:
     API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315
-    BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v
+    BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/
     MODEL : qwen3-14b
   red_title:
     API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315
-    BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v
+    BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
     MODEL : qwen3-vl-32b-instruct
 MinIO:
   IP: 60.204.211.83:10000

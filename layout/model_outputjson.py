@@ -268,7 +268,7 @@ n. 类型名称
                 f"{self.base_url}/chat/completions",
                 headers=self.headers,
                 json=payload,
-                timeout=30
+                timeout=(20,180)
             )
             
             response.raise_for_status()

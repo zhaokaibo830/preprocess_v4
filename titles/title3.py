@@ -195,7 +195,7 @@ def call_llm_polish_structure(raw_titles: str, full_context: str,base_url, api_k
         client = OpenAI(
             api_key=api_key,
             base_url=base_url,
-            timeout=(5,300.0)
+            timeout=(20,300.0)
         )
 
         completion = client.chat.completions.create(
@@ -433,7 +433,7 @@ def title_process(json_path: str, base_url: str, api_key: str, model_name: str, 
     except Exception as e:
         print(f"Startup Failed: {e}")
         sys.exit(1)
-
+    
     # 4. LLM 处理 (含干扰项剔除逻辑)
     title_level_map , error_info = process_titles_with_llm(all_process_nodes, full_context,base_url, api_key, model_name)
 

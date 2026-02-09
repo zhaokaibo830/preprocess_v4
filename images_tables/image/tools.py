@@ -52,7 +52,7 @@ def analyze_image_content(image_path, title, config, api_key, base_url, model_na
                 model=model_name,
                 messages=messages,
                 temperature=temp,
-                timeout=(5.0, 60.0)  # 连接超时5s，响应超时60s（针对本地大模型较慢的情况）
+                timeout=(20.0, 300)  # 连接超时5s，响应超时60s（针对本地大模型较慢的情况）
             )
             return completion.choices[0].message.content.strip()
         except Exception as e:
