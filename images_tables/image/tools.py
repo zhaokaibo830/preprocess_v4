@@ -23,7 +23,7 @@ def process_and_encode_image(image_path, max_size=800):
         img.save(buffer, format=img_format)
         return base64.b64encode(buffer.getvalue()).decode("utf-8")
 
-def analyze_image_content(image_path, title, config, api_key, base_url, model_name):
+def analyze_image_content(image_path, title, config, api_key, base_url, model_name,connection_timeout,process_timeout):
     """
     分析图片内容：首先判断图片类型，然后使用针对性的提示词进行详细描述。
     增加了 raise 异常处理，确保系统级错误能被主函数捕获。
@@ -52,7 +52,7 @@ def analyze_image_content(image_path, title, config, api_key, base_url, model_na
                 model=model_name,
                 messages=messages,
                 temperature=temp,
-                timeout=(20.0, 300)  # 连接超时5s，响应超时60s（针对本地大模型较慢的情况）
+                timeout=(connection_timeout, process_timeout)  # 连接超时5s，响应超时60s（针对本地大模型较慢的情况）
             )
             return completion.choices[0].message.content.strip()
         except Exception as e:

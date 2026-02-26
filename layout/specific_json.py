@@ -15,16 +15,33 @@ def extract_text_from_item(item: Dict) -> str:
         # 首先检查llm_process
         if "llm_process" in item:
             llm_data = item["llm_process"]
-            print(f"DEBUG: llm_process存在，keys: {list(llm_data.keys())}")
+            print(f"DEBUG: llm_process存在，类型: {type(llm_data)}")
             
-            # 检查description字段
-            if "description" in llm_data:
-                description = llm_data["description"]
-                print(f"DEBUG: 找到description字段，类型: {type(description)}")
-                print(f"DEBUG: description值预览: {str(description)[:200]}...")
-                return str(description) if description is not None else ""
-            else:
-                print(f"DEBUG: llm_process中没有description字段")
+            # 处理llm_process是列表的情况
+            if isinstance(llm_data, list):
+                print(f"DEBUG: llm_process是列表，长度: {len(llm_data)}")
+                for llm_item in llm_data:
+                    if isinstance(llm_item, dict):
+                        # 检查description字段
+                        if "description" in llm_item:
+                            description = llm_item["description"]
+                            print(f"DEBUG: 找到description字段")
+                            return str(description) if description is not None else ""
+                        # 检查desc字段（用于image类型）
+                        elif "desc" in llm_item:
+                            desc = llm_item["desc"]
+                            print(f"DEBUG: 找到desc字段")
+                            return str(desc) if desc is not None else ""
+            
+            # 处理llm_process是字典的情况（兼容原有代码）
+            elif isinstance(llm_data, dict):
+                print(f"DEBUG: llm_process是字典，keys: {list(llm_data.keys())}")
+                if "description" in llm_data:
+                    description = llm_data["description"]
+                    return str(description) if description is not None else ""
+                elif "desc" in llm_data:
+                    desc = llm_data["desc"]
+                    return str(desc) if desc is not None else ""
         else:
             print(f"DEBUG: table中没有llm_process字段")
         
@@ -47,8 +64,26 @@ def extract_text_from_item(item: Dict) -> str:
     
     # 处理image类型
     elif item_type == "image":
-        if "llm_process" in item and "desc" in item["llm_process"]:
-            return str(item["llm_process"]["desc"]) if item["llm_process"]["desc"] is not None else ""
+        if "llm_process" in item:
+            llm_data = item["llm_process"]
+            print(f"DEBUG: image的llm_process类型: {type(llm_data)}")
+            
+            # 处理llm_process是列表的情况
+            if isinstance(llm_data, list):
+                for llm_item in llm_data:
+                    if isinstance(llm_item, dict):
+                        if "desc" in llm_item:
+                            desc = llm_item["desc"]
+                            print(f"DEBUG: 从image的llm_process列表中找到desc字段")
+                            return str(desc) if desc is not None else ""
+            
+            # 处理llm_process是字典的情况
+            elif isinstance(llm_data, dict):
+                if "desc" in llm_data:
+                    desc = llm_data["desc"]
+                    print(f"DEBUG: 从image的llm_process字典中找到desc字段")
+                    return str(desc) if desc is not None else ""
+        
         elif "blocks" in item:
             # 尝试从caption中提取文本
             for block in item.get("blocks", []):
@@ -60,40 +95,7 @@ def extract_text_from_item(item: Dict) -> str:
                                     return span["content"]
         return ""
     
-    # 专门处理equation类型（包括inline_equation和interline_equation）
-    elif item_type in ["inline_equation", "interline_equation"]:
-        print(f"DEBUG extract_text_from_item: 处理equation类型: {item_type}")
-        texts = []
-        
-        # 从lines中提取
-        if "lines" in item:
-            for line in item["lines"]:
-                if "spans" in line:
-                    for span in line["spans"]:
-                        # 检查是否为equation类型且有content
-                        if span.get("type") in ["inline_equation", "interline_equation"] and "content" in span:
-                            content = span["content"]
-                            print(f"DEBUG: 提取到equation内容: {content[:100]}...")
-                            texts.append(content)
-                        # 也检查text类型
-                        elif span.get("type") == "text" and "content" in span:
-                            texts.append(span["content"])
-        
-        # 如果lines中没有找到，尝试从blocks中提取
-        if not texts and "blocks" in item:
-            for block in item.get("blocks", []):
-                if "lines" in block:
-                    for line in block["lines"]:
-                        if "spans" in line:
-                            for span in line["spans"]:
-                                if span.get("type") in ["inline_equation", "interline_equation", "text"] and "content" in span:
-                                    texts.append(span["content"])
-        
-        result = " ".join(texts)
-        print(f"DEBUG: {item_type}提取结果，长度: {len(result)}")
-        return result
-    
-    # 处理其他类型（text, title, list等）
+    # 处理其他类型...
     else:
         texts = []
         
@@ -102,7 +104,6 @@ def extract_text_from_item(item: Dict) -> str:
             for line in item["lines"]:
                 if "spans" in line:
                     for span in line["spans"]:
-                        # 处理各种文本类型的span
                         if span.get("type") in ["text", "inline_equation", "interline_equation"] and "content" in span:
                             texts.append(span["content"])
         
@@ -117,6 +118,51 @@ def extract_text_from_item(item: Dict) -> str:
                                     texts.append(span["content"])
         
         return " ".join(texts)
+
+
+def extract_table_html(item: Dict) -> str:
+    """从table类型数据项中提取html"""
+    if item.get("type") == "table":
+        print(f"DEBUG extract_table_html: 处理table类型")
+        
+        # 尝试从llm_process中获取table_html
+        if "llm_process" in item:
+            llm_data = item["llm_process"]
+            print(f"DEBUG: llm_process类型: {type(llm_data)}")
+            
+            # 处理llm_process是列表的情况
+            if isinstance(llm_data, list):
+                print(f"DEBUG: llm_process是列表，长度: {len(llm_data)}")
+                for llm_item in llm_data:
+                    if isinstance(llm_item, dict):
+                        if "table_html" in llm_item:
+                            html = llm_item["table_html"]
+                            print(f"DEBUG: 从llm_process列表中找到table_html字段")
+                            return str(html) if html is not None else ""
+                        elif "key_value" in llm_item:
+                            # 如果只有key_value，尝试构建HTML？或者返回空
+                            print(f"DEBUG: 找到key_value字段，但没有table_html")
+            
+            # 处理llm_process是字典的情况
+            elif isinstance(llm_data, dict):
+                if "table_html" in llm_data:
+                    html = llm_data["table_html"]
+                    return str(html) if html is not None else ""
+        
+        # 尝试从blocks中获取html
+        if "blocks" in item:
+            for block in item.get("blocks", []):
+                if "lines" in block:
+                    for line in block["lines"]:
+                        if "spans" in line:
+                            for span in line["spans"]:
+                                if span.get("type") == "table" and "html" in span:
+                                    html = span["html"]
+                                    print(f"DEBUG: 从span中提取到html")
+                                    return str(html) if html is not None else ""
+    
+    return ""
+
 
 def extract_caption_from_item(item: Dict) -> str:
     """
@@ -146,45 +192,13 @@ def extract_caption_from_item(item: Dict) -> str:
                             for span in line["spans"]:
                                 if span.get("type") == "text" and "content" in span:
                                     caption_texts.append(span["content"])
-                                    print(f"DEBUG: 从{block_type}提取到caption内容: {span['content'][:100]}...")
         
         # 合并所有caption文本
         if caption_texts:
             caption = " ".join(caption_texts)
-            print(f"DEBUG: 提取到的完整caption: {caption}")
     
     return caption
 
-def extract_table_html(item: Dict) -> str:
-    """从table类型数据项中提取html"""
-    if item.get("type") == "table":
-        print(f"DEBUG extract_table_html: 处理table类型")
-        
-        # 尝试从llm_process中获取table_html
-        if "llm_process" in item:
-            llm_data = item["llm_process"]
-            print(f"DEBUG: llm_process keys: {list(llm_data.keys())}")
-            
-            if "table_html" in llm_data:
-                html = llm_data["table_html"]
-                print(f"DEBUG: 找到table_html字段，类型: {type(html)}，长度: {len(str(html)) if html else 0}")
-                return str(html) if html is not None else ""
-            else:
-                print(f"DEBUG: 没有找到table_html字段")
-        
-        # 尝试从blocks中获取html
-        if "blocks" in item:
-            for block in item.get("blocks", []):
-                if "lines" in block:
-                    for line in block["lines"]:
-                        if "spans" in line:
-                            for span in line["spans"]:
-                                if span.get("type") == "table" and "html" in span:
-                                    html = span["html"]
-                                    print(f"DEBUG: 从span中提取到html，长度: {len(str(html)) if html else 0}")
-                                    return str(html) if html is not None else ""
-    
-    return ""  # 修改：返回空字符串而非"无"
 
 def extract_image_path(item: Dict) -> str:
     """从数据项中提取image_path"""
@@ -214,7 +228,7 @@ def extract_image_path(item: Dict) -> str:
                                 if "image_path" in span:
                                     return span["image_path"]
     
-    return ""  # 修改：返回空字符串而非"无"
+    return ""
 
 def extract_bbox(item: Dict) -> List:
     """从数据项中提取bbox信息"""
@@ -496,18 +510,19 @@ def clean_extra_data_numbers(data):
     else:
         return data
 
-def process_single_json_file(input_json , output_file: str, json_index: int, total_jsons: int = 12):
+def process_single_json_file(input_json, output_file: str, json_index: int, total_jsons: int = 12):
     """
     处理单个JSON文件
     
     Args:
-        input_file: 输入文件路径
+        input_json: 输入JSON数据（字典或列表）
+        output_file: 输出文件路径
         output_file: 输出文件路径
         json_index: 当前JSON文件的索引
         total_jsons: 总的JSON文件数量
     """
     print(f"\n{'#'*60}")
-    print(f"处理第 {json_index + 1} 个JSON文件: ")
+    #print(f"处理第 {json_index + 1} 个JSON文件: {input_file}")
     print(f"文件位置: {'前7个' if json_index < 7 else '后5个'}")
     print(f"{'#'*60}")
     
@@ -516,15 +531,32 @@ def process_single_json_file(input_json , output_file: str, json_index: int, tot
         
         original_json = input_json
         
-        # 提取output数组
-        if isinstance(original_json, dict) and "output" in original_json:
-            original_data = original_json["output"]
+        # 修改：适配 test2.json 的结构
+        if isinstance(original_json, dict):
+            # 检查是否为 test2.json 的嵌套结构
+            if "partitions" in original_json and "output" in original_json["partitions"]:
+                original_data = original_json["partitions"]["output"]
+                print(f"从 partitions.output 加载了 {len(original_data)} 条原始数据")
+            elif "output" in original_json:
+                original_data = original_json["output"]
+                print(f"从 output 加载了 {len(original_data)} 条原始数据")
+            else:
+                # 如果都没有，尝试获取任意一个可能是数据数组的键
+                possible_data_keys = ['data', 'items', 'content', 'results']
+                found = False
+                for key in possible_data_keys:
+                    if key in original_json and isinstance(original_json[key], list):
+                        original_data = original_json[key]
+                        print(f"从 {key} 加载了 {len(original_data)} 条原始数据")
+                        found = True
+                        break
+                if not found:
+                    raise ValueError("输入JSON格式不符合预期：找不到包含数据的数组")
         elif isinstance(original_json, list):
             original_data = original_json
+            print(f"直接使用数组数据，共 {len(original_data)} 条")
         else:
             raise ValueError("输入JSON格式不符合预期")
-        
-        print(f"加载了 {len(original_data)} 条原始数据")
         
         # 统计各种类型的数量
         type_counts = {}
@@ -606,7 +638,7 @@ def process_single_json_file(input_json , output_file: str, json_index: int, tot
         return True
         
     except Exception as e:
-        print(f"处理文件 {input_file} 过程中出错: {e}")
+        #print(f"处理文件 {input_file} 过程中出错: {e}")
         import traceback
         traceback.print_exc()
         return False
@@ -623,8 +655,8 @@ def main():
     主函数：执行JSON格式转换
     """
     # 配置输入输出文件路径
-    input_json_file = "demo4.json"
-    output_json_file = "demo4_result.json"
+    input_json_file = "test2.json"
+    output_json_file = "test2_result.json"
     
     print("开始JSON格式转换...")
     print(f"输入文件: {input_json_file}")
@@ -632,7 +664,7 @@ def main():
     print("-" * 50)
     
     # 执行转换
-    load_and_process_json(input_json_file, output_json_file)
+    load_and_process_json(input_json, output_json_file)
     
     # 验证转换结果
     print("\n" + "=" * 50)

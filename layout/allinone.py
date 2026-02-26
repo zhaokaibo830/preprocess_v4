@@ -20,7 +20,7 @@ CONFIG = {
 }
 
 #单独处理红头文件信息，并转换json格式
-def post_process(pdf_path,images_output_path,original_json_path,api_key,base_url,model_name,output_path,file_name,folder_name,vlm_enable,red_title):
+def post_process(pdf_path,images_output_path,original_json_path,api_key,base_url,model_name,output_path,file_name,folder_name,vlm_enable,red_title,connection_timeout,process_timeout):
     if red_title:
         # step1：将文档pdf按页转png
         pdf_to_images(pdf_path,images_output_path)
@@ -39,8 +39,9 @@ def post_process(pdf_path,images_output_path,original_json_path,api_key,base_url
             "LLM_BASE_URL": base_url,
             "LLM_MODEL": model_name,
             "INPUT_PATH":images_output_path,
-            "OUTPUT_PATH":json_temp_path
-
+            "OUTPUT_PATH":json_temp_path,
+            "CONNECTION_TIMEOUT": connection_timeout,
+            "PROCESS_TIMEOUT": process_timeout
         }
         extractor = ImageTextExtractor(config)
         results ,error_msg = extractor.process_all_images()#红头文件提取结果
@@ -70,7 +71,7 @@ def post_process(pdf_path,images_output_path,original_json_path,api_key,base_url
         load_and_process_json(json_final,json_return_path)
         return error_msg
 #只处理红头文件标题，不修改json格式
-def post_process_2(pdf_path,images_output_path,original_json_path,api_key,base_url,model_name,output_path,file_name,folder_name,vlm_enable,red_title):
+def post_process_2(pdf_path,images_output_path,original_json_path,api_key,base_url,model_name,output_path,file_name,folder_name,vlm_enable,red_title,connection_timeout,process_timeout):
     if red_title:
         pdf_to_images(pdf_path,images_output_path)
         clean_folder_without_lines(images_output_path)
@@ -84,7 +85,9 @@ def post_process_2(pdf_path,images_output_path,original_json_path,api_key,base_u
             "LLM_BASE_URL": base_url,
             "LLM_MODEL": model_name,
             "INPUT_PATH":images_output_path,
-            "OUTPUT_PATH":json_temp_path
+            "OUTPUT_PATH":json_temp_path,
+            "CONNECTION_TIMEOUT": connection_timeout,
+            "PROCESS_TIMEOUT": process_timeout
 
         }
         extractor = ImageTextExtractor(config)

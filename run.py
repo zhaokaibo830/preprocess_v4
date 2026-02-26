@@ -40,6 +40,7 @@ import shutil
 import uuid
 import httpx
 from layout.allinone import post_process,post_process_2
+from layout.mineru_call import call_mineru_api, mineru_layout
 MAX_CONCURRENT = 5
 semaphore = asyncio.Semaphore(MAX_CONCURRENT)
 
@@ -63,13 +64,13 @@ async def core_analyze_pipeline(
     except AttributeError:
         return JSONResponse(content={"error": "文件上传出错"})
 
-    input_file = save_filepath
-    file_format = Path(input_file).suffix[1:]
-    file_name = Path(input_file).stem
+    #input_file = save_filepath
+    file_format = Path(save_filepath).suffix[1:]
+    file_name = Path(save_filepath).stem
     folder_name=f"{timestamp}_{file_name}"
     if file_format in AVALIABLE_FORMATS:
         if file_format != "pdf":
-            input_file = format(input_file)
+            save_filepath = format(save_filepath)
     else:
         raise HTTPException(status_code=400, detail=f"不支持的文件格式：{file_format}")
 
@@ -78,11 +79,13 @@ async def core_analyze_pipeline(
     output_path = Path(cfg['output_path']).resolve()
     request_id = str(uuid.uuid4())
     output_path_temp = Path(cfg['output_path_temp']).resolve()
+    mineru_layout(save_filepath, output_path, request_id, output_path_temp, folder_name, vlm_enable)
+    """
     output_path.mkdir(parents=True, exist_ok=True)
     output_path_temp.mkdir(parents=True, exist_ok=True)
     task_temp_path = Path(cfg['output_path_temp']).resolve() / request_id
     task_temp_path.mkdir(parents=True, exist_ok=True)
-    await call_mineru_api(input_file, task_temp_path, 'vlm-lmdeploy-engine' if vlm_enable else 'pipeline')
+    call_mineru_api(input_file, task_temp_path, 'vlm-lmdeploy-engine' if vlm_enable else 'pipeline')
     mineru_end_time=time.perf_counter()
 
     #输出路径重整
@@ -115,8 +118,14 @@ async def core_analyze_pipeline(
 
         print(f"mineru 输出已移动至: {target_dir}")
     shutil.rmtree(task_temp_path)
+    """
 
-    #json格式修改
+    #mineru处理后，对json进行后处理，后续处理基于json数据进行，不再保存中间状态文件
+
+    #json_data=...,对文件的读取
+
+
+    #json格式修改，封装，输入json数据，输出json数据，可以与mineru处理封装到一起
     middle_json_name = f'{file_name}_middle.json'
     if vlm_enable:
         target_json = output_path / folder_name / 'vlm' / middle_json_name
@@ -124,6 +133,9 @@ async def core_analyze_pipeline(
         target_json = output_path / folder_name / 'auto' / middle_json_name
     with open(target_json, "r", encoding="utf-8") as f:
         data = json.load(f)
+
+    print("mineru output json")
+    print(data)
 
     if vlm_enable:
         processed_data = merge_blocks(data)
@@ -142,27 +154,35 @@ async def core_analyze_pipeline(
         json.dump(output_data, f, ensure_ascii=False, indent=2)
     print(f"处理完成，已保存到 {final_json_path}")
 
+
+    print("格式转换后的 json 数据")
+    print(output_data)
     #final_json_path是mineru版面识别的最终结果
 
+
+
     #标题处理
+    #传入client和json数据，输出json数据和报错信息
     final_json_path = Path(final_json_path).absolute()
     title_start_time=time.perf_counter()
     full_json_data, title_error_info = title_process(
-        final_json_path,
-        cfg['LLM']['title_model']['LLM_BASE_URL'],
-        cfg['LLM']['title_model']['LLM_API_KEY'],
-        cfg['LLM']['title_model']['LLM_MODEL'],
+        json_data
         output_path,
         file_name,
         folder_name,
-        vlm_enable=vlm_enable
+        vlm_enable
     )
     title_end_time=time.perf_counter()
+    print("标题处理完成，full_json_data已更新")
+    #print(full_json_data)
 
+    """
     # 图表处理
     # 图片配置
     image_config, table_config = [], []
 
+    
+    #图片处理，控制参数改为三个bool变量，传入一个client和json数据，输出json数据和报错信息
     if "class" in img_select:
         image_config.append("cls")
     if "description" in img_select:
@@ -228,11 +248,13 @@ async def core_analyze_pipeline(
                         except (IndexError, KeyError, TypeError):
                             img_title=""
                 try:
-                    result=analyze_image_content(img_path,img_title,image_config,
-                                            cfg['LLM']['img']['API_KEY'],
-                                            cfg['LLM']['img']['BASE_URL'],
-                                            cfg['LLM']['img']['MODEL'])
-                    block["llm_process"]=result
+                    result = analyze_image_content(img_path,img_title,
+                        image_class=True,
+                        image_desc=True,
+                        image_html=True,
+                        client
+                    ),
+                    block["llm_process"] = result
                 except Exception as e:
                     stop_processing = True  # 触发熔断
                     final_error_info = str(e)  # 记录错误信息
@@ -250,6 +272,7 @@ async def core_analyze_pipeline(
     
 
     #表格处理
+    #同图片处理，控制参数改为三个bool变量，传入一个client和json数据，输出json数据和报错信息
     table_error_msg = ""
     if table_config:
 
@@ -298,17 +321,19 @@ async def core_analyze_pipeline(
                         try:
                             table_title=sub_block["lines"][0]["spans"][0]["content"]
                         except (IndexError, KeyError, TypeError):
-                            table_title=""
+                            table_title = ""
                 if not table_html:
                     print(f"[WARN] 表格 {block_index} 缺少 HTML 内容，跳过 LLM 处理")
-                    block["llm_process"] = build_table_error_json("解析不到 HTML 内容")
+                    #block["llm_process"] = build_table_error_json("解析不到 HTML 内容")
                     continue # 👈 这里的 continue 是跳过整个 table block 的 LLM 处理
                 try:
-                    result=table_extract(table_html,table_title,table_config,
+                    result = table_extract(table_html,table_title,table_config,
                                         cfg['LLM']['table']['API_KEY'],
                                         cfg['LLM']['table']['BASE_URL'],
-                                        cfg['LLM']['table']['MODEL'])
-                    block["llm_process"]=result
+                                        cfg['LLM']['table']['MODEL'],
+                                        cfg['LLM']['table']['connection_timeout'],
+                                        cfg['LLM']['table']['process_timeout']),
+                    block["llm_process"] = result
                 except Exception as e:
                     # 3. 捕获 raise 抛出的错误，启动熔断
                     stop_processing_table = True
@@ -332,9 +357,11 @@ async def core_analyze_pipeline(
         print("表格处理选项为空，跳过表格处理步骤。")
         table_start_time=0
         table_time_end=0
-
+    """
     
     #将公式图片从minio待上传列表中移除
+    #工具类函数
+    """
     eq_path=output_path / folder_name / ('vlm' if vlm_enable else 'auto')/'equation_images'
     eq_path.mkdir(parents=True,exist_ok=True)
     for block_index, block in enumerate(full_json_data["output"]):
@@ -343,7 +370,7 @@ async def core_analyze_pipeline(
             img_path=Path(output_path)/folder_name/('vlm' if vlm_enable else 'auto')/'images'/img_path
             if img_path.exists():
                 shutil.move(str(img_path), str(output_path / folder_name / 'vlm' if vlm_enable else 'auto'/'equation_images' / img_path.name))
-
+    """
     return  {
         "output_path":output_path,
         "full_json_data": full_json_data, 
@@ -365,26 +392,7 @@ async def core_analyze_pipeline(
         "title_error_msg": title_error_info
     }  
 
-async def call_mineru_api(input_file_path, output_dir, backend):
-    async with httpx.AsyncClient(timeout=None) as client:
-        with open(input_file_path, "rb") as f:
-            files = {'files': f}
-            data = {
-                'output_dir': str(output_dir),
-                'backend': backend,
-                'parse_method': 'auto',
-                'table_enable': 'true',
-                'formula_enable': 'true',
-                'return_content_list': 'true',
-                'return_images': 'true',
-                'return_md': 'true',
-                'return_layout_pdf': 'true',
-                'return_middle_json': 'true',
-                'return_model_output': 'true'
-            }
-            # 异步发送请求，此时 8003 服务可以去干别的事
-            response = await client.post("http://127.0.0.1:8000/file_parse", files=files, data=data)
-            return response.json()
+
 
 app = FastAPI(docs_url=None, redoc_url=None)
 
@@ -489,7 +497,7 @@ async def preprocess_v4(
         images_output_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/"page_images"
         images_output_path.mkdir(parents=True, exist_ok=True)
 
-        red_title_error_msg = post_process(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable)
+        red_title_error_msg = post_process(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable,cfg['LLM']['red_title']['connection_timeout'],cfg['LLM']['red_title']['process_timeout']) or ""
         #post_process_2(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable)
         level_json_path = output_path / folder_name / ('vlm' if vlm_enable else 'auto') / f'{file_name}_level_redtitle.json'
         partitions_json_path=output_path / folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
@@ -604,6 +612,7 @@ async def return_json_only(
     table_error_msg = ""
     red_title_error_msg = ""
     try:
+        """
         img_select, table_select = [], []
 
         if img_class:
@@ -618,7 +627,7 @@ async def return_json_only(
             table_select.append("description")
         if table_html:
             table_select.append("html")
-
+        """
         
         res = await core_analyze_pipeline(file, vlm_enable, img_select, table_select, request_id)
         
@@ -641,6 +650,8 @@ async def return_json_only(
         # 2. 存储逻辑：将图表文件上传 MinIO
         images_path = Path(res['output_path']) / res["folder_name"] / res["sub_type"] / 'images'
         store_images(images_path, res["file_name"], res["timestamp"], cfg['MinIO']['IP'],cfg['MinIO']['ACCESS_KEY'],cfg['MinIO']['SECRET_KEY'],cfg['MinIO']['BUCKET_NAME'])
+
+        """
         # 修改图表的存储路径
         full_json_data=res['full_json_data'] 
 
@@ -666,19 +677,22 @@ async def return_json_only(
                         except (IndexError, KeyError, TypeError):
                             print(f"[WARN] block={block_index} 取不到表格，已跳过")
                             continue
-        
-        # 保存level JSON
+        """
+
+        # 保存level JSON,省略，减少io
+        """
         level_json_name = f'{file_name}_processed_with_levels.json'
         if vlm_enable:
             level_json_path = output_path / folder_name / 'vlm' / level_json_name
         else:
             level_json_path = output_path / folder_name / 'auto' / level_json_name
         save_json_data(full_json_data, str(level_json_path))
-
+        """
         # 红头文件处理
+
         images_output_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/"page_images"
         images_output_path.mkdir(parents=True, exist_ok=True)
-        red_title_error_msg = post_process(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable) or ""
+        red_title_error_msg = post_process(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable,cfg['LLM']['red_title']['connection_timeout'],cfg['LLM']['red_title']['process_timeout']) or ""
         partitions_json_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
         with open(partitions_json_path,'r',encoding='utf-8') as f:
             return_json_partitions=json.load(f)#红头文件标题处理后的json
@@ -815,7 +829,7 @@ async def return_json_only(
         # 红头文件处理
         images_output_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/"page_images"
         images_output_path.mkdir(parents=True, exist_ok=True)
-        red_title_error_msg = post_process(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable)
+        red_title_error_msg = post_process(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable,cfg['LLM']['red_title']['connection_timeout'],cfg['LLM']['red_title']['process_timeout']) or ""
         partitions_json_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
         with open(partitions_json_path,'r',encoding='utf-8') as f:
             return_json_partitions=json.load(f)#红头文件标题处理后的json
@@ -955,7 +969,7 @@ async def return_json_with_zip_save(
 
         images_output_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/"page_images"
         images_output_path.mkdir(parents=True, exist_ok=True)
-        red_title_error_msg = post_process_2(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable)
+        red_title_error_msg = post_process_2(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable,cfg['LLM']['red_title']['connection_timeout'],cfg['LLM']['red_title']['process_timeout'])
         partitions_json_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f'{file_name}_level_redtitle.json'
         with open(partitions_json_path,'r',encoding='utf-8') as f:
             return_json_partitions=json.load(f)
@@ -1068,4 +1082,4 @@ async def mineru_json_only_endpoint(
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=10025)
+    uvicorn.run("run:app", host="0.0.0.0", port=8003,workers=2)

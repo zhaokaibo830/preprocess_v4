@@ -158,7 +158,7 @@ def build_structure_relationships(all_nodes: List[Dict[str, Any]]):
 
 # ================= LLM 调用函数 (Prompt 重点修改区域) =================
 
-def call_llm_polish_structure(raw_titles: str, full_context: str,base_url, api_key, model_name) -> str:
+def call_llm_polish_structure(raw_titles: str, full_context: str,base_url, api_key, model_name,connection_timeout,process_timeout) -> str:
     """
     整理目录结构并标记层级。
     在此处通过 Prompt Engineering 解决"封面干扰"问题。
@@ -190,12 +190,11 @@ def call_llm_polish_structure(raw_titles: str, full_context: str,base_url, api_k
     
     输出要求：仅输出 Markdown 结果，包含列表中所有原始文本，严禁遗漏。
     """
-    REQUEST_TIMEOUT = (5.0, 60.0)
     try:
         client = OpenAI(
             api_key=api_key,
             base_url=base_url,
-            timeout=(20,300.0)
+            timeout=(connection_timeout,process_timeout)
         )
 
         completion = client.chat.completions.create(
@@ -213,7 +212,7 @@ def call_llm_polish_structure(raw_titles: str, full_context: str,base_url, api_k
         raise RuntimeError(f"标题层级分析LLM调用失败: {str(e)}")
 
 
-def process_titles_with_llm(all_nodes: List[Dict[str, Any]], full_context: str,base_url, api_key, model_name) -> Dict[str, int]:
+def process_titles_with_llm(all_nodes: List[Dict[str, Any]], full_context: str,base_url, api_key, model_name,connection_timeout,process_timeout) -> Dict[str, int]:
     """提取标题，LLM 处理，返回 {标题文本: level} 映射"""
     print("1. Collecting text from type='title' blocks...")
     titles_input_to_llm = []
@@ -226,7 +225,7 @@ def process_titles_with_llm(all_nodes: List[Dict[str, Any]], full_context: str,b
 
     if not titles_input_to_llm:
         print("   Warning: No blocks with type='title' found. Skipping LLM call.")
-        return {}
+        return {},""
 
     full_titles_input = "\n".join(titles_input_to_llm)
     print("2. Calling LLM to polish structure (with cover/TOC protection)...")
@@ -234,7 +233,7 @@ def process_titles_with_llm(all_nodes: List[Dict[str, Any]], full_context: str,b
     error_info = ""
     title_level_map = {}
     try:
-        title_md_result = call_llm_polish_structure(full_titles_input, full_context,base_url, api_key, model_name)
+        title_md_result = call_llm_polish_structure(full_titles_input, full_context,base_url, api_key, model_name,connection_timeout,process_timeout)
         if not title_md_result:
             # 这里如果不抛异常，也可以直接 return，视作“无结果”
             return {}, "LLM返回结果为空"
@@ -417,7 +416,7 @@ def export_structure_to_markdown(nodes: List[Dict[str, Any]], output_path: str):
 
 
 
-def title_process(json_path: str, base_url: str, api_key: str, model_name: str, output_path: str, file_name: str,folder_name,vlm_enable)->Dict[str,Any]:
+def title_process(json_path: str, base_url: str, api_key: str, model_name: str, output_path: str, file_name: str,folder_name,vlm_enable,connection_timeout,process_timeout)->Dict[str,Any]:
     print("--- Structure Processor Started ---")
 
     try:
@@ -435,7 +434,7 @@ def title_process(json_path: str, base_url: str, api_key: str, model_name: str, 
         sys.exit(1)
     
     # 4. LLM 处理 (含干扰项剔除逻辑)
-    title_level_map , error_info = process_titles_with_llm(all_process_nodes, full_context,base_url, api_key, model_name)
+    title_level_map , error_info = process_titles_with_llm(all_process_nodes, full_context,base_url, api_key, model_name,connection_timeout,process_timeout)
 
     print("3. Assigning levels to ALL nodes (Task 2)...")
 

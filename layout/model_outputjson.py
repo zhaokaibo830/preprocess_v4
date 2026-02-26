@@ -14,7 +14,8 @@ class ImageTextExtractor:
         self.model = config["LLM_MODEL"]
         self.input_path = config["INPUT_PATH"]
         self.output_path = config["OUTPUT_PATH"]
-        
+        self.connection_timeout = config.get("CONNECTION_TIMEOUT")
+        self.process_timeout = config.get("PROCESS_TIMEOUT")
         # 创建输出目录
         #os.makedirs(self.output_path, exist_ok=True)
         
@@ -104,7 +105,7 @@ class ImageTextExtractor:
                 f"{self.base_url}/chat/completions",
                 headers=self.headers,
                 json=payload,
-                timeout=(5,60)
+                timeout=(self.connection_timeout, self.process_timeout)
             )
             
             response.raise_for_status()

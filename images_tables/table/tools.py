@@ -3,7 +3,7 @@ import io
 import time
 from openai import OpenAI
 
-def table_extract(table_html: str, title, config, api_key: str, base_url: str, model_name: str) -> dict:
+def table_extract(table_html: str, title, config, api_key: str, base_url: str, model_name: str, connection_timeout, process_timeout) -> dict:
     # ==========================================
     # 第一步：工具函数
     # ========================================== 
@@ -36,7 +36,7 @@ def table_extract(table_html: str, title, config, api_key: str, base_url: str, m
                     {"role": "user", "content": user_content},
                 ],
                 extra_body={"enable_thinking": False},
-                timeout=(20.0, 600)  # 连接5秒，响应60秒超时
+                timeout=(connection_timeout, process_timeout)  # 连接5秒，响应60秒超时
             )
             return completion.choices[0].message.content
         except Exception as e:
@@ -76,11 +76,15 @@ def table_extract(table_html: str, title, config, api_key: str, base_url: str, m
     # 执行 KV 提取
     if "kv" in config:
         kv_raw = _safe_api_call(table_html + "\n" + prompt_kv)
+        print("原始 KV 输出:")
+        print(kv_raw)
         result["key_value"] = safe_json_parse(kv_raw)
 
     # 执行描述提取
     if "desc" in config:
         desc_raw = _safe_api_call(table_html + "\n" + (title if title else "") + "\n" + prompt_desc)
+        print("原始描述输出:")
+        print(desc_raw)
         result["description"] = desc_raw
 
     # 执行 HTML 保留
