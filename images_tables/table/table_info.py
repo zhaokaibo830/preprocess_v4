@@ -1,7 +1,7 @@
 from pathlib import Path
 from tools.table_analysis import analyze_table_content
 
-def add_table_info(full_json_data, vlm_enable, client, table_kv = True,table_desc = True, table_html = True):
+def add_table_info(full_json_data, vlm_enable, client,model_name, table_kv = True,table_desc = True, table_html = True):
     table_error_msg = ""
     if table_kv or table_desc or table_html:
 
@@ -56,7 +56,9 @@ def add_table_info(full_json_data, vlm_enable, client, table_kv = True,table_des
                     #block["llm_process"] = build_table_error_json("解析不到 HTML 内容")
                     continue # 👈 这里的 continue 是跳过整个 table block 的 LLM 处理
                 try:
-                    result = analyze_table_content(table_html,table_title,table_kv=table_kv,table_desc=table_desc,table_html=table_html,client),
+                    result = analyze_table_content(table_html,table_title,
+                        table_kv=table_kv,table_desc=table_desc,table_html=table_html,
+                        client,model_name),
                     block["llm_process"] = result
                 except Exception as e:
                     # 3. 捕获 raise 抛出的错误，启动熔断
@@ -82,4 +84,5 @@ def add_table_info(full_json_data, vlm_enable, client, table_kv = True,table_des
         print("表格处理选项为空，跳过表格处理步骤。")
         #table_start_time=0
         #table_time_end=0
-    return full_json_data, table_error_msg
+        table_count=0
+    return full_json_data, table_error_msg,table_count

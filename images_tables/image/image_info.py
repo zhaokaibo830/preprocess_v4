@@ -1,6 +1,6 @@
 from pathlib import Path
 from tools.image_analysis import analyze_image_content
-def add_image_info(full_json_data, vlm_enable, client, image_class=True, image_desc=True, image_html=True):
+def add_image_info(full_json_data, vlm_enable, client, model_name, image_class=True, image_desc=True, image_html=True):
     image_error_msg = ""
     if  image_class or image_desc or image_html:
 
@@ -46,10 +46,11 @@ def add_image_info(full_json_data, vlm_enable, client, image_class=True, image_d
                             img_title=""
                 try:
                     result = analyze_image_content(img_path,img_title,
-                        image_class=True,
-                        image_desc=True,
-                        image_html=True,
-                        client
+                        image_class,
+                        image_desc,
+                        image_html,
+                        client,
+                        model_name
                     ),
                     block["llm_process"] = result
                 except Exception as e:
@@ -66,4 +67,5 @@ def add_image_info(full_json_data, vlm_enable, client, image_class=True, image_d
         print("图片处理选项为空，跳过图片处理步骤。")
         #img_start_time=0
         #img_end_time=
-    return full_json_data, image_error_msg
+        image_count = 0
+    return full_json_data, image_error_msg, image_count

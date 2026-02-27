@@ -39,7 +39,8 @@ def create_client(
 
     client = OpenAI(
         base_url=base_url,
-        api_key=api_key
+        api_key=api_key,
+        timeout=(connect_timeout, read_timeout)
     )
 
     return client
@@ -128,3 +129,23 @@ def stream_image_description(
 
         if event.type == "response.output_text.delta":
             yield event.delta
+
+
+if __name__ == "__main__":
+
+    client = OpenAI(
+        base_url="http://localhost:8000/v1",
+        api_key="EMPTY"
+    )
+
+    print("=== 文本测试 ===")
+
+    for t in stream_text(client, "介绍一下量子计算"):
+        print(t, end="", flush=True)
+
+    print("\n\n=== 图片测试 ===")
+
+    img = "file:///home/user/test.jpg"
+
+    for t in stream_image_description(client, img):
+        print(t, end="", flush=True)

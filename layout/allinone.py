@@ -27,7 +27,7 @@ def post_process(pdf_path,images_output_path,original_json_path,api_key,base_url
         # 基于视觉模型判断红线，将不包含线段的图片删除
         clean_folder_without_lines(images_output_path)
         # 根据json获取包含图表的页码，删除这些页
-        index_list=get_page_index_list(original_json_path)
+        index_list = get_page_index_list(original_json_path)
         delete_specific_pages(images_output_path,index_list)
 
         #基于多模态分析筛选后的page
