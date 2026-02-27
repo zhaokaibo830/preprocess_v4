@@ -4,23 +4,32 @@ import io
 from openai import OpenAI
 from openai import APIConnectionError, APIError, RateLimitError
     
-def table_extract(table_html: str, title, config, api_key: str, base_url: str, model_name: str) -> dict:
+# 修改函数签名：kv, desc, html改为布尔值，并接收预初始化的client
+def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc: bool, table_html: bool, client: OpenAI, model_name: str) -> dict:
     # ==========================================
     # 第一步：从html表格中提取数据
     # ========================================== 
     def safe_json_parse(json_str):
         try:
-            if "json"  in json_str:
-                json_str=json_str.replace("json","")
-            if "'''" in json_str:
-                json_str = json_str.replace("'''", "")
-            if "\n" in json_str:
-                json_str=json_str.replace("\n","")
+            # 兼容处理可能出现的额外文本，例如"json```"
+            if json_str.strip().startswith("json"):
+                json_str = json_str.strip()[len("json"):].strip()
+            if json_str.strip().startswith("```json"):
+                json_str = json_str.strip()[len("```json"):].strip()
+            if json_str.strip().startswith("```"):
+                json_str = json_str.strip()[len("```"):].strip()
+            if json_str.strip().endswith("```"):
+                json_str = json_str.strip()[:-len("```")].strip()
+
+            # 移除所有换行符，以便更好地解析
+            json_str = json_str.replace("\n", "")
+            
             #print("--------------------------------")
             #print(json_str)
             return json.loads(json_str)
         except json.JSONDecodeError as e:
             print(f"JSON解析错误: {e}")
+            # 如果解析失败，返回原始字符串，以便调用者可以查看或进一步处理
             return json_str
     # ==========================================
     # 第二步：创建调用API的函数
@@ -38,16 +47,16 @@ def table_extract(table_html: str, title, config, api_key: str, base_url: str, m
             return completion.choices[0].message.content
         except APIConnectionError as e:
             print(f"处理表格时API连接错误: {e}")
-            return {"error": "API连接失败", "details": str(e)}
+            raise e # 抛出错误
         except RateLimitError as e:
             print(f"处理表格时API速率限制错误: {e}")
-            return {"error": "处理表格时API请求超过速率限制", "details": str(e)}
+            raise e # 抛出错误
         except APIError as e:
             print(f"处理表格时API错误: {e}")
-            return {"error": "处理表格时API请求失败", "details": str(e)}
+            raise e # 抛出错误
         except Exception as e:
             print(f"处理表格时未知错误: {e}")
-            return {"error": "处理表格时未知错误", "details": str(e)}
+            raise e # 抛出错误
     
     def make_api_call_desc(client, table_content,title, prompt, model):
         try:
@@ -62,29 +71,17 @@ def table_extract(table_html: str, title, config, api_key: str, base_url: str, m
             return completion.choices[0].message.content
         except APIConnectionError as e:
             print(f"处理表格时API连接错误: {e}")
-            return {"error": "API连接失败", "details": str(e)}
+            raise e # 抛出错误
         except RateLimitError as e:
             print(f"处理表格时API速率限制错误: {e}")
-            return {"error": "处理表格时API请求超过速率限制", "details": str(e)}
+            raise e # 抛出错误
         except APIError as e:
             print(f"处理表格时API错误: {e}")
-            return {"error": "处理表格时API请求失败", "details": str(e)}
+            raise e # 抛出错误
         except Exception as e:
             print(f"处理表格时未知错误: {e}")
-            return {"error": "处理表格时未知错误", "details": str(e)}
+            raise e # 抛出错误
 
-    # 初始化客户端
-    try:
-        client = OpenAI(
-            api_key=api_key,
-            base_url=base_url,
-        )
-    except Exception as e:
-        print(f"处理表格时OpenAI客户端初始化失败: {e}")
-        return {
-            "key_value": {"error": "处理表格时客户端初始化失败", "details": str(e)},
-            "description": {"error": "处理表格时客户端初始化失败", "details": str(e)}
-        }
     # ==========================================
     # 第三步：构建prompt
     # ========================================== 
@@ -111,69 +108,38 @@ def table_extract(table_html: str, title, config, api_key: str, base_url: str, m
 
     # 调用API获取键值对结果
     def kv_api_call():
-        return make_api_call_kv(client, table_html, prompt_kv, model_name)
+        # 使用 table_html_input 作为内容
+        return make_api_call_kv(client, table_html_input, prompt_kv, model_name)
     
     # 调用API获取描述结果
     def desc_api_call():
-        return make_api_call_desc(client, table_html,title, prompt_desc, model_name)
+        # 使用 table_html_input 作为内容
+        return make_api_call_desc(client, table_html_input, title, prompt_desc, model_name)
 
     
     # ==========================================
-    # 第四步：创建if分支识别传入config
+    # 第四步：根据布尔值参数执行相应操作
     # ==========================================   
     result = {}
     result["type"] = "table"
-    #判断config中包含的功能，更新result并返回
-    if "kv"in config and "desc"and "html" in config:
-        #判断kv中的功能，更新result并返回
-        keyvalue_result=kv_api_call()
-        if isinstance(keyvalue_result, dict) and "error" in keyvalue_result:
-            result["key_value"] = keyvalue_result
-        else:
-            result["key_value"] = safe_json_parse(keyvalue_result)
-        #判断desc中的功能，更新result并返回
-        result["description"]=desc_api_call()
-        result["table_html"]=table_html
-        return result
-    elif "kv"in config and "desc" in config:
-         #判断kv中的功能，更新result并返回
-        keyvalue_result=kv_api_call()
-        if isinstance(keyvalue_result, dict) and "error" in keyvalue_result:
-            result["key_value"] = keyvalue_result
-        else:
-            result["key_value"] = safe_json_parse(keyvalue_result)
-        #判断desc中的功能，更新result并返回
-        result["description"]=desc_api_call()
-        return result
-    elif "desc"in config and "html" in config:
-        description=desc_api_call()
-        result["description"]=description
-        result["table_html"]=table_html
-        return result
-    elif "kv"in config and "html" in config:
-         #判断kv中的功能，更新result并返回
-        keyvalue_result=kv_api_call()
-        if isinstance(keyvalue_result, dict) and "error" in keyvalue_result:
-            result["key_value"] = keyvalue_result
-        else:
-            result["key_value"] = safe_json_parse(keyvalue_result)
-        result["table_html"]=table_html
-        return result
-    elif "kv"in config:
-         #判断kv中的功能，更新result并返回
-        keyvalue_result=kv_api_call()
-        if isinstance(keyvalue_result, dict) and "error" in keyvalue_result:
-            result["key_value"] = keyvalue_result
-        else:
-            result["key_value"] = safe_json_parse(keyvalue_result)
-        return result
-    elif "desc"in config:
-        description=desc_api_call()
-        result["description"]=description
-        return result
-    elif "html"in config:
-        result["table_html"]=table_html
-        return result
+
+    # 根据 table_kv 布尔值判断是否提取键值对
+    if table_kv:
+        # 这里的异常会向上层调用者传播，而不是在此处捕获
+        keyvalue_result = kv_api_call() 
+        result["key_value"] = safe_json_parse(keyvalue_result)
+    
+    # 根据 table_desc 布尔值判断是否提取描述
+    if table_desc:
+        # 这里的异常会向上层调用者传播，而不是在此处捕获
+        description = desc_api_call()
+        result["description"] = description
+    
+    # 根据 table_html 布尔值判断是否包含原始HTML
+    if table_html:
+        result["table_html"] = table_html_input # 将原始HTML内容放入结果中
+
+    return result
 
 
 if __name__ == "__main__":
@@ -181,11 +147,36 @@ if __name__ == "__main__":
     API_KEY = "sk-46af479b8d7b4a1489ff47b084831a0c"  # 替换为你的真实 Key
     BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
     MODEL = "qwen3-vl-8b-instruct"
-    table_html = "<table><tr><th>岗位名称</th><th>占比</th></tr><tr><td>监理员</td><td>41%</td></tr><tr><td>资料员</td><td>13%</td></tr><tr><td>总监理工程师</td><td>7%</td></tr><tr><td>总监代表</td><td>8%</td></tr><tr><td>专业监理工程师</td><td>18%</td></tr><tr><td>安全监理工程师</td><td>13%</td></tr></table>"
-    config='desc'  # 可选 'kv', 'desc', 'html' 或它们的组合，如 'kv_desc_html'
-    title=""
+    table_html_example = "<table><tr><th>岗位名称</th><th>占比</th></tr><tr><td>监理员</td><td>41%</td></tr><tr><td>资料员</td><td>13%</td></tr><tr><td>总监理工程师</td><td>7%</td></tr><tr><td>总监代表</td><td>8%</td></tr><tr><td>专业监理工程师</td><td>18%</td></tr><tr><td>安全监理工程师</td><td>13%</td></tr></table>"
+ 
+    
+    table_title = "岗位人员占比表" # 示例标题
+
+    # 客户端在调用函数前进行初始化
+    client_instance = None
+    try:
+        client_instance = OpenAI(
+            api_key=API_KEY,
+            base_url=BASE_URL,
+        )
+    except Exception as e:
+        print(f"OpenAI客户端初始化失败: {e}")
+        # 如果客户端初始化失败，可以根据需要处理错误，例如退出程序
+        exit()
+
     # 运行函数
-    result = table_extract(table_html, title,config, API_KEY, BASE_URL, MODEL)
-    print(result)
-  
-  
+    # 传入布尔值参数和已初始化的client
+    if client_instance: # 确保客户端成功初始化
+        try:
+            result = table_extract(
+                table_html_example,
+                table_title,
+                table_kv=True,
+                table_desc=True,
+                table_html=True,
+                client=client_instance,
+                model_name=MODEL
+            )
+            print(json.dumps(result, ensure_ascii=False, indent=4))
+        except (APIConnectionError, RateLimitError, APIError, Exception) as e:
+            print(f"调用 table_extract 过程中发生错误: {e}")

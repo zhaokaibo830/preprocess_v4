@@ -41,22 +41,24 @@ def process_and_encode_image(image_path, max_size=800):
         return base64.b64encode(buffer.getvalue()).decode("utf-8")
 
 
-def analyze_image_content(image_path,title,config, api_key, base_url, model_name):
+# 修改函数签名以接受布尔参数和client对象
+def analyze_image_content(image_path, img_title, image_class: bool, image_desc: bool, image_html: bool, client, model_name):
     """
     分析图片内容：首先判断图片类型，然后使用针对性的提示词进行详细描述。
     """
-    # 1. 准备客户端
-    client = OpenAI(
-        api_key=api_key,
-        base_url=base_url,
-    )
+    # 1. 客户端现在作为参数直接传入，无需在此处初始化
+    # client = OpenAI(
+    #     api_key=api_key,
+    #     base_url=base_url,
+    # )
 
     # 2. 处理并编码图片 (此处加入了缩放逻辑)
     try:
         # 默认限制 800px，你可以通过参数修改
         base64_image = process_and_encode_image(image_path, max_size=800)
     except Exception as e:
-        return {"image_cls": "error", "description": f"图片处理出错: {str(e)}"}
+        # 修改点：在except里抛出错误信息
+        raise RuntimeError(f"图片处理出错: {str(e)}")
     image_message = {
         "type": "image_url",
         "image_url": {"url": f"data:image/png;base64,{base64_image}"},
@@ -65,7 +67,7 @@ def analyze_image_content(image_path,title,config, api_key, base_url, model_name
     # ==========================================
     # 第一步：图像分类 (Classification)
     # ==========================================
-    def cls():
+    def cls_call(): # 重命名防止与外部变量冲突
         classify_prompt = (
             "你是一个图像分类助手。请仔细观察这张图片，将其归类为以下三类之一：\n"
             "1. line graph (折线图)\n"
@@ -86,28 +88,41 @@ def analyze_image_content(image_path,title,config, api_key, base_url, model_name
                 ],
                 temperature=0.1,
             )
-            image_cls = cls_completion.choices[0].message.content.strip().lower()
+            image_cls_result = cls_completion.choices[0].message.content.strip().lower()
 
         # 简单的容错处理
-            if "line graph" in image_cls:
-                image_cls = "line graph"
-            elif "bar chart" in image_cls:
-                image_cls = "bar chart"
-            elif "pie chart" in image_cls:
-                image_cls = "pie chart"
-            elif "铭牌" in image_cls:
-                image_cls = "铭牌"
+            if "line graph" in image_cls_result:
+                image_cls_result = "line graph"
+            elif "bar chart" in image_cls_result:
+                image_cls_result = "bar chart"
+            elif "pie chart" in image_cls_result:
+                image_cls_result = "pie chart"
+            elif "铭牌" in image_cls_result:
+                image_cls_result = "铭牌"
             else:
-                image_cls = "other"
+                image_cls_result = "other"
 
         except Exception as e:
-            return {"image_cls": "error", "description": f"分类阶段出错: {str(e)}"}
-        return image_cls
+            # 修改点：在except里抛出错误信息
+            raise RuntimeError(f"分类阶段出错: {str(e)}")
+        return image_cls_result
+
+    # 无论是否需要image_class作为最终输出，后续的desc_prompt和html_prompt都依赖于图像分类结果。
+    # 因此，总是执行分类。
+    image_cls = cls_call()
+    # 这里的if分支保持不变，即使cls_call现在会抛出异常而不是返回"error"字符串
+    # 如果cls_call抛出异常，程序会直接跳出当前函数，不会执行到这里。
+    # 如果cls_call没有异常，则正常返回分类结果。
+    if image_cls == "error": # Handle error from classification (this branch is now effectively unreachable for exceptions raised by cls_call)
+        raise RuntimeError("Classification failed early.")
+
 
     # ==========================================
     # 第二步：prompt构建(desc_prompt,html_prompt)
     # ==========================================
-    image_cls=cls()
+    desc_prompt = "" # Initialize to avoid UnboundLocalError
+    html_prompt = "" # Initialize to avoid UnboundLocalError
+
     if image_cls == "line graph":
         desc_prompt = (
         "你是资深数据分析师，擅长捕捉数据的动态变化与趋势。请结合图片标题（若有）与折线图内容，输出一份约150字的分析报告。\n\n"
@@ -194,13 +209,14 @@ def analyze_image_content(image_path,title,config, api_key, base_url, model_name
                 messages=[
                     {
                         "role": "user",
-                        "content": [image_message, title, {"type": "text", "text": desc_prompt}],
+                        "content": [image_message, img_title, {"type": "text", "text": desc_prompt}],
                     }
                 ],
             )
             description = desc_completion.choices[0].message.content
         except Exception as e:
-            return {"desc_completion": "error", "description": f"描述阶段出错: {str(e)}"}
+            # 修改点：在except里抛出错误信息
+            raise RuntimeError(f"描述阶段出错: {str(e)}")
         return description
     def html_api_call():
         try:
@@ -215,36 +231,24 @@ def analyze_image_content(image_path,title,config, api_key, base_url, model_name
             )
             html = html_completion.choices[0].message.content
         except Exception as e:
-            return {"html_completion": "error", "description": f"html提取阶段出错: {str(e)}"}
+            # 修改点：在except里抛出错误信息
+            raise RuntimeError(f"html提取阶段出错: {str(e)}")
         return html
 # ==========================================
-# 第四步：创建if分支识别传入config
+# 第四步：创建if分支识别传入config -> 修改为布尔值判断
 # ==========================================
     result = {}
-    if 'cls' in config:
-            result["type"] = image_cls
-    if 'desc' in config:
-            description=desc_api_call()
-            result['desc']=description
-    if "html" in config and image_cls in "line graph,bar chart,pie chart":
-            html=html_api_call()
-            result['html']=html
+    if image_class:
+        result["type"] = image_cls
+    if image_desc:
+        description = desc_api_call()
+        result['desc'] = description
+    # 只有当请求html且图片类型为图表时才进行html提取
+    if image_html and image_cls in ["line graph", "bar chart", "pie chart"]:
+        html = html_api_call()
+        result['html'] = html
 
-    if config =='cls':
-            return result
-    elif config =='desc':
-            return result
-    elif config=='html':
-            return result
-    elif 'cls' in config and 'desc' in config and 'html' in config:
-            return result
-    elif 'cls' in config and 'desc' in config:
-            return result
-    elif 'cls' in config and 'html' in config:
-            return result
-    elif 'desc' in config and 'html' in config:
-            return result
-
+    return result
 
 
 # ==========================================
@@ -252,15 +256,28 @@ def analyze_image_content(image_path,title,config, api_key, base_url, model_name
 # ==========================================
 if __name__ == "__main__":
     # 配置参数
-    IMG_PATH = "./datatest/1_3.png"
+    IMG_PATH = "/root/autodl-tmp/data/15.png" # 假设存在此路径的图片
     API_KEY = "sk-46af479b8d7b4a1489ff47b084831a0c"  # 替换为你的真实 Key
     BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
     MODEL = "qwen3-vl-8b-instruct"
-    config='html,desc,cls'  # 可选 'cls', 'desc', 'html' 或它们的组合，如 'cls_desc_html'
     title=""
-    # 运行函数
-    result = analyze_image_content(IMG_PATH,title,config, API_KEY, BASE_URL, MODEL)
 
-    # 打印结果
-    print(result)
-  
+    # 实例化OpenAI客户端
+    client_instance = OpenAI(
+        api_key=API_KEY,
+        base_url=BASE_URL,
+    )
+
+    # 运行函数，传递布尔值
+    # 对应您提供的修改示例：image_class=True, image_desc=True, image_html=True
+    try:
+        result = analyze_image_content(IMG_PATH, title,
+                                       image_class=True,
+                                       image_desc=False,
+                                       image_html=True,
+                                       client=client_instance, # 传入已实例化的client
+                                       model_name=MODEL)
+        # 打印结果
+        print(result)
+    except Exception as e:
+        print(f"在调用 analyze_image_content 时捕获到错误: {e}")
