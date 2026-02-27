@@ -110,6 +110,12 @@ def interface1_json(file,vlm_enable,red_title_enable,image_class,image_desc,imag
         status_code = 500
         status_message = f"INTERNAL_ERROR: {str(e)}"
     
+    title_client.close()
+    image_client.close()
+    table_client.close()
+    red_title_client.close()
+    
+
     if status_code == 200:
         extra_errors = []
         if image_error_msg:
