@@ -117,8 +117,8 @@ def stream_image_description(
                         "text": prompt
                     },
                     {
-                        "type": "input_image",
-                        "image_url": image_url
+                        "type": "image_url",
+                        "image_url": {"url": f"data:image/png;base64,{image_url}"}
                     }
                 ]
             }

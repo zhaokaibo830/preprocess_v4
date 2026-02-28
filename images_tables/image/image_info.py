@@ -1,5 +1,5 @@
 from pathlib import Path
-from tools.image_analysis import analyze_image_content
+from tools import analyze_image_content
 def add_image_info(full_json_data, vlm_enable, client, model_name, image_class=True, image_desc=True, image_html=True):
     image_error_msg = ""
     if  image_class or image_desc or image_html:
