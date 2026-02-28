@@ -7,7 +7,6 @@ from format.formatTransform import format
 from layout.outputjs import merge_blocks
 from layout.output_pipeline import merge_blocks_pipeline
 from layout.changeJson import *
-from titles.get_title import *
 import pathlib
 from pathlib import Path
 layout_path = Path(__file__).parent / "layout"
@@ -25,8 +24,6 @@ from fastapi.responses import StreamingResponse
 from images_tables.image.tools_async import analyze_image_content_async
 from images_tables.table.tools_async import analyze_table_content_async
 import asyncio
-#from titles.title_process import *
-from titles.title3 import title_process
 import zipfile
 import io
 import time
@@ -85,7 +82,7 @@ async def core_analyze_pipeline(
     output_path_temp = Path(cfg['output_path_temp']).resolve()
     mineru_layout(save_filepath, output_path, request_id, output_path_temp, folder_name, vlm_enable,file_name)
     
-    """
+
     output_path.mkdir(parents=True, exist_ok=True)
     output_path_temp.mkdir(parents=True, exist_ok=True)
     task_temp_path = Path(cfg['output_path_temp']).resolve() / request_id
@@ -163,7 +160,7 @@ async def core_analyze_pipeline(
     print("格式转换后的 json 数据")
     print(output_data)
     #final_json_path是mineru版面识别的最终结果
-    """
+    
 
 
     #标题处理
@@ -182,7 +179,7 @@ async def core_analyze_pipeline(
     print("标题处理完成，full_json_data已更新")
     #print(full_json_data)
 
-    """
+    
     # 图表处理
     # 图片配置
     image_config, table_config = [], []
@@ -360,11 +357,11 @@ async def core_analyze_pipeline(
         print("表格处理选项为空，跳过表格处理步骤。")
         table_start_time=0
         table_time_end=0
-    """
+    
     
     #将公式图片从minio待上传列表中移除
     #工具类函数
-    """
+    
     eq_path=output_path / folder_name / ('vlm' if vlm_enable else 'auto')/'equation_images'
     eq_path.mkdir(parents=True,exist_ok=True)
     for block_index, block in enumerate(full_json_data["output"]):
@@ -373,7 +370,7 @@ async def core_analyze_pipeline(
             img_path=Path(output_path)/folder_name/('vlm' if vlm_enable else 'auto')/'images'/img_path
             if img_path.exists():
                 shutil.move(str(img_path), str(output_path / folder_name / 'vlm' if vlm_enable else 'auto'/'equation_images' / img_path.name))
-    """
+    
     return  {
         "output_path":output_path,
         "full_json_data": full_json_data, 
@@ -605,10 +602,24 @@ async def return_json_only(
     table_desc: bool = Query(True),
     table_html: bool = Query(True)
 ):
+    #将上传文件保存到本地
+    try:
+        file_name = file.filename
+        save_path = "../data/doc"
+        if not os.path.exists(save_path):
+            os.makedirs(save_path)
+        save_filepath = os.path.join(save_path, file_name)
+        with open(save_filepath, "wb") as f:
+            f.write(file.file.read())
+    except AttributeError:
+        return JSONResponse(content={"error": "文件上传出错"})
     # 1. 调用核心逻辑
+    print(f"接口1调用参数: vlm_enable={vlm_enable}, red_title_enable={red_title_enable}, img_class={img_class}, img_desc={img_desc}, img_html={img_html}, table_kv={table_kv}, table_desc={table_desc}, table_html={table_html}")
     request_id = str(uuid.uuid4())
-
-    result = interface1_json(file, vlm_enable, red_title_enable, img_class, img_desc, img_html, table_kv, table_desc, table_html, cfg, request_id)
+    print(f"接口1调用 request_id: {request_id}")
+    print("正在调用接口1核心逻辑...")
+    result = await interface1_json(save_filepath, vlm_enable, red_title_enable, img_class, img_desc, img_html, table_kv, table_desc, table_html, cfg, request_id)
+    print("接口1核心逻辑调用完成")
     """
     status_code = 200
     status_message = "SUCCESS"
@@ -1044,9 +1055,9 @@ async def mineru_json_only_endpoint(
     file: UploadFile = File(...),
     vlm_enable: bool = Form(True)
 ):
-    """
+    
     轻量级接口：仅返回 MinerU 解析出的原始 JSON 数据
-    """
+    
     # 1. 准备服务器内部路径（从你的配置 cfg 中读取）
     temp_root = cfg['output_path_temp']
     final_root = cfg['output_path']

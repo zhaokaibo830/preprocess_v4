@@ -1,5 +1,5 @@
-output_path: ./data/output
-output_path_temp: ./data/temp
+output_path: ../data/output
+output_path_temp: ../data/temp
 
 title_model:
   API_KEY: sk-1fdbb0e4ce3943bab4b300ca867c1315
@@ -7,19 +7,19 @@ title_model:
   MODEL: qwen3-14b
   connection_timeout: 20
   process_timeout: 600
-img:
+image_model:
   API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315
   BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
   MODEL : qwen3-vl-8b-instruct
   connection_timeout: 20
   process_timeout: 180
-table:
+table_model:
   API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315
   BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
   MODEL : qwen3-14b
   connection_timeout: 20
   process_timeout: 300
-red_title:
+red_title_model:
   API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315
   BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
   MODEL : qwen3-vl-32b-instruct

@@ -4,9 +4,9 @@ from utils.filePathRearrange import path_rearrange
 from layout.outputjs import merge_blocks
 from layout.output_pipeline import merge_blocks_pipeline
 from layout.changeJson import *
-
+import httpx
 # 调用mineru服务
-def call_mineru_api(input_file_path, output_dir, backend):
+async def call_mineru_api(input_file_path, output_dir, backend):
     async with httpx.AsyncClient(timeout=None) as client:
         with open(input_file_path, "rb") as f:
             files = {'files': f}
@@ -29,14 +29,15 @@ def call_mineru_api(input_file_path, output_dir, backend):
 
 
 #布局处理函数，负责布局分析，文件路径管理，调用mineru服务，以及后续的json格式处理
-def mineru_layout(input_file,output_path:Path,request_id,output_path_temp:Path,folder_name,vlm_enable,file_name):
+async def mineru_layout(input_file,output_path,request_id,output_path_temp,folder_name,vlm_enable,file_name):
     output_path.mkdir(parents=True, exist_ok=True)
     output_path_temp.mkdir(parents=True, exist_ok=True)
-    task_temp_path = Path(cfg['output_path_temp']).resolve() / request_id
+    task_temp_path = Path(output_path_temp) / request_id
     task_temp_path.mkdir(parents=True, exist_ok=True)
-
-    call_mineru_api(input_file, task_temp_path, 'vlm-lmdeploy-engine' if vlm_enable else 'pipeline')
-
+    print(f"临时路径: {task_temp_path}")
+    print("开始调用mineru服务进行布局分析...")
+    await call_mineru_api(input_file, task_temp_path, 'vlm-lmdeploy-engine' if vlm_enable else 'pipeline')
+    print("mineru服务调用完成，开始路径整理...")
     path_rearrange(task_temp_path, output_path, folder_name)
 
     middle_json_name = f'{file_name}_middle.json'
@@ -48,9 +49,9 @@ def mineru_layout(input_file,output_path:Path,request_id,output_path_temp:Path,f
         json_data = json.load(f)
 
     if vlm_enable:
-        processed_data = merge_blocks(data)
+        processed_data = merge_blocks(json_data)
     else:
-        processed_data = merge_blocks_pipeline(data)
+        processed_data = merge_blocks_pipeline(json_data)
 
     output_data = {"output": processed_data["pdf_info"]}
     output_data = modify_json_structure_complete(output_data)

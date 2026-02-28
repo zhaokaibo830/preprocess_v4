@@ -1,9 +1,8 @@
 import json
 import io
-  # 需要安装: pip install Pillow
 from openai import OpenAI
 from openai import APIConnectionError, APIError, RateLimitError
-from utils.LLMcall.client import stream_text, stream_image_description
+from utils.client import stream_text, stream_image_description
 # 修改函数签名：kv, desc, html改为布尔值，并接收预初始化的client
 def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc: bool, table_html: bool, client: OpenAI, model_name: str) -> dict:
     # ==========================================
@@ -38,6 +37,7 @@ def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc:
         try:
             answer = ""
             for chunk in stream_text(client, table_content +"\n" + prompt, model):
+                print(chunk, end="", flush=True)
                 answer += chunk
             return answer
             """
@@ -68,6 +68,7 @@ def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc:
         try:
             answer = ""
             for chunk in stream_text(client, table_content +"\n" + title +"\n" + prompt, model):
+                print(chunk, end="", flush=True)
                 answer += chunk
             return answer
             """

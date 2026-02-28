@@ -5,7 +5,7 @@ import sys
 from typing import List, Dict, Any, Tuple
 from pathlib import Path
 import time
-from utils.LLMcall.client import stream_text
+from utils.client import stream_text
 from openai import OpenAI
 
 
@@ -138,9 +138,7 @@ def title_process(client,
             answer = ""
             for chunk in stream_text(client,
                                      prompt,
-                                     model,
-                                     client.timeout.connect,
-                                     client.timeout.read
+                                     model
                                      ):
                 print(chunk, end="", flush=True)
                 answer += chunk

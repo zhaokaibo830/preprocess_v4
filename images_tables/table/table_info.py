@@ -1,18 +1,18 @@
 from pathlib import Path
-from tools import table_extract
+from .tools import table_extract
 
-def add_table_info(full_json_data, vlm_enable, client,model_name, table_kv = True,table_desc = True, table_html = True):
+def add_table_info(full_json_data, vlm_enable, client,model_name,output_path,folder_name, table_kv = True,table_desc = True, table_html = True):
     table_error_msg = ""
     if table_kv or table_desc or table_html:
 
         def build_table_error_json(reason):
                 err_dict = {"type": "table"} # 表格固定有 type
-                if 'kv' in table_config:
+                if table_kv:
                     # 正常是 list[dict]，报错也给个 list[dict]
                     err_dict["key_value"] = [{"error": "数据提取失败", "details": reason}]
-                if 'desc' in table_config:
+                if table_desc:
                     err_dict["description"] = f"表格分析失败: {reason}"
-                if 'html' in table_config:
+                if table_html:
                     err_dict["table_html"] = block.get("table_html", "") # 失败则保留原html或报错信息
                 return err_dict
 
@@ -53,8 +53,8 @@ def add_table_info(full_json_data, vlm_enable, client,model_name, table_kv = Tru
                             table_title = ""
                 if not table_html:
                     print(f"[WARN] 表格 {block_index} 缺少 HTML 内容，跳过 LLM 处理")
-                    #block["llm_process"] = build_table_error_json("解析不到 HTML 内容")
-                    continue # 👈 这里的 continue 是跳过整个 table block 的 LLM 处理
+                    
+                    continue
                 try:
                     result = table_extract(
                         table_html_input=table_html,

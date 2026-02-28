@@ -2,10 +2,13 @@ import datetime
 import time
 import os
 from pathlib import Path
+import sys
+parent_path = Path(__file__).parent.parent 
+sys.path.insert(0, str(parent_path))
 from fastapi import HTTPException, UploadFile
 from fastapi.responses import JSONResponse
 from format.formatTransform import format
-from utils.LLMCall.client import *
+from utils.client import *
 from layout.mineru_call import mineru_layout
 from titles.title_process import title_process
 from images_tables.image.image_info import *
@@ -13,7 +16,7 @@ from images_tables.table.table_info import *
 from utils.rm_equations import *
 from minioStore.store import store_images
 from minioStore.changePath import changeImagesPath
-from utils.LLMcall.client import create_client
+from utils.client import create_client
 
 # 与接口一基本一致，不进行最后的格式转换
 def test_interface_json(file,vlm_enable,red_title_enable,image_class,image_desc,image_html,table_kv,table_desc,table_html,cfg,request_id):

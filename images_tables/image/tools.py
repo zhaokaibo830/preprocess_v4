@@ -5,7 +5,7 @@ import io
 import time
 from PIL import Image  # 需要安装: pip install Pillow
 import json
-from utils.LLMcall.client import stream_image_description, stream_text
+from utils.client import stream_image_description, stream_text
 def process_and_encode_image(image_path, max_size=800):
     """
     读取本地图片，限制最大长宽不超过 max_size，并转换为 Base64 编码。
@@ -80,6 +80,7 @@ def analyze_image_content(image_path, img_title, image_class: bool, image_desc: 
         try:
             answer = ""
             for chunk in stream_image_description(client, base64_image, classify_prompt, model_name):
+                print(chunk, end="", flush=True)
                 answer += chunk
             #cls_completion = client.chat.completions.create(
             #    model=model_name,
@@ -210,6 +211,7 @@ def analyze_image_content(image_path, img_title, image_class: bool, image_desc: 
         try:
             answer = ""
             for chunk in stream_image_description(client, base64_image, img_title + desc_prompt, model_name):
+                print(chunk, end="", flush=True)
                 answer += chunk
             #desc_completion = client.chat.completions.create(
             #    model=model_name,
@@ -230,6 +232,7 @@ def analyze_image_content(image_path, img_title, image_class: bool, image_desc: 
         try:
             answer = ""
             for chunk in stream_image_description(client, base64_image, html_prompt, model_name):
+                print(chunk, end="", flush=True)
                 answer += chunk
             #html_completion = client.chat.completions.create(
             #    model=model_name,
