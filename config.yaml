@@ -31,3 +31,4 @@ MinIO:
   SECRET_KEY: minioadmin123
   BUCKET_NAME: preprocess
 
+workers: 2

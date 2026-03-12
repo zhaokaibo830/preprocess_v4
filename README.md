@@ -51,4 +51,13 @@
 
 **为确保程序正常运行，output_path_temp: ./data/temp必须存在，例如data/temp,并且要保证这个文件夹为空，不能放入任何文件**
 
+## preprocessv4.5
+
+处理流程：layout->titles->images_tables->red_title->formatChange
+
+接口:
+1. interface1:返回指定格式json
+2. interface2:返回自定义格式json
+3. test_interface:在接口1的基础上返回值加上测试指标
+
 

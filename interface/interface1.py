@@ -4,7 +4,7 @@ import pathlib
 from pathlib import Path
 import sys
 parent_path = Path(__file__).parent.parent 
-sys.path.insert(0, str(parent_path))
+#sys.path.insert(0, str(parent_path))
 from pathlib import Path
 from fastapi import HTTPException, UploadFile
 from fastapi.responses import JSONResponse
@@ -19,6 +19,9 @@ from minioStore.store import store_images
 from minioStore.changePath import changeImagesPath
 from utils.client import create_client
 import json
+from  utils.get_index_list import get_page_index_list
+from red_title.redtitle import red_title_process
+from utils.jsonchangefunction import convert_json_format
 AVALIABLE_FORMATS = ["pdf", "docx", "doc", "wps", "odt", "pptx", "ppt", "ofd", "md", "ceb", "jpg", "jpeg", "png", "txt"]
 
 async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,image_desc,image_html,table_kv,table_desc,table_html,cfg,request_id):
@@ -98,25 +101,28 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
         #红头文件处理
         images_output_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/"page_images"
         images_output_path.mkdir(parents=True, exist_ok=True)
-        """
+        
         if red_title_enable:
             #红头文件信息提取
             #返回加入红头文件信息的json和红头处理的错误信息，如果没有错误则为空字符串
-            json_data, red_title_error_msg = red_title_process(
+            to_delete_page_index_list = get_page_index_list(json_data)
+            result = red_title_process(
                 save_filepath,#pdf文件路径
                 images_output_path,#pdf转图片的保存路径
                 json_data,#待处理的完整json数据
                 red_title_client,#已创建好的大模型client
-                cfg['red_title_model']['MODEL'] # 大模型model name
+                cfg['red_title_model']['MODEL'], # 大模型model name
+                delete_pages=to_delete_page_index_list
                 )
-
+            json_data = result.get("modified_json", json_data)  # 如果处理成功，使用修改后的JSON；否则继续使用原JSON
+            red_title_error_info = result.get("error", "")
         #将json格式转换为甲方指定格式
         json_data = convert_json_format(json_data)
-        """
+        
     except FileNotFoundError as e:
         status_code = 404
         status_message = f"FILE_NOT_FOUND: {str(e)}"
-    """
+    
     except PermissionError as e:
         status_code = 403
         status_message = f"PERMISSION_DENIED: {str(e)}"
@@ -126,7 +132,7 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
     except Exception as e:
         status_code = 500
         status_message = f"INTERNAL_ERROR: {str(e)}"
-    """
+    
     title_client.close()
     image_client.close()
     table_client.close()
