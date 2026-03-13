@@ -22,8 +22,24 @@ import json
 from  utils.get_index_list import get_page_index_list
 from red_title.redtitle import red_title_process
 from utils.jsonchangefunction import convert_json_format
+import ast
 AVALIABLE_FORMATS = ["pdf", "docx", "doc", "wps", "odt", "pptx", "ppt", "ofd", "md", "ceb", "jpg", "jpeg", "png", "txt"]
-
+def py_dict_to_json_var(py_dict_str):
+    """
+    将 Python 字典字符串转换为合法的 JSON 对象（变量）
+    
+    输入: Python 字典格式的字符串（单引号）
+    输出: JSON 对象（Python 中的 dict/list 等）
+    """
+    # 先用 ast.literal_eval 解析 Python 字面量
+    python_obj = ast.literal_eval(py_dict_str)
+    
+    # 通过 json.dumps 再 json.loads 确保转换为标准 JSON 对象
+    # 这样可以处理 Python 特有的数据类型（如 tuple、set 等）
+    json_str = json.dumps(python_obj)
+    json_obj = json.loads(json_str)
+    
+    return json_obj
 async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,image_desc,image_html,table_kv,table_desc,table_html,cfg,request_id):
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -117,6 +133,9 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
             json_data = result.get("modified_json", json_data)  # 如果处理成功，使用修改后的JSON；否则继续使用原JSON
             red_title_error_info = result.get("error", "")
         #将json格式转换为甲方指定格式
+        #print(json_data)
+        #json_data = py_dict_to_json_var(json_data)
+        #print(json_data)
         json_data = convert_json_format(json_data)
         
     except FileNotFoundError as e:
