@@ -2,9 +2,9 @@ output_path: ../data/output
 output_path_temp: ../data/temp
 
 title_model:
-  API_KEY: sk-1fdbb0e4ce3943bab4b300ca867c1315
+  API_KEY: sk-fa25a0986eed43e3865f723ed0789986
   BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
-  MODEL: qwen3-14b
+  MODEL: qwen2.5-vl-72b-instruct
   connection_timeout: 20
   process_timeout: 600
 image_model:
@@ -14,9 +14,9 @@ image_model:
   connection_timeout: 20
   process_timeout: 180
 table_model:
-  API_KEY : sk-1fdbb0e4ce3943bab4b300ca867c1315
+  API_KEY : sk-fa25a0986eed43e3865f723ed0789986
   BASE_URL : https://dashscope.aliyuncs.com/compatible-mode/v1
-  MODEL : qwen3-14b
+  MODEL : qwen2.5-32b-instruct
   connection_timeout: 20
   process_timeout: 300
 red_title_model:
@@ -32,3 +32,7 @@ MinIO:
   BUCKET_NAME: preprocess
 
 workers: 2
+
+title_process:
+  extract_mode: json_only # json_only, hybrid, multimodal_only
+  precision_profile: balanced # balanced, fast, precise

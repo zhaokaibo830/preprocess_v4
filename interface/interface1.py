@@ -93,16 +93,25 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
         json_data = await mineru_layout(save_filepath,output_path,request_id,output_path_temp,folder_name,vlm_enable,file_name)
         print("mineru服务调用完成，开始后续处理...")
         #print(f"mineru服务返回的初始json数据: {json_data}")
-        json_data, title_error_info = title_process(
-            title_client,#大模型client
-            cfg['title_model']['MODEL'],
-            json_data,#json数据，避免io
-            output_path,
-            file_name,
-            folder_name,
-            vlm_enable
+        # with open('./test411.json', 'w', encoding='utf-8') as f:
+        #     json.dump(json_data, f, ensure_ascii=False, indent=4)
+
+        json_data, title_error_msg = title_process(
+            client=title_client,  # 大模型client
+            model=cfg['title_model']['MODEL'],  # 大模型model name
+            json_data=json_data,  # json数据，避免io
+            output_path=str(output_path),
+            file_name=file_name,
+            folder_name=folder_name,
+            vlm_enable=vlm_enable,
+            image_inputs=None,
+            pdf_path=save_filepath if cfg['title_process']['extract_mode'] in {'multimodal_only'} else None,
+            extract_mode=cfg['title_process']['extract_mode'],
+            precision_profile=cfg['title_process']['precision_profile'],
         )
-        #print(f"标题层级分析完成，json数据: {json_data}")
+        # with open('./test411_title.json', 'w', encoding='utf-8') as f:
+        #     json.dump(json_data, f, ensure_ascii=False, indent=4)
+        # print(f"标题层级分析完成，json数据: {json_data}")
         json_data , image_error_msg, image_count = add_image_info(json_data, vlm_enable, image_client,cfg['image_model']['MODEL'], output_path, folder_name, image_class, image_desc, image_html)
 
         json_data, table_error_info, table_count= add_table_info(json_data, vlm_enable, table_client,cfg['table_model']['MODEL'], output_path, folder_name, table_kv, table_desc, table_html)
@@ -112,7 +121,7 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
         images_path = output_path / folder_name / ('vlm' if vlm_enable else 'auto') / 'images'
         store_images(images_path, file_name, timestamp, cfg['MinIO']['IP'],cfg['MinIO']['ACCESS_KEY'],cfg['MinIO']['SECRET_KEY'],cfg['MinIO']['BUCKET_NAME'])
         json_data = changeImagesPath(json_data, output_path, folder_name, vlm_enable, cfg, timestamp, file_name)
-        with open('../../test.json', 'w', encoding='utf-8') as f:
+        with open('../test.json', 'w', encoding='utf-8') as f:
             json.dump(json_data, f, ensure_ascii=False, indent=4)
         #红头文件处理
         images_output_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/"page_images"

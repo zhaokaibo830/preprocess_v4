@@ -43,8 +43,29 @@ from layout.mineru_call import call_mineru_api, mineru_layout
 from interface.interface1 import interface1_json
 from interface.interface2 import interface2_json
 from interface.test_interface import test_interface_json
+from pydantic import BaseModel, Field
+from typing import List, Dict, Any
 MAX_CONCURRENT = 5
 semaphore = asyncio.Semaphore(MAX_CONCURRENT)
+
+class BaseResponse(BaseModel):
+    status_code: int = Field(..., description="状态码，200表示成功")
+    status_message: str = Field(..., description="状态信息")
+    partitions: List[Dict[str, Any]] = Field(
+        ..., 
+        description="解析后的文档结构数据",
+        example=[{"type": "text", "content": "示例内容"}]
+    )
+
+class TestResponse(BaseResponse):
+    time: float = Field(..., description="总耗时（秒）", example=1.23)
+    layout_time: float = Field(..., description="布局分析耗时")
+    title_time: float = Field(..., description="标题识别耗时")
+    image_time: float = Field(..., description="图片处理耗时")
+    table_time: float = Field(..., description="表格处理耗时")
+    red_title_time: float = Field(..., description="红标题识别耗时")
+    image_number: int = Field(..., description="图片数量")
+    table_number: int = Field(..., description="表格数量")
 
 app = FastAPI(docs_url=None, redoc_url=None)
 
@@ -73,186 +94,22 @@ with open("config.yaml", 'r', encoding='utf-8') as file:
     cfg = yaml.safe_load(file)
 
 
-@app.post("/api/preprocessv4")
-async def preprocess_v4(
-    file: UploadFile = File(...),
-    vlm_enable: bool = Form(True),
-    red_title_enable:bool = Form(True),
-    img_select: List[str] = Form([]),
-    table_select: List[str] = Form([])
-):
 
-    # 1. 调用核心逻辑
-    request_id = str(uuid.uuid4())
-    status_code = 200
-    status_message = "SUCCESS"
-    return_json_partitions = []
-    title_error_msg = ""
-    image_error_msg = ""
-    table_error_msg = ""
-    red_title_error_msg = ""
-    try:
-        res = await core_analyze_pipeline(file, vlm_enable, img_select, table_select, request_id)
-        
-        output_path=res['output_path']
-        folder_name=res["folder_name"]
-        file_name=res["file_name"]
-        timestamp=res["timestamp"]
-        image_config=res["image_config"]
-        table_config=res["table_config"]
-        input_file=res["input_file"]
-        image_number=res["image_number"]
-        table_number=res["table_number"]
-        image_error_msg=res["image_error_msg"]
-        table_error_msg=res["table_error_msg"]
-        title_error_msg=res["title_error_msg"]
-        # 2. 存储逻辑：上传 MinIO
-        images_path = Path(res['output_path']) / res["folder_name"] / res["sub_type"] / 'images'
-        store_images(images_path, res["file_name"], res["timestamp"], cfg['MinIO']['IP'],cfg['MinIO']['ACCESS_KEY'],cfg['MinIO']['SECRET_KEY'],cfg['MinIO']['BUCKET_NAME'])
-
-        full_json_data=res['full_json_data']
-
-        for block_index,block in enumerate(full_json_data["output"]):
-            if block["type"]=="image":
-                for sub_block_index,sub_block in enumerate(block["blocks"]):
-                    if sub_block["type"]=="image_body":
-                        try:
-                            img_path=sub_block["lines"][0]["spans"][0]["image_path"]
-                            img_path=f"http://{cfg['MinIO']['IP']}/{cfg['MinIO']['BUCKET_NAME']}/{timestamp}_{file_name}/{img_path}"
-                            full_json_data["output"][block_index]["blocks"][sub_block_index]["lines"][0]["spans"][0]["image_path"]=img_path
-                        except (IndexError, KeyError, TypeError):
-                            print(f"[WARN] block={block_index} 取不到图片，已跳过")
-                            continue
-
-            elif block["type"]=="table":
-                for sub_block_index,sub_block in enumerate(block["blocks"]):
-                    if sub_block["type"]=="table_body":
-                        try:
-                            table_path=sub_block["lines"][0]["spans"][0]["image_path"]
-                            table_path=f"http://{cfg['MinIO']['IP']}/{cfg['MinIO']['BUCKET_NAME']}/{timestamp}_{file_name}/{table_path}"
-                            full_json_data["output"][block_index]["blocks"][sub_block_index]["lines"][0]["spans"][0]["image_path"]=table_path
-                        except (IndexError, KeyError, TypeError):
-                            print(f"[WARN] block={block_index} 取不到表格，已跳过")
-                            continue
-        
-        # 保存接口2输出的JSON 
-        level_json_name = f'{file_name}_processed_with_levels.json'
-
-        if vlm_enable:
-            level_json_path = output_path / folder_name / 'vlm' / level_json_name
-        else:
-            level_json_path = output_path / folder_name / 'auto' / level_json_name
-
-        save_json_data(full_json_data, str(level_json_path))
-
-
-        images_output_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/"page_images"
-        images_output_path.mkdir(parents=True, exist_ok=True)
-
-        red_title_error_msg = post_process(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable,cfg['LLM']['red_title']['connection_timeout'],cfg['LLM']['red_title']['process_timeout']) or ""
-        #post_process_2(input_file,images_output_path,level_json_path,cfg['LLM']['red_title']['API_KEY'],cfg['LLM']['red_title']['BASE_URL'],cfg['LLM']['red_title']['MODEL'],output_path,file_name,folder_name,vlm_enable,red_title_enable)
-        level_json_path = output_path / folder_name / ('vlm' if vlm_enable else 'auto') / f'{file_name}_level_redtitle.json'
-        partitions_json_path=output_path / folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_partitions.json"
-        with open(partitions_json_path,'r',encoding='utf-8') as f:
-            return_json_partitions=json.load(f)
-    
-    except FileNotFoundError as e:
-        status_code = 404
-        status_message = f"FILE_NOT_FOUND: {str(e)}"
-    except PermissionError as e:
-        status_code = 403
-        status_message = f"PERMISSION_DENIED: {str(e)}"
-    except ValueError as e:
-        status_code = 400
-        status_message = f"BAD_REQUEST: {str(e)}"
-    except Exception as e:
-        status_code = 500
-        status_message = f"INTERNAL_ERROR: {str(e)}"
-    if status_code == 200:
-        extra_errors = []
-        if image_error_msg:
-            extra_errors.append(f"图片提取异常: {image_error_msg}")
-            status_code = 500  # 部分成功
-        if table_error_msg:
-            extra_errors.append(f"表格提取异常: {table_error_msg}")
-            status_code = 500  # 部分成功
-        if red_title_error_msg: 
-            extra_errors.append(f"红头处理异常: {red_title_error_msg}")
-            status_code = 500  # 部分成功
-        if title_error_msg: 
-            extra_errors.append(f"标题层级分析异常: {title_error_msg}")
-            status_code = 500  # 部分成功
-        if extra_errors:
-            status_message = "核心流程成功，大模型调用出错: " + " | ".join(extra_errors)
-    return_json={
-        "status_code": status_code,
-        "status_message": status_message,
-        "partitions": return_json_partitions if status_code == 200 else []
-    }
-    return_json_level={
-        "status_code": status_code,
-        "status_message": status_message,
-        "full_json_data": full_json_data if status_code == 200 else {}
-    }
-    save_json_data(return_json_level, level_json_path)
-    if status_code == 200:
-        return_json_path=output_path/folder_name/('vlm' if vlm_enable else 'auto')/f"{file_name}_return.json"
-        with open(return_json_path,'w',encoding='utf-8') as f:
-            json.dump(return_json,f,ensure_ascii=False,indent=2)
-        
-        if vlm_enable:
-            pdf_view = output_path / folder_name / 'vlm' / f"{file_name}_layout.pdf"
-            md_output_path = output_path / folder_name / 'vlm' / f"{file_name}_titles_only.md"
-        else:
-            pdf_view = output_path / folder_name / 'auto' / f"{file_name}_layout.pdf"
-            md_output_path = output_path / folder_name / 'auto' / f"{file_name}_titles_only.md"
-
-        if vlm_enable and 'html' in table_config:
-            excel_output_dir = output_path / folder_name / 'vlm' / 'tables_excel'
-        elif (not vlm_enable) and 'html' in table_config:
-            excel_output_dir = output_path / folder_name / 'auto' / 'tables_excel'
-
-        if 'html' in table_config:
-            files_to_send = [return_json_path, md_output_path, pdf_view, excel_output_dir,level_json_path]
-        else:
-            files_to_send = [return_json_path, md_output_path, pdf_view,level_json_path]
-
-        zip_buffer = io.BytesIO()
-        with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zf:
-            for f in files_to_send:
-                if f.is_dir():
-                    for root, _, files in os.walk(f):
-                        for file in files:
-                            file_path = Path(root) / file
-                            arcname = file_path.relative_to(output_path / folder_name / ('vlm' if vlm_enable else 'auto'))
-                            zf.write(file_path, arcname=arcname)
-                else:
-                    zf.write(f, arcname=f.name)
-        zip_buffer.seek(0)
-
-        return StreamingResponse(
-            zip_buffer,
-            media_type="application/zip",
-            headers={"Content-Disposition": f"attachment; filename*=utf-8''{quote(folder_name)}_result.zip"}
-        )
-    else:
-        from fastapi.responses import JSONResponse
-        return JSONResponse(
-            status_code=status_code,
-            content=return_json
-        )
-
-@app.post("/api/v1/xidian/preprocess_required")
+@app.post("/api/v1/xidian/preprocess_required",
+            response_model=BaseResponse,
+            summary="标准处理接口",
+            description="上传文件进行处理，返回标准格式的处理结果"
+)
 async def return_json_only(
     file: UploadFile = File(...),
-    vlm_enable: bool = Query(True),
-    red_title_enable: bool = Query(True),
-    img_class: bool = Query(True),
-    img_desc: bool = Query(True),
-    img_html: bool = Query(True),
-    table_kv: bool = Query(True),
-    table_desc: bool = Query(True),
-    table_html: bool = Query(True)
+    vlm_enable: bool = Query(True, description="是否启用视觉语言模型（VLM）"),
+    red_title_enable: bool = Query(True, description="是否识别红头标题"),
+    img_class: bool = Query(True, description="是否进行图片分类"),
+    img_desc: bool = Query(True, description="是否生成图片描述"),
+    img_html: bool = Query(True, description="是否生成图片HTML结构"),
+    table_kv: bool = Query(True, description="是否提取表格键值对"),
+    table_desc: bool = Query(True, description="是否生成表格描述"),
+    table_html: bool = Query(True, description="是否生成表格HTML结构")
 ):
     #将上传文件保存到本地
     try:
@@ -275,17 +132,22 @@ async def return_json_only(
     return result
 
 
-@app.post("/api/v1/xidian/preprocess_required_test")
+@app.post(
+    "/api/v1/xidian/preprocess_required_test",
+    response_model=TestResponse,
+    summary="批量性能测试",
+    description="上传待处理文件，返回标准格式处理结果和性能测试信息"
+    )
 async def return_json_only(
     file: UploadFile = File(...),
-    vlm_enable: bool = Query(True),
-    red_title_enable: bool = Query(True),
-    img_class: bool = Query(True),
-    img_desc: bool = Query(True),
-    img_html: bool = Query(True),
-    table_kv: bool = Query(True),
-    table_desc: bool = Query(True),
-    table_html: bool = Query(True)
+    vlm_enable: bool = Query(True, description="是否启用视觉语言模型（VLM）"),
+    red_title_enable: bool = Query(True, description="是否识别红头标题"),
+    img_class: bool = Query(True, description="是否进行图片分类"),
+    img_desc: bool = Query(True, description="是否生成图片描述"),
+    img_html: bool = Query(True, description="是否生成图片HTML结构"),
+    table_kv: bool = Query(True, description="是否提取表格键值对"),
+    table_desc: bool = Query(True, description="是否生成表格描述"),
+    table_html: bool = Query(True, description="是否生成表格HTML结构")
 ):
     # 1. 调用核心逻辑
     #start_time=time.perf_counter()
@@ -305,17 +167,21 @@ async def return_json_only(
 
 
 
-@app.post("/api/v1/xidian/preprocess_custom")
+@app.post("/api/v1/xidian/preprocess_custom",
+            response_model=BaseResponse,
+            summary="自定义格式处理结果",
+            description="上传待处理文件，返回自定义格式的处理结果"
+            )
 async def return_json_with_custom_format(
     file: UploadFile = File(...),
-    vlm_enable: bool = Query(True),
-    red_title_enable: bool = Query(True),
-    img_class: bool = Query(True),
-    img_desc: bool = Query(True),
-    img_html: bool = Query(True),
-    table_kv: bool = Query(True),
-    table_desc: bool = Query(True),
-    table_html: bool = Query(True)
+    vlm_enable: bool = Query(True, description="是否启用视觉语言模型（VLM）"),
+    red_title_enable: bool = Query(True, description="是否识别红头标题"),
+    img_class: bool = Query(True, description="是否进行图片分类"),
+    img_desc: bool = Query(True, description="是否生成图片描述"),
+    img_html: bool = Query(True, description="是否生成图片HTML结构"),
+    table_kv: bool = Query(True, description="是否提取表格键值对"),
+    table_desc: bool = Query(True, description="是否生成表格描述"),
+    table_html: bool = Query(True, description="是否生成表格HTML结构")
 ):
 
     # 1. 调用核心逻辑
@@ -332,6 +198,211 @@ async def return_json_with_custom_format(
         return JSONResponse(content={"error": "文件上传出错"})
     result =await interface2_json(save_filepath, vlm_enable, red_title_enable, img_class, img_desc, img_html, table_kv, table_desc, table_html, cfg, request_id)
     return result 
+
+@app.get("/portal", include_in_schema=False)
+async def index():
+    """
+    前端首页
+    """
+    return FileResponse("static/index.html")
+
+
+@app.post(
+    "/api/v1/xidian/preprocess_web",
+    summary="前端页面统一接口",
+    description="供前端页面调用，自动下载JSON结果"
+)
+async def preprocess_web(
+    file: UploadFile = File(...),
+
+    # 前端模式
+    json_mode: str = Form(...),
+
+    # 通用配置
+    vlm_enable: bool = Form(True),
+    red_title_enable: bool = Form(True),
+
+    # 多选项
+    img_select: List[str] = Form([]),
+    table_select: List[str] = Form([])
+):
+    """
+    前端统一接口：
+
+    json_mode:
+        standard -> interface1_json
+        custom   -> interface2_json
+    """
+
+    try:
+
+        # =====================================================
+        # 1. 文件检查
+        # =====================================================
+
+        if not file.filename:
+            raise HTTPException(status_code=400, detail="文件名为空")
+
+        safe_name = Path(file.filename).name
+
+        ext = safe_name.split(".")[-1].lower()
+
+        if ext not in AVALIABLE_FORMATS:
+            raise HTTPException(
+                status_code=400,
+                detail=f"不支持的文件格式: {ext}"
+            )
+
+        # =====================================================
+        # 2. 保存上传文件
+        # =====================================================
+
+        request_id = str(uuid.uuid4())
+
+        save_dir = Path("../data/doc")
+        save_dir.mkdir(parents=True, exist_ok=True)
+
+        save_filename = f"{request_id}_{safe_name}"
+
+        save_path = save_dir / save_filename
+
+        with open(save_path, "wb") as f:
+            shutil.copyfileobj(file.file, f)
+
+        # =====================================================
+        # 3. 解析图片配置
+        # =====================================================
+
+        img_class = "class" in img_select
+        img_desc = "description" in img_select
+        img_html = "html" in img_select
+
+        # =====================================================
+        # 4. 解析表格配置
+        # =====================================================
+
+        table_kv = "key-value" in table_select
+        table_desc = "description" in table_select
+        table_html = "html" in table_select
+
+        # =====================================================
+        # 5. 打印日志
+        # =====================================================
+
+        print("=" * 80)
+        print(f"[WEB] request_id = {request_id}")
+        print(f"[WEB] json_mode = {json_mode}")
+        print(f"[WEB] file_name = {safe_name}")
+
+        print(
+            f"[WEB] vlm_enable={vlm_enable}, "
+            f"red_title_enable={red_title_enable}"
+        )
+
+        print(
+            f"[WEB] img_class={img_class}, "
+            f"img_desc={img_desc}, "
+            f"img_html={img_html}"
+        )
+
+        print(
+            f"[WEB] table_kv={table_kv}, "
+            f"table_desc={table_desc}, "
+            f"table_html={table_html}"
+        )
+
+        print("=" * 80)
+
+        # =====================================================
+        # 6. 调用已有接口逻辑
+        # =====================================================
+
+        if json_mode == "standard":
+
+            result = await interface1_json(
+                str(save_path),
+                vlm_enable,
+                red_title_enable,
+                img_class,
+                img_desc,
+                img_html,
+                table_kv,
+                table_desc,
+                table_html,
+                cfg,
+                request_id
+            )
+
+            output_json_name = f"{Path(safe_name).stem}_standard.json"
+
+        elif json_mode == "custom":
+
+            result = await interface2_json(
+                str(save_path),
+                vlm_enable,
+                red_title_enable,
+                img_class,
+                img_desc,
+                img_html,
+                table_kv,
+                table_desc,
+                table_html,
+                cfg,
+                request_id
+            )
+
+            output_json_name = f"{Path(safe_name).stem}_custom.json"
+
+        else:
+
+            raise HTTPException(
+                status_code=400,
+                detail="json_mode 仅支持 standard/custom"
+            )
+
+        # =====================================================
+        # 7. 保存JSON文件
+        # =====================================================
+
+        output_dir = Path("../data/web_result")
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        output_json_path = output_dir / output_json_name
+
+        with open(output_json_path, "w", encoding="utf-8") as f:
+            json.dump(
+                result,
+                f,
+                ensure_ascii=False,
+                indent=2
+            )
+
+        # =====================================================
+        # 8. 返回JSON文件下载
+        # =====================================================
+
+        return FileResponse(
+            path=str(output_json_path),
+            media_type="application/json",
+            filename=output_json_name
+        )
+
+    except HTTPException as e:
+
+        raise e
+
+    except Exception as e:
+
+        print(f"[ERROR] preprocess_web: {str(e)}")
+
+        return JSONResponse(
+            status_code=500,
+            content={
+                "status_code": 500,
+                "status_message": str(e),
+                "partitions": []
+            }
+        )
 
 if __name__ == "__main__":
     import uvicorn

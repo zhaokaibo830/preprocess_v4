@@ -7,6 +7,7 @@ from layout.changeJson import *
 import httpx
 # 调用mineru服务
 async def call_mineru_api(input_file_path, output_dir, backend):
+    print("calling mineru service...")
     async with httpx.AsyncClient(timeout=None) as client:
         with open(input_file_path, "rb") as f:
             files = {'files': f}
@@ -23,8 +24,10 @@ async def call_mineru_api(input_file_path, output_dir, backend):
                 'return_middle_json': 'true',
                 'return_model_output': 'true'
             }
-            # 异步发送请求，此时 8003 服务可以去干别的事
+            # 异步发送请求，此时 8000 服务可以去干别的事
+            print("发送请求到mineru服务...")
             response = await client.post("http://127.0.0.1:8000/file_parse", files=files, data=data)
+            print("收到mineru服务响应")
             return response.json()
 
 
@@ -57,3 +60,16 @@ async def mineru_layout(input_file,output_path,request_id,output_path_temp,folde
     output_data = modify_json_structure_complete(output_data)
 
     return output_data
+
+if __name__ == "__main__":
+    #import argparse
+    #parser = argparse.ArgumentParser(description="调用mineru服务进行布局分析")
+    #parser.add_argument("input_file", type=str, help="输入文件路径")
+    #parser.add_argument("output_dir", type=str, help="输出目录路径")
+    #parser.add_argument("--vlm_enable", action="store_true", help="是否启用VLM模式")
+    #args = parser.parse_args()
+
+    import asyncio
+    asyncio.run(call_mineru_api("/home/bestwish/preprocessTest/test428/files/verify.pdf", "/home/bestwish/data/output", 'vlm-lmdeploy-engine' ))
+    #result = asyncio.run(mineru_layout(args.input_file, args.output_dir, "test_request_id", Path("/home/bestwish/data/temp"), "/home/bestwish/data/output", True, Path(args.input_file).stem))
+    print(json.dumps(result, ensure_ascii=False, indent=4))

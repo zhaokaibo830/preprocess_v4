@@ -4,77 +4,464 @@
   <meta charset="UTF-8" />
   <title>文档解析服务</title>
   <style>
-    :root{--prim:#1677ff}
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;background:#f7f8fa;color:#222;display:flex;justify-content:center}
-    .card{background:#fff;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);width:640px;margin:48px 16px;padding:48px}
-    h1{font-size:32px;margin:0 0 36px}
-    .sec{margin-bottom:32px}
-    .sec-title{font-size:20px;font-weight:600;margin-bottom:16px}
-    input[type=file]{display:none}
-    .file-box{border:2px dashed #bbb;border-radius:8px;padding:32px;text-align:center;font-size:18px;cursor:pointer;transition:.25s}
-    .file-box:hover{border-color:var(--prim);background:#fafbfc}
-    .check-grid{display:flex;flex-wrap:wrap;gap:20px}
-    .check-item{display:flex;align-items:center;font-size:18px;gap:10px}
-    .check-item input{width:20px;height:20px;accent-color:var(--prim)}
-    button{padding:14px 36px;font-size:18px;border:none;border-radius:6px;background:var(--prim);color:#fff;cursor:pointer}
-    button:disabled{background:#94bfff;cursor:not-allowed}
-    #msg{margin-top:24px;font-size:18px; word-break: break-all; white-space: pre-wrap;}
-    .err{color:#e04040}
-    .ok{color:#0bb750}
+    :root {
+      --green-deep: #005238;
+      --green-primary: #007a53;
+      --green-light: #e6f5ef;
+      --green-border: #b2dfd0;
+      --gold-accent: #c8a44e;
+      --gold-light: #faf3e0;
+      --gold-border: #e0cba0;
+      --bg: #f0f2f5;
+      --card: #ffffff;
+      --text: #1a2332;
+      --text-secondary: #5a6a7e;
+      --text-muted: #8c96a4;
+      --border: #dce1e8;
+      --danger: #d4380d;
+      --success: #005238;
+      --radius: 4px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* 顶部装饰条 */
+    .top-bar {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--green-deep) 0%, var(--green-primary) 40%, var(--gold-accent) 100%);
+      flex-shrink: 0;
+    }
+
+    /* 页面头部 */
+    .page-header {
+      width: 100%;
+      max-width: 780px;
+      padding: 40px 24px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .header-left {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+    }
+    .header-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-primary));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .header-icon svg { width: 28px; height: 28px; fill: #fff; }
+    .header-text h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text);
+    }
+    .header-text p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    /* 右上角国网 Logo */
+    .sgcc-logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-top: 4px;
+    }
+    .sgcc-logo-icon {
+      width: 44px;
+      height: 44px;
+      display: block;
+    }
+    .sgcc-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+    }
+    .sgcc-logo-text .name-cn {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--green-deep);
+      letter-spacing: 3px;
+    }
+    .sgcc-logo-text .name-en {
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.8px;
+      margin-top: 1px;
+    }
+
+    /* 主卡片 */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+      width: 100%;
+      max-width: 780px;
+      margin: 24px 24px 48px;
+      overflow: hidden;
+    }
+
+    /* 卡片内分区 */
+    .card-section {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-section:last-child { border-bottom: none; }
+
+    /* 分区标题 */
+    .sec-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 16px;
+      padding-left: 10px;
+      border-left: 3px solid var(--green-primary);
+      line-height: 1;
+    }
+
+    /* 文件上传区域 */
+    .file-zone {
+      border: 2px dashed var(--green-border);
+      border-radius: var(--radius);
+      padding: 36px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--green-light);
+      position: relative;
+    }
+    .file-zone:hover {
+      border-color: var(--green-primary);
+      background: #d9f0e5;
+    }
+    .file-zone.drag-over {
+      border-color: var(--green-primary);
+      background: #d0eddf;
+    }
+    .file-zone svg {
+      width: 40px;
+      height: 40px;
+      fill: var(--green-primary);
+      margin-bottom: 10px;
+      opacity: 0.7;
+    }
+    .file-zone .file-main-text {
+      font-size: 15px;
+      color: var(--green-deep);
+      font-weight: 500;
+    }
+    .file-zone .file-sub-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .file-zone.has-file {
+      border-style: solid;
+      border-color: var(--green-primary);
+      background: #fff;
+    }
+    .file-zone.has-file .file-main-text {
+      color: var(--text);
+      font-weight: 600;
+      word-break: break-all;
+    }
+    input[type="file"] { display: none; }
+
+    /* 选项行布局 */
+    .option-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    /* Radio / Checkbox 通用样式 */
+    .opt-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      user-select: none;
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      transition: all 0.15s;
+    }
+    .opt-label:hover {
+      background: var(--green-light);
+      border-color: var(--green-border);
+    }
+    .opt-label input[type="radio"],
+    .opt-label input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--green-primary);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    /* 多选网格 */
+    .opt-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 开关式复选框 */
+    .switch-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      user-select: none;
+    }
+    .switch-track {
+      width: 36px;
+      height: 20px;
+      background: #c4cdd5;
+      border-radius: 10px;
+      position: relative;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .switch-track::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.2s;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    }
+    .switch-label input { display: none; }
+    .switch-label input:checked + .switch-track {
+      background: var(--green-primary);
+    }
+    .switch-label input:checked + .switch-track::after {
+      transform: translateX(16px);
+    }
+
+    /* 提交按钮 */
+    .action-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .btn-primary {
+      padding: 10px 40px;
+      font-size: 15px;
+      font-weight: 500;
+      border: none;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--green-deep), var(--green-primary));
+      color: #fff;
+      cursor: pointer;
+      letter-spacing: 2px;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+      transition: left 0.4s;
+    }
+    .btn-primary:hover::before { left: 100%; }
+    .btn-primary:hover {
+      box-shadow: 0 4px 12px rgba(0,82,56,0.3);
+    }
+    .btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 6px rgba(0,82,56,0.25);
+    }
+    .btn-primary:disabled {
+      background: #a0c4b5;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    .btn-primary:disabled::before { display: none; }
+
+    /* 消息区 */
+    #msg {
+      margin-top: 16px;
+      font-size: 14px;
+      word-break: break-all;
+      white-space: pre-wrap;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      line-height: 1.6;
+      display: none;
+    }
+    #msg.show { display: block; }
+    #msg.err {
+      color: var(--danger);
+      background: #fff2f0;
+      border: 1px solid #ffccc7;
+    }
+    #msg.ok {
+      color: var(--success);
+      background: var(--green-light);
+      border: 1px solid var(--green-border);
+    }
+
+    /* 底部信息 */
+    .footer {
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 0 24px 32px;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .page-header {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px 16px 0;
+        align-items: flex-start;
+      }
+      .sgcc-logo { align-self: flex-end; }
+      .header-text h1 { font-size: 22px; }
+      .card { margin: 16px 12px 32px; }
+      .card-section { padding: 20px 18px; }
+      .option-row { gap: 16px; flex-wrap: wrap; }
+      .file-zone { padding: 24px 16px; }
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>文档解析服务</h1>
 
-    <div class="sec">
+  <div class="top-bar"></div>
+
+  <header class="page-header">
+    <div class="header-left">
+      <div class="header-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6zm2-7h8v1.5H8V13zm0 3h5v1.5H8V16z"/></svg>
+      </div>
+      <div class="header-text">
+        <h1>文档解析服务</h1>
+        <p>上传文档，智能识别版面结构与内容</p>
+      </div>
+    </div>
+    <div class="sgcc-logo">
+      <img src="/static/state-grid-1.svg" class="sgcc-logo-icon" alt="STATE GRID">
+      <div class="sgcc-logo-text">
+        <span class="name-cn">国家电网</span>
+        <span class="name-en">STATE GRID</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="card">
+
+    <section class="card-section">
+      <div class="sec-title">文件上传</div>
       <input id="fileInput" type="file" />
-      <div id="fileBox" class="file-box">点击或拖拽上传文件</div>
-    </div>
+      <div id="fileBox" class="file-zone">
+        <svg viewBox="0 0 24 24"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+        <div class="file-main-text">点击或拖拽文件到此处上传</div>
+        <div class="file-sub-text">支持 PDF、docx、doc、pptx、ppt、wps、png、jpg、jpeg、ofd、odt、ceb、md、txt格式</div>
+      </div>
+    </section>
 
-    <div class="sec">
+    <section class="card-section">
+      <div class="sec-title">JSON输出格式</div>
+      <div class="option-row">
+        <label class="opt-label">
+          <input type="radio" name="json_mode" value="standard" checked />
+          <span>标准格式(符合标准定义的json格式)</span>
+        </label>
+        <label class="opt-label">
+          <input type="radio" name="json_mode" value="custom" />
+          <span>自定义格式(包含更多输出字段的json格式)</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card-section">
       <div class="sec-title">VLM 版面识别</div>
-      <label class="check-item">
+      <label class="switch-label">
         <input id="vlm_enable" type="checkbox" checked />
-        <span>启用</span>
+        <span class="switch-track"></span>
+        <span>启用版面智能识别</span>
       </label>
-    </div>
+    </section>
 
-    <div class="sec">
+    <section class="card-section">
       <div class="sec-title">红头文件识别</div>
-      <label class="check-item">
+      <label class="switch-label">
         <input id="red_title_enable" type="checkbox" checked />
-        <span>启用</span>
+        <span class="switch-track"></span>
+        <span>启用红头文件识别</span>
       </label>
-    </div>
+    </section>
 
-    <div class="sec">
-      <div class="sec-title">图片处理（可多选）</div>
-      <div class="check-grid">
-        <label class="check-item"><input type="checkbox" value="class" name="img" checked>class</label>
-        <label class="check-item"><input type="checkbox" value="description" name="img" checked>description</label>
-        <label class="check-item"><input type="checkbox" value="html" name="img" checked>html</label>
+    <section class="card-section">
+      <div class="sec-title">图片处理功能选项</div>
+      <div class="opt-grid">
+        <label class="opt-label"><input type="checkbox" value="class" name="img" checked><span>图片类别识别</span></label>
+        <label class="opt-label"><input type="checkbox" value="description" name="img" checked><span>图片的文本描述</span></label>
+        <label class="opt-label"><input type="checkbox" value="html" name="img" checked><span>统计图的HTML代码表示</span></label>
       </div>
-    </div>
+    </section>
 
-    <div class="sec">
-      <div class="sec-title">表格处理（可多选）</div>
-      <div class="check-grid">
-        <label class="check-item"><input type="checkbox" value="key-value" name="table" checked>key-value</label>
-        <label class="check-item"><input type="checkbox" value="description" name="table" checked>description</label>
-        <label class="check-item"><input type="checkbox" value="html" name="table" checked>html</label>
+    <section class="card-section">
+      <div class="sec-title">表格处理功能选项</div>
+      <div class="opt-grid">
+        <label class="opt-label"><input type="checkbox" value="key-value" name="table" checked><span>表格键值对提取</span></label>
+        <label class="opt-label"><input type="checkbox" value="description" name="table" checked><span>表格的文本描述</span></label>
+        <label class="opt-label"><input type="checkbox" value="html" name="table" checked><span>表格的HTML代码表示</span></label>
       </div>
-    </div>
+    </section>
 
-    <div class="sec">
-      <button id="submitBtn">开始处理</button>
-    </div>
+    <section class="card-section">
+      <div class="action-bar">
+        <button id="submitBtn" class="btn-primary">开始处理</button>
+      </div>
+      <div id="msg"></div>
+    </section>
 
-    <div id="msg"></div>
-  </div>
+  </main>
+
+  <footer class="footer">文档解析服务平台 · 技术支持</footer>
 
 <script>
-const $  = id => document.getElementById(id);
+const $ = id => document.getElementById(id);
 const fileInput = $('fileInput');
 const fileBox   = $('fileBox');
 const submitBtn = $('submitBtn');
@@ -82,69 +469,105 @@ const msgBox    = $('msg');
 
 /* 文件拖放 / 点击 */
 fileBox.addEventListener('click', () => fileInput.click());
-fileBox.addEventListener('dragover', e => { e.preventDefault(); fileBox.style.borderColor='var(--prim)'; });
-fileBox.addEventListener('dragleave', () => { fileBox.style.borderColor='#bbb'; });
+
+fileBox.addEventListener('dragover', e => {
+  e.preventDefault();
+  fileBox.classList.add('drag-over');
+});
+fileBox.addEventListener('dragleave', () => {
+  fileBox.classList.remove('drag-over');
+});
 fileBox.addEventListener('drop', e => {
   e.preventDefault();
-  fileBox.style.borderColor='#bbb';
-  if(e.dataTransfer.files.length) fileInput.files = e.dataTransfer.files;
-  showFile();
+  fileBox.classList.remove('drag-over');
+  if (e.dataTransfer.files.length) {
+    fileInput.files = e.dataTransfer.files;
+    showFile();
+  }
 });
 fileInput.addEventListener('change', showFile);
 
-function showFile(){
-  const name = fileInput.files[0]?.name || '';
-  fileBox.textContent = name || '点击或拖拽上传文件';
+function showFile() {
+  const file = fileInput.files[0];
+  if (file) {
+    fileBox.classList.add('has-file');
+    fileBox.innerHTML =
+      '<svg viewBox="0 0 24 24" style="width:32px;height:32px;fill:var(--green-primary);margin-bottom:8px;opacity:0.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/></svg>' +
+      '<div class="file-main-text">' + escapeHtml(file.name) + '</div>' +
+      '<div class="file-sub-text">' + formatSize(file.size) + ' · 点击重新选择</div>';
+  } else {
+    fileBox.classList.remove('has-file');
+    fileBox.innerHTML =
+      '<svg viewBox="0 0 24 24"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>' +
+      '<div class="file-main-text">点击或拖拽文件到此处上传</div>' +
+      '<div class="file-sub-text">支持 PDF、Word、图片等常见文档格式</div>';
+  }
+}
+
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function formatSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / 1048576).toFixed(1) + ' MB';
 }
 
 /* 提交 */
 submitBtn.addEventListener('click', async () => {
   const file = fileInput.files[0];
-  if(!file) return flash('请先选择文件','err');
+  if (!file) return flash('请先选择文件', 'err');
+
+  const jsonMode = document.querySelector('input[name="json_mode"]:checked');
+  if (!jsonMode) return flash('请选择 JSON 模式', 'err');
 
   submitBtn.disabled = true;
-  flash('正在处理，请稍候…','ok');
+  flash('正在处理，请稍候…', 'ok');
 
   const fd = new FormData();
   fd.append('file', file);
+  fd.append('json_mode', jsonMode.value);
   fd.append('vlm_enable', $('vlm_enable').checked);
   fd.append('red_title_enable', $('red_title_enable').checked);
 
-  /* 收集 img 选项 */
   document.querySelectorAll('input[name="img"]:checked')
-          .forEach(ch => fd.append('img_select', ch.value));
+    .forEach(ch => fd.append('img_select', ch.value));
 
-  /* 收集 table 选项 */
   document.querySelectorAll('input[name="table"]:checked')
-          .forEach(ch => fd.append('table_select', ch.value));
+    .forEach(ch => fd.append('table_select', ch.value));
 
   try {
-    const r = await fetch('/api/preprocessv4', { method:'POST', body:fd });
-    if(!r.ok) throw new Error(await r.text());
+    const r = await fetch('/api/v1/xidian/preprocess_web', { method: 'POST', body: fd });
+    if (!r.ok) throw new Error(await r.text());
 
     const blob = await r.blob();
     const rawFname = r.headers.get('Content-Disposition');
     let fname = 'result.zip';
-    
+
     if (rawFname && rawFname.includes("filename*=utf-8''")) {
       fname = decodeURIComponent(rawFname.split("filename*=utf-8''")[1]);
     }
 
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url; a.download = fname; a.click();
+    a.href = url;
+    a.download = fname;
+    a.click();
     URL.revokeObjectURL(url);
-    flash('处理完成，已下载结果包','ok');
-  } catch(e) {
+    flash('处理完成，已下载结果包', 'ok');
+  } catch (e) {
     flash('处理失败：' + e.message, 'err');
   } finally {
     submitBtn.disabled = false;
   }
 });
 
-function flash(text, type){
+function flash(text, type) {
   msgBox.textContent = text;
-  msgBox.className = type;
+  msgBox.className = type + ' show';
 }
 </script>
 </body>

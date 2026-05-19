@@ -1,6 +1,6 @@
 # 使用非 slim，确保兼容 Wine + LibreOffice + XeLaTeX
 # rebuild context 20250601
-FROM python:3.13
+FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/library/python:3.13
 
 RUN sed -i \
     -e 's|http://deb.debian.org|https://mirrors.tuna.tsinghua.edu.cn|g' \
@@ -14,45 +14,45 @@ WORKDIR /app
 # 安装系统依赖
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        pandoc \
-        libreoffice \
-        libreoffice-writer \
-        libreoffice-calc \
-        libreoffice-impress \
-        wine \
-        && dpkg --add-architecture i386 \
-        && apt-get update \
-        && apt-get install -y --no-install-recommends \
-            wine32:i386 \
-            libgl1:i386 \
-        xvfb \
-        xauth \
-        winbind \
-        cabextract \
-        fonts-noto-cjk \
-        texlive-xetex \
-        texlive-latex-base \
-        texlive-latex-extra \
-        texlive-fonts-recommended \
-        texlive-lang-chinese \
-        texlive-latex-recommended \
-        texlive-fonts-extra \
-        lmodern \
-        wget \
-        curl \
-        unzip \
-        libxrender1 \
-        libxext6 \
-        libxinerama1 \
-        libxtst6 \
-        libfontconfig1 \
-        # ===== 新增：OpenCV 运行依赖 =====
-        libgl1 \
-        libglib2.0-0 \
-        libsm6 \
-        libgomp1 \
-        vim \
-        && rm -rf /var/lib/apt/lists/*
+    pandoc \
+    libreoffice \
+    libreoffice-writer \
+    libreoffice-calc \
+    libreoffice-impress \
+    wine \
+    && dpkg --add-architecture i386 \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+    wine32:i386 \
+    libgl1:i386 \
+    xvfb \
+    xauth \
+    winbind \
+    cabextract \
+    fonts-noto-cjk \
+    texlive-xetex \
+    texlive-latex-base \
+    texlive-latex-extra \
+    texlive-fonts-recommended \
+    texlive-lang-chinese \
+    texlive-latex-recommended \
+    texlive-fonts-extra \
+    lmodern \
+    wget \
+    curl \
+    unzip \
+    libxrender1 \
+    libxext6 \
+    libxinerama1 \
+    libxtst6 \
+    libfontconfig1 \
+    # ===== 新增：OpenCV 运行依赖 =====
+    libgl1 \
+    libglib2.0-0 \
+    libsm6 \
+    libgomp1 \
+    vim \
+    && rm -rf /var/lib/apt/lists/*
 
 
 
