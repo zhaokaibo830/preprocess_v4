@@ -35,12 +35,6 @@ def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc:
     # ========================================== 
     def make_api_call_kv(client, table_content, prompt, model):
         try:
-            answer = ""
-            for chunk in stream_text(client, table_content +"\n" + prompt, model):
-                print(chunk, end="", flush=True)
-                answer += chunk
-            return answer
-            """
             completion = client.chat.completions.create(
                 model=model,
                 messages=[
@@ -50,7 +44,6 @@ def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc:
                 extra_body={"enable_thinking": False}
             )
             return completion.choices[0].message.content
-            """
         except APIConnectionError as e:
             print(f"处理表格时API连接错误: {e}")
             raise e # 抛出错误
@@ -66,22 +59,15 @@ def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc:
     
     def make_api_call_desc(client, table_content,title, prompt, model):
         try:
-            answer = ""
-            for chunk in stream_text(client, table_content +"\n" + title +"\n" + prompt, model):
-                print(chunk, end="", flush=True)
-                answer += chunk
-            return answer
-            """
             completion = client.chat.completions.create(
                 model=model,
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": table_content +"\n" + title+"\n"+prompt},
+                    {"role": "user", "content": table_content +"\n" + prompt},
                 ],
                 extra_body={"enable_thinking": False}
             )
             return completion.choices[0].message.content
-            """
         except APIConnectionError as e:
             print(f"处理表格时API连接错误: {e}")
             raise e # 抛出错误
@@ -159,11 +145,10 @@ if __name__ == "__main__":
     # 配置参数
     API_KEY = "sk-46af479b8d7b4a1489ff47b084831a0c"  # 替换为你的真实 Key
     BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-    MODEL = "qwen3-vl-8b-instruct"
-    table_html_example = "<table><tr><th>岗位名称</th><th>占比</th></tr><tr><td>监理员</td><td>41%</td></tr><tr><td>资料员</td><td>13%</td></tr><tr><td>总监理工程师</td><td>7%</td></tr><tr><td>总监代表</td><td>8%</td></tr><tr><td>专业监理工程师</td><td>18%</td></tr><tr><td>安全监理工程师</td><td>13%</td></tr></table>"
- 
+    MODEL = "qwen-plus"
+    table_html_example = "<table><tr><td>厂站</td><td>装置型号</td><td>调度命名</td></tr><tr><td>复龙站</td><td>2套SCS-500分布式稳定控制装置</td><td>复龙站安控装置1\n复龙站安控装置2</td></tr><tr><td>宜宾站</td><td>2套SCS-500分布式稳定控制装置</td><td>宜宾站安控装置1\n宜宾站安控装置2</td></tr><tr><td>向家坝左岸电厂</td><td>2套SCS-500分布式稳定控制装置</td><td>向家坝左岸电厂安控装置1\n向家坝左岸电厂安控装置2</td></tr><tr><td>向家坝右岸电厂</td><td>2套SCS-500分布式稳定控制装置</td><td>向家坝右岸电厂安控装置1\n向家坝右岸电厂安控装置2</td></tr><tr><td>溪洛渡左岸电厂</td><td>2套SCS-500分布式稳定控制装置</td><td>溪洛渡左岸电厂安控装置1\n溪洛渡左岸电厂安控装置2</td></tr><tr><td>泸州站</td><td>2套SCS-500分布式稳定控制装置</td><td>泸州站泸复安控装置1\n泸州站泸复安控装置2</td></tr><tr><td>沐溪站</td><td>2套SCS-500分布式稳定控制装置</td><td>沐溪站1号宾金直流安控装置\n沐溪站2号宾金直流安控装置</td></tr><tr><td colspan=\"3\">注:复龙站安控装置1、2,宜宾站安控装置1、2同属德阳安控系统与西南交直流协调控制系统;泸州站泸复安控装置1、2同属复龙-锦屏-宜宾安控系统。</td></tr></table>"
     
-    table_title = "岗位人员占比表" # 示例标题
+    table_title = "" # 示例标题
 
     # 客户端在调用函数前进行初始化
     client_instance = None
