@@ -1565,20 +1565,21 @@ def title_process(client,
         prefix_to_level_global: Dict[str, int] = {}
 
         # ------------------ 批处理 LLM 调用 ------------------
-        batch_size = 100
+        batch_size = 30
         total_candidates = len(title_candidates)
-        total_batches = (total_candidates + batch_size - 1) // batch_size
 
-        for batch_idx in range((len(title_candidates) + batch_size - 1) // batch_size):
+        for batch_idx in range((total_candidates + batch_size - 1) // batch_size):
             batch = title_candidates[batch_idx * batch_size : (batch_idx + 1) * batch_size]
-            print(f"[进度] 第 {batch_idx + 1} 批次，处理 {len(batch)} 条标题")
+            print(f"[进度] 第 {batch_idx + 1} 批次，正在审计 {len(batch)} 条标题...")
             try:
-                # [修复] 增加错误捕捉，防止单一 batch 毁掉全局
-                payload = extract_json_payload(call_llm_polish_structure(client_obj, batch, model_name, mode, profile), expect='list')
+                raw_llm_output = call_llm_polish_structure(client_obj, batch, model_name, mode, profile)
+                payload = extract_json_payload(raw_llm_output, expect='list')
                 for item in (payload if isinstance(payload, list) else []):
-                    if str(item.get('id', '')).strip(): result_by_id[str(item.get('id', '')).strip()] = item
+                    item_id = str(item.get('id', '')).strip()
+                    if item_id: 
+                        result_by_id[item_id] = item
             except Exception as e:
-                print(f"⚠️ 第 {batch_idx + 1} 批次解析失败，已跳过: {e}")
+                print(f"⚠️ 第 {batch_idx + 1} 批次捕获到不稳定解析，触发物理防御降级保护: {e}")
                 continue
 
         # ------------------ 层级分配 ------------------
