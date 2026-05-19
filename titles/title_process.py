@@ -1232,9 +1232,28 @@ def title_process(client,
 """
         try:
             answer = ''
-            for chunk in stream_text(client_obj, prompt, model_name):
-                print(chunk, end='', flush=True)
-                answer += chunk
+            # 【核心修改】：绕过自动生成的 stream_text，直接调用原生底层的流式接口
+            stream = client_obj.chat.completions.create(
+                model=model_name,
+                messages=[{"role": "user", "content": prompt}],
+                stream=True,
+                # 强行注入私有参数，关闭千问的深度思考
+                extra_body={"enable_thinking": False} 
+            )
+
+            # 自行解析返回的流式数据块（Chunk）
+            for chunk in stream:
+                delta_text = ''
+                choices = getattr(chunk, 'choices', None) or []
+                if choices:
+                    delta_obj = getattr(choices[0], 'delta', None)
+                    content = getattr(delta_obj, 'content', None)
+                    if isinstance(content, str):
+                        delta_text = content
+                if delta_text:
+                    print(delta_text, end='', flush=True)
+                    answer += delta_text
+                    
             return answer
         except Exception as e:
             print(f'Error during LLM structure polishing: {e}')
