@@ -38,9 +38,13 @@ async def table_extract(table_html_input: str, title: str, table_kv: bool, table
                 model=model,
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": table_content +"\n" + prompt},
+                    {"role": "user", "content": table_content + "\n" + prompt},
                 ],
-                extra_body={"enable_thinking": False}
+                extra_body={
+                    "chat_template_kwargs": {
+                        "enable_thinking": False  # 关键：将参数放在这里
+                    }
+                }
             )
             return completion.choices[0].message.content
         except APIConnectionError as e:
@@ -62,9 +66,13 @@ async def table_extract(table_html_input: str, title: str, table_kv: bool, table
                 model=model,
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": table_content +"\n" + prompt},
+                    {"role": "user", "content": table_content + "\n" + prompt},
                 ],
-                extra_body={"enable_thinking": False}
+                extra_body={
+                    "chat_template_kwargs": {
+                        "enable_thinking": False  # 关键：将参数放在这里
+                    }
+                }
             )
             return completion.choices[0].message.content
         except APIConnectionError as e:
