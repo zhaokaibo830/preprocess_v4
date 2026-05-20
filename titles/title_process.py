@@ -1089,6 +1089,11 @@ def title_process(client,
                     model=model_name,
                     messages=chat_messages,
                     stream=True,
+                    extra_body={
+                        "chat_template_kwargs": {
+                            "enable_thinking": False
+                        }
+                    }
                 )
                 for chunk in stream:
                     delta_text = ''
