@@ -1,158 +1,194 @@
-# -*- coding: utf-8 -*-
 import json
 import asyncio
 from openai import AsyncOpenAI
 from openai import APIConnectionError, APIError, RateLimitError
+from utils.client import stream_text, stream_image_description
 
-async def analyze_table_content_async(
-    table_html: str, 
-    title: str, 
-    config: str, 
-    api_key: str, 
-    base_url: str, 
-    model_name: str,
-    semaphore=None
-) -> dict:
-    """
-    并发处理表格提取的异步主函数
-    """
-    if semaphore:
-        async with semaphore:
-            return await _table_extract_impl(table_html, title, config, api_key, base_url, model_name)
-    else:
-        return await _table_extract_impl(table_html, title, config, api_key, base_url, model_name)
-
-async def _table_extract_impl(table_html, title, config, api_key, base_url, model_name) -> dict:
+# 修改函数签名为异步函数
+async def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc: bool, table_html: bool, client: AsyncOpenAI, model_name: str) -> dict:
     # ==========================================
-    # 第一步：工具函数
+    # 第一步：从html表格中提取数据
     # ========================================== 
     def safe_json_parse(json_str):
-        if not isinstance(json_str, str):
-            return json_str
         try:
-            # 清洗 markdown 标签和换行
-            cleaned = json_str.replace("json", "").replace("'''", "").replace("```", "").strip()
-            # 处理可能的换行符污染
-            cleaned = "".join(cleaned.splitlines())
-            return json.loads(cleaned)
-        except Exception as e:
+            # 兼容处理可能出现的额外文本，例如"json```"
+            if json_str.strip().startswith("json"):
+                json_str = json_str.strip()[len("json"):].strip()
+            if json_str.strip().startswith("```json"):
+                json_str = json_str.strip()[len("```json"):].strip()
+            if json_str.strip().startswith("```"):
+                json_str = json_str.strip()[len("```"):].strip()
+            if json_str.strip().endswith("```"):
+                json_str = json_str.strip()[:-len("```")].strip()
+
+            # 移除所有换行符，以便更好地解析
+            json_str = json_str.replace("\n", "")
+            
+            return json.loads(json_str)
+        except json.JSONDecodeError as e:
             print(f"JSON解析错误: {e}")
             return json_str
 
     # ==========================================
-    # 第二步：初始化异步客户端
+    # 第二步：创建异步调用API的函数
     # ========================================== 
-    client = AsyncOpenAI(api_key=api_key, base_url=base_url)
+    async def make_api_call_kv(client, table_content, prompt, model):
+        try:
+            completion = await client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": table_content +"\n" + prompt},
+                ],
+                extra_body={"enable_thinking": False}
+            )
+            return completion.choices[0].message.content
+        except APIConnectionError as e:
+            print(f"处理表格时API连接错误: {e}")
+            raise e
+        except RateLimitError as e:
+            print(f"处理表格时API速率限制错误: {e}")
+            raise e
+        except APIError as e:
+            print(f"处理表格时API错误: {e}")
+            raise e
+        except Exception as e:
+            print(f"处理表格时未知错误: {e}")
+            raise e
+    
+    async def make_api_call_desc(client, table_content, title, prompt, model):
+        try:
+            completion = await client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": table_content +"\n" + prompt},
+                ],
+                extra_body={"enable_thinking": False}
+            )
+            return completion.choices[0].message.content
+        except APIConnectionError as e:
+            print(f"处理表格时API连接错误: {e}")
+            raise e
+        except RateLimitError as e:
+            print(f"处理表格时API速率限制错误: {e}")
+            raise e
+        except APIError as e:
+            print(f"处理表格时API错误: {e}")
+            raise e
+        except Exception as e:
+            print(f"处理表格时未知错误: {e}")
+            raise e
 
     # ==========================================
-    # 第三步：构建 Prompt
+    # 第三步：构建prompt（保持不变）
     # ========================================== 
     prompt_kv = """
-    给定内容是一个以HTML格式呈现的表格，请详细分析该表格的内容，并将其转化为键值对（key-value）的形式，最终输出为JSON格式。
-    请确保不遗漏HTML中的任何一个单元格数据，每一个键（key）或值（value）应当对应表格中的某个单元格。
-    避免在同一个dict中出现重复的key。
-    请直接输出JSON内容，不要任何解释。
-    """
+    给定内容是一个以HTML格式呈现的表格，请详细分析该表格的内容，并将其转化为键值对（key-value）的形式，最终输出为JSON格式。请确保不遗漏HTML中的任何一个单元格数据，每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值。示例如下：
 
+输入的HTML表格内容如下：
+<table><tr><td rowspan=2 colspan=1>序号</td><td rowspan=1 colspan=3>学生信息</td></tr><tr><td rowspan=1 colspan=1>姓名</td><td rowspan=1 colspan=1>年龄</td><td rowspan=1 colspan=1>家庭地址</td></tr><tr><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>张三</td><td rowspan=1 colspan=1>23</td><td rowspan=1 colspan=1>北京</td></tr><tr><td rowspan=1 colspan=1>2</td><td rowspan=1 colspan=1>李四</td><td rowspan=1 colspan=1>12</td><td rowspan=1 colspan=1>上海</td></tr></table>
+以上HTML表格内容转化为JSON格式。最终输出的JSON格式如下：
+[{"序号":"1","学生信息":{"姓名":"张三","年龄":"23","家庭地址":"北京"}},{"序号":"2","学生信息":{"姓名":"李四","年龄":"12","家庭地址":"上海"}}]
+
+要避免出现同一个dict里面出现相同的key，例如如下类似例子要避免出现：
+[{"时段/h":"1","频率/Hz":"45.7857","时段/h":"17","频率/Hz":"46.9250"},{"时段/h":"10","频率/Hz":"47.4718","时段/h":"18","频率/Hz":"46.9588"}]
+
+请按照这个格式输出JSON，不需要其他多余的解释，HTML中的每一个数据都要体现出来不能遗漏,每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值,相同的key不能出现在同一个dict里面且确保输出的JSON是有效且可以解析的。
+    """
+    
     prompt_desc = (
-        "你是一个数据分析技术员，给定内容是表格的HTML格式和表格标题，请仔细分析并描述该表格传达的信息：\n"
-        "1. 用简明的语言说明这是一张什么类型的表格。\n"
-        "2. 分析表格中如最大值、最小值等能反映数据特点的信息。\n"
-        "3. 对应文字信息和数据进行简要描述。\n"
+        "你是一个数据分析技术员，给定内容是表格的HTML格式和表格标题，请仔细分析该以HTML格式呈现的表格的内容，并结合表格标题（若不为空）分析并描述该表格传达的信息，需注意以下要点\n"
+        "1. 用简明的语言说明这是一张什么什么表格，如‘这是一张xx公司的员工工资表’，‘这是一张学生成绩表’\n"
+        "2. 如果表格内容以数据为主，需要分析表格中如最大值，最小值等能反映数据特点的信息。\n"
+        "3. 如果表格内容中涉及文字信息，则应对文字信息和数据进行简要描述。\n"
     )
 
-    # ==========================================
-    # 第四步：定义异步 API 调用任务
-    # ========================================== 
+    # 异步调用API获取键值对结果
     async def kv_api_call():
-        try:
-            resp = await client.chat.completions.create(
-                model=model_name,
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": f"{table_html}\n{prompt_kv}"}
-                ],
-                temperature=0.1,
-                extra_body={"enable_thinking": False}
-            )
-            return safe_json_parse(resp.choices[0].message.content)
-        except (APIConnectionError, RateLimitError, APIError) as e:
-            return {"error": "API请求失败", "details": str(e)}
-        except Exception as e:
-            return {"error": "未知错误", "details": str(e)}
-
+        return await make_api_call_kv(client, table_html_input, prompt_kv, model_name)
+    
+    # 异步调用API获取描述结果
     async def desc_api_call():
-        try:
-            # 包含 title 信息
-            full_content = f"表格HTML: {table_html}\n表格标题: {title}\n{prompt_desc}"
-            resp = await client.chat.completions.create(
-                model=model_name,
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": full_content}
-                ],
-                extra_body={"enable_thinking": False}
-            )
-            return resp.choices[0].message.content
-        except Exception as e:
-            return f"描述获取失败: {str(e)}"
+        return await make_api_call_desc(client, table_html_input, title, prompt_desc, model_name)
 
     # ==========================================
-    # 第五步：并发执行任务 (关键并发逻辑)
-    # ========================================== 
-    tasks = {}
-    
-    # 只有当需要时才创建协程任务
-    if "kv" in config:
-        tasks["key_value"] = kv_api_call()
-    
-    if "desc" in config:
-        tasks["description"] = desc_api_call()
+    # 第四步：根据布尔值参数执行相应操作
+    # ==========================================   
+    result = {}
+    result["type"] = "table"
 
-    # 使用 gather 并行执行 kv 和 desc 调用
+    # 创建异步任务列表
+    tasks = []
+    task_mapping = {}
+
+    # 根据 table_kv 布尔值判断是否提取键值对
+    if table_kv:
+        task = asyncio.create_task(kv_api_call())
+        tasks.append(task)
+        task_mapping["kv"] = task
+    
+    # 根据 table_desc 布尔值判断是否提取描述
+    if table_desc:
+        task = asyncio.create_task(desc_api_call())
+        tasks.append(task)
+        task_mapping["desc"] = task
+    
+    # 并发执行所有任务
     if tasks:
-        task_names = list(tasks.keys())
-        task_objects = list(tasks.values())
-        api_responses = await asyncio.gather(*task_objects)
-        
-        # 将结果映射回字典
-        execution_results = dict(zip(task_names, api_responses))
-    else:
-        execution_results = {}
-
-    # ==========================================
-    # 第六步：组装最终结果
-    # ========================================== 
-    result = {"type": "table"}
+        await asyncio.gather(*tasks)
     
-    if "kv" in config:
-        result["key_value"] = execution_results.get("key_value")
+    # 收集结果
+    if table_kv and "kv" in task_mapping:
+        keyvalue_result = task_mapping["kv"].result()
+        result["key_value"] = safe_json_parse(keyvalue_result)
     
-    if "desc" in config:
-        result["description"] = execution_results.get("description")
-        
-    if "html" in config:
-        result["table_html"] = table_html
+    if table_desc and "desc" in task_mapping:
+        description = task_mapping["desc"].result()
+        result["description"] = description
+    
+    # 根据 table_html 布尔值判断是否包含原始HTML
+    if table_html:
+        result["table_html"] = table_html_input
 
     return result
 
-# ==========================================
-# 调用示例
-# ==========================================
-async def main():
-    # 模拟输入
-    HTML_DATA = "<table><tr><td>项目</td><td>数值</td></tr><tr><td>收入</td><td>100</td></tr></table>"
-    TITLE = "2025年财务报表"
-    CONFIG = "kv,desc,html"
-    API_KEY = "your_api_key"
-    BASE_URL = "[https://api.openai.com/v1](https://api.openai.com/v1)"
-    MODEL = "gpt-4-turbo"
-
-    # 限制最大并发数为 10
-    sem = asyncio.Semaphore(10)
-
-    result = await table_extract_async(HTML_DATA, TITLE, CONFIG, API_KEY, BASE_URL, MODEL, semaphore=sem)
-    print(json.dumps(result, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":
+    # 配置参数
+    API_KEY = "sk-46af479b8d7b4a1489ff47b084831a0c"  # 替换为你的真实 Key
+    BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    MODEL = "qwen-plus"
+    table_html_example = "<table><tr><td>厂站</td><td>装置型号</td><td>调度命名</td></tr><tr><td>复龙站</td><td>2套SCS-500分布式稳定控制装置</td><td>复龙站安控装置1\n复龙站安控装置2</td></tr><tr><td>宜宾站</td><td>2套SCS-500分布式稳定控制装置</td><td>宜宾站安控装置1\n宜宾站安控装置2</td></tr><tr><td>向家坝左岸电厂</td><td>2套SCS-500分布式稳定控制装置</td><td>向家坝左岸电厂安控装置1\n向家坝左岸电厂安控装置2</td></tr><tr><td>向家坝右岸电厂</td><td>2套SCS-500分布式稳定控制装置</td><td>向家坝右岸电厂安控装置1\n向家坝右岸电厂安控装置2</td></tr><tr><td>溪洛渡左岸电厂</td><td>2套SCS-500分布式稳定控制装置</td><td>溪洛渡左岸电厂安控装置1\n溪洛渡左岸电厂安控装置2</td></tr><tr><td>泸州站</td><td>2套SCS-500分布式稳定控制装置</td><td>泸州站泸复安控装置1\n泸州站泸复安控装置2</td></tr><tr><td>沐溪站</td><td>2套SCS-500分布式稳定控制装置</td><td>沐溪站1号宾金直流安控装置\n沐溪站2号宾金直流安控装置</td></tr><tr><td colspan=\"3\">注:复龙站安控装置1、2,宜宾站安控装置1、2同属德阳安控系统与西南交直流协调控制系统;泸州站泸复安控装置1、2同属复龙-锦屏-宜宾安控系统。</td></tr></table>"
+    
+    table_title = ""
+
+    async def main():
+        # 使用异步客户端
+        client_instance = None
+        try:
+            client_instance = AsyncOpenAI(
+                api_key=API_KEY,
+                base_url=BASE_URL,
+            )
+        except Exception as e:
+            print(f"OpenAI客户端初始化失败: {e}")
+            return
+
+        if client_instance:
+            try:
+                result = await table_extract(
+                    table_html_example,
+                    table_title,
+                    table_kv=True,
+                    table_desc=True,
+                    table_html=True,
+                    client=client_instance,
+                    model_name=MODEL
+                )
+                print(json.dumps(result, ensure_ascii=False, indent=4))
+            except (APIConnectionError, RateLimitError, APIError, Exception) as e:
+                print(f"调用 table_extract 过程中发生错误: {e}")
+
+    # 运行异步主函数
     asyncio.run(main())
