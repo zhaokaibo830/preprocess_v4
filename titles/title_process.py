@@ -862,6 +862,21 @@ def title_process(client,
             text = re.sub(r'\s*```$', '', text)
         return text.strip()
 
+    def build_qwen_no_think_extra_body() -> Dict[str, Any]:
+        """
+        vLLM + Qwen3/Qwen3.5 的官方关闭思考方式。
+
+        注意：vLLM 读取的是 chat_template_kwargs.enable_thinking，
+        不是直接读取顶层 enable_thinking。这里集中封装，避免不同调用点遗漏。
+        如果服务器启动时已经配置 --default-chat-template-kwargs '{"enable_thinking": false}'，
+        该请求级配置仍然是幂等的。
+        """
+        return {
+            'chat_template_kwargs': {
+                'enable_thinking': False,
+            }
+        }
+
     def extract_json_payload(text: str, expect: str = 'any') -> Any:
         """
         强化版 JSON 提取器：支持 dict / list 两种主流返回类型。
@@ -1185,14 +1200,17 @@ def title_process(client,
         try:
             if hasattr(client_obj, 'responses') and hasattr(client_obj.responses, 'stream'):
                 answer = ''
-                with client_obj.responses.stream(model=model_name, input=responses_input) as stream:
+                with client_obj.responses.stream(
+                    model=model_name,
+                    input=responses_input,
+                    extra_body=build_qwen_no_think_extra_body(),
+                ) as stream:
                     for event in stream:
                         event_type = getattr(event, 'type', '') or ''
                         if 'reasoning' in str(event_type).lower():
                             continue
                         if event_type == 'response.output_text.delta':
                             delta = getattr(event, 'delta', '') or ''
-                            print(delta, end='', flush=True)
                             answer += delta
                     if not answer and hasattr(stream, 'get_final_response'):
                         final_response = stream.get_final_response()
@@ -1209,11 +1227,7 @@ def title_process(client,
                     model=model_name,
                     messages=chat_messages,
                     stream=True,
-                    extra_body={
-                        "chat_template_kwargs": {
-                            "enable_thinking": False
-                        }
-                    }
+                    extra_body=build_qwen_no_think_extra_body()
                 )
                 for chunk in stream:
                     delta_text = ''
@@ -1222,13 +1236,15 @@ def title_process(client,
                         delta_obj = getattr(choices[0], 'delta', None)
 
                         if isinstance(delta_obj, dict):
-                            # vLLM / OpenAI 兼容格式中可能出现 reasoning_content；
-                            # 该字段属于思考过程，必须明确忽略，不能拼入 answer。
+                            # vLLM / OpenAI 兼容格式中可能出现 reasoning / reasoning_content；
+                            # 这些字段属于思考过程，必须明确忽略，不能拼入 answer。
+                            _ = delta_obj.get('reasoning', None)
                             _ = delta_obj.get('reasoning_content', None)
                             content = delta_obj.get('content', None)
                         else:
                             # Qwen 推理模型常见字段：delta.reasoning_content。
                             # 只读取 delta.content，明确丢弃 reasoning_content。
+                            _ = getattr(delta_obj, 'reasoning', None)
                             _ = getattr(delta_obj, 'reasoning_content', None)
                             content = getattr(delta_obj, 'content', None)
 
@@ -1239,7 +1255,6 @@ def title_process(client,
                                 if isinstance(part, dict) and part.get('type') == 'text':
                                     delta_text += str(part.get('text', ''))
                     if delta_text:
-                        print(delta_text, end='', flush=True)
                         answer += delta_text
                 if answer:
                     return answer
@@ -1373,8 +1388,8 @@ def title_process(client,
                 model=model_name,
                 messages=[{"role": "user", "content": prompt}],
                 stream=True,
-                # 强行注入私有参数，关闭千问的深度思考
-                extra_body={"enable_thinking": False} 
+                # vLLM + Qwen3/Qwen3.5 官方关闭思考方式：必须放在 chat_template_kwargs 中。
+                extra_body=build_qwen_no_think_extra_body()
             )
 
             # 自行解析返回的流式数据块（Chunk）
@@ -1385,19 +1400,20 @@ def title_process(client,
                     delta_obj = getattr(choices[0], 'delta', None)
 
                     if isinstance(delta_obj, dict):
-                        # 显式忽略 reasoning_content，避免思考过程进入 answer。
+                        # 显式忽略 reasoning / reasoning_content，避免思考过程进入 answer。
+                        _ = delta_obj.get('reasoning', None)
                         _ = delta_obj.get('reasoning_content', None)
                         content = delta_obj.get('content', None)
                     else:
                         # Qwen / vLLM 兼容 OpenAI 流式返回中常见：
                         # delta.reasoning_content = 思考过程；delta.content = 最终回答。
+                        _ = getattr(delta_obj, 'reasoning', None)
                         _ = getattr(delta_obj, 'reasoning_content', None)
                         content = getattr(delta_obj, 'content', None)
 
                     if isinstance(content, str):
                         delta_text = content
                 if delta_text:
-                    print(delta_text, end='', flush=True)
                     answer += delta_text
                     
             return answer
