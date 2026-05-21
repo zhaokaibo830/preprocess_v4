@@ -863,59 +863,162 @@ def title_process(client,
         return text.strip()
 
     def extract_json_payload(text: str, expect: str = 'any') -> Any:
-        """强化版 JSON 提取器：支持 dict / list 两种主流返回类型。"""
+        """
+        强化版 JSON 提取器：支持 dict / list 两种主流返回类型。
+
+        防御顺序：
+        1. 先剔除 <think>...</think> 与 <reasoning>...</reasoning> 及其内部内容；
+        2. 优先从 Markdown 代码块中提取最终 JSON；
+        3. 代码块失败后，从全文中反向扫描，优先解析最后一个合法 JSON 对象或数组。
+        """
         raw_text = str(text or '').strip()
         if not raw_text:
             raise ValueError("大模型返回了空字符串，没有任何内容。")
 
-        cleaned = strip_code_fences(raw_text)
-        decoder = json.JSONDecoder()
+        def _remove_reasoning_blocks(value: str) -> str:
+            """删除推理模型可能输出的显式思考块。"""
+            cleaned_value = re.sub(
+                r'<\s*(think|reasoning)\b[^>]*>.*?<\s*/\s*\1\s*>',
+                '',
+                value,
+                flags=re.DOTALL | re.IGNORECASE,
+            )
+            # 额外清理少量孤立标签，避免标签残片污染 JSON 提取。
+            cleaned_value = re.sub(
+                r'</?\s*(think|reasoning)\b[^>]*>',
+                '',
+                cleaned_value,
+                flags=re.IGNORECASE,
+            )
+            return cleaned_value.strip()
 
-        for i, ch in enumerate(cleaned):
-            if ch not in '{[':
-                continue
+        def _type_matches(payload: Any) -> bool:
+            if expect == 'dict':
+                return isinstance(payload, dict)
+            if expect == 'list':
+                return isinstance(payload, list)
+            return expect == 'any'
+
+        def _try_load_json(snippet: str) -> Optional[Any]:
+            candidate = strip_code_fences(str(snippet or '').strip())
+            if not candidate:
+                return None
             try:
-                payload, _ = decoder.raw_decode(cleaned[i:])
-            except json.JSONDecodeError:
-                continue
-
-            if expect == 'dict' and isinstance(payload, dict):
-                return payload
-            if expect == 'list' and isinstance(payload, list):
-                return payload
-            if expect == 'any':
-                return payload
-
-        candidate_snippets: List[str] = []
-        if expect in {'dict', 'any'}:
-            start_obj = cleaned.find('{')
-            end_obj = cleaned.rfind('}')
-            if start_obj != -1 and end_obj != -1 and end_obj > start_obj:
-                candidate_snippets.append(cleaned[start_obj:end_obj + 1])
-
-        if expect in {'list', 'any'}:
-            start_arr = cleaned.find('[')
-            end_arr = cleaned.rfind(']')
-            if start_arr != -1 and end_arr != -1 and end_arr > start_arr:
-                candidate_snippets.append(cleaned[start_arr:end_arr + 1])
-
-        for snippet in candidate_snippets:
-            try:
-                payload = json.loads(snippet)
+                payload = json.loads(candidate)
             except Exception:
+                return None
+            if _type_matches(payload):
+                return payload
+            return None
+
+        def _collect_fenced_blocks(value: str, language_required: bool) -> List[str]:
+            if language_required:
+                pattern = re.compile(
+                    r'```(?:json|JSON)\s*([\s\S]*?)```',
+                    flags=re.IGNORECASE,
+                )
+            else:
+                pattern = re.compile(
+                    r'```[a-zA-Z0-9_\-]*\s*([\s\S]*?)```',
+                    flags=re.IGNORECASE,
+                )
+            return [match.group(1).strip() for match in pattern.finditer(value)]
+
+        def _collect_balanced_json_candidates(value: str) -> List[str]:
+            """
+            从文本中收集所有看起来像完整 JSON 对象/数组的片段。
+            使用栈式扫描而不是简单贪婪正则，避免嵌套 JSON 被截断。
+            只保留“最大外层片段”，避免 expect='dict' 时误取最终 JSON 内部的子对象。
+            """
+            positioned_candidates: List[Tuple[int, int, str]] = []
+            opening_to_closing = {'{': '}', '[': ']'}
+            closing_to_opening = {'}': '{', ']': '['}
+            text_len = len(value)
+
+            for start_idx, start_char in enumerate(value):
+                if start_char not in opening_to_closing:
+                    continue
+
+                stack: List[str] = []
+                in_string = False
+                escape = False
+
+                for pos in range(start_idx, text_len):
+                    ch = value[pos]
+
+                    if in_string:
+                        if escape:
+                            escape = False
+                        elif ch == '\\':
+                            escape = True
+                        elif ch == '"':
+                            in_string = False
+                        continue
+
+                    if ch == '"':
+                        in_string = True
+                        continue
+
+                    if ch in opening_to_closing:
+                        stack.append(ch)
+                    elif ch in closing_to_opening:
+                        if not stack or stack[-1] != closing_to_opening[ch]:
+                            break
+                        stack.pop()
+                        if not stack:
+                            positioned_candidates.append((start_idx, pos + 1, value[start_idx:pos + 1].strip()))
+                            break
+
+            maximal_candidates: List[Tuple[int, int, str]] = []
+            for start_idx, end_idx, snippet in positioned_candidates:
+                is_nested = False
+                for outer_start, outer_end, _ in positioned_candidates:
+                    if outer_start <= start_idx and end_idx <= outer_end and (outer_start, outer_end) != (start_idx, end_idx):
+                        is_nested = True
+                        break
+                if not is_nested:
+                    maximal_candidates.append((start_idx, end_idx, snippet))
+
+            maximal_candidates.sort(key=lambda item: item[0])
+            return [snippet for _, _, snippet in maximal_candidates]
+
+        cleaned = _remove_reasoning_blocks(raw_text)
+
+        # 第一优先级：完整输出本身就是 JSON。
+        direct_payload = _try_load_json(cleaned)
+        if direct_payload is not None:
+            return direct_payload
+
+        # 第二优先级：优先解析 ```json ... ``` 代码块；多个代码块时从最后一个开始尝试。
+        json_blocks = _collect_fenced_blocks(cleaned, language_required=True)
+        for block in reversed(json_blocks):
+            payload = _try_load_json(block)
+            if payload is not None:
+                return payload
+
+        # 第三优先级：解析普通 ``` ... ``` 代码块；多个代码块时从最后一个开始尝试。
+        generic_blocks = _collect_fenced_blocks(cleaned, language_required=False)
+        for block in reversed(generic_blocks):
+            payload = _try_load_json(block)
+            if payload is not None:
+                return payload
+
+        # 第四优先级：反向扫描所有完整 JSON 对象/数组，优先取最后一个合法结果。
+        balanced_candidates = _collect_balanced_json_candidates(cleaned)
+        seen_snippets: set = set()
+        for snippet in reversed(balanced_candidates):
+            if snippet in seen_snippets:
                 continue
-
-            if expect == 'dict' and isinstance(payload, dict):
-                return payload
-            if expect == 'list' and isinstance(payload, list):
-                return payload
-            if expect == 'any':
+            seen_snippets.add(snippet)
+            payload = _try_load_json(snippet)
+            if payload is not None:
                 return payload
 
+        # 最后一层兼容：处理偶发的尾部数组缺失右中括号的情况，只从最后一个 '[' 尝试修复。
         if expect in {'list', 'any'}:
             try:
-                start_arr = cleaned.find('[')
-                if start_arr != -1 and cleaned.rfind(']') == -1:
+                start_arr = cleaned.rfind('[')
+                if start_arr != -1 and cleaned.rfind(']') < start_arr:
                     fixed_str = cleaned[start_arr:]
                     last_brace = fixed_str.rfind('}')
                     if last_brace != -1:
@@ -926,16 +1029,29 @@ def title_process(client,
             except Exception:
                 pass
 
+        # 最后一层兼容：处理偶发的对象缺失右大括号的情况，只从最后一个 '{' 尝试补齐。
         if expect in {'dict', 'any'}:
             try:
-                start_obj = cleaned.find('{')
-                if start_obj != -1 and cleaned.rfind('}') == -1:
+                start_obj = cleaned.rfind('{')
+                if start_obj != -1 and cleaned.rfind('}') < start_obj:
                     fixed_str = cleaned[start_obj:]
                     brace_depth = 0
                     safe_chars = []
+                    in_string = False
+                    escape = False
                     for ch in fixed_str:
                         safe_chars.append(ch)
-                        if ch == '{':
+                        if in_string:
+                            if escape:
+                                escape = False
+                            elif ch == '\\':
+                                escape = True
+                            elif ch == '"':
+                                in_string = False
+                            continue
+                        if ch == '"':
+                            in_string = True
+                        elif ch == '{':
                             brace_depth += 1
                         elif ch == '}':
                             brace_depth = max(0, brace_depth - 1)
@@ -950,9 +1066,11 @@ def title_process(client,
         print("\n" + "!" * 65)
         print("🚨 [致命拦截] 大模型未能输出符合预期类型的合法 JSON！")
         print(f"期望类型: {expect}")
+        print("已剔除 <think>/<reasoning> 思考块，并按代码块优先、全文反向扫描策略尝试解析。")
         print(f"\n{raw_text}\n")
         print("!" * 65 + "\n")
         raise ValueError(f'未能从模型输出中解析出合法 JSON，期望类型={expect}')
+
 
     def maybe_path_to_image_url(image_value: str) -> str:
         raw_value = str(image_value or '').strip()
@@ -1069,7 +1187,9 @@ def title_process(client,
                 answer = ''
                 with client_obj.responses.stream(model=model_name, input=responses_input) as stream:
                     for event in stream:
-                        event_type = getattr(event, 'type', '')
+                        event_type = getattr(event, 'type', '') or ''
+                        if 'reasoning' in str(event_type).lower():
+                            continue
                         if event_type == 'response.output_text.delta':
                             delta = getattr(event, 'delta', '') or ''
                             print(delta, end='', flush=True)
@@ -1100,7 +1220,18 @@ def title_process(client,
                     choices = getattr(chunk, 'choices', None) or []
                     if choices:
                         delta_obj = getattr(choices[0], 'delta', None)
-                        content = getattr(delta_obj, 'content', None)
+
+                        if isinstance(delta_obj, dict):
+                            # vLLM / OpenAI 兼容格式中可能出现 reasoning_content；
+                            # 该字段属于思考过程，必须明确忽略，不能拼入 answer。
+                            _ = delta_obj.get('reasoning_content', None)
+                            content = delta_obj.get('content', None)
+                        else:
+                            # Qwen 推理模型常见字段：delta.reasoning_content。
+                            # 只读取 delta.content，明确丢弃 reasoning_content。
+                            _ = getattr(delta_obj, 'reasoning_content', None)
+                            content = getattr(delta_obj, 'content', None)
+
                         if isinstance(content, str):
                             delta_text = content
                         elif isinstance(content, list):
@@ -1252,7 +1383,17 @@ def title_process(client,
                 choices = getattr(chunk, 'choices', None) or []
                 if choices:
                     delta_obj = getattr(choices[0], 'delta', None)
-                    content = getattr(delta_obj, 'content', None)
+
+                    if isinstance(delta_obj, dict):
+                        # 显式忽略 reasoning_content，避免思考过程进入 answer。
+                        _ = delta_obj.get('reasoning_content', None)
+                        content = delta_obj.get('content', None)
+                    else:
+                        # Qwen / vLLM 兼容 OpenAI 流式返回中常见：
+                        # delta.reasoning_content = 思考过程；delta.content = 最终回答。
+                        _ = getattr(delta_obj, 'reasoning_content', None)
+                        content = getattr(delta_obj, 'content', None)
+
                     if isinstance(content, str):
                         delta_text = content
                 if delta_text:
