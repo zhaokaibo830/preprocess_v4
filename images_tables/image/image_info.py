@@ -1,5 +1,98 @@
 from pathlib import Path
-from .tools import analyze_image_content
+from .tools import analyze_image_content_async
+
+import asyncio
+from pathlib import Path
+
+
+async def add_image_info(
+    full_json_data,
+    vlm_enable,
+    client,
+    model_name,
+    output_path,
+    folder_name,
+    image_class=True,
+    image_desc=True,
+    image_html=True,
+):
+    """
+    异步版：所有图片并发处理；错误各自独立，不熔断。
+    并发上限由 client 底层的 httpx.Limits(max_connections=...) 控制。
+    """
+    image_error_msg = ""
+
+    if not (image_class or image_desc or image_html):
+        print("图片处理选项为空，跳过图片处理步骤。")
+        return full_json_data, image_error_msg, 0
+
+    def build_consistent_error_json(reason):
+        err_dict = {}
+        if image_class:
+            err_dict["type"] = "error"
+        if image_desc:
+            err_dict["desc"] = f"处理失败/已跳过: {reason}。本内容由AI生成，内容仅供参考。"
+        if image_html:
+            err_dict["html"] = f"<table><tr><td>错误信息：{reason}</td></tr></table>"
+        return err_dict
+
+    # ---- 收集所有 image block 及其 path / title ----
+    subdir = "vlm" if vlm_enable else "auto"
+    items = []  # [(block, img_path, img_title), ...]
+    for block in full_json_data["output"]:
+        if block["type"] != "image":
+            continue
+        img_path = None
+        img_title = ""
+        for sub_block in block["blocks"]:
+            if sub_block["type"] == "image_body":
+                raw_path = sub_block["lines"][0]["spans"][0]["image_path"]
+                img_path = Path(output_path) / folder_name / subdir / "images" / raw_path
+            elif sub_block["type"] == "image_caption":
+                try:
+                    img_title = sub_block["lines"][0]["spans"][0]["content"]
+                except (IndexError, KeyError, TypeError):
+                    img_title = ""
+        items.append((block, img_path, img_title))
+
+    image_count = len(items)
+    if image_count == 0:
+        print("未发现图片，跳过图片处理步骤。")
+        return full_json_data, image_error_msg, 0
+
+    # ---- 每张图起一个 coroutine，异常在函数内 catch，不抛出 ----
+    async def process_one(block, img_path, img_title):
+        try:
+            block["llm_process"] = await analyze_image_content_async(
+                img_path,
+                img_title,
+                image_class,
+                image_desc,
+                image_html,
+                client,
+                model_name,
+            )
+            return None
+        except Exception as e:
+            err = str(e)
+            block["llm_process"] = build_consistent_error_json(err)
+            print(f"图片处理失败({img_path}): {err}")
+            return err
+
+    errs = await asyncio.gather(
+        *(process_one(b, p, t) for b, p, t in items)
+    )
+
+    # 保留原返回签名：把第一个错误作为整体 error_msg
+    for e in errs:
+        if e:
+            image_error_msg = e
+            break
+
+    print(f"已处理{image_count}张图片")
+    return full_json_data, image_error_msg, image_count
+
+"""
 def add_image_info(full_json_data, vlm_enable, client, model_name,output_path,folder_name,image_class=True, image_desc=True, image_html=True):
     image_error_msg = ""
     if  image_class or image_desc or image_html:
@@ -69,3 +162,4 @@ def add_image_info(full_json_data, vlm_enable, client, model_name,output_path,fo
         #img_end_time=
         image_count = 0
     return full_json_data, image_error_msg, image_count
+"""

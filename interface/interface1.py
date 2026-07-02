@@ -17,7 +17,7 @@ from images_tables.table.table_info import *
 from utils.rm_equations import *
 from minioStore.store import store_images
 from minioStore.changePath import changeImagesPath
-from utils.client import create_client
+from utils.client import create_client,create_async_client
 import json
 from  utils.get_index_list import get_page_index_list
 from red_title.redtitle import red_title_process
@@ -51,8 +51,23 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
     print(f"接口1核心逻辑参数: vlm_enable={vlm_enable}, red_title_enable={red_title_enable}, image_class={image_class}, image_desc={image_desc}, image_html={image_html}, table_kv={table_kv}, table_desc={table_desc}, table_html={table_html}")
     print("创建大模型客户端...")
     title_client = create_client(cfg['title_model']['BASE_URL'], cfg['title_model']['API_KEY'], cfg['title_model']['connection_timeout'], cfg['title_model']['process_timeout'])
-    image_client = create_client(cfg['image_model']['BASE_URL'], cfg['image_model']['API_KEY'], cfg['image_model']['connection_timeout'], cfg['image_model']['process_timeout'])
-    table_client = create_client(cfg['table_model']['BASE_URL'], cfg['table_model']['API_KEY'], cfg['table_model']['connection_timeout'], cfg['table_model']['process_timeout'])
+    #image_client = create_client(cfg['image_model']['BASE_URL'], cfg['image_model']['API_KEY'], cfg['image_model']['connection_timeout'], cfg['image_model']['process_timeout'])
+    image_client = create_async_client(
+        base_url=cfg['image_model']['BASE_URL'],
+        api_key=cfg['image_model']['API_KEY'],
+        connect_timeout=cfg['image_model']['connection_timeout'],
+        read_timeout=cfg['image_model']['process_timeout'],
+        max_connections=cfg['image_process_nums'],
+    )
+
+    table_client = create_async_client(
+        base_url=cfg['table_model']['BASE_URL'],
+        api_key=cfg['table_model']['API_KEY'],
+        connect_timeout=cfg['table_model']['connection_timeout'],
+        read_timeout=cfg['table_model']['process_timeout'],
+        max_connections=cfg['table_process_nums'],
+    )
+    #table_client = create_client(cfg['table_model']['BASE_URL'], cfg['table_model']['API_KEY'], cfg['table_model']['connection_timeout'], cfg['table_model']['process_timeout'])
     red_title_client = create_client(cfg['red_title_model']['BASE_URL'], cfg['red_title_model']['API_KEY'], cfg['red_title_model']['connection_timeout'], cfg['red_title_model']['process_timeout'])
     print("大模型客户端创建完成")
     """
@@ -112,9 +127,9 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
         # with open('./test411_title.json', 'w', encoding='utf-8') as f:
         #     json.dump(json_data, f, ensure_ascii=False, indent=4)
         # print(f"标题层级分析完成，json数据: {json_data}")
-        json_data , image_error_msg, image_count = add_image_info(json_data, vlm_enable, image_client,cfg['image_model']['MODEL'], output_path, folder_name, image_class, image_desc, image_html)
+        json_data , image_error_msg, image_count = await add_image_info(json_data, vlm_enable, image_client,cfg['image_model']['MODEL'], output_path, folder_name, image_class, image_desc, image_html)
 
-        json_data, table_error_info, table_count= add_table_info(json_data, vlm_enable, table_client,cfg['table_model']['MODEL'], output_path, folder_name, table_kv, table_desc, table_html)
+        json_data, table_error_info, table_count= await add_table_info(json_data, vlm_enable, table_client,cfg['table_model']['MODEL'], output_path, folder_name, table_kv, table_desc, table_html)
         
         #上传图片到minio
         remove_equations(json_data,output_path,folder_name,vlm_enable)
@@ -163,8 +178,8 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
         status_message = f"INTERNAL_ERROR: {str(e)}"
     
     title_client.close()
-    image_client.close()
-    table_client.close()
+    await image_client.close()
+    await table_client.close()
     red_title_client.close()
     
 

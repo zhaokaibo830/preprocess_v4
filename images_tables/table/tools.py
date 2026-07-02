@@ -4,6 +4,155 @@ from openai import OpenAI
 from openai import APIConnectionError, APIError, RateLimitError
 from utils.client import stream_text, stream_image_description
 # 修改函数签名：kv, desc, html改为布尔值，并接收预初始化的client
+
+import asyncio
+import json
+from openai import AsyncOpenAI, APIConnectionError, RateLimitError, APIError
+
+
+async def table_extract_async(
+    table_html_input: str,
+    title: str,
+    table_kv: bool,
+    table_desc: bool,
+    table_html: bool,
+    client: AsyncOpenAI,
+    model_name: str,
+) -> dict:
+    # ==========================================
+    # 第一步：从html表格中提取数据
+    # ==========================================
+    def safe_json_parse(json_str):
+        try:
+            if json_str.strip().startswith("json"):
+                json_str = json_str.strip()[len("json"):].strip()
+            if json_str.strip().startswith("```json"):
+                json_str = json_str.strip()[len("```json"):].strip()
+            if json_str.strip().startswith("```"):
+                json_str = json_str.strip()[len("```"):].strip()
+            if json_str.strip().endswith("```"):
+                json_str = json_str.strip()[:-len("```")].strip()
+            json_str = json_str.replace("\n", "")
+            return json.loads(json_str)
+        except json.JSONDecodeError as e:
+            print(f"JSON解析错误: {e}")
+            return json_str
+
+    # ==========================================
+    # 第二步：创建异步调用 API 的函数
+    # ==========================================
+    async def make_api_call_kv(table_content, prompt):
+        try:
+            completion = await client.chat.completions.create(
+                model=model_name,
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": table_content + "\n" + prompt},
+                ],
+                extra_body={
+                    "chat_template_kwargs": {
+                        "enable_thinking": False
+                    }
+                },
+            )
+            return completion.choices[0].message.content
+        except APIConnectionError as e:
+            print(f"处理表格时API连接错误: {e}")
+            raise
+        except RateLimitError as e:
+            print(f"处理表格时API速率限制错误: {e}")
+            raise
+        except APIError as e:
+            print(f"处理表格时API错误: {e}")
+            raise
+        except Exception as e:
+            print(f"处理表格时未知错误: {e}")
+            raise
+
+    async def make_api_call_desc(table_content, table_title, prompt):
+        try:
+            completion = await client.chat.completions.create(
+                model=model_name,
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": table_content + "\n" + prompt},
+                ],
+                extra_body={"enable_thinking": False},
+            )
+            return completion.choices[0].message.content
+        except APIConnectionError as e:
+            print(f"处理表格时API连接错误: {e}")
+            raise
+        except RateLimitError as e:
+            print(f"处理表格时API速率限制错误: {e}")
+            raise
+        except APIError as e:
+            print(f"处理表格时API错误: {e}")
+            raise
+        except Exception as e:
+            print(f"处理表格时未知错误: {e}")
+            raise
+
+    # ==========================================
+    # 第三步：构建 prompt
+    # ==========================================
+    prompt_kv = """
+    给定内容是一个以HTML格式呈现的表格，请详细分析该表格的内容，并将其转化为键值对（key-value）的形式，最终输出为JSON格式。请确保不遗漏HTML中的任何一个单元格数据，每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值。示例如下：
+
+输入的HTML表格内容如下：
+<table><tr><td rowspan=2 colspan=1>序号</td><td rowspan=1 colspan=3>学生信息</td></tr><tr><td rowspan=1 colspan=1>姓名</td><td rowspan=1 colspan=1>年龄</td><td rowspan=1 colspan=1>家庭地址</td></tr><tr><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>张三</td><td rowspan=1 colspan=1>23</td><td rowspan=1 colspan=1>北京</td></tr><tr><td rowspan=1 colspan=1>2</td><td rowspan=1 colspan=1>李四</td><td rowspan=1 colspan=1>12</td><td rowspan=1 colspan=1>上海</td></tr></table>
+以上HTML表格内容转化为JSON格式。最终输出的JSON格式如下：
+[{"序号":"1","学生信息":{"姓名":"张三","年龄":"23","家庭地址":"北京"}},{"序号":"2","学生信息":{"姓名":"李四","年龄":"12","家庭地址":"上海"}}]
+
+要避免出现同一个dict里面出现相同的key，例如如下类似例子要避免出现：
+[{"时段/h":"1","频率/Hz":"45.7857","时段/h":"17","频率/Hz":"46.9250"},{"时段/h":"10","频率/Hz":"47.4718","时段/h":"18","频率/Hz":"46.9588"}]
+
+请按照这个格式输出JSON，不需要其他多余的解释，HTML中的每一个数据都要体现出来不能遗漏,每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值,相同的key不能出现在同一个dict里面且确保输出的JSON是有效且可以解析的。
+
+    """
+    prompt_desc = (
+        "你是一个数据分析技术员，给定内容是表格的HTML格式和表格标题，请仔细分析该以HTML格式呈现的表格的内容，并结合表格标题（若不为空）分析并描述该表格传达的信息，需注意以下要点\n"
+        "1. 用简明的语言说明这是一张什么什么表格，如‘这是一张xx公司的员工工资表’，‘这是一张学生成绩表’\n"
+        "2. 如果表格内容以数据为主，需要分析表格中如最大值，最小值等能反映数据特点的信息。\n"
+        "3. 如果表格内容中涉及文字信息，则应对文字信息和数据进行简要描述。\n"
+    )
+
+    # ==========================================
+    # 第四步：kv 和 desc 并行调用
+    # ==========================================
+    async def kv_api_call():
+        return await make_api_call_kv(table_html_input, prompt_kv)
+
+    async def desc_api_call():
+        return await make_api_call_desc(table_html_input, title, prompt_desc)
+
+    tasks = []
+    keys = []
+    if table_kv:
+        tasks.append(kv_api_call())
+        keys.append("kv")
+    if table_desc:
+        tasks.append(desc_api_call())
+        keys.append("desc")
+
+    api_results = await asyncio.gather(*tasks) if tasks else []
+
+    # ==========================================
+    # 第五步：组装结果
+    # ==========================================
+    result = {"type": "table"}
+    for k, v in zip(keys, api_results):
+        if k == "kv":
+            result["key_value"] = safe_json_parse(v)
+        elif k == "desc":
+            result["description"] = v
+
+    if table_html:
+        result["table_html"] = table_html_input
+
+    return result
+
+"""
 def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc: bool, table_html: bool, client: OpenAI, model_name: str) -> dict:
     # ==========================================
     # 第一步：从html表格中提取数据
@@ -87,8 +236,8 @@ def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc:
     # ==========================================
     # 第三步：构建prompt
     # ========================================== 
-    prompt_kv= """
-    给定内容是一个以HTML格式呈现的表格，请详细分析该表格的内容，并将其转化为键值对（key-value）的形式，最终输出为JSON格式。请确保不遗漏HTML中的任何一个单元格数据，每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值。示例如下：
+    prompt_kv= 
+    #给定内容是一个以HTML格式呈现的表格，请详细分析该表格的内容，并将其转化为键值对（key-value）的形式，最终输出为JSON格式。请确保不遗漏HTML中的任何一个单元格数据，每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值。示例如下：
 
 输入的HTML表格内容如下：
 <table><tr><td rowspan=2 colspan=1>序号</td><td rowspan=1 colspan=3>学生信息</td></tr><tr><td rowspan=1 colspan=1>姓名</td><td rowspan=1 colspan=1>年龄</td><td rowspan=1 colspan=1>家庭地址</td></tr><tr><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>张三</td><td rowspan=1 colspan=1>23</td><td rowspan=1 colspan=1>北京</td></tr><tr><td rowspan=1 colspan=1>2</td><td rowspan=1 colspan=1>李四</td><td rowspan=1 colspan=1>12</td><td rowspan=1 colspan=1>上海</td></tr></table>
@@ -100,7 +249,7 @@ def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc:
 
 请按照这个格式输出JSON，不需要其他多余的解释，HTML中的每一个数据都要体现出来不能遗漏,每一个键（key）或值（value）应当对应表格中的某个单元格，不能将多个单元格的数据拼接成一个值,相同的key不能出现在同一个dict里面且确保输出的JSON是有效且可以解析的。
 
-    """
+    
     prompt_desc= (
         "你是一个数据分析技术员，给定内容是表格的HTML格式和表格标题，请仔细分析该以HTML格式呈现的表格的内容，并结合表格标题（若不为空）分析并描述该表格传达的信息，需注意以下要点\n"
         "1. 用简明的语言说明这是一张什么什么表格，如‘这是一张xx公司的员工工资表’，‘这是一张学生成绩表’\n"
@@ -142,7 +291,7 @@ def table_extract(table_html_input: str, title: str, table_kv: bool, table_desc:
         result["table_html"] = table_html_input # 将原始HTML内容放入结果中
 
     return result
-
+"""
 
 if __name__ == "__main__":
     # 配置参数

@@ -4,8 +4,8 @@ print(sys.path)
 import urllib
 import yaml
 import os
-from images_tables.image.tools import analyze_image_content
-from images_tables.table.tools import table_extract
+from images_tables.image.tools import analyze_image_content_async
+from images_tables.table.tools import table_extract_async
 from format.formatTransform import format
 from layout.outputjs import merge_blocks
 from layout.output_pipeline import merge_blocks_pipeline
@@ -25,7 +25,6 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.responses import FileResponse
 from fastapi.responses import StreamingResponse
-from images_tables.image.tools_async import analyze_image_content_async
 import asyncio
 import zipfile
 import io
