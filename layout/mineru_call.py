@@ -26,7 +26,7 @@ async def call_mineru_api(input_file_path, output_dir, backend):
             }
             # 异步发送请求，此时 8000 服务可以去干别的事
             print("发送请求到mineru服务...")
-            response = await client.post("http://127.0.0.1:8000/file_parse", files=files, data=data)
+            response = await client.post("http://127.0.0.1:8006/file_parse", files=files, data=data)
             print("收到mineru服务响应")
             return response.json()
 
