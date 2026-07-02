@@ -74,11 +74,26 @@ def stream_image_description(
                 {"type": "image_url", "image_url": {"url": image_input}}
             ]
         }],
-        stream=True
+        stream=True,
+        extra_body={
+            "chat_template_kwargs": {
+                "enable_thinking": False  # 关键：将参数放在这里
+            }
+        }
     )
 
     for chunk in stream:
-        delta = chunk.choices[0].delta
-        content = delta.content if hasattr(delta, 'content') and delta.content else None
+        # 防止 choices 为空
+        if not hasattr(chunk, "choices"):
+            continue
+        if not chunk.choices:
+            continue
+        choice = chunk.choices[0]
+        # 防止 delta 不存在
+        if not hasattr(choice, "delta"):
+            continue
+        delta = choice.delta
+        # 防止 content 不存在
+        content = getattr(delta, "content", None)
         if content:
             yield content
