@@ -1,6 +1,7 @@
 import json
 import sys
 print(sys.path)
+import urllib
 import yaml
 import os
 from images_tables.image.tools import analyze_image_content
@@ -25,7 +26,6 @@ from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.responses import FileResponse
 from fastapi.responses import StreamingResponse
 from images_tables.image.tools_async import analyze_image_content_async
-from images_tables.table.tools_async import analyze_table_content_async
 import asyncio
 import zipfile
 import io
@@ -45,6 +45,11 @@ from interface.interface2 import interface2_json
 from interface.test_interface import test_interface_json
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any
+from utils.json_to_md import json_to_markdown
+import os
+from minio import Minio
+from minio.error import S3Error
+from fastapi.responses import StreamingResponse
 MAX_CONCURRENT = 5
 semaphore = asyncio.Semaphore(MAX_CONCURRENT)
 
@@ -69,6 +74,24 @@ class TestResponse(BaseResponse):
 
 app = FastAPI(docs_url=None, redoc_url=None)
 
+# ================================================================
+# MinIO 客户端（用于图片代理）
+# ================================================================
+minio_client = Minio(
+    endpoint=os.getenv("MINIO_ENDPOINT", "60.204.211.83:10000"),
+    access_key=os.getenv("MINIO_ACCESS_KEY", "minioadmin"),
+    secret_key=os.getenv("MINIO_SECRET_KEY", "minioadmin123"),
+    secure=False,  # MinIO 走 HTTP（10000 端口）
+)
+
+_IMG_MIME_MAP = {
+    "jpg": "image/jpeg", "jpeg": "image/jpeg",
+    "png": "image/png",  "gif":  "image/gif",
+    "webp": "image/webp", "bmp": "image/bmp",
+    "svg": "image/svg+xml", "tiff": "image/tiff", "tif": "image/tiff",
+    "ico": "image/x-icon",
+}
+
 @app.middleware("http")
 async def add_process_time(request: Request, call_next):
     start = time.time()
@@ -87,7 +110,53 @@ def custom_docs():
         swagger_js_url="/static/swagger-ui-bundle.js",
         swagger_css_url="/static/swagger-ui.css",
     )
+# ================================================================
+# MinIO 图片代理接口
+# ================================================================
+@app.get(
+    "/api/v1/image-proxy/{bucket}/{object_path:path}",
+    summary="MinIO 图片代理",
+    description="代理拉取 MinIO 鉴权图片，避免暴露密钥给前端"
+)
+async def proxy_minio_image(bucket: str, object_path: str):
+    """
+    URL 映射示例：
+        原始 MinIO:  http://60.204.211.83:10000/preprocess/xxx/abc.jpg
+        代理路径:    /api/v1/image-proxy/preprocess/xxx/abc.jpg
+    """
+    # 路径安全检查
+    if ".." in object_path or ".." in bucket:
+        raise HTTPException(400, "非法路径")
 
+    # 从 MinIO 拉取对象
+    try:
+        resp = minio_client.get_object(bucket, object_path)
+    except S3Error as e:
+        raise HTTPException(404, f"图片不存在或无权访问: {e}")
+    except Exception as e:
+        print(f"[ERROR] MinIO 访问失败: {e}")
+        raise HTTPException(500, f"MinIO 访问失败: {e}")
+
+    # 根据扩展名推断 Content-Type
+    ext = object_path.rsplit(".", 1)[-1].lower() if "." in object_path else ""
+    mime = _IMG_MIME_MAP.get(ext, "application/octet-stream")
+
+    # 流式返回 + 主动释放连接
+    def stream():
+        try:
+            for chunk in resp.stream(32 * 1024):
+                yield chunk
+        finally:
+            resp.close()
+            resp.release_conn()
+
+    return StreamingResponse(
+        stream(),
+        media_type=mime,
+        headers={
+            "Cache-Control": "public, max-age=3600",  # 浏览器缓存 1 小时
+        },
+    )
 AVALIABLE_FORMATS = ["pdf", "docx", "doc", "wps", "odt", "pptx", "ppt", "ofd", "md", "ceb", "jpg", "jpeg", "png", "txt"]
 
 with open("config.yaml", 'r', encoding='utf-8') as file:
@@ -206,11 +275,10 @@ async def index():
     """
     return FileResponse("static/index.html")
 
-
 @app.post(
     "/api/v1/xidian/preprocess_web",
     summary="前端页面统一接口",
-    description="供前端页面调用，自动下载JSON结果"
+    description="处理文档，返回预览内容和下载标识"
 )
 async def preprocess_web(
     file: UploadFile = File(...),
@@ -232,6 +300,8 @@ async def preprocess_web(
     json_mode:
         standard -> interface1_json
         custom   -> interface2_json
+
+    返回 JSON 响应，包含预览内容和 request_id，前端用 request_id 调用下载接口。
     """
 
     try:
@@ -262,7 +332,7 @@ async def preprocess_web(
         save_dir = Path("../data/doc")
         save_dir.mkdir(parents=True, exist_ok=True)
 
-        save_filename = f"{request_id}_{safe_name}"
+        save_filename = f"{safe_name}"
 
         save_path = save_dir / save_filename
 
@@ -319,7 +389,7 @@ async def preprocess_web(
 
         if json_mode == "standard":
 
-            result = await interface1_json(
+            result ,folder_name= await interface1_json(
                 str(save_path),
                 vlm_enable,
                 red_title_enable,
@@ -333,11 +403,12 @@ async def preprocess_web(
                 request_id
             )
 
-            output_json_name = f"{Path(safe_name).stem}_standard.json"
+            #output_json_name = f"{request_id}_{Path(safe_name).stem}_standard.json"
+            #output_md_name = f"{request_id}_{Path(safe_name).stem}_standard.md"
 
         elif json_mode == "custom":
 
-            result = await interface2_json(
+            result ,folder_name= await interface2_json(
                 str(save_path),
                 vlm_enable,
                 red_title_enable,
@@ -351,7 +422,8 @@ async def preprocess_web(
                 request_id
             )
 
-            output_json_name = f"{Path(safe_name).stem}_custom.json"
+            #output_json_name = f"{request_id}_{Path(safe_name).stem}_custom.json"
+            #output_md_name = f"{request_id}_{Path(safe_name).stem}_custom.md"
 
         else:
 
@@ -361,31 +433,66 @@ async def preprocess_web(
             )
 
         # =====================================================
-        # 7. 保存JSON文件
+        # 7. 保存 JSON 文件，并读取已生成的 MD 文件
         # =====================================================
 
-        output_dir = Path("../data/web_result")
-        output_dir.mkdir(parents=True, exist_ok=True)
+        #output_dir = Path("../data/web_result")
+        #output_dir.mkdir(parents=True, exist_ok=True)
+        output_dir=cfg['output_path']
+        file_name = Path(safe_name).stem
+        output_json_path = Path(output_dir) / folder_name / ('vlm' if vlm_enable else 'auto') / f"{file_name}_result.json"
+        # MD 文件由 interface1_json / interface2_json 已经生成好了
+        # 它的原始路径（不带 request_id 前缀）：
+        output_md_path = Path(output_dir) / folder_name / ('vlm' if vlm_enable else 'auto') / f"{file_name}_result.md"
 
-        output_json_path = output_dir / output_json_name
+        
 
+        # 保存 JSON
         with open(output_json_path, "w", encoding="utf-8") as f:
-            json.dump(
-                result,
-                f,
-                ensure_ascii=False,
-                indent=2
-            )
+            json.dump(result, f, ensure_ascii=False, indent=2)
 
+        # 读取 MD 内容（用于前端预览）
+        md_content = json_to_markdown(result)
+        #if output_md_path.exists():
+        #    with open(output_md_path, "r", encoding="utf-8") as f:
+        #        md_content = f.read()
+        print(f"MD 内容预览:\n{md_content[:500]}...")  # 打印前 500 字符预览
+        with open(output_md_path, "w", encoding="utf-8") as f:
+            f.write(md_content)
         # =====================================================
-        # 8. 返回JSON文件下载
+        # 8. 构建预览内容并返回
         # =====================================================
 
-        return FileResponse(
-            path=str(output_json_path),
-            media_type="application/json",
-            filename=output_json_name
-        )
+        # JSON 预览：读取前 300 行（大文件只展示片段）
+        MAX_PREVIEW_LINES = 1000000000
+        with open(output_json_path, "r", encoding="utf-8") as f:
+            preview_lines = []
+            for i, line in enumerate(f):
+                if i >= MAX_PREVIEW_LINES:
+                    break
+                preview_lines.append(line)
+
+        json_preview = "".join(preview_lines)
+        json_truncated = len(preview_lines) >= MAX_PREVIEW_LINES
+        pdf_filename = f"{file_name}_layout.pdf"
+        return JSONResponse({
+            "status": "success",
+            "request_id": request_id,
+
+            # 文件名（前端显示用）
+            "json_filename": f"{file_name}_result.json",
+            "md_filename": f"{file_name}_result.md",
+            "pdf_filename": pdf_filename,
+            # JSON 预览（片段）
+            "json_preview": json_preview,
+            "json_truncated": json_truncated,
+
+            # MD 预览（全量，md 一般不大）
+            "md_content": md_content,
+            "folder_name": folder_name,
+            "vlm_enable": vlm_enable,
+            "save_filename": save_filename
+        })
 
     except HTTPException as e:
 
@@ -398,12 +505,68 @@ async def preprocess_web(
         return JSONResponse(
             status_code=500,
             content={
+                "status": "error",
                 "status_code": 500,
                 "status_message": str(e),
-                "partitions": []
             }
         )
 
+
+# ================================================================
+# 下载接口
+# ================================================================
+
+@app.get(
+    "/api/v1/xidian/download/{folder_name}/{vlm_mode}/{filename}",
+    summary="下载结果文件",
+)
+async def download_result(folder_name: str, vlm_mode: str, filename: str):
+    # 1. 参数校验
+    if vlm_mode not in ("vlm", "auto"):
+        raise HTTPException(400, "vlm_mode 仅支持 vlm / auto")
+
+    if ".." in folder_name or ".." in filename:
+        raise HTTPException(400, "非法路径")
+
+    # 2. 构建路径并检查存在性
+    file_path = Path(cfg['output_path']) / folder_name / vlm_mode / filename
+
+    if not file_path.exists():
+        raise HTTPException(404, "文件不存在")
+
+    # 3. 核心修复：对所有文件名进行 URL 编码
+    # quote() 会将中文、空格等特殊字符转换为 %XX 格式，确保符合 HTTP Header 的 ASCII 要求
+    encoded_filename = urllib.parse.quote(filename)
+
+    suffix = file_path.suffix.lower()
+
+    # 4. 根据后缀决定 Media-Type 和 展示方式 (inline/attachment)
+    if suffix == ".pdf":
+        media_type = "application/pdf"
+        # PDF 通常希望直接在浏览器预览，所以用 inline
+        disposition = f"inline; filename*=UTF-8''{encoded_filename}"
+        
+    elif suffix == ".json":
+        media_type = "application/json"
+        # JSON 通常直接下载，所以用 attachment
+        disposition = f"attachment; filename*=UTF-8''{encoded_filename}"
+        
+    else: 
+        # 处理 .md 以及其他所有未知类型
+        # Markdown 浏览器通常无法直接渲染，建议作为附件下载
+        media_type = "text/markdown" 
+        disposition = f"attachment; filename*=UTF-8''{encoded_filename}"
+
+    # 5. 统一返回响应
+    return FileResponse(
+        path=str(file_path),
+        media_type=media_type,
+        filename=filename,  # 这里传原始文件名给 FastAPI 内部使用（可选）
+        headers={
+            "Content-Disposition": disposition
+        }
+    )
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("run:app", host="0.0.0.0", port=8003,workers=cfg['workers'])
+    uvicorn.run("run:app", host="0.0.0.0", port=8007,workers=cfg['workers'])

@@ -145,6 +145,7 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
         #print(json_data)
         #json_data = py_dict_to_json_var(json_data)
         #print(json_data)
+        
         json_data = convert_json_format(json_data)
         
     except FileNotFoundError as e:
@@ -188,4 +189,4 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
         "status_message": status_message,
         "partitions": json_data if status_code == 200 else []
     }
-    return return_json
+    return return_json,folder_name

@@ -60,7 +60,12 @@ def convert_json_format(json_data: Union[Dict, List]) -> List[Dict]:
                         for line in (entry.get("lines", [entry]) if key == "blocks" else [entry]):
                             for span in line.get("spans", []):
                                 if span.get("type") in ["text", "inline_equation", "interline_equation"] and "content" in span:
-                                    texts.append(span["content"])
+                                    if span.get("type") == "inline_equation":
+                                        texts.append(f"${span['content']}$")
+                                    elif span.get("type") == "interline_equation":
+                                        texts.append(f"\n$$\n{span['content']}\n$$\n")
+                                    else:
+                                        texts.append(span["content"])
             return " ".join(texts)
 
     def extract_table_html(item: Dict) -> str:

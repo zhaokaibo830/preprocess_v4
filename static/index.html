@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>文档解析服务</title>
+  <!-- KaTeX CSS (LaTeX 公式渲染) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
   <style>
     :root {
       --green-deep: #005238;
@@ -10,8 +12,6 @@
       --green-light: #e6f5ef;
       --green-border: #b2dfd0;
       --gold-accent: #c8a44e;
-      --gold-light: #faf3e0;
-      --gold-border: #e0cba0;
       --bg: #f0f2f5;
       --card: #ffffff;
       --text: #1a2332;
@@ -21,6 +21,16 @@
       --danger: #d4380d;
       --success: #005238;
       --radius: 4px;
+
+      /* JSON 树配色 */
+      --json-key: #a52a2a;
+      --json-string: #008000;
+      --json-number: #1a01cc;
+      --json-boolean: #c800c8;
+      --json-null: #808080;
+      --json-bracket: #4a4a4a;
+      --json-bg: #fafafa;
+      --json-highlight: #fff58c;
     }
 
     * { box-sizing: border-box; }
@@ -36,7 +46,6 @@
       align-items: center;
     }
 
-    /* 顶部装饰条 */
     .top-bar {
       width: 100%;
       height: 4px;
@@ -44,323 +53,349 @@
       flex-shrink: 0;
     }
 
-    /* 页面头部 */
+    /* ============= 头部 ============= */
     .page-header {
       width: 100%;
-      max-width: 780px;
-      padding: 40px 24px 0;
+      max-width: 1600px;
+      padding: 32px 24px 0;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
     }
-    .header-left {
-      display: flex;
-      align-items: flex-end;
-      gap: 16px;
-    }
+    .header-left { display: flex; align-items: flex-end; gap: 16px; }
     .header-icon {
-      width: 48px;
-      height: 48px;
+      width: 48px; height: 48px;
       background: linear-gradient(135deg, var(--green-deep), var(--green-primary));
       border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
     .header-icon svg { width: 28px; height: 28px; fill: #fff; }
-    .header-text h1 {
-      margin: 0;
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--text);
+    .header-text h1 { margin: 0; font-size: 26px; font-weight: 700; letter-spacing: 1px; }
+    .header-text p { margin: 4px 0 0; font-size: 14px; color: var(--text-muted); letter-spacing: 0.5px; }
+    .sgcc-logo { display: flex; align-items: center; gap: 10px; padding-top: 4px; flex-shrink: 0; }
+    .sgcc-logo-icon { width: 44px; height: 44px; display: block; }
+    .sgcc-logo-text { display: flex; flex-direction: column; line-height: 1.3; }
+    .sgcc-logo-text .name-cn { font-size: 16px; font-weight: 700; color: var(--green-deep); letter-spacing: 3px; }
+    .sgcc-logo-text .name-en { font-size: 10px; color: var(--text-muted); letter-spacing: 0.8px; margin-top: 1px; }
+
+    /* ============= 工作区 ============= */
+    .workspace {
+      width: 100%;
+      max-width: 1600px;
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      flex: 1;
+      align-items: flex-start;
+      justify-content: center;
+      transition: all 0.3s ease;
     }
-    .header-text p {
-      margin: 4px 0 0;
-      font-size: 14px;
-      color: var(--text-muted);
-      letter-spacing: 0.5px;
+    .workspace.center .config-panel { max-width: 780px; width: 100%; }
+    .workspace.center .result-panel { display: none; }
+
+    .workspace.split { justify-content: stretch; }
+    .workspace.split .config-panel {
+      flex: 0 0 460px;
+      max-width: 460px;
+      position: sticky;
+      top: 24px;
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
+    }
+    .workspace.split .result-panel {
+      display: flex;
+      flex: 1;
+      min-width: 0;
     }
 
-    /* 右上角国网 Logo */
-    .sgcc-logo {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding-top: 4px;
-    }
-    .sgcc-logo-icon {
-      width: 44px;
-      height: 44px;
-      display: block;
-    }
-    .sgcc-logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.3;
-    }
-    .sgcc-logo-text .name-cn {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--green-deep);
-      letter-spacing: 3px;
-    }
-    .sgcc-logo-text .name-en {
-      font-size: 10px;
-      font-weight: 400;
-      color: var(--text-muted);
-      letter-spacing: 0.8px;
-      margin-top: 1px;
-    }
-
-    /* 主卡片 */
-    .card {
+    /* ============= 配置面板 ============= */
+    .config-panel {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
-      width: 100%;
-      max-width: 780px;
-      margin: 24px 24px 48px;
       overflow: hidden;
     }
-
-    /* 卡片内分区 */
-    .card-section {
-      padding: 24px 32px;
-      border-bottom: 1px solid var(--border);
-    }
+    .card-section { padding: 20px 28px; border-bottom: 1px solid var(--border); }
     .card-section:last-child { border-bottom: none; }
-
-    /* 分区标题 */
     .sec-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
-      margin: 0 0 16px;
+      font-size: 15px; font-weight: 600;
+      margin: 0 0 14px;
       padding-left: 10px;
       border-left: 3px solid var(--green-primary);
       line-height: 1;
     }
 
-    /* 文件上传区域 */
     .file-zone {
       border: 2px dashed var(--green-border);
       border-radius: var(--radius);
-      padding: 36px 24px;
-      text-align: center;
-      cursor: pointer;
+      padding: 28px 20px;
+      text-align: center; cursor: pointer;
       transition: all 0.2s;
       background: var(--green-light);
-      position: relative;
     }
-    .file-zone:hover {
-      border-color: var(--green-primary);
-      background: #d9f0e5;
-    }
-    .file-zone.drag-over {
-      border-color: var(--green-primary);
-      background: #d0eddf;
-    }
-    .file-zone svg {
-      width: 40px;
-      height: 40px;
-      fill: var(--green-primary);
-      margin-bottom: 10px;
-      opacity: 0.7;
-    }
-    .file-zone .file-main-text {
-      font-size: 15px;
-      color: var(--green-deep);
-      font-weight: 500;
-    }
-    .file-zone .file-sub-text {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-    .file-zone.has-file {
-      border-style: solid;
-      border-color: var(--green-primary);
-      background: #fff;
-    }
-    .file-zone.has-file .file-main-text {
-      color: var(--text);
-      font-weight: 600;
-      word-break: break-all;
-    }
+    .file-zone:hover { border-color: var(--green-primary); background: #d9f0e5; }
+    .file-zone.drag-over { border-color: var(--green-primary); background: #d0eddf; }
+    .file-zone svg { width: 36px; height: 36px; fill: var(--green-primary); margin-bottom: 8px; opacity: 0.7; }
+    .file-zone .file-main-text { font-size: 14px; color: var(--green-deep); font-weight: 500; }
+    .file-zone .file-sub-text { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+    .file-zone.has-file { border-style: solid; border-color: var(--green-primary); background: #fff; }
+    .file-zone.has-file .file-main-text { color: var(--text); font-weight: 600; word-break: break-all; }
     input[type="file"] { display: none; }
 
-    /* 选项行布局 */
-    .option-row {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    /* Radio / Checkbox 通用样式 */
+    .option-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .opt-label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--text-secondary);
-      cursor: pointer;
-      user-select: none;
-      padding: 6px 14px;
-      border-radius: var(--radius);
-      border: 1px solid transparent;
-      transition: all 0.15s;
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--text-secondary);
+      cursor: pointer; user-select: none;
+      padding: 5px 12px; border-radius: var(--radius);
+      border: 1px solid transparent; transition: all 0.15s;
     }
-    .opt-label:hover {
-      background: var(--green-light);
-      border-color: var(--green-border);
-    }
-    .opt-label input[type="radio"],
-    .opt-label input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      accent-color: var(--green-primary);
-      cursor: pointer;
-      flex-shrink: 0;
-    }
+    .opt-label:hover { background: var(--green-light); border-color: var(--green-border); }
+    .opt-label input { width: 14px; height: 14px; accent-color: var(--green-primary); cursor: pointer; flex-shrink: 0; }
+    .opt-grid { display: flex; flex-wrap: wrap; gap: 6px; }
 
-    /* 多选网格 */
-    .opt-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    /* 开关式复选框 */
-    .switch-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      color: var(--text-secondary);
-      cursor: pointer;
-      user-select: none;
-    }
-    .switch-track {
-      width: 36px;
-      height: 20px;
-      background: #c4cdd5;
-      border-radius: 10px;
-      position: relative;
-      transition: background 0.2s;
-      flex-shrink: 0;
-    }
-    .switch-track::after {
-      content: '';
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      background: #fff;
-      border-radius: 50%;
-      top: 2px;
-      left: 2px;
-      transition: transform 0.2s;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-    }
+    .switch-label { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-secondary); cursor: pointer; user-select: none; }
+    .switch-track { width: 36px; height: 20px; background: #c4cdd5; border-radius: 10px; position: relative; transition: background 0.2s; flex-shrink: 0; }
+    .switch-track::after { content: ''; position: absolute; width: 16px; height: 16px; background: #fff; border-radius: 50%; top: 2px; left: 2px; transition: transform 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.15); }
     .switch-label input { display: none; }
-    .switch-label input:checked + .switch-track {
-      background: var(--green-primary);
-    }
-    .switch-label input:checked + .switch-track::after {
-      transform: translateX(16px);
-    }
+    .switch-label input:checked + .switch-track { background: var(--green-primary); }
+    .switch-label input:checked + .switch-track::after { transform: translateX(16px); }
 
-    /* 提交按钮 */
-    .action-bar {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
     .btn-primary {
-      padding: 10px 40px;
-      font-size: 15px;
-      font-weight: 500;
-      border: none;
-      border-radius: var(--radius);
+      width: 100%;
+      padding: 10px 32px;
+      font-size: 14px; font-weight: 500;
+      border: none; border-radius: var(--radius);
       background: linear-gradient(135deg, var(--green-deep), var(--green-primary));
-      color: #fff;
-      cursor: pointer;
+      color: #fff; cursor: pointer;
       letter-spacing: 2px;
       transition: all 0.2s;
-      position: relative;
-      overflow: hidden;
     }
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%; width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-      transition: left 0.4s;
-    }
-    .btn-primary:hover::before { left: 100%; }
-    .btn-primary:hover {
-      box-shadow: 0 4px 12px rgba(0,82,56,0.3);
-    }
-    .btn-primary:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 6px rgba(0,82,56,0.25);
-    }
-    .btn-primary:disabled {
-      background: #a0c4b5;
-      cursor: not-allowed;
-      box-shadow: none;
-    }
-    .btn-primary:disabled::before { display: none; }
+    .btn-primary:hover { box-shadow: 0 4px 12px rgba(0,82,56,0.3); }
+    .btn-primary:disabled { background: #a0c4b5; cursor: not-allowed; box-shadow: none; }
 
-    /* 消息区 */
-    #msg {
-      margin-top: 16px;
-      font-size: 14px;
-      word-break: break-all;
-      white-space: pre-wrap;
-      padding: 10px 14px;
-      border-radius: var(--radius);
-      line-height: 1.6;
-      display: none;
-    }
+    #msg { margin-top: 12px; font-size: 13px; word-break: break-all; white-space: pre-wrap; padding: 8px 12px; border-radius: var(--radius); line-height: 1.6; display: none; }
     #msg.show { display: block; }
-    #msg.err {
-      color: var(--danger);
-      background: #fff2f0;
-      border: 1px solid #ffccc7;
+    #msg.err { color: var(--danger); background: #fff2f0; border: 1px solid #ffccc7; }
+    #msg.ok { color: var(--success); background: var(--green-light); border: 1px solid var(--green-border); }
+
+    /* ============= 结果面板 ============= */
+    .result-panel { flex-direction: column; gap: 16px; width: 100%; }
+    .result-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+      overflow: hidden;
+      display: flex; flex-direction: column;
     }
-    #msg.ok {
-      color: var(--success);
+    .result-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
       background: var(--green-light);
-      border: 1px solid var(--green-border);
+      flex-wrap: wrap; gap: 10px;
     }
-
-    /* 底部信息 */
-    .footer {
+    .result-title { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--green-deep); min-width: 0; }
+    .result-title .filename {
+      font-weight: 400; color: var(--text-secondary);
       font-size: 12px;
-      color: var(--text-muted);
-      padding: 0 24px 32px;
-      text-align: center;
-      letter-spacing: 0.5px;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      max-width: 240px;
+    }
+    .result-actions { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+
+    .btn-sm {
+      padding: 5px 12px;
+      font-size: 12px;
+      border: 1px solid var(--green-border);
+      border-radius: var(--radius);
+      background: #fff; color: var(--green-deep);
+      cursor: pointer; transition: all 0.15s;
+      font-weight: 500;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .btn-sm:hover { background: var(--green-primary); color: #fff; border-color: var(--green-primary); }
+    .btn-download { background: linear-gradient(135deg, var(--green-deep), var(--green-primary)); color: #fff; border-color: var(--green-deep); }
+    .btn-download:hover { box-shadow: 0 2px 8px rgba(0,82,56,0.3); }
+
+    /* ✅ PDF 预览按钮特殊样式 */
+    .btn-pdf-preview { border-color: var(--gold-accent); color: #8a6d2b; }
+    .btn-pdf-preview:hover { background: var(--gold-accent); color: #fff; border-color: var(--gold-accent); }
+
+    /* JSON 工具栏 */
+    .json-toolbar {
+      padding: 8px 20px;
+      border-bottom: 1px solid var(--border);
+      background: #f9fafb;
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    }
+    .json-search {
+      flex: 1; min-width: 180px;
+      padding: 5px 10px; font-size: 12px;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      outline: none; transition: border-color 0.15s;
+    }
+    .json-search:focus { border-color: var(--green-primary); }
+    .search-info { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+
+    .preview-body {
+      max-height: 70vh; min-height: 200px;
+      overflow: auto;
+      padding: 14px 20px;
+      background: var(--json-bg);
+      font-family: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, "Courier New", monospace;
+      font-size: 13px; line-height: 1.6;
     }
 
-    /* 响应式 */
+    /* ============= JSON 树形 ============= */
+    .json-tree { color: var(--text); }
+    .json-line {
+      display: flex; align-items: flex-start;
+      white-space: nowrap;
+      min-height: 22px;
+      padding-left: 4px;
+      transition: background 0.1s;
+    }
+    .json-line:hover { background: rgba(0,122,83,0.04); }
+    .json-line:hover .copy-node-btn { opacity: 1; }
+    .toggle {
+      display: inline-block; width: 14px;
+      cursor: pointer; color: var(--text-muted);
+      user-select: none; flex-shrink: 0;
+      text-align: center; font-size: 10px; line-height: 22px;
+    }
+    .toggle.empty { cursor: default; visibility: hidden; }
+    .toggle:hover { color: var(--green-primary); }
+
+    .json-key { color: var(--json-key); }
+    .json-key::before, .json-key::after { content: '"'; color: var(--text); }
+    .json-key-colon { color: var(--text); margin-right: 6px; }
+    .json-string { color: var(--json-string); }
+    .json-string::before, .json-string::after { content: '"'; }
+    .json-number { color: var(--json-number); }
+    .json-boolean { color: var(--json-boolean); font-weight: 500; }
+    .json-null { color: var(--json-null); font-style: italic; }
+    .json-bracket { color: var(--json-bracket); }
+
+    .json-children { padding-left: 22px; }
+    .json-children.collapsed { display: none; }
+
+    .json-summary { color: var(--text-muted); font-style: italic; margin-left: 6px; font-size: 12px; cursor: pointer; }
+    .json-summary.hidden { display: none; }
+
+    .copy-node-btn {
+      opacity: 0;
+      margin-left: 8px;
+      font-size: 10px;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 1px 6px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: #fff;
+      transition: opacity 0.15s, color 0.15s, border-color 0.15s;
+      flex-shrink: 0; align-self: center;
+    }
+    .copy-node-btn:hover { color: var(--green-primary); border-color: var(--green-primary); }
+
+    .json-highlight { background: var(--json-highlight); border-radius: 2px; padding: 0 2px; }
+    .json-highlight.current { background: #ffa500; color: #fff; }
+
+    /* ============= Markdown Raw ============= */
+    .md-raw {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-all;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text);
+      background: #fff;
+      padding: 20px;
+      min-height: 200px;
+    }
+
+    /* ============= Markdown 渲染视图 ============= */
+    .md-rendered {
+      padding: 24px 28px;
+      min-height: 200px;
+      max-height: 70vh;
+      overflow: auto;
+      background: #fff;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .md-rendered h1, .md-rendered h2, .md-rendered h3,
+    .md-rendered h4, .md-rendered h5, .md-rendered h6 {
+      margin-top: 1.2em; margin-bottom: 0.6em;
+      font-weight: 600; color: var(--text);
+      border-bottom: none;
+    }
+    .md-rendered h1 { font-size: 1.6em; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+    .md-rendered h2 { font-size: 1.4em; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+    .md-rendered h3 { font-size: 1.2em; }
+    .md-rendered p { margin: 0.6em 0; }
+    .md-rendered ul, .md-rendered ol { padding-left: 2em; margin: 0.6em 0; }
+    .md-rendered li { margin: 0.3em 0; }
+    .md-rendered blockquote {
+      border-left: 4px solid var(--green-primary);
+      padding: 8px 16px; margin: 0.8em 0;
+      background: var(--green-light); color: var(--text-secondary);
+    }
+    .md-rendered pre {
+      background: #f6f8fa; border-radius: 6px;
+      padding: 14px 16px; overflow-x: auto;
+      font-size: 13px; line-height: 1.5;
+    }
+    .md-rendered code {
+      background: #f0f0f0; padding: 2px 6px;
+      border-radius: 3px; font-size: 0.9em;
+      font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+    }
+    .md-rendered pre code { background: none; padding: 0; }
+    .md-rendered table {
+      border-collapse: collapse; width: 100%;
+      margin: 0.8em 0; font-size: 13px;
+    }
+    .md-rendered th, .md-rendered td {
+      border: 1px solid var(--border);
+      padding: 8px 12px; text-align: left;
+    }
+    .md-rendered th { background: var(--green-light); font-weight: 600; }
+    .md-rendered img { max-width: 100%; border-radius: 4px; margin: 0.5em 0; }
+    .md-rendered hr { border: none; border-top: 1px solid var(--border); margin: 1.5em 0; }
+    .md-rendered a { color: var(--green-primary); text-decoration: none; }
+    .md-rendered a:hover { text-decoration: underline; }
+
+    /* 切换按钮组 */
+    .toggle-group {
+      display: flex; border: 1px solid var(--green-border); border-radius: var(--radius); overflow: hidden;
+    }
+    .toggle-group .toggle-btn {
+      padding: 4px 12px; font-size: 12px; font-weight: 500;
+      border: none; background: #fff; color: var(--text-secondary);
+      cursor: pointer; transition: all 0.15s;
+    }
+    .toggle-group .toggle-btn + .toggle-btn { border-left: 1px solid var(--green-border); }
+    .toggle-group .toggle-btn.active {
+      background: var(--green-primary); color: #fff;
+    }
+    .toggle-group .toggle-btn:hover:not(.active) { background: var(--green-light); }
+
+    .footer { font-size: 12px; color: var(--text-muted); padding: 16px 24px 24px; text-align: center; letter-spacing: 0.5px; }
+
+    @media (max-width: 1100px) {
+      .workspace.split { flex-direction: column; align-items: stretch; }
+      .workspace.split .config-panel { flex: none; max-width: 100%; position: static; max-height: none; }
+    }
     @media (max-width: 600px) {
-      .page-header {
-        flex-direction: column;
-        gap: 16px;
-        padding: 24px 16px 0;
-        align-items: flex-start;
-      }
-      .sgcc-logo { align-self: flex-end; }
+      .page-header { flex-direction: column; gap: 12px; padding: 20px 16px 0; }
       .header-text h1 { font-size: 22px; }
-      .card { margin: 16px 12px 32px; }
-      .card-section { padding: 20px 18px; }
-      .option-row { gap: 16px; flex-wrap: wrap; }
-      .file-zone { padding: 24px 16px; }
+      .workspace { padding: 16px; }
+      .card-section { padding: 16px 18px; }
     }
   </style>
 </head>
@@ -387,78 +422,151 @@
     </div>
   </header>
 
-  <main class="card">
+  <div id="workspace" class="workspace center">
 
-    <section class="card-section">
-      <div class="sec-title">文件上传</div>
-      <input id="fileInput" type="file" />
-      <div id="fileBox" class="file-zone">
-        <svg viewBox="0 0 24 24"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
-        <div class="file-main-text">点击或拖拽文件到此处上传</div>
-        <div class="file-sub-text">支持 PDF、docx、doc、pptx、ppt、wps、png、jpg、jpeg、ofd、odt、ceb、md、txt格式</div>
-      </div>
-    </section>
+    <!-- 配置面板 -->
+    <main class="config-panel">
 
-    <section class="card-section">
-      <div class="sec-title">JSON输出格式</div>
-      <div class="option-row">
-        <label class="opt-label">
-          <input type="radio" name="json_mode" value="standard" checked />
-          <span>标准格式(符合标准定义的json格式)</span>
+      <section class="card-section">
+        <div class="sec-title">文件上传</div>
+        <input id="fileInput" type="file" />
+        <div id="fileBox" class="file-zone">
+          <svg viewBox="0 0 24 24"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+          <div class="file-main-text">点击或拖拽文件到此处上传</div>
+          <div class="file-sub-text">支持 PDF、docx、doc、pptx、ppt、wps、png、jpg、jpeg、ofd、odt、ceb、md、txt</div>
+        </div>
+      </section>
+
+      <section class="card-section">
+        <div class="sec-title">JSON 输出格式</div>
+        <div class="option-row">
+          <label class="opt-label"><input type="radio" name="json_mode" value="standard" checked /><span>标准格式</span></label>
+          <label class="opt-label"><input type="radio" name="json_mode" value="custom" /><span>自定义格式</span></label>
+        </div>
+      </section>
+
+      <section class="card-section">
+        <div class="sec-title">VLM 版面识别</div>
+        <label class="switch-label">
+          <input id="vlm_enable" type="checkbox" checked />
+          <span class="switch-track"></span>
+          <span>启用版面智能识别</span>
         </label>
-        <label class="opt-label">
-          <input type="radio" name="json_mode" value="custom" />
-          <span>自定义格式(包含更多输出字段的json格式)</span>
+      </section>
+
+      <section class="card-section">
+        <div class="sec-title">红头文件识别</div>
+        <label class="switch-label">
+          <input id="red_title_enable" type="checkbox" checked />
+          <span class="switch-track"></span>
+          <span>启用红头文件识别</span>
         </label>
-      </div>
-    </section>
+      </section>
 
-    <section class="card-section">
-      <div class="sec-title">VLM 版面识别</div>
-      <label class="switch-label">
-        <input id="vlm_enable" type="checkbox" checked />
-        <span class="switch-track"></span>
-        <span>启用版面智能识别</span>
-      </label>
-    </section>
+      <section class="card-section">
+        <div class="sec-title">图片处理选项</div>
+        <div class="opt-grid">
+          <label class="opt-label"><input type="checkbox" value="class" name="img" checked><span>类别识别</span></label>
+          <label class="opt-label"><input type="checkbox" value="description" name="img" checked><span>文本描述</span></label>
+          <label class="opt-label"><input type="checkbox" value="html" name="img" checked><span>HTML 表示</span></label>
+        </div>
+      </section>
 
-    <section class="card-section">
-      <div class="sec-title">红头文件识别</div>
-      <label class="switch-label">
-        <input id="red_title_enable" type="checkbox" checked />
-        <span class="switch-track"></span>
-        <span>启用红头文件识别</span>
-      </label>
-    </section>
+      <section class="card-section">
+        <div class="sec-title">表格处理选项</div>
+        <div class="opt-grid">
+          <label class="opt-label"><input type="checkbox" value="key-value" name="table" checked><span>键值对</span></label>
+          <label class="opt-label"><input type="checkbox" value="description" name="table" checked><span>文本描述</span></label>
+          <label class="opt-label"><input type="checkbox" value="html" name="table" checked><span>HTML 表示</span></label>
+        </div>
+      </section>
 
-    <section class="card-section">
-      <div class="sec-title">图片处理功能选项</div>
-      <div class="opt-grid">
-        <label class="opt-label"><input type="checkbox" value="class" name="img" checked><span>图片类别识别</span></label>
-        <label class="opt-label"><input type="checkbox" value="description" name="img" checked><span>图片的文本描述</span></label>
-        <label class="opt-label"><input type="checkbox" value="html" name="img" checked><span>统计图的HTML代码表示</span></label>
-      </div>
-    </section>
-
-    <section class="card-section">
-      <div class="sec-title">表格处理功能选项</div>
-      <div class="opt-grid">
-        <label class="opt-label"><input type="checkbox" value="key-value" name="table" checked><span>表格键值对提取</span></label>
-        <label class="opt-label"><input type="checkbox" value="description" name="table" checked><span>表格的文本描述</span></label>
-        <label class="opt-label"><input type="checkbox" value="html" name="table" checked><span>表格的HTML代码表示</span></label>
-      </div>
-    </section>
-
-    <section class="card-section">
-      <div class="action-bar">
+      <section class="card-section">
         <button id="submitBtn" class="btn-primary">开始处理</button>
-      </div>
-      <div id="msg"></div>
-    </section>
+        <div id="msg"></div>
+      </section>
 
-  </main>
+    </main>
+
+    <!-- 结果面板：三个预览框 -->
+    <aside class="result-panel" id="resultPanel">
+
+      <!-- ✅ 1. 版面分析 PDF 卡片（仅预览+下载） -->
+      <div class="result-card">
+        <div class="result-header">
+          <div class="result-title">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--green-deep)" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/></svg>
+            <span>版面分析 PDF</span>
+            <span class="filename" id="pdfFilename"></span>
+          </div>
+          <div class="result-actions">
+            <button class="btn-sm btn-pdf-preview" onclick="openPdfPreview()">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              预览版面
+            </button>
+            <button class="btn-sm btn-download" onclick="downloadPdf()">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+              下载 PDF
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. JSON 解析结果卡片 -->
+      <div class="result-card">
+        <div class="result-header">
+          <div class="result-title">
+            <span>JSON 解析结果</span>
+            <span class="filename" id="jsonFilename"></span>
+          </div>
+          <div class="result-actions">
+            <button class="btn-sm" onclick="expandAllJson()">全部展开</button>
+            <button class="btn-sm" onclick="collapseAllJson()">全部折叠</button>
+            <button class="btn-sm" onclick="copyAllJson()">复制全部</button>
+            <button class="btn-sm btn-download" onclick="downloadJson()">下载</button>
+          </div>
+        </div>
+        <div class="json-toolbar">
+          <input type="text" id="jsonSearch" class="json-search"
+                 placeholder="搜索 key 或 value（回车跳转下一个匹配）"
+                 oninput="searchJson()" onkeydown="if(event.key==='Enter')nextSearchMatch()" />
+          <span class="search-info" id="searchInfo"></span>
+        </div>
+        <div id="jsonPreview" class="preview-body json-tree"></div>
+      </div>
+
+      <!-- 3. Markdown 内容卡片 -->
+      <div class="result-card">
+        <div class="result-header">
+          <div class="result-title">
+            <span>Markdown 内容</span>
+            <span class="filename" id="mdFilename"></span>
+          </div>
+          <div class="result-actions">
+            <div class="toggle-group">
+              <button class="toggle-btn active" id="btnMdSource" onclick="switchMdView('source')">源码</button>
+              <button class="toggle-btn" id="btnMdRender" onclick="switchMdView('render')">渲染</button>
+            </div>
+            <button class="btn-sm" onclick="copyMarkdown()">复制源码</button>
+            <button class="btn-sm btn-download" onclick="downloadMd()">下载 MD</button>
+          </div>
+        </div>
+        <pre id="mdRaw" class="md-raw"></pre>
+        <div id="mdRendered" class="md-rendered" style="display:none;"></div>
+      </div>
+
+    </aside>
+
+  </div>
 
   <footer class="footer">文档解析服务平台 · 技术支持</footer>
+
+  <!-- markdown-it -->
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
+  <!-- KaTeX -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+  <!-- markdown-it-texmath 插件 -->
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath@1.0.0/texmath.min.js"></script>
 
 <script>
 const $ = id => document.getElementById(id);
@@ -466,17 +574,14 @@ const fileInput = $('fileInput');
 const fileBox   = $('fileBox');
 const submitBtn = $('submitBtn');
 const msgBox    = $('msg');
+const workspace = $('workspace');
 
-/* 文件拖放 / 点击 */
+let resultData = null;
+
+/* ==================== 文件拖放 ==================== */
 fileBox.addEventListener('click', () => fileInput.click());
-
-fileBox.addEventListener('dragover', e => {
-  e.preventDefault();
-  fileBox.classList.add('drag-over');
-});
-fileBox.addEventListener('dragleave', () => {
-  fileBox.classList.remove('drag-over');
-});
+fileBox.addEventListener('dragover', e => { e.preventDefault(); fileBox.classList.add('drag-over'); });
+fileBox.addEventListener('dragleave', () => fileBox.classList.remove('drag-over'));
 fileBox.addEventListener('drop', e => {
   e.preventDefault();
   fileBox.classList.remove('drag-over');
@@ -492,7 +597,7 @@ function showFile() {
   if (file) {
     fileBox.classList.add('has-file');
     fileBox.innerHTML =
-      '<svg viewBox="0 0 24 24" style="width:32px;height:32px;fill:var(--green-primary);margin-bottom:8px;opacity:0.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/></svg>' +
+      '<svg viewBox="0 0 24 24" style="width:32px;height:32px;fill:var(--green-primary);margin-bottom:6px;opacity:0.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/></svg>' +
       '<div class="file-main-text">' + escapeHtml(file.name) + '</div>' +
       '<div class="file-sub-text">' + formatSize(file.size) + ' · 点击重新选择</div>';
   } else {
@@ -500,23 +605,18 @@ function showFile() {
     fileBox.innerHTML =
       '<svg viewBox="0 0 24 24"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>' +
       '<div class="file-main-text">点击或拖拽文件到此处上传</div>' +
-      '<div class="file-sub-text">支持 PDF、Word、图片等常见文档格式</div>';
+      '<div class="file-sub-text">支持常见文档格式</div>';
   }
 }
 
-function escapeHtml(s) {
-  const d = document.createElement('div');
-  d.textContent = s;
-  return d.innerHTML;
+function escapeHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+function formatSize(b) {
+  if (b < 1024) return b + ' B';
+  if (b < 1048576) return (b / 1024).toFixed(1) + ' KB';
+  return (b / 1048576).toFixed(1) + ' MB';
 }
 
-function formatSize(bytes) {
-  if (bytes < 1024) return bytes + ' B';
-  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
-  return (bytes / 1048576).toFixed(1) + ' MB';
-}
-
-/* 提交 */
+/* ==================== 提交处理 ==================== */
 submitBtn.addEventListener('click', async () => {
   const file = fileInput.files[0];
   if (!file) return flash('请先选择文件', 'err');
@@ -532,32 +632,20 @@ submitBtn.addEventListener('click', async () => {
   fd.append('json_mode', jsonMode.value);
   fd.append('vlm_enable', $('vlm_enable').checked);
   fd.append('red_title_enable', $('red_title_enable').checked);
-
-  document.querySelectorAll('input[name="img"]:checked')
-    .forEach(ch => fd.append('img_select', ch.value));
-
-  document.querySelectorAll('input[name="table"]:checked')
-    .forEach(ch => fd.append('table_select', ch.value));
+  document.querySelectorAll('input[name="img"]:checked').forEach(ch => fd.append('img_select', ch.value));
+  document.querySelectorAll('input[name="table"]:checked').forEach(ch => fd.append('table_select', ch.value));
 
   try {
     const r = await fetch('/api/v1/xidian/preprocess_web', { method: 'POST', body: fd });
     if (!r.ok) throw new Error(await r.text());
 
-    const blob = await r.blob();
-    const rawFname = r.headers.get('Content-Disposition');
-    let fname = 'result.zip';
+    const data = await r.json();
+    if (data.status === 'error') throw new Error(data.status_message || '处理失败');
 
-    if (rawFname && rawFname.includes("filename*=utf-8''")) {
-      fname = decodeURIComponent(rawFname.split("filename*=utf-8''")[1]);
-    }
+    resultData = data;
+    showResultPanel(data);
+    flash('处理完成！请在右侧查看结果。', 'ok');
 
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = fname;
-    a.click();
-    URL.revokeObjectURL(url);
-    flash('处理完成，已下载结果包', 'ok');
   } catch (e) {
     flash('处理失败：' + e.message, 'err');
   } finally {
@@ -569,6 +657,438 @@ function flash(text, type) {
   msgBox.textContent = text;
   msgBox.className = type + ' show';
 }
+
+/* ==================== 切换到分屏并渲染结果 ==================== */
+function showResultPanel(data) {
+  workspace.classList.remove('center');
+  workspace.classList.add('split');
+
+  // ✅ 填充三个卡片的文件名
+  $('pdfFilename').textContent = data.pdf_filename || '';
+  $('jsonFilename').textContent = data.json_filename || '';
+  $('mdFilename').textContent = data.md_filename || '';
+
+  // JSON 数据解析
+  try {
+    data.json_data = JSON.parse(data.json_preview);
+  } catch (e) {
+    data.json_data = { error: 'JSON 解析失败', raw: data.json_preview };
+  }
+
+  renderJsonTree(data.json_data);
+
+  // 直接显示 Markdown 源码
+  $('mdRaw').textContent = data.md_content || '';
+}
+
+/* ==================== PDF 相关操作 ==================== */
+function getPdfUrl() {
+  if (!resultData || !resultData.pdf_filename) return null;
+  const vlmMode = resultData.vlm_enable ? 'vlm' : 'auto';
+  return `/api/v1/xidian/download/${resultData.folder_name}/${vlmMode}/${resultData.pdf_filename}`;
+}
+
+// 跳转到独立 PDF 预览页面
+function openPdfPreview() {
+  const url = getPdfUrl();
+  if (!url) return flash('暂无版面分析 PDF 文件', 'err');
+
+  const previewPage = `/static/pdf_preview.html?file=${encodeURIComponent(url)}&name=${encodeURIComponent(resultData.pdf_filename)}`;
+  window.open(previewPage, '_blank');
+}
+
+// 直接下载 PDF（fetch blob 方式，避免触发预览）
+async function downloadPdf() {
+  const url = getPdfUrl();
+  if (!url) return flash('暂无版面分析 PDF 文件', 'err');
+
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error('Download failed');
+    const blob = await resp.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = resultData.pdf_filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(blobUrl);
+  } catch (err) {
+    flash('PDF 下载失败，请重试', 'err');
+  }
+}
+
+// 复制 Markdown 源码
+function copyMarkdown() {
+  if (!resultData || !resultData.md_content) return;
+  navigator.clipboard.writeText(resultData.md_content).then(() => {
+    flash('Markdown 源码已复制到剪贴板', 'ok');
+  }).catch(err => {
+    flash('复制失败: ' + err, 'err');
+  });
+}
+
+/* ==================== JSON 树形预览 ==================== */
+const COLLAPSE_LARGE_THRESHOLD = 50;
+
+function renderJsonTree(data) {
+  const container = $('jsonPreview');
+  container.innerHTML = '';
+  container.appendChild(buildJsonNode(data, '', null, true, 0));
+}
+
+function buildJsonNode(value, key, parentType, isLast, depth) {
+  const wrapper = document.createElement('div');
+  const line = document.createElement('div');
+  line.className = 'json-line';
+
+  const toggle = document.createElement('span');
+  toggle.className = 'toggle';
+
+  const content = document.createElement('span');
+  content.style.flex = '1';
+  content.style.overflow = 'hidden';
+  content.style.textOverflow = 'ellipsis';
+
+  const copyBtn = document.createElement('span');
+  copyBtn.className = 'copy-node-btn';
+  copyBtn.textContent = '复制';
+  copyBtn.onclick = (e) => {
+    e.stopPropagation();
+    const text = (typeof value === 'object' && value !== null)
+      ? JSON.stringify(value, null, 2)
+      : String(value);
+    navigator.clipboard.writeText(text).then(() => {
+      copyBtn.textContent = '✓';
+      setTimeout(() => copyBtn.textContent = '复制', 1200);
+    });
+  };
+
+  const isObject = value !== null && typeof value === 'object';
+  const isArray = Array.isArray(value);
+
+  if (parentType === 'object') {
+    const keySpan = document.createElement('span');
+    keySpan.className = 'json-key';
+    keySpan.textContent = key;
+    content.appendChild(keySpan);
+    const colon = document.createElement('span');
+    colon.className = 'json-key-colon';
+    colon.textContent = ':';
+    content.appendChild(colon);
+  }
+
+  if (isObject) {
+    const length = isArray ? value.length : Object.keys(value).length;
+
+    if (length === 0) {
+      toggle.classList.add('empty');
+      const empty = document.createElement('span');
+      empty.className = 'json-bracket';
+      empty.textContent = (isArray ? '[]' : '{}') + (parentType !== null && !isLast ? ',' : '');
+      content.appendChild(empty);
+      line.appendChild(toggle);
+      line.appendChild(content);
+      line.appendChild(copyBtn);
+      wrapper.appendChild(line);
+      return wrapper;
+    }
+
+    const openBracket = document.createElement('span');
+    openBracket.className = 'json-bracket';
+    openBracket.textContent = isArray ? '[' : '{';
+    content.appendChild(openBracket);
+
+    const summary = document.createElement('span');
+    summary.className = 'json-summary hidden';
+    summary.textContent = isArray ? ` ... ${length} items ` : ` ... ${length} keys `;
+    const closeInline = document.createElement('span');
+    closeInline.className = 'json-bracket json-summary hidden';
+    closeInline.textContent = (isArray ? ']' : '}') + (parentType !== null && !isLast ? ',' : '');
+    content.appendChild(summary);
+    content.appendChild(closeInline);
+
+    const children = document.createElement('div');
+    children.className = 'json-children';
+
+    if (isArray) {
+      value.forEach((item, idx) => {
+        children.appendChild(buildJsonNode(item, idx, 'array', idx === value.length - 1, depth + 1));
+      });
+    } else {
+      const objEntries = Object.entries(value);
+      objEntries.forEach(([k, v], idx) => {
+        children.appendChild(buildJsonNode(v, k, 'object', idx === objEntries.length - 1, depth + 1));
+      });
+    }
+
+    const closingLine = document.createElement('div');
+    closingLine.className = 'json-line';
+    const closingPad = document.createElement('span');
+    closingPad.className = 'toggle empty';
+    closingLine.appendChild(closingPad);
+    const closingContent = document.createElement('span');
+    const closeBracket = document.createElement('span');
+    closeBracket.className = 'json-bracket';
+    closeBracket.textContent = (isArray ? ']' : '}') + (parentType !== null && !isLast ? ',' : '');
+    closingContent.appendChild(closeBracket);
+    closingLine.appendChild(closingContent);
+
+    let collapsed = length > COLLAPSE_LARGE_THRESHOLD && depth >= 1;
+    const updateCollapse = () => {
+      if (collapsed) {
+        toggle.textContent = '▶';
+        children.classList.add('collapsed');
+        closingLine.style.display = 'none';
+        summary.classList.remove('hidden');
+        closeInline.classList.remove('hidden');
+      } else {
+        toggle.textContent = '▼';
+        children.classList.remove('collapsed');
+        closingLine.style.display = '';
+        summary.classList.add('hidden');
+        closeInline.classList.add('hidden');
+      }
+    };
+    updateCollapse();
+    toggle.onclick = (e) => { e.stopPropagation(); collapsed = !collapsed; updateCollapse(); };
+    summary.onclick = (e) => { e.stopPropagation(); collapsed = false; updateCollapse(); };
+    closeInline.onclick = (e) => { e.stopPropagation(); collapsed = false; updateCollapse(); };
+
+    line.appendChild(toggle);
+    line.appendChild(content);
+    line.appendChild(copyBtn);
+    wrapper.appendChild(line);
+    wrapper.appendChild(children);
+    wrapper.appendChild(closingLine);
+
+  } else {
+    toggle.classList.add('empty');
+    content.appendChild(renderPrimitive(value));
+    if (parentType !== null && !isLast) {
+      const comma = document.createElement('span');
+      comma.className = 'json-bracket';
+      comma.textContent = ',';
+      content.appendChild(comma);
+    }
+    line.appendChild(toggle);
+    line.appendChild(content);
+    line.appendChild(copyBtn);
+    wrapper.appendChild(line);
+  }
+
+  return wrapper;
+}
+
+function renderPrimitive(value) {
+  const span = document.createElement('span');
+  if (value === null) {
+    span.className = 'json-null';
+    span.textContent = 'null';
+  } else if (typeof value === 'string') {
+    span.className = 'json-string';
+    span.textContent = value;
+  } else if (typeof value === 'number') {
+    span.className = 'json-number';
+    span.textContent = value;
+  } else if (typeof value === 'boolean') {
+    span.className = 'json-boolean';
+    span.textContent = String(value);
+  } else {
+    span.textContent = String(value);
+  }
+  return span;
+}
+
+/* 全部展开/折叠 */
+function expandAllJson() {
+  const lines = $('jsonPreview').querySelectorAll('.json-line');
+  lines.forEach(l => {
+    const t = l.querySelector('.toggle');
+    if (t && !t.classList.contains('empty') && t.textContent === '▶') t.click();
+  });
+}
+function collapseAllJson() {
+  const lines = Array.from($('jsonPreview').querySelectorAll('.json-line'));
+  lines.reverse().forEach((l, idx) => {
+    const t = l.querySelector('.toggle');
+    if (t && !t.classList.contains('empty') && t.textContent === '▼') {
+      if (idx === lines.length - 1) return;
+      t.click();
+    }
+  });
+}
+
+function copyAllJson() {
+  if (!resultData || !resultData.json_data) return;
+  navigator.clipboard.writeText(JSON.stringify(resultData.json_data, null, 2));
+  flash('完整 JSON 已复制到剪贴板', 'ok');
+}
+
+/* ==================== JSON 搜索 ==================== */
+let searchMatches = [];
+let currentMatchIndex = -1;
+
+function searchJson() {
+  const keyword = $('jsonSearch').value.trim();
+  const container = $('jsonPreview');
+
+  container.querySelectorAll('.json-highlight').forEach(el => {
+    const parent = el.parentNode;
+    while (el.firstChild) parent.insertBefore(el.firstChild, el);
+    parent.removeChild(el);
+    parent.normalize();
+  });
+  searchMatches = [];
+  currentMatchIndex = -1;
+
+  if (!keyword) {
+    $('searchInfo').textContent = '';
+    return;
+  }
+
+  highlightTextNodes(container, keyword.toLowerCase());
+  searchMatches = Array.from(container.querySelectorAll('.json-highlight'));
+
+  if (searchMatches.length > 0) {
+    currentMatchIndex = 0;
+    scrollToMatch();
+  }
+  $('searchInfo').textContent =
+    searchMatches.length > 0 ? `${currentMatchIndex + 1} / ${searchMatches.length}` : '无匹配';
+}
+
+function highlightTextNodes(node, keyword) {
+  if (node.nodeType === Node.TEXT_NODE) {
+    const text = node.nodeValue;
+    const lower = text.toLowerCase();
+    let idx = lower.indexOf(keyword);
+    if (idx === -1) return;
+    const frag = document.createDocumentFragment();
+    let last = 0;
+    while (idx !== -1) {
+      if (idx > last) frag.appendChild(document.createTextNode(text.slice(last, idx)));
+      const mark = document.createElement('span');
+      mark.className = 'json-highlight';
+      mark.textContent = text.slice(idx, idx + keyword.length);
+      frag.appendChild(mark);
+      last = idx + keyword.length;
+      idx = lower.indexOf(keyword, last);
+    }
+    if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+    node.parentNode.replaceChild(frag, node);
+  } else if (node.nodeType === Node.ELEMENT_NODE
+             && !node.classList.contains('copy-node-btn')
+             && !node.classList.contains('toggle')) {
+    Array.from(node.childNodes).forEach(c => highlightTextNodes(c, keyword));
+  }
+}
+
+function nextSearchMatch() {
+  if (searchMatches.length === 0) return;
+  searchMatches.forEach(m => m.classList.remove('current'));
+  currentMatchIndex = (currentMatchIndex + 1) % searchMatches.length;
+  scrollToMatch();
+  $('searchInfo').textContent = `${currentMatchIndex + 1} / ${searchMatches.length}`;
+}
+
+function scrollToMatch() {
+  if (currentMatchIndex < 0 || currentMatchIndex >= searchMatches.length) return;
+  const el = searchMatches[currentMatchIndex];
+  el.classList.add('current');
+
+  let parent = el.parentElement;
+  while (parent && parent.id !== 'jsonPreview') {
+    if (parent.classList.contains('json-children') && parent.classList.contains('collapsed')) {
+      const prevLine = parent.previousElementSibling;
+      if (prevLine) {
+        const t = prevLine.querySelector('.toggle');
+        if (t && !t.classList.contains('empty')) t.click();
+      }
+    }
+    parent = parent.parentElement;
+  }
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+/* ==================== 下载 JSON / MD ==================== */
+function downloadJson() {
+  if (!resultData) return;
+  const vlmMode = resultData.vlm_enable ? 'vlm' : 'auto';
+  window.location.href = `/api/v1/xidian/download/${resultData.folder_name}/${vlmMode}/${resultData.json_filename}`;
+}
+
+function downloadMd() {
+  if (!resultData) return;
+  const vlmMode = resultData.vlm_enable ? 'vlm' : 'auto';
+  window.location.href = `/api/v1/xidian/download/${resultData.folder_name}/${vlmMode}/${resultData.md_filename}`;
+}
+
+/* ==================== Markdown 渲染 & 切换 ==================== */
+// 初始化 markdown-it + KaTeX
+const mdParser = window.markdownit({
+  html: true,        // 允许 HTML 标签（表格、图片等直接渲染）
+  linkify: true,     // 自动识别链接
+  typographer: true,
+  breaks: true       // 换行符转 <br>
+});
+
+// 挂载 LaTeX 公式渲染
+mdParser.use(window.texmath, {
+  engine: window.katex,
+  delimiters: ['dollars', 'brackets'],  // 支持 $...$ $$...$$ \(...\) \[...\]
+  katexOptions: { throwOnError: false }
+});
+
+/* ========== MinIO 图片代理改写 ==========
+   Markdown 源码里的 MinIO URL 保持原样（用户复制/下载不受影响），
+   渲染后扫描 <img>，把 MinIO 地址替换为后端代理地址，
+   让后端用密钥拉图返回，密钥永远不出后端。
+============================================ */
+const MINIO_HOST = 'http://60.204.211.83:10000';
+const IMAGE_PROXY_PREFIX = '/api/v1/image-proxy';
+
+function rewriteMinioImages(container) {
+  const imgs = container.querySelectorAll('img');
+  imgs.forEach(img => {
+    const src = img.getAttribute('src') || '';
+    if (src.startsWith(MINIO_HOST)) {
+      // http://60.204.211.83:10000/preprocess/xxx/yyy.jpg
+      //   →  /api/v1/image-proxy/preprocess/xxx/yyy.jpg
+      img.src = src.replace(MINIO_HOST, IMAGE_PROXY_PREFIX);
+    }
+  });
+}
+
+let currentMdView = 'source';  // 'source' | 'render'
+
+function switchMdView(mode) {
+  currentMdView = mode;
+  const rawEl = $('mdRaw');
+  const renderedEl = $('mdRendered');
+  const btnSource = $('btnMdSource');
+  const btnRender = $('btnMdRender');
+
+  if (mode === 'source') {
+    rawEl.style.display = '';
+    renderedEl.style.display = 'none';
+    btnSource.classList.add('active');
+    btnRender.classList.remove('active');
+  } else {
+    rawEl.style.display = 'none';
+    renderedEl.style.display = '';
+    btnSource.classList.remove('active');
+    btnRender.classList.add('active');
+
+    // 渲染 Markdown（依赖 md_content 已带 $/$$ 分隔符）
+    if (resultData && resultData.md_content) {
+      renderedEl.innerHTML = mdParser.render(resultData.md_content);
+      rewriteMinioImages(renderedEl);   // ← 渲染后改写图片地址
+    }
+  }
+}
+
 </script>
 </body>
 </html>

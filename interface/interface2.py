@@ -144,4 +144,4 @@ async def interface2_json(save_filepath,vlm_enable,red_title_enable,image_class,
         "status_message": status_message,
         "partitions": json_data if status_code == 200 else []
     }
-    return return_json
+    return return_json,folder_name
