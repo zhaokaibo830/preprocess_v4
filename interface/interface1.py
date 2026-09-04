@@ -40,7 +40,7 @@ def py_dict_to_json_var(py_dict_str):
     json_obj = json.loads(json_str)
     
     return json_obj
-async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,image_desc,image_html,table_kv,table_desc,table_html,cfg,request_id):
+async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,image_desc,image_html,table_kv,table_desc,table_html,cfg,request_id,progress_callback=None):
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
@@ -107,6 +107,12 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
         print("调用mineru服务进行布局分析...")
         json_data = await mineru_layout(save_filepath,output_path,request_id,output_path_temp,folder_name,vlm_enable,file_name)
         print("mineru服务调用完成，开始后续处理...")
+        if progress_callback:
+            print("调用回调函数，返回mineru阶段数据...")
+            await progress_callback(
+                stage="mineru",
+                data=json_data
+            )
         #print(f"mineru服务返回的初始json数据: {json_data}")
         # with open('./test411.json', 'w', encoding='utf-8') as f:
         #     json.dump(json_data, f, ensure_ascii=False, indent=4)
@@ -204,4 +210,10 @@ async def interface1_json(save_filepath,vlm_enable,red_title_enable,image_class,
         "status_message": status_message,
         "partitions": json_data if status_code == 200 else []
     }
+    if progress_callback:
+        print("调用回调函数，返回最终数据...")
+        await progress_callback(
+            stage="final",
+            data=return_json
+        )
     return return_json,folder_name

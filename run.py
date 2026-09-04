@@ -44,7 +44,7 @@ from interface.interface2 import interface2_json
 from interface.test_interface import test_interface_json
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any
-from utils.json_to_md import json_to_markdown
+from utils.json_to_md import json_to_markdown,custom_json_to_markdown
 import os
 from minio import Minio
 from minio.error import S3Error
@@ -109,6 +109,8 @@ def custom_docs():
         swagger_js_url="/static/swagger-ui-bundle.js",
         swagger_css_url="/static/swagger-ui.css",
     )
+
+"""
 # ================================================================
 # MinIO 图片代理接口
 # ================================================================
@@ -118,11 +120,11 @@ def custom_docs():
     description="代理拉取 MinIO 鉴权图片，避免暴露密钥给前端"
 )
 async def proxy_minio_image(bucket: str, object_path: str):
-    """
+    
     URL 映射示例：
         原始 MinIO:  http://60.204.211.83:10000/preprocess/xxx/abc.jpg
         代理路径:    /api/v1/image-proxy/preprocess/xxx/abc.jpg
-    """
+    
     # 路径安全检查
     if ".." in object_path or ".." in bucket:
         raise HTTPException(400, "非法路径")
@@ -156,6 +158,29 @@ async def proxy_minio_image(bucket: str, object_path: str):
             "Cache-Control": "public, max-age=3600",  # 浏览器缓存 1 小时
         },
     )
+"""
+MINIO_WEB_BASE = "http://10.208.127.189:29101"
+@app.get("/api/v1/image-proxy/{bucket}/{object_path:path}")
+async def proxy_minio_image(bucket: str, object_path: str):
+    if ".." in object_path or ".." in bucket:
+        raise HTTPException(400, "非法路径")
+
+    url = f"{MINIO_WEB_BASE}/{bucket}/{object_path}"
+
+    async with httpx.AsyncClient(follow_redirects=True) as client:
+        resp = await client.get(url, timeout=30)
+
+    if resp.status_code != 200:
+        raise HTTPException(resp.status_code, "图片获取失败")
+
+    ext = object_path.rsplit(".", 1)[-1].lower() if "." in object_path else ""
+    mime = _IMG_MIME_MAP.get(ext, "application/octet-stream")
+
+    return StreamingResponse(
+        iter([resp.content]),
+        media_type=mime,
+        headers={"Cache-Control": "public, max-age=3600"},
+    )
 AVALIABLE_FORMATS = ["pdf", "docx", "doc", "wps", "odt", "pptx", "ppt", "ofd", "md", "ceb", "jpg", "jpeg", "png", "txt"]
 
 with open("config.yaml", 'r', encoding='utf-8') as file:
@@ -177,7 +202,8 @@ async def return_json_only(
     img_html: bool = Query(True, description="是否生成图片HTML结构"),
     table_kv: bool = Query(True, description="是否提取表格键值对"),
     table_desc: bool = Query(True, description="是否生成表格描述"),
-    table_html: bool = Query(True, description="是否生成表格HTML结构")
+    table_html: bool = Query(True, description="是否生成表格HTML结构"),
+    phase_return: bool = Query(False, description="是否分阶段返回结果")
 ):
     #将上传文件保存到本地
     try:
@@ -195,9 +221,59 @@ async def return_json_only(
     request_id = str(uuid.uuid4())
     print(f"接口1调用 request_id: {request_id}")
     print("正在调用接口1核心逻辑...")
-    result = await interface1_json(save_filepath, vlm_enable, red_title_enable, img_class, img_desc, img_html, table_kv, table_desc, table_html, cfg, request_id)
-    print("接口1核心逻辑调用完成")
-    return result
+    
+    if not phase_return:
+        result, folder_name= await interface1_json(save_filepath, vlm_enable, red_title_enable, img_class, img_desc, img_html, table_kv, table_desc, table_html, cfg, request_id)
+        print("接口1核心逻辑调用完成")
+        return result
+    
+    return StreamingResponse(
+        interface1_stream(save_filepath, vlm_enable, red_title_enable, img_class, img_desc, img_html, table_kv, table_desc, table_html, cfg, request_id),
+        media_type="text/event-stream"
+    )
+    
+async def interface1_stream(save_filepath, vlm_enable, red_title_enable, img_class, img_desc, img_html, table_kv, table_desc, table_html, cfg, request_id):
+    """
+    异步生成器，用于分阶段返回interface1的处理结果。
+    """
+    queue = asyncio.Queue()
+
+    async def callback(stage, data):
+        await queue.put({
+            "stage": stage,
+            "data": data
+        })
+
+    task = asyncio.create_task(
+        interface1_json(
+            save_filepath,
+            vlm_enable,
+            red_title_enable,
+            img_class,
+            img_desc,
+            img_html,
+            table_kv,
+            table_desc,
+            table_html,
+            cfg,
+            request_id,
+            progress_callback=callback
+        )
+    )
+
+    while True:
+
+        item = await queue.get()
+
+        yield (
+            f"event: {item['stage']}\n"
+            f"data: {json.dumps(item, ensure_ascii=False)}\n\n"
+        )
+        
+        if item['stage'] == "final":
+            break
+
+    await task
 
 
 @app.post(
@@ -236,7 +312,7 @@ async def return_json_only(
 
 
 @app.post("/api/v1/xidian/preprocess_custom",
-            response_model=BaseResponse,
+            #response_model=BaseResponse,
             summary="自定义格式处理结果",
             description="上传待处理文件，返回自定义格式的处理结果"
             )
@@ -264,7 +340,7 @@ async def return_json_with_custom_format(
             f.write(file.file.read())
     except AttributeError:
         return JSONResponse(content={"error": "文件上传出错"})
-    result =await interface2_json(save_filepath, vlm_enable, red_title_enable, img_class, img_desc, img_html, table_kv, table_desc, table_html, cfg, request_id)
+    result,folder_name=await interface2_json(save_filepath, vlm_enable, red_title_enable, img_class, img_desc, img_html, table_kv, table_desc, table_html, cfg, request_id)
     return result 
 
 @app.get("/portal", include_in_schema=False)
@@ -451,7 +527,10 @@ async def preprocess_web(
             json.dump(result, f, ensure_ascii=False, indent=2)
 
         # 读取 MD 内容（用于前端预览）
-        md_content = json_to_markdown(result)
+        if json_mode == "standard":
+            md_content = json_to_markdown(result)
+        elif json_mode == "custom":
+            md_content = custom_json_to_markdown(result)
         #if output_md_path.exists():
         #    with open(output_md_path, "r", encoding="utf-8") as f:
         #        md_content = f.read()
